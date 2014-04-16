@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('painSquad', [
   'ionic',
   'painSquad.routes',
@@ -12,4 +14,4 @@ angular.module('painSquad', [
       StatusBar.styleDefault();
     }
   });
-})
+});

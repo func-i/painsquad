@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('painSquad.controllers', [])
 
 .controller('IntroCtrl', function($scope, $state, $window, $ionicSlideBoxDelegate) {

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('painSquad.routes', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -57,7 +59,7 @@ angular.module('painSquad.routes', ['ionic'])
     .state('pain', {
       url: '/pain',
       templateUrl: 'templates/static/pain.html'
-    })
+    });
 
     // .state('intro', {
     //   url: '/intro',
