@@ -1,12 +1,16 @@
 'use strict';
 
-angular.module('painsquad', [
+angular.module('painSquad.controllers', []);
+angular.module('painSquad.services', []);
+// angular.module('painSquad.directives', []);
+
+var painSquad = angular.module('painSquad', [
   'ionic',
-  'painsquad.controllers',
-  'painsquad.services'
+  'painSquad.controllers',
+  'painSquad.services'
 ])
 
-.run(function($ionicPlatform) {
+painSquad.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -15,7 +19,7 @@ angular.module('painsquad', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+painSquad.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider
     // convenience method to re-route to app/home, not needed!
