@@ -1,19 +1,67 @@
-'use strict';
-angular.module('Psquad.controllers', [])
+angular.module('painSquad.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('IntroCtrl', function($scope, $state, $window, $ionicSlideBoxDelegate) {
+  // Called to navigate to the main app
+  $scope.startApp = function() {
+    $state.go('home');
+  };
+
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
+
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+  };
+
+  $scope.goBack = function() {
+    $window.history.back();
+  };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('MenuCtrl', function($scope, $rootScope, $window, $location, $ionicSideMenuDelegate) {
+  $scope.goToPage = function(page) {
+    // console.log($rootScope.isTablet);
+    if (!$rootScope.isTablet) {
+      $ionicSideMenuDelegate.toggleLeft(false);
+    }
+    $location.url('/' + page);
+  };
+
+  $scope.closeSideMenu = function() {
+    $ionicSideMenuDelegate.close();
+  };
+
+  $scope.goBack = function() {
+    $window.history.back();
+  };
+
+  $scope.openLeftPanel = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('CaseCtrl', function($scope, $stateParams) {
+})
+
+.controller('HomeCtrl', function($scope, $state, $stateParams) {
+})
+
+.controller('AboutCtrl', function($scope, $state, $stateParams) {
+  $scope.toIntro = function() {
+    $state.go('intro');
+  }
+})
+
+.controller('ReportsCtrl', function($scope, $stateParams) {
+})
+
+.controller('SettingsCtrl', function($scope, $state, $stateParams) {
+})
+
+
