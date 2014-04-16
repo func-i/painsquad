@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('painSquad.services', [])
-.factory('ExService', function() {
+angular.module('painsquad.services', [])
+.factory('ExampleService', function() {
 // example service:
 // Some fake testing data
 //   var pets = [
