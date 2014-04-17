@@ -1,44 +1,53 @@
-class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  after_action :verify_authorized, except: [:show]
-
-  def index
-    @users = User.all
-    authorize @users
-  end
+class UsersController < BaseController
+  # skip_before_filter :restrict_access, only: [:create]
 
   def show
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to root_path, :alert => "Access denied."
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to root_path
+      # reset_session
+      # auto_login @user
+      # respond_with @user
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def update
     @user = User.find(params[:id])
-    authorize @user
-    if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+    if @user.update_attributes(user_params)
+      head :ok
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def password
+    @user = User.find(params[:id])
+    if @user.update_attributes(password: params[:password])
+      head :ok
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def destroy
     user = User.find(params[:id])
-    authorize user
-    unless user == current_user
-      user.destroy
-      redirect_to users_path, :notice => "User deleted."
-    else
-      redirect_to users_path, :notice => "Can't delete yourself."
-    end
+    user.destroy!
+    head :ok
   end
 
   private
 
-  def secure_params
-    params.require(:user).permit!
+  def user_params
+    params.require(:user).permit(:username, :password, :email)
   end
-
 end

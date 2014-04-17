@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 things = %w{ Desk Chair Banana Thermos Herbert Dog }
 
-user = User.create!(name: "test user", email: "test@email.com", password: "password")
+user = User.create!(username: "test user", email: "test@email.com", password: "password")
 
 5.times do |thing|
   Thing.create!(name: things.sample, description: "This is description ##{thing + 1}")

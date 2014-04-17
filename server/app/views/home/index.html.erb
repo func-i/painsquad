@@ -1,9 +1,10 @@
 <h3>Home Controller</h3>
-<%= render 'navigation_links' %>
-
-<%# if !current_user.nil? %>
-  <%# @users.each do |user| %>
-    <!-- <p>User: <%#=link_to user.email, user %> -->
-  <%# end %>
-
-<%# end %>
+<% if current_user %>
+  <li><%= link_to "Things", things_path %></li>
+  <li><%= link_to "Users", users_path %></li>
+  <li><%#= link_to 'Edit account', edit_user_registration_path %></li>
+  <li><%#= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%#= link_to 'Login', [:new, :session] %></li>
+  <li><%= link_to 'Sign up', [:new, :user] %></li>
+<% end %>

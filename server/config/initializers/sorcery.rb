@@ -302,7 +302,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `:reset_password_email_sent_at`
     #
     # user.reset_password_email_sent_at_attribute_name =
-
+    user.reset_password_mailer = UserMailer
 
     # mailer class. Needed.
     # Default: `nil`
