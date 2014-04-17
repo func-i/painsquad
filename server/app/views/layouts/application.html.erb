@@ -8,9 +8,19 @@
 </head>
 <body>
 
+<hr>
+<%= render "nav_links" %>
+<hr>
+
 <%= yield %>
 
+<hr>
 <%= debug params if Rails.env.development? %>
+<hr>
+<br>
+<hr>
+<%= debug current_user %>
+<hr>
 
 </body>
 </html>

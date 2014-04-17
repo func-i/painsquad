@@ -5,11 +5,15 @@ PainSquadApi::Application.routes.draw do
     resources :things
   end
 
-  resources :users#,   only: [:show, :create, :update, :destroy]
-  resources :session, only: [:create, :destroy]
+  resources :users
+  resources :session, only: [:new, :create, :destroy]
 
   resources :things
 
+  get  "signup", to: "users#new",        as: :signup
+  post "login",  to: "sessions#create",  as: :create_session
+  get  "login",  to: "sessions#new",     as: :login
+  get  "logout", to: "sessions#destroy", as: :logout
   root :to => "home#index"
 
 end

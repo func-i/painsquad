@@ -1,0 +1,7 @@
+<%= simple_form_for :session, url: create_session_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :remember_me, as: :boolean %>
+  <%= f.submit %>
+<% end %>
