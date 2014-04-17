@@ -1,5 +1,3 @@
 class User < ActiveRecord::Base
-
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable
-
+  authenticates_with_sorcery!
 end
