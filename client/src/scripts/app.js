@@ -8,9 +8,7 @@ var painSquad = angular.module('painSquad', [
   'ionic',
   'painSquad.controllers',
   'painSquad.services',
-  'ngResource'//,
-  // 'ngCookies'
-])
+]);
 
 painSquad.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -19,21 +17,21 @@ painSquad.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-})
+});
 
 var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
   function success(response) {
-      return response
-  };
+    return response;
+  }
 
   function error(response) {
-    if (response.status == 401) {
+    if (response.status === 401) {
       // $rootScope.$broadcast('event:unauthorized');
       $location.path('/login');
       return response;
-    };
+    }
     return $q.reject(response);
-  };
+  }
 
   return function(promise) {
     return promise.then(success, error);
@@ -41,7 +39,7 @@ var interceptor = ['$location', '$rootScope', '$q', function($location, $rootSco
 }];
 
 painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
-  $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   $httpProvider.responseInterceptors.push(interceptor);
 
   $urlRouterProvider

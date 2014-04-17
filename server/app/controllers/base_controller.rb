@@ -2,8 +2,8 @@ class BaseController < ApplicationController
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  # respond_to :json
-  # before_filter :restrict_access
+  respond_to :json
+  before_filter :restrict_access
 
   protected
 

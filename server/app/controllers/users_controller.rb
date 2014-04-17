@@ -1,5 +1,5 @@
 class UsersController < BaseController
-  # skip_before_filter :restrict_access, only: [:create]
+  skip_before_filter :restrict_access, only: [:create]
 
   def index
     @users = User.all
