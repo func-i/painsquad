@@ -7,7 +7,9 @@ angular.module('painSquad.services', []);
 var painSquad = angular.module('painSquad', [
   'ionic',
   'painSquad.controllers',
-  'painSquad.services'
+  'painSquad.services',
+  'ngResource'//,
+  // 'ngCookies'
 ])
 
 painSquad.run(function($ionicPlatform) {
@@ -19,24 +21,47 @@ painSquad.run(function($ionicPlatform) {
   });
 })
 
-painSquad.config(function($stateProvider, $urlRouterProvider) {
+var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
+  function success(response) {
+      return response
+  };
+
+  function error(response) {
+    if (response.status == 401) {
+      // $rootScope.$broadcast('event:unauthorized');
+      $location.path('/login');
+      return response;
+    };
+    return $q.reject(response);
+  };
+
+  return function(promise) {
+    return promise.then(success, error);
+  };
+}];
+
+painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
+  $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  $httpProvider.responseInterceptors.push(interceptor);
 
   $urlRouterProvider
-    // convenience method to re-route to app/home, not needed!
-    // .when('/home', '/app/home')
-
-    // if none of the above states are matched, use this as the fallback
-    // $urlRouterProvider.otherwise('/intro');
+    // fallback route
     .otherwise('/home');
 
   // Learn more here: https://github.com/angular-ui/ui-router
   $stateProvider
-
     // HOME VIEW
     .state('home', {
       url: '/home',
       templateUrl: 'templates/home.html',
       controller: 'HomeCtrl'
+    })
+
+    // LOGIN VIEW
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/users/new.html',
+      controller: 'UserCtrl'
     })
 
     // REPORTS VIEW
@@ -73,10 +98,10 @@ painSquad.config(function($stateProvider, $urlRouterProvider) {
       controller: 'IntroCtrl'
     })
 
-    .state('pain', {
-      url: '/pain',
-      templateUrl: 'templates/static/pain.html'
-    });
+    // .state('pain', {
+    //   url: '/pain',
+    //   templateUrl: 'templates/static/pain.html'
+    // });
 
     // .state('intro', {
     //   url: '/intro',
@@ -84,28 +109,27 @@ painSquad.config(function($stateProvider, $urlRouterProvider) {
     //   controller: 'IntroCtrl'
     // })
 
-
     // .state('about.home', {
-    //   url: "/home",
+    //   url: '/home',
     //   views: {
     //     'about-view': {
-    //       templateUrl: "views/about.html",
-    //       controller: "IntroCtrl"
+    //       templateUrl: 'views/about.html',
+    //       controller: 'IntroCtrl'
     //     }
     //   }
     // })
 
     // .state('about.intro', {
-    //   url: "/intro",
+    //   url: '/intro',
     //   views: {
     //     'about-view': {
-    //       templateUrl: "views/slides.html",
-    //       controller: "IntroCtrl"
+    //       templateUrl: 'views/slides.html',
+    //       controller: 'IntroCtrl'
     //     }
     //   }
     // })
 
-    // app intro path
+    // // app intro path
     // .state('intro', {
     //   url: '/intro',
     //   templateUrl: 'views/slides.html',
