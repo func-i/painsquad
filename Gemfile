@@ -20,6 +20,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rack-cors', require: 'rack/cors'
   gem 'spring'
   gem 'jazz_hands'
   gem 'quiet_assets'
