@@ -6,7 +6,7 @@ angular.module('painSquad.controllers')
 
   $http.get('http://localhost:3000/api/v1/greet.json')
     .success(function(data) {
-      $scope.message = data;
+      $scope.message = data.message;
     })
     .error(function(data, status, headers, config) {
       $scope.message = status + " " + data + " " + headers + " " + config;
