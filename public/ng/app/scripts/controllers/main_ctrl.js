@@ -4,14 +4,12 @@ angular.module('painSquad.controllers')
 
 .controller('MainCtrl', function($rootScope, $scope, $window, $location, $ionicSideMenuDelegate, $http, storageService, apiService) {
 
-  // $scope.message = apiService.getThings();
-
-  apiService.getGreeting()
+  apiService.getThing(1)
     .success(function(data) {
-      $scope.message = data.message;
+      $scope.data = data;
     })
     .error(function(data) {
-      $scope.message = data;
+      $scope.data = data;
     });
 
   $scope.goToPage = function(page) {

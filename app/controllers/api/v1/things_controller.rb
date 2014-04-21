@@ -3,10 +3,6 @@ module Api
     class ThingsController < ApplicationController
       before_action :set_thing, only: [:show, :edit, :update, :destroy]
 
-      def greet
-        render :json => { message: "Gotta set CORS headers" }.as_json
-      end
-
       def index
         @things = Thing.all
         render json: @things

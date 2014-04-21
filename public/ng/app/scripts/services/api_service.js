@@ -5,7 +5,7 @@ var ApiService = (function() {
   function ApiService($http, storageService) {
     this.$http          = $http;
     this.storageService = storageService;
-    this.baseUrl        = 'http://localhost\:3000/api/v1/';
+    this.baseUrl        = 'http://localhost:3000/api/v1/';
   }
 
   ApiService.prototype.login = function(user) {

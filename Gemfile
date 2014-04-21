@@ -8,6 +8,7 @@ gem 'rack-cors'
 gem 'simple_form'
 gem 'pundit'
 gem 'pg'
+gem 'active_model_serializers'
 
 gem 'sass-rails'
 gem 'uglifier'

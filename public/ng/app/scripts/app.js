@@ -36,8 +36,7 @@ var interceptor = ['$location', '$q', '$injector', function($location, $q, $inje
 
 painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-  // $httpProvider.responseInterceptors.push(interceptor);
-  $httpProvider.defaults.port = 3000;
+  $httpProvider.responseInterceptors.push(interceptor);
 
   $urlRouterProvider
     // fallback route

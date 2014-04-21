@@ -17,8 +17,8 @@ var StorageService = (function() {
   };
 
   StorageService.prototype.logout = function() {
-    localStorage.removeItem("email");
-    localStorage.removeItem("token");
+    localStorage.removeItem('email');
+    localStorage.removeItem('token');
   };
 
   return StorageService;
