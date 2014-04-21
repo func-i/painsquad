@@ -1,1 +1,9 @@
-@import "intro", "home", "sidebar";
+// modules are sass-only styles (variables, mixins, overrides)
+
+
+// partials are view and template-related styles
+@import "partials/intro",
+        "partials/buttons",
+        "partials/sidebar";
+
+// vendor is imported/required styles
