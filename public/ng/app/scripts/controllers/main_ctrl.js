@@ -2,14 +2,16 @@
 
 angular.module('painSquad.controllers')
 
-.controller('MainCtrl', function($scope, $rootScope, $window, $location, $ionicSideMenuDelegate, $http) {
+.controller('MainCtrl', function($rootScope, $scope, $window, $location, $ionicSideMenuDelegate, $http, storageService, apiService) {
 
-  $http.get('http://localhost:3000/api/v1/things.json')
+  // $scope.message = apiService.getThings();
+
+  apiService.getGreeting()
     .success(function(data) {
-      $scope.message = data;
+      $scope.message = data.message;
     })
-    .error(function(data, status, headers, config) {
-      $scope.message = status + ' ' + data + ' ' + headers + ' ' + config;
+    .error(function(data) {
+      $scope.message = data;
     });
 
   $scope.goToPage = function(page) {

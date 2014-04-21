@@ -7,15 +7,37 @@ angular.module('painSquad.services', []);
 var painSquad = angular.module('painSquad', [
   'ionic',
   'painSquad.controllers',
-  'painSquad.services',
+  'painSquad.storageService',
+  'painSquad.apiService',
   'ngResource',
   'ngCookies',
   'ngSanitize'
 ]);
 
-painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider) {
+var interceptor = ['$location', '$q', '$injector', function($location, $q, $injector) {
+  function success(response) {
+    return response;
+  }
+
+  function error(response) {
+    if(response.status === 401) {
+      $injector.get('$state').transitionTo('login');
+      return $q.reject(response);
+    }
+    else {
+      return $q.reject(response);
+    }
+  }
+
+  return function(promise) {
+    return promise.then(success, error);
+  };
+}];
+
+painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   // $httpProvider.responseInterceptors.push(interceptor);
+  $httpProvider.defaults.port = 3000;
 
   $urlRouterProvider
     // fallback route
@@ -117,11 +139,11 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider) 
     // })
 });
 
-// painSquad.run(function($ionicPlatform) {
-//   $ionicPlatform.ready(function() {
-//     if(window.StatusBar) {
-//       // org.apache.cordova.statusbar required
-//       StatusBar.styleDefault();
-//     }
-//   });
-// });
+painSquad.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+});

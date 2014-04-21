@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :allow_cross_domain_access
   after_action :cors_set_access_control_headers
 
-  before_action :restrict_access
+  # before_action :restrict_access
 
   protected
 
