@@ -2,7 +2,7 @@
 
 angular.module('painSquad.controllers')
 
-.controller('UserCtrl', function($window, $scope, $state, $stateParams) {
+.controller('UserCtrl', function($scope, $window) {
   $scope.goBack = function() {
     $window.history.back();
   };

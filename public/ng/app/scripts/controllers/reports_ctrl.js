@@ -2,6 +2,6 @@
 
 angular.module('painSquad.controllers')
 
-.controller('ReportsCtrl', function($scope, $state, $stateParams) {
+.controller('ReportsCtrl', function() {
   // code goes hurr
 });

@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ThingsController < BaseController
+    class ThingsController < ApplicationController
       before_action :set_thing, only: [:show, :edit, :update, :destroy]
 
       def greet

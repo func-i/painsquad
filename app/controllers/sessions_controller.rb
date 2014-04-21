@@ -1,5 +1,5 @@
-class SessionsController < BaseController
-  skip_before_filter :restrict_access
+class SessionsController < ApplicationController
+  skip_before_action :restrict_access
   skip_before_action :require_login, except: :destroy
 
   def new

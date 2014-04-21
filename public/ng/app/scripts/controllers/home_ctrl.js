@@ -2,6 +2,6 @@
 
 angular.module('painSquad.controllers')
 
-.controller('HomeCtrl', function($scope, $state, $stateParams) {
+.controller('HomeCtrl', function() {
   // code goes hurr
 });

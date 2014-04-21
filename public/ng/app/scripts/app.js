@@ -13,7 +13,7 @@ var painSquad = angular.module('painSquad', [
   'ngSanitize'
 ]);
 
-painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
+painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   // $httpProvider.responseInterceptors.push(interceptor);
 
@@ -23,7 +23,6 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, 
 
   // Learn more here: https://github.com/angular-ui/ui-router
   $stateProvider
-
     // root
     .state('root', {
       url: '/',
@@ -77,7 +76,7 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, 
       url: '/intro',
       templateUrl: 'templates/static/intro.html',
       controller: 'IntroCtrl'
-    })
+    });
 
     // .state('pain', {
     //   url: '/pain',

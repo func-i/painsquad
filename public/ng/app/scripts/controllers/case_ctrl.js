@@ -2,6 +2,6 @@
 
 angular.module('painSquad.controllers')
 
-.controller('CaseCtrl', function($scope, $state, $stateParams) {
+.controller('CaseCtrl', function() {
   // code goes hurr
 });
