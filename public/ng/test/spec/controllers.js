@@ -1,19 +1,19 @@
 'use strict';
 
-describe('Controller: PetIndexCtrl', function () {
+describe('Controller: MainCtrl', function () {
 
   var should = chai.should();
 
   // load the controller's module
-  beforeEach(module('Psquad'));
+  beforeEach(module('painSquad'));
 
-  var PetIndexCtrl,
+  var MainCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    PetIndexCtrl = $controller('PetIndexCtrl', {
+    MainCtrl = $controller('MainCtrl', {
       $scope: scope
     });
   }));

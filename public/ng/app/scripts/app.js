@@ -117,11 +117,11 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider) 
     // })
 });
 
-painSquad.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-});
+// painSquad.run(function($ionicPlatform) {
+//   $ionicPlatform.ready(function() {
+//     if(window.StatusBar) {
+//       // org.apache.cordova.statusbar required
+//       StatusBar.styleDefault();
+//     }
+//   });
+// });
