@@ -6,12 +6,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:session][:email], params[:session][:password])
-      remember_me!
-      redirect_to :root
-      # render :create, status: :created
-    else
-      render json: { error: "Login failed" }, status: :unprocessable_entity
+    respond_to do |format|
+      if @user = login(params[:session][:email], params[:session][:password])
+        remember_me!
+        format.html { redirect_to(:root) }
+        format.json { render :create, status: :created }
+      else
+        format.html { redirect_to(:root, error: "Login failed") }
+        format.json { render error: "Login failed", status: :unprocessable_entity }
+      end
     end
   end
 
