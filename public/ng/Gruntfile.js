@@ -1,16 +1,10 @@
-// Generated on 2014-04-16 using generator-ionic 0.2.6
+// Generated on 2014-04-14 using generator-ionicjs 0.2.5
 'use strict';
 
 var _ = require('lodash');
 var path = require('path');
 var cordova = require('cordova');
 var spawn = require('child_process').spawn;
-
-// grunt-connect settings
-var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
 
 module.exports = function (grunt) {
 
@@ -20,7 +14,7 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  grunt.loadNpmTasks('grunt-connect-proxy');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -36,13 +30,29 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      js: {
-        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'],
-        tasks: ['newer:jshint:all'],
-        options: {
-          livereload: true
-        }
+      coffee: {
+        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/{,*/}*.coffee'],
+        tasks: ['coffee:dist']
       },
+      coffeeTest: {
+        files: ['test/spec/{,*/}*.coffee'],
+        tasks: ['coffee:test']
+      },
+      // coffee: {
+      //   files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**.{coffee,litcoffee,coffee.md}'],
+      //   tasks: ['newer:coffee:dist']
+      // },
+      // coffeeTest: {
+      //   files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
+      //   tasks: ['newer:coffee:test', 'karma']
+      // },
+      // js: {
+      //   files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'],
+      //   tasks: ['newer:jshint:all'],
+      //   options: {
+      //     livereload: true
+      //   }
+      // },
       compass: {
         files: ['<%= yeoman.app %>/<%= yeoman.styles %>/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
@@ -58,6 +68,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/*.html',
           '<%= yeoman.app %>/templates/**/*.html',
           '.tmp/<%= yeoman.styles %>/**/*.css',
+          '.tmp/scripts/{,*/}*.js',
           '<%= yeoman.app %>/<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -71,33 +82,15 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
-      proxies: [
-        {
-          context: '/api/v1',
-          host: 'localhost',
-          port: 3000,
-          https: false,
-          changeOrigin: false,
-          xforward: false
-        }
-      ],
       livereload: {
         options: {
           open: true,
           base: [
             '.tmp',
             '<%= yeoman.app %>'
-          ],
-          middleware: function (connect) {
-            return [
-              proxySnippet,
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'app')
-            ];
-          }
+          ]
         }
       },
-
       dist: {
         options: {
           base: 'www'
@@ -167,6 +160,31 @@ module.exports = function (grunt) {
       }
     },
 
+    // Compiles CoffeeScript to JavaScript
+    coffee: {
+      options: {
+        sourceMap: true,
+        sourceRoot: ''
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scripts',
+          src: '{,*/}*.coffee',
+          dest: '.tmp/scripts',
+          ext: '.js'
+        }]
+      },
+      test: {
+        files: [{
+          expand: true,
+          cwd: 'test/spec',
+          src: '{,*/}*.coffee',
+          dest: '.tmp/spec',
+          ext: '.js'
+        }]
+      }
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -196,7 +214,6 @@ module.exports = function (grunt) {
         }
       }
     },
-
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -300,18 +317,21 @@ module.exports = function (grunt) {
 
     concurrent: {
       server: [
+        'coffee:dist',
         'compass:server',
         'copy:styles',
         'copy:vendor',
         'copy:fonts'
       ],
       test: [
+        'coffee',
         'compass',
         'copy:styles',
         'copy:vendor',
         'copy:fonts'
       ],
       dist: [
+        'coffee',
         'compass:dist',
         'copy:styles',
         'copy:vendor',
