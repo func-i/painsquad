@@ -38,21 +38,6 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
-      // coffee: {
-      //   files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**.{coffee,litcoffee,coffee.md}'],
-      //   tasks: ['newer:coffee:dist']
-      // },
-      // coffeeTest: {
-      //   files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
-      //   tasks: ['newer:coffee:test', 'karma']
-      // },
-      // js: {
-      //   files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'],
-      //   tasks: ['newer:jshint:all'],
-      //   options: {
-      //     livereload: true
-      //   }
-      // },
       compass: {
         files: ['<%= yeoman.app %>/<%= yeoman.styles %>/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
@@ -336,7 +321,10 @@ module.exports = function (grunt) {
         'copy:styles',
         'copy:vendor',
         'copy:fonts'
-      ]
+      ],
+      options: {
+        limit: 10
+      }
     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
