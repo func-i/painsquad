@@ -2,15 +2,15 @@
 
 angular.module('painSquad.controllers')
 
-.controller('MainCtrl', function($scope, $stateParams) {
+.controller('MainCtrl', function($scope, $stateParams, apiService) {
 
-  // apiService.getThing(1)
-  //   .success(function(data) {
-  //     $scope.data = data;
-  //   })
-  //   .error(function(data) {
-  //     $scope.data = data;
-  //   });
+  apiService.getThing(1)
+    .success(function(data) {
+      $scope.data = data;
+    })
+    .error(function(data) {
+      $scope.data = data;
+    });
 
   // $scope.goToPage = function(page) {
   //   // console.log($rootScope.isTablet);

@@ -37,8 +37,11 @@ var interceptor = ['$location', '$q', '$injector', function($location, $q, $inje
 painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
   // $httpProvider.responseInterceptors.push(interceptor);
+  $urlRouterProvider.otherwise('/app/home');
 
   $stateProvider
+
+    // abstract menu view
     .state('app', {
       url: '/app',
       abstract: true,
@@ -46,55 +49,76 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, 
       controller: 'MainCtrl'
     })
 
-    // .state('app.home', {
-    //   url: '/home',
+    .state('app.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'MainCtrl'
+        }
+      }
+    })
+
+    // new case view
+    .state('app.case', {
+      url: '/case',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/case/case.html',
+          controller: 'CaseCtrl'
+        }
+      }
+    })
+
+    // .state('app.', {
+    //   url: '/case',
     //   views: {
-    //     'menuContent' :{
-    //       templateUrl: 'templates/home.html',
-    //       controller: 'MainCtrl'
+    //     'menuContent': {
+    //       templateUrl: 'templates/case/case.html',
+    //       controller: 'CaseCtrl'
     //     }
     //   }
     // })
 
-    .state('app.cases', {
-      url: '/cases',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/cases.html',
-          controller: 'CaseCtrl'
-        }
-      }
-    })
+    // .state('app.cases', {
+    //   url: '/cases',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/cases.html',
+    //       controller: 'CaseCtrl'
+    //     }
+    //   }
+    // })
 
-    .state('case', {
-      url: '/cases',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/cases.html',
-          controller: 'CaseCtrl'
-        }
-      }
-    })
+    // .state('case', {
+    //   url: '/cases',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/cases.html',
+    //       controller: 'CaseCtrl'
+    //     }
+    //   }
+    // })
 
-    .state('case.progress', {
-      url: '/progress',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/case/case-progress.html',
-          controller: 'CaseCtrl'
-        }
-      }
-    })
+    // .state('case.progress', {
+    //   url: '/progress',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/case/case-progress.html',
+    //       controller: 'CaseCtrl'
+    //     }
+    //   }
+    // })
 
-    .state('app.new_case', {
-      url: '/new_case',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/new_case.html',
-          controller: 'CaseCtrl'
-        }
-      }
-    })
+    // .state('app.new_case', {
+    //   url: '/new_case',
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: 'templates/new_case.html',
+    //       controller: 'CaseCtrl'
+    //     }
+    //   }
+    // })
 
     // .state('app.case', {
     //   url: '/cases/:caseId',
@@ -157,9 +181,6 @@ painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, 
     //   templateUrl: 'views/slides.html',
     //   controller: 'IntroCtrl'
     // })
-
-    $urlRouterProvider.otherwise('/app/cases');
-
 });
 
 painSquad.run(function($ionicPlatform) {
