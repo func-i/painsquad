@@ -20,26 +20,6 @@
 
   <ion-nav-view></ion-nav-view>
 
-<!--
-  <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
-    <ion-nav-back-button class="button-icon ion-arrow-left-c">
-    </ion-nav-back-button>
-  </ion-nav-bar>
--->
-
-  <!-- IONIC VIEWS -->
-  <!--
-    <ion-side-menus>
-      <ion-side-menu-content drag-content="true">
-          <ion-nav-view animation=""></ion-nav-view>
-      </ion-side-menu-content>
-
-      <ion-side-menu side="left">
-          <ng-include src="'templates/sidemenu.html'"></ng-include>
-      </ion-side-menu>
-    </ion-side-menus>
-   -->
-
   <!-- build:js scripts/vendor.js -->
   <!-- <script src="vendor/someContribJs.js"></script> -->
   <!-- bower:js -->
@@ -60,18 +40,21 @@
 
   <!-- CONTROLLERS -->
   <script src="scripts/controllers/main_ctrl.js"></script>
-  <script src="scripts/controllers/login_ctrl.js"></script>
+  <script src="scripts/controllers/case_ctrl.js"></script>
 
+  <!-- // <script src="scripts/controllers/login_ctrl.js"></script> -->
   <!-- // <script src="scripts/controllers/user_ctrl.js"></script> -->
   <!-- // <script src="scripts/controllers/about_ctrl.js"></script> -->
-  <!-- // <script src="scripts/controllers/case_ctrl.js"></script> -->
   <!-- // <script src="scripts/controllers/intro_ctrl.js"></script> -->
   <!-- // <script src="scripts/controllers/reports_ctrl.js"></script> -->
   <!-- // <script src="scripts/controllers/settings_ctrl.js"></script> -->
 
   <!-- SERVICES -->
-  <!-- // <script src="scripts/services/storage_service.js"></script> -->
   <script src="scripts/services/api_service.js"></script>
+
+  <!-- DIRECTIVES -->
+  <script src="scripts/directives/pain_wizard.js"></script>
+  <script src="scripts/directives/drag_back.js"></script>
   <!-- endbuild -->
 
   <!-- cordova script (this will be a 404 during development) -->

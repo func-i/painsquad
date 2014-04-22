@@ -1,29 +1,11 @@
-<ion-nav-view class="slide-left-right">
-  <ion-view title="My Page">
-    <ion-content>
-      Hello!
-    </ion-content>
-  </ion-view>
-</ion-nav-view>
+<ion-view title="Pain Squad">
+  <ion-content class="has-header" ng-class="{ 'has-loading': data.isLoading }">
+    PRogress Bar Directive
+    {{ painCase }}
+    {{ painCase.points }}
+    <hr>
 
-<!-- <ion-view title="New Case">
-  <ion-content class="has-header">
-
-    PROGRESS BAR HERE
-
-    <div class="marginalized">
-      <span>Did you have <em>pain</em> since your last report?</span>
-      </br>
-
-      <button class="button button-full button-balanced">
-        Yes
-      </button>
-
-      <button class="button button-full button-assertive" href="#/app/case_complete">
-        No
-      </button>
-    </div>
+    <div ng-include src="'/templates/case/partial-start.html'"></div>
 
   </ion-content>
 </ion-view>
- -->

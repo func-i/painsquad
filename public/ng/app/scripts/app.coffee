@@ -12,7 +12,7 @@
 @controllerModule = angular.module 'painSquad.controllers', []
 @serviceModule    = angular.module 'painSquad.services', []
 @configModule     = angular.module 'painSquad.config', []
-# @directiveModule  = angular.module 'painSquad.directives', []
+@directiveModule  = angular.module 'painSquad.directives', []
 # @filterModule     = angular.module 'painSquad.filters', []
 
 interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
@@ -56,6 +56,15 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         templateUrl: 'templates/case/case.html'
         controller: 'CaseCtrl'
   )
+
+  .state('app.case_complete',
+    url: '/case_complete'
+    views:
+      menuContent:
+        templateUrl: 'templates/case/case_complete.html'
+        controller: 'CaseCtrl'
+  )
+
 
 @painSquad.run ($ionicPlatform) ->
   $ionicPlatform.ready ->
