@@ -3,7 +3,6 @@
 # Seeds
 user = User.create username: "test user", email: "test@email.com", password: "password"
 
-
 # Setup Basic Survey
 survey = Survey.create title: "Full Assessment"
 
@@ -31,7 +30,6 @@ q3.choices.create value: "Other", textfield: true
 
 
 # Setup Basic Submission
-
 submission = Submission.create survey: survey
 
 survey.questions.each do |question|

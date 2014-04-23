@@ -5,7 +5,11 @@ module Api
       before_action :get_survey
 
       def show
-        render json: @survey
+        if @survey
+          render json: @survey if @survey
+        else
+          render json: nil, status: 404
+        end
       end
 
       private
