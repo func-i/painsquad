@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/{,*/}*.coffee'],
+        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.coffee'],
         tasks: ['coffee:dist']
       },
       coffeeTest: {
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/*.html',
           '<%= yeoman.app %>/templates/**/*.html',
           '.tmp/<%= yeoman.styles %>/**/*.css',
-          '.tmp/scripts/{,*/}*.js',
+          '.tmp/scripts/**/*.js',
           '<%= yeoman.app %>/<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -155,7 +155,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*/}*.coffee',
+          src: '{,**/}*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
         }]

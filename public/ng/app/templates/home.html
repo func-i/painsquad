@@ -9,11 +9,21 @@
 
   <ion-content class="has-header">
     <ion-list class="marginalized">
-      {{ data }}
-      <a href="#/app/case" class="button button-block button-balanced icon">Start Case</a>
+      <section class="row">
+        <div class='col'>
+          <h1>Hi {{currentUser.firstName}},</h1>
+        </div>
+        <div class='col'>
+          <img src='http://placekitten.com/100/200' />
+        </div>
+      </section>
+      <hr />
+        Your rank
+      <hr />
 
-      <!-- <a href="#/app/achievements" class="button button-block button-stable icon">Achievements</a> -->
-      <!-- <a href="#/app/advice" class="button button-block button-stable icon">Get Advice</a> -->
+      <a ui-sref="app.new_survey" class="button button-block button-balanced icon">Start Survey</a>
+      <a href="#/app/achievements" class="button button-block button-balanced icon">Achievements</a>
+      <a href="#/app/advice" class="button button-block button-balanced icon">Get Advice</a>
     </ion-list>
 
   </ion-content>

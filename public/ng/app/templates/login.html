@@ -1,0 +1,19 @@
+<ion-view title="Login" hide-back-button="true">
+  <ion-content class'has-header'>
+    <ion-list class="marginalized">
+      <section class="row">
+        <div class='col'>
+          <form data-ng-submit="login()">
+            <label class="item item-input">
+              <input type='email' placeholder="Email" data-ng-model="user.email" />
+            </label>
+            <label class="item item-input">
+              <input type='password' placeholder="Password" data-ng-model="user.password" />
+            </label>
+            <input type='submit' class='button button-block button-balanced icon' />
+          </form>
+        </div>
+      </section>
+    </ion-list>
+  </ion-content>
+</ion-view>

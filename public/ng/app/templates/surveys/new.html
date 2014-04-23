@@ -1,11 +1,15 @@
 <ion-view title="Pain Squad">
+  <ion-nav-buttons side="right">
+    <a data-ng-click="nextQuestion()">Next ></a>
+  </ion-nav-buttons>
+
   <ion-content class="has-header" ng-class="{ 'has-loading': data.isLoading }">
     PRogress Bar Directive
     {{ painCase }}
     {{ painCase.points }}
     <hr>
 
-    <div ng-include src="'/templates/case/partial-start.html'"></div>
+    <div data-ng-include src="'/templates/surveys/question.html'"></div>
 
   </ion-content>
 </ion-view>

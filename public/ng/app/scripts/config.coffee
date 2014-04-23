@@ -1,3 +1,4 @@
 'use strict'
 
-@configModule.constant 'CONFIG'
+@configModule.constant 'CONFIG',
+  apiUrl: 'http://localhost:3000'

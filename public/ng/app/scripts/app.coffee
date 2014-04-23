@@ -3,16 +3,19 @@
 @painSquad = angular.module 'painSquad', [
   'ionic',
   'painSquad.controllers',
+  'painSquad.resources',
   'painSquad.services',
+  'painSquad.config',
   'ngResource',
   'ngCookies',
   'ngSanitize'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
+@resourceModule   = angular.module 'painSquad.resources', []
 @serviceModule    = angular.module 'painSquad.services', []
-@configModule     = angular.module 'painSquad.config', []
 @directiveModule  = angular.module 'painSquad.directives', []
+@configModule     = angular.module 'painSquad.config', []
 # @filterModule     = angular.module 'painSquad.filters', []
 
 interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
@@ -34,11 +37,18 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
   $urlRouterProvider.otherwise "/app/home"
 
   $stateProvider
-
   .state('app',
     url: '/app'
     abstract: true
     templateUrl: 'templates/menu.html'
+  )
+
+  .state('app.login'
+    url: '/login'
+    views:
+      menuContent:
+        templateUrl: 'templates/login.html'
+        controller: 'LoginCtrl'
   )
 
   .state('app.home'
@@ -46,25 +56,25 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     views:
       menuContent:
         templateUrl: 'templates/home.html'
-        controller: 'MainCtrl'
+        controller: 'HomeCtrl'
   )
 
-  .state('app.case',
-    url: '/case'
+  .state('app.new_survey'
+    url: '/surveys/new'
     views:
       menuContent:
-        templateUrl: 'templates/case/case.html'
-        controller: 'CaseCtrl'
+        templateUrl: 'templates/surveys/new.html'
+        controller: 'NewSurveyCtrl'
+        resolve: NewSurveyCtrl.resolve
   )
 
-  .state('app.case_complete',
-    url: '/case_complete'
+  .state('app.case_complete'
+    url: '/cases/:id'
     views:
       menuContent:
-        templateUrl: 'templates/case/case_complete.html'
+        templateUrl: 'templates/cases/show.html'
         controller: 'CaseCtrl'
   )
-
 
 @painSquad.run ($ionicPlatform) ->
   $ionicPlatform.ready ->
