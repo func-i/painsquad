@@ -1,9 +1,9 @@
+require 'api_constraints'
 PainSquadApi::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      resources :surveys
-      resources :submissions
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+      resource :surveys
     end
   end
 
