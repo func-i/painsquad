@@ -1,38 +1,42 @@
 # Seeds
 user = User.create!(username: "test user", email: "test@email.com", password: "password")
 
-QUESTION_TYPES = %w{ boolean body_map slider radio checklist text_field }
+QUESTIONS = {
+  boolean: {
+    question: "Are you in pain?",
+    answers: ["yes", "no"]
+  },
 
-# QUESTooI
+  slider: {
+    question: "How much pain are you in?",
+    answer: 0
+  },
 
-QUESTION_WITH_TYPES = {
-  boolean: "Did you have PAIN in the last 12 hours?",
-  slider: "Did you have PAIN in the last 12 hours?",
-  checklist: "Did you have pain since your last case?",
+  checklist: {
+    question: "What do you think your pain was due to?",
+    answer: [ "Medical Condition", "Medical Procedure", "Other (please list)" ]
+  },
 
-  body_map: "How much pain do you have right now?",
+  # bodymap: {
+  #   question: "Where did it hurt since your last report?",
+  #   answer: {
+  #     head: "",
+  #     torso: "",
+  #     arms: "",
+  #     legs: ""
+  #   }
+  # }
 
-  "What was your pain when it was at its worst since your last case?",
-  "What do you think your pain was due to?",
-  "Where did it hurt since your last case?",
-
+  # slider:           "How much pain are you in?",
+  # checklist:        "What do you think your pain was due to?",
+  # body_map:         "",
+  # radio:            "",
+  # checklist_slider: "",
+  # textfield:        "Tell us anything else about your pain since your last report"
 }
 
-CONTENT = [
-  "Did you have PAIN in the last 12 hours?",
-  "Did you have pain since your last case?",
-  "How much pain do you have right now?",
-  "What was your pain when it was at its worst since your last case?",
-  "What do you think your pain was due to?",
-  "Where did it hurt since your last case?",
-  "",
-  "",
-  "",
-  ""
-]
+# boolean = Choice.create!()
+
+# QuestionType
 
 survey = Survey.create!(title: "Full Assessment")
-
-22.times do |n|
-  survey.questions.create!(choice_type: QUESTION_TYPES.sample, content: )
-end
