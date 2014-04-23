@@ -7,12 +7,12 @@ user = User.create username: "test user", email: "test@email.com", password: "pa
 # Setup Basic Survey
 survey = Survey.create title: "Full Assessment"
 
-q1 = survey.questions.create choice_type: "boolean", content: "Are you in pain right now?"
+q1 = survey.questions.create choice_type: "boolean", title: "Are you in pain right now?"
 q1.choices.create value: "Yes"
 q1.choices.create value: "No"
 
 
-q2 = survey.questions.create choice_type: "radio", content: "When you had pain in the last 12 hours, how long did it usually last?"
+q2 = survey.questions.create choice_type: "radio", title: "When you had pain in the last 12 hours, how long did it usually last?"
 q2.choices.create value: "Just a few minutes"
 q2.choices.create value: "About an hour"
 q2.choices.create value: "1-3 hours"
@@ -21,7 +21,7 @@ q2.choices.create value: "7-9 hours"
 q2.choices.create value: "10-12 hours"
 
 
-q3 = survey.questions.create choice_type: "checklist", content: "What do you think your pain was due to?"
+q3 = survey.questions.create choice_type: "checklist", title: "What do you think your pain was due to?"
 q3.choices.create value: "None"
 q3.choices.create value: "Your treatments"
 q3.choices.create value: "Medical Conditions"

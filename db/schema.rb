@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140422224334) do
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "choice_type"
-    t.string   "content"
+    t.string   "title"
     t.string   "tip"
     t.datetime "created_at"
     t.datetime "updated_at"
