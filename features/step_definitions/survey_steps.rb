@@ -1,7 +1,7 @@
 Given /^I hit the surveys path$/ do
-  get api_v1_surveys_path
+  get api_surveys_path
 end
 
-Given /^the first surveys title should be set$/ do
-  json_body["surveys"].first["title"].should eql(@survey.title)
+Given /^the survey (\S*) should be set$/ do |value|
+  json_body["survey"][value].should eql(@survey[value])
 end

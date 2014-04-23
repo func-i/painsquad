@@ -19,11 +19,11 @@ group :development, :test do
   gem 'rspec-rails',        '~> 2.14.2'
   gem 'cucumber-rails',     '~> 1.4.0', require: false
   gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'jazz_hands',         '~> 0.5.2'
 end
 
 group :development do
   gem 'spring',            '~> 1.1.2'
-  gem 'jazz_hands',        '~> 0.5.2'
   gem 'quiet_assets',      '~> 1.0.2'
   gem 'better_errors',     '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'

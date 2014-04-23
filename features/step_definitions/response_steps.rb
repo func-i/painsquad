@@ -7,8 +7,8 @@ Given /^the path should be (\S*)$/ do |path|
 end
 
 Given /the response should have the key (.*)/ do |key|
- hash = JSON.parse(last_response.body)
- hash.has_key?(key).should == true
+  hash = JSON.parse(last_response.body)
+  hash.has_key?(key).should == true
 end
 
 Given /^the (\S*) hash should be an array$/ do |hash_key|
