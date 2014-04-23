@@ -1,42 +1,39 @@
+[User, Survey, Question, Choice, Submission, Answer].each &:destroy_all
+
 # Seeds
-user = User.create!(username: "test user", email: "test@email.com", password: "password")
+user = User.create username: "test user", email: "test@email.com", password: "password"
 
-QUESTIONS = {
-  boolean: {
-    question: "Are you in pain?",
-    answers: ["yes", "no"]
-  },
 
-  slider: {
-    question: "How much pain are you in?",
-    answer: 0
-  },
+# Setup Basic Survey
+survey = Survey.create title: "Full Assessment"
 
-  checklist: {
-    question: "What do you think your pain was due to?",
-    answer: [ "Medical Condition", "Medical Procedure", "Other (please list)" ]
-  },
+q1 = survey.questions.create choice_type: "boolean", content: "Are you in pain right now?"
+q1.choices.create value: "Yes"
+q1.choices.create value: "No"
 
-  # bodymap: {
-  #   question: "Where did it hurt since your last report?",
-  #   answer: {
-  #     head: "",
-  #     torso: "",
-  #     arms: "",
-  #     legs: ""
-  #   }
-  # }
 
-  # slider:           "How much pain are you in?",
-  # checklist:        "What do you think your pain was due to?",
-  # body_map:         "",
-  # radio:            "",
-  # checklist_slider: "",
-  # textfield:        "Tell us anything else about your pain since your last report"
-}
+q2 = survey.questions.create choice_type: "radio", content: "When you had pain in the last 12 hours, how long did it usually last?"
+q2.choices.create value: "Just a few minutes"
+q2.choices.create value: "About an hour"
+q2.choices.create value: "1-3 hours"
+q2.choices.create value: "4-6 hours"
+q2.choices.create value: "7-9 hours"
+q2.choices.create value: "10-12 hours"
 
-# boolean = Choice.create!()
 
-# QuestionType
+q3 = survey.questions.create choice_type: "checklist", content: "What do you think your pain was due to?"
+q3.choices.create value: "None"
+q3.choices.create value: "Your treatments"
+q3.choices.create value: "Medical Conditions"
+q3.choices.create value: "Medical Procedures"
+q3.choices.create value: "Everyday Pain"
+q3.choices.create value: "Other", textfield: true
 
-survey = Survey.create!(title: "Full Assessment")
+
+# Setup Basic Submission
+
+submission = Submission.create survey: survey
+
+survey.questions.each do |question|
+  submission.answers.create choice: question.choices.sample
+end

@@ -1,6 +1,5 @@
 <h3>Home Controller</h3>
 <% if current_user %>
-  <li><%= link_to "Things", things_path %></li>
   <li><%= link_to "Users", users_path %></li>
   <li><%= link_to 'Logout', logout_path %></li>
 <% else %>

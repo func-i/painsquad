@@ -18,10 +18,10 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
+  gem 'factory_girl_rails'
 end
 
 group :development do
-  gem 'rack-cors', require: 'rack/cors'
   gem 'spring'
   gem 'jazz_hands'
   gem 'quiet_assets'
@@ -30,7 +30,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
 end

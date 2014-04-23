@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 20140422224334) do
 
   create_table "choices", force: true do |t|
     t.integer  "question_id"
-    t.string   "name"
+    t.string   "value"
+    t.boolean  "textfield",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

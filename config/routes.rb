@@ -2,13 +2,14 @@ PainSquadApi::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :things
+      resources :surveys
+      resources :submissions
     end
   end
 
   resources :session, only: [:new, :create, :destroy]
   resources :users
-  resources :things
+  resources :surveys
 
   get  "signup", to: "users#new",        as: :signup
   post "login",  to: "sessions#create",  as: :create_session
