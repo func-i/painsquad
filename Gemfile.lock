@@ -245,25 +245,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
-  better_errors
-  binding_of_caller
-  coffee-rails
-  cucumber-rails
-  database_cleaner
-  factory_girl_rails
-  jazz_hands
-  jquery-rails
-  pg
-  pundit
-  quiet_assets
-  rack-cors
+  active_model_serializers (~> 0.8.1)
+  better_errors (~> 1.1.0)
+  binding_of_caller (~> 0.7.2)
+  coffee-rails (~> 4.0.1)
+  cucumber-rails (~> 1.4.0)
+  database_cleaner (~> 1.2.0)
+  factory_girl_rails (~> 4.4.1)
+  jazz_hands (~> 0.5.2)
+  jquery-rails (~> 3.1.0)
+  pg (~> 0.17.1)
+  pundit (~> 0.2.3)
+  quiet_assets (~> 1.0.2)
+  rack-cors (~> 0.2.9)
   rails (= 4.1.0)
-  rspec-rails
-  sass-rails
-  shoulda-matchers
-  simple_form
-  sorcery
-  spring
-  thin
-  uglifier
+  rspec-rails (~> 2.14.2)
+  sass-rails (~> 4.0.3)
+  shoulda-matchers (~> 2.6.0)
+  simple_form (~> 3.0.2)
+  sorcery (~> 0.8.5)
+  spring (~> 1.1.2)
+  thin (~> 1.6.2)
+  uglifier (~> 2.5.0)
