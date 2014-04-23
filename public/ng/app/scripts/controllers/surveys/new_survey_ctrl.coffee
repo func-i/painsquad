@@ -25,7 +25,6 @@
 ]
 
 # MUST COMPLETE BEFORE CONTROLLER LOAD
-
 @NewSurveyCtrl.resolve =
   survey: (Survey, $q) ->
     # TODO: Uncomment this
@@ -36,24 +35,24 @@
         title: "Do you have pain?"
         choice_type: 'radio'
         choices: [
-          { title: 'Yes' }
-          { title: 'No' }
+          { value: 'Yes' }
+          { value: 'No' }
         ]
       },
       {
         title: "Are you sure?"
         choice_type: 'radio'
         choices: [
-          { title: 'Yes' }
-          { title: 'No' }
+          { value: 'Yes' }
+          { value: 'No' }
         ]
       },
       {
         title: "Are you REALLY sure?"
         choice_type: 'radio'
         choices: [
-          { title: 'Yes' }
-          { title: 'No' }
+          { value: 'Yes' }
+          { value: 'No' }
         ]
       }
     ]

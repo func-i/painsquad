@@ -4,7 +4,7 @@
   </ion-nav-buttons>
 
   <ion-content class="has-header" ng-class="{ 'has-loading': data.isLoading }">
-    PRogress Bar Directive
+    <div data-ng-include src="'/templates/surveys/progress.html'"></div>
     {{ painCase }}
     {{ painCase.points }}
     <hr>
