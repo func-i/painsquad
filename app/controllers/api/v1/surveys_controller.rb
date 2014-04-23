@@ -1,12 +1,17 @@
 module Api
   module V1
     class SurveysController < ApplicationController
-      before_action :get_survey
+      # before_action :get_survey
       # skip_before_action :restrict_access
 
-      def show
-        render json: @survey
+      def index
+        @surveys = Survey.all
+        render json: @surveys
       end
+
+      # def show
+      #   render json: @survey
+      # end
 
       private
 
