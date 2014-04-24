@@ -68,12 +68,12 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         resolve: NewSurveyCtrl.resolve
   )
 
-  .state('app.case_complete'
-    url: '/cases/:id'
+  .state('app.survey_complete'
+    url: '/surveys/complete'
     views:
       menuContent:
-        templateUrl: 'templates/cases/show.html'
-        controller: 'CaseCtrl'
+        templateUrl: 'templates/surveys/complete.html'
+        controller: 'NewSurveyCtrl'
   )
 
 @painSquad.run ($ionicPlatform) ->

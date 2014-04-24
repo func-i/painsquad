@@ -14,7 +14,8 @@
         $scope.question = survey.survey.questions[$scope.questionIndex]
 
     $scope.finishSurvey = () ->
-      $state.go('app.home')
+      $state.go('app.survey_complete')
+      # $state.go('app.home')
 
     $scope.getChoicesPartial = (question) ->
       "/templates/surveys/question_types/#{question.choice_type}.html"
@@ -26,5 +27,6 @@
 
 # resolve this resource before loading the controller
 @NewSurveyCtrl.resolve =
+  # TODO: return object without root, negating calls for `survey.survey.questions` above
   survey: (Survey, $q) ->
-    Survey.query().$promise
+    @resource = Survey.query().$promise
