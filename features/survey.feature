@@ -6,14 +6,24 @@ And receive a JSON survey object
 
   Scenario: Fetching Survey that does not exist
     Given an unsaved survey
-    When I hit the surveys path
+    When I visit the surveys endpoint
     Then I should receive a 404 response code
 
-  Scenario: Fetching Survey from API
+  Scenario: Fetching Survey that does exist
     Given a saved survey
-    When I hit the surveys path
+    When I visit the surveys endpoint
     Then I should receive a 200 response code
       And the response should have the key survey
       And the survey hash should have the key title
       And the survey title should be set
       And the survey hash should have the key questions and it should be a Array
+
+  Scenario: Fetching existing Survey, verify valid questions and choices
+    Given a saved survey
+    When I visit the surveys endpoint
+    Then I should receive a 200 response code
+      And the survey hash should have the key questions and it should be a Array
+      # And the first element of "survey.questions" should be a Hash
+      # And the "survey.questions" hash
+
+

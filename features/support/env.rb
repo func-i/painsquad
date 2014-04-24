@@ -36,11 +36,11 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
-module ResponseHelper
-  def json_body
-    JSON.parse(last_response.body)
-  end
-end
+# module ResponseHelper
+#   def json_body
+#     JSON.parse(last_response.body)
+#   end
+# end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
@@ -63,4 +63,4 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 World(FactoryGirl::Syntax::Methods)
-World(ResponseHelper)
+# World(ResponseHelper)

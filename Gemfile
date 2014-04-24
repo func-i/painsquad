@@ -23,13 +23,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'spring',            '~> 1.1.2'
-  gem 'quiet_assets',      '~> 1.0.2'
-  gem 'better_errors',     '~> 1.1.0'
-  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'spring',             '~> 1.1.2'
+  gem 'quiet_assets',       '~> 1.0.2'
+  gem 'better_errors',      '~> 1.1.0'
+  gem 'binding_of_caller',  '~> 0.7.2'
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 2.6.0'
-  gem 'database_cleaner', '~> 1.2.0'
+  gem 'shoulda-matchers',   '~> 2.6.0'
+  gem 'database_cleaner',   '~> 1.2.0'
 end
