@@ -1,11 +1,13 @@
-@NewSurveyCtrl = @controllerModule.controller "NewSurveyCtrl", ['$scope', '$state', 'AuthService', 'survey',
-  ($scope, $state, AuthService, survey) ->
+@NewSurveyCtrl = @controllerModule.controller "NewSurveyCtrl", ['$scope', '$state', 'AuthService', 'SubmissionService', 'survey',
+  ($scope, $state, AuthService, SubmissionService, survey) ->
+    $scope.submission = SubmissionService.getSubmission()
 
     $scope.startSurvey = () ->
       $scope.questionIndex = 0
       $scope.question = survey.survey.questions[$scope.questionIndex]
 
     $scope.nextQuestion = () ->
+      SubmissionService.addAnswer($scope.question)
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.survey.questions.length - 1

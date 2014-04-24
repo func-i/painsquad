@@ -1,10 +1,17 @@
 <!-- TODO: Selecting 'None' should gray out & disabled other options -->
 <!-- TODO: 'Next' button is disabled/grayed out until something is selected -->
-<ul class="list">
-  <li class="item item-checkbox checkbox-assertive" data-ng-repeat="choice in question.choices">
+
+<!-- <ul class="list">
+  <li class="item item-checkbox" data-ng-repeat="choice in question.choices" data-ng-model="answer">
     <label class="checkbox">
       <input type="checkbox">
     </label>
     {{ choice.value }}
   </li>
 </ul>
+ -->
+
+<ion-checkbox data-ng-model="choice.selected" data-ng-repeat="choice in question.choices">
+  {{ choice.value }} - {{ choice.selected }}
+</ion-checkbox>
+

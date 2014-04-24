@@ -10,7 +10,7 @@
   <ion-content class="has-header">
     <div class="marginalized">
       <span>Survey complete!</span>
-      <pre ng-bind="painSurvey | json"></pre>
+      {{ submission | json }}
       <button class="button" ui-sref="app.home">Go Home</button>
     </div>
   </ion-content>
