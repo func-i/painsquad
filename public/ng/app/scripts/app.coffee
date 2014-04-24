@@ -59,17 +59,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         controller: 'HomeCtrl'
   )
 
-  # first 'pain case view', checks if user is in pain
-  .state('app.pain_check'
-    url: '/surveys/pain_check'
-    views:
-      menuContent:
-        templateUrl: 'templates/surveys/pain_check.html'
-        controller: 'NewSurveyCtrl'
-        resolve: NewSurveyCtrl.resolve
-  )
-
-  # if user is in pain, start a new survey
   .state('app.new_survey'
     url: '/surveys/new'
     views:
@@ -79,7 +68,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         resolve: NewSurveyCtrl.resolve
   )
 
-  # all surveys end up here
   .state('app.survey_complete'
     url: '/surveys/complete'
     views:

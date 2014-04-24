@@ -6,8 +6,16 @@
       $scope.questionIndex = 0
       $scope.question = survey.survey.questions[$scope.questionIndex]
 
-    $scope.nextQuestion = () ->
-      SubmissionService.addAnswer($scope.question)
+    $scope.painCheck = (hasPain) ->
+      if hasPain
+        $scope.submission.answers.push(has_pain: true)
+        $scope.nextQuestion(skip_save = true)
+      else
+        $scope.submission.answers.push(has_pain: false)
+        $state.go("app.survey_complete")
+
+    $scope.nextQuestion = (skip_save) ->
+      SubmissionService.addAnswer($scope.question) unless skip_save
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.survey.questions.length - 1
@@ -15,8 +23,10 @@
       else
         $scope.question = survey.survey.questions[$scope.questionIndex]
 
-    # $scope.noPain = () ->
-      # $state.go('a')
+    $scope.setRadioAnswer = (question, choice) ->
+      for c in question.choices
+        delete c.selected
+      choice.selected = true
 
     $scope.finishSurvey = () ->
       $state.go('app.survey_complete')

@@ -1,3 +1,20 @@
-<div class="marginalized" data-ng-repeat="choice in question.choices">
+<!-- <div class="marginalized" data-ng-repeat="choice in question.choices">
   <button class="button button-block button-outline button-dark" data-ng-click="nextQuestion()">{{choice.value}}</button>
 </div>
+ -->
+
+<button data-ng-click="painCheck(hasPain = true)" class="button button-full button-balanced">
+  Yes
+</button>
+
+<button data-ng-click="painCheck(hasPain = false)" class="button button-full button-assertive">
+  No
+</button>
+
+<!--  <button
+  class="button button-block button-outline button-dark"
+  data-ng-value="choice.value"
+  data-ng-model="submission"
+  data-ng-repeat="choice in question.choices">
+    {{ choice.value }}
+</button> -->
