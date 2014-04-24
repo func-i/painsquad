@@ -84,22 +84,3 @@ Given /^the (\S*) hash should have the key (\S*) and it should be a (\S*)$/ do |
   hash.has_key?(key_name).should == true
   hash[key_name].should be_a type.constantize
 end
-
-# And the first element of "surveys.questions" should be a Hash
-Given /^the first element of "(\S*)" should be a (\S*)$/ do |hash_key, type|
-  hash = JSON.parse(last_response.body)
-  binding.pry
-
-  # => Check if the hash reference has periods in it.  Eg:  user.session
-  hash_key.split(".").each do |k|
-    # => Make sure the hash has each level of nesting
-    hash.has_key?(k).should == true
-
-    # => If the response is an array, we still want to make sure one of the results
-    # => has the keys.  Get the first object in the array.
-    # => This assumes all entries in the array are the same
-    # hash = hash[k].kind_of?(Array) ? hash[k].first : hash[k]
-  end
-
-  binding.pry
-end

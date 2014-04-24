@@ -22,8 +22,7 @@ And receive a JSON survey object
     Given a saved survey
     When I visit the surveys endpoint
     Then I should receive a 200 response code
-      And the survey hash should have the key questions and it should be a Array
-      # And the first element of "survey.questions" should be a Hash
-      # And the "survey.questions" hash
-
-
+      And the survey.questions hash should have the key title
+      And the survey.questions hash should have the key choices
+      And the survey.questions hash should have the key choices and it should be a Array
+      And the survey.questions hash should have the key choice_type and it should equal "boolean"
