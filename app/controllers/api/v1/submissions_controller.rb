@@ -8,7 +8,16 @@ module Api
         render json: @submission
       end
 
+      def create
+        @submission = Submission.create! submission_params
+        render json: @submission
+      end
+
       private
+
+      def submission_params
+        params.require(:submission).permit!
+      end
 
       def get_submission
         @submission = Submission.includes(:answers).find params[:id]

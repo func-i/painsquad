@@ -6,7 +6,7 @@ module Api
 
       def show
         if @survey
-          render json: @survey if @survey
+          render json: @survey, root: false
         else
           render json: nil, status: 404
         end

@@ -24,35 +24,7 @@
 
 ]
 
-# MUST COMPLETE BEFORE CONTROLLER LOAD
+# resolve this resource before loading the controller
 @NewSurveyCtrl.resolve =
   survey: (Survey, $q) ->
-    # TODO: Uncomment this
-    #$scope.survey = Survey.query(user_id: AuthService.getCurrentUser.token)
-
-    questions: [
-      {
-        title: "Do you have pain?"
-        choice_type: 'radio'
-        choices: [
-          { value: 'Yes' }
-          { value: 'No' }
-        ]
-      },
-      {
-        title: "Are you sure?"
-        choice_type: 'radio'
-        choices: [
-          { value: 'Yes' }
-          { value: 'No' }
-        ]
-      },
-      {
-        title: "Are you REALLY sure?"
-        choice_type: 'radio'
-        choices: [
-          { value: 'Yes' }
-          { value: 'No' }
-        ]
-      }
-    ]
+    Survey.query().$promise
