@@ -9,17 +9,15 @@
     $scope.painCheck = (hasPain) ->
       if hasPain
         $scope.submission.answers.push(has_pain: true)
-        $scope.questionIndex++
-        if $scope.questionIndex > survey.survey.questions.length - 1
-          $scope.finishSurvey()
-        else
-          $scope.question = survey.survey.questions[$scope.questionIndex]
+        $scope.nextQuestion()
       else
         $scope.submission.answers.push(has_pain: false)
         $state.go("app.survey_complete")
 
-    $scope.nextQuestion = () ->
+    $scope.saveAnswer = () ->
       SubmissionService.addAnswer($scope.question)
+
+    $scope.nextQuestion = () ->
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.survey.questions.length - 1
