@@ -15,6 +15,9 @@
       else
         $scope.question = survey.survey.questions[$scope.questionIndex]
 
+    # $scope.noPain = () ->
+      # $state.go('a')
+
     $scope.finishSurvey = () ->
       $state.go('app.survey_complete')
       # $state.go('app.home')
