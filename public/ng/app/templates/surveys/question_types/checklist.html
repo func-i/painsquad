@@ -1,3 +1,10 @@
-<ion-radio data-ng-repeat="choice in question.choices" data-ng-model="blah" value="{{choice.title}}">
-  {{choice.value}}
-</ion-radio>
+<!-- TODO: Selecting 'None' should gray out & disabled other options -->
+<!-- TODO: 'Next' button is disabled/grayed out until something is selected -->
+<ul class="list">
+  <li class="item item-checkbox checkbox-assertive" data-ng-repeat="choice in question.choices">
+    <label class="checkbox">
+      <input type="checkbox">
+    </label>
+    {{ choice.value }}
+  </li>
+</ul>

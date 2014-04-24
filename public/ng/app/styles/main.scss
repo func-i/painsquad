@@ -1,5 +1,5 @@
 // modules are sass-only styles (variables, mixins, overrides)
-
+@import "modules/overrides";
 
 // partials are view and template-related styles
 @import "partials/intro",

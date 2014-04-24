@@ -6,11 +6,6 @@ Given /^the path should be (\S*)$/ do |path|
   current_path.should eql(path)
 end
 
-Given /the response should have the key (.*)/ do |key|
-  hash = JSON.parse(last_response.body)
-  hash.has_key?(key).should == true
-end
-
 Given /^the (\S*) hash should have the key (\S*)$/ do |hash_key, key_name|
   hash = JSON.parse(last_response.body)
 

@@ -1,15 +1,13 @@
-<ion-view title="Pain Squad">
+<ion-view title="Pain Case" hide-back-button="true">
+
   <ion-nav-buttons side="right">
+    <!-- TODO: disable 'Next' button for first survey question,
+      all other questions dependent on answer to this one-->
     <a data-ng-click="nextQuestion()">Next ></a>
   </ion-nav-buttons>
 
-  <ion-content class="has-header" ng-class="{ 'has-loading': data.isLoading }">
+  <ion-content class="has-header">
     <div data-ng-include src="'/templates/surveys/progress.html'"></div>
-    {{ painCase }}
-    {{ painCase.points }}
-    <hr>
-
     <div data-ng-include src="'/templates/surveys/question.html'"></div>
-
   </ion-content>
 </ion-view>

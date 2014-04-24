@@ -3,15 +3,15 @@
 
     $scope.startSurvey = () ->
       $scope.questionIndex = 0
-      $scope.question = survey.questions[$scope.questionIndex]
+      $scope.question = survey.survey.questions[$scope.questionIndex]
 
     $scope.nextQuestion = () ->
       $scope.questionIndex++
 
-      if $scope.questionIndex > survey.questions.length - 1
+      if $scope.questionIndex > survey.survey.questions.length - 1
         $scope.finishSurvey()
       else
-        $scope.question = survey.questions[$scope.questionIndex]
+        $scope.question = survey.survey.questions[$scope.questionIndex]
 
     $scope.finishSurvey = () ->
       $state.go('app.home')

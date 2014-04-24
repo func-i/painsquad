@@ -2,3 +2,9 @@
   <h4>{{question.title}}</h4>
   <div class='fade-in-not-out' data-ng-include src="getChoicesPartial(question)"></div>
 </section>
+
+<hr>
+
+<pre ng-bind="answer | json"></pre>
+
+<pre ng-bind="question | json"></pre>
