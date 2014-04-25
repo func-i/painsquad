@@ -64,8 +64,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     views:
       menuContent:
         templateUrl: 'templates/surveys/new.html'
-        controller: 'NewSurveyCtrl'
-        resolve: NewSurveyCtrl.resolve
+        controller: 'SurveyCtrl'
+        resolve: SurveyCtrl.resolve
   )
 
   .state('app.survey_complete'
@@ -73,8 +73,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     views:
       menuContent:
         templateUrl: 'templates/surveys/complete.html'
-        controller: 'NewSurveyCtrl'
-        resolve: NewSurveyCtrl.resolve
+        controller: 'SurveyCtrl'
+        resolve: SurveyCtrl.resolve
   )
 
 @painSquad.run ($ionicPlatform) ->
