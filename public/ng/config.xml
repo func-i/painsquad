@@ -1,12 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.painsquad" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Psquad</name>
-    <description>
-      Ionic Cordova App
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+<widget id="com.functionalimperative.painsquad" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PainSquad</name>
+    <description></description>
+    <author></author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Logger">
+      <param name="ios-package" value="CDVLogger" />
+  </feature>
 </widget>

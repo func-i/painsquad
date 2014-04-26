@@ -79,4 +79,4 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
 
 @painSquad.run ($ionicPlatform) ->
   $ionicPlatform.ready ->
-    StatusBar.styleDefault()  if window.StatusBar
+    StatusBar.styleDefault() if window.StatusBar
