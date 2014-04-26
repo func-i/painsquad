@@ -20,7 +20,8 @@ module Api
       private
 
       def submission_params
-        params.require(:submission).permit!
+        params.require(:submission).permit(answers:
+          [:has_pain, :choice_type, :title, :tip, choices: [:value, :textfield, :selected]])
       end
 
       def get_submission
