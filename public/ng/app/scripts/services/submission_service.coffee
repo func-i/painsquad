@@ -1,14 +1,18 @@
 'use strict'
 
-@serviceModule.factory 'SubmissionService', [ () ->
-  submission = {
-    answers: []
-  }
 
+@serviceModule.service 'SubmissionService', [ () ->
+
+  # creates new singleton object
+  init: () ->
+    @submission = { answers: [] }
+
+  # adds answer to singleton
   addAnswer: (value) ->
-    submission.answers.push(value)
+    @submission.answers.push value
 
-  getSubmission: ->
-    submission
+  # retrieves singleton object
+  getSubmission: () ->
+    @submission
 
 ]

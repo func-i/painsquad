@@ -1,7 +1,7 @@
 module Api
   module V1
     class SubmissionsController < ApplicationController
-      before_action :get_submission
+      before_action :get_submission, only: [:show]
       # skip_before_action :restrict_access
 
       def show
@@ -9,6 +9,7 @@ module Api
       end
 
       def create
+        binding.pry
         @submission = Submission.create! submission_params
         render json: @submission
       end

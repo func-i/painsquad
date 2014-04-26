@@ -16,7 +16,7 @@
 @serviceModule    = angular.module 'painSquad.services', []
 @directiveModule  = angular.module 'painSquad.directives', []
 @configModule     = angular.module 'painSquad.config', []
-# @filterModule     = angular.module 'painSquad.filters', []
+@filterModule     = angular.module 'painSquad.filters', []
 
 interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     success = (response) ->
@@ -73,8 +73,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     views:
       menuContent:
         templateUrl: 'templates/surveys/complete.html'
-        controller: 'SurveyCtrl'
-        resolve: SurveyCtrl.resolve
+        controller: 'CompleteSurveyCtrl'
   )
 
 @painSquad.run ($ionicPlatform) ->

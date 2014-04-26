@@ -1,20 +1,20 @@
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', 'AuthService', 'SubmissionService', 'survey',
-  ($scope, $state, AuthService, SubmissionService, survey) ->
-    $scope.submission = SubmissionService.getSubmission()
+'use strict'
+
+# Parent controller responsible for handling survey navigation
+# Survey question-specific logic delegated to sub-controllers
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl",
+  ['$scope', '$state', '$stateParams', '$ionicModal', 'AuthService', 'SubmissionService', 'survey',
+  ($scope, $state, $stateParams, $ionicModal, AuthService, SubmissionService, survey) ->
 
     $scope.startSurvey = () ->
+      console.log "START SURVEY CALLED, initializing new submission"
+      # $scope.submission = new SubmissionService
+      $scope.submission = SubmissionService.init()
       $scope.questionIndex = 0
       $scope.question = survey.questions[$scope.questionIndex]
 
-    $scope.painCheck = (hasPain) ->
-      if hasPain
-        $scope.submission.answers.push(has_pain: true)
-        $scope.nextQuestion()
-      else
-        $scope.submission.answers.push(has_pain: false)
-        $state.go("app.survey_complete")
-
     $scope.saveAnswer = () ->
+      # $scope.submission.answers.push($scope.question)
       SubmissionService.addAnswer($scope.question)
 
     $scope.nextQuestion = () ->
@@ -28,14 +28,23 @@
     $scope.getChoicesPartial = (question) ->
       "/templates/surveys/question_types/#{question.choice_type}.html"
 
+    $scope.finishSurvey = () ->
+      $state.go('app.survey_complete')
+
+    # needs its own controller
     $scope.setRadioAnswer = (question, choice) ->
       for c in question.choices
         delete c.selected
       choice.selected = true
 
-    $scope.finishSurvey = () ->
-      $state.go('app.survey_complete')
-      # $state.go('app.home')
+    # needs its own controller
+    $scope.painCheck = (hasPain) ->
+      if hasPain
+        $scope.submission.answers.push(has_pain: true)
+        $scope.nextQuestion()
+      else
+        $scope.submission.answers.push(has_pain: false)
+        $scope.finishSurvey()
 
     # DEFAULT ACTIONS
     $scope.startSurvey()
