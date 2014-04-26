@@ -1,12 +1,11 @@
 <ion-view title="Pain Case" hide-back-button="true">
 
-  <ion-content padding="true" class="has-header marginalized">
+  <ion-content padding="true" class="has-header marginalized" data-ng-controller="CompleteSurveyCtrl">
 
     <span>Survey complete!</span>
 
     <pre ng-bind="submission | json"></pre>
-
+    <button class="button" data-ng-click="submitSurvey(submission)">Submit</button>
     <button class="button" ui-sref="app.home">Go Home</button>
-
   </ion-content>
 </ion-view>

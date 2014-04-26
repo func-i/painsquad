@@ -10,8 +10,11 @@ module Api
 
       def create
         binding.pry
-        @submission = Submission.create! submission_params
-        render json: @submission
+        # respond_with Submission.create(submission_params)
+        # @submission = submission_params
+        # respond_with @submission
+        # @submission = Submission.create! submission_params
+        # render json: @submission
       end
 
       private

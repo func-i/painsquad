@@ -2,19 +2,15 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl",
-  ['$scope', '$state', '$stateParams', '$ionicModal', 'AuthService', 'SubmissionService', 'survey',
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', '$ionicModal', 'AuthService', 'SubmissionService', 'survey',
   ($scope, $state, $stateParams, $ionicModal, AuthService, SubmissionService, survey) ->
 
     $scope.startSurvey = () ->
-      console.log "START SURVEY CALLED, initializing new submission"
-      # $scope.submission = new SubmissionService
       $scope.submission = SubmissionService.init()
       $scope.questionIndex = 0
       $scope.question = survey.questions[$scope.questionIndex]
 
     $scope.saveAnswer = () ->
-      # $scope.submission.answers.push($scope.question)
       SubmissionService.addAnswer($scope.question)
 
     $scope.nextQuestion = () ->

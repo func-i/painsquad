@@ -1,6 +1,5 @@
 'use strict'
 
-
 @serviceModule.service 'SubmissionService', [ () ->
 
   # creates new singleton object

@@ -1,8 +1,19 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl",
-  ['$scope', '$state', '$stateParams', 'SubmissionService',
-  ($scope, $state, $stateParams, SubmissionService) ->
-    # fetch existing submission
-    $scope.submission = SubmissionService.getSubmission()
+@controllerModule.controller "CompleteSurveyCtrl", ['$scope', 'SubmissionService', 'SubmissionResource', ($scope, SubmissionService, SubmissionResource) ->
+  $scope.submission = SubmissionService.getSubmission()
+
+  # TODO: Why do I have not access to any dependencies inside $scope.submitSurvey?
+    # => if we invoke $scope.submitSurvey when the controller is instantiated, it can't access $scope?
+    # => why does it seem like this controller is invoked twice?
+    # => need to resolve DI injection before invoking submitSurvey? :W
+  $scope.submitSurvey = () ->
+    SubmissionResource.save($scope.submission)
+
+    #   debugger
+    #   console.log "SAve successful!"
+    # ,
+    #   debugger
+    #   console.log "Shit went wrong"
+
 ]
