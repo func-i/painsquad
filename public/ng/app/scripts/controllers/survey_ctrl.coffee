@@ -2,18 +2,16 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', '$ionicModal', 'AuthService', 'SubmissionService', 'survey',
-  ($scope, $state, $stateParams, $ionicModal, AuthService, SubmissionService, survey) ->
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
+  ($scope, $state, $stateParams, AuthService, SubmissionService, survey) ->
 
     $scope.startSurvey = () ->
-      $scope.submission = SubmissionService.init()
+      $scope.submission    = SubmissionService.init(survey.id)
       $scope.questionIndex = 0
-      $scope.question = survey.questions[$scope.questionIndex]
-
-    $scope.saveAnswer = () ->
-      SubmissionService.addAnswer($scope.question)
+      $scope.question      = survey.questions[$scope.questionIndex]
 
     $scope.nextQuestion = () ->
+      SubmissionService.addAnswer($scope.question)
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.questions.length - 1
@@ -35,12 +33,8 @@
 
     # needs its own controller
     $scope.painCheck = (hasPain) ->
-      if hasPain
-        $scope.submission.answers.push(has_pain: true)
-        $scope.nextQuestion()
-      else
-        $scope.submission.answers.push(has_pain: false)
-        $scope.finishSurvey()
+      $scope.submission.has_pain = hasPain
+      if hasPain then $scope.nextQuestion() else $scope.finishSurvey()
 
     # DEFAULT ACTIONS
     $scope.startSurvey()

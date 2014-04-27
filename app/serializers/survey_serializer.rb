@@ -1,5 +1,5 @@
 class SurveySerializer < ActiveModel::Serializer
-  attributes :title
+  attributes :id, :title
   has_many :questions
 
   # eager load serialized association

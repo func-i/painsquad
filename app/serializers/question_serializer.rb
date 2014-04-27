@@ -1,4 +1,9 @@
 class QuestionSerializer < ActiveModel::Serializer
-  attributes :choice_type, :title, :tip
+  attributes :question_id, :choice_type, :title, :tip
   has_many :choices
+
+  def question_id
+    object.id
+  end
+
 end

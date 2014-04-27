@@ -1,7 +1,6 @@
 @BooleanCtrl = @controllerModule.controller "BooleanCtrl", ['$scope', '$state', ($scope, $state) ->
 
   $scope.painCheck = (hasPain) ->
-    debugger
     if hasPain
       $scope.submission.answers.push(has_pain: true)
       $scope.nextQuestion()

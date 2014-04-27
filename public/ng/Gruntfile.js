@@ -15,6 +15,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-coffeelint');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -91,21 +92,27 @@ module.exports = function (grunt) {
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: [
-        'Gruntfile.js',
+    // jshint: {
+    //   options: {
+    //     jshintrc: '.jshintrc',
+    //     reporter: require('jshint-stylish')
+    //   },
+    //   all: [
+    //     'Gruntfile.js',
+    //     '<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'
+    //   ],
+    //   test: {
+    //     options: {
+    //       jshintrc: 'test/.jshintrc'
+    //     },
+    //     src: ['test/unit/**/*.js']
+    //   }
+    // },
+
+    coffeelint: {
+      app: [
         '<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'
-      ],
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/unit/**/*.js']
-      }
+      ]
     },
 
     // Empties folders to start fresh
@@ -524,7 +531,7 @@ module.exports = function (grunt) {
   grunt.registerTask('coverage', ['karma:continuous', 'connect:coverage:keepalive']);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    'coffeelint',
     'karma:continuous',
     'build'
   ]);
