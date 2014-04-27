@@ -26,8 +26,6 @@ module Api
 
       def get_submission
         @submission = Submission.includes(:answers).find params[:id]
-        # @survey = Survey.includes(questions: [:choices]).find params[:id]
-        # @submission = submission.includes(questions: [:choices]).find params[:id]
       end
 
     end
