@@ -11,7 +11,7 @@
       $scope.question      = survey.questions[$scope.questionIndex]
 
     $scope.nextQuestion = (save = true) ->
-      SubmissionService.addAnswer($scope.question) if save
+      SubmissionService.prepareAnswer($scope.question) if save
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.questions.length - 1
@@ -26,15 +26,15 @@
       $state.go('app.survey_complete')
 
     # needs its own controller
+    $scope.painCheck = (hasPain) ->
+      $scope.submission.has_pain = hasPain
+      if hasPain then $scope.nextQuestion(false) else $scope.finishSurvey()
+
+    # needs its own controller
     $scope.setRadioAnswer = (question, choice) ->
       for c in question.choices
         delete c.selected
       choice.selected = true
-
-    # needs its own controller
-    $scope.painCheck = (hasPain) ->
-      $scope.submission.has_pain = hasPain
-      if hasPain then $scope.nextQuestion(false) else $scope.finishSurvey()
 
     # DEFAULT ACTIONS
     $scope.startSurvey()

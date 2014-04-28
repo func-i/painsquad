@@ -9,6 +9,7 @@ module Api
       end
 
       def create
+        binding.pry
         if @submission = Submission.create(submission_params)
           render json: @submission.to_json
         else
@@ -20,7 +21,7 @@ module Api
 
       def submission_params
         params.require(:submission).permit(:survey_id, :has_pain,
-          answers_attributes: [:question_id, :choice_id] )
+          answers_attributes: [:question_id, :choice_id, :value, :custom_text] )
       end
 
       def get_submission

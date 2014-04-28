@@ -8,25 +8,47 @@
       survey_id:          survey_id
       answers_attributes: []
 
-  # adds answer to singleton
-  addAnswer: (value) ->
-    selectedChoices = _.where(value.choices, selected: true)
-    if selectedChoices.length > 1
-      @recursiveExtractAnswers(value, selectedChoices)
-    else
-      @submission.answers_attributes.push
-        question_id: value.question_id
-        choice_id: selectedChoices[0].id
+  # adds object to answer payload
+  addAnswer: (answerObj) ->
+    @submission.answers_attributes.push answerObj
 
-  # recursively extracts items from selectedChoices and pushes to answers array
-  recursiveExtractAnswers: (value, selectedChoices) ->
+  # answer object pre-requisite
+  prepareAnswer: (answerObj) ->
+    switch answerObj.question_type
+      when 'checklist', 'radio'
+        @addSelectionAnswer(answerObj)
+      when 'slider'
+        @addSliderAnswer(answerObj)
+      else
+        console.log "invalid question type detected: #{answerObj}"
+
+  # adds choice_ids for basic selection questions
+  addSelectionAnswer: (answerObj) ->
+    selectedChoices = _.where(answerObj.choices, selected: true)
+    if selectedChoices.length > 1
+      @recursiveExtractAnswers(answerObj, selectedChoices)
+    else
+      resultObj =
+        question_id: answerObj.question_id
+        choice_id:   selectedChoices[0].id
+      @addAnswer(resultObj)
+
+  # extracts items from selectedChoices and pushes to answers array
+  recursiveExtractAnswers: (answerObj, selectedChoices) ->
     return unless selectedChoices.length
     item = selectedChoices.shift()
-    answerObj =
-      question_id: value.question_id
+    resultObj =
+      question_id: answerObj.question_id
       choice_id:   item.id
-    @submission.answers_attributes.push(answerObj)
-    @recursiveExtractAnswers(value, selectedChoices)
+    @addAnswer(resultObj)
+    @recursiveExtractAnswers(answerObj, selectedChoices)
+
+  # adds integer 'value' to Answer for simple slider questions
+  addSliderAnswer: (answerObj) ->
+    resultObj =
+      question_id: answerObj.question_id
+      value:       parseInt(answerObj.choices[0].value)
+    @addAnswer(resultObj)
 
   # retrieves singleton object
   getSubmission: () ->

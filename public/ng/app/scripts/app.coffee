@@ -3,8 +3,10 @@
 @painSquad = angular.module 'painSquad', [
   'ionic',
   'painSquad.controllers',
+  'painSquad.directives',
   'painSquad.resources',
   'painSquad.services',
+  'painSquad.filters',
   'painSquad.config',
   'ngResource',
   'ngCookies',
@@ -13,11 +15,11 @@
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
+@directiveModule  = angular.module 'painSquad.directives', []
 @resourceModule   = angular.module 'painSquad.resources', []
 @serviceModule    = angular.module 'painSquad.services', []
-@directiveModule  = angular.module 'painSquad.directives', []
-@configModule     = angular.module 'painSquad.config', []
 @filterModule     = angular.module 'painSquad.filters', []
+@configModule     = angular.module 'painSquad.config', []
 
 interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     success = (response) ->
