@@ -4,6 +4,7 @@
 # Survey question-specific logic delegated to sub-controllers
 @SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
   ($scope, $state, $stateParams, AuthService, SubmissionService, survey) ->
+    console.log("Survey Controller Instantiated")
 
     $scope.startSurvey = () ->
       $scope.submission    = SubmissionService.init(survey.id)

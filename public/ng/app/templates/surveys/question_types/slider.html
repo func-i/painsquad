@@ -4,7 +4,8 @@
     <div class="item range range-positive">
       <i class="icon ion-ios7-sunny-outline"></i>
       <input type="range" name="volume" min="0" max="100" value="99"
-        ng-model="question.choices[0].value">
+        ng-model="question.choices[0].value"
+        ng-change="testFunc()">
       <i class="icon ion-ios7-sunny"></i>
     </div>
     {{ question.choices[0].value | sliderFilter }}

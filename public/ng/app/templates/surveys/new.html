@@ -8,8 +8,12 @@
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header">
-    this is from the parent view (before progress/question partials)
-    showNext: {{ showNext }}
+    <pre>
+      this is from the parent view (before progress/question partials)
+      showNext: {{ showNext }}
+    </pre>
+    <hr>
+
     <div data-ng-include src="'/templates/surveys/progress.html'"></div>
     <div data-ng-include src="'/templates/surveys/question.html'"></div>
   </ion-content>

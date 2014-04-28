@@ -1,6 +1,7 @@
 'use strict'
 
 @controllerModule.controller "SliderCtrl", ['$scope', '$state', ($scope, $state) ->
+  console.log("Slider Controller Instantiated")
 
   # $scope.hasPain = () ->
   #   $scope.submission.has_pain = true
