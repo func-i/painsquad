@@ -9,7 +9,6 @@ module Api
       end
 
       def create
-        binding.pry
         if @submission = Submission.create(submission_params)
           render json: @submission.to_json
         else
