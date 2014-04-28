@@ -10,8 +10,8 @@
       $scope.questionIndex = 0
       $scope.question      = survey.questions[$scope.questionIndex]
 
-    $scope.nextQuestion = () ->
-      SubmissionService.addAnswer($scope.question)
+    $scope.nextQuestion = (save = true) ->
+      SubmissionService.addAnswer($scope.question) if save
       $scope.questionIndex++
 
       if $scope.questionIndex > survey.questions.length - 1
@@ -20,7 +20,7 @@
         $scope.question = survey.questions[$scope.questionIndex]
 
     $scope.getChoicesPartial = (question) ->
-      "/templates/surveys/question_types/#{question.choice_type}.html"
+      "/templates/surveys/question_types/#{question.question_type}.html"
 
     $scope.finishSurvey = () ->
       $state.go('app.survey_complete')
@@ -34,7 +34,7 @@
     # needs its own controller
     $scope.painCheck = (hasPain) ->
       $scope.submission.has_pain = hasPain
-      if hasPain then $scope.nextQuestion() else $scope.finishSurvey()
+      if hasPain then $scope.nextQuestion(false) else $scope.finishSurvey()
 
     # DEFAULT ACTIONS
     $scope.startSurvey()

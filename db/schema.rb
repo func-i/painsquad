@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140427170223) do
   create_table "answers", force: true do |t|
     t.integer  "submission_id"
     t.integer  "choice_id"
-    t.string   "content"
+    t.string   "custom_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,16 +35,17 @@ ActiveRecord::Schema.define(version: 20140427170223) do
 
   create_table "choices", force: true do |t|
     t.integer  "question_id"
-    t.string   "value"
     t.boolean  "textfield",   default: false
+    t.string   "content"
+    t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
-    t.string   "choice_type"
-    t.string   "title"
+    t.string   "question_type"
+    t.string   "content"
     t.string   "tip"
     t.datetime "created_at"
     t.datetime "updated_at"

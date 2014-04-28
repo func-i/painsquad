@@ -1,6 +1,6 @@
 'use strict'
 
-@serviceModule.service 'SubmissionService', [ () ->
+@serviceModule.service 'SubmissionService', ["_", (_) ->
 
   # creates new singleton object
   init: (survey_id) ->
@@ -10,7 +10,11 @@
 
   # adds answer to singleton
   addAnswer: (value) ->
-    @submission.answers_attributes.push value
+    @submission.answers_attributes.push(@extractSelected(value))
+
+  extractSelected: (value) ->
+    value.choices = _.where(value.choices, selected: true)
+    value
 
   # retrieves singleton object
   getSubmission: () ->

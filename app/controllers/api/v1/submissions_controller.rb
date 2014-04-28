@@ -9,24 +9,31 @@ module Api
       end
 
       def create
+        @submission = Submission.create(submission_params)
         binding.pry
-        if @submission = Submission.create(submission_params)
-          render json: @submission.to_json
-          binding.pry
-        else
-          render json: nil, status: :unprocessable_entity
-        end
+        # if @submission = Submission.create(submission_params)
+        #   render json: @submission.to_json
+        # else
+        #   render json: nil, status: :unprocessable_entity
+        # end
       end
 
       private
 
       def submission_params
-        params.require(:submission).permit!
-        # Rails converts empty arrays to nil values, throwing strong parameter errors
-        # params.require(:submission).permit(:survey_id, :has_pain,
-        #   answers_attributes: [:question_id, :choice_type, :title, :tip,
-        #     choices: [:id, :value, :textfield, :selected] ]
-        #   )
+        params.require(:submission).permit(:survey_id, :has_pain)
+      end
+
+      def answer_params
+        params[:submission][:answers_attributes] ||= []
+        params.require(:submission).permit(
+          answers_attributes: [
+            :question_id, :question_type, :content, :tip,
+              choices: [
+                :id, :content, :value, :textfield, :selected
+              ]
+            ]
+          )
       end
 
       def get_submission

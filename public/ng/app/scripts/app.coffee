@@ -8,7 +8,8 @@
   'painSquad.config',
   'ngResource',
   'ngCookies',
-  'ngSanitize'
+  'ngSanitize',
+  'underscore'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

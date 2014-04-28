@@ -1,3 +1,3 @@
 class ChoiceSerializer < ActiveModel::Serializer
-  attributes :id, :value, :textfield
+  attributes :id, :content, :value, :textfield
 end
