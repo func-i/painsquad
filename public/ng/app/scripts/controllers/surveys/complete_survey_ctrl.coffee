@@ -1,7 +1,6 @@
 'use strict'
 
 @controllerModule.controller "CompleteSurveyCtrl", ['$scope', 'SubmissionService', 'SubmissionResource', ($scope, SubmissionService, SubmissionResource) ->
-  $scope.submission = SubmissionService.getSubmission()
 
   # TODO: Why do I have not access to any dependencies inside $scope.submitSurvey?
     # => if we invoke $scope.submitSurvey when the controller is instantiated, it can't access $scope?
@@ -10,4 +9,6 @@
   $scope.submitSurvey = () ->
     SubmissionResource.save(submission: $scope.submission)
 
+  console.log("INSTANTIATED COMPLETE SURVEY CTRL")
+  $scope.submission = SubmissionService.getSubmission()
 ]

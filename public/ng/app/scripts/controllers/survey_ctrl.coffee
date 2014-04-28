@@ -23,22 +23,11 @@
       "/templates/surveys/question_types/#{question.question_type}.html"
 
     $scope.finishSurvey = () ->
-      $state.go('app.survey_complete')
-
-    # needs its own controller
-    $scope.painCheck = (hasPain) ->
-      $scope.submission.has_pain = hasPain
-      if hasPain then $scope.nextQuestion(false) else $scope.finishSurvey()
-
-    # needs its own controller
-    $scope.setRadioAnswer = (question, choice) ->
-      for c in question.choices
-        delete c.selected
-      choice.selected = true
+      $state.transitionTo('app.survey_complete')
+      # $state.go('app.survey_complete')
 
     # DEFAULT ACTIONS
     $scope.startSurvey()
-
 ]
 
 # resolve this resource before loading the controller

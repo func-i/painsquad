@@ -1,2 +1,5 @@
-@BooleanCtrl = @controllerModule.controller "BooleanCtrl", ['$scope', ($scope) ->
+'use strict'
+
+@controllerModule.controller "ChecklistCtrl", ['$scope', '$state', ($scope, $state) ->
+
 ]

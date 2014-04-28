@@ -1,7 +1,11 @@
-<ion-radio
-  data-ng-repeat="choice in question.choices"
-  data-ng-value="choice.content"
-  data-ng-model="submission"
-  data-ng-click="setRadioAnswer(question, choice)">
-    {{ choice.content }}
-</ion-radio>
+<section ng-controller="RadioCtrl">
+
+  <ion-radio
+    data-ng-repeat="choice in question.choices"
+    data-ng-value="choice.content"
+    data-ng-model="submission"
+    data-ng-click="setRadioAnswer(question, choice)">
+      {{ choice.content }}
+  </ion-radio>
+
+</section>
