@@ -23,8 +23,7 @@
       "/templates/surveys/question_types/#{question.question_type}.html"
 
     $scope.finishSurvey = () ->
-      $state.transitionTo('app.survey_complete')
-      # $state.go('app.survey_complete')
+      $state.go('app.survey_complete')
 
     # DEFAULT ACTIONS
     $scope.startSurvey()
