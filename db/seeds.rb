@@ -24,37 +24,28 @@ q2 = survey.questions.create(
 q2.choices.create value: 0
 
 
-# # RADIO
-# q3 = survey.questions.create(
-#   question_type: "radio",
-#   content: "When you had pain in the last 12 hours, how long did it usually last?",
-#   tip: "Tell us how much it hurts"
-# )
-# q3.choices.create content: "Just a few minutes"
-# q3.choices.create content: "About an hour"
-# q3.choices.create content: "1-3 hours"
-# q3.choices.create content: "4-6 hours"
-# q3.choices.create content: "7-9 hours"
-# q3.choices.create content: "10-12 hours"
+# RADIO
+q3 = survey.questions.create(
+  question_type: "radio",
+  content: "When you had pain in the last 12 hours, how long did it usually last?",
+  tip: "Tell us how much it hurts"
+)
+q3.choices.create content: "Just a few minutes"
+q3.choices.create content: "About an hour"
+q3.choices.create content: "1-3 hours"
+q3.choices.create content: "4-6 hours"
+q3.choices.create content: "7-9 hours"
+q3.choices.create content: "10-12 hours"
 
 
-# # CHECKLIST
-# q4 = survey.questions.create(
-#   question_type: "checklist",
-#   content: "What do you think your pain was due to?",
-# )
-# q4.choices.create content: "None"
-# q4.choices.create content: "Your treatments"
-# q4.choices.create content: "Medical Conditions"
-# q4.choices.create content: "Medical Procedures"
-# q4.choices.create content: "Everyday Pain"
-# q4.choices.create content: "Other", textfield: true
-
-
-
-# Setup Basic Submission
-# submission = Submission.create survey: survey
-
-# survey.questions.each do |question|
-#   submission.answers.create choice: question.choices.sample
-# end
+# CHECKLIST
+q4 = survey.questions.create(
+  question_type: "checklist",
+  content: "What do you think your pain was due to?",
+)
+q4.choices.create content: "None"
+q4.choices.create content: "Your treatments"
+q4.choices.create content: "Medical Conditions"
+q4.choices.create content: "Medical Procedures"
+q4.choices.create content: "Everyday Pain"
+q4.choices.create content: "Other", textfield: true
