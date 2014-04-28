@@ -27,6 +27,7 @@
 
     # DEFAULT ACTIONS
     $scope.startSurvey()
+    $scope.showNext = false
 ]
 
 # resolve this resource before loading the controller

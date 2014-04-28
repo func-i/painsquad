@@ -1,11 +1,11 @@
 <section ng-controller="BooleanCtrl">
 
-  <button ng-click="painCheck(hasPain = true)" class="button button-full button-balanced">
-    Yes
-  </button>
+  <form name="booleanForm" novalidate>
+    <button class="button button-full button-balanced" ng-click="hasPain()">Yes</button>
+    <button class="button button-full button-assertive" ng-click="noPain()">No</button>
+  </form>
 
-  <button ng-click="painCheck(hasPain = false)" class="button button-full button-assertive">
-    No
-  </button>
+  {{ showNext }}
 
 </section>
+
