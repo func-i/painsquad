@@ -1,6 +1,6 @@
 'use strict'
 
-@directiveModule.directive 'validRadio', ->
+@directiveModule.directive 'validRadioForm', ->
   link: (scope) ->
     scope.$watch 'currentForm.$dirty', (isDirty)  ->
       if isDirty
