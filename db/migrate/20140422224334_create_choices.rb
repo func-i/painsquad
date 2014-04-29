@@ -4,7 +4,7 @@ class CreateChoices < ActiveRecord::Migration
       t.references :question
       t.boolean :textfield, default: :false
       t.string :content
-      t.integer :value
+      t.string :value
       t.timestamps
     end
   end

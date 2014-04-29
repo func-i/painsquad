@@ -19,8 +19,8 @@ module Api
       private
 
       def submission_params
-        params.require(:submission).permit(:survey_id, :has_pain,
-          answers_attributes: [:question_id, :choice_id, :value, :custom_text] )
+        params[:submission][:answers_attributes] ||= []
+        params.require(:submission).permit(:survey_id, :has_pain, answers_attributes: [])
       end
 
       def get_submission

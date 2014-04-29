@@ -1,11 +1,22 @@
 <section ng-controller="BooleanCtrl">
 
-  <button data-ng-click="painCheck(hasPain = true)" class="button button-full button-balanced">
-    Yes
-  </button>
+  <!-- TODO: Proper styling for this form -->
+  <form name="currentForm" valid-form>
 
-  <button data-ng-click="painCheck(hasPain = false)" class="button button-full button-assertive">
-    No
-  </button>
+    <div class="list" ng-repeat="choice in question.choices">
+      <label class="item item-radio">
+        <input type="radio" name="has_pain"
+          ng-model="submission.has_pain"
+          ng-value="choice.value"
+          required>
+        <div class="item-content">
+          {{ choice.content }}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+
+  </form>
 
 </section>
+

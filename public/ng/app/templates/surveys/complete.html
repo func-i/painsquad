@@ -5,7 +5,6 @@
     <span>Survey complete!</span>
 
     <pre ng-bind="submission | json"></pre>
-    <button class="button" data-ng-click="submitSurvey(submission)">Submit</button>
-    <button class="button" ui-sref="app.home">Go Home</button>
+    <button class="button" ui-sref="app.home" ng-click="submitSurvey(submission)">Submit &amp; Go Home</button>
   </ion-content>
 </ion-view>

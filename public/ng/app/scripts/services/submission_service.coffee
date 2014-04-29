@@ -6,6 +6,7 @@
   init: (survey_id) ->
     @submission =
       survey_id:          survey_id
+      has_pain:           null
       answers_attributes: []
 
   # adds object to answer payload
@@ -19,6 +20,8 @@
         @addSelectionAnswer(answerObj)
       when 'slider'
         @addSliderAnswer(answerObj)
+      when 'boolean'
+        # do nothing
       else
         console.log "invalid question type detected: #{answerObj}"
 

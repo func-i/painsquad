@@ -15,6 +15,9 @@
 /vendor/bundle/
 /vendor/ruby/
 
+# local settings
+coffeelint.json
+
 # minimal Rails specific artifacts
 db/*.sqlite3
 /db/*.sqlite3-journal

@@ -1,5 +1,8 @@
 <!-- TODO: Selecting 'None' should gray out & disabled other options -->
 <!-- TODO: 'Next' button is disabled/grayed out until something is selected -->
-<ion-checkbox data-ng-model="choice.selected" data-ng-repeat="choice in question.choices">
-  {{ choice.content }}
-</ion-checkbox>
+<section ng-controller="ChecklistCtrl">
+  <ion-checkbox ng-model="choice.selected" ng-repeat="choice in question.choices">
+    {{ choice.content }}
+  </ion-checkbox>
+
+</section>

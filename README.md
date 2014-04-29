@@ -17,3 +17,7 @@
 - `bower install`
 - `grunt serve`
 
+
+## Best Practices
+
+`$ coffeelint public/ng/app/scripts/**/*.coffee`
