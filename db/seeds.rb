@@ -21,7 +21,7 @@ q2 = survey.questions.create(
   content:       'Rate your pain on a scale of 1 to 10',
   tip:           'Touch the slider yo'
 )
-q2.choices.create value: 0
+q2.choices.create value: nil
 
 
 # RADIO

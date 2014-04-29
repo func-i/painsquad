@@ -2,35 +2,14 @@
 
   <form name="currentForm" valid-form>
     <div class="range range-positive">
-      <input
+      <input required
         type="range"
         name="slider"
         min="0"
         max="100"
-        ng-model="question.choices[0].value" required>
+        ng-model="question.choices[0].value">
     </div>
     {{ question.choices[0].value | sliderFilter }}
   </form>
-
-<!--
-    <div class="item range range-positive">
-      <i class="icon ion-ios7-sunny-outline"></i>
-      <input type="range" name="slider" min="0" max="100"
-        ng-model="question.choices[0].value"
-        value="{{question.choices[0].value}}" required />
-      <i class="icon ion-ios7-sunny"></i>
-    </div>
- -->
-
-  showNext: {{ showNext }}
-  <br>
-  slider.$dirty: {{ currentForm.slider.$dirty }}
-  <br>
-  slider.$pristine: {{ currentForm.slider.$pristine }}
-  <br>
-  slider.$valid: {{ currentForm.slider.$valid }}
-  <br>
-
-
 
 </section>
