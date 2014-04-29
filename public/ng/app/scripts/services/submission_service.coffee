@@ -20,6 +20,8 @@
         @addSelectionAnswer(answerObj)
       when 'slider'
         @addSliderAnswer(answerObj)
+      when 'boolean'
+        # do nothing
       else
         console.log "invalid question type detected: #{answerObj}"
 
