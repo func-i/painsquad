@@ -3,10 +3,10 @@
 @controllerModule.controller "RadioCtrl", ['$scope', '$state', ($scope, $state) ->
   console.log("Radio Controller Instantiated")
 
-  testFunc = () ->
-    debugger
+  # testFunc = () ->
+  #   debugger
 
-  testFunc()
+  # testFunc()
 
 
   $scope.setRadioAnswer = (question, choice) ->

@@ -1,14 +1,28 @@
 <section ng-controller="SliderCtrl">
 
-  <div class="list">
-    <div class="item range range-positive">
-      <i class="icon ion-ios7-sunny-outline"></i>
-      <input type="range" name="volume" min="0" max="100" value="99"
-        ng-model="question.choices[0].value"
-        ng-change="testFunc()">
-      <i class="icon ion-ios7-sunny"></i>
+  <form name="currentForm" valid-form>
+    <div class="list">
+      <div class="item range range-positive">
+        <i class="icon ion-ios7-sunny-outline"></i>
+        <input
+          type="range"
+          name="slider"
+          ng-model="question.choices[0].value"
+          min="0"
+          max="100"
+          value="{{question.choices[0].value}}"
+          required>
+        <i class="icon ion-ios7-sunny"></i>
+      </div>
+      {{ question.choices[0].value | sliderFilter }}
     </div>
-    {{ question.choices[0].value | sliderFilter }}
-  </div>
+  </form>
 
+<!--
+  <div class="item range range-positive">
+    <i class="icon ion-ios7-sunny-outline"></i>
+    <input type="range" name="volume" min="0" max="100" value="12">
+    <i class="icon ion-ios7-sunny"></i>
+  </div>
+ -->
 </section>

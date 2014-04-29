@@ -1,11 +1,15 @@
 <section ng-controller="BooleanCtrl">
 
-  <form name="booleanForm" novalidate>
-    <button class="button button-full button-balanced" ng-click="hasPain()">Yes</button>
-    <button class="button button-full button-assertive" ng-click="noPain()">No</button>
+  <!-- TODO: Proper styling for this form -->
+  <form name="currentForm" valid-form>
+    <ion-radio
+      ng-repeat="choice in question.choices"
+      ng-value="choice.value"
+      ng-model="submission.has_pain"
+      ng-click="submitForm(submission.has_pain)" required>
+        {{ choice.content }}
+    </ion-radio>
   </form>
-
-  {{ showNext }}
 
 </section>
 

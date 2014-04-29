@@ -6,6 +6,7 @@
   init: (survey_id) ->
     @submission =
       survey_id:          survey_id
+      has_pain:           null
       answers_attributes: []
 
   # adds object to answer payload

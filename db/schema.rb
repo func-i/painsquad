@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.integer  "question_id"
     t.boolean  "textfield",   default: false
     t.string   "content"
-    t.integer  "value"
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

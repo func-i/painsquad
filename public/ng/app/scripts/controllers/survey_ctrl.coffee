@@ -2,9 +2,8 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
-  ($scope, $state, $stateParams, AuthService, SubmissionService, survey) ->
-    console.log("Survey Controller Instantiated")
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$rootScope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
+  ($scope, $rootScope, $state, $stateParams, AuthService, SubmissionService, survey) ->
 
     $scope.startSurvey = () ->
       $scope.submission    = SubmissionService.init(survey.id)
@@ -20,6 +19,7 @@
       else
         $scope.question = survey.questions[$scope.questionIndex]
 
+   # TODO: proper transition animations between these partials, use $state.go
     $scope.getChoicesPartial = (question) ->
       "/templates/surveys/question_types/#{question.question_type}.html"
 
@@ -28,7 +28,12 @@
 
     # DEFAULT ACTIONS
     $scope.startSurvey()
-    $scope.showNext = true
+    $scope.showNext = false
+
+    $scope.$on 'currentForm:valid', (ev) ->
+      $scope.showNext = true
+    $scope.$on 'currentForm:invalid', (ev) ->
+      $scope.showNext = false
 ]
 
 # resolve this resource before loading the controller

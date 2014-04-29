@@ -4,7 +4,7 @@ class Submission < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers
 
-  validates :has_pain, presence: true
+  validates :has_pain, inclusion: [true, false]
 
   def print_tree
     SubmissionSerializer.new(self).to_json

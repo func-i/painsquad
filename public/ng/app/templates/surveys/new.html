@@ -1,20 +1,13 @@
 <ion-view title="Pain Case" hide-back-button="true">
 
   <ion-nav-buttons side="right">
-    <!-- TODO: Disable Next button until selections are made -->
     <button class="button button-positive button-clear" ng-click="nextQuestion()" ng-show="showNext">
       Next &gt;
     </button>
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header">
-    <pre>
-      this is from the parent view (before progress/question partials)
-      showNext: {{ showNext }}
-    </pre>
-    <hr>
-
-    <div data-ng-include src="'/templates/surveys/progress.html'"></div>
-    <div data-ng-include src="'/templates/surveys/question.html'"></div>
+    <div ng-include src="'/templates/surveys/progress.html'"></div>
+    <div ng-include src="'/templates/surveys/question.html'"></div>
   </ion-content>
 </ion-view>
