@@ -11,8 +11,8 @@ q1 = survey.questions.create(
   question_type: 'boolean',
   content: 'Are you in pain right now?'
 )
-q1.choices.create content: 'Yes', value: true
-q1.choices.create content: 'No', value: false
+q1.choices.create content: 'Yes', value: 'true'
+q1.choices.create content: 'No', value: 'false'
 
 
 # SLIDER
@@ -21,9 +21,6 @@ q2 = survey.questions.create(
   content:       'Rate your pain on a scale of 1 to 10',
   tip:           'Touch the slider yo'
 )
-q2.choices.create value: 0
-# q2.choices.create value: 0
-
 
 
 # RADIO

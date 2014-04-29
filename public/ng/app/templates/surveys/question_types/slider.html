@@ -1,5 +1,5 @@
 <section ng-controller="SliderCtrl">
-
+<!--
   <form name="currentForm" valid-form>
     <div class="list">
       <div class="item range range-positive">
@@ -17,12 +17,19 @@
       {{ question.choices[0].value | sliderFilter }}
     </div>
   </form>
-
-<!--
-  <div class="item range range-positive">
-    <i class="icon ion-ios7-sunny-outline"></i>
-    <input type="range" name="volume" min="0" max="100" value="12">
-    <i class="icon ion-ios7-sunny"></i>
-  </div>
  -->
+  <form name="currentForm" valid-form>
+    <div class="item range range-positive">
+      <i class="icon ion-ios7-sunny-outline"></i>
+      <input
+        type="range"
+        name="slider"
+        min="0"
+        max="100"
+        value="0"
+        required>
+      <i class="icon ion-ios7-sunny"></i>
+    </div>
+  </form>
+
 </section>

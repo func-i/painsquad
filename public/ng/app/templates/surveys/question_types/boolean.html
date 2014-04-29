@@ -6,7 +6,7 @@
       ng-repeat="choice in question.choices"
       ng-value="choice.value"
       ng-model="submission.has_pain"
-      ng-click="submitForm(submission.has_pain)" required>
+      ng-click="submitData(submission.has_pain)" >
         {{ choice.content }}
     </ion-radio>
   </form>
