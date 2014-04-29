@@ -2,13 +2,20 @@
 
   <!-- TODO: Proper styling for this form -->
   <form name="currentForm" valid-form>
-    <ion-radio
-      ng-repeat="choice in question.choices"
-      ng-value="choice.value"
-      ng-model="submission.has_pain"
-      ng-click="submitData(submission.has_pain)" >
-        {{ choice.content }}
-    </ion-radio>
+
+    <div class="list" ng-repeat="choice in question.choices">
+      <label class="item item-radio">
+        <input type="radio" name="has_pain"
+          ng-model="submission.has_pain"
+          ng-value="choice.value"
+          required>
+        <div class="item-content">
+          {{ choice.content }}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </label>
+    </div>
+
   </form>
 
 </section>
