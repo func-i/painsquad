@@ -1,29 +1,14 @@
 <section ng-controller="RadioCtrl">
 
-  <form name="currentForm" valid-form>
-
-    <ion-radio required
-      ng-repeat="choice in question.choices"
-      ng-value="choice.content"
-      value="true"
-      ng-model="choice.selected">
-        {{ choice.content }}
-    </ion-radio>
-    <!-- ng-click="setRadioAnswer(question, choice)"> -->
-    <!-- ng-model="choice.selected=true"> -->
-
+  <form name="currentForm" valid-radio>
+      <ion-radio
+        ng-repeat="choice in question.choices"
+        ng-value="true"
+        ng-model="choice.selected"
+        ng-change="setRadioAnswer(question, choice)">
+          {{ choice.content }}
+      </ion-radio>
+    </div>
   </form>
-
-  $valid:    {{ currentForm.$valid }}
-  <br/>
-
-  $invalid:  {{ currentForm.$invalid }}
-  <br/>
-
-  $dirty:    {{ currentForm.$dirty }}
-  <br/>
-
-  $pristine: {{ currentForm.$pristine }}
-  <br/>
 
 </section>

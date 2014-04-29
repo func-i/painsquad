@@ -2,8 +2,7 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl",
-  ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey',
   ($scope, $state, $stateParams, AuthService, SubmissionService, survey) ->
 
     $scope.startSurvey = () ->
@@ -36,6 +35,7 @@
 
     $scope.$on 'currentForm:valid', (ev) ->
       $scope.showNext = true
+
     $scope.$on 'currentForm:invalid', (ev) ->
       $scope.showNext = false
 ]

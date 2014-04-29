@@ -21,4 +21,3 @@
 ## Best Practices
 
 `$ coffeelint public/ng/app/scripts/**/*.coffee`
-``

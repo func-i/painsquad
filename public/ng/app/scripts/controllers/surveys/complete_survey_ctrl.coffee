@@ -1,7 +1,6 @@
 'use strict'
 
-@controllerModule.controller "CompleteSurveyCtrl",
-  ['$scope', 'SubmissionService', 'SubmissionResource',
+@controllerModule.controller "CompleteSurveyCtrl", ['$scope', 'SubmissionService', 'SubmissionResource',
   ($scope, SubmissionService, SubmissionResource) ->
 
     $scope.submitSurvey = () ->
