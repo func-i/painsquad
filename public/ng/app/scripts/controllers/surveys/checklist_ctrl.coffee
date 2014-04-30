@@ -1,11 +1,12 @@
 'use strict'
 
 @controllerModule.controller "ChecklistCtrl", ['$scope', '$state', ($scope, $state) ->
-  console.log("Checklist Controller Instantiated")
+  $scope.disableAll = false
 
-  # testFunc = () ->
-  #   debugger
-
-  # testFunc()
+  # de-selects and disables all
+  $scope.toggleDisableAll = () ->
+    _.each $scope.question.choices, (choice) ->
+      choice.selected = false
+    $scope.disableAll = !$scope.disableAll
 
 ]

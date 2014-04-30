@@ -4,3 +4,12 @@
   margin-right: auto;
   width: 90%;
 }
+
+// set disabled checkbox styles
+.checkbox {
+  width: 100%;
+
+  input[disabled]:before {
+    border: 1px solid #EF4562;
+  }
+}
