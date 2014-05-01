@@ -1,5 +1,32 @@
 <section ng-controller="TextBoxCtrl">
 
-  Text Box Ctrl
+  <form name="currentForm" valid-form>
+    <label class="item item-input">
+      <input type="text"
+        required
+        placeholder="How's it going?"
+        ng-maxlength="500"
+        ng-model="question.choices[0].custom_text">
+    </label>
+  </form>
 
 </section>
+
+<!--
+<section ng-controller="SliderCtrl">
+
+  <form name="currentForm" valid-form>
+    <div class="range range-positive">
+      <input required
+        type="range"
+        name="slider"
+        min="0"
+        max="100"
+        ng-value="0"
+        ng-model="question.choices[0].value">
+    </div>
+    {{ question.choices[0].value | sliderFilter }}
+  </form>
+
+</section>
+ -->

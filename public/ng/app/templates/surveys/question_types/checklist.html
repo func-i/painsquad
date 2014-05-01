@@ -4,10 +4,10 @@
     <ul>
       <li class="item item-checkbox" ng-repeat="choice in question.choices">
           <label class="checkbox">
-            <input type="checkbox" ng-required="selection.length === 0"
+            <input type="checkbox" ng-required="atLeastOneSelected(question.choices)"
               ng-model="choice.selected"
-              ng-change="toggleSelection(choice)"
-              ng-disabled="disableAll && !$first">
+              ng-change="disableIfChosenNone(choice)"
+              ng-disabled="choice.disabled">
           </label>
           {{ choice.content }}
       </li>

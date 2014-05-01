@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.integer  "submission_id"
     t.integer  "choice_id"
     t.integer  "question_id"
-    t.string   "custom_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.boolean  "textfield",   default: false
     t.string   "content"
     t.string   "value"
+    t.string   "custom_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

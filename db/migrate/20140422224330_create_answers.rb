@@ -4,7 +4,6 @@ class CreateAnswers < ActiveRecord::Migration
       t.references :submission
       t.references :choice
       t.references :question
-      t.string :custom_text
       t.timestamps
     end
   end

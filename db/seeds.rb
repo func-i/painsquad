@@ -55,3 +55,4 @@ q5 = survey.questions.create(
   question_type: 'textbox',
   content:       'Tell us anything else about your pain in the last 12 hours'
 )
+q5.choices.create textfield: true

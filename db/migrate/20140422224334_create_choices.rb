@@ -5,6 +5,7 @@ class CreateChoices < ActiveRecord::Migration
       t.boolean :textfield, default: :false
       t.string :content
       t.string :value
+      t.string :custom_text
       t.timestamps
     end
   end
