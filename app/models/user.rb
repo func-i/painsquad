@@ -1,3 +1,4 @@
+# User Model, Sorcery-based authentication
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_one :api_key
@@ -9,5 +10,4 @@ class User < ActiveRecord::Base
   def grant_api_access
     create_api_key!
   end
-
 end

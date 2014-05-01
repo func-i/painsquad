@@ -1,8 +1,9 @@
 module Api
   module V1
+    # Survey Controller, singular resource
     class SurveysController < ApplicationController
       # skip_before_action :restrict_access
-      before_action :get_survey
+      before_action :fetch_survey
 
       def show
         if @survey
@@ -14,11 +15,10 @@ module Api
 
       private
 
-      # TODO: Need to get the survey conditionally based on User state (previous pain report)
-      def get_survey
+      # Need to get the survey conditionally based on previous pain report
+      def fetch_survey
         @survey = Survey.includes(questions: [:choices]).first
       end
-
     end
   end
 end
