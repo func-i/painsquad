@@ -11,7 +11,6 @@ module Api
       def create
         if @submission = Submission.create(submission_params)
           render json: @submission.to_json
-          binding.pry
         else
           render json: nil, status: :unprocessable_entity
         end

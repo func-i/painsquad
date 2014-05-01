@@ -20,4 +20,21 @@
 
 ## Best Practices
 
+lints coffeescript:
+
 `$ coffeelint public/ng/app/scripts/**/*.coffee`
+
+
+rails security audit:
+
+`$ brakeman .`
+
+
+ruby static code analysis:
+
+`$ rubocop app/`
+
+
+ruby codesmell:
+
+`$ reek .`
