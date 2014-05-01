@@ -1,6 +1,6 @@
 'use strict'
 
-@directiveModule.directive 'validForm', ->
+@directiveModule.directive 'validBooleanForm', ->
   link: (scope) ->
     scope.$watch 'currentForm.$valid', (isValid)  ->
       if isValid

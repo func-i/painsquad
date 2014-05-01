@@ -43,6 +43,7 @@ q4 = survey.questions.create(
   question_type: 'checklist',
   content:       'What do you think your pain was due to?',
 )
+q4.choices.create content: 'None'
 q4.choices.create content: 'Your treatments'
 q4.choices.create content: 'Medical Conditions'
 q4.choices.create content: 'Medical Procedures'

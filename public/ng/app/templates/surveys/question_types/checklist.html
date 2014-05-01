@@ -1,29 +1,17 @@
-<!-- TODO: Selecting 'None' should gray out & disabled other options -->
-<!-- TODO: 'Next' button is disabled/grayed out until something is selected -->
 <section class="checkbox" ng-controller="ChecklistCtrl">
 
-  <form name="currentForm" valid-radio-form>
+  <form name="currentForm" valid-boolean-form>
     <ul>
-      <!-- pseudo-checkbox for the 'disableAll' functionality -->
-      <li class="item item-checkbox">
-        <label class="checkbox" ng-click="toggleDisableAll()">
-          <input type="checkbox">
-        </label>
-        None
-      </li>
-
       <li class="item item-checkbox" ng-repeat="choice in question.choices">
           <label class="checkbox">
-            <input type="checkbox" required
+            <input type="checkbox" ng-required="selection.length === 0"
               ng-model="choice.selected"
-              ng-disabled="disableAll">
+              ng-change="toggleSelection(choice)"
+              ng-disabled="disableAll && !$first">
           </label>
           {{ choice.content }}
       </li>
     </ul>
-
   </form>
-
-  $valid: {{ currentForm.$valid }}
 
 </section>
