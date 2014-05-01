@@ -11,9 +11,9 @@
   $scope.toggleAllChoiceDisabled = () ->
     _.each $scope.question.choices, (choice) ->
       choice.disabled = !choice.disabled if choice.content isnt 'None'
-    deselectElements()
+    $scope.deselectElements()
 
-  deselectElements: ->
+  $scope.deselectElements = () ->
     _.each $scope.question.choices, (choice) ->
       if choice.content isnt 'None'
         choice.selected = false

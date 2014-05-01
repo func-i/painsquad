@@ -11,6 +11,7 @@ module Api
       def create
         if @submission = Submission.create(submission_params)
           render json: @submission.to_json
+          binding.pry
         else
           render json: nil, status: :unprocessable_entity
         end
@@ -19,8 +20,9 @@ module Api
       private
 
       def submission_params
-        params[:submission][:answers_attributes] ||= []
-        params.require(:submission).permit(:survey_id, :has_pain, answers_attributes: [])
+        params.require(:submission).permit(:survey_id, :has_pain,
+          answers_attributes: [:question_id, :choice_id, :value]
+        )
       end
 
       def get_submission
