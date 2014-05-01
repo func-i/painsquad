@@ -20,6 +20,8 @@
         @addSelectionAnswer(answerObj)
       when 'slider'
         @addSliderAnswer(answerObj)
+      when 'textbox'
+        @addTextboxAnswer(answerObj)
       when 'boolean'
         # do nothing
       else
@@ -51,6 +53,12 @@
     resultObj =
       question_id: answerObj.question_id
       value:       parseInt(answerObj.choices[0].value)
+    @addAnswer(resultObj)
+
+  addTextboxAnswer: (answerObj) ->
+    resultObj =
+      question_id: answerObj.question_id
+      value:       answerObj.choices[0].value
     @addAnswer(resultObj)
 
   # retrieves singleton object

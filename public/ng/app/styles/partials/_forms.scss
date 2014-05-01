@@ -1,0 +1,17 @@
+// set disabled checkbox styles
+.checkbox {
+  width: 100%;
+
+  input[disabled]:before {
+    border: 1px solid #EF4562;
+  }
+}
+
+.textbox {
+
+  textarea {
+    resize: none;
+  }
+
+}
+
