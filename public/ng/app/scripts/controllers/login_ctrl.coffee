@@ -4,6 +4,6 @@
 
   $scope.user = {}
 
-  $scope.login = () ->
+  $scope.login = ->
     AuthService.login($scope.user)
 ]

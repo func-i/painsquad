@@ -10,17 +10,21 @@
               ng-model="choice.selected"
               ng-change="disableIfChosenNone(choice)"
               ng-disabled="choice.disabled"
-              ps-other-textbox>
+              ps-other-textbox="choice.value">
           </label>
           {{ choice.content }}
       </li>
     </ul>
+  </form>
 
+  Other value: {{ question.choices[question.choices.length - 1].value }}
 
-    $valid:    {{ currentForm.$valid }} <br/>
-    $invalid:  {{ currentForm.$invalid }} <br/>
-    $dirty:    {{ currentForm.$dirty }} <br/>
-    $pristine: {{ currentForm.$pristine }} <br/>
+  <hr>
+  $valid:    {{ currentForm.$valid }} <br/>
+  $invalid:  {{ currentForm.$invalid }} <br/>
+  $dirty:    {{ currentForm.$dirty }} <br/>
+  $pristine: {{ currentForm.$pristine }} <br/>
+  <hr>
 
 <!--
     <div class="list">
@@ -32,8 +36,5 @@
           ng-model="question.choices[-1].value"></textarea>
       </label>
  -->
-    </div>
-
-  </form>
 
 </section>
