@@ -4,5 +4,7 @@ class CreateSubmissions < ActiveRecord::Migration
       t.references :survey
       t.timestamps
     end
+
+    add_index :submissions, :survey_id
   end
 end

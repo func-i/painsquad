@@ -1,17 +1,40 @@
 <section class="checkbox" ng-controller="ChecklistCtrl">
 
-  <form name="currentForm" valid-boolean-form>
+  <form name="currentForm" valid-form>
     <ul>
       <li class="item item-checkbox" ng-repeat="choice in question.choices">
           <label class="checkbox">
-            <input type="checkbox" ng-required="atLeastOneSelected(question.choices)"
+            <input
+              type="checkbox"
+              ng-required="atLeastOneSelected(question.choices)"
               ng-model="choice.selected"
               ng-change="disableIfChosenNone(choice)"
-              ng-disabled="choice.disabled">
+              ng-disabled="choice.disabled"
+              ps-other-textbox>
           </label>
           {{ choice.content }}
       </li>
     </ul>
   </form>
+
+  <!-- Other value: {{ question.choices[question.choices.length - 1].value }} -->
+
+  <hr>
+  $valid:    {{ currentForm.$valid }} <br/>
+  $invalid:  {{ currentForm.$invalid }} <br/>
+  $dirty:    {{ currentForm.$dirty }} <br/>
+  $pristine: {{ currentForm.$pristine }} <br/>
+  <hr>
+
+<!--
+    <div class="list">
+      <label class="item item-input">
+        <textarea
+          required
+          placeholder="Please specify"
+          rows="5"
+          ng-model="question.choices[-1].value"></textarea>
+      </label>
+ -->
 
 </section>
