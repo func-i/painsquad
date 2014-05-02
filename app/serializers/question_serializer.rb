@@ -4,7 +4,7 @@ class QuestionSerializer < ActiveModel::Serializer
   has_many :choices
 
   def choices
-    object.choices.order('id')
+    object.choices.order('id ASC')
   end
 
   def question_id

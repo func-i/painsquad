@@ -16,7 +16,7 @@
   # answer object pre-requisite
   prepareAnswer: (answerObj) ->
     switch answerObj.question_type
-      when 'checklist', 'radio'
+      when 'checklist', 'radio', 'checklist-grid'
         @addSelectionAnswer(answerObj)
       when 'slider'
         @addSliderAnswer(answerObj)
@@ -36,6 +36,7 @@
       resultObj =
         question_id: answerObj.question_id
         choice_id:   selectedChoices[0].id
+        value:       selectedChoices[0].value
       @addAnswer(resultObj)
 
   # extracts items from selectedChoices and pushes to answers array
@@ -45,6 +46,7 @@
     resultObj =
       question_id: answerObj.question_id
       choice_id:   item.id
+      value:       item.value
     @addAnswer(resultObj)
     @recursiveExtractAnswers(answerObj, selectedChoices)
 

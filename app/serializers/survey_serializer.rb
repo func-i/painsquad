@@ -4,7 +4,7 @@ class SurveySerializer < ActiveModel::Serializer
 
   # eager load serialized association
   def questions
-    object.questions.includes(:choices)
+    object.questions.includes(:choices).order('id ASC')
   end
 
 end
