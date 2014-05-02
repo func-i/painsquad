@@ -25,16 +25,6 @@ lints coffeescript:
 `$ coffeelint public/ng/app/scripts/**/*.coffee`
 
 
-rails security audit:
-
-`$ brakema app/`
-
-
 ruby static code analysis:
 
 `$ rubocop app/`
-
-
-ruby codesmell:
-
-`$ reek app/`
