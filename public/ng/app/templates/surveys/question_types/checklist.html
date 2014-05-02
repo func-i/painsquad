@@ -9,10 +9,14 @@
               ng-required="atLeastOneSelected(question.choices)"
               ng-model="choice.selected"
               ng-change="disableIfChosenNone(choice)"
-              ng-disabled="choice.disabled"
-              ps-other-textbox>
+              ng-disabled="choice.disabled" />
           </label>
           {{ choice.content }}
+
+          <label class="item item-input other-textbox" ng-show="choice.textfield && choice.selected">
+            <textarea placeholder="Please specify" rows="5"></textarea>
+          </label>
+
       </li>
     </ul>
   </form>
