@@ -10,14 +10,14 @@
               ng-model="choice.selected"
               ng-change="disableIfChosenNone(choice)"
               ng-disabled="choice.disabled"
-              ps-other-textbox="choice.value">
+              ps-other-textbox>
           </label>
           {{ choice.content }}
       </li>
     </ul>
   </form>
 
-  Other value: {{ question.choices[question.choices.length - 1].value }}
+  <!-- Other value: {{ question.choices[question.choices.length - 1].value }} -->
 
   <hr>
   $valid:    {{ currentForm.$valid }} <br/>
