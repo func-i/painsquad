@@ -1,5 +1,5 @@
 <section class="checkbox-grid" ng-controller="ChecklistGridCtrl">
-
+<!--
   <form name="currentForm" valid-form>
     <div class="row" ng-repeat="row in question.choices | inSlicesOf:2">
       <label class="checkbox col col-50" ng-repeat="choice in row">
@@ -11,10 +11,50 @@
           ng-model="choice.selected" />
       </label>
 
-      <!-- textfield: {{ choice.textfield }} -->
     </div>
   </form>
+ -->
 
+ <form name="currentForm">
+
+  <div class="row grid-list">
+
+    <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}" >
+
+      <label class="checkbox content">
+        {{ choice.content }}
+        <input
+        type="checkbox"
+        class="pull-right"
+        ng-required="atLeastOneSelection(question.choices)"
+        ng-model="choice.selected" />
+      </label>
+
+    </div>
+
+  </div>
+
+</form>
+
+<!--
+  <form name="currentForm">
+    <div class="row grid-list">
+      <div class="col" ng-repeat="choice in question.choices">
+
+        <label class="checkbox">
+          {{ choice.content }}
+          <input
+            type="checkbox"
+            class="pull-right"
+            ng-required="atLeastOneSelection(question.choices)"
+            ng-model="choice.selected" />
+        </label>
+
+      </div>
+    </div>
+
+  </form>
+ -->
   <hr>
   $valid:    {{ currentForm.$valid }} <br/>
   $invalid:  {{ currentForm.$invalid }} <br/>

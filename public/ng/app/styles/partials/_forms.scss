@@ -25,9 +25,26 @@
 // checklist grid
 .checkbox-grid {
 
+  .row.grid-list {
+    flex-wrap: wrap;
+
+    .col {
+      flex: none;
+      width: 50%;
+
+      .content {
+        border: 1px dotted black;
+      }
+    }
+
+    .last {
+      flex: none;
+      width: 100%;
+    }
+
+  }
+
   label {
-    border: 1px dotted black;
-    margin: 1px;
     line-height: 30px;
 
     .pull-right {
@@ -35,6 +52,4 @@
     }
   }
 
-
 }
-
