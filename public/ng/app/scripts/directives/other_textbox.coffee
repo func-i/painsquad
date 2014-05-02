@@ -8,9 +8,17 @@
 
 @directiveModule.directive 'psOtherTextbox', ->
   restrict: 'A'
+
+  scope:
+    value: '=ngModel'
+
+  template = '<label class="item item-input other-textbox">' +
+            '<textarea ng-model="choice.value" ng-min="5" placeholder="Please specify" rows="5"></textarea>' +
+            '</label>'
+
   link: (scope, elem, attr) ->
     textBox = '<label class="item item-input other-textbox">' +
-              '<textarea placeholder="Please specify" rows="5"></textarea>' +
+              '<textarea ng-model="choice.value" ng-min="5" placeholder="Please specify" rows="5"></textarea>' +
               '</label>'
     if scope.$last && scope.choice.textfield
       parentSelector = elem.parent().parent().parent()

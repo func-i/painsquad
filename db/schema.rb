@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.datetime "updated_at"
   end
 
+  add_index "answers", ["submission_id", "choice_id", "question_id"], name: "index_answers_on_submission_id_and_choice_id_and_question_id", using: :btree
+
   create_table "api_keys", force: true do |t|
     t.string   "access_token"
     t.integer  "user_id"
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.datetime "updated_at"
   end
 
+  add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "question_type"
@@ -52,12 +56,16 @@ ActiveRecord::Schema.define(version: 20140427170223) do
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
   create_table "submissions", force: true do |t|
     t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "has_pain"
   end
+
+  add_index "submissions", ["survey_id"], name: "index_submissions_on_survey_id", using: :btree
 
   create_table "surveys", force: true do |t|
     t.string   "title"
