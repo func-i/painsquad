@@ -7,5 +7,6 @@ class CreateChoices < ActiveRecord::Migration
       t.string :value
       t.timestamps
     end
+    add_index :choices, :question_id
   end
 end

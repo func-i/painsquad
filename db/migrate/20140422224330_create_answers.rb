@@ -7,5 +7,6 @@ class CreateAnswers < ActiveRecord::Migration
       t.text :value
       t.timestamps
     end
+    add_index :answers, [:submission_id, :choice_id, :question_id]
   end
 end

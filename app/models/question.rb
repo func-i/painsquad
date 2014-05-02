@@ -1,5 +1,5 @@
+# Submission has many Questions, a Question has many Choices
 class Question < ActiveRecord::Base
-
   QUESTION_TYPES = %w( boolean radio checklist slider textbox )
 
   belongs_to :survey
@@ -10,8 +10,7 @@ class Question < ActiveRecord::Base
 
   def valid_question_type
     unless QUESTION_TYPES.include? question_type
-      errors.add(:base, "Must submit a valid question type")
+      errors.add(:base, 'Must submit a valid question type')
     end
   end
-
 end

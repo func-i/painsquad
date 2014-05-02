@@ -1,5 +1,5 @@
+# Choice model - a Question has many choices
 class Choice < ActiveRecord::Base
-
   belongs_to :question
   has_many :answers
 
@@ -7,10 +7,9 @@ class Choice < ActiveRecord::Base
 
   def polymorphic_value
     if value.is_a? Integer
-      errors.add(:base, "value must be between 0 and 100") unless value.between?(0, 100)
-    # elsif value.is_a?(TrueClass) || value.is_a?(FalseClass)
-    #   return
+      unless value.between?(0, 100)
+        errors.add(:base, 'value must be between 0 and 100')
+      end
     end
   end
-
 end

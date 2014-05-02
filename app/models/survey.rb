@@ -1,5 +1,5 @@
+# Top level Survey, has many Questions
 class Survey < ActiveRecord::Base
-
   has_many :questions
   has_many :submissions
   has_many :answers, through: :submissions
@@ -8,5 +8,4 @@ class Survey < ActiveRecord::Base
   def print_tree
     SurveySerializer.new(self).to_json
   end
-
 end
