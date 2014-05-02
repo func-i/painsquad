@@ -1,22 +1,19 @@
-// set disabled checkbox styles
-// .checkbox {
+// checkbox survey partial
+.checkbox {
+  width: 100%;
 
-//   input[disabled]:before {
-//     border: 1px solid #EF4562;
-//   }
+  // set disabled checkbox styles
+  input[disabled]:before {
+    border: 1px solid #EF4562;
+  }
 
-//   textarea {
-//     resize: none;
-//   }
-
-//   .has-textbox {
-//     background-color: black;
-//   }
-
-// }
+  textarea {
+    resize: none;
+  }
+}
 
 
-// textbox partial
+// textbox survey partial
 .textbox {
 
   textarea {
@@ -24,7 +21,6 @@
   }
 
 }
-
 
 // checklist grid
 .checkbox-grid {

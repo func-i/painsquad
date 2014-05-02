@@ -1,63 +1,30 @@
 <section class="checkbox" ng-controller="ChecklistCtrl">
 
-  <!-- <form name="currentForm" valid-form> -->
-  <form name="currentForm">
-    <ul>
-      <li class="item item-checkbox" ng-repeat="choice in question.choices">
-          <label class="checkbox">
-            <input
-              type="checkbox"
-              ng-required="atLeastOneSelected(question.choices)"
-              ng-model="choice.selected"
-              ng-change="disableIfChosenNone(choice)"
-              ng-disabled="choice.disabled" />
-          </label>
-          {{ choice.content }}
-      </li>
-    </ul>
-  </form>
-
-<!--
+  <!-- TODO: validate 'other' as $valid only if text inputted -->
   <form name="currentForm" valid-form>
     <ul>
-      <li class="item item-checkbox" ng-repeat="choice in question.choices">
-        <label class="checkbox" ng-class="{ has-textbox: choice.textfield }">
-          <input
-            type="checkbox"
-            ng-required="atLeastOneSelected(question.choices)"
-            ng-model="choice.selected"
-            ng-change="disableIfChosenNone(choice)"
-            ng-disabled="choice.disabled" />
-        </label>
-        {{ choice.content }}
-
-        <label class="item item-input other-textbox" ng-show="choice.textfield && choice.selected">
-          <textarea placeholder="Please specify" rows="5" ng-model="choice.value" sk-input-validator></textarea>
-        </label>
-
-      </li>
+      <div ng-repeat="choice in question.choices">
+        <li class="item item-checkbox">
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                ng-required="atLeastOneSelected(question.choices)"
+                ng-model="choice.selected"
+                ng-change="disableIfChosenNone(choice)"
+                ng-disabled="choice.disabled" />
+            </label>
+            {{ choice.content }}
+        </li>
+        <li ng-show="choice.textfield && choice.selected">
+          <label class="item item-input other-textbox">
+            <textarea
+              placeholder="Please specify"
+              rows="5"
+              ng-model="choice.value"></textarea>
+          </label>
+        </li>
+      </div>
     </ul>
   </form>
--->
-
-  Other value: {{ question.choices[question.choices.length - 1].value }}
-
-  <hr>
-  $valid:    {{ currentForm.$valid }} <br/>
-  $invalid:  {{ currentForm.$invalid }} <br/>
-  $dirty:    {{ currentForm.$dirty }} <br/>
-  $pristine: {{ currentForm.$pristine }} <br/>
-  <hr>
-
-<!--
-    <div class="list">
-      <label class="item item-input">
-        <textarea
-          required
-          placeholder="Please specify"
-          rows="5"
-          ng-model="question.choices[-1].value"></textarea>
-      </label>
- -->
 
 </section>

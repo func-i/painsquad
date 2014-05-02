@@ -22,4 +22,5 @@
     atLeastOne = _.some choices, (choice) ->
       choice.selected
     !atLeastOne
+
 ]
