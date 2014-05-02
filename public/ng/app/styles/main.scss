@@ -4,7 +4,11 @@
 // partials are view and template-related styles
 @import "partials/intro",
         "partials/buttons",
-        "partials/sidebar",
-        "partials/forms";
+        "partials/sidebar";
+
+// form-specific styles
+@import "partials/forms/checkbox-grid",
+        "partials/forms/checkbox",
+        "partials/forms/textbox";
 
 // vendor is imported/required styles

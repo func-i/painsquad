@@ -1,65 +1,28 @@
 <section class="checkbox-grid" ng-controller="ChecklistGridCtrl">
-<!--
+
+  <!-- TODO: validate 'other' as $valid only if text inputted -->
   <form name="currentForm" valid-form>
-    <div class="row" ng-repeat="row in question.choices | inSlicesOf:2">
-      <label class="checkbox col col-50" ng-repeat="choice in row">
-        {{ choice.content }}
-        <input
+    <div class="row grid-list">
+      <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}" >
+
+        <label class="checkbox content">
+          {{ choice.content }}
+          <input
           type="checkbox"
           class="pull-right"
           ng-required="atLeastOneSelection(question.choices)"
           ng-model="choice.selected" />
-      </label>
+        </label>
 
-    </div>
-  </form>
- -->
-
- <form name="currentForm">
-
-  <div class="row grid-list">
-
-    <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}" >
-
-      <label class="checkbox content">
-        {{ choice.content }}
-        <input
-        type="checkbox"
-        class="pull-right"
-        ng-required="atLeastOneSelection(question.choices)"
-        ng-model="choice.selected" />
-      </label>
-
-    </div>
-
-  </div>
-
-</form>
-
-<!--
-  <form name="currentForm">
-    <div class="row grid-list">
-      <div class="col" ng-repeat="choice in question.choices">
-
-        <label class="checkbox">
-          {{ choice.content }}
-          <input
-            type="checkbox"
-            class="pull-right"
-            ng-required="atLeastOneSelection(question.choices)"
-            ng-model="choice.selected" />
+        <label ng-show="choice.textfield && choice.selected" class="checkbox">
+          <textarea
+          placeholder="Please specify"
+          rows="5"
+          ng-model="choice.value"></textarea>
         </label>
 
       </div>
     </div>
-
   </form>
- -->
-  <hr>
-  $valid:    {{ currentForm.$valid }} <br/>
-  $invalid:  {{ currentForm.$invalid }} <br/>
-  $dirty:    {{ currentForm.$dirty }} <br/>
-  $pristine: {{ currentForm.$pristine }} <br/>
-  <hr>
 
 </section>

@@ -1,0 +1,13 @@
+// checkbox survey partial
+.checkbox {
+  width: 100%;
+
+  // set disabled checkbox styles
+  input[disabled]:before {
+    border: 1px solid #EF4562;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
