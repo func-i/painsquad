@@ -51,6 +51,20 @@ q4.choices.create content: 'Medical Procedures'
 q4.choices.create content: 'Everyday Pain'
 q4.choices.create content: 'Other (please list)', textfield: true
 
+# # CHECKLIST GRID
+# q5 = survey.questions.create(
+#   question_type: 'checklist-grid',
+#   content: 'Touch the words that best describe how your pain felt since your last report'
+# )
+
+# %w(
+#     Beating Burning Cramping Cruel Drilling Fearful Horrible
+#     Hurting Itching Miserable Pouding Pulling Shooting Squeezing
+#     Throbbing Unbearable Uncomfortable Whining
+#   ).each { |q_content| q5.choices.create content: q_content }
+
+# q5.choices.create content: 'Other', textfield: true
+
 
 # # TEXTBOX
 # q5 = survey.questions.create(

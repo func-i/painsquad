@@ -1,0 +1,40 @@
+<section class="checkbox-grid" ng-controller="ChecklistGridCtrl">
+
+  <div class='row' ng-repeat="row in question.choices | inSlicesOf:2">
+
+    <label class="checkbox col col-50" ng-repeat="choice in row">
+      {{ choice.content }}
+      <input type="checkbox" class="pull-right">
+    </label>
+
+  </div>
+
+  <form name="currentForm" valid-form>
+  </form>
+<!--
+    <ul>
+      <li class="item item-checkbox" ng-repeat="choice in question.choices">
+          <label class="checkbox">
+            <input
+              type="checkbox"
+              ng-required="atLeastOneSelected(question.choices)"
+              ng-model="choice.selected"
+              ng-change="disableIfChosenNone(choice)"
+              ng-disabled="choice.disabled"
+              ps-other-textbox/>
+          </label>
+          {{ choice.content }}
+      </li>
+    </ul>
+  </form>
+-->
+
+
+  <hr>
+  $valid:    {{ currentForm.$valid }} <br/>
+  $invalid:  {{ currentForm.$invalid }} <br/>
+  $dirty:    {{ currentForm.$dirty }} <br/>
+  $pristine: {{ currentForm.$pristine }} <br/>
+  <hr>
+
+</section>

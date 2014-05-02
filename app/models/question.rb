@@ -1,6 +1,6 @@
 # Submission has many Questions, a Question has many Choices
 class Question < ActiveRecord::Base
-  QUESTION_TYPES = %w( boolean radio checklist slider textbox )
+  QUESTION_TYPES = %w( boolean radio checklist slider textbox checklist-grid )
 
   belongs_to :survey
   has_many :choices, dependent: :destroy

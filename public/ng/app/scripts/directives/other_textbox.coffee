@@ -12,7 +12,7 @@
 
     createTextBox = ->
       textBox = '<label class="item item-input other-textbox">' +
-                '<textarea placeholder="Please specify" rows="5"></textarea>' +
+                '<textarea placeholder="Please specify" rows="5" ></textarea>' +
                 '</label>'
       parentSelector = elem.parents('ul')
       textAreaExists = parentSelector.find('.other-textbox')

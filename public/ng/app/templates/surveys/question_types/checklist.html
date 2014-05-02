@@ -1,6 +1,7 @@
 <section class="checkbox" ng-controller="ChecklistCtrl">
 
-  <form name="currentForm" valid-form>
+  <!-- <form name="currentForm" valid-form> -->
+  <form name="currentForm">
     <ul>
       <li class="item item-checkbox" ng-repeat="choice in question.choices">
           <label class="checkbox">
@@ -9,15 +10,37 @@
               ng-required="atLeastOneSelected(question.choices)"
               ng-model="choice.selected"
               ng-change="disableIfChosenNone(choice)"
-              ng-disabled="choice.disabled"
-              ps-other-textbox>
+              ng-disabled="choice.disabled" />
           </label>
           {{ choice.content }}
       </li>
     </ul>
   </form>
 
-  <!-- Other value: {{ question.choices[question.choices.length - 1].value }} -->
+<!--
+  <form name="currentForm" valid-form>
+    <ul>
+      <li class="item item-checkbox" ng-repeat="choice in question.choices">
+        <label class="checkbox" ng-class="{ has-textbox: choice.textfield }">
+          <input
+            type="checkbox"
+            ng-required="atLeastOneSelected(question.choices)"
+            ng-model="choice.selected"
+            ng-change="disableIfChosenNone(choice)"
+            ng-disabled="choice.disabled" />
+        </label>
+        {{ choice.content }}
+
+        <label class="item item-input other-textbox" ng-show="choice.textfield && choice.selected">
+          <textarea placeholder="Please specify" rows="5" ng-model="choice.value" sk-input-validator></textarea>
+        </label>
+
+      </li>
+    </ul>
+  </form>
+-->
+
+  Other value: {{ question.choices[question.choices.length - 1].value }}
 
   <hr>
   $valid:    {{ currentForm.$valid }} <br/>

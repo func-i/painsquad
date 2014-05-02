@@ -1,21 +1,44 @@
 // set disabled checkbox styles
-.checkbox {
-  width: 100%;
+// .checkbox {
 
-  input[disabled]:before {
-    border: 1px solid #EF4562;
-  }
+//   input[disabled]:before {
+//     border: 1px solid #EF4562;
+//   }
 
-  textarea {
-    resize: none;
-  }
-}
+//   textarea {
+//     resize: none;
+//   }
 
+//   .has-textbox {
+//     background-color: black;
+//   }
+
+// }
+
+
+// textbox partial
 .textbox {
 
   textarea {
     resize: none;
   }
+
+}
+
+
+// checklist grid
+.checkbox-grid {
+
+  label {
+    border: 1px dotted black;
+    margin: 1px;
+    line-height: 30px;
+
+    .pull-right {
+      float: right;
+    }
+  }
+
 
 }
 
