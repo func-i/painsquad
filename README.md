@@ -27,7 +27,7 @@ lints coffeescript:
 
 rails security audit:
 
-`$ brakeman .`
+`$ brakema app/`
 
 
 ruby static code analysis:
@@ -37,4 +37,4 @@ ruby static code analysis:
 
 ruby codesmell:
 
-`$ reek .`
+`$ reek app/`
