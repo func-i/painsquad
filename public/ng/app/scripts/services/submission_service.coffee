@@ -36,7 +36,7 @@
       resultObj =
         question_id: answerObj.question_id
         choice_id:   selectedChoices[0].id
-        value:       selectedChoices[0].value
+        custom_text: selectedChoices[0].value
       @addAnswer(resultObj)
 
   # extracts items from selectedChoices and pushes to answers array
@@ -46,7 +46,7 @@
     resultObj =
       question_id: answerObj.question_id
       choice_id:   item.id
-      value:       item.value
+      custom_text: item.value
     @addAnswer(resultObj)
     @recursiveExtractAnswers(answerObj, selectedChoices)
 
@@ -60,7 +60,7 @@
   addTextboxAnswer: (answerObj) ->
     resultObj =
       question_id: answerObj.question_id
-      value:       answerObj.choices[0].value
+      custom_text: answerObj.choices[0].value
     @addAnswer(resultObj)
 
   # retrieves singleton object
