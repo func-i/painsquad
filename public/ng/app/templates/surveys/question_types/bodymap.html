@@ -4,7 +4,7 @@
     <a class="item" ui-sref="app.bodymap-{{choice.content | lowercase}}" ng-repeat="choice in question.choices">
       {{ choice.content }}
     </a>
-    selections: {{ selections }}
+    selections: {{ selections | json }}
   </ion-list>
 
 </section>

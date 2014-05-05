@@ -112,11 +112,11 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
   )
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
-  $rootScope.$state = $state
+  $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-    # to be used for back button //won't work when page is reloaded.
-    $rootScope.previousState_name = fromState.name
+    # to be used for back button *won't work when page is reloaded.
+    $rootScope.previousState_name   = fromState.name
     $rootScope.previousState_params = fromParams
 
   #back button function called from back button's ng-click="back()"

@@ -10,20 +10,25 @@
       arms:  []
       legs:  []
 
-  # retrieves singleton object
+  # # retrieves singleton object
   getSelections: () ->
-    @selections
+    @selections ||= @init()
 
-  # adds object to answer payload
-  addSelection: (body_region, pain_area) ->
-    @selections[body_region].push pain_area
+  # # adds object to answer payload
+  addSelection: (parentNode, element) ->
+    @selections[parentNode].push element
 
   # removes object from payload
-  removeSelection: (body_region, pain_area) ->
-    @selections[body_region].splice(@selections[body_region].indexOf(element]), 1)
+  removeSelection: (parentNode, element) ->
+    @selections[parentNode].splice(@selections[parentNode].indexOf(element), 1)
+
+  # empties subarray
+  clearRegion: (parentNode) ->
+    return if _.isUndefined(@selections[parentNode])
+    @selections[parentNode] = [] if @selections[parentNode].length
 
   # checks if element already selected
-  elementInSelection = (parentNode, element) ->
+  elementInSelection: (parentNode, element) ->
     _.contains(@selections[parentNode], element)
 
 ]

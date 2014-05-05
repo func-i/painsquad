@@ -1,9 +1,20 @@
 <ion-view title="Head" hide-back-button="true">
 
-  <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div>
+  <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header-partial.html'"></div> -->
+
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear" ng-click="clearSelection('head') && back()">
+      Cancel
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Save
+    </button>
+  </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header">
     <span ng-include="'images/bodymap/bodymap-head.svg'"></span>
-    <br/>
   </ion-content>
 </ion-view>
