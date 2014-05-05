@@ -8,5 +8,12 @@
  -->
   <ion-content padding="true" class="has-header">
     Torso Partial!
+    <br/>
+    <!-- TODO: ng-switch tags for front-back -->
+    <span ng-include="'images/bodymap/bodymap-torsofront.svg'" ng-mousedown="onMouseDown($event)"></span>
+    <span ng-include="'images/bodymap/bodymap-torsoback.svg'" ng-mousedown="onMouseDown($event)"></span>
+    <br/>
+    click coordinations: {{ clickEvent }}
+
   </ion-content>
 </ion-view>
