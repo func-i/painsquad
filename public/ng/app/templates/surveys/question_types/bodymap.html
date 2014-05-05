@@ -1,8 +1,9 @@
 <section ng-controller="BodymapCtrl">
 
   <ion-list>
-    <a class="item" ui-sref="app.bodymap-{{choice.content | lowercase}}" ng-repeat="choice in question.choices">
+    <a class="item" ng-repeat="choice in question.choices" ui-sref="app.bodymap-{{choice.content | lowercase}}">
       {{ choice.content }}
+      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
     </a>
     selections: {{ selections | json }}
   </ion-list>

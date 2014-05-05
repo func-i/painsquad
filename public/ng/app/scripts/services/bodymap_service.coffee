@@ -31,4 +31,7 @@
   elementInSelection: (parentNode, element) ->
     _.contains(@selections[parentNode], element)
 
+  anyElementsInRegion: (parentNode) ->
+    _.any(@selections[parentNode])
+
 ]
