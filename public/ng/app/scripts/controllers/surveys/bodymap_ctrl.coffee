@@ -1,53 +1,27 @@
 'use strict'
 
-@controllerModule.controller "BodymapCtrl", ['$scope', '$state', ($scope, $state) ->
+@controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
   selectedFill      = "#1CAFD5"
   unselectedFill    = "#DDC9B2"
-  $scope.clickEvent = ""
-  $scope.selections = []
 
-  $scope.onMouseDown = (event) ->
-    $scope.clickEvent = getElementCoordinates(event)
+  $scope.init = () ->
+    debugger
+    $scope.selections = BodymapService.init()
 
+  # TODO: preserve selections for partials (switching between front/back doesn't preserve state)
+  # toggles selected regions in SVGs
   $scope.toggleSelection = () ->
     return unless event.target
-    element = event.target.id
-    if elementInSelection element
-      $scope.selections.splice $scope.selections.indexOf(element), 1
+    parentNode = event.target.parentNode.parentNode.id.toLowerCase()
+    element    = event.target.id
+    if BodymapService.elementInSelection(parentNode, element)
+      BodymapService.removeSeletion(parentNode, element)
       event.target.setAttribute('fill', unselectedFill)
     else
-      $scope.selections.push element
+      BodymapService.addSelection(parentNode, element)
       event.target.setAttribute('fill', selectedFill)
 
-  elementInSelection = (element) ->
-    _.contains($scope.selections, element)
-
-  getElementCoordinates = (mouseEvent) ->
-    result =
-      x: 0
-      y: 0
-
-    mouseEvent = window.event  unless mouseEvent
-    if mouseEvent.pageX or mouseEvent.pageY
-      result.x = mouseEvent.pageX
-      result.y = mouseEvent.pageY
-    else if mouseEvent.clientX or mouseEvent.clientY
-      result.x = mouseEvent.clientX + document.body.scrollLeft + document.documentElement.scrollLeft
-      result.y = mouseEvent.clientY + document.body.scrollTop + document.documentElement.scrollTop
-    if mouseEvent.target
-      offEl = mouseEvent.target
-      offX = 0
-      offY = 0
-      unless typeof (offEl.offsetParent) is "undefined"
-        while offEl
-          offX += offEl.offsetLeft
-          offY += offEl.offsetTop
-          offEl = offEl.offsetParent
-      else
-        offX = offEl.x
-        offY = offEl.y
-      result.x -= offX
-      result.y -= offY
-    result
+  # start er up
+  $scope.init()
 
 ]

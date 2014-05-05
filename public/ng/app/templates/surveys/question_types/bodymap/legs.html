@@ -1,17 +1,13 @@
 <ion-view title="Legs" hide-back-button="true">
-<!--
-  <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="nextQuestion()" ng-show="showNext">
-      Next &gt;
-    </button>
-  </ion-nav-buttons>
- -->
+
+  <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div>
+
   <ion-content padding="true" class="has-header">
     Legs Partial!
     <br/>
     <span ng-include="'images/bodymap/bodymap-legs.svg'" ng-mousedown="onMouseDown($event)"></span>
     <br/>
     click coordinations: {{ clickEvent }}
-
   </ion-content>
+
 </ion-view>

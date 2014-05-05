@@ -1,15 +1,10 @@
 <section ng-controller="BodymapCtrl">
 
-  <form name="currentForm">
-
-    <ion-list>
-
-      <a class="item" ui-sref="app.bodymap-{{choice.content | lowercase}}" ng-repeat="choice in question.choices">
-        {{ choice.content }}
-      </a>
-
-    </ion-list>
-
-  </form>
+  <ion-list>
+    <a class="item" ui-sref="app.bodymap-{{choice.content | lowercase}}" ng-repeat="choice in question.choices">
+      {{ choice.content }}
+    </a>
+    selections: {{ selections }}
+  </ion-list>
 
 </section>

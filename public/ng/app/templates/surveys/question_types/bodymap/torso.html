@@ -1,19 +1,35 @@
 <ion-view title="Torso" hide-back-button="true">
-<!--
-  <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="nextQuestion()" ng-show="showNext">
-      Next &gt;
-    </button>
-  </ion-nav-buttons>
- -->
-  <ion-content padding="true" class="has-header">
-    Torso Partial!
-    <br/>
-    <!-- TODO: ng-switch tags for front-back -->
-    <span ng-include="'images/bodymap/bodymap-torsofront.svg'" ng-mousedown="onMouseDown($event)"></span>
-    <span ng-include="'images/bodymap/bodymap-torsoback.svg'" ng-mousedown="onMouseDown($event)"></span>
-    <br/>
-    click coordinations: {{ clickEvent }}
+
+  <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div>
+
+  <ion-content padding="true" class="has-header" ng-controller="TorsoCtrl">
+
+    <!-- TODO: test 'active' class holds, not sticking after toggling -->
+    <div class="button-bar">
+      <a href=""
+        class="button"
+        ng-click="activeTab = 'front'"
+        ng-class="{ 'active': activeTab === 'front' }">
+          Front
+      </a>
+
+      <a href=""
+        class="button"
+        ng-click="activeTab = 'back'"
+        ng-class="{ 'active': activeTab === 'back' }">
+          Back
+      </a>
+    </div>
+
+    <div class="marginalized" ng-switch="activeTab">
+      <div ng-switch-when="front">
+        <span ng-include="'images/bodymap/bodymap-torsofront.svg'"></span>
+      </div>
+
+      <div ng-switch-when="back">
+        <span ng-include="'images/bodymap/bodymap-torsoback.svg'"></span>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
