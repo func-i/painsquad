@@ -2,11 +2,22 @@
 
   <form name="currentForm">
 
-    <ul class="list">
-      <a class="item" ng-repeat="choice in question.choices">
+    <ion-list>
+
+      <a class="item" ui-sref="app.bodymap-{{choice.content | lowercase}}" ng-repeat="choice in question.choices">
         {{ choice.content }}
       </a>
-    </ul>
+
+<!--
+      <a class="item" href="" ng-repeat="choice in question.choices">
+        {{ choice.content }}
+      </a>
+
+      <a class="item" href="" ng-repeat="choice in question.choices">
+        {{ choice.content }}
+      </a>
+ -->
+    </ion-list>
 
   </form>
 

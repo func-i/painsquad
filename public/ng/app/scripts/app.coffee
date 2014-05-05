@@ -71,6 +71,38 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         resolve: SurveyCtrl.resolve
   )
 
+  .state('app.bodymap-head'
+    url: '/surveys/bodymap/head'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/head.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-torso'
+    url: '/surveys/bodymap/torso'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/torso.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-arms'
+    url: '/surveys/bodymap/arms'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/arms.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-legs'
+    url: '/surveys/bodymap/legs'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
+        controller: 'BodymapCtrl'
+  )
+
   .state('app.survey_complete'
     url: '/surveys/complete'
     views:
