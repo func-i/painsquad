@@ -16,13 +16,13 @@ survey = Survey.create title: 'Full Assessment'
 # q1.choices.create content: 'No', value: 'false'
 
 
-# # SLIDER
-# q2 = survey.questions.create(
-#   question_type: 'slider',
-#   content:       'Rate your pain on a scale of 1 to 10',
-#   tip:           'Touch the slider yo'
-# )
-# q2.choices.create value: nil
+# SLIDER
+q2 = survey.questions.create(
+  question_type: 'slider',
+  content:       'Rate your pain on a scale of 1 to 10',
+  tip:           'Touch the slider yo'
+)
+q2.choices.create value: "1"
 
 
 # # RADIO
