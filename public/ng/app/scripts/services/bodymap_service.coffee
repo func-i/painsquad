@@ -22,7 +22,7 @@
   removeSelection: (parentNode, element) ->
     @selections[parentNode].splice(@selections[parentNode].indexOf(element), 1)
 
-  # empties subarray
+  # reset to previous state, removing current changes
   clearRegion: (parentNode) ->
     return if _.isUndefined(@selections[parentNode])
     @selections[parentNode] = [] if @selections[parentNode].length

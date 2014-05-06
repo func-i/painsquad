@@ -3,7 +3,7 @@
   <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div> -->
 
   <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="clearSelection('torso') && back()">
+    <button class="button button-positive button-clear" ng-click="back() && clearSelection('torso')">
       Cancel
     </button>
   </ion-nav-buttons>
@@ -35,11 +35,11 @@
 
     <div class="marginalized" ng-switch="activeTab">
       <div ng-switch-when="front">
-        <span ng-include="'images/bodymap/bodymap-torsofront.svg'"></span>
+        <section bodymap-color-selector region-type="torso" ng-include="'images/bodymap/bodymap-torsofront.svg'"></section>
       </div>
 
       <div ng-switch-when="back">
-        <span ng-include="'images/bodymap/bodymap-torsoback.svg'"></span>
+        <section bodymap-color-selector region-type="torso" ng-include="'images/bodymap/bodymap-torsoback.svg'"></section>
       </div>
     </div>
 
