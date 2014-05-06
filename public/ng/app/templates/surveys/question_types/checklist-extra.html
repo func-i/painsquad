@@ -1,0 +1,22 @@
+<section class="checkbox-extra" ng-controller="ChecklistExtraCtrl">
+
+  <!-- TODO: validate 'other' as $valid only if text inputted -->
+  <form name="currentForm" valid-form>
+    <ul>
+      <div ng-repeat="choice in question.choices">
+        <li class="item item-checkbox">
+            <label class="checkbox">
+              <input
+                type="checkbox"
+                ng-required="atLeastOneSelected(question.choices)"
+                ng-model="choice.selected"
+                ng-change="disableIfChosenNone(choice)"
+                ng-disabled="choice.disabled" />
+            </label>
+            {{ choice.content }}
+        </li>
+      </div>
+    </ul>
+  </form>
+
+</section>

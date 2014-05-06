@@ -67,15 +67,32 @@ survey = Survey.create title: 'Full Assessment'
 # q5.choices.create content: 'Other', textfield: true
 
 
-# BODY MAP
-q6 = survey.questions.create(
-  question_type: 'bodymap',
-  content: 'Where did it hurt since your last report?'
+# # BODY MAP
+# q6 = survey.questions.create(
+#   question_type: 'bodymap',
+#   content: 'Where did it hurt since your last report?'
+# )
+# q6.choices.create content: 'Head'
+# q6.choices.create content: 'Torso'
+# q6.choices.create content: 'Arms'
+# q6.choices.create content: 'Legs'
+
+
+# CHECKLIST EXTRA
+q7 = survey.questions.create(
+  question_type: 'checklist-extra',
+  content: 'What meidcations have you taken to reduce your pain since your last report?'
 )
-q6.choices.create content: 'Head'
-q6.choices.create content: 'Torso'
-q6.choices.create content: 'Arms'
-q6.choices.create content: 'Legs'
+q7.choices.create content: 'None'
+q7.choices.create content: 'Acetaminophen (Tylenol)'
+q7.choices.create content: 'Ibuprofen (Advil)'
+q7.choices.create content: 'Naproxen'
+q7.choices.create content: 'Codeine'
+q7.choices.create content: 'Morphine (short-acting)'
+q7.choices.create content: 'Morphine (long-acting)'
+q7.choices.create content: 'Gabapentin'
+q7.choices.create content: 'Amitriptyline'
+q7.choices.create content: 'Other', textfield: true
 
 
 # # TEXTBOX
