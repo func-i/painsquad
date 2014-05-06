@@ -71,6 +71,38 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         resolve: SurveyCtrl.resolve
   )
 
+  .state('app.bodymap-head'
+    url: '/surveys/bodymap/head'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/head.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-torso'
+    url: '/surveys/bodymap/torso'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/torso.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-arms'
+    url: '/surveys/bodymap/arms'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/arms.html'
+        controller: 'BodymapCtrl'
+  )
+
+  .state('app.bodymap-legs'
+    url: '/surveys/bodymap/legs'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
+        controller: 'BodymapCtrl'
+  )
+
   .state('app.survey_complete'
     url: '/surveys/complete'
     views:
@@ -79,6 +111,17 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         controller: 'CompleteSurveyCtrl'
   )
 
-@painSquad.run ($ionicPlatform) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
+  $rootScope.$state       = $state
+  $rootScope.$stateParams = $stateParams
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+    # to be used for back button *won't work when page is reloaded.
+    $rootScope.previousState_name   = fromState.name
+    $rootScope.previousState_params = fromParams
+
+  #back button function called from back button's ng-click="back()"
+  $rootScope.back = ->
+    $state.go $rootScope.previousState_name, $rootScope.previousState_params
+
   $ionicPlatform.ready ->
     StatusBar.styleDefault() if window.StatusBar

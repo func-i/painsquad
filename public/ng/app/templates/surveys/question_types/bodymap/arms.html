@@ -1,0 +1,48 @@
+<ion-view title="Arms" hide-back-button="true">
+
+  <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div> -->
+
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear" ng-click="back() && clearSelection('arms')">
+      Cancel
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Save
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header" ng-controller="ArmCtrl">
+
+    <!-- TODO: test 'active' class holds, not sticking after toggling -->
+    <div class="button-bar">
+      <a href=""
+        class="button"
+        ng-click="activeTab = 'left'"
+        ng-class="{ 'active': activeTab === 'left' }">
+          Left
+      </a>
+
+      <a href=""
+        class="button"
+        ng-click="activeTab = 'right'"
+        ng-class="{ 'active': activeTab === 'right' }">
+          Right
+      </a>
+    </div>
+
+    <div class="marginalized" ng-switch="activeTab">
+      <div ng-switch-when="left">
+        <span ng-include="'images/bodymap/bodymap-armleft.svg'"></span>
+      </div>
+
+      <div ng-switch-when="right">
+        <span ng-include="'images/bodymap/bodymap-armright.svg'"></span>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+
