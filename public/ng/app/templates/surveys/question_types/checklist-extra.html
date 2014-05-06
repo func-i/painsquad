@@ -4,10 +4,31 @@
   <form name="currentForm" valid-form>
     <ul>
       <div ng-repeat="choice in question.choices">
+
+        <li class="item item-checkbox">
+          <label class="checkbox">
+            <input type="checkbox"
+              ng-click="goToDetailedView(choice)"
+              ng-model="choice.selected"
+              ng-required="atLeastOneSelection()"
+              ng-change="disableIfNoneChosen(choice)"
+              ng-disabled="choice.disabled" />
+          </label>
+          {{ choice.content }}
+          <span class="icon-right ion-chevron-right" style="float: right;"
+            ng-hide="choice.content == 'None'"></span>
+        </li>
+
+      </div>
+    </ul>
+  </form>
+
+<!--
+    <ul>
+      <div ng-repeat="choice in question.choices">
         <li class="item item-checkbox">
             <label class="checkbox">
-              <input
-                type="checkbox"
+              <input type="checkbox"
                 ng-required="atLeastOneSelected(question.choices)"
                 ng-model="choice.selected"
                 ng-change="disableIfChosenNone(choice)"
@@ -17,6 +38,6 @@
         </li>
       </div>
     </ul>
-  </form>
+ -->
 
 </section>

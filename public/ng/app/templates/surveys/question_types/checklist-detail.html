@@ -1,0 +1,21 @@
+<ion-view title="{{ choice }}" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Cancel
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Save
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header">
+    Hello World, dynamic view should go here
+    choice: {{ choice | json }}
+
+  </ion-content>
+
+</ion-view>

@@ -6,7 +6,6 @@ user = User.create username: 'test user', email: 'test@email.com', password: 'pa
 # Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-
 # # BOOLEAN
 # q1 = survey.questions.create(
 #   question_type: 'boolean',
@@ -22,7 +21,7 @@ survey = Survey.create title: 'Full Assessment'
 #   content:       'Rate your pain on a scale of 1 to 10',
 #   tip:           'Touch the slider yo'
 # )
-# q2.choices.create value: nil
+# q2.choices.create value: "1"
 
 
 # # RADIO
@@ -81,7 +80,7 @@ survey = Survey.create title: 'Full Assessment'
 # CHECKLIST EXTRA
 q7 = survey.questions.create(
   question_type: 'checklist-extra',
-  content: 'What meidcations have you taken to reduce your pain since your last report?'
+  content: 'What medications have you taken to reduce your pain since your last report?'
 )
 q7.choices.create content: 'None'
 q7.choices.create content: 'Acetaminophen (Tylenol)'
