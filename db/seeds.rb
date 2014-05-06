@@ -38,17 +38,17 @@ survey = Survey.create title: 'Full Assessment'
 # q3.choices.create content: '10-12 hours'
 
 
-# CHECKLIST
-q4 = survey.questions.create(
-  question_type: 'checklist',
-  content:       'What do you think your pain was due to?',
-)
-q4.choices.create content: 'None'
-q4.choices.create content: 'Your treatments'
-q4.choices.create content: 'Medical Conditions'
-q4.choices.create content: 'Medical Procedures'
-q4.choices.create content: 'Everyday Pain'
-q4.choices.create content: 'Other (please list)', textfield: true
+# # CHECKLIST
+# q4 = survey.questions.create(
+#   question_type: 'checklist',
+#   content:       'What do you think your pain was due to?',
+# )
+# q4.choices.create content: 'None'
+# q4.choices.create content: 'Your treatments'
+# q4.choices.create content: 'Medical Conditions'
+# q4.choices.create content: 'Medical Procedures'
+# q4.choices.create content: 'Everyday Pain'
+# q4.choices.create content: 'Other (please list)', textfield: true
 
 
 # # CHECKLIST GRID

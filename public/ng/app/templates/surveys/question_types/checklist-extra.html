@@ -8,8 +8,9 @@
         <li class="item item-checkbox">
           <label class="checkbox">
             <input type="checkbox"
-              ng-click="goToDetailedView()"
+              ng-click="goToSection()"
               ng-model="choice.selected"
+              ng-required="atLeastOne()"
               ng-disabled="choice.disabled" />
           </label>
           {{ choice.content }}

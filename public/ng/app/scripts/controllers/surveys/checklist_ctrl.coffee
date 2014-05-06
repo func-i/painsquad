@@ -10,15 +10,9 @@
 
   $scope.disableAllChoices = () ->
     _.each $scope.question.choices, (choice) ->
-      unless choice.content is 'None'
+      if choice.content isnt 'None'
+        choice.selected = false
         choice.disabled = !choice.disabled
-      # choice.disabled = !choice.disabled unless choice.content is 'None'
-
-  # $scope.toggleSelections = (choices) ->
-  #   _.each choices, (choice) ->
-  #     if choice.content isnt 'None'
-  #       choice.selected = false
-  #       choice.disabled = !choice.disabled
 
   $scope.atLeastOne = () ->
     atLeastOne = _.some $scope.question.choices, (choice) ->

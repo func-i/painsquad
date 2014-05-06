@@ -11,7 +11,7 @@
   'ngResource',
   'ngCookies',
   'ngSanitize',
-  'lodash'
+  'underscore'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
