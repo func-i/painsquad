@@ -3,27 +3,44 @@
 @controllerModule.controller "ChecklistExtraCtrl", ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) ->
 
   # convenience method to pass choice object to dynamic checklist detail view
-  $scope.goToDetailedView = (choice) ->
-    if choice.content is 'None'
-      $scope.deselectElements()
-      console.log "None selected, doing stuff here"
+  $scope.goToDetailedView = () ->
+    if @choice.content is 'None'
+      $scope.deselectAll()
     else
       $state.go('app.checklist-detail', { 'choice': choice.content })
 
-  # $scope.isNotNone = (choice) ->
-  #   debugger
-  #   choice.content isnt 'None'
+  $scope.deselectAll = () ->
+  _.each $scope.question.choices, (choice) ->
+    choice.selected = false unless choice.content is 'None'
+
   $scope.isNotNone = () ->
-    if @choice.content is 'None'
-      false
-    else
-      true
+    if @choice.content is 'None' then false else true
 
-  $scope.deselectElements = () ->
-    _.each $scope.question.choices, (choice) ->
-      if choice.content isnt 'None'
-        choice.selected = false
+  # $scope.deselectElements = () ->
+  #   debugger
+  #   _.each $scope.question.choices, (choice) ->
+  #     if choice.content isnt 'None'
+  #       choice.selected = false
 
-  # console.log "Checklist Extra Ctrl instantiated!"
-  # $scope.choice = $stateParams.choice
+  # # add/removes item from $scope.selection array
+  # # triggers disableAll if 'None' selected
+  # $scope.disableIfChosenNone = (choice) ->
+  #   if choice.content is 'None'
+  #     $scope.toggleAllChoiceDisabled()
+
+  # $scope.toggleAllChoiceDisabled = () ->
+  #   _.each $scope.question.choices, (choice) ->
+  #     choice.disabled = !choice.disabled if choice.content isnt 'None'
+  #   $scope.deselectElements()
+
+  # $scope.deselectElements = () ->
+  #   _.each $scope.question.choices, (choice) ->
+  #     if choice.content isnt 'None'
+  #       choice.selected = false
+
+  # $scope.atLeastOneSelected = (choices) ->
+  #   atLeastOne = _.some choices, (choice) ->
+  #     choice.selected
+  #   !atLeastOne
+
 ]

@@ -4,22 +4,24 @@
 
   # add/removes item from $scope.selection array
   # triggers disableAll if 'None' selected
-  $scope.disableIfChosenNone = (choice) ->
-    if choice.content is 'None'
-      $scope.toggleAllChoiceDisabled()
+  $scope.disableIfNone = () ->
+    if @choice.content is 'None'
+      $scope.disableAllChoices()
 
-  $scope.toggleAllChoiceDisabled = () ->
+  $scope.disableAllChoices = () ->
     _.each $scope.question.choices, (choice) ->
-      choice.disabled = !choice.disabled if choice.content isnt 'None'
-    $scope.deselectElements()
+      unless choice.content is 'None'
+        choice.disabled = !choice.disabled
+      # choice.disabled = !choice.disabled unless choice.content is 'None'
 
-  $scope.deselectElements = () ->
-    _.each $scope.question.choices, (choice) ->
-      if choice.content isnt 'None'
-        choice.selected = false
+  # $scope.toggleSelections = (choices) ->
+  #   _.each choices, (choice) ->
+  #     if choice.content isnt 'None'
+  #       choice.selected = false
+  #       choice.disabled = !choice.disabled
 
-  $scope.atLeastOneSelected = (choices) ->
-    atLeastOne = _.some choices, (choice) ->
+  $scope.atLeastOne = () ->
+    atLeastOne = _.some $scope.question.choices, (choice) ->
       choice.selected
     !atLeastOne
 

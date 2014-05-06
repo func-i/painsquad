@@ -8,10 +8,8 @@
         <li class="item item-checkbox">
           <label class="checkbox">
             <input type="checkbox"
-              ng-click="goToDetailedView(choice)"
+              ng-click="goToDetailedView()"
               ng-model="choice.selected"
-              ng-required="atLeastOneSelection()"
-              ng-change="disableIfNoneChosen(choice)"
               ng-disabled="choice.disabled" />
           </label>
           {{ choice.content }}
@@ -22,22 +20,5 @@
       </div>
     </ul>
   </form>
-
-<!--
-    <ul>
-      <div ng-repeat="choice in question.choices">
-        <li class="item item-checkbox">
-            <label class="checkbox">
-              <input type="checkbox"
-                ng-required="atLeastOneSelected(question.choices)"
-                ng-model="choice.selected"
-                ng-change="disableIfChosenNone(choice)"
-                ng-disabled="choice.disabled" />
-            </label>
-            {{ choice.content }}
-        </li>
-      </div>
-    </ul>
- -->
 
 </section>
