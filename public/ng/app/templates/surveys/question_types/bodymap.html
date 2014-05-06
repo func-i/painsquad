@@ -1,13 +1,11 @@
 <section ng-controller="BodymapCtrl">
 
-  <form name="currentForm">
-
-    <ul class="list">
-      <a class="item" ng-repeat="choice in question.choices">
-        {{ choice.content }}
-      </a>
-    </ul>
-
-  </form>
+  <ion-list>
+    <a class="item" ng-repeat="choice in question.choices" ui-sref="app.bodymap-{{choice.content | lowercase}}">
+      {{ choice.content }}
+      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
+    </a>
+    selections: {{ selections | json }}
+  </ion-list>
 
 </section>
