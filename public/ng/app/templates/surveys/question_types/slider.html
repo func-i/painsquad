@@ -1,13 +1,9 @@
 <section ng-controller="SliderCtrl">
 
-  <form name="currentForm" valid-form>
+  <form name="currentForm" valid-radio-form>
     <div class="range range-positive">
       <input required
         type="range"
-        name="slider"
-        min="0"
-        max="100"
-        ng-value="0"
         ng-model="question.choices[0].value">
     </div>
     {{ question.choices[0].value | sliderFilter }}
