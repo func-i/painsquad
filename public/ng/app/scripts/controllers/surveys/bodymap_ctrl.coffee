@@ -5,15 +5,16 @@
 @controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
   $scope.selections = BodymapService.getSelections()
 
-  $scope.contentSaved = (region) ->
-    BodymapService.anyElementsInRegion(region.toLowerCase())
+  $scope.contentSaved = (painRegion) ->
+    BodymapService.anyElementsInRegion(painRegion.toLowerCase())
 
-  $scope.clearSelection = (pain_region) ->
-    BodymapService.clearRegion(pain_region)
+  $scope.clearSelection = (painRegion) ->
+    BodymapService.clearRegion(painRegion)
 
-  $scope.saveSelection = (pain_region, currentSelections) ->
+  $scope.saveSelection = (painRegion, currentSelections) ->
+    debugger
     console.log "here is where we save selections to BodymapService"
-    console.log pain_region
+    console.log painRegion
     console.log currentSelections
 
 ]

@@ -1,6 +1,6 @@
 'use strict'
 
-@directiveModule.directive 'bodymapColorSelector', () ->
+@directiveModule.directive 'bodymapSelector', () ->
 
   selectedFill   = '#1CAFD5'
   unselectedFill = '#DDC9B2'
