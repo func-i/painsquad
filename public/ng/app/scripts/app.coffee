@@ -76,7 +76,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     views:
       menuContent:
         templateUrl: 'templates/surveys/question_types/checklist-detail.html'
-        controller: 'ChecklistExtraDetailCtrl'
+        controller: 'ChecklistDetailCtrl'
   )
 
   .state('app.survey_complete'
