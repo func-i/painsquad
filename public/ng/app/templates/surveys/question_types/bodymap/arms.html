@@ -18,14 +18,14 @@
 
     <!-- TODO: test 'active' class holds, not sticking after toggling -->
     <div class="button-bar">
-      <a href=""
+      <a href
         class="button"
         ng-click="activeTab = 'left'"
         ng-class="{ 'active': activeTab === 'left' }">
           Left
       </a>
 
-      <a href=""
+      <a href
         class="button"
         ng-click="activeTab = 'right'"
         ng-class="{ 'active': activeTab === 'right' }">
@@ -34,12 +34,14 @@
     </div>
 
     <div class="marginalized" ng-switch="activeTab">
+      <!-- TODO: use show/hide instead of switch?
+      because this way it won't re-render the SVGs, instead persist them -->
       <div ng-switch-when="left">
-        <span ng-include="'images/bodymap/bodymap-armleft.svg'"></span>
+        <body-map svg-path="images/bodymap/bodymap-armleft.svg" region-type="arms" ng-model="tempSelections"></body-map>
       </div>
 
       <div ng-switch-when="right">
-        <span ng-include="'images/bodymap/bodymap-armright.svg'"></span>
+        <body-map svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" ng-model="tempSelections"></body-map>
       </div>
     </div>
 

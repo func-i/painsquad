@@ -16,7 +16,7 @@
 
   <ion-content padding="true" class="has-header" ng-controller="TorsoCtrl">
 
-    <!-- TODO: test 'active' class holds, not sticking after toggling -->
+    <!-- TODO: test 'active' ng-class - not sticking after toggling -->
     <div class="button-bar">
       <a href=""
         class="button"
@@ -35,12 +35,13 @@
 
     <div class="marginalized" ng-switch="activeTab">
       <div ng-switch-when="front">
-        <section bodymap-color-selector region-type="torso" ng-include="'images/bodymap/bodymap-torsofront.svg'"></section>
+        <body-map svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" ng-model="tempSelections"></body-map>
       </div>
 
       <div ng-switch-when="back">
-        <section bodymap-color-selector region-type="torso" ng-include="'images/bodymap/bodymap-torsoback.svg'"></section>
+        <body-map svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" ng-model="tempSelections"></body-map>
       </div>
+      Head Selections: {{tempSelections}}
     </div>
 
   </ion-content>

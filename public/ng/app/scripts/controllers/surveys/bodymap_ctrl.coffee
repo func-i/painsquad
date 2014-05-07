@@ -6,13 +6,14 @@
   $scope.selections     = BodymapService.getSelections()
   # $scope.tempSelections = []
 
-  $scope.contentSaved = (painRegion) ->
-    BodymapService.anyElementsInRegion(painRegion.toLowerCase())
+  # $scope.contentSaved = (painRegion) ->
+  #   BodymapService.anyElementsInRegion(painRegion.toLowerCase())
 
-  $scope.clearSelection = (painRegion) ->
-    BodymapService.clearRegion(painRegion)
+  # $scope.clearSelection = (painRegion) ->
+  #   BodymapService.clearRegion(painRegion)
 
   $scope.saveSelection = (painRegion) ->
+    return if _.isUndefined(@tempSelections)
     $scope.selections[painRegion] = @tempSelections
 
 ]
