@@ -1,4 +1,4 @@
-<ion-view title="{{ choice }}" hide-back-button="true">
+  <ion-view title="{{ choice }}" hide-back-button="true">
 
   <ion-nav-buttons side="left">
     <button class="button button-positive button-clear" ng-click="back()">
@@ -13,16 +13,37 @@
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header checklist-detail">
-    <p>How helpful was this in reducing your pain?</p>
+
+    <div ng-show="isOther">
+      <p>Please specify what other medications you took</p>
+      <label class="item item-input">
+        <textarea
+        placeholder="Please specify"
+        rows="5"></textarea>
+      </label>
       <div class="range" ng-class="{ 'range-positive': !sliderDisable, 'range-assertive': sliderDisable }">
         <input type="range"
-          name="slider"
-          min="0"
-          max="100"
-          ng-model="currentValue"
-          ng-disabled="sliderDisable">
+        name="slider"
+        min="0"
+        max="100"
+        ng-model="currentValue"
+        ng-disabled="sliderDisable">
+      </div>
+      {{ currentValue | sliderFilter }}
     </div>
-    {{ currentValue | sliderFilter }}
+
+    <div ng-show="!isOther">
+      <p>How helpful was this in reducing your pain?</p>
+        <div class="range" ng-class="{ 'range-positive': !sliderDisable, 'range-assertive': sliderDisable }">
+          <input type="range"
+            name="slider"
+            min="0"
+            max="100"
+            ng-model="currentValue"
+            ng-disabled="sliderDisable">
+      </div>
+      {{ currentValue | sliderFilter }}
+    </div>
 
     <section class="slider-disable">
       <li class="item item-checkbox">
