@@ -6,27 +6,32 @@
   unselectedFill = '#DDC9B2'
 
   restrict: 'A'
+  scope: true
+  #   parent: '='
+  #   regionType: '='
 
   link: (scope, elem, attr) ->
     $svg               = elem.find('svg')
     $paths             = $svg.find('path')
-    $currentSelections = if scope.selections[attr.regionType].length then scope.selections[attr.regionType] else []
+    scope.currentSelections = if scope.selections[attr.regionType].length then scope.selections[attr.regionType]
 
     regionInSelection = (selections, parentNode, region) ->
       _.contains(selections, region)
 
     addRegion = (parentNode, region) ->
-      $currentSelections.push(region)
+      scope.$apply ->
+        debugger
+        scope.currentSelections.push(region)
       # scope.selections[parentNode].push region
 
     removeRegion = (parentNode, region) ->
-      $currentSelections.splice($currentSelections.indexOf(region), 1)
+      scope.currentSelections.splice(scope.currentSelections.indexOf(region), 1)
       # scope.selections[parentNode].splice(scope.selections[parentNode].indexOf(region), 1)
 
     $paths.bind 'click', ->
       parentNode = event.target.parentNode.id
       region     = event.target.id
-      if regionInSelection($currentSelections, parentNode, region)
+      if regionInSelection(scope.currentSelections, parentNode, region)
         removeRegion(parentNode, region)
         event.target.setAttribute('fill', unselectedFill)
       else

@@ -9,12 +9,14 @@
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveSelection('head', currentSelections)">
+    <button class="button button-positive button-clear" ng-click="saveSelection('head', currentSelections) && back()">
       Save
     </button>
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header">
-    <section bodymap-color-selector region-type="head" ng-include="'images/bodymap/bodymap-head.svg'"></section>
+    <!-- <section bodymap-color-selector region-type="head" ng-include="'images/bodymap/bodymap-head.svg'" parent="$parent"></section> -->
+    Head Selections: {{headSelections}}
+    <body-map svg-path="images/bodymap/bodymap-head.svg" ng-model="headSelections"></body-map>
   </ion-content>
 </ion-view>
