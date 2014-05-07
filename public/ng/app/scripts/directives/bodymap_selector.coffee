@@ -8,8 +8,7 @@
   restrict: 'A'
 
   link: (scope, elem, attr) ->
-    $svg               = elem.find('svg')
-    $paths             = $svg.find('path')
+    $paths             = angular.element(document.querySelector('#selections')).find('path')
     $currentSelections = if scope.selections[attr.regionType].length then scope.selections[attr.regionType] else []
 
     regionInSelection = (selections, parentNode, region) ->

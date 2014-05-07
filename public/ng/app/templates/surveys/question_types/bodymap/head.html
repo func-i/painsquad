@@ -3,18 +3,20 @@
   <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header-partial.html'"></div> -->
 
   <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="back() && clearSelection('head')">
+    <button class="button button-positive button-clear" ng-click="back()">
       Cancel
     </button>
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveSelection('head', currentSelections)">
+    <button class="button button-positive button-clear" ng-click="back() && saveSelection('head')">
       Save
     </button>
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header">
-    <section bodymap-selector region-type="head" ng-include="'images/bodymap/bodymap-head.svg'"></section>
+    <!-- <section bodymap-selector region-type="head" ng-include="'images/bodymap/bodymap-head.svg'"></section> -->
+    <body-map svg-path="images/bodymap/bodymap-head.svg" region-type="head" ng-model="tempSelections"></body-map>
+    Head Selections: {{tempSelections}}
   </ion-content>
 </ion-view>
