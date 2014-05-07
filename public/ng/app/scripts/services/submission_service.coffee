@@ -22,10 +22,14 @@
         @addSliderAnswer(answerObj)
       when 'textbox'
         @addTextboxAnswer(answerObj)
+      when 'checklist-extra'
+        console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
+      when 'bodymap'
+        console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
       when 'boolean'
         # do nothing
       else
-        console.log "invalid question type detected: #{answerObj}"
+        console.log "invalid question type detected: #{answerObj.question_type}"
 
   # adds choice_ids for basic selection questions
   addSelectionAnswer: (answerObj) ->

@@ -1,16 +1,14 @@
-<section class="checkbox" ng-controller="ChecklistCtrl">
+<section class="checklist" ng-controller="ChecklistCtrl">
 
-  <!-- TODO: validate 'other' as $valid only if text inputted -->
   <form name="currentForm" valid-form>
     <ul>
       <div ng-repeat="choice in question.choices">
         <li class="item item-checkbox">
             <label class="checkbox">
-              <input
-                type="checkbox"
-                ng-required="atLeastOneSelected(question.choices)"
+              <input type="checkbox"
+                ng-required="atLeastOne()"
                 ng-model="choice.selected"
-                ng-change="disableIfChosenNone(choice)"
+                ng-change="disableIfNone()"
                 ng-disabled="choice.disabled" />
             </label>
             {{ choice.content }}

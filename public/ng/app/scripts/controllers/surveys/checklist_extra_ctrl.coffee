@@ -1,12 +1,16 @@
 'use strict'
 
-@controllerModule.controller "ChecklistCtrl", ['$scope', '$state', ($scope, $state) ->
+@controllerModule.controller "ChecklistExtraCtrl", ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) ->
 
-  # add/removes item from $scope.selection array
-  # triggers disableAll if 'None' selected
-  $scope.disableIfNone = () ->
+  # convenience method to pass choice object to dynamic checklist detail view
+  $scope.goToSection = () ->
     if @choice.content is 'None'
       $scope.disableAllChoices()
+    else
+      $state.go('app.checklist-detail', { 'choice': @choice.content })
+
+  $scope.isNotNone = () ->
+    if @choice.content is 'None' then false else true
 
   $scope.disableAllChoices = () ->
     _.each $scope.question.choices, (choice) ->

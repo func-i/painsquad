@@ -1,14 +1,12 @@
 // modules are sass-only styles (variables, mixins, overrides)
-@import "modules/overrides";
+@import "modules/layout";
 
 // partials are view and template-related styles
 @import "partials/intro",
         "partials/buttons",
-        "partials/sidebar";
+        "partials/sidebar",
+        "partials/textarea";
 
 // form-specific styles
-@import "partials/forms/checkbox-grid",
-        "partials/forms/checkbox",
-        "partials/forms/textbox";
-
-// vendor is imported/required styles
+@import "partials/forms/checklist",
+        "partials/forms/checklist-grid";
