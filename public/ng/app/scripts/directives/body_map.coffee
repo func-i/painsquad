@@ -20,14 +20,14 @@
       $paths   = $svg.find('path')
 
       $paths.bind 'click', ->
-        if @getAttribute('fill') is '#1CAFD5'
+        if @getAttribute('fill') is selectedFill
           @setAttribute('fill', unselectedFill)
         else
           @setAttribute('fill', selectedFill)
 
         selections = []
         for path in $paths
-          selections.push path.id if path.getAttribute('fill') is '#1CAFD5'
+          selections.push path.id if path.getAttribute('fill') is selectedFill
 
         scope.$apply ->
           scope[attributes.ngModel] = selections
