@@ -1,9 +1,9 @@
-<section class="checkbox-grid" ng-controller="ChecklistGridCtrl">
+<section class="checklist-grid" ng-controller="ChecklistGridCtrl">
 
   <!-- TODO: validate 'other' as $valid only if text inputted -->
   <form name="currentForm" valid-form>
     <div class="row grid-list">
-      <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}" >
+      <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}">
 
         <label class="checkbox content">
           {{ choice.content }}

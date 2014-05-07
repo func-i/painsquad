@@ -12,10 +12,27 @@
     </button>
   </ion-nav-buttons>
 
-  <ion-content padding="true" class="has-header">
-    Hello World, dynamic view should go here
-    <br/>
-    choice: {{ choice | json }}
+  <ion-content padding="true" class="has-header checklist-detail">
+    <p>How helpful was this in reducing your pain?</p>
+      <div class="range" ng-class="{ 'range-positive': !sliderDisable, 'range-assertive': sliderDisable }">
+        <input type="range"
+          name="slider"
+          min="0"
+          max="100"
+          ng-model="currentValue"
+          ng-disabled="sliderDisable">
+    </div>
+    {{ currentValue | sliderFilter }}
+
+    <section class="slider-disable">
+      <li class="item item-checkbox">
+       <label class="checkbox">
+         <input type="checkbox"
+          ng-model="sliderDisable">
+       </label>
+       Don't Know
+     </li>
+    </section>
 
   </ion-content>
 
