@@ -6,7 +6,6 @@ user = User.create username: 'test user', email: 'test@email.com', password: 'pa
 # Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-
 # # BOOLEAN
 # q1 = survey.questions.create(
 #   question_type: 'boolean',
@@ -22,7 +21,7 @@ survey = Survey.create title: 'Full Assessment'
 #   content:       'Rate your pain on a scale of 1 to 10',
 #   tip:           'Touch the slider yo'
 # )
-# q2.choices.create value: nil
+# q2.choices.create value: "1"
 
 
 # # RADIO
@@ -67,15 +66,33 @@ survey = Survey.create title: 'Full Assessment'
 # q5.choices.create content: 'Other', textfield: true
 
 
-# BODY MAP
+
+# CHECKLIST EXTRA
 q6 = survey.questions.create(
-  question_type: 'bodymap',
-  content: 'Where did it hurt since your last report?'
+  question_type: 'checklist-extra',
+  content: 'What medications have you taken to reduce your pain since your last report?'
 )
-q6.choices.create content: 'Head'
-q6.choices.create content: 'Torso'
-q6.choices.create content: 'Arms'
-q6.choices.create content: 'Legs'
+q6.choices.create content: 'None'
+q6.choices.create content: 'Acetaminophen (Tylenol)'
+q6.choices.create content: 'Ibuprofen (Advil)'
+q6.choices.create content: 'Naproxen'
+q6.choices.create content: 'Codeine'
+q6.choices.create content: 'Morphine (short-acting)'
+q6.choices.create content: 'Morphine (long-acting)'
+q6.choices.create content: 'Gabapentin'
+q6.choices.create content: 'Amitriptyline'
+q6.choices.create content: 'Other', textfield: true
+
+
+# # BODY MAP
+# q7 = survey.questions.create(
+#   question_type: 'bodymap',
+#   content: 'Where did it hurt since your last report?'
+# )
+# q7.choices.create content: 'Head'
+# q7.choices.create content: 'Torso'
+# q7.choices.create content: 'Arms'
+# q7.choices.create content: 'Legs'
 
 
 # # TEXTBOX

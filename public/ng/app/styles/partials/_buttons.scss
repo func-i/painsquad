@@ -1,6 +1,9 @@
-// centers elements
-.marginalized {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+// full-width clickable checkboxes
+label.checkbox {
+  width: 100%;
+}
+
+// set disabled checkbox styles
+input[disabled]:before {
+  border: 1px solid #EF4562;
 }

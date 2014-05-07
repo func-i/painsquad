@@ -71,6 +71,14 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         resolve: SurveyCtrl.resolve
   )
 
+  .state('app.checklist-detail'
+    url: '/surveys/checklist/detail/:choice'
+    views:
+      menuContent:
+        templateUrl: 'templates/surveys/question_types/checklist-detail.html'
+        controller: 'ChecklistDetailCtrl'
+  )
+
   .state('app.survey_complete'
     url: '/surveys/complete'
     views:
@@ -79,6 +87,17 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         controller: 'CompleteSurveyCtrl'
   )
 
-@painSquad.run ($ionicPlatform) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
+  $rootScope.$state       = $state
+  $rootScope.$stateParams = $stateParams
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+    # to be used for back button *won't work when page is reloaded.
+    $rootScope.previousState_name   = fromState.name
+    $rootScope.previousState_params = fromParams
+
+  #back button function called from back button's ng-click="back()"
+  $rootScope.back = ->
+    $state.go $rootScope.previousState_name, $rootScope.previousState_params
+
   $ionicPlatform.ready ->
     StatusBar.styleDefault() if window.StatusBar

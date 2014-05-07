@@ -1,0 +1,56 @@
+  <ion-view title="{{ choice }}" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Cancel
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="back() && saveSelection()">
+      Save
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header checklist-detail">
+
+    <div ng-hide="detailData.isOther">
+      <p>How helpful was this in reducing your pain?</p>
+    </div>
+
+    <div ng-hide="!detailData.isOther">
+      <p>Please specify what other medications you took</p>
+      <label class="item item-input">
+        <textarea rows="5"
+        placeholder="Please specify"
+        ng-model="detailData.otherMedication"></textarea>
+      </label>
+    </div>
+
+    <article>
+      <div class="range" ng-class="{ 'range-positive': !sliderDisable, 'range-assertive': sliderDisable }">
+        <input type="range"
+        name="slider"
+        min="0"
+        max="100"
+        ng-model="detailData.currentValue"
+        ng-disabled="detailData.sliderDisable">
+      </div>
+      {{ currentValue | sliderFilter }}
+
+      <div class="slider-disable">
+        <div class="item item-checkbox">
+         <label class="checkbox">
+           <input type="checkbox"
+            ng-model="detailData.sliderDisable">
+         </label>
+         Don't Know
+       </div>
+      </div>
+    </article>
+
+    detailData: {{ detailData | json }} <br/>
+
+  </ion-content>
+
+</ion-view>
