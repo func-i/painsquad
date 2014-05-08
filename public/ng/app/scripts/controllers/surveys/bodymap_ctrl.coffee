@@ -1,7 +1,6 @@
 'use strict'
 
 @controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
-  # TODO: seperate init and getSelections
   $scope.selections = BodymapService.getSelections()
 
   $scope.contentSaved = (painRegion) ->
@@ -13,15 +12,13 @@
     return if _.isUndefined(@tempSelections)
     $scope.selections[painRegion] = @tempSelections
 
-  # TODO: Fix bug where region is re-selected and 'save' is clicked with nothing selected, resets selections to nothing
-  # SHITTY BUG YO
   $scope.saveDualSelection = (painRegion) ->
     # choose-your-own-hacky-child-scope-lookup-adventure :((
-    # tempObj    = $scope.$$childTail.tempSelections
-    childElement = angular.element(document).find('body-map-dual').scope().$parent
-    tempObj      = childElement.tempSelections
-    # return if _.isEmpty(tempObj.first) && _.isEmpty(tempObj.second)
+    # tempObj        = $scope.$$childTail.tempSelections
+    childElement     = angular.element(document).find('body-map-dual').scope().$parent # <-- the worst
+    tempObj          = childElement.tempSelections
     mergedSelections = tempObj.first.concat tempObj.second
-    $scope.selections[painRegion] = mergedSelections
+    if mergedSelections.length
+      $scope.selections[painRegion] = mergedSelections
 
 ]
