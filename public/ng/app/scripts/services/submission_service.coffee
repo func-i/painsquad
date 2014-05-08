@@ -1,20 +1,24 @@
 'use strict'
 
-@serviceModule.service 'SubmissionService', ["_", (_) ->
+@serviceModule.service 'SubmissionService', ['_', 'BodymapService', (_, BodymapService) ->
 
-  # creates new singleton object
+  # new singleton object
   init: (survey_id) ->
     @submission =
       survey_id:          survey_id
       has_pain:           null
       answers_attributes: []
 
+  # retrieves singleton object
+  getSubmission: () ->
+    @submission
+
   # adds object to answer payload
   addAnswer: (answerObj) ->
     @submission.answers_attributes.push answerObj
 
   # answer object pre-requisite
-  prepareAnswer: (answerObj) ->
+  prepareAnswer: (answerObj, regionSelections = null) ->
     switch answerObj.question_type
       when 'checklist', 'radio', 'checklist-grid'
         @addSelectionAnswer(answerObj)
@@ -22,9 +26,9 @@
         @addSliderAnswer(answerObj)
       when 'textbox'
         @addTextboxAnswer(answerObj)
-      when 'checklist-extra'
-        console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
       when 'bodymap'
+        @addBodymapAnswer(answerObj, regionSelections)
+      when 'checklist-extra'
         console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
       when 'boolean'
         # do nothing
@@ -67,8 +71,10 @@
       custom_text: answerObj.choices[0].value
     @addAnswer(resultObj)
 
-  # retrieves singleton object
-  getSubmission: () ->
-    @submission
+  addBodymapAnswer: (answerObj, regionSelections) ->
+    resultObj =
+      question_id: answerObj.question_id
+      data_object: regionSelections
+    @addAnswer(resultObj)
 
 ]

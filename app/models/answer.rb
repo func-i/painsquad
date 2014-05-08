@@ -10,6 +10,8 @@ class Answer < ActiveRecord::Base
     allow_nil:                true
   }
 
+  serialize :data_object
+
   # belongs_to :question
   # has_many :choices, dependent: :destroy
   # accepts_nested_attributes_for :choices, reject_if: :all_blank

@@ -2,7 +2,7 @@
 
 @serviceModule.service 'BodymapService', ["_", (_) ->
 
-  # creates new singleton object
+  # new singleton object
   init: () ->
     @selections =
       head:  []
@@ -10,30 +10,11 @@
       arms:  []
       legs:  []
 
-  # # retrieves singleton object
+  # retrieves singleton object
   getSelections: () ->
     @selections ||= @init()
 
-  saveSelection: (parentNode, elements) ->
-    @selections[parentNode].push elements
-
-  # # adds object to answer payload
-  addSelection: (parentNode, element) ->
-    @selections[parentNode].push element
-
-  # removes object from payload
-  removeSelection: (parentNode, element) ->
-    @selections[parentNode].splice(@selections[parentNode].indexOf(element), 1)
-
-  # reset to previous state, removing current changes
-  clearRegion: (parentNode) ->
-    return if _.isUndefined(@selections[parentNode])
-    @selections[parentNode] = [] if @selections[parentNode].length
-
-  # checks if element already selected
-  elementInSelection: (parentNode, element) ->
-    _.contains(@selections[parentNode], element)
-
+  # body region 'checked' state
   anyElementsInRegion: (parentNode) ->
     _.any(@selections[parentNode])
 
