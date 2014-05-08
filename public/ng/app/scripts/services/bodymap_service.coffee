@@ -1,21 +1,22 @@
 'use strict'
 
-@serviceModule.service 'BodymapService', ["_", (_) ->
+@BodymapService = @serviceModule.service 'BodymapService', (_) ->
 
-  # new singleton object
-  init: () ->
+  init: ->
     @selections =
       head:  []
       torso: []
       arms:  []
       legs:  []
 
-  # retrieves singleton object
-  getSelections: () ->
+  getSelections: ->
     @selections ||= @init()
 
-  # body region 'checked' state
-  anyElementsInRegion: (parentNode) ->
-    _.any(@selections[parentNode])
+  anyElementsInRegion: (painRegion) ->
+    _.any(@selections[painRegion])
 
-]
+  # resets object after answer is saved
+  reset: ->
+    @init()
+
+@BodymapService.$inject = ['_']

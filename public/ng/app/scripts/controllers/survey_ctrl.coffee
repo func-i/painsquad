@@ -2,26 +2,23 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SubmissionService, BodymapService) ->
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) ->
 
-  $scope.startSurvey = () ->
+  $scope.startSurvey = ->
     $scope.submission    = SubmissionService.init(survey.id)
     $scope.questionIndex = 0
     $scope.question      = survey.questions[$scope.questionIndex]
 
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
-  $scope.nextQuestion = () ->
+  $scope.nextQuestion = ->
     if $scope.submission.has_pain is "false"
       $scope.finishSurvey()
     else
-      if $scope.question.question_type is 'bodymap'
-        SubmissionService.prepareAnswer($scope.question, BodymapService.getSelections())
-      else
-        SubmissionService.prepareAnswer($scope.question)
+      SurveyService.prepareSubmissionAnswer($scope.question)
       $scope.continueSurvey()
 
-  $scope.continueSurvey = () ->
+  $scope.continueSurvey = ->
     $scope.questionIndex++
     if $scope.questionIndex > survey.questions.length - 1
       $scope.finishSurvey()
@@ -32,7 +29,7 @@
   $scope.getChoicesPartial = (question) ->
     "/templates/surveys/question_types/#{question.question_type}.html"
 
-  $scope.finishSurvey = () ->
+  $scope.finishSurvey = ->
     $state.go('app.survey_complete')
 
   # DEFAULT ACTIONS
@@ -45,7 +42,7 @@
   $scope.$on 'currentForm:invalid', (ev) ->
     $scope.showNext = false
 
-@SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SubmissionService', 'BodymapService']
+@SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']
 
 # resolve this resource before loading the controller
 @SurveyCtrl.resolve =

@@ -28,6 +28,7 @@
         @addTextboxAnswer(answerObj)
       when 'bodymap'
         @addBodymapAnswer(answerObj, regionSelections)
+        BodymapService.reset()
       when 'checklist-extra'
         console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
       when 'boolean'
@@ -65,12 +66,14 @@
       value:       parseInt(answerObj.choices[0].value)
     @addAnswer(resultObj)
 
+  # adds custom textbox answer
   addTextboxAnswer: (answerObj) ->
     resultObj =
       question_id: answerObj.question_id
       custom_text: answerObj.choices[0].value
     @addAnswer(resultObj)
 
+  # adds bodymap object answer
   addBodymapAnswer: (answerObj, regionSelections) ->
     resultObj =
       question_id: answerObj.question_id
