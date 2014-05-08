@@ -3,13 +3,13 @@
   <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div> -->
 
   <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="back() && clearSelection('arms')">
+    <button class="button button-positive button-clear" ng-click="back()">
       Cancel
     </button>
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back()">
+    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('arms')">
       Save
     </button>
   </ion-nav-buttons>
@@ -34,17 +34,14 @@
     </div>
 
     <div class="marginalized" ng-switch="activeTab">
-      <!-- TODO: use show/hide instead of switch?
-      because this way it won't re-render the SVGs, instead persist them -->
       <div ng-switch-when="left">
-        <body-map svg-path="images/bodymap/bodymap-armleft.svg" region-type="arms" ng-model="tempSelections"></body-map>
+        <body-map-dual svg-path="images/bodymap/bodymap-armleft.svg" region-type="arms" bound-scope="first"></body-map-dual>
       </div>
 
       <div ng-switch-when="right">
-        <body-map svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" ng-model="tempSelections"></body-map>
+        <body-map-dual svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" bound-scope="second"></body-map-dual>
       </div>
     </div>
 
   </ion-content>
 </ion-view>
-

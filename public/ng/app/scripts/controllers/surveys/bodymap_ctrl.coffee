@@ -1,19 +1,19 @@
 'use strict'
 
-# TODO: preserve visual selections through partials & state rendering/re-rendering
-# TODO: preserve visual selections through ng-switch changes
 @controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
   $scope.selections     = BodymapService.getSelections()
-  # $scope.tempSelections = []
 
-  # $scope.contentSaved = (painRegion) ->
-  #   BodymapService.anyElementsInRegion(painRegion.toLowerCase())
-
-  # $scope.clearSelection = (painRegion) ->
-  #   BodymapService.clearRegion(painRegion)
+  $scope.contentSaved = (painRegion) ->
+    BodymapService.anyElementsInRegion(painRegion.toLowerCase())
 
   $scope.saveSelection = (painRegion) ->
     return if _.isUndefined(@tempSelections)
     $scope.selections[painRegion] = @tempSelections
+
+  $scope.saveDualSelection = (painRegion) ->
+    # should we use $emit instead of accessing $$childTail (incorrect!)
+    tempObj                       = $scope.$$childTail.tempSelections
+    mergedSelections              = tempObj.first.concat tempObj.second
+    $scope.selections[painRegion] = mergedSelections
 
 ]

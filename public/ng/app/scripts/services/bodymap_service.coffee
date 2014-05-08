@@ -14,6 +14,9 @@
   getSelections: () ->
     @selections ||= @init()
 
+  saveSelection: (parentNode, elements) ->
+    @selections[parentNode].push elements
+
   # # adds object to answer payload
   addSelection: (parentNode, element) ->
     @selections[parentNode].push element

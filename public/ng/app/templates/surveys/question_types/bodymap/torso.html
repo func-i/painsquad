@@ -1,31 +1,29 @@
 <ion-view title="Torso" hide-back-button="true">
 
-  <!-- <div ng-include src="'/templates/surveys/question_types/bodymap/header.html'"></div> -->
-
   <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="back() && clearSelection('torso')">
+    <button class="button button-positive button-clear" ng-click="back()">
       Cancel
     </button>
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back()">
+    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('torso')">
       Save
     </button>
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header" ng-controller="TorsoCtrl">
 
-    <!-- TODO: test 'active' ng-class - not sticking after toggling -->
+    <!-- TODO: test 'active' ng-class - not sticking after toggle -->
     <div class="button-bar">
-      <a href=""
+      <a href
         class="button"
         ng-click="activeTab = 'front'"
         ng-class="{ 'active': activeTab === 'front' }">
           Front
       </a>
 
-      <a href=""
+      <a href
         class="button"
         ng-click="activeTab = 'back'"
         ng-class="{ 'active': activeTab === 'back' }">
@@ -35,13 +33,13 @@
 
     <div class="marginalized" ng-switch="activeTab">
       <div ng-switch-when="front">
-        <body-map svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" ng-model="tempSelections"></body-map>
+        <body-map-dual svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" bound-scope="first"></body-map-dual>
       </div>
 
       <div ng-switch-when="back">
-        <body-map svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" ng-model="tempSelections"></body-map>
+        <body-map-dual svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" bound-scope="second"></body-map-dual>
       </div>
-      Head Selections: {{tempSelections}}
+      Selections: {{ tempSelections | json }} <br/>
     </div>
 
   </ion-content>
