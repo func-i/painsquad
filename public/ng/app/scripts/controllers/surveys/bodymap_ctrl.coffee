@@ -1,7 +1,7 @@
 'use strict'
 
 @controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
-  $scope.selections     = BodymapService.getSelections()
+  $scope.selections = BodymapService.getSelections()
 
   $scope.contentSaved = (painRegion) ->
     BodymapService.anyElementsInRegion(painRegion.toLowerCase())
@@ -11,9 +11,11 @@
     $scope.selections[painRegion] = @tempSelections
 
   $scope.saveDualSelection = (painRegion) ->
-    # should we use $emit instead of accessing $$childTail (incorrect!)
-    tempObj                       = $scope.$$childTail.tempSelections
-    mergedSelections              = tempObj.first.concat tempObj.second
+    # hacky scope lookup :/
+    # tempObj        = $scope.$$childTail.tempSelections
+    childElement     = angular.element(document).find('body-map-dual').scope().$parent
+    tempObj          = childElement.tempSelections
+    mergedSelections = tempObj.first.concat tempObj.second
     $scope.selections[painRegion] = mergedSelections
 
 ]

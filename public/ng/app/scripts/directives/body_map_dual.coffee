@@ -7,13 +7,13 @@
   template: '<section ng-include="getSvgPath()"></section>'
 
   link: (scope, element, attributes) ->
-    $paths = angular.element(document.querySelector('#selections')).find('path')
     scope.getSvgPath = () ->
       attributes.svgPath
 
     # Use $timeout to allow the ng-include content to load
     $timeout () ->
       $paths = angular.element(document.querySelector('#selections')).find('path')
+
       $paths.bind 'click', ->
         if @getAttribute('fill') is selectedFill
           @setAttribute('fill', unselectedFill)
