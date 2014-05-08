@@ -10,7 +10,7 @@ class Answer < ActiveRecord::Base
     allow_nil:                true
   }
 
-  serialize :data_object
+  serialize :data_object, JSON
 
   # belongs_to :question
   # has_many :choices, dependent: :destroy

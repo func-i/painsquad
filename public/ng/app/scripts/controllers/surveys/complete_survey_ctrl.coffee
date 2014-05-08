@@ -7,5 +7,4 @@
 
   $scope.submission = SubmissionService.getSubmission()
 
-
 @CompleteSurveyCtrl.$inject = ['$scope', 'SubmissionService', 'SubmissionResource']

@@ -10,7 +10,6 @@ module Api
       end
 
       def create
-        binding.pry
         if (@submission = Submission.create(submission_params))
           render json: @submission.to_json
         else
@@ -29,16 +28,14 @@ module Api
             :choice_id,
             :value,
             :custom_text,
-            { :data_object => [] }
+            data_object: [
+              head:  [],
+              torso: [],
+              arms:  [],
+              legs:  []
+            ]
           ]
         )
-        # params.require(:submission).permit(
-        #   :survey_id,
-        #   :has_pain,
-        #   answers_attributes: [:question_id, :choice_id, :value, :custom_text,
-        #     data_object: []
-        #   ]
-        # )
       end
 
       def fetch_submission

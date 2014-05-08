@@ -1,6 +1,7 @@
 'use strict'
 
 @controllerModule.controller "BodymapCtrl", ['$scope', '$state', 'BodymapService', ($scope, $state, BodymapService) ->
+  # TODO: seperate init and getSelections
   $scope.selections = BodymapService.getSelections()
 
   $scope.contentSaved = (painRegion) ->
