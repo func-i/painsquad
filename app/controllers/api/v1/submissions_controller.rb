@@ -23,7 +23,18 @@ module Api
         params.require(:submission).permit(
           :survey_id,
           :has_pain,
-          answers_attributes: [:question_id, :choice_id, :value, :custom_text]
+          answers_attributes: [
+            :question_id,
+            :choice_id,
+            :value,
+            :custom_text,
+            data_object: [
+              head:  [],
+              torso: [],
+              arms:  [],
+              legs:  []
+            ]
+          ]
         )
       end
 

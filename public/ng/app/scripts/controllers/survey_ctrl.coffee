@@ -2,43 +2,50 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ['$scope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'survey', 'BodymapService',
-  ($scope, $state, $stateParams, AuthService, SubmissionService, survey, BodymapService) ->
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SubmissionService, BodymapService) ->
 
-    $scope.startSurvey = () ->
-      $scope.submission    = SubmissionService.init(survey.id)
-      $scope.questionIndex = 0
-      $scope.question      = survey.questions[$scope.questionIndex]
+  $scope.startSurvey = () ->
+    $scope.submission    = SubmissionService.init(survey.id)
+    $scope.questionIndex = 0
+    $scope.question      = survey.questions[$scope.questionIndex]
 
-    $scope.nextQuestion = () ->
-      if $scope.submission.has_pain is "false"
-        $scope.finishSurvey()
+  # question handler, passes current choices to SubmissionService
+  # calls continueSurvey which handles rendering of next partial
+  $scope.nextQuestion = () ->
+    if $scope.submission.has_pain is "false"
+      $scope.finishSurvey()
+    else
+      if $scope.question.question_type is 'bodymap'
+        SubmissionService.prepareAnswer($scope.question, BodymapService.getSelections())
       else
         SubmissionService.prepareAnswer($scope.question)
-        $scope.questionIndex++
+      $scope.continueSurvey()
 
-        if $scope.questionIndex > survey.questions.length - 1
-          $scope.finishSurvey()
-        else
-          $scope.question = survey.questions[$scope.questionIndex]
+  $scope.continueSurvey = () ->
+    $scope.questionIndex++
+    if $scope.questionIndex > survey.questions.length - 1
+      $scope.finishSurvey()
+    else
+      $scope.question = survey.questions[$scope.questionIndex]
 
    # TODO: proper transition animations between these partials, use $state.go
-    $scope.getChoicesPartial = (question) ->
-      "/templates/surveys/question_types/#{question.question_type}.html"
+  $scope.getChoicesPartial = (question) ->
+    "/templates/surveys/question_types/#{question.question_type}.html"
 
-    $scope.finishSurvey = () ->
-      $state.go('app.survey_complete')
+  $scope.finishSurvey = () ->
+    $state.go('app.survey_complete')
 
-    # DEFAULT ACTIONS
-    $scope.startSurvey()
+  # DEFAULT ACTIONS
+  $scope.startSurvey()
+  $scope.showNext = false
+
+  $scope.$on 'currentForm:valid', (ev) ->
+    $scope.showNext = true
+
+  $scope.$on 'currentForm:invalid', (ev) ->
     $scope.showNext = false
 
-    $scope.$on 'currentForm:valid', (ev) ->
-      $scope.showNext = true
-
-    $scope.$on 'currentForm:invalid', (ev) ->
-      $scope.showNext = false
-]
+@SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SubmissionService', 'BodymapService']
 
 # resolve this resource before loading the controller
 @SurveyCtrl.resolve =
