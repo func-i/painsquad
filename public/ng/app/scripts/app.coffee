@@ -71,6 +71,14 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           resolve: SurveyCtrl.resolve
     )
 
+    .state('app.checklist-detail'
+      url: '/surveys/checklist/detail/:choice'
+      views:
+        menuContent:
+          templateUrl: 'templates/surveys/question_types/checklist-detail.html'
+          controller: 'ChecklistExtraCtrl'
+    )
+
     .state('app.bodymap-head'
       url: '/surveys/bodymap/head'
       views:
@@ -101,14 +109,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         menuContent:
           templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
           controller: 'BodymapCtrl'
-    )
-
-    .state('app.checklist-detail'
-      url: '/surveys/checklist/detail/:choice'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/checklist-detail.html'
-          controller: 'ChecklistDetailCtrl'
     )
 
     .state('app.survey_complete'

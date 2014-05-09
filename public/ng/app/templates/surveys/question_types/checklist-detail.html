@@ -1,4 +1,4 @@
-  <ion-view title="{{ choice }}" hide-back-button="true">
+  <ion-view title="{{ choiceItem.content }}" hide-back-button="true">
 
   <ion-nav-buttons side="left">
     <button class="button button-positive button-clear" ng-click="back()">
@@ -7,16 +7,12 @@
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="saveSelection() && back()">
+    <button class="button button-positive button-clear" ng-click="saveDetailSelection($stateParams.choice, detailData) && back()">
       Save
     </button>
   </ion-nav-buttons>
 
   <ion-content padding="true" class="has-header checklist-detail">
-    <button class="button button-positive button-clear" ng-click="saveSelection() && back()">
-      Save
-    </button>
-
     <div ng-hide="detailData.isOther">
       <p>How helpful was this in reducing your pain?</p>
     </div>
@@ -31,7 +27,7 @@
     </div>
 
     <section class="detail-slider">
-      <div class="range" ng-class="{ 'range-positive': !sliderDisabled, 'range-assertive': sliderDisabled }">
+      <div class="range" ng-class="{ 'range-positive': !detailData.sliderDisabled, 'range-assertive': detailData.sliderDisabled }">
         <input type="range"
         name="slider"
         min="0"
@@ -39,7 +35,7 @@
         ng-model="detailData.currentValue"
         ng-disabled="detailData.sliderDisabled">
       </div>
-      {{ currentValue | sliderFilter }}
+      {{ detailData.currentValue | sliderFilter }}
 
       <div class="slider-disable">
         <div class="item item-checkbox">

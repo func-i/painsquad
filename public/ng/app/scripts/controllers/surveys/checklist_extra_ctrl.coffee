@@ -1,30 +1,30 @@
 'use strict'
 
-@controllerModule.controller "ChecklistExtraCtrl", ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) ->
-  console.log "Checklist Extra Ctrl instantiated"
+@ChecklistExtraCtrl = @controllerModule.controller "ChecklistExtraCtrl", ($scope, $state, $stateParams) ->
 
-  # convenience method to pass choice object to dynamic checklist detail view
-  $scope.goToSectionOrDisable = () ->
+  # convenience method to pass choice object to checklist detail view
+  $scope.goToSectionOrDisable = ->
     if @choice.can_disable
       $scope.disableAllChoices()
     else
-      $state.go('app.checklist-detail', { 'choice': @choice.content })
+      $state.go('app.checklist-detail', { 'choice': @choice.id })
 
-  $scope.isNotNone = () ->
+  $scope.isNotNone = ->
     if @choice.can_disable then false else true
 
-  $scope.disableAllChoices = () ->
+  $scope.disableAllChoices = ->
     _.each $scope.question.choices, (choice) ->
       unless choice.can_disable
         choice.selected = false
         choice.disabled = !choice.disabled
 
-  $scope.atLeastOne = () ->
+  $scope.atLeastOne = ->
     atLeastOne = _.some $scope.question.choices, (choice) ->
       choice.selected
     !atLeastOne
 
-  $scope.$on 'saveDetails', (event, data) ->
+  $scope.saveDetailSelection = (choice_id, detailData) ->
     debugger
 
-]
+
+@ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams']
