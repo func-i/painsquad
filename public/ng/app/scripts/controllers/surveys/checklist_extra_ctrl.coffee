@@ -1,9 +1,10 @@
 'use strict'
 
 @controllerModule.controller "ChecklistExtraCtrl", ['$scope', '$state', '$stateParams', ($scope, $state, $stateParams) ->
+  console.log "Checklist Extra Ctrl instantiated"
 
   # convenience method to pass choice object to dynamic checklist detail view
-  $scope.goToSection = () ->
+  $scope.goToSectionOrDisable = () ->
     if @choice.content is 'None'
       $scope.disableAllChoices()
     else
@@ -22,5 +23,8 @@
     atLeastOne = _.some $scope.question.choices, (choice) ->
       choice.selected
     !atLeastOne
+
+  $scope.$on 'saveDetails', (event, data) ->
+    debugger
 
 ]
