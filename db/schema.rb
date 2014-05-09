@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 20140509172902) do
     t.boolean  "selected",    default: false
     t.boolean  "disabled",    default: false
     t.boolean  "can_disable", default: false
-    t.boolean  "is_other",    default: false
   end
 
   add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
