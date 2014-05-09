@@ -28,7 +28,7 @@
           scope.$parent.tempSelections[attributes.boundScope] = selections
 
       # redraws from ng-switch rendering
-      scope.$parent.$watch "tempSelections.#{attributes.boundScope}", (selectionArray) ->
+      scope.$parent.$watch "tempSelections.#{attributes.selectionScope}", (selectionArray) ->
         _.each selectionArray, (region) ->
           item = _.find $paths, (path) ->
             path.id is region

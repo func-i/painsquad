@@ -13,12 +13,11 @@
     $scope.selections[painRegion] = @tempSelections
 
   $scope.saveDualSelection = (painRegion) ->
-    # choose-your-own-hacky-child-scope-lookup-adventure :((
-    # tempObj        = $scope.$$childTail.tempSelections
-    childElement     = angular.element(document).find('body-map-dual').scope().$parent # <-- the worst
-    tempObj          = childElement.tempSelections
-    mergedSelections = tempObj.first.concat tempObj.second
+    $scope.$broadcast 'requestSelections'
+
+  $scope.$on 'dualSelections', (event, data) ->
+    mergedSelections = data.first.concat data.second
     if mergedSelections.length
-      $scope.selections[painRegion] = mergedSelections
+      $scope.selections[data.region] = mergedSelections
 
 ]

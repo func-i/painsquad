@@ -7,7 +7,7 @@
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('arms')">
+    <button class="button button-positive button-clear" ng-click="saveDualSelection('arms') && back()">
       Save
     </button>
   </ion-nav-buttons>
@@ -39,6 +39,8 @@
       <div ng-switch-when="right">
         <body-map-dual svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" bound-scope="second"></body-map-dual>
       </div>
+
+      tempSelections: {{ tempSelections }}
     </div>
 
   </ion-content>

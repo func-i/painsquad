@@ -1,7 +1,7 @@
 'use strict'
 
 # Parent controller responsible for handling survey navigation
-# Survey question-specific logic delegated to sub-controllers
+# Question-specific logic delegated to sub-controllers
 @SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) ->
 
   $scope.startSurvey = ->
