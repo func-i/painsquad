@@ -7,7 +7,7 @@
   </ion-nav-buttons>
 
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('torso')">
+    <button class="button button-positive button-clear" ng-click="saveDualSelection('torso') && back()">
       Save
     </button>
   </ion-nav-buttons>
@@ -33,12 +33,14 @@
 
     <div class="marginalized" ng-switch="activeTab">
       <div ng-switch-when="front">
-        <body-map-dual svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" bound-scope="first"></body-map-dual>
+        <body-map-dual svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" selection-scope="first"></body-map-dual>
       </div>
 
       <div ng-switch-when="back">
-        <body-map-dual svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" bound-scope="second"></body-map-dual>
+        <body-map-dual svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" selection-scope="second"></body-map-dual>
       </div>
+
+      tempSelections: {{ tempSelections }}
     </div>
 
   </ion-content>
