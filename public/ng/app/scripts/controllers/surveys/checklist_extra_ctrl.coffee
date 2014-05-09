@@ -5,17 +5,17 @@
 
   # convenience method to pass choice object to dynamic checklist detail view
   $scope.goToSectionOrDisable = () ->
-    if @choice.content is 'None'
+    if @choice.can_disable
       $scope.disableAllChoices()
     else
       $state.go('app.checklist-detail', { 'choice': @choice.content })
 
   $scope.isNotNone = () ->
-    if @choice.content is 'None' then false else true
+    if @choice.can_disable then false else true
 
   $scope.disableAllChoices = () ->
     _.each $scope.question.choices, (choice) ->
-      if choice.content isnt 'None'
+      unless choice.can_disable
         choice.selected = false
         choice.disabled = !choice.disabled
 
