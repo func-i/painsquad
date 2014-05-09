@@ -5,12 +5,12 @@
   # add/removes item from $scope.selection array
   # triggers disableAll if 'None' selected
   $scope.disableIfNone = () ->
-    if @choice.content is 'None'
+    if @choice.can_disable
       $scope.disableAllChoices()
 
   $scope.disableAllChoices = () ->
     _.each $scope.question.choices, (choice) ->
-      if choice.content isnt 'None'
+      unless choice.can_disable
         choice.selected = false
         choice.disabled = !choice.disabled
 
