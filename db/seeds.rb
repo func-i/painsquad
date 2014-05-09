@@ -43,7 +43,7 @@ survey = Survey.create title: 'Full Assessment'
 #   question_type: 'checklist',
 #   content:       'What do you think your pain was due to?',
 # )
-# q4.choices.create content: 'None'
+# q4.choices.create content: 'None', can_disable: true
 # q4.choices.create content: 'Your treatments'
 # q4.choices.create content: 'Medical Conditions'
 # q4.choices.create content: 'Medical Procedures'
@@ -71,7 +71,7 @@ survey = Survey.create title: 'Full Assessment'
 #   question_type: 'checklist-extra',
 #   content: 'What medications have you taken to reduce your pain since your last report?'
 # )
-# q6.choices.create content: 'None'
+# q6.choices.create content: 'None', can_disable: true
 # q6.choices.create content: 'Acetaminophen (Tylenol)'
 # q6.choices.create content: 'Ibuprofen (Advil)'
 # q6.choices.create content: 'Naproxen'
