@@ -8,10 +8,19 @@
         <li class="item item-checkbox">
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox"
+              ng-click="goToSectionOrDisable(choice)"
+              ng-model="choice.selected"
+              ng-required="atLeastOne()"
+              ng-disabled="choice.disabled" />
+
+
+<!--
+            <input type="checkbox"
               ng-click="goToSectionOrDisable()"
               ng-model="choice.selected"
               ng-required="atLeastOne()"
               ng-disabled="choice.disabled" />
+ -->
 
           </label>
           {{ choice.content }}

@@ -71,12 +71,11 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           resolve: SurveyCtrl.resolve
     )
 
-    .state('app.checklist-detail'
+    .state('app.new_survey.checklist-detail'
       url: '/surveys/checklist/detail/:choice'
       views:
         menuContent:
           templateUrl: 'templates/surveys/question_types/checklist-detail.html'
-          controller: 'ChecklistExtraCtrl'
     )
 
     .state('app.bodymap-head'

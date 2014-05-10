@@ -1,13 +1,22 @@
 'use strict'
 
-@ChecklistExtraCtrl = @controllerModule.controller "ChecklistExtraCtrl", ($scope, $state, $stateParams) ->
+@ChecklistExtraCtrl = @controllerModule.controller "ChecklistExtraCtrl", ($scope, $state, $stateParams, $ionicModal) ->
+  $scope.detailData =
+    currentChoice = {}
+
+  $ionicModal.fromTemplateUrl "templates/surveys/question_types/checklist-detail.html", (modal) ->
+    $scope.modal = modal
+  ,
+    animation: "slide-in-up"
+    scope: $scope
 
   # convenience method to pass choice object to checklist detail view
-  $scope.goToSectionOrDisable = ->
+  $scope.goToSectionOrDisable = (choice) ->
     if @choice.can_disable
       $scope.disableAllChoices()
     else
-      $state.go('app.checklist-detail', { 'choice': @choice.id })
+      $scope.detailData.currentChoice = choice
+      $scope.modal.show()
 
   $scope.isNotNone = ->
     if @choice.can_disable then false else true
@@ -23,8 +32,13 @@
       choice.selected
     !atLeastOne
 
-  $scope.saveDetailSelection = (choice_id, detailData) ->
-    debugger
+  $scope.saveDetails = (choice) ->
+    choice.selected = true
+    $scope.modal.hide()
+
+  $scope.discardDetails = (choice) ->
+    choice.selected = false
+    $scope.modal.hide()
 
 
-@ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams']
+@ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']
