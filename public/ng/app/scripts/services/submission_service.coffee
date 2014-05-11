@@ -20,7 +20,7 @@
   # answer object pre-requisite
   prepareAnswer: (answerObj, regionSelections = null) ->
     switch answerObj.question_type
-      when 'checklist', 'radio', 'checklist-grid'
+      when 'checklist', 'radio', 'checklist-grid', 'checklist-extra'
         @addSelectionAnswer(answerObj)
       when 'slider'
         @addSliderAnswer(answerObj)
@@ -29,8 +29,6 @@
       when 'bodymap'
         @addBodymapAnswer(answerObj, regionSelections)
         BodymapService.reset()
-      when 'checklist-extra'
-        console.log "TODO: Need to add answer parsing for #{answerObj.question_type}"
       when 'boolean'
         # do nothing
       else
@@ -45,7 +43,7 @@
       resultObj =
         question_id: answerObj.question_id
         choice_id:   selectedChoices[0].id
-        custom_text: selectedChoices[0].value
+        value:       selectedChoices[0].value
       @addAnswer(resultObj)
 
   # extracts items from selectedChoices and pushes to answers array
@@ -55,7 +53,8 @@
     resultObj =
       question_id: answerObj.question_id
       choice_id:   item.id
-      custom_text: item.value
+      value:       (if item.slider_disabled then "N/A" else item.value)
+      custom_text: item.custom_text
     @addAnswer(resultObj)
     @recursiveExtractAnswers(answerObj, selectedChoices)
 

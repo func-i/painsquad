@@ -38,6 +38,7 @@
 
   $scope.discardDetails = (choice) ->
     choice.selected = false
+    choice.value = null
     $scope.modal.hide()
 
 
