@@ -1,9 +1,9 @@
 'use strict'
 
 @directiveModule.directive 'validModalForm', ->
-  link: (scope) ->
-    scope.$watch 'currentForm.$dirty', (isDirty)  ->
-      if isDirty
+  link: (scope, elem, attr) ->
+    scope.$watch 'currentForm.$valid', (isValid)  ->
+      if isValid
         scope.$emit 'detailModal:valid'
       else
         scope.$emit 'detailModal:invalid'
