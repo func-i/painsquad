@@ -18,21 +18,24 @@
   </ion-header-bar>
 
   <ion-content padding="true" class="has-header checklist-detail">
-    <div ng-hide="detailData.currentChoice.textfield">
-      <p>How helpful was this in reducing your pain?</p>
-    </div>
-
-    <div ng-hide="!detailData.currentChoice.textfield">
-      <p>Please specify what other medications you took</p>
-      <label class="item item-input">
-        <textarea rows="5"
-        placeholder="Please specify"
-        ng-model="detailData.currentChoice.custom_text"></textarea>
-      </label>
-    </div>
 
     <section class="detail-slider">
+
       <form name="currentForm" valid-modal-form>
+
+        <div ng-hide="detailData.currentChoice.textfield">
+          <p>How helpful was this in reducing your pain?</p>
+        </div>
+
+        <div ng-hide="!detailData.currentChoice.textfield">
+          <p>Please specify what other medications you took</p>
+          <label class="item item-input">
+            <textarea rows="5"
+              name="custom_text"
+              placeholder="Please specify"
+              ng-model="detailData.currentChoice.custom_text"></textarea>
+          </label>
+        </div>
 
         <div class="range"
              ng-class="{ 'range-positive': !detailData.currentChoice.slider_disabled,
@@ -42,6 +45,7 @@
             name="slider"
             min="0"
             max="100"
+            ng-required="ifSliderNull(detailData.currentChoice)"
             ng-model="detailData.currentChoice.value"
             ng-disabled="detailData.currentChoice.slider_disabled"
           />
@@ -54,6 +58,7 @@
             <input
               type="checkbox"
               name="slider_disable"
+              ng-required="ifSliderNull(detailData.currentChoice)"
               ng-model="detailData.currentChoice.slider_disabled"
             />
            </label>
@@ -62,6 +67,7 @@
         </div>
 
       </form>
+
     </section>
 
     detailData: {{ detailData.currentChoice | json }} <br/>

@@ -2,6 +2,10 @@
 
 @ChecklistDetailCtrl = @controllerModule.controller "ChecklistDetailCtrl", ($scope, $state, $stateParams, $ionicModal) ->
 
+  $scope.ifSliderNull = (choice) ->
+    if choice and !(choice.value? || choice.slider_disabled is true)
+      true
+
   $scope.saveDetails = (choice) ->
     choice.selected = true
     $scope.modal.hide()

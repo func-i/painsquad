@@ -38,32 +38,32 @@ survey = Survey.create title: 'Full Assessment'
 # q3.choices.create content: '10-12 hours'
 
 
-####### CHECKLIST
-q4 = survey.questions.create(
-  question_type: 'checklist',
-  content:       'What do you think your pain was due to?',
-)
-q4.choices.create content: 'None', can_disable: true
-q4.choices.create content: 'Your treatments'
-q4.choices.create content: 'Medical Conditions'
-q4.choices.create content: 'Medical Procedures'
-q4.choices.create content: 'Everyday Pain'
-q4.choices.create content: 'Other (please list)', textfield: true
+# ####### CHECKLIST
+# q4 = survey.questions.create(
+#   question_type: 'checklist',
+#   content:       'What do you think your pain was due to?',
+# )
+# q4.choices.create content: 'None', can_disable: true
+# q4.choices.create content: 'Your treatments'
+# q4.choices.create content: 'Medical Conditions'
+# q4.choices.create content: 'Medical Procedures'
+# q4.choices.create content: 'Everyday Pain'
+# q4.choices.create content: 'Other (please list)', textfield: true
 
 
-####### CHECKLIST GRID
-q5 = survey.questions.create(
-  question_type: 'checklist-grid',
-  content: 'Touch the words that best describe how your pain felt since your last report'
-)
+# ####### CHECKLIST GRID
+# q5 = survey.questions.create(
+#   question_type: 'checklist-grid',
+#   content: 'Touch the words that best describe how your pain felt since your last report'
+# )
 
-%w(
-  Beating Burning Cramping Cruel Drilling Fearful Horrible
-  Hurting Itching Miserable Pouding Pulling Shooting Squeezing
-  Throbbing Unbearable Uncomfortable Whining
-).each { |content| q5.choices.create content: content }
+# %w(
+#   Beating Burning Cramping Cruel Drilling Fearful Horrible
+#   Hurting Itching Miserable Pouding Pulling Shooting Squeezing
+#   Throbbing Unbearable Uncomfortable Whining
+# ).each { |content| q5.choices.create content: content }
 
-q5.choices.create content: 'Other', textfield: true
+# q5.choices.create content: 'Other', textfield: true
 
 
 ####### CHECKLIST EXTRA
