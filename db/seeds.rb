@@ -66,7 +66,7 @@ survey = Survey.create title: 'Full Assessment'
 # q5.choices.create content: 'Other', textfield: true
 
 
-# # CHECKLIST EXTRA
+# CHECKLIST EXTRA
 # q6 = survey.questions.create(
 #   question_type: 'checklist-extra',
 #   content: 'What medications have you taken to reduce your pain since your last report?'
