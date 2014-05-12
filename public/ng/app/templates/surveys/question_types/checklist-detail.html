@@ -31,6 +31,7 @@
           <p>Please specify what other medications you took</p>
           <label class="item item-input">
             <textarea rows="5"
+              ng-required="ifTextareaPresent(detailData.currentChoice)"
               name="custom_text"
               placeholder="Please specify"
               ng-model="detailData.currentChoice.custom_text"></textarea>
