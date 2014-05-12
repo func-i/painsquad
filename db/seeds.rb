@@ -6,13 +6,13 @@ user = User.create username: 'test user', email: 'test@email.com', password: 'pa
 # Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-# BOOLEAN
-q1 = survey.questions.create(
-  question_type: 'boolean',
-  content: 'Are you in pain right now?'
-)
-q1.choices.create content: 'Yes', value: 'true'
-q1.choices.create content: 'No', value: 'false'
+# # BOOLEAN
+# q1 = survey.questions.create(
+#   question_type: 'boolean',
+#   content: 'Are you in pain right now?'
+# )
+# q1.choices.create content: 'Yes', value: 'true'
+# q1.choices.create content: 'No', value: 'false'
 
 
 # # SLIDER
@@ -66,21 +66,21 @@ q1.choices.create content: 'No', value: 'false'
 # q5.choices.create content: 'Other', textfield: true
 
 
-# CHECKLIST EXTRA
-q6 = survey.questions.create(
-  question_type: 'checklist-extra',
-  content: 'What medications have you taken to reduce your pain since your last report?'
-)
-q6.choices.create content: 'None', can_disable: true
-q6.choices.create content: 'Acetaminophen (Tylenol)'
-q6.choices.create content: 'Ibuprofen (Advil)'
-q6.choices.create content: 'Naproxen'
-q6.choices.create content: 'Codeine'
-q6.choices.create content: 'Morphine (short-acting)'
-q6.choices.create content: 'Morphine (long-acting)'
-q6.choices.create content: 'Gabapentin'
-q6.choices.create content: 'Amitriptyline'
-q6.choices.create content: 'Other', textfield: true
+# # CHECKLIST EXTRA
+# q6 = survey.questions.create(
+#   question_type: 'checklist-extra',
+#   content: 'What medications have you taken to reduce your pain since your last report?'
+# )
+# q6.choices.create content: 'None', can_disable: true
+# q6.choices.create content: 'Acetaminophen (Tylenol)'
+# q6.choices.create content: 'Ibuprofen (Advil)'
+# q6.choices.create content: 'Naproxen'
+# q6.choices.create content: 'Codeine'
+# q6.choices.create content: 'Morphine (short-acting)'
+# q6.choices.create content: 'Morphine (long-acting)'
+# q6.choices.create content: 'Gabapentin'
+# q6.choices.create content: 'Amitriptyline'
+# q6.choices.create content: 'Other', textfield: true
 
 
 # BODY MAP
