@@ -9,7 +9,7 @@
     anyElements
 
   $scope.saveSelection = (painRegion) ->
-    return if _.isUndefined(@tempSelections)
+    return unless @tempSelections?
     $scope.selections[painRegion] = @tempSelections
 
   $scope.saveDualSelection = (painRegion) ->

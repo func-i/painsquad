@@ -1,6 +1,6 @@
 'use strict'
 
-@BodymapService = @serviceModule.service 'BodymapService', (_) ->
+@BodymapService = @serviceModule.service 'BodymapService', () ->
 
   init: ->
     @selections =
@@ -13,10 +13,10 @@
     @selections ||= @init()
 
   anyElementsInRegion: (painRegion) ->
-    _.any(@selections[painRegion])
+    @selections[painRegion].length
 
   # resets object after answer is saved
   reset: ->
     @init()
 
-@BodymapService.$inject = ['_']
+@BodymapService.$inject = []
