@@ -27,17 +27,29 @@
         scope.$apply ->
           scope.$parent.tempSelections[attributes.boundScope] = selections
 
-      # redraws from ng-switch rendering
-      scope.$parent.$watch "tempSelections.#{attributes.boundScope}", (selectionArray) ->
-        _.each selectionArray, (region) ->
-          item = _.find $paths, (path) ->
-            path.id is region
-          item.setAttribute('fill', selectedFill) if item
+      # redraws from ng-switch selections
+      for region in tempSelections[attributes.boundScope]
+      # for region in scope.$parent.selections[attributes.regionType]
+        item = _.find $paths, (path) -> path.id is region
+        item.setAttribute('fill', selectedFill)
 
       # redraws from persisted selections
-      scope.$parent.$watch "selections.#{attributes.regionType}", (selectionArray) ->
-        _.each selectionArray, (region) ->
-          item = _.find $paths, (path) ->
-            path.id is region
-          item.setAttribute('fill', selectedFill) if item
+      for region in scope.$parent.selections[attributes.regionType]
+        item = _.find $paths, (path) -> path.id is region
+        item.setAttribute('fill', selectedFill)
+
+      # # redraws from ng-switch rendering
+      # scope.$parent.$watch "tempSelections.#{attributes.boundScope}", (selectionArray) ->
+      #   _.each selectionArray, (region) ->
+      #     item = _.find $paths, (path) ->
+      #       path.id is region
+      #     item.setAttribute('fill', selectedFill) if item
+
+      # # redraws from persisted selections
+      # scope.$parent.$watch "selections.#{attributes.regionType}", (selectionArray) ->
+      #   _.each selectionArray, (region) ->
+      #     item = _.find $paths, (path) ->
+      #       path.id is region
+      #     item.setAttribute('fill', selectedFill) if item
+
     , 50
