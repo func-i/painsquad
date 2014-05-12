@@ -32,7 +32,10 @@
 
   $scope.atLeastOne = ->
     atLeastOne = _.some $scope.question.choices, (choice) ->
-      choice.selected
+      if choice.textfield
+        choice.selected && choice.value && choice.value.length > 5
+      else
+        choice.selected
     !atLeastOne
 
 @ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']

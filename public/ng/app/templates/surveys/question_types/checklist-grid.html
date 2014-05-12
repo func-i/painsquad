@@ -1,6 +1,5 @@
 <section class="checklist-grid" ng-controller="ChecklistGridCtrl">
 
-  <!-- TODO: validate 'other' as $valid only if text inputted -->
   <form name="currentForm" valid-form>
     <div class="row grid-list">
       <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}">
@@ -10,15 +9,15 @@
           <input
           type="checkbox"
           class="pull-right"
-          ng-required="atLeastOneSelection(question.choices)"
+          ng-required="atLeastOne()"
           ng-model="choice.selected" />
         </label>
 
         <label ng-show="choice.textfield && choice.selected" class="item item-input">
           <textarea
-          placeholder="Please specify"
-          rows="5"
-          ng-model="choice.value"></textarea>
+            ng-model="choice.value"
+            placeholder="Please specify"
+            rows="5"></textarea>
         </label>
 
       </div>

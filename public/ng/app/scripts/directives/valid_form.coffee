@@ -7,3 +7,4 @@
         scope.$emit 'currentForm:valid'
       else
         scope.$emit 'currentForm:invalid'
+
