@@ -4,7 +4,7 @@
   $scope.detailData =
     currentChoice = {}
 
-  $ionicModal.fromTemplateUrl "templates/surveys/question_types/checklist-detail.html", (modal) ->
+  $ionicModal.fromTemplateUrl "templates/surveys/question_types/checklist-modal.html", (modal) ->
     $scope.modal = modal
   ,
     animation: "slide-in-up"

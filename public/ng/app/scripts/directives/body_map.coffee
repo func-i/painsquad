@@ -6,16 +6,19 @@
   restrict: 'E'
   template: '<section ng-include="getSvgPath()"></section>'
 
-  link: (scope, element, attributes) ->
+  link: (scope, element, attributes, ngModelController) ->
     scope.getSvgPath = () ->
       attributes.svgPath
-
-    $paths = angular.element(document.querySelector('#selections')).find('path')
 
     # Use $timeout to allow the ng-include content to load
     $timeout () ->
       $paths = angular.element(document.querySelector('#selections')).find('path')
-      console.log "paths", $paths
+
+      # redraws from persisted selections
+      for region in scope.$parent.selections[attributes.regionType]
+        item = _.find $paths, (path) -> path.id is region
+        item.setAttribute('fill', selectedFill)
+
       $paths.bind 'click', ->
         if @getAttribute('fill') is selectedFill
           @setAttribute('fill', unselectedFill)
@@ -28,11 +31,5 @@
 
         scope.$apply ->
           scope.$parent.tempSelections = selections
-
-      # Load saved selections from the parent
-      # Loop through them and reselect their regions
-      for region in scope.$parent.selections[attributes.regionType]
-        item = _.find $paths, (path) -> path.id is region
-        item.setAttribute('fill', selectedFill)
 
     , 100

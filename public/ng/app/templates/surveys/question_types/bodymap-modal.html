@@ -1,0 +1,32 @@
+<!-- <div class="modal" ng-controller="BodymapDetailCtrl"> -->
+<div class="modal">
+
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">{{ tempSelection.content }}</h1>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="discardTempSelections()">
+        Cancel
+    </button>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="saveTempSelections(tempSelections)">
+        Save
+    </button>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="has-header">
+    <section ng-include src="getBodymapPartial(tempSelections)"></section>
+
+<!--
+    <body-map
+      svg-path="images/bodymap/bodymap-{{ tempSelection.content | lowercase }}.svg"
+      region-type="{{ tempSelection.content | lowercase }}"
+      ng-model="tempSelections"></body-map>
+    Head Selections: {{tempSelections}}
+ -->
+  </ion-content>
+
+</div>

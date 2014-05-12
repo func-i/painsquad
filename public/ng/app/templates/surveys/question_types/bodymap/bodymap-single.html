@@ -1,0 +1,5 @@
+<body-map
+  ng-model="tempSelections"
+  svg-path="images/bodymap/bodymap-{{ tempSelections.content | lowercase }}.svg"
+  region-type="{{ tempSelections.content | lowercase }}"><body-map/>
+tempSelections: {{ tempSelections | json }}
