@@ -10,6 +10,9 @@
     animation: "slide-in-up"
     scope: $scope
 
+  $scope.$on '$destroy', ->
+    $scope.modal.remove()
+
   # convenience method to pass choice object to checklist detail view
   $scope.goToSectionOrDisable = (choice) ->
     if @choice.can_disable
@@ -31,15 +34,5 @@
     atLeastOne = _.some $scope.question.choices, (choice) ->
       choice.selected
     !atLeastOne
-
-  $scope.saveDetails = (choice) ->
-    choice.selected = true
-    $scope.modal.hide()
-
-  $scope.discardDetails = (choice) ->
-    choice.selected = false
-    choice.value = null
-    $scope.modal.hide()
-
 
 @ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']
