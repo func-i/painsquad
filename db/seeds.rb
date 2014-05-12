@@ -6,13 +6,13 @@ user = User.create username: 'test user', email: 'test@email.com', password: 'pa
 # Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-# # BOOLEAN
-# q1 = survey.questions.create(
-#   question_type: 'boolean',
-#   content: 'Are you in pain right now?'
-# )
-# q1.choices.create content: 'Yes', value: 'true'
-# q1.choices.create content: 'No', value: 'false'
+# BOOLEAN
+q1 = survey.questions.create(
+  question_type: 'boolean',
+  content: 'Are you in pain right now?'
+)
+q1.choices.create content: 'Yes', value: 'true'
+q1.choices.create content: 'No', value: 'false'
 
 
 # # SLIDER
@@ -61,7 +61,7 @@ survey = Survey.create title: 'Full Assessment'
 #   Beating Burning Cramping Cruel Drilling Fearful Horrible
 #   Hurting Itching Miserable Pouding Pulling Shooting Squeezing
 #   Throbbing Unbearable Uncomfortable Whining
-# ).each { |q_content| q5.choices.create content: q_content }
+# ).each { |content| q5.choices.create content: content }
 
 # q5.choices.create content: 'Other', textfield: true
 
@@ -83,15 +83,15 @@ q6.choices.create content: 'Amitriptyline'
 q6.choices.create content: 'Other', textfield: true
 
 
-# # BODY MAP
-# q7 = survey.questions.create(
-#   question_type: 'bodymap',
-#   content: 'Where did it hurt since your last report?'
-# )
-# q7.choices.create content: 'Head'
-# q7.choices.create content: 'Torso'
-# q7.choices.create content: 'Arms'
-# q7.choices.create content: 'Legs'
+# BODY MAP
+q7 = survey.questions.create(
+  question_type: 'bodymap',
+  content: 'Where did it hurt since your last report?'
+)
+q7.choices.create content: 'Head'
+q7.choices.create content: 'Torso'
+q7.choices.create content: 'Arms'
+q7.choices.create content: 'Legs'
 
 
 # # TEXTBOX
