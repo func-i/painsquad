@@ -4,9 +4,12 @@
   $scope.selections = BodymapService.getSelections()
 
   $scope.contentSaved = (painRegion) ->
-    anyElements = BodymapService.anyElementsInRegion(painRegion.toLowerCase())
-    $scope.$emit 'currentForm:valid' if anyElements
-    anyElements
+    if BodymapService.anyElementsInRegion(painRegion.toLowerCase())
+      $scope.$emit 'currentForm:valid'
+      true
+    # anyElements = BodymapService.anyElementsInRegion(painRegion.toLowerCase())
+    # $scope.$emit 'currentForm:valid' if anyElements
+    # anyElements
 
   $scope.saveSelection = (painRegion) ->
     return unless @tempSelections?

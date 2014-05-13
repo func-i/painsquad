@@ -3,8 +3,10 @@
 @ChecklistDetailCtrl = @controllerModule.controller "ChecklistDetailCtrl", ($scope, $state, $stateParams, $ionicModal) ->
 
   $scope.ifSliderNull = (choice) ->
-    if choice and !(choice.value? || choice.slider_disabled is true)
+    if choice and !choice.value?
       true
+    # if choice and !(choice.value? || choice.slider_disabled is true)
+    #   true
 
   $scope.ifTextareaPresent = (choice) ->
     if choice and !(choice.custom_text and choice.custom_text.length < 5)

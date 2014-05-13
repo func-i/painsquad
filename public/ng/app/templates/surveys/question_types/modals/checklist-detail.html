@@ -46,9 +46,9 @@
             name="slider"
             min="0"
             max="100"
-            ng-required="ifSliderNull(detailData.currentChoice)"
             ng-model="detailData.currentChoice.value"
             ng-disabled="detailData.currentChoice.slider_disabled"
+            ng-required="ifSliderNull(detailData.currentChoice)"
           />
         </div>
         {{ detailData.currentChoice.value | sliderFilter }}
@@ -72,6 +72,10 @@
     </section>
 
     detailData: {{ detailData.currentChoice | json }} <br/>
+
+    showSave: {{ showSave }} <br/>
+
+    $valid: {{ currentForm.$valid }} <br/>
 
   </ion-content>
 
