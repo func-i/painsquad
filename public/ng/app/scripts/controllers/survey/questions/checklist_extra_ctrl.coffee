@@ -25,14 +25,18 @@
     if @choice.can_disable then false else true
 
   $scope.disableAllChoices = ->
-    _.each $scope.question.choices, (choice) ->
+    for choice in $scope.question.choices
       unless choice.can_disable
         choice.selected = false
         choice.disabled = !choice.disabled
 
+  # TODO: remove underscore depencency and clean this up
   $scope.atLeastOne = ->
     atLeastOne = _.some $scope.question.choices, (choice) ->
-      choice.selected
+      if choice.textfield
+        choice.selected && choice.value && choice.value.length > 5
+      else
+        choice.selected
     !atLeastOne
 
 @ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']

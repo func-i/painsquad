@@ -5,20 +5,25 @@
       <div ng-repeat="choice in question.choices">
         <li class="item item-checkbox">
             <label class="checkbox">
-              <input type="checkbox"
+
+              <input
+                type="checkbox"
                 ng-required="atLeastOne()"
                 ng-model="choice.selected"
                 ng-change="disableIfNone()"
                 ng-disabled="choice.disabled" />
+
             </label>
             {{ choice.content }}
         </li>
         <li ng-show="choice.textfield && choice.selected">
           <label class="item item-input other-textbox">
+
             <textarea
+              ng-model="choice.value"
               placeholder="Please specify"
-              rows="5"
-              ng-model="choice.value"></textarea>
+              rows="5"></textarea>
+
           </label>
         </li>
       </div>

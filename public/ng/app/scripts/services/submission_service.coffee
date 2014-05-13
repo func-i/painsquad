@@ -1,6 +1,6 @@
 'use strict'
 
-@serviceModule.service 'SubmissionService', ['_', 'BodymapService', (_, BodymapService) ->
+@SubmissionService = @serviceModule.service 'SubmissionService', (BodymapService) ->
 
   # new singleton object
   init: (survey_id) ->
@@ -35,6 +35,7 @@
         console.log "invalid question type detected: #{answerObj.question_type}"
 
   # adds choice_ids for basic selection questions
+  # TODO: remove underscore js and use coffee filter here
   addSelectionAnswer: (answerObj) ->
     selectedChoices = _.where(answerObj.choices, selected: true)
     if selectedChoices.length > 1
@@ -79,4 +80,4 @@
       data_object: regionSelections
     @addAnswer(resultObj)
 
-]
+@SubmissionService.$inject = [ 'BodymapService' ]

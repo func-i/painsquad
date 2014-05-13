@@ -1,12 +1,12 @@
 [User, Survey, Question, Choice, Submission, Answer].each &:destroy_all
 
-# Seeds
+####### Seeds
 user = User.create username: 'test user', email: 'test@email.com', password: 'password'
 
-# Setup Basic Survey
+####### Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-# # BOOLEAN
+# ####### BOOLEAN
 # q1 = survey.questions.create(
 #   question_type: 'boolean',
 #   content: 'Are you in pain right now?'
@@ -15,7 +15,7 @@ survey = Survey.create title: 'Full Assessment'
 # q1.choices.create content: 'No', value: 'false'
 
 
-# # SLIDER
+# ####### SLIDER
 # q2 = survey.questions.create(
 #   question_type: 'slider',
 #   content:       'Rate your pain on a scale of 1 to 10',
@@ -24,7 +24,7 @@ survey = Survey.create title: 'Full Assessment'
 # q2.choices.create value: "1"
 
 
-# # RADIO
+# ####### RADIO
 # q3 = survey.questions.create(
 #   question_type: 'radio',
 #   content:       'When you had pain in the last 12 hours, how long did it usually last?',
@@ -38,7 +38,7 @@ survey = Survey.create title: 'Full Assessment'
 # q3.choices.create content: '10-12 hours'
 
 
-# # CHECKLIST
+# ####### CHECKLIST
 # q4 = survey.questions.create(
 #   question_type: 'checklist',
 #   content:       'What do you think your pain was due to?',
@@ -51,7 +51,7 @@ survey = Survey.create title: 'Full Assessment'
 # q4.choices.create content: 'Other (please list)', textfield: true
 
 
-# # CHECKLIST GRID
+# ####### CHECKLIST GRID
 # q5 = survey.questions.create(
 #   question_type: 'checklist-grid',
 #   content: 'Touch the words that best describe how your pain felt since your last report'
@@ -66,7 +66,7 @@ survey = Survey.create title: 'Full Assessment'
 # q5.choices.create content: 'Other', textfield: true
 
 
-# CHECKLIST EXTRA
+# ####### CHECKLIST EXTRA
 # q6 = survey.questions.create(
 #   question_type: 'checklist-extra',
 #   content: 'What medications have you taken to reduce your pain since your last report?'
@@ -83,7 +83,7 @@ survey = Survey.create title: 'Full Assessment'
 # q6.choices.create content: 'Other', textfield: true
 
 
-# BODY MAP
+####### BODY MAP
 q7 = survey.questions.create(
   question_type: 'bodymap',
   content: 'Where did it hurt since your last report?'
@@ -94,7 +94,7 @@ q7.choices.create content: 'Arms'
 q7.choices.create content: 'Legs'
 
 
-# # TEXTBOX
+# ####### TEXTBOX
 # last_question = survey.questions.create(
 #   question_type: 'textbox',
 #   content:       'Tell us anything else about your pain in the last 12 hours'

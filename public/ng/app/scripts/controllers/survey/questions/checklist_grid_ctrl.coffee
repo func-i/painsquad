@@ -2,8 +2,13 @@
 
 @controllerModule.controller "ChecklistGridCtrl", ['$scope', '$state', ($scope, $state) ->
 
-  $scope.atLeastOneSelection = (choices) ->
-    atLeastOne = _.some choices, (choice) ->
-      choice.selected
+  # TODO: remove underscore depencency and clean this up
+  $scope.atLeastOne = ->
+    atLeastOne = _.some $scope.question.choices, (choice) ->
+      if choice.textfield
+        choice.selected && choice.value && choice.value.length > 5
+      else
+        choice.selected
     !atLeastOne
+
 ]
