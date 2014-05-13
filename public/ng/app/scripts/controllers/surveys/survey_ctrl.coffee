@@ -5,9 +5,10 @@
 @SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) ->
 
   $scope.startSurvey = ->
-    $scope.submission    = SubmissionService.init(survey.id)
-    $scope.questionIndex = 0
-    $scope.question      = survey.questions[$scope.questionIndex]
+    $scope.submission     = SubmissionService.init(survey.id)
+    $scope.questionIndex  = 0
+    $scope.totalQuestions = survey.questions.length
+    $scope.question       = survey.questions[$scope.questionIndex]
 
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
@@ -32,15 +33,24 @@
   $scope.finishSurvey = ->
     $state.go('app.survey_complete')
 
-  # DEFAULT ACTIONS
-  $scope.startSurvey()
-  $scope.showNext = false
-
   $scope.$on 'currentForm:valid', (ev) ->
     $scope.showNext = true
 
   $scope.$on 'currentForm:invalid', (ev) ->
     $scope.showNext = false
+
+  # PROGRESS BAR
+  $scope.$watch 'questionIndex', ->
+    surveyLength = survey.questions.length - 1
+    $scope.surveyProgress = ($scope.questionIndex / surveyLength) * 100
+
+  $scope.progressWidth = ->
+    width: "#{$scope.surveyProgress}%"
+
+  # DEFAULT ACTIONS
+  $scope.startSurvey()
+  $scope.showNext = false
+
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']
 
