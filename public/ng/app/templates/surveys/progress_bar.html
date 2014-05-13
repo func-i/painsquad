@@ -1,1 +1,11 @@
-|----------------------------PROGRESS----------------------------|
+<section class="progress">
+
+  <span class="pull-left">Case Progress</span>
+  <span class="pull-right">{{ questionIndex + 1 }} of {{ totalQuestions }}</span>
+  <br/>
+
+  <div id="progress">
+    <div ng-style="progressWidth()"></div>
+  </div>
+
+</section>

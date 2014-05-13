@@ -6,16 +6,14 @@
   restrict: 'E'
   template: '<section ng-include="getSvgPath()"></section>'
 
-  link: (scope, element, attributes) ->
+  link: (scope, elem, attr) ->
     scope.getSvgPath = () ->
-      attributes.svgPath
-
-    $paths = angular.element(document.querySelector('#selections')).find('path')
+      attr.svgPath
 
     # Use $timeout to allow the ng-include content to load
     $timeout () ->
       $paths = angular.element(document.querySelector('#selections')).find('path')
-      console.log "paths", $paths
+
       $paths.bind 'click', ->
         if @getAttribute('fill') is selectedFill
           @setAttribute('fill', unselectedFill)
@@ -26,13 +24,19 @@
         for path in $paths
           selections.push path.id if path.getAttribute('fill') is selectedFill
 
-        scope.$apply ->
-          scope.$parent.tempSelections = selections
-
-      # Load saved selections from the parent
-      # Loop through them and reselect their regions
-      for region in scope.$parent.selections[attributes.regionType]
-        item = _.find $paths, (path) -> path.id is region
-        item.setAttribute('fill', selectedFill)
-
+        # scope.$apply is automatic when using $timeout
+        scope.$parent.painRegion.tempSelections = selections
     , 100
+
+    # $timeout () ->
+    #   $paths = angular.element(document.querySelector('#selections')).find('path')
+
+    #   scope.$parent.$watch "selections.#{attr.regionType}", (regionArray) ->
+    #     for region in regionArray
+    #       item = _.find $paths, (path) -> path.id is region
+    #       item.setAttribute('fill', selectedFill)
+    # , 100
+
+    #   for region in scope.$parent.selections[attr.regionType]
+    #     item = _.find $paths, (path) -> path.id is region
+    #     item.setAttribute('fill', selectedFill)
