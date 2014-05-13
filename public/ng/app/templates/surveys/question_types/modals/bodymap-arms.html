@@ -1,0 +1,45 @@
+<ion-view title="Arms" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear" ng-click="back()">
+      Cancel
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('arms')">
+      Save
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header" ng-controller="ArmCtrl">
+
+    <!-- TODO: test 'active' ng-class, not sticking after toggling -->
+    <div class="button-bar">
+      <a href
+        class="button"
+        ng-click="activeTab = 'left'"
+        ng-class="{ 'active': activeTab === 'left' }">
+          Left
+      </a>
+
+      <a href
+        class="button"
+        ng-click="activeTab = 'right'"
+        ng-class="{ 'active': activeTab === 'right' }">
+          Right
+      </a>
+    </div>
+
+    <div class="marginalized" ng-switch="activeTab">
+      <div ng-switch-when="left">
+        <body-map-dual svg-path="images/bodymap/bodymap-armleft.svg" region-type="arms" bound-scope="first"></body-map-dual>
+      </div>
+
+      <div ng-switch-when="right">
+        <body-map-dual svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" bound-scope="second"></body-map-dual>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

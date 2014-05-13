@@ -43,14 +43,14 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     .state('app',
       url: '/app'
       abstract: true
-      templateUrl: 'templates/menu.html'
+      templateUrl: 'templates/layout/menu.html'
     )
 
     .state('app.login'
       url: '/login'
       views:
         menuContent:
-          templateUrl: 'templates/login.html'
+          templateUrl: 'templates/shared/login.html'
           controller: 'LoginCtrl'
     )
 
@@ -58,7 +58,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
       url: '/home'
       views:
         menuContent:
-          templateUrl: 'templates/home.html'
+          templateUrl: 'templates/shared/home.html'
           controller: 'HomeCtrl'
     )
 

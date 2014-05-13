@@ -1,0 +1,78 @@
+<div class="modal" ng-controller="ChecklistDetailCtrl">
+
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">{{ detailData.currentChoice.content }}</h1>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="discardDetails(detailData.currentChoice)">
+        Cancel
+    </button>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="saveDetails(detailData.currentChoice)"
+      ng-show="showSave">
+        Save
+    </button>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="has-header checklist-detail">
+
+    <section class="detail-slider">
+
+      <form name="currentForm" valid-modal-form>
+
+        <div ng-show="!detailData.currentChoice.textfield">
+          <p>How helpful was this in reducing your pain?</p>
+        </div>
+
+        <!-- <div ng-show="detailData.currentChoice.textfield"> -->
+        <div ng-if="detailData.currentChoice.textfield == true">
+          <p>Please specify what other medications you took</p>
+          <label class="item item-input">
+
+            <textarea rows="5"
+              ng-required="ifTextareaPresent(detailData.currentChoice)"
+              name="custom_text"
+              placeholder="Please specify"
+              ng-model="detailData.currentChoice.custom_text"></textarea>
+          </label>
+        </div>
+
+        <div class="range"
+             ng-class="{ 'range-positive': !detailData.currentChoice.slider_disabled,
+                         'range-assertive': detailData.currentChoice.slider_disabled }">
+          <input
+            type="range"
+            name="slider"
+            min="0"
+            max="100"
+            ng-model="detailData.currentChoice.value"
+            ng-disabled="detailData.currentChoice.slider_disabled"
+            ng-required="ifSliderNull(detailData.currentChoice)"
+          />
+        </div>
+        {{ detailData.currentChoice.value | sliderFilter }}
+
+        <div class="slider-disable">
+          <div class="item item-checkbox">
+           <label class="checkbox">
+            <input
+              type="checkbox"
+              name="slider_disable"
+              ng-required="ifSliderNull(detailData.currentChoice)"
+              ng-model="detailData.currentChoice.slider_disabled"
+            />
+           </label>
+           Don't Know
+         </div>
+        </div>
+      </form>
+    </section>
+
+    detailData: {{ detailData.currentChoice | json }} <br/>
+
+  </ion-content>
+
+</div>
