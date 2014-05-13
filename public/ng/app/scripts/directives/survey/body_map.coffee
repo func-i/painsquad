@@ -29,7 +29,8 @@
         for path in $paths
           selections.push path.id if path.getAttribute('fill') is selectedFill
 
+        # pushes changes up to parent
         scope.$apply ->
-          scope.$parent.tempSelections = selections
+          scope.$parent.$parent.tempSelections = selections
 
     , 100

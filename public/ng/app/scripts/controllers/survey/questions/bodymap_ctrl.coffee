@@ -1,10 +1,10 @@
 'use strict'
 
 @BodymapCtrl = @controllerModule.controller "BodymapCtrl", ($scope, $state, $ionicModal, BodymapService) ->
+  console.log "Bodymap Ctrl Instantiated"
   $scope.selections = BodymapService.getSelections()
-  $scope.tempSelections =
-    {}
 
+  # register modal and setup scope
   $ionicModal.fromTemplateUrl "templates/surveys/question_types/bodymap-modal.html", (modal) ->
     $scope.modal = modal
   ,
@@ -14,40 +14,41 @@
   $scope.$on '$destroy', ->
     $scope.modal.remove()
 
+  $scope.$on 'saveSelections', (event, painRegion, selectionData) ->
+    return unless selectionData?
+    $scope.selections[painRegion] = selectionData
+
+  # set current selection into 'painRegion' scope so modal can access it
   $scope.loadModal = (painRegion) ->
-    $scope.tempSelections = painRegion
+    $scope.painRegion = painRegion
     $scope.modal.show()
 
-  $scope.saveTempSelections = (tempSelections) ->
-    debugger
-    $scope.modal.hide()
-
-  $scope.discardTempSelections = ->
-    $scope.modal.hide()
-
-  $scope.getBodymapPartial = (painRegion) ->
-    if painRegion.content is 'Head' || painRegion.content is 'Legs'
-      "templates/surveys/question_types/bodymap/bodymap-single.html"
-    else if painRegion.content is 'Torso' || painRegion.content is 'Arms'
-      "templates/surveys/question_types/bodymap/bodymap-dual.html"
-    else
-      # do nothing
-
+  # checks if elements in painRegion to display valid selections checkmark
   $scope.contentSaved = (painRegion) ->
-    anyElements = BodymapService.anyElementsInRegion(painRegion.toLowerCase())
-    $scope.$emit 'currentForm:valid' if anyElements
-    anyElements
+    return unless painRegion?
+    if BodymapService.anyElementsInRegion(painRegion.content.toLowerCase())
+      $scope.$emit 'currentForm:valid'
+      true
 
-  $scope.saveSelection = (painRegion) ->
-    return if _.isUndefined(@tempSelections)
-    $scope.selections[painRegion] = @tempSelections
+  # loads svg partial based on painRegion
+  $scope.getBodymapPartial = ->
+    return unless $scope.painRegion?
+    switch $scope.painRegion.content
+      when 'Head'
+        "templates/surveys/question_types/bodymap/head.html"
+      when 'Legs'
+        "templates/surveys/question_types/bodymap/legs.html"
+      when 'Torso'
+        "templates/surveys/question_types/bodymap/torso.html"
+      when 'Arms'
+        "templates/surveys/question_types/bodymap/arms.html"
 
-  $scope.saveDualSelection = (painRegion) ->
-    $scope.$broadcast 'requestSelections'
+  $scope.saveTempSelections = (painRegion) ->
+    # $scope.$emit 'saveSelections', painRegion, $scope.tempSelections[painRegion]
+    $scope.modal.hide()
 
-  $scope.$on 'dualSelections', (event, data) ->
-    mergedSelections = data.first.concat data.second
-    if mergedSelections.length
-      $scope.selections[data.region] = mergedSelections
+  $scope.discardTempSelections = (painRegion)->
+    # $scope.tempSelections = angular.copy($scope.$parent.selections)
+    $scope.modal.hide()
 
 @BodymapCtrl.$inject = ['$scope', '$state', '$ionicModal', 'BodymapService']

@@ -1,32 +1,24 @@
-<!-- <div class="modal" ng-controller="BodymapDetailCtrl"> -->
 <div class="modal">
 
   <ion-header-bar class="bar bar-header bar-positive">
-    <h1 class="title">{{ tempSelection.content }}</h1>
+    <h1 class="title">{{ painRegion.content }}</h1>
 
     <button
       class="button button-clear button-primary"
-      ng-click="discardTempSelections()">
+      ng-click="discardTempSelections(painRegion.content.toLowerCase())">
         Cancel
     </button>
 
     <button
       class="button button-clear button-primary"
-      ng-click="saveTempSelections(tempSelections)">
+      ng-click="saveTempSelections(painRegion.content.toLowerCase())">
         Save
     </button>
   </ion-header-bar>
 
   <ion-content padding="true" class="has-header">
-    <section ng-include src="getBodymapPartial(tempSelections)"></section>
-
-<!--
-    <body-map
-      svg-path="images/bodymap/bodymap-{{ tempSelection.content | lowercase }}.svg"
-      region-type="{{ tempSelection.content | lowercase }}"
-      ng-model="tempSelections"></body-map>
-    Head Selections: {{tempSelections}}
- -->
+    <!-- renders SVG based on selection -->
+    <section ng-include src="getBodymapPartial()"></section>
   </ion-content>
 
 </div>

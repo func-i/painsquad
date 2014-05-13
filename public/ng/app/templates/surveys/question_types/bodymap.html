@@ -1,22 +1,11 @@
 <section ng-controller="BodymapCtrl">
 
-  <!-- if using Bodymap States
-  <ion-list>
-    <a class="item" ng-repeat="choice in question.choices" ui-sref="app.bodymap-{{choice.content | lowercase}}">
-      {{ choice.content }}
-      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
-    </a>
-    selections: {{ selections | json }}
-  </ion-list>
-  -->
-
-  <!-- Bodymap modal -->
   <ion-list>
     <a class="item"
       ng-repeat="choice in question.choices"
       ng-click="loadModal(choice)">
         {{ choice.content }}
-      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
+      <span class="ion-checkmark-circled" ng-show="contentSaved(choice)"></span>
     </a>
     selections: {{ selections | json }}
   </ion-list>
