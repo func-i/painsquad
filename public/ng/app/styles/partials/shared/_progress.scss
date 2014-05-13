@@ -1,36 +1,40 @@
-section.progress {
-  padding: 10px;
+.progress {
   clear: both;
 
-  .pull-right {
-    float: right;
+  .info {
+    padding-bottom: 30px;
+
+    .pull-right {
+      float: right;
+    }
+
+    .pull-left {
+      float: left;
+    }
   }
 
-  .pull-left {
-    float: left;
+  #bar {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+
+    div {
+      position:      relative;
+      background:    #3498db;
+      height:        3px;
+      transition:    0.2s ease-in-out;
+      margin-bottom: -2px;
+    }
+
+    div::after {
+      content:    '';
+      position:   absolute;
+      right:      -2px;
+      top:        -2px;
+      height:     7px;
+      width:      7px;
+      // borrowed from cssdeck.com
+      background: radial-gradient(ellipse at center,  rgba(52,152,219,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
+    }
   }
 }
 
-#progress {
-  width: 100%;
-  border-bottom: 1px solid #cccccc;
-
-  div {
-    position:      relative;
-    background:    #3498db;
-    height:        3px;
-    transition:    0.2s ease-in-out;
-    margin-bottom: -2px;
-  }
-
-  div::after {
-    content:    '';
-    position:   absolute;
-    right:      -2px;
-    top:        -2px;
-    height:     7px;
-    width:      7px;
-    // borrowed from cssdeck.com
-    background: radial-gradient(ellipse at center,  rgba(52,152,219,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
-  }
-}
