@@ -23,13 +23,15 @@
 
       <form name="currentForm" valid-modal-form>
 
-        <div ng-hide="detailData.currentChoice.textfield">
+        <div ng-show="!detailData.currentChoice.textfield">
           <p>How helpful was this in reducing your pain?</p>
         </div>
 
-        <div ng-hide="!detailData.currentChoice.textfield">
+        <!-- <div ng-show="detailData.currentChoice.textfield"> -->
+        <div ng-if="detailData.currentChoice.textfield == true">
           <p>Please specify what other medications you took</p>
           <label class="item item-input">
+
             <textarea rows="5"
               ng-required="ifTextareaPresent(detailData.currentChoice)"
               name="custom_text"
@@ -66,16 +68,10 @@
            Don't Know
          </div>
         </div>
-
       </form>
-
     </section>
 
     detailData: {{ detailData.currentChoice | json }} <br/>
-
-    showSave: {{ showSave }} <br/>
-
-    $valid: {{ currentForm.$valid }} <br/>
 
   </ion-content>
 
