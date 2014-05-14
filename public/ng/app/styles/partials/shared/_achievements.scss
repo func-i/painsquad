@@ -1,0 +1,48 @@
+.awards {
+  border: 1px dotted black;
+  height: 450px;
+
+  .slider-slide {
+    padding-top: 20px;
+    // position: relative;
+
+    .wrapper {
+      position: relative;
+
+      img {
+        margin: auto;
+      }
+
+      aside {
+        margin-top: 125px;
+        color: rgba(128, 128, 128, 0.92);
+        font-size: 50px;
+
+        &.back { float: left; }
+        &.forward { float: right; }
+      }
+    }
+  }
+}
+
+.badges {
+  border: 1px dotted black;
+  height: 250px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    // justify-content: space-around;
+  }
+
+  #circle {
+    width: 75px;
+    height: 75px;
+    border: 1px dotted black;
+    border-radius: 50px;
+  }
+
+}
+
+hr {
+}

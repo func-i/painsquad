@@ -1,14 +1,15 @@
 // modules are sass-only styles (variables, mixins, overrides)
-@import "modules/layout";
+@import 'modules/layout';
 
 // partials are view and template-related styles
-@import "partials/shared/intro",
-        "partials/shared/buttons",
-        "partials/shared/sidebar",
-        "partials/shared/progress";
+@import 'partials/shared/intro',
+        'partials/shared/buttons',
+        'partials/shared/sidebar',
+        'partials/shared/progress',
+        'partials/shared/achievements';
 
 // form-specific styles
-@import "partials/forms/checklist",
-        "partials/forms/checklist-grid",
-        "partials/forms/checklist-extra",
-        "partials/forms/textarea";
+@import 'partials/forms/checklist',
+        'partials/forms/checklist-grid',
+        'partials/forms/checklist-extra',
+        'partials/forms/textarea';
