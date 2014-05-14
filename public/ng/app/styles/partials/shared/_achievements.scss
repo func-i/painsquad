@@ -4,7 +4,6 @@
 
   .slider-slide {
     padding-top: 20px;
-    // position: relative;
 
     .wrapper {
       position: relative;
@@ -18,8 +17,14 @@
         color: rgba(128, 128, 128, 0.92);
         font-size: 50px;
 
-        &.back { float: left; }
-        &.forward { float: right; }
+        &.back {
+          float: left;
+          margin-left: 10px;
+        }
+        &.forward {
+          float: right;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -29,20 +34,26 @@
   border: 1px dotted black;
   height: 250px;
 
+  h3 {
+    text-align: center;
+  }
+
   .row {
     display: flex;
     justify-content: center;
-    // justify-content: space-around;
+    margin-bottom: 10px;
+
+    div {
+      margin: 0 20px 0 20px;
+    }
+
+    span { text-align: center; }
+
+    #circle {
+      width: 75px;
+      height: 75px;
+      border: 1px dotted black;
+      border-radius: 50px;
+    }
   }
-
-  #circle {
-    width: 75px;
-    height: 75px;
-    border: 1px dotted black;
-    border-radius: 50px;
-  }
-
-}
-
-hr {
 }

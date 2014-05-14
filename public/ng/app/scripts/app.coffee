@@ -12,7 +12,7 @@
   'ngCookies',
   'ngSanitize',
   'underscore',
-  'angular-momentjs'
+  'angularMoment'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

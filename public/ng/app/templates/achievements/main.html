@@ -9,10 +9,9 @@
 
     <!-- TODO: Dynamically load awards content based on User points -->
     <article class="awards">
-      <ion-slide-box>
+      <ion-slide-box on-slide-changed="slideChange(index)">
 
         <ion-slide ng-repeat="slide in achievementData.awards">
-
 
           <h3>Rank</h3>
           <div class="wrapper">
@@ -28,9 +27,8 @@
       </ion-slide-box>
     </article>
 
-    <hr>
-
     <article class="badges">
+      <h3>Awards</h3>
 
       <section class="row first">
         <div id="commendation">
