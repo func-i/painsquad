@@ -1,23 +1,19 @@
-<section ng-controller="SliderCtrl">
+<section ng-controller="SliderCtrl" class="default-slider">
 
   <form name="currentForm" valid-radio-form>
-    <!-- <slider-display ng-model="question.choices[0].value"></slider-display> -->
 
     <div class="wedge-container">
       <div class="wedge"></div>
-      <div class="overlay" slider-gradient></div>
+      <div class="overlay" slider-gradient="question.choices[0].value"></div>
     </div>
 
-    <!-- <div class="wedge"></div> -->
-    <!-- <div class="slider-wedge"></div> -->
-
-    <div class="range range-assertive range-assertive-gradient">
+    <!-- TODO: custom slider range gradient -->
+    <div class="range range-assertive">
       <input required
         type="range"
         ng-model="question.choices[0].value">
     </div>
     sliderValue: {{ question.choices[0].value | sliderFilter }}
-
 
   </form>
 

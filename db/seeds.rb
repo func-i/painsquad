@@ -53,36 +53,36 @@ q2.choices.create
 # q4.choices.create content: 'Other (please list)', textfield: true
 
 
-####### CHECKLIST GRID
-q5 = survey.questions.create(
-  question_type: 'checklist-grid',
-  content: 'Touch the words that best describe how your pain felt since your last report'
-)
-
-%w(
-  Beating Burning Cramping Cruel Drilling Fearful Horrible
-  Hurting Itching Miserable Pouding Pulling Shooting Squeezing
-  Throbbing Unbearable Uncomfortable Whining
-).each { |content| q5.choices.create content: content }
-
-q5.choices.create content: 'Other', textfield: true
-
-
-# ####### CHECKLIST EXTRA
-# q6 = survey.questions.create(
-#   question_type: 'checklist-extra',
-#   content: 'What medications have you taken to reduce your pain since your last report?'
+# ####### CHECKLIST GRID
+# q5 = survey.questions.create(
+#   question_type: 'checklist-grid',
+#   content: 'Touch the words that best describe how your pain felt since your last report'
 # )
-# q6.choices.create content: 'None', can_disable: true
-# q6.choices.create content: 'Acetaminophen (Tylenol)'
-# q6.choices.create content: 'Ibuprofen (Advil)'
-# q6.choices.create content: 'Naproxen'
-# q6.choices.create content: 'Codeine'
-# q6.choices.create content: 'Morphine (short-acting)'
-# q6.choices.create content: 'Morphine (long-acting)'
-# q6.choices.create content: 'Gabapentin'
-# q6.choices.create content: 'Amitriptyline'
-# q6.choices.create content: 'Other', textfield: true
+
+# %w(
+#   Beating Burning Cramping Cruel Drilling Fearful Horrible
+#   Hurting Itching Miserable Pouding Pulling Shooting Squeezing
+#   Throbbing Unbearable Uncomfortable Whining
+# ).each { |content| q5.choices.create content: content }
+
+# q5.choices.create content: 'Other', textfield: true
+
+
+####### CHECKLIST EXTRA
+q6 = survey.questions.create(
+  question_type: 'checklist-extra',
+  content: 'What medications have you taken to reduce your pain since your last report?'
+)
+q6.choices.create content: 'None', can_disable: true
+q6.choices.create content: 'Acetaminophen (Tylenol)'
+q6.choices.create content: 'Ibuprofen (Advil)'
+q6.choices.create content: 'Naproxen'
+q6.choices.create content: 'Codeine'
+q6.choices.create content: 'Morphine (short-acting)'
+q6.choices.create content: 'Morphine (long-acting)'
+q6.choices.create content: 'Gabapentin'
+q6.choices.create content: 'Amitriptyline'
+q6.choices.create content: 'Other', textfield: true
 
 
 # ####### BODY MAP

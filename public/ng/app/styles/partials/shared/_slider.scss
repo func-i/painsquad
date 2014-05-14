@@ -1,92 +1,75 @@
-.wedge-container {
-  position: relative;
-  width:    100%;
-  height:   150px;
-  background-color: #E7E7E7;
-
-  .wedge {
-    position:     absolute;
-    z-index:      1;
-    margin:       0 15px 0 15px;
-    width:        0;
-    height:       0;
-    border-style: solid;
-    border-width: 0 0 150px 600px;
-    // border-color: transparent transparent #E7E7E7 white;
-    border-color: transparent transparent transparent white;
-
+.default-slider {
+  .range {
+    max-width: 420px;
   }
 
-  .overlay {
-    position:         absolute;
-    margin:           0 15px 0 15px;
-    z-index:          0;
-    top:              0;
-    left:             0;
-    width:            50%;
-    height:           100%;
-    background-color: red; // fallback
-    background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+  .wedge-container {
+    position:         relative;
+    width:            100%;
+    height:           150px;
+    background-color: #E7E7E7;
+    max-width:        395px;
+    margin-left:      10px;
 
+    .wedge {
+      position:     absolute;
+      z-index:      1;
+      margin:       0 auto;
+      width:        0;
+      height:       0;
+      border-style: solid;
+      border-width: 0 0 150px 600px;
+      border-color: transparent transparent transparent white;
+    }
+
+    .overlay {
+      position:         absolute;
+      margin:           0 auto;
+      z-index:          0;
+      top:              0;
+      left:             0;
+      width:            50%;
+      height:           100%;
+      background-color: red;
+      background:       red;
+      background-image: $redGradient;
+    }
   }
-
-  .range-gradient {
-  }
-
 }
 
-// .triangle-down-left {
-//   width: 25%;
-//   height: 0;
-//   padding-bottom: 25%;
-//   overflow: hidden;
-// }
-// .triangle-down-left:after {
-//   content: "";
-//   display: block;
-//   width: 0;
-//   height: 0;
-//   border-right: 500px solid transparent;
-//   border-bottom: 500px solid #4679BD;
-// }
+.checklist-detail {
+  .range {
+    max-width: 420px;
+  }
 
-// .range-assertive-gradient {
-//   input {
-//     &::-webkit-slider-thumb:before {
-//       background: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
-//       background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+  .wedge-container {
+    position:         relative;
+    width:            100%;
+    height:           150px;
+    background-color: #E7E7E7;
+    max-width:        395px;
+    margin-left:      10px;
 
-//       background: -webkit-gradient(linear, left top, right top, color-stop(0, #F5C7D0), color-stop(1, #DD4662));
-//       background: -webkit-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
+    .wedge {
+      position:     absolute;
+      z-index:      1;
+      margin:       0 auto;
+      width:        0;
+      height:       0;
+      border-style: solid;
+      border-width: 0 0 150px 600px;
+      border-color: transparent transparent transparent white;
+    }
 
-//       background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
-//       background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #F5C7D0), color-stop(1, #DD4662));
-//       background-image: -webkit-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
-//     }
-
-//   }
-// }
-
-// @mixin range-style($track-bg-color) {
-//   &::-webkit-slider-thumb:before {
-//     background: $track-bg-color;
-//   }
-// }
-
-// /* IE10 Consumer Preview */
-// background-image: -ms-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
-
-// /* Mozilla Firefox */
-// background-image: -moz-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
-
-// /* Opera */
-// background-image: -o-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
-
-// /* Webkit (Safari/Chrome 10) */
-// background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #F5C7D0), color-stop(1, #DD4662));
-
-// /* Webkit (Chrome 11+) */
-// background-image: -webkit-linear-gradient(left, #F5C7D0 0%, #DD4662 100%);
-
-// /* W3C Markup, IE10 Release Preview */
-// background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+    .overlay {
+      position:         absolute;
+      margin:           0 auto;
+      z-index:          0;
+      top:              0;
+      left:             0;
+      width:            50%;
+      height:           100%;
+      background-image: $greenGradient;
+    }
+  }
+}

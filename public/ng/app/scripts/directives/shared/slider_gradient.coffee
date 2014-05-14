@@ -2,7 +2,10 @@
 
 @directiveModule.directive 'sliderGradient', ->
   restrict: 'A'
-  link: (scope, elem, attr) ->
-    scope.$watch 'question.choices[0].value', (value) ->
-      elem.css('width', "#{parseInt(value)}%")
+  scope:
+    sliderGradient: '=sliderGradient'
 
+  link: (scope, elem, attr) ->
+    scope.$watch 'sliderGradient', (value) ->
+      value ||= 50
+      elem.css('width', "#{parseInt(value)}%")
