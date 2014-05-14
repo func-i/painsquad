@@ -6,22 +6,24 @@ user = User.create username: 'test user', email: 'test@email.com', password: 'pa
 ####### Setup Basic Survey
 survey = Survey.create title: 'Full Assessment'
 
-####### BOOLEAN
-q1 = survey.questions.create(
-  question_type: 'boolean',
-  content: 'Are you in pain right now?'
-)
-q1.choices.create content: 'Yes', value: 'true'
-q1.choices.create content: 'No', value: 'false'
-
-
-# ####### SLIDER
-# q2 = survey.questions.create(
-#   question_type: 'slider',
-#   content:       'Rate your pain on a scale of 1 to 10',
-#   tip:           'Touch the slider yo'
+# ####### BOOLEAN
+# q1 = survey.questions.create(
+#   question_type: 'boolean',
+#   content: 'Are you in pain right now?'
 # )
+# q1.choices.create content: 'Yes', value: 'true'
+# q1.choices.create content: 'No', value: 'false'
+
+
+####### SLIDER
+q2 = survey.questions.create(
+  question_type: 'slider',
+  content:       'How much pain do you have right now?',
+  tip:           'Touch the mark and slide it to describe your pain. Then click Next.'
+)
+q2.choices.create
 # q2.choices.create value: "1"
+
 
 
 # ####### RADIO

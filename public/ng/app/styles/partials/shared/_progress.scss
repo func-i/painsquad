@@ -19,7 +19,7 @@
 
     div {
       position:      relative;
-      background:    #3498db;
+      background:    #E56981;
       height:        3px;
       transition:    0.2s ease-in-out;
       margin-bottom: -2px;
@@ -33,7 +33,10 @@
       height:     7px;
       width:      7px;
       // borrowed from cssdeck.com
-      background: radial-gradient(ellipse at center,  rgba(52,152,219,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
+      background: radial-gradient(
+        ellipse at center,
+        rgba(245, 199, 208, 1) 0%,
+        rgba(221, 70, 98, 0) 100%);
     }
   }
 }
