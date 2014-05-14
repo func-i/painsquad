@@ -3,19 +3,21 @@
   <form name="currentForm" valid-radio-form>
     <!-- <slider-display ng-model="question.choices[0].value"></slider-display> -->
 
-    <div class="slider-container">
-
+    <div class="wedge-container">
       <div class="wedge"></div>
-      <div class="slider-wedge"></div>
-
-      <div class="range range-assertive range-assertive-gradient">
-        <input required
-          type="range"
-          ng-model="question.choices[0].value">
-      </div>
-      sliderValue: {{ question.choices[0].value | sliderFilter }}
-
+      <div class="overlay" slider-gradient></div>
     </div>
+
+    <!-- <div class="wedge"></div> -->
+    <!-- <div class="slider-wedge"></div> -->
+
+    <div class="range range-assertive range-assertive-gradient">
+      <input required
+        type="range"
+        ng-model="question.choices[0].value">
+    </div>
+    sliderValue: {{ question.choices[0].value | sliderFilter }}
+
 
   </form>
 
