@@ -1,14 +1,13 @@
-.range {
-  max-width: 420px;
-}
-
-.wedge-container {
-  position:         relative;
+.slider-container {
   width:            100%;
+  position:         relative;
   height:           150px;
   background-color: #E7E7E7;
-  max-width:        395px;
-  margin-left:      10px;
+  margin:           0 5px 0 5px;
+
+  &.modal {
+    left: -5px;
+  }
 
   .wedge {
     position:     absolute;
@@ -22,13 +21,13 @@
   }
 
   .overlay {
-    position:         absolute;
-    margin:           0 auto;
-    z-index:          0;
-    top:              0;
-    left:             0;
-    width:            50%;
-    height:           100%;
+    position: absolute;
+    margin:   0 auto;
+    z-index:  0;
+    top:      0;
+    left:     0;
+    width:    50%;
+    height:   100%;
 
     &.red {
       background-image: $redGradient;
