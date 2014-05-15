@@ -1,47 +1,30 @@
-ARMS
-<!--
-<ion-view title="Arms" hide-back-button="true">
+<section ng-controller="BodymapArmCtrl" ng-init="activeTab = 'left'">
 
-  <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="back()">
-      Cancel
-    </button>
-  </ion-nav-buttons>
+  <div class="button-bar">
+    <a href
+      class="button"
+      ng-click="activeTab = 'left'"
+      ng-class="{ 'active': activeTab === 'left' }">
+        Left
+    </a>
 
-  <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('arms')">
-      Save
-    </button>
-  </ion-nav-buttons>
-
-  <ion-content padding="true" class="has-header" ng-controller="ArmCtrl">
-
-    <div class="button-bar">
-      <a href
-        class="button"
-        ng-click="activeTab = 'left'"
-        ng-class="{ 'active': activeTab === 'left' }">
-          Left
-      </a>
-
-      <a href
-        class="button"
-        ng-click="activeTab = 'right'"
-        ng-class="{ 'active': activeTab === 'right' }">
-          Right
-      </a>
+    <a href
+      class="button"
+      ng-click="activeTab = 'right'"
+      ng-class="{ 'active': activeTab === 'right' }">
+        Right
+    </a>
+  </div>
+  <div ng-switch="activeTab">
+    <div ng-switch-when="left">
+      <section region="left" body-map-selector-switch ng-include="'images/bodymap/bodymap-armleft.svg'"></section>
     </div>
 
-    <div class="marginalized" ng-switch="activeTab">
-      <div ng-switch-when="left">
-        <body-map-dual svg-path="images/bodymap/bodymap-armleft.svg" region-type="arms" bound-scope="first"></body-map-dual>
-      </div>
-
-      <div ng-switch-when="right">
-        <body-map-dual svg-path="images/bodymap/bodymap-armright.svg" region-type="arms" bound-scope="second"></body-map-dual>
-      </div>
+    <div ng-switch-when="right">
+      <section region="right" body-map-selector-switch ng-include="'images/bodymap/bodymap-armright.svg'"></section>
     </div>
+  </div>
 
-  </ion-content>
-</ion-view>
- -->
+  selections: {{ switchSelections.data }}
+
+</section>

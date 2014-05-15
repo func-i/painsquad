@@ -6,22 +6,22 @@
   restrict: 'E'
   template: '<section ng-include="getSvgPath()"></section>'
 
-  link: (scope, element, attributes) ->
+  link: (scope, element, attr) ->
     scope.getSvgPath = () ->
-      attributes.svgPath
+      attr.svgPath
 
     # Use $timeout to allow the ng-include content to load
     $timeout () ->
       $paths = angular.element(document.querySelector('#selections')).find('path')
 
       # redraws from ng-switch selections
-      for region in scope.$parent.tempSelections[attributes.boundScope]
-      # for region in scope.$parent.selections[attributes.regionType]
+      for region in scope.$parent.tempSelections[attr.boundScope]
+      # for region in scope.$parent.selections[attr.region]
         item = _.find $paths, (path) -> path.id is region
         item.setAttribute('fill', selectedFill) if item
 
       # redraws from persisted selections
-      for region in scope.$parent.selections[attributes.regionType]
+      for region in scope.$parent.selections[attr.region]
         item = _.find $paths, (path) -> path.id is region
         item.setAttribute('fill', selectedFill) if item
 
@@ -36,6 +36,6 @@
           selections.push path.id if path.getAttribute('fill') is selectedFill
 
         scope.$apply ->
-          scope.$parent.tempSelections[attributes.boundScope] = selections
+          scope.$parent.tempSelections[attr.boundScope] = selections
 
     , 50

@@ -1,5 +1,5 @@
 'use strict'
 
-@controllerModule.controller "BooleanCtrl", ['$scope', '$state', ($scope, $state) ->
+@BooleanCtrl = @controllerModule.controller "BooleanCtrl", ($scope, $state) ->
 
-]
+@BooleanCtrl.$inject = ['$scope', '$state']

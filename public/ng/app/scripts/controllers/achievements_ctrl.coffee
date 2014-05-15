@@ -46,5 +46,4 @@
   $scope.slideChange = (slideIndex) ->
     console.log "Changing slides to index: ", slideIndex
 
-
 @AchievementsCtrl.$inject = ['$scope', '$state', 'moment', '$ionicSlideBoxDelegate']

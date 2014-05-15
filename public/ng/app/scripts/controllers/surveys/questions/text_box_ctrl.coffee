@@ -1,5 +1,5 @@
 'use strict'
 
-@controllerModule.controller "TextBoxCtrl", ['$scope', '$state', ($scope, $state) ->
+@TextboxCtrl = @controllerModule.controller "TextboxCtrl", ($scope, $state) ->
 
-]
+@TextboxCtrl.$inject = ['$scope', '$state']

@@ -1,5 +1,5 @@
 'use strict'
 
-@controllerModule.controller "SliderCtrl", ['$scope', '$state', ($scope, $state) ->
+@SliderCtrl = @controllerModule.controller "SliderCtrl", ($scope, $state) ->
 
-]
+@SliderCtrl.$inject = ['$scope', '$state']

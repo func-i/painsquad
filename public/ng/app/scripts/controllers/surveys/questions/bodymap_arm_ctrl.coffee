@@ -1,13 +1,11 @@
 'use strict'
 
-@controllerModule.controller "ArmCtrl", ['$scope', '$state', ($scope, $state) ->
-  $scope.activeTab = 'left'
-  $scope.tempSelections =
-    region: 'arms'
-    first:  []
-    second: []
+@BodymapArmCtrl = @controllerModule.controller "BodymapArmCtrl", ($scope, $state) ->
 
-  $scope.$on 'requestSelections', (event) ->
-    $scope.$emit 'dualSelections', $scope.tempSelections
+  $scope.switchSelections =
+    data: []
 
-]
+  $scope.$on 'requestSwitchSelections', (event) ->
+    $scope.$emit 'dualSelections', $scope.switchSelections.data, 'arms'
+
+@BodymapArmCtrl.$inject = ['$scope', '$state']
