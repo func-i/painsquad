@@ -19,9 +19,9 @@
         _selections.push path.id if path.getAttribute('fill') is selectedFill
 
       scope.$apply ->
-        debugger
-        # scope.$parent.$parent.tempSelections[attr.region] = _selections
+        scope.$parent.modalSelection.tempSelections = _selections
 
-    # for region in scope.$parent.$parent.tempSelections[attr.region]
-    #   item = _.find $paths, (path) -> path.id is region
-    #   item.setAttribute('fill', selectedFill)
+    # redraws from $scope.selections
+    for region in scope.$parent.selections[attr.region]
+      item = _.find $paths, (path) -> path.id is region
+      item.setAttribute('fill', selectedFill)

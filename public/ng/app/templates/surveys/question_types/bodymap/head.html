@@ -1,6 +1,3 @@
-<!-- <body-map svg-path="images/bodymap/bodymap-head.svg" region-type="head" ng-model="tempSelections"></body-map> -->
+<section body-map-selector region="head" ng-include src="'images/bodymap/bodymap-head.svg'"></section>
 
-<div ng-controller="HeadCtrl">
-  <section body-map-selector region="head" ng-include src="'images/bodymap/bodymap-head.svg'"></section>
-  Head Selections: {{tempSelections.head}}
-</div>
+tempSelections: {{ modalSelection.tempSelections | json }}

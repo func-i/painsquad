@@ -3,7 +3,7 @@
   <ion-list>
     <a class="item"
       ng-repeat="choice in question.choices"
-      ng-click="loadModal(choice)">
+      ng-click="openModal(choice)">
         {{ choice.content }}
       <span class="ion-checkmark-circled" ng-show="contentSaved(choice)"></span>
     </a>

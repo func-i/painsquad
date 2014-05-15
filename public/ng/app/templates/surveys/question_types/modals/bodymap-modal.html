@@ -5,20 +5,19 @@
 
     <button
       class="button button-clear button-primary"
-      ng-click="discardTempSelections(painRegion.content.toLowerCase())">
+      ng-click="discardModalSelections()">
         Cancel
     </button>
 
     <button
       class="button button-clear button-primary"
-      ng-click="saveTempSelections(painRegion.content.toLowerCase())">
+      ng-click="saveModalSelections()">
         Save
     </button>
   </ion-header-bar>
 
   <ion-content padding="true" class="has-header">
-    <!-- renders SVG based on selection -->
-    <section ng-include src="getBodymapPartial()"></section>
+    <ng-include src="renderBodymapPartial()"></ng-include>
   </ion-content>
 
 </div>
