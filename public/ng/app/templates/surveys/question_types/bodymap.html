@@ -5,7 +5,7 @@
       ng-repeat="choice in question.choices"
       ng-click="openModal(choice)">
         {{ choice.content }}
-      <span class="ion-checkmark-circled" ng-show="contentSaved(choice)"></span>
+      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
     </a>
     selections: {{ selections | json }}
   </ion-list>

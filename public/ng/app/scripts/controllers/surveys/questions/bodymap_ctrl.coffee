@@ -13,10 +13,9 @@
     $scope.modal = modal
 
   $scope.contentSaved = (painRegion) ->
-    false
-    # anyElements = BodymapService.anyElementsInRegion(painRegion.toLowerCase())
-    # $scope.$emit 'currentForm:valid' if anyElements
-    # anyElements
+    if BodymapService.anyElementsInRegion(painRegion.toLowerCase())
+      $scope.$emit 'currentForm:valid'
+      true
 
   # $scope.saveSelection = (painRegion) ->
   #   return unless @tempSelections?
@@ -33,13 +32,14 @@
   # MODAL STUFF
   $scope.openModal = (choice) ->
     $scope.modalSelection.choice = choice
+    # load persisted selections, if any
+    $scope.modalSelection.tempSelections = angular.copy($scope.selections[getPainRegion()])
     $scope.modal.show()
 
   # saves modalSelections to master selections
   $scope.saveModalSelections = ->
-    # don't overwrite if nothing is selected
-    if $scope.modalSelection.tempSelections.length
-      $scope.selections[getPainRegion()] = $scope.modalSelection.tempSelections
+    $scope.selections[getPainRegion()] = $scope.modalSelection.tempSelections
+    resetModalSelection()
     $scope.modal.hide()
 
   # resets modalSelection object and close modal
