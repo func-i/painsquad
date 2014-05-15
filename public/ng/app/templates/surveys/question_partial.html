@@ -3,8 +3,8 @@
   <div class="fade-in-not-out" ng-include src="getChoicesPartial(question)"></div>
 </section>
 
-<section class="tip">
-  <pre>{{ question.tip }}</pre>
+<section class="tip" ng-show="question.tip">
+  <p>TIP: {{ question.tip }}</p>
 </section>
 
 <hr>

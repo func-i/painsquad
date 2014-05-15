@@ -11,7 +11,8 @@
   'ngResource',
   'ngCookies',
   'ngSanitize',
-  'underscore'
+  'underscore',
+  'angularMoment'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
@@ -71,45 +72,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           resolve: SurveyCtrl.resolve
     )
 
-    .state('app.new_survey.checklist-detail'
-      url: '/surveys/checklist/detail/:choice'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/checklist-detail.html'
-    )
-
-    .state('app.bodymap-head'
-      url: '/surveys/bodymap/head'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/bodymap/head.html'
-          controller: 'BodymapCtrl'
-    )
-
-    .state('app.bodymap-torso'
-      url: '/surveys/bodymap/torso'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/bodymap/torso.html'
-          controller: 'BodymapCtrl'
-    )
-
-    .state('app.bodymap-arms'
-      url: '/surveys/bodymap/arms'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/bodymap/arms.html'
-          controller: 'BodymapCtrl'
-    )
-
-    .state('app.bodymap-legs'
-      url: '/surveys/bodymap/legs'
-      views:
-        menuContent:
-          templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
-          controller: 'BodymapCtrl'
-    )
-
     .state('app.survey_complete'
       url: '/surveys/complete'
       views:
@@ -117,6 +79,47 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/surveys/complete.html'
           controller: 'CompleteSurveyCtrl'
     )
+
+    .state('app.achievements'
+      url: '/achievements'
+      views:
+        menuContent:
+          templateUrl: 'templates/achievements/main.html'
+          controller: 'AchievementsCtrl'
+    )
+
+    # .state('app.bodymap-head'
+    #   url: '/surveys/bodymap/head'
+    #   views:
+    #     menuContent:
+    #       templateUrl: 'templates/surveys/question_types/bodymap/head.html'
+    #       controller: 'BodymapCtrl'
+    # )
+
+    # .state('app.bodymap-torso'
+    #   url: '/surveys/bodymap/torso'
+    #   views:
+    #     menuContent:
+    #       templateUrl: 'templates/surveys/question_types/bodymap/torso.html'
+    #       controller: 'BodymapCtrl'
+    # )
+
+    # .state('app.bodymap-arms'
+    #   url: '/surveys/bodymap/arms'
+    #   views:
+    #     menuContent:
+    #       templateUrl: 'templates/surveys/question_types/bodymap/arms.html'
+    #       controller: 'BodymapCtrl'
+    # )
+
+    # .state('app.bodymap-legs'
+    #   url: '/surveys/bodymap/legs'
+    #   views:
+    #     menuContent:
+    #       templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
+    #       controller: 'BodymapCtrl'
+    # )
+
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
   $rootScope.$state       = $state

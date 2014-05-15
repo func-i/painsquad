@@ -1,0 +1,65 @@
+<ion-view title="Achievements">
+
+  <ion-header-bar>
+    <button class="button button-clear button-primary" ng-click="back()">Back</button>
+    <!-- <button class="button button-clear button-primary" ng-click="state.go('app.home')">Back</button> -->
+  </ion-header-bar>
+
+  <ion-content padding="true">
+
+    <!-- TODO: Dynamically load awards content based on User points -->
+    <article class="awards">
+      <ion-slide-box on-slide-changed="slideChange(index)">
+
+        <ion-slide ng-repeat="slide in achievementData.awards">
+
+          <h3>Rank</h3>
+          <div class="wrapper">
+            <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
+            <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
+            <img ng-src="{{slide.image_path}}">
+          </div>
+
+          <h4 ng-bind="slide.title"></h4>
+          <time>Achieved {{slide.date}}</time>
+        </ion-slide>
+
+      </ion-slide-box>
+    </article>
+
+    <article class="badges">
+      <h3>Awards</h3>
+
+      <section class="row first">
+        <div id="commendation">
+          <figure id="circle"></figure>
+          <span>Commendation</span>
+        </div>
+
+        <div id="medal">
+          <figure id="circle"></figure>
+          <span>Medal</span>
+        </div>
+      </section>
+
+      <section class="row second">
+        <div id="award">
+          <figure id="circle"></figure>
+          <span>Award</span>
+        </div>
+
+        <div id="cross">
+          <figure id="circle"></figure>
+          <span>Cross</span>
+        </div>
+
+        <div id="star">
+          <figure id="circle"></figure>
+          <span>Star</span>
+        </div>
+      </section>
+
+    </article>
+
+  </ion-content>
+</ion-view>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>PainSquad Client</title>
+  <title>PainSquad</title>
 
   <!-- build:css styles/vendor.css -->
   <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
@@ -32,6 +32,8 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -40,32 +42,9 @@
   <script src="scripts/config.js"></script>
 
   <!-- CONTROLLERS -->
-<<<<<<< HEAD
-
-  <script src="scripts/controllers/shared/login_ctrl.js"></script>
-  <script src="scripts/controllers/shared/home_ctrl.js"></script>
-
-  <script src="scripts/controllers/survey/survey_ctrl.js"></script>
-  <script src="scripts/controllers/survey/complete_survey_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/boolean_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/slider_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/radio_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/checklist_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/checklist_grid_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/checklist_extra_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/checklist_modal_ctrl.js"></script>
-
-  <script src="scripts/controllers/survey/questions/bodymap_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/bodymap_modal_ctrl.js"></script>
-  <script src="scripts/controllers/survey/questions/bodymap/head_ctrl.js"></script>
-
-  <!-- // <script src="scripts/controllers/survey/questions/bodymap_torso_ctrl.js"></script> -->
-  <!-- // <script src="scripts/controllers/survey/questions/bodymap_arm_ctrl.js"></script> -->
-
-  <script src="scripts/controllers/survey/questions/text_box_ctrl.js"></script>
-=======
-  <script src="scripts/controllers/shared/login_ctrl.js"></script>
-  <script src="scripts/controllers/shared/home_ctrl.js"></script>
+  <script src="scripts/controllers/login_ctrl.js"></script>
+  <script src="scripts/controllers/home_ctrl.js"></script>
+  <script src="scripts/controllers/achievements_ctrl.js"></script>
   <script src="scripts/controllers/surveys/survey_ctrl.js"></script>
   <script src="scripts/controllers/surveys/complete_survey_ctrl.js"></script>
   <script src="scripts/controllers/surveys/questions/boolean_ctrl.js"></script>
@@ -79,7 +58,6 @@
   <script src="scripts/controllers/surveys/questions/bodymap_ctrl.js"></script>
   <script src="scripts/controllers/surveys/questions/bodymap_torso_ctrl.js"></script>
   <script src="scripts/controllers/surveys/questions/bodymap_arm_ctrl.js"></script>
->>>>>>> d8f3e6108ae5ae7cfe3b5ba5f29601ac73e5887b
 
   <!-- RESOURCES -->
   <script src="scripts/resources/session_resource.js"></script>
@@ -89,37 +67,21 @@
   <!-- SERVICES -->
   <script src="scripts/services/shared/auth_service.js"></script>
   <script src="scripts/services/shared/underscore_service.js"></script>
-<<<<<<< HEAD
-
-  <script src="scripts/services/survey/submission_service.js"></script>
-  <script src="scripts/services/survey/survey_service.js"></script>
-  <script src="scripts/services/survey/bodymap_service.js"></script>
-=======
   <script src="scripts/services/surveys/survey_service.js"></script>
   <script src="scripts/services/surveys/submission_service.js"></script>
   <script src="scripts/services/surveys/bodymap_service.js"></script>
->>>>>>> d8f3e6108ae5ae7cfe3b5ba5f29601ac73e5887b
 
   <!-- FILTERS -->
   <script src="scripts/filters/slider_filter.js"></script>
 
   <!-- DIRECTIVES -->
-<<<<<<< HEAD
-  <script src="scripts/directives/shared/drag_back.js"></script>
-  <script src="scripts/directives/forms/valid_form.js"></script>
-  <script src="scripts/directives/forms/valid_radio_form.js"></script>
-  <script src="scripts/directives/forms/valid_modal_form.js"></script>
-  <script src="scripts/directives/survey/body_map_selector.js"></script>
-
-  <script src="scripts/directives/survey/body_map.js"></script>
-  <script src="scripts/directives/survey/body_map_dual.js"></script>
-=======
   <script src="scripts/directives/forms/valid_form.js"></script>
   <script src="scripts/directives/forms/valid_radio_form.js"></script>
   <script src="scripts/directives/forms/valid_modal_form.js"></script>
   <script src="scripts/directives/bodymap/body_map.js"></script>
   <script src="scripts/directives/bodymap/body_map_dual.js"></script>
->>>>>>> d8f3e6108ae5ae7cfe3b5ba5f29601ac73e5887b
+  <script src="scripts/directives/shared/slider_gradient.js"></script>
+
   <!-- endbuild -->
 
   <!-- cordova script (this will be a 404 during development) -->
