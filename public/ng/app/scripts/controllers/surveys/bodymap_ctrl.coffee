@@ -48,10 +48,6 @@
       choice:         {}
       tempSelections: []
 
-  # hacky broadcast / emit event for dual selections
-  $scope.$on 'dualSelections', (event, switchSelections, region) ->
-    $scope.selections[region] = switchSelections
-
   $scope.$on "$destroy", ->
     $scope.modal.remove()
 
