@@ -20,10 +20,7 @@ Given /^the (\S*) field (\S*) is set to (.*)$/ do |instance_var_name, field, val
   instance_variable_get("@#{instance_var_name}").send("#{field}=", value)
 end
 
-Given /^we test the (\S*)$/ do |hash|
+Given /^I test the (\S*)$/ do |response|
+  hash = JSON.parse(last_response.body)
   binding.pry
 end
-
-# Given /^the (\S*) field (\S*) is set to (.*)$/ do |instance_var_name, field, value|
-#   binding.pry
-# end

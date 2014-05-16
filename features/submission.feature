@@ -26,7 +26,11 @@ I want to ensure it can process all answers from the JSON response
     Given an unsaved submission
     When the submission field has_pain is set to true
     Then I create the submission
-    And we test the submission
+    Then I should receive a 200 response code
+      And I test the response
+      # puts JSON
+      # And the JSON at "submission.answers_attributes" should be 5
+
     # And the JSON response at "submission.answers_attributes/0" should be ""
     # Then the JSON at "submission.answers_attributes" should be ""
     # Then the submission.answers_attributes hash

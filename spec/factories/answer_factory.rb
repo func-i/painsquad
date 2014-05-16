@@ -3,14 +3,14 @@ FactoryGirl.define do
   factory :answer do
     question
     choice
-    # value
-    # question_type "boolean"
-    # content       "Are you in pain right now?"
-    # ignore        { choice_count 4 }
-
-    # after(:create) do |question, evaluator|
-    #   create_list(:choice, evaluator.choice_count, question: question)
-    # end
-  end # => factory :question
+    sequence(:value) { |n| "answer value #{n}" }
+    sequence(:custom_text) { |n| "custom text #{n}" }
+    data_object {{
+      'head'  => ["mid_left"],
+      'torso' => ["chest_left", "mid_back"],
+      'arms'  => ["elbow_left", "bicep_right"],
+      'legs'  => []
+    }}
+  end
 
 end

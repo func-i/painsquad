@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :submission do
     survey
-    has_pain [true, false].sample
+    has_pain true
 
     ignore { answer_count 5 }
     after(:create) do |submission, evaluator|
