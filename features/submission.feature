@@ -5,16 +5,25 @@ And the Submission object is received
 I want to ensure it can process all answers from the JSON response
 
   Scenario: When `has_pain` is false
-    Given a saved submission
-    # Given an unsaved survey
-    # When I visit the surveys endpoint
-    # Then I should receive a 404 response code
+    Given I post to "/api/submissions" with:
+    """
+    {
+      "survey_id": 1,
+      "has_pain": false,
+      "answers_attributes": []
+    }
+    """
+
 
   Scenario: When `has_pain` is true
-    Given a saved submission
-    # Given an unsaved survey
-    # When I visit the surveys endpoint
-    # Then I should receive a 404 response code
+    Given I post to "/api/submissions" with:
+    """
+    {
+      "survey_id": 1,
+      "has_pain": true,
+      "answers_attributes": []
+    }
+    """
 
 
   # Scenario: Fetching Survey that does exist

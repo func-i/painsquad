@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails',       '4.1.0'
+gem 'rails-api',   '~> 0.2.1'
 gem 'thin',        '~> 1.6.2'
 gem 'sorcery',     '~> 0.8.5'
 gem 'rack-cors',   '~> 0.2.9'

@@ -1,13 +1,13 @@
 # Prevent CSRF attacks by raising an exception.
 # For APIs, you may want to use :null_session instead.
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+class ApplicationController < ActionController::API
+  # protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token, if: proc { |c| c.request.format.json? }
 
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  respond_to :json
+  # respond_to :json
   # before_action :restrict_access
 
   protected
