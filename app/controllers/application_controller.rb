@@ -7,7 +7,6 @@ class ApplicationController < ActionController::API
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  # respond_to :json
   # before_action :restrict_access
 
   protected

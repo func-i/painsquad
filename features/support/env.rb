@@ -5,6 +5,11 @@
 # files.
 
 require 'cucumber/rails'
+require 'json_spec/cucumber'
+
+def last_json
+  page.source
+end
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any

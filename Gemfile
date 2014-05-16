@@ -20,6 +20,7 @@ gem 'pundit',      '~> 0.2.3'
 group :development, :test do
   gem 'rspec-rails',        '~> 2.14.2'
   gem 'cucumber-rails',     '~> 1.4.0', require: false
+  gem 'json_spec',          '~> 1.1.1'
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'jazz_hands',         '~> 0.5.2'
 end
