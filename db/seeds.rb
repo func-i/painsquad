@@ -3,8 +3,8 @@
 ####### Seeds
 user = User.create username: 'test user', email: 'test@email.com', password: 'password'
 
-####### Setup Basic Survey
-survey = Survey.create title: 'Full Assessment'
+# ####### Full Assessment
+# survey = Survey.create title: 'Full Assessment'
 
 
 # ####### BOOLEAN
@@ -84,15 +84,15 @@ survey = Survey.create title: 'Full Assessment'
 # q6.choices.create content: 'Other', textfield: true
 
 
-####### BODY MAP
-q7 = survey.questions.create(
-  question_type: 'bodymap',
-  content: 'Where did it hurt since your last report?'
-)
-q7.choices.create content: 'Head'
-q7.choices.create content: 'Torso'
-q7.choices.create content: 'Arms'
-q7.choices.create content: 'Legs'
+# # ####### BODY MAP
+# q7 = survey.questions.create(
+#   question_type: 'bodymap',
+#   content: 'Where did it hurt since your last report?'
+# )
+# q7.choices.create content: 'Head'
+# q7.choices.create content: 'Torso'
+# q7.choices.create content: 'Arms'
+# q7.choices.create content: 'Legs'
 
 
 # ####### TEXTBOX
