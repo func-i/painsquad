@@ -1,18 +1,9 @@
-.range {
-  border: 1px dotted red;
-}
-
 .slider-container {
-  background: 1px dotted blue;
-  width:            100%;
+  width:            93%;
+  margin-left:      16px;
   position:         relative;
   height:           150px;
   background-color: #E7E7E7;
-  margin:           0 5px 0 5px;
-
-  &.modal {
-    left: -5px;
-  }
 
   .wedge {
     position:     absolute;

@@ -1,6 +1,6 @@
 'use strict'
 
-@controllerModule.controller "ChecklistCtrl", ['$scope', '$state', ($scope, $state) ->
+@ChecklistCtrl = @controllerModule.controller "ChecklistCtrl", ($scope, $state) ->
 
   # add/removes item from $scope.selection array
   # triggers disableAll if 'None' selected
@@ -23,4 +23,4 @@
         choice.selected
     !atLeastOne
 
-]
+@ChecklistCtrl.$inject = ['$scope', '$state']

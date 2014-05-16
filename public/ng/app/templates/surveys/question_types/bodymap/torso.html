@@ -1,46 +1,29 @@
-<ion-view title="Torso" hide-back-button="true">
+<section ng-init="activeTab = 'front'">
 
-  <ion-nav-buttons side="left">
-    <button class="button button-positive button-clear" ng-click="back()">
-      Cancel
-    </button>
-  </ion-nav-buttons>
+  <div class="button-bar">
+    <a href
+      class="button"
+      ng-click="activeTab = 'front'"
+      ng-class="{ 'active': activeTab === 'front' }">
+        Front
+    </a>
 
-  <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear" ng-click="back() && saveDualSelection('torso')">
-      Save
-    </button>
-  </ion-nav-buttons>
+    <a href
+      class="button"
+      ng-click="activeTab = 'back'"
+      ng-class="{ 'active': activeTab === 'back' }">
+        Back
+    </a>
+  </div>
 
-  <ion-content padding="true" class="has-header" ng-controller="TorsoCtrl">
-
-    <!-- TODO: test 'active' ng-class - not sticking after toggle -->
-    <div class="button-bar">
-      <a href
-        class="button"
-        ng-click="activeTab = 'front'"
-        ng-class="{ 'active': activeTab === 'front' }">
-          Front
-      </a>
-
-      <a href
-        class="button"
-        ng-click="activeTab = 'back'"
-        ng-class="{ 'active': activeTab === 'back' }">
-          Back
-      </a>
+  <div ng-switch="activeTab">
+    <div ng-switch-when="front">
+      <section region="front" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsofront.svg'"></section>
     </div>
 
-    <div class="marginalized" ng-switch="activeTab">
-      <div ng-switch-when="front">
-        <body-map-dual svg-path="images/bodymap/bodymap-torsofront.svg" region-type="torso" bound-scope="first"></body-map-dual>
-      </div>
-
-      <div ng-switch-when="back">
-        <body-map-dual svg-path="images/bodymap/bodymap-torsoback.svg" region-type="torso" bound-scope="second"></body-map-dual>
-      </div>
+    <div ng-switch-when="back">
+      <section region="back" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsoback.svg'"></section>
     </div>
+  </div>
 
-  </ion-content>
-
-</ion-view>
+</section>

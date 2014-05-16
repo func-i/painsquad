@@ -1,6 +1,6 @@
 'use strict'
 
-@controllerModule.controller "ChecklistGridCtrl", ['$scope', '$state', ($scope, $state) ->
+@ChecklistGridCtrl = @controllerModule.controller "ChecklistGridCtrl", ($scope, $state) ->
 
   # TODO: remove underscore depencency and clean this up
   $scope.atLeastOne = ->
@@ -11,4 +11,4 @@
         choice.selected
     !atLeastOne
 
-]
+@ChecklistGridCtrl.$inject = ['$scope', '$state']
