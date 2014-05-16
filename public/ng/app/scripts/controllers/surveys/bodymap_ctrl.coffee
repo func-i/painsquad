@@ -13,6 +13,7 @@
     $scope.modal = modal
 
   $scope.contentSaved = (painRegion) ->
+    return unless painRegion?
     if BodymapService.anyElementsInRegion(painRegion.toLowerCase())
       $scope.$emit 'currentForm:valid'
       true
