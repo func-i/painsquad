@@ -1,4 +1,15 @@
-# Submission has many Questions, a Question has many Choices
+# == Schema Information
+#
+# Table name: questions
+#
+#  id            :integer          not null, primary key
+#  survey_id     :integer
+#  question_type :string(255)
+#  content       :string(255)
+#  tip           :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
 class Question < ActiveRecord::Base
   QUESTION_TYPES = %w( boolean radio slider bodymap checklist checklist-grid checklist-extra textbox )
 

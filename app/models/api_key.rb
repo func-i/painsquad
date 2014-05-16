@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: api_keys
+#
+#  id           :integer          not null, primary key
+#  access_token :string(255)
+#  user_id      :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 # tentative solution for token-based user authentication
 class ApiKey < ActiveRecord::Base
   belongs_to :user

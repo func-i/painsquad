@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: surveys
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Top level Survey, has many Questions
 class Survey < ActiveRecord::Base
   has_many :questions

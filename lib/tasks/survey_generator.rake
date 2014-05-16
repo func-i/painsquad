@@ -5,13 +5,13 @@ namespace :survey do
   # Official Surveys
   desc "Creates 'Full Assessment' Survey"
   task :full => [:clear_all, :environment] do
-    survey = Survey.create title: 'Full Assessment'
+    # survey = Survey.create title: 'Full Assessment'
     puts 'TODO'
   end
 
   desc "Creates 'Truncated Assessment' Survey"
   task :truncated => [:clear_all, :environment] do
-    survey = Survey.create title: 'Truncated Assessment'
+    # survey = Survey.create title: 'Truncated Assessment'
     puts "TODO"
   end
 

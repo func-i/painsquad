@@ -1,8 +1,24 @@
-# Answer Model - created through nested attributes from Submission
+# == Schema Information
+#
+# Table name: answers
+#
+#  id            :integer          not null, primary key
+#  submission_id :integer
+#  choice_id     :integer
+#  question_id   :integer
+#  value         :integer
+#  custom_text   :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#  data_object   :text
+#
+
 class Answer < ActiveRecord::Base
   belongs_to :submission
   belongs_to :choice
   belongs_to :question
+
+  serialize :data_object, JSON
 
   # TODO: fix this
   # validates :value, numericality: {
@@ -11,7 +27,6 @@ class Answer < ActiveRecord::Base
   #   allow_nil:                true
   # }
 
-  serialize :data_object, JSON
 
   # belongs_to :question
   # has_many :choices, dependent: :destroy

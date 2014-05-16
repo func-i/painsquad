@@ -1,6 +1,5 @@
 module Api
   module V1
-    # Submission Controller, accepts POST to create Submission Tree
     class SubmissionsController < ApplicationController
       before_action :fetch_submission, only: [:show]
       # skip_before_action :restrict_access
@@ -10,10 +9,11 @@ module Api
       end
 
       def create
-        if (@submission = Submission.create(submission_params))
-          render json: @submission.to_json
+        @submission = Submission.new submission_params
+        if @submission.save
+          render json: @submission
         else
-          render json: nil, status: :unprocessable_entity
+          render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
         end
       end
 

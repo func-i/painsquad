@@ -1,11 +1,11 @@
-# Given /^I visit the surveys endpoint$/ do
-#   get api_surveys_path
-# end
+Given(/^I post to "(.*?)" with:$/) do |path, json_body|
+  post path, json_body
+end
 
-# Given /^the survey (\S*) should be set$/ do |value|
-#   hash = JSON.parse(last_response.body)
-#   hash["survey"][value].should eql(@survey.send(value))
-# end
+Given /^I create the submission$/ do
+  post api_submissions_path, submission: @submission.attributes
+end
 
-# Given /^the survey has (\S*)$/ do |value|
-# end
+Given /^an empty submission$/ do
+  @submission = build(:submission, survey: nil)
+end
