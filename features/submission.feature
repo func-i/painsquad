@@ -24,10 +24,14 @@ I want to ensure it can process all answers from the JSON response
 
   Scenario: A submissions' answers array should contain answers
     Given an unsaved submission
-    When the submission field has_pain is set to true
-    Then I create the submission
+    When I create the submission
     Then I should receive a 200 response code
+      # testing is fucking annoying
       And I test the response
+
+    # Given an unsaved submission
+    # When the submission field has_pain is set to true
+    # Then I create the submission
       # puts JSON
       # And the JSON at "submission.answers_attributes" should be 5
 
