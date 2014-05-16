@@ -49,6 +49,7 @@
       choice:         {}
       tempSelections: []
 
+  # removes modal from memory when finished
   $scope.$on "$destroy", ->
     $scope.modal.remove()
 
