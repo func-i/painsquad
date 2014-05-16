@@ -24,11 +24,7 @@
 
   # saves modalSelections to master selections
   $scope.saveModalSelections = ->
-    painRegion = getPainRegion()
-    if painRegion in ['torso', 'arms']
-      $scope.$broadcast 'requestSwitchSelections'
-    else
-      $scope.selections[painRegion] = $scope.modalSelection.tempSelections
+    $scope.selections[getPainRegion()] = $scope.modalSelection.tempSelections
     resetModalSelection()
     $scope.modal.hide()
 
@@ -54,7 +50,7 @@
 
   # hacky broadcast / emit event for dual selections
   $scope.$on 'dualSelections', (event, switchSelections, region) ->
-    $scope.selections[region] = _.uniq($scope.selections[region].concat switchSelections)
+    $scope.selections[region] = switchSelections
 
   $scope.$on "$destroy", ->
     $scope.modal.remove()
