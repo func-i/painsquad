@@ -6,7 +6,41 @@
   </ion-header-bar>
 
   <ion-content padding="true">
-    Recommended stuff here
+
+    <!-- TODO: dynamically populate this list -->
+    <ion-list class="recommended">
+
+      <a ng-repeat="item in data.recommended"
+         class="item item-thumbnail-left"
+         href="">
+
+        <img ng-src="{{ item.image }}" alt="{{ item.title }}">
+        <h2>{{ item.title }}</h2>
+
+        <div class="duration">
+          <span class="ion-ios7-alarm-outline calm"></span>
+          <span>{{ item.duration }}</span>
+        </div>
+
+        <div class="resolves">
+          <span class="ion-ios7-checkmark-outline balanced"></span>
+          <span>{{ item.resolves }}</span>
+        </div>
+
+        <span ng-model="item.favorite"
+          class="badge"
+          ng-class="{ 'ion-ios7-heart': item.favorite, 'ion-ios7-heart-outline': !item.favorite }"
+          ng-click="item.favorite = !item.favorite"
+          ng-model="item.favorite"> </span>
+
+          {{ item.favorite }}
+      </a>
+
+    </ion-list>
+
+    <hr>
+    <pre ng-bind="data.recommended | json"></pre>
+
   </ion-content>
 
 </ion-view>

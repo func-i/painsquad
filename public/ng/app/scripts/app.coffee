@@ -41,12 +41,15 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
   $urlRouterProvider.otherwise "/app/home"
 
   $stateProvider
+
+    # abstract sidemenu state/template
     .state('app',
       url: '/app'
       abstract: true
       templateUrl: 'templates/layout/menu.html'
     )
 
+    # root template 1
     .state('app.login'
       url: '/login'
       views:
@@ -55,6 +58,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'LoginCtrl'
     )
 
+    # root template 2
     .state('app.home'
       url: '/home'
       views:
@@ -63,6 +67,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'HomeCtrl'
     )
 
+    # pain-case template - render individual questions as partials
     .state('app.new_survey'
       url: '/surveys/new'
       views:
@@ -72,6 +77,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           resolve: SurveyCtrl.resolve
     )
 
+    # temporary state - REMOVE DIS
     .state('app.survey_complete'
       url: '/surveys/complete'
       views:
@@ -80,6 +86,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'CompleteSurveyCtrl'
     )
 
+
+    # achievements state
     .state('app.achievements'
       url: '/achievements'
       views:
@@ -88,6 +96,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'AchievementsCtrl'
     )
 
+    # advice state
     .state('app.advice'
       url: '/advice'
       views:
@@ -96,21 +105,42 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'AdviceCtrl'
     )
 
-    .state('app.recommended'
-      url: '/recommended'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/recommended.html'
-          controller: 'AdviceCtrl'
-    )
+      # advice -> recommended state
+      .state('app.recommended'
+        url: '/recommended'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/recommended.html'
+            controller: 'AdviceCtrl'
+      )
 
-    .state('app.favorites'
-      url: '/favorites'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/favorites.html'
-          controller: 'AdviceCtrl'
-    )
+      # advice -> favorites state
+      .state('app.favorites'
+        url: '/favorites'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/favorites.html'
+            controller: 'AdviceCtrl'
+      )
+
+      # advice -> prevent pain state
+      .state('app.prevent'
+        url: '/prevent'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/prevent.html'
+            controller: 'AdviceCtrl'
+      )
+
+      # advice -> manage pain state
+      .state('app.manage'
+        url: '/manage'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/manage.html'
+            controller: 'AdviceCtrl'
+      )
+
 
 
 

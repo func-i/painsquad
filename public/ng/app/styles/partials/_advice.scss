@@ -16,6 +16,45 @@
     }
   }
 
-  .bottom {}
+  .bottom {
+    .list > .item {
+      cursor: pointer;
+    }
+  }
 
+}
+
+.recommended {
+  position: relative;
+
+  .item {
+    .duration {
+      // border: 1px dotted black;
+    }
+
+    .resolves {
+      // border: 1px dotted black;
+    }
+
+    .resolves > span:last-child {
+      // border: 1px dotted black;
+      word-break: break-all;
+      white-space: normal;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+
+    &::after {
+      content: " ";
+    }
+
+    &:hover {
+      font-size: 35px;
+    }
+  }
 }
