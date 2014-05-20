@@ -4,17 +4,12 @@ When a survey is filled out
 And the Submission object is received
 I want to ensure it can process all answers from the JSON response
 
-  Scenario: survey_id is required
+  Scenario: A submission without survey and has_pain will fail
     Given an empty submission
     When I create the submission
     Then I should receive a 422 response code
 
-  Scenario: has_pain is required
-    Given an unsaved submission
-    When I create the submission
-    Then I should receive a 422 response code
-
-  Scenario: A submission with survey and has_pain will succeed
+  Scenario: A submission with survey_id and has_pain will succeed
     Given an unsaved submission
     When the submission field has_pain is set to false
     Then I create the submission
@@ -22,12 +17,15 @@ I want to ensure it can process all answers from the JSON response
       And the response should have the key submission
       And the submission hash should have the key answers_attributes and it should be a Array
 
-  Scenario: A submissions' answers array should contain answers
-    Given an unsaved submission
-    When I create the submission
+  Scenario: A submissions' answers_attributes array should contain valid answers
+    Given a saved submission
+    Then I create the submission
     Then I should receive a 200 response code
-      # testing is fucking annoying
       And I test the response
+
+    # Given an unsaved submission
+    # When I create the submission
+    # Then I should receive a 200 response code
 
     # Given an unsaved submission
     # When the submission field has_pain is set to true

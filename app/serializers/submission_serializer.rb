@@ -3,7 +3,7 @@ class SubmissionSerializer < ActiveModel::Serializer
   has_many :answers_attributes
 
   def answers_attributes
-    object.answers.includes(:choices, :questions)
+    object.answers.includes(:choice, :question)
   end
 
 end

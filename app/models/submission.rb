@@ -14,6 +14,10 @@ class Submission < ActiveRecord::Base
   accepts_nested_attributes_for :answers
 
   validates :survey, presence: true
-  validates :has_pain, presence: true, inclusion: [true, false]
+  validates :has_pain, inclusion: [true, false]
+
+  def print_tree
+    SubmissionSerializer.new(self).to_json
+  end
 
 end
