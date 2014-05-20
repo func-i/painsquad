@@ -1,0 +1,21 @@
+.advice {
+
+  .top {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+    .item {
+      height: 250px;
+      width: 50%;
+      float:  left;
+
+      &:last-child {
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .bottom {}
+
+}

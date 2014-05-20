@@ -88,37 +88,30 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           controller: 'AchievementsCtrl'
     )
 
-    # .state('app.bodymap-head'
-    #   url: '/surveys/bodymap/head'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/surveys/question_types/bodymap/head.html'
-    #       controller: 'BodymapCtrl'
-    # )
+    .state('app.advice'
+      url: '/advice'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/main.html'
+          controller: 'AdviceCtrl'
+    )
 
-    # .state('app.bodymap-torso'
-    #   url: '/surveys/bodymap/torso'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/surveys/question_types/bodymap/torso.html'
-    #       controller: 'BodymapCtrl'
-    # )
+    .state('app.recommended'
+      url: '/recommended'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/recommended.html'
+          controller: 'AdviceCtrl'
+    )
 
-    # .state('app.bodymap-arms'
-    #   url: '/surveys/bodymap/arms'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/surveys/question_types/bodymap/arms.html'
-    #       controller: 'BodymapCtrl'
-    # )
+    .state('app.favorites'
+      url: '/favorites'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/favorites.html'
+          controller: 'AdviceCtrl'
+    )
 
-    # .state('app.bodymap-legs'
-    #   url: '/surveys/bodymap/legs'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/surveys/question_types/bodymap/legs.html'
-    #       controller: 'BodymapCtrl'
-    # )
 
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->

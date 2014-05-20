@@ -1,4 +1,4 @@
-<ion-view title="Pain Case" hide-back-button="true">
+<ion-view title="Pain Case" hide-back-button="true" class="width-wrap">
 
   <ion-nav-buttons side="right">
     <button class="button button-positive button-clear" ng-click="nextQuestion()" ng-show="showNext">
@@ -6,7 +6,7 @@
     </button>
   </ion-nav-buttons>
 
-  <ion-content padding="true" class="has-header survey-wrapper">
+  <ion-content padding="true" class="has-header">
     <div ng-include src="'/templates/surveys/progress_bar.html'"></div>
     <div ng-include src="'/templates/surveys/question_partial.html'"></div>
   </ion-content>

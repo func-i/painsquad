@@ -1,16 +1,20 @@
 // modules are sass-only styles (variables, mixins, overrides)
 @import 'modules/defaults',
         'modules/layout',
-        'modules/variables';
+        'modules/variables',
+        'modules/helpers';
 
-// partials are view and template-related styles
+// view and template-related styles
 @import 'partials/shared/intro',
         'partials/shared/buttons',
         'partials/shared/sidebar',
         'partials/shared/modal',
         'partials/shared/progress',
-        'partials/shared/slider',
-        'partials/shared/achievements';
+        'partials/shared/slider';
+
+// state-specific partial styling
+@import 'partials/achievements',
+        'partials/advice';
 
 // survey questions
 @import 'partials/survey/question_partial';
