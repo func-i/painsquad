@@ -2,9 +2,11 @@
 
   <!-- TODO: disable 'drag-left' gesture for sidemenu -->
   <ion-pane ion-side-menu-content drag-content="false">
+
     <ion-nav-bar class="bar-light">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-left"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
+
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
@@ -24,32 +26,23 @@
 
     <div class="list pull-down">
 
-      <ion-item nav-clear menu-close href="">
-        <i class="icon ion-home"></i>
-        Home
+      <ion-item menu-close ui-sref="app.about">
+        About
       </ion-item>
 
-      <ion-item nav-clear menu-close ui-sref="app.login">
-        <i class="icon ion-log-in"></i>
-        Login
-      </ion-item>
-
-
-      <ion-item nav-clear menu-close href="">
+      <ion-item menu-close href="">
         Contact &amp; Support
       </ion-item>
 
-      <ion-item nav-clear menu-close href="">
+      <ion-item menu-close href="">
         Terms of Use
       </ion-item>
 
-      <ion-item nav-clear menu-close href="">
+      <ion-item menu-close href="">
         Privacy
       </ion-item>
 
     </div>
-
-    </ion-content>
   </ion-side-menu>
 </ion-side-menus>
 

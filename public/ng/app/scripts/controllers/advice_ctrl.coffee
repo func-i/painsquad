@@ -1,6 +1,10 @@
 'use strict'
 
 @AdviceCtrl = @controllerModule.controller 'AdviceCtrl', ($scope, $state) ->
+
+  # TODO: this data should ideally come to the server based on the users state
+  # we should dynamically populate the 'recommended' list based on this data
+  # as well as the sub-views
   $scope.data = {}
   $scope.data.recommended = [
     {
