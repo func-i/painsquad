@@ -84,3 +84,10 @@ Given /^the (\S*) hash should have the key (\S*) and it should be a (\S*)$/ do |
   hash.has_key?(key_name).should == true
   hash[key_name].should be_a type.constantize
 end
+
+Given  /^the JSON at "(.*?)" should be length (\d+)$/  do |hash_key, response_length|
+  hash = JSON.parse(last_response.body)
+  keys = hash_key.split('.')
+  # injects keys array into hash to fetch target JSON
+  keys.inject(hash, &:fetch).length.should == Integer(response_length)
+end
