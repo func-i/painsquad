@@ -7,14 +7,15 @@
 #  title      :string(255)
 #  image      :string(255)
 #  duration   :string(255)
-#  resolves   :string(255)
+#  context    :string(255)
 #  favorite   :boolean          default(FALSE)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-require 'spec_helper'
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-describe Recommendation do
-  pending "add some examples to (or delete) #{__FILE__}"
+FactoryGirl.define do
+  factory :recommendation do
+  end
 end

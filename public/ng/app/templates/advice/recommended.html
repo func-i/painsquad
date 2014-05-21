@@ -11,7 +11,7 @@
       <ion-item
         ng-repeat="item in data.recommended"
         class="item item-thumbnail-left"
-        ng-click="renderAdvicePartial(item)">
+        ng-click="loadAdviceModal(item)">
 
           <img ng-src="{{ item.image }}" alt="{{ item.title }}">
           <h2>{{ item.title }}</h2>
