@@ -95,6 +95,15 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
                 Advice.query().$promise
       )
 
+      # recommended -> advice steps slidebox
+      .state('app.advice_steps'
+        url: '/recommended/steps/'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/steps.html'
+            controller:  'AdviceStepsCtrl'
+      )
+
       # advice -> favorites state
       .state('app.favorites'
         url: '/favorites'

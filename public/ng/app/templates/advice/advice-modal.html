@@ -1,16 +1,25 @@
 <div class="modal">
   <ion-header-bar class="bar bar-header bar-positive">
-    <button class="button button-icon icon ion-ios7-arrow-back" ng-click="modal.hide()">
+
+    <button class="button button-icon ion-ios7-arrow-back" ng-click="modal.hide()">
       Back
     </button>
 
-    <button class="button button-icon button-primary" ng-click="modal.hide()">
+    <button class="button button-icon">
+      Start
+      <i class="button button-icon ion-ios7-arrow-forward"></i>
+    </button>
+
+<!--
+    <button class="button button-icon button-primary" ng-click="modal.hide()" ng-hide="!slideIndex">
       Did it!
     </button>
+ -->
   </ion-header-bar>
 
   <ion-content has-header="true" class="advice-modal">
-
+    {{ slideIndex }}
+<!--
     <ion-slide-box on-slide-changed="slideChanged(index)">
 
       <ion-slide class="has-header" ng-repeat="step in data.adviceSlides.steps">
@@ -18,7 +27,7 @@
       </ion-slide>
 
     </ion-slide-box>
-
+ -->
   </ion-content>
 
 </div>
