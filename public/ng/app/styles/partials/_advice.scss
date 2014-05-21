@@ -10,6 +10,12 @@
       width: 50%;
       float:  left;
 
+      i {
+        left: 50%;
+        top: 50%;
+        font-size: 50px;
+      }
+
       &:last-child {
         margin-left: 3px;
       }

@@ -51,8 +51,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/surveys/new.html'
-          controller: 'SurveyCtrl'
-          resolve: SurveyCtrl.resolve
+          controller:  'SurveyCtrl'
+          resolve:     SurveyCtrl.resolve
     )
 
     # temporary state - REMOVE DIS
@@ -80,7 +80,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/advice/main.html'
-          controller: 'AdviceCtrl'
+          controller:  'AdviceCtrl'
+          # resolve:     AdviceCtrl.resolve
     )
 
       # advice -> recommended state
