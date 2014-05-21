@@ -14,9 +14,10 @@ module Api
 
       private
 
-      # TODO: Need to populate advice -> recommendations based upon some requirements
+      # TODO: Need to populate advice -> recommendations based upon some
+      # requirements specified by SickKids
       def fetch_advice
-        @advice = Advice.last
+        @advice = Advice.first
       end
     end
   end

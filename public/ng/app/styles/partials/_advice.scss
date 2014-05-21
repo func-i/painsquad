@@ -38,11 +38,11 @@
       // border: 1px dotted black;
     }
 
-    .resolves {
+    .context {
       // border: 1px dotted black;
     }
 
-    .resolves > span:last-child {
+    .context > span:last-child {
       // border: 1px dotted black;
       word-break: break-all;
       white-space: normal;
@@ -50,17 +50,13 @@
   }
 
   .badge {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    position:  absolute;
+    top:       0px;
+    right:     0px;
     font-size: 20px;
 
-    &::after {
-      content: " ";
-    }
-
     &:hover {
-      font-size: 35px;
+      font-size: 30px;
     }
   }
 }

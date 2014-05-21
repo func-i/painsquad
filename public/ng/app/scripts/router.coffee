@@ -81,8 +81,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         menuContent:
           templateUrl: 'templates/advice/main.html'
           controller:  'AdviceCtrl'
-          resolve:     AdviceCtrl.resolve
-    )
+      )
 
       # advice -> recommended state
       .state('app.recommended'
@@ -90,6 +89,10 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         views:
           menuContent:
             templateUrl: 'templates/advice/recommended.html'
+            controller: 'RecommendationsCtrl'
+            resolve:
+              adviceResource: (Advice) ->
+                Advice.query().$promise
       )
 
       # advice -> favorites state

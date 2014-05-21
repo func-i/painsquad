@@ -2,42 +2,37 @@
 
   <ion-header-bar>
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
-    <!-- <button class="button button-clear button-primary" ng-click="state.go('app.home')">Back</button> -->
   </ion-header-bar>
 
   <ion-content padding="true">
 
-    <!-- TODO: dynamically populate this list -->
     <ion-list class="recommended">
 
-      <a ng-repeat="item in data.recommended"
-         class="item item-thumbnail-left"
-         href="">
+      <ion-item
+        ng-repeat="item in data.recommended"
+        class="item item-thumbnail-left"
+        ng-click="renderAdvicePartial(item)">
 
-        <img ng-src="{{ item.image }}" alt="{{ item.title }}">
-        <h2>{{ item.title }}</h2>
+          <img ng-src="{{ item.image }}" alt="{{ item.title }}">
+          <h2>{{ item.title }}</h2>
 
-        <div class="duration">
-          <span class="ion-ios7-alarm-outline calm"></span>
-          <span>{{ item.duration }}</span>
-        </div>
+          <div class="duration">
+            <span class="ion-ios7-alarm-outline calm"></span>
+            <span>{{ item.duration }}</span>
+          </div>
 
-        <div class="resolves">
-          <span class="ion-ios7-checkmark-outline balanced"></span>
-          <span>{{ item.resolves }}</span>
-        </div>
+          <div class="context">
+            <span class="ion-ios7-checkmark-outline balanced"></span>
+            <span>{{ item.context }}</span>
+          </div>
 
-        <span ng-model="item.favorite"
-          class="badge"
-          ng-class="{ 'ion-ios7-heart': item.favorite, 'ion-ios7-heart-outline': !item.favorite }"
-          ng-click="item.favorite = !item.favorite"
-          ng-model="item.favorite"> </span>
-        </a>
+          <i ng-model="item.favorite"
+             class="badge"
+             ng-class="{ 'ion-ios7-heart': item.favorite, 'ion-ios7-heart-outline': !item.favorite }"
+             ng-click="item.favorite = !item.favorite"> </i>
+      </ion-item>
 
     </ion-list>
-
-    <hr>
-    <pre ng-bind="data.recommended | json"></pre>
 
   </ion-content>
 
