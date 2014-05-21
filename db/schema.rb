@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509172902) do
+ActiveRecord::Schema.define(version: 20140521155758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advices", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "answers", force: true do |t|
     t.integer  "submission_id"
@@ -62,6 +68,17 @@ ActiveRecord::Schema.define(version: 20140509172902) do
   end
 
   add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
+  create_table "recommendations", force: true do |t|
+    t.integer  "advice_id"
+    t.string   "title"
+    t.string   "image"
+    t.string   "duration"
+    t.string   "context"
+    t.boolean  "favorite",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "submissions", force: true do |t|
     t.integer  "survey_id"

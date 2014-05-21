@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: answers
+#
+#  id            :integer          not null, primary key
+#  submission_id :integer
+#  choice_id     :integer
+#  question_id   :integer
+#  value         :integer
+#  custom_text   :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#  data_object   :text
+#
+
 FactoryGirl.define do
 
   $head  = %w( neck_left neck_right jaw_left jaw_right mid_left mid_right top_right top_left )

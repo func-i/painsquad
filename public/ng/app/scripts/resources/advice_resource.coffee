@@ -1,7 +1,7 @@
 @AdviceResource = @resourceModule.factory 'Advice', ($http, $resource, CONFIG) ->
 
   $http.defaults.useXDomain = true
-  $resource "#{CONFIG.apiUrl}/advice", {},
+  $resource "#{CONFIG.apiUrl}/advices", {},
     query:
       method: 'GET'
       isArray: false

@@ -1,9 +1,8 @@
 'use strict'
 
-# @AdviceCtrl = @controllerModule.controller 'AdviceCtrl', ($scope, $state, advice) ->
-@AdviceCtrl = @controllerModule.controller 'AdviceCtrl', ($scope, $state) ->
-
+@AdviceCtrl = @controllerModule.controller 'AdviceCtrl', ($scope, $state, advice) ->
   console.log "Advice Ctrl Instantiated"
+  debugger
 
   # TODO: this data should ideally come to the server based on the users state
   # we should dynamically populate the 'recommended' list based on this data
@@ -33,19 +32,15 @@
   #   }
   # ]
 
-
-@AdviceCtrl.$inject = ['$scope', '$state']
-# @AdviceCtrl.$inject = ['$scope', '$state', 'advice']
-
+@AdviceCtrl.$inject = ['$scope', '$state', 'advice']
 
 # resolve this resource before loading the controller
-# @SurveyCtrl.resolve =
-#   advice: {}
-  # advice: (Advice, $q) ->
-#     deferred = $q.defer()
+@AdviceCtrl.resolve =
+  advice: (Advice, $q) ->
+    deferred = $q.defer()
 
-#     Advice.query (response) ->
-#       deffered.resolve response
-#       # deferred.resolve response.survey
+    Advice.query (response) ->
+      deffered.resolve response
+      # deferred.resolve response.survey
 
-#     deferred.promise
+    deferred.promise

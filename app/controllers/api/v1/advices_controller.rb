@@ -1,6 +1,6 @@
 module Api
   module V1
-    class AdviceController < ApplicationController
+    class AdvicesController < ApplicationController
       # skip_before_action :restrict_access
       before_action :fetch_advice
 
@@ -14,9 +14,9 @@ module Api
 
       private
 
-      # TODO: Need to get the advice conditionally based on previous pain report
+      # TODO: Need to populate advice -> recommendations based upon some requirements
       def fetch_advice
-        @advice = Advice.first
+        @advice = Advice.last
       end
     end
   end

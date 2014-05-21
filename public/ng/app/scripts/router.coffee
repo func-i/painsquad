@@ -81,7 +81,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         menuContent:
           templateUrl: 'templates/advice/main.html'
           controller:  'AdviceCtrl'
-          # resolve:     AdviceCtrl.resolve
+          resolve:     AdviceCtrl.resolve
     )
 
       # advice -> recommended state
@@ -90,7 +90,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         views:
           menuContent:
             templateUrl: 'templates/advice/recommended.html'
-            controller: 'AdviceCtrl'
       )
 
       # advice -> favorites state
@@ -99,7 +98,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         views:
           menuContent:
             templateUrl: 'templates/advice/favorites.html'
-            controller: 'AdviceCtrl'
       )
 
       # # advice -> prevent pain state
