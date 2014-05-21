@@ -100,24 +100,6 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
             templateUrl: 'templates/advice/favorites.html'
       )
 
-      # # advice -> prevent pain state
-      # .state('app.prevent'
-      #   url: '/prevent'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/advice/prevent.html'
-      #       controller: 'AdviceCtrl'
-      # )
-
-      # # advice -> manage pain state
-      # .state('app.manage'
-      #   url: '/manage'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/advice/manage.html'
-      #       controller: 'AdviceCtrl'
-      # )
-
 ############################ STATIC CONTENT ####################################
     # settings state
     .state('app.settings'
@@ -151,7 +133,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/acknowledgements.html'
     )
 
-    # tos
+    # terms of use
     .state('app.terms'
       url: '/terms'
       views:
@@ -159,7 +141,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/terms.html'
     )
 
-    # tos
+    # contact us
     .state('app.contact'
       url: '/contact'
       views:
@@ -167,30 +149,13 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/contact.html'
     )
 
-    # tos
+    # privacy
     .state('app.privacy'
       url: '/privacy'
       views:
         menuContent:
           templateUrl: 'templates/static/privacy.html'
     )
-
-
-    # # acknowledgements
-    # .state('app.acknowledgements'
-    #   url: '/acknowledgements'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/static/acknowledgements.html'
-    # )
-
-    # # acknowledgements
-    # .state('app.acknowledgements'
-    #   url: '/acknowledgements'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/static/acknowledgements.html'
-    # )
 
     # intro slideshow
     .state('app.intro'
