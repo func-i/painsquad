@@ -10,7 +10,6 @@
     <!-- TODO: Dynamically load awards content based on User points -->
     <article class="awards">
       <ion-slide-box on-slide-changed="slideChange(index)">
-
         <ion-slide ng-repeat="slide in achievementData.awards">
 
           <h3>Rank</h3>
@@ -23,7 +22,6 @@
           <h4 ng-bind="slide.title"></h4>
           <time>Achieved {{slide.date}}</time>
         </ion-slide>
-
       </ion-slide-box>
     </article>
 

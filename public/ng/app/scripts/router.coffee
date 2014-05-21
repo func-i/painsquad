@@ -119,7 +119,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
             controller: 'AdviceCtrl'
       )
 
-    # STATIC CONTENT
+############################ STATIC CONTENT ####################################
     # about state
     .state('app.about'
       url: '/about'
@@ -153,7 +153,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     )
 
       # understanding pain -> what is pain
-      .state('app.what'
+      .state('app.pain_what'
         url: '/pain/what'
         views:
           menuContent:
@@ -168,19 +168,45 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
             templateUrl: 'templates/static/pain/type.html'
       )
 
-      # # understanding pain -> reducing pain
-      # .state('app.pain.reduce'
-      #   url: '/pain/reduce'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/static/pain.reduce.html'
-      # )
+      # understanding pain -> reducing pain
+      .state('app.pain_reduce'
+        url: '/pain/reduce'
+        views:
+          menuContent:
+            templateUrl: 'templates/static/pain/reduce.html'
+      )
 
-      # # understanding pain -> pain management plan
-      # .state('app.pain.plan'
-      #   url: '/pain/plan'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/static/pain.plan.html'
-      # )
+      # understanding pain -> pain management plan
+      .state('app.pain_plan'
+        url: '/pain/plan'
+        views:
+          menuContent:
+            templateUrl: 'templates/static/pain/plan.html'
+      )
+
+        # reducing pain -> pharmacological pain
+        .state('app.pain_pharmacological'
+          url: '/pain/pharmacological'
+          views:
+            menuContent:
+              templateUrl: 'templates/static/pain/pharmacological.html'
+        )
+
+        # reducing pain -> physical pain
+        .state('app.pain_physical'
+          url: '/pain/physical'
+          views:
+            menuContent:
+              templateUrl: 'templates/static/pain/physical.html'
+        )
+
+        # reducing pain -> psychological pain
+        .state('app.pain_psychological'
+          url: '/pain/psychological'
+          views:
+            menuContent:
+              templateUrl: 'templates/static/pain/psychological.html'
+        )
+
+
 
