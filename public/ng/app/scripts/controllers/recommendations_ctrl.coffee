@@ -45,8 +45,12 @@
     reset()
     $scope.modal.hide()
 
+  $scope.discardAdvice = ->
+    reset()
+    $scope.modal.hide()
+
   reset = ->
-    $scope.slideShowActivated = false
+    $scope.slideShowActivated = null
     $scope.data.selectedItem  = null
     $scope.modalStyle         = null
     $scope.showStartButton    = null

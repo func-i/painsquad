@@ -26,7 +26,7 @@
 </div>
 
 <div class="actual" ng-show="slideShowActivated">
-  Step: {{ slideIndex + 1 }}
+  Step {{ slideIndex + 1 }}
   <ion-slide-box on-slide-changed="slideChange(index)">
     <ion-slide ng-repeat="step in data.selectedItem.steps">
       <p style="margin: 5px;" ng-bind="step.content"></p>

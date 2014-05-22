@@ -18,5 +18,9 @@
 class Recommendation < ActiveRecord::Base
   belongs_to :advice
   has_many :steps
+
+  # has_many :nested_recommendations, class_name: 'Recommendation', foreign_key: 'nested_recommendation_id'
+  # belongs_to :nested_recommendation, class_name: 'Recommendation'
+
   validates :style, inclusion: %w(basic slideshow nested)
 end

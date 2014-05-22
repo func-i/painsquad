@@ -37,6 +37,7 @@ rec2 = advice.recommendations.create(
 )
 
 # rec2.steps.create(
+#   title: "Alphabet games",
 #   content: "Rehearse what you are going to do to relax, stay calm and get through the procedure"
 # )
 # rec2.steps.create(
