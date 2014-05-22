@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: submissions
+#
+#  id         :integer          not null, primary key
+#  survey_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  has_pain   :boolean
+#
+
 FactoryGirl.define do
 
   factory :submission do

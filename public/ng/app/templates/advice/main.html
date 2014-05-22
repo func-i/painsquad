@@ -1,4 +1,4 @@
-<ion-view title="Advice" class="width-wrap">
+<ion-view title="Get Advice" class="width-wrap">
 
   <ion-header-bar>
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
@@ -8,16 +8,14 @@
 
     <section class="top">
 
-      <!-- <div class="item" ui-sref="app.recommended"> -->
-      <div class="item" ng-click="$state.go('app.recommended')">
+      <div class="item" ui-sref="app.recommended">
         <h2>Recommended For You</h2>
-        <span class="ion-help-buoy"></span>
+        <i class="ion-ios7-lightbulb-outline"></i>
       </div>
 
-      <!-- <div class="item" ui-sref="app.favorites"> -->
-      <div class="item" ng-click="$state.go('app.favorites')">
+      <div class="item" ui-sref="app.favorites">
         <h2>Your Favorites</h2>
-        <span class="ion-heart"></span>
+        <i class="ion-heart"></i>
       </div>
 
     </section>

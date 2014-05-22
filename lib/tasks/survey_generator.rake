@@ -1,7 +1,6 @@
 QUESTIONS = %i(boolean slider radio checklist checklist_grid checklist_extra bodymap textbox)
 
 namespace :survey do
-
   # Official Surveys
   desc "Creates 'Full Assessment' Survey"
   task :full => [:clear_all, :environment] do
@@ -17,7 +16,7 @@ namespace :survey do
 
   desc "rake callback to clear existing survey"
   task :clear_all => :environment do
-    clear_all
+    [Survey, Question, Choice, Submission, Answer].each &:destroy_all
   end
 
   # Test Surveys
@@ -27,6 +26,7 @@ namespace :survey do
     QUESTIONS.each { |q| send(q, survey) }
   end
 
+  # individual question generators
   QUESTIONS.each do |question|
     desc "Creates Survey only containing: #{question}"
     task question => [:clear_all, :environment] do
@@ -35,11 +35,6 @@ namespace :survey do
     end
   end
 end
-
-def clear_all
-  [Survey, Question, Choice, Submission, Answer].each &:destroy_all
-end
-
 
 def boolean survey
   question = survey.questions.create(

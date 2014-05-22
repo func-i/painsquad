@@ -51,8 +51,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/surveys/new.html'
-          controller: 'SurveyCtrl'
-          resolve: SurveyCtrl.resolve
+          controller:  'SurveyCtrl'
+          resolve:     SurveyCtrl.resolve
     )
 
     # temporary state - REMOVE DIS
@@ -80,8 +80,8 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/advice/main.html'
-          controller: 'AdviceCtrl'
-    )
+          controller:  'AdviceCtrl'
+      )
 
       # advice -> recommended state
       .state('app.recommended'
@@ -89,7 +89,19 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         views:
           menuContent:
             templateUrl: 'templates/advice/recommended.html'
-            controller: 'AdviceCtrl'
+            controller: 'RecommendationsCtrl'
+            resolve:
+              adviceResource: (Advice) ->
+                Advice.query().$promise
+      )
+
+      # recommended -> advice steps slidebox
+      .state('app.advice_steps'
+        url: '/recommended/steps/'
+        views:
+          menuContent:
+            templateUrl: 'templates/advice/steps.html'
+            controller:  'AdviceStepsCtrl'
       )
 
       # advice -> favorites state
@@ -98,26 +110,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
         views:
           menuContent:
             templateUrl: 'templates/advice/favorites.html'
-            controller: 'AdviceCtrl'
       )
-
-      # # advice -> prevent pain state
-      # .state('app.prevent'
-      #   url: '/prevent'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/advice/prevent.html'
-      #       controller: 'AdviceCtrl'
-      # )
-
-      # # advice -> manage pain state
-      # .state('app.manage'
-      #   url: '/manage'
-      #   views:
-      #     menuContent:
-      #       templateUrl: 'templates/advice/manage.html'
-      #       controller: 'AdviceCtrl'
-      # )
 
 ############################ STATIC CONTENT ####################################
     # settings state
@@ -152,7 +145,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/acknowledgements.html'
     )
 
-    # tos
+    # terms of use
     .state('app.terms'
       url: '/terms'
       views:
@@ -160,7 +153,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/terms.html'
     )
 
-    # tos
+    # contact us
     .state('app.contact'
       url: '/contact'
       views:
@@ -168,30 +161,13 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
           templateUrl: 'templates/static/contact.html'
     )
 
-    # tos
+    # privacy
     .state('app.privacy'
       url: '/privacy'
       views:
         menuContent:
           templateUrl: 'templates/static/privacy.html'
     )
-
-
-    # # acknowledgements
-    # .state('app.acknowledgements'
-    #   url: '/acknowledgements'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/static/acknowledgements.html'
-    # )
-
-    # # acknowledgements
-    # .state('app.acknowledgements'
-    #   url: '/acknowledgements'
-    #   views:
-    #     menuContent:
-    #       templateUrl: 'templates/static/acknowledgements.html'
-    # )
 
     # intro slideshow
     .state('app.intro'
