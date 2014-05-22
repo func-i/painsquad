@@ -6,6 +6,9 @@ class CreateRecommendations < ActiveRecord::Migration
       t.string :image
       t.string :duration
       t.string :context
+      t.string :description
+      t.string :byline
+      t.string :style
       t.boolean :favorite, default: false
       t.timestamps
     end

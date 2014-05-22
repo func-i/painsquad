@@ -1,33 +1,76 @@
 <div class="modal">
+
   <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">{{data.selectedItem.title}}</h1>
 
-    <button class="button button-icon ion-ios7-arrow-back" ng-click="modal.hide()">
-      Back
+    <button class="button button-icon icon-left ion-ios7-arrow-back"
+      ng-click="modal.hide()">
+        Back
     </button>
 
-    <button class="button button-icon">
-      Start
-      <i class="button button-icon ion-ios7-arrow-forward"></i>
+    <button class="button button-icon icon-right ion-ios7-arrow-forward pull-right"
+      ng-show="!isSlideshow"
+      ng-click="startSlideshow()">
+        Start
     </button>
 
-<!--
-    <button class="button button-icon button-primary" ng-click="modal.hide()" ng-hide="!slideIndex">
-      Did it!
+    <button class="button button-icon icon-right"
+      ng-click="adviceCompleted()"
+      ng-show="isSlideshow">
+        Did it!
     </button>
- -->
   </ion-header-bar>
 
   <ion-content has-header="true" class="advice-modal">
-    {{ slideIndex }}
-<!--
-    <ion-slide-box on-slide-changed="slideChanged(index)">
 
-      <ion-slide class="has-header" ng-repeat="step in data.adviceSlides.steps">
-        {{ step }}
-      </ion-slide>
+    <div class="intro" ng-hide="isSlideshow">
+      <img src="http://placekitten.com/200/200">
 
-    </ion-slide-box>
- -->
+      <section class="duration">
+        <span class="ion-ios7-alarm-outline calm"></span>
+        <span>{{ data.selectedItem.duration }}</span>
+      </section>
+
+      <section class="context">
+        <span class="ion-ios7-checkmark-outline balanced"></span>
+        <span>{{ data.selectedItem.context }}</span>
+      </section>
+
+      <section class="description">
+        <p>{{data.selectedItem.description}}</p>
+        <small>{{data.selectedItem.byline}}</small>
+      </section>
+    </div>
+
+    <div class="actual" ng-show="isSlideshow">
+      Step: {{ slideIndex + 1 }}
+      <ion-slide-box on-slide-changed="slideChange(index)">
+
+        <ion-slide ng-repeat="step in data.selectedItem.steps">
+
+          <p style="margin: 5px;" ng-bind="step.content"></p>
+
+          <span ng-show="step.tip">
+            TIP: <small ng-bind="step.tip"></small>
+          </span>
+
+        </ion-slide>
+
+      </ion-slide-box>
+    </div>
+
+
+
   </ion-content>
+
+<!--
+    <hr>
+    slideIndex: {{ slideIndex }}
+    <br>
+    slideCount: {{ slideCount }}
+    <br>
+    <pre ng-bind="data.selectedItem | json"></pre>
+ -->
+
 
 </div>

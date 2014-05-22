@@ -1,5 +1,4 @@
 .advice {
-
   .top {
     display: inline-block;
     height: 100%;
@@ -29,10 +28,6 @@
   }
 }
 
-// .advice-modal {
-//   height: 100%;
-// }
-
 .recommended {
   position: relative;
 
@@ -59,7 +54,19 @@
     font-size: 20px;
 
     &:hover {
-      font-size: 30px;
+      font-size: 25px;
+    }
+  }
+}
+
+.advice-modal {
+  // height: 500px;
+
+  .actual {
+    // height: 100%;
+
+    .slider {
+      height: 500px;
     }
   }
 }

@@ -75,7 +75,9 @@ ActiveRecord::Schema.define(version: 20140521202040) do
     t.string   "image"
     t.string   "duration"
     t.string   "context"
-    t.boolean  "favorite",   default: false
+    t.string   "description"
+    t.string   "byline"
+    t.boolean  "favorite",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
