@@ -9,68 +9,34 @@
     </button>
 
     <button class="button button-icon icon-right ion-ios7-arrow-forward pull-right"
-      ng-show="!isSlideshow"
-      ng-click="startSlideshow()">
+      ng-click="startSlideshow()"
+      ng-show="showStartButton">
         Start
     </button>
 
     <button class="button button-icon icon-right"
       ng-click="adviceCompleted()"
-      ng-show="isSlideshow">
+      ng-show="showDidItButton">
         Did it!
     </button>
   </ion-header-bar>
 
   <ion-content has-header="true" class="advice-modal">
 
-    <div class="intro" ng-hide="isSlideshow">
-      <img src="http://placekitten.com/200/200">
+    <div ng-switch="modalStyle">
 
-      <section class="duration">
-        <span class="ion-ios7-alarm-outline calm"></span>
-        <span>{{ data.selectedItem.duration }}</span>
-      </section>
+      <div ng-switch-when="slideshow">
+        <section ng-include="'templates/advice/advice-modal-slideshow.html'"></section>
+      </div>
 
-      <section class="context">
-        <span class="ion-ios7-checkmark-outline balanced"></span>
-        <span>{{ data.selectedItem.context }}</span>
-      </section>
+      <div ng-switch-when="nested">
+        <section ng-include="'templates/advice/advice-modal-nested.html'"></section>
+      </div>
 
-      <section class="description">
-        <p>{{data.selectedItem.description}}</p>
-        <small>{{data.selectedItem.byline}}</small>
-      </section>
+      <div ng-switch-when="basic">
+        <section ng-include="'templates/advice/advice-modal-basic.html'"></section>
+      </div>
+
     </div>
-
-    <div class="actual" ng-show="isSlideshow">
-      Step: {{ slideIndex + 1 }}
-      <ion-slide-box on-slide-changed="slideChange(index)">
-
-        <ion-slide ng-repeat="step in data.selectedItem.steps">
-
-          <p style="margin: 5px;" ng-bind="step.content"></p>
-
-          <span ng-show="step.tip">
-            TIP: <small ng-bind="step.tip"></small>
-          </span>
-
-        </ion-slide>
-
-      </ion-slide-box>
-    </div>
-
-
-
   </ion-content>
-
-<!--
-    <hr>
-    slideIndex: {{ slideIndex }}
-    <br>
-    slideCount: {{ slideCount }}
-    <br>
-    <pre ng-bind="data.selectedItem | json"></pre>
- -->
-
-
 </div>

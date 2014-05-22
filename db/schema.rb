@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140521202040) do
     t.string   "context"
     t.string   "description"
     t.string   "byline"
+    t.string   "style"
     t.boolean  "favorite",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
