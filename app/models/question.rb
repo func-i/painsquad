@@ -19,10 +19,4 @@ class Question < ActiveRecord::Base
 
   validates :question_type, inclusion: QUESTION_TYPES
 
-  # validate :valid_question_type
-  # def valid_question_type
-  #   unless QUESTION_TYPES.include? question_type
-  #     errors.add(:base, 'Must submit a valid question type')
-  #   end
-  # end
 end
