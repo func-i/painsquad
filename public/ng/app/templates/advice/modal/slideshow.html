@@ -1,4 +1,4 @@
-<div class="intro" ng-show="!slideShowActivated">
+<div class="intro" ng-show="!slideShowActivated" ng-cloak>
   <img ng-src="{{data.selectedItem.image}}">
 
   <section class="duration">
@@ -25,7 +25,7 @@
   </section>
 </div>
 
-<div class="actual" ng-show="slideShowActivated">
+<div class="actual" ng-show="slideShowActivated" ng-cloak>
   Step {{ slideIndex + 1 }}
   <ion-slide-box on-slide-changed="slideChange(index)">
     <ion-slide ng-repeat="step in data.selectedItem.steps">

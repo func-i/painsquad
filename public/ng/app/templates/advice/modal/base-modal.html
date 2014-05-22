@@ -1,14 +1,14 @@
 <div class="modal">
 
   <ion-header-bar class="bar bar-header bar-positive">
-    <h1 class="title">{{data.selectedItem.title}}</h1>
-
-    <button class="button button-icon icon-left ion-ios7-arrow-back"
+    <button class="button button-icon ion-ios7-arrow-back"
       ng-click="discardAdvice()">
         Back
     </button>
 
-    <button class="button button-icon icon-right ion-ios7-arrow-forward pull-right"
+    <h1 class="title">{{data.selectedItem.title}}</h1>
+
+    <button class="button button-icon ion-ios7-arrow-forward icon-right pull-right"
       ng-click="startSlideshow()"
       ng-show="showStartButton">
         Start

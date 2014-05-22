@@ -4,7 +4,7 @@
   $scope.data              = {}
   $scope.data.recommended  = adviceResource.advice.recommendations
 
-  $ionicModal.fromTemplateUrl "templates/advice/advice-modal.html", (modal) ->
+  $ionicModal.fromTemplateUrl "templates/advice/modal/base-modal.html", (modal) ->
     $scope.modal = modal
   ,
     animation: "slide-in-up"
@@ -21,12 +21,6 @@
       $scope.data.selectedItem = item
       $scope.modal.show()
 
-  setHeaderButtons = (item) ->
-    if item.style is 'slideshow'
-      $scope.showStartButton = true
-    else
-      $scope.showDidItButton = true
-
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0
     $scope.showStartButton    = false
@@ -39,6 +33,9 @@
   $scope.slideChange = (index) ->
     $scope.slideIndex = index
 
+  $scope.loadNestedModal = (item) ->
+    console.log item
+
   # TODO: advice scoring
   $scope.adviceCompleted = ->
     console.log "+5 Bonus Points Awarded"
@@ -48,6 +45,12 @@
   $scope.discardAdvice = ->
     reset()
     $scope.modal.hide()
+
+  setHeaderButtons = (item) ->
+    if item.style is 'slideshow'
+      $scope.showStartButton = true
+    else
+      $scope.showDidItButton = true
 
   reset = ->
     $scope.slideShowActivated = null

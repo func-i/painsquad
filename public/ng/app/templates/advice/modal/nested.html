@@ -1,0 +1,38 @@
+<div ng-controller="NestedAdviceCtrl">
+  <img ng-src="{{data.selectedItem.image}}">
+
+  <section class="duration">
+    <span class="ion-ios7-alarm-outline calm"></span>
+    <span>{{ data.selectedItem.duration }}</span>
+  </section>
+
+  <section class="context">
+    <span class="ion-ios7-checkmark-outline balanced"></span>
+    <span>{{ data.selectedItem.context }}</span>
+  </section>
+
+  <section class="favorite">
+     <i ng-model="data.selectedItem.favorite"
+       style="font-size: 40px;"
+       class="badge"
+       ng-class="{ 'ion-ios7-heart': data.selectedItem.favorite, 'ion-ios7-heart-outline': !data.selectedItem.favorite }"
+       ng-click="data.selectedItem.favorite = !data.selectedItem.favorite"> </i>
+  </section>
+
+  <section class="description">
+    <p>{{data.selectedItem.description}}</p>
+    <small>{{data.selectedItem.byline}}</small>
+  </section>
+
+  <hr>
+
+  <ion-list>
+
+    <ion-item ng-repeat="item in data.selectedItem.nested_recommendations"
+      ng-click="loadNestedModal(item)">
+      {{ item.title }}
+      <i class="ion-chevron-right pull-right"></i>
+    </ion-item>
+
+  </ion-list>
+</div>

@@ -11,7 +11,7 @@ class CreateRecommendations < ActiveRecord::Migration
       t.string :style
       t.boolean :favorite, default: false
 
-      # t.integer :nested_recommendation_id
+      t.integer :parent_recommendation_id
       t.timestamps
     end
   end

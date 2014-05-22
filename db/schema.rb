@@ -78,7 +78,8 @@ ActiveRecord::Schema.define(version: 20140521202040) do
     t.string   "description"
     t.string   "byline"
     t.string   "style"
-    t.boolean  "favorite",    default: false
+    t.boolean  "favorite",                 default: false
+    t.integer  "parent_recommendation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
