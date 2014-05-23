@@ -1,14 +1,15 @@
 'use strict'
 
-interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
+interceptor = ['$q', '$injector', ($q, $injector) ->
     success = (response) ->
       response
     error = (response) ->
       if response.status is 422
-        $injector.get("$state").transitionTo "login"
-        $q.reject response
-      else
-        $q.reject response
+        $injector.get('$state').go 'login'
+        # $injector.get('$state').transitionTo 'login'
+        # $q.reject response
+      # else
+      #   $q.reject response
     return (promise) ->
       promise.then success, error
 ]
@@ -16,9 +17,9 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push(interceptor)
+  $urlRouterProvider.otherwise '/login'
 
   $stateProvider
-
     .state('login',
       url: '/login',
       templateUrl: 'templates/shared/login.html'
@@ -237,4 +238,3 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
               templateUrl: 'templates/static/pain/psychological.html'
         )
 
-  $urlRouterProvider.otherwise "/login"

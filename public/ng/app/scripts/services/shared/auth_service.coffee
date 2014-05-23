@@ -5,7 +5,8 @@
 
   login: (user) ->
     session = Session.save(user: user).$promise.then (response) ->
-      debugger
+      console.log response
+      # debugger
       currentUser = response
 
     # currentUser = {
