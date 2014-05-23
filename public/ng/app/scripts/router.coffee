@@ -4,7 +4,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     success = (response) ->
       response
     error = (response) ->
-      if response.status is 422 || response.status is 401 || response.status is 404
+      if response.status is 422
         $injector.get("$state").transitionTo "login"
         $q.reject response
       else
