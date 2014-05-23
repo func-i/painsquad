@@ -4,7 +4,7 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
     success = (response) ->
       response
     error = (response) ->
-      if response.status is 401
+      if response.status is 422 || response.status is 401 || response.status is 404
         $injector.get("$state").transitionTo "login"
         $q.reject response
       else
@@ -15,28 +15,24 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  # $httpProvider.responseInterceptors.push(interceptor)
-  $urlRouterProvider.otherwise "/app/home"
+  $httpProvider.responseInterceptors.push(interceptor)
 
   $stateProvider
 
+    .state('login',
+      url: '/login',
+      templateUrl: 'templates/shared/login.html'
+      controller: 'LoginCtrl'
+    )
+
     # abstract sidemenu state/template
-    .state('app',
+    .state('app'
       url: '/app'
       abstract: true
       templateUrl: 'templates/layout/menu.html'
     )
 
-    # root template 1
-    .state('app.login'
-      url: '/login'
-      views:
-        menuContent:
-          templateUrl: 'templates/shared/login.html'
-          controller: 'LoginCtrl'
-    )
-
-    # root template 2
+    # root template
     .state('app.home'
       url: '/home'
       views:
@@ -241,5 +237,4 @@ interceptor = ["$location", "$q", "$injector", ($location, $q, $injector) ->
               templateUrl: 'templates/static/pain/psychological.html'
         )
 
-
-
+  $urlRouterProvider.otherwise "/login"

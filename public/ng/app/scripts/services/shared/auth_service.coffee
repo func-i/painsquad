@@ -4,15 +4,14 @@
   currentUser = {}
 
   login: (user) ->
-    # TODO: Uncomment
-    # session = Session.save(user: user).$promise.then((response) ->
-    #   currentUser = response
-    # )
+    session = Session.save(user: user).$promise.then (response) ->
+      debugger
+      currentUser = response
 
-    currentUser = {
-      firstName: 'Jon',
-      token: 'abc123'
-    }
+    # currentUser = {
+    #   firstName: 'Jon',
+    #   token: 'abc123'
+    # }
 
     $state.go('app.home')
 
