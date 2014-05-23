@@ -10,8 +10,11 @@
     animation: "slide-in-up"
     scope: $scope
 
-  $scope.$on '$destroy', ->
+  $scope.$on '$stateChangeStart' ->
     $scope.modal.remove()
+
+  # $scope.$on '$destroy', ->
+  #   $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
