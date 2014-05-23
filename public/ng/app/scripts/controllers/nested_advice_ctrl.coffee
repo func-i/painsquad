@@ -9,11 +9,8 @@
     animation: "slide-in-up"
     scope: $scope
 
-  $scope.$on '$stateChangeStart' ->
+  $scope.$on '$destroy', ->
     $scope.modal.remove()
-
-  # $scope.$on '$destroy', ->
-  #   $scope.modal.remove()
 
   $scope.loadNestedModal = (item) ->
     $scope.nestedSelection = item

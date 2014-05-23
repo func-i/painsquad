@@ -50,10 +50,7 @@
       tempSelections: []
 
   # removes modal from memory when finished
-  $scope.$on '$stateChangeStart' ->
+  $scope.$on "$destroy", ->
     $scope.modal.remove()
-
-  # $scope.$on "$destroy", ->
-  #   $scope.modal.remove()
 
 @BodymapCtrl.$inject = ['$scope', '$state', '$ionicModal', 'BodymapService']
