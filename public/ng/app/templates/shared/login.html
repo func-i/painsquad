@@ -1,8 +1,10 @@
-<ion-view hide-back-button="true" class="width-wrap" ng-cloak>
+<ion-view hide-back-button="true" class="width-wrap" title="Pain Squad" ng-cloak>
 
-  <ion-header-bar>
-    <h1 class="title">Pain Squad</h1>
-  </ion-header-bar>
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-home" ui-sref="app.home"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
 
   <ion-content>
     <div class="list">
@@ -27,7 +29,7 @@
 
     <button class="button button-block button-assertive" ng-click="logout()">Logout</button>
 
-    user: {{ $rootScope.user | json }}
+    user: {{ currentUser }}
   </ion-content>
 
 </ion-view>

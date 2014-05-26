@@ -1,6 +1,6 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $rootScope, $state, $stateParams, AuthService, SubmissionService) ->
-  $scope.currentUser = $rootScope.user
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $rootScope, $state, $stateParams, AuthService, SubmissionService, UserService) ->
+  $scope.currentUser = UserService.currentUser()
 
-@HomeCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'AuthService', 'SubmissionService']
+@HomeCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'UserService']

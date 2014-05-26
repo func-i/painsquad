@@ -1,13 +1,16 @@
 'use strict'
 
 interceptor = ['$q', '$injector', ($q, $injector) ->
-    success = (response) ->
-      response
-    error = (response) ->
-      if response.status is 401
-        $injector.get('$state').go 'login'
-    return (promise) ->
-      promise.then success, error
+  success = (response) ->
+    response
+  error = (response) ->
+    if response.status is 401
+      $injector.get("$state").transitionTo "login"
+      $q.reject response
+    else
+      $q.reject response
+  (promise) ->
+    promise.then success, error
 ]
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->

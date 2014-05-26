@@ -23,13 +23,10 @@
 @configModule     = angular.module 'painSquad.config', []
 
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, AuthService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
 
-  $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
-    console.log 'rootScope.user: ', $rootScope.user
-  #   console.log $rootScope.user
-  #   unless $rootScope.user?
-  #     $state.go 'login'
+  # $rootScope.$on "$stateChangeStart", (event, toState, toParams, fromState, fromParams) ->
+  #   console.log "current user: ", UserService.currentUser()
 
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
