@@ -10,7 +10,8 @@
     animation: "slide-in-up"
     scope: $scope
 
-  $scope.$on '$destroy', ->
+  # $scope.$on '$destroy', ->
+  $scope.$on '$stateChangeStart', ->
     $scope.modal.remove()
 
   # convenience method to pass choice object to checklist detail view

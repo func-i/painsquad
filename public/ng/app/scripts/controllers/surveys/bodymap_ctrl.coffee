@@ -12,6 +12,10 @@
   .then (modal) ->
     $scope.modal = modal
 
+  # $scope.$on '$destroy', ->
+  $scope.$on '$stateChangeStart', ->
+    $scope.modal.remove()
+
   $scope.contentSaved = (painRegion) ->
     return unless painRegion?
     if BodymapService.anyElementsInRegion(painRegion.toLowerCase())
@@ -48,9 +52,5 @@
     $scope.modalSelection =
       choice:         {}
       tempSelections: []
-
-  # removes modal from memory when finished
-  $scope.$on "$destroy", ->
-    $scope.modal.remove()
 
 @BodymapCtrl.$inject = ['$scope', '$state', '$ionicModal', 'BodymapService']
