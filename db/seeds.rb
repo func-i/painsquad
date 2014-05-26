@@ -1,6 +1,6 @@
 [User, Advice, Recommendation, Step].each &:destroy_all
 
-user = User.create username: 'test user', email: 'test@email.com', password: 'password'
+user = User.create username: 'test user', email: 'a@b.com', password: 'password'
 
 advice = Advice.create title: 'Default'
 

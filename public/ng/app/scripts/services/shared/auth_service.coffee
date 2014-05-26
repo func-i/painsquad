@@ -1,33 +1,33 @@
 'use strict'
 
-@AuthService = @serviceModule.factory 'AuthService', ($state, Session) ->
-  currentUser = {}
+@AuthService = @serviceModule.factory 'AuthService', ($rootScope, $state, $http, Session) ->
+  # currentUser = {}
 
   login: (credentials) ->
-    Session.save(session: credentials).$promise
-      .then (response) ->
-        console.log "Sucess: ", response
-      , (error) ->
-        console.log "Error!", error
+    Session.authenticate(credentials).then (response) ->
+      $rootScope.user = response.user
+      $http.defaults.headers.common['Authorization'] = "Token token=#{response.user.access_token}"
+      $state.go 'app.home'
 
-  getCurrentUser: ->
-    currentUser
+    # Session.save(session: credentials).$promise.then (response) =>
+    #   # @init(response)
+    #   $state.go 'app.home'
+    # , (error) ->
+    #   console.log "Error occurred: ", error
+
+  # getCurrentUser: ->
+  #   currentUser
 
   # isAuthenticated: ->
-  #   !!Session.userId
+  #   console.log currentUser?
+  #   if currentUser then true else false
+
+  # init: (response) ->
+  #   if response.user?#.access_token?
+  #     token = response.user.access_token
+  #     $http.defaults.headers.common['Authorization'] = "Token token=#{token}"
+  #   else
+  #     $state.go 'login'
 
 
-  # login: (credentials) ->
-  #   # console.log credentials
-  #   debugger
-  #   Session.save(user: credentials)
-  #   .$promise.then (response) ->
-  #     console.log response
-  #     # currentUser = response
-
-    # session = Session.save(user: credentials)
-    #   .$promise.then (response) ->
-    #     console.log response.credentials
-    #     currentUser = response
-
-@AuthService.$inject = [ '$state', 'Session' ]
+@AuthService.$inject = [ '$rootScope', '$state', '$http', 'Session' ]

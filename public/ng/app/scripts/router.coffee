@@ -4,12 +4,8 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
     success = (response) ->
       response
     error = (response) ->
-      if response.status is 422
+      if response.status is 401
         $injector.get('$state').go 'login'
-        # $injector.get('$state').transitionTo 'login'
-        # $q.reject response
-      # else
-      #   $q.reject response
     return (promise) ->
       promise.then success, error
 ]

@@ -4,7 +4,6 @@
   $scope.credentials = {}
 
   $scope.login = ->
-    console.log "Sending credentials to AuthService => ", $scope.credentials
     AuthService.login($scope.credentials)
 
 @LoginCtrl.$inject = ['$scope', 'AuthService']

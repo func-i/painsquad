@@ -5,9 +5,9 @@ module Api
 
       def create
         if @user = login(params[:session][:email], params[:session][:password])
-          head :ok
+          render json: @user
         else
-          render json: { error: "Login failed" }, status: :unprocessable_entity
+          render json: { error: "Login failed" }, status: 401
         end
       end
 

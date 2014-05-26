@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails',       '4.1.0'
-gem 'rails-api',   '~> 0.2.1'
-
 gem 'thin',        '~> 1.6.2'
 gem 'pg',          '~> 0.17.1'
 
