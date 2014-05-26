@@ -17,6 +17,7 @@
     # go to home view!
     $state.go 'app.home'
 
+  # handle errors here somehow idk maybe like show stuff to user
   onError: (errorData) ->
     console.log errorData.data
 
