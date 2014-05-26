@@ -15,10 +15,23 @@ class ApplicationController < ActionController::Base
   protected
 
   def restrict_access
-    unless logged_in?
-      render json: { error: 'Authentication required' }, status: :unauthorized
+    authenticate_or_request_with_http_token do |token, options|
+      binding.pry
+      api_key = ApiKey.find_by_access_token(token)
+      if api_key
+        @user = api_key.user
+        true
+      else
+        false
+      end
     end
   end
+
+  # def restrict_access
+  #   unless logged_in?
+  #     render json: { error: 'Authentication required' }, status: :unauthorized
+  #   end
+  # end
 
   def user_not_authorized
     flash[:alert] = 'Access denied'

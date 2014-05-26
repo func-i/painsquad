@@ -1,22 +1,33 @@
 'use strict'
 
-@serviceModule.factory 'AuthService', ['$state', 'Session', ($state, Session) ->
+@AuthService = @serviceModule.factory 'AuthService', ($state, Session) ->
   currentUser = {}
 
-  login: (user) ->
-    session = Session.save(user: user).$promise.then (response) ->
-      console.log response
-      # debugger
-      currentUser = response
+  login: (credentials) ->
+    Session.save(session: credentials).$promise
+      .then (response) ->
+        console.log "Sucess: ", response
+      , (error) ->
+        console.log "Error!", error
 
-    # currentUser = {
-    #   firstName: 'Jon',
-    #   token: 'abc123'
-    # }
-
-    $state.go('app.home')
-
-  getCurrentUser: () ->
+  getCurrentUser: ->
     currentUser
 
-]
+  # isAuthenticated: ->
+  #   !!Session.userId
+
+
+  # login: (credentials) ->
+  #   # console.log credentials
+  #   debugger
+  #   Session.save(user: credentials)
+  #   .$promise.then (response) ->
+  #     console.log response
+  #     # currentUser = response
+
+    # session = Session.save(user: credentials)
+    #   .$promise.then (response) ->
+    #     console.log response.credentials
+    #     currentUser = response
+
+@AuthService.$inject = [ '$state', 'Session' ]

@@ -5,27 +5,25 @@
   </ion-header-bar>
 
   <ion-content>
+    <div class="list">
+      <form name="loginForm" ng-submit="login()">
+        <label class="item item-input">
+          <input type="email" placeholder="Email" ng-model="credentials.email" required />
+        </label>
 
-    <ion-list>
-      <section class="row">
-        <div class="col">
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="credentials.password" ng-minlength="5" required />
+        </label>
 
-          <form ng-submit="login()">
-            <label class="item item-input">
-              <input type="email" placeholder="Email" ng-model="user.email" />
-            </label>
+        <button
+          type="submit"
+          class="button button-block button-positive"
+          ng-disabled="loginForm.$invalid">
+            Submit
+        </button>
 
-            <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="user.password" />
-            </label>
-
-            <input type="submit" class="button button-block button-balanced icon" />
-          </form>
-
-        </div>
-      </section>
-    </ion-list>
-
+      </form>
+    </div>
   </ion-content>
 
 </ion-view>
