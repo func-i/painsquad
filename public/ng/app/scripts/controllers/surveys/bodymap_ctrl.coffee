@@ -50,7 +50,7 @@
       tempSelections: []
 
   # removes modal from memory when finished
-  $scope.$on '$stateChangeStart' ->
+  $scope.$on '$stateChangeStart', ->
     $scope.modal.remove()
 
   # $scope.$on "$destroy", ->

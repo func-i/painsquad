@@ -13,7 +13,7 @@
   # $scope.$on '$destroy', ->
   #   $scope.modal.remove()
 
-  $scope.$on '$stateChangeStart' ->
+  $scope.$on '$stateChangeStart', ->
     $scope.modal.remove()
 
   # convenience method to pass choice object to checklist detail view

@@ -1,4 +1,4 @@
-// Generated on 2014-04-14 using generator-ionicjs 0.2.5
+// Generated on 2014-05-26 using generator-ionic 0.3.4
 'use strict';
 
 var _ = require('lodash');
@@ -14,8 +14,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  // coffeescript
   grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-coffeelint');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -31,13 +31,16 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      js: {
+        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'],
+        tasks: ['newer:jshint:all'],
+        options: {
+          livereload: true
+        }
+      },
       coffee: {
         files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.coffee'],
         tasks: ['coffee:dist']
-      },
-      coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
-        tasks: ['coffee:test']
       },
       compass: {
         files: ['<%= yeoman.app %>/<%= yeoman.styles %>/**/*.{scss,sass}'],
@@ -54,7 +57,6 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/*.html',
           '<%= yeoman.app %>/templates/**/*.html',
           '.tmp/<%= yeoman.styles %>/**/*.css',
-          '.tmp/scripts/**/*.js',
           '<%= yeoman.app %>/<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -65,7 +67,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '0.0.0.0',
+        hostname: 'localhost',
         livereload: 35729
       },
       livereload: {
@@ -92,27 +94,21 @@ module.exports = function (grunt) {
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
-    // jshint: {
-    //   options: {
-    //     jshintrc: '.jshintrc',
-    //     reporter: require('jshint-stylish')
-    //   },
-    //   all: [
-    //     'Gruntfile.js',
-    //     '<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'
-    //   ],
-    //   test: {
-    //     options: {
-    //       jshintrc: 'test/.jshintrc'
-    //     },
-    //     src: ['test/unit/**/*.js']
-    //   }
-    // },
-
-    coffeelint: {
-      app: [
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
         '<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js'
-      ]
+      ],
+      test: {
+        options: {
+          jshintrc: 'test/.jshintrc'
+        },
+        src: ['test/unit/**/*.js']
+      }
     },
 
     // Empties folders to start fresh
@@ -207,6 +203,7 @@ module.exports = function (grunt) {
       }
     },
 
+
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
@@ -272,7 +269,7 @@ module.exports = function (grunt) {
             '*.html',
             'templates/**/*.html',
             'fonts/*',
-            'res/*'
+            'res/**'
           ]
         }, {
           expand: true,

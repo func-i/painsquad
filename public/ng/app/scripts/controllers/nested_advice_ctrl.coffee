@@ -9,7 +9,7 @@
     animation: "slide-in-up"
     scope: $scope
 
-  $scope.$on '$stateChangeStart' ->
+  $scope.$on '$stateChangeStart', ->
     $scope.modal.remove()
 
   # $scope.$on '$destroy', ->
