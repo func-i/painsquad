@@ -7,7 +7,7 @@
   </ion-nav-bar>
 
   <ion-content>
-    <div class="list">
+    <div class="list" ng-hide="currentUser">
       <form name="loginForm" ng-submit="login()">
         <label class="item item-input">
           <input type="email" placeholder="Email" ng-model="credentials.email" required />
@@ -27,9 +27,14 @@
       </form>
     </div>
 
-    <button class="button button-block button-assertive" ng-click="logout()">Logout</button>
+    <button
+      class="button button-block button-assertive"
+      ng-show="currentUser"
+      ng-click="logout()">
+        Logout
+    </button>
 
-    user: {{ currentUser }}
+    <!-- user: {{ currentUser }} -->
   </ion-content>
 
 </ion-view>

@@ -8,8 +8,8 @@
     AuthService.login($scope.credentials)
 
   $scope.logout = ->
-    $state.reload()
-    # UserService.remove()
-    # $state.reload()
+    UserService.remove()
+    $state.go $state.current, {}, {reload: true}
+
 
 @LoginCtrl.$inject = [ '$state', '$scope', 'AuthService', 'UserService' ]
