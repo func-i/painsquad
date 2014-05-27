@@ -178,6 +178,7 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/static/intro.html'
+          controller:  'IntroCtrl'
     )
 
     # 'Understanding Pain' template
