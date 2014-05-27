@@ -1,9 +1,9 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $rootScope, $state, $stateParams, AuthService, SubmissionService, UserService) ->
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, UserService) ->
   $scope.currentUser = UserService.currentUser()
 
-@HomeCtrl.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'AuthService', 'SubmissionService', 'UserService']
+@HomeCtrl.$inject = ['$scope', '$state', 'UserService']
 
 # redirects to login view if currentUser is not set inside UserService
 @HomeCtrl.resolve =
