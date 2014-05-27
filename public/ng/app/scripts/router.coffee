@@ -17,7 +17,6 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push(interceptor)
   $urlRouterProvider.otherwise '/app/home'
-  # $urlRouterProvider.otherwise '/app/login'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'
   if currentUser?
@@ -37,7 +36,8 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
       views:
         menuContent:
           templateUrl: 'templates/shared/home.html'
-          controller: 'HomeCtrl'
+          controller:  'HomeCtrl'
+          resolve:     HomeCtrl.resolve
     )
 
     .state('app.login',
@@ -47,7 +47,6 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
           templateUrl: 'templates/shared/login.html'
           controller: 'LoginCtrl'
     )
-
 
     # pain-case template - render individual questions as partials
     .state('app.new_survey'
@@ -87,34 +86,34 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
           controller:  'AdviceCtrl'
       )
 
-      # advice -> recommended state
-      .state('app.recommended'
-        url: '/recommended'
-        views:
-          menuContent:
-            templateUrl: 'templates/advice/recommended.html'
-            controller: 'RecommendationsCtrl'
-            resolve:
-              adviceResource: (Advice) ->
-                Advice.query().$promise
-      )
+    # advice -> recommended state
+    .state('app.recommended'
+      url: '/recommended'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/recommended.html'
+          controller:  'RecommendationsCtrl'
+          resolve:
+            recommendations: (Advice) ->
+              Advice.query().$promise
+    )
 
-      # recommended -> advice steps slidebox
-      .state('app.advice_steps'
-        url: '/recommended/steps/'
-        views:
-          menuContent:
-            templateUrl: 'templates/advice/steps.html'
-            controller:  'AdviceStepsCtrl'
-      )
+    # recommended -> advice steps slidebox
+    .state('app.advice_steps'
+      url: '/recommended/steps/'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/steps.html'
+          controller:  'AdviceStepsCtrl'
+    )
 
-      # advice -> favorites state
-      .state('app.favorites'
-        url: '/favorites'
-        views:
-          menuContent:
-            templateUrl: 'templates/advice/favorites.html'
-      )
+    # advice -> favorites state
+    .state('app.favorites'
+      url: '/favorites'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/favorites.html'
+    )
 
 ############################ STATIC CONTENT ####################################
     # settings state
@@ -189,59 +188,58 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
           templateUrl: 'templates/static/understanding_pain.html'
     )
 
-      # understanding pain -> what is pain
-      .state('app.pain_what'
-        url: '/pain/what'
-        views:
-          menuContent:
-            templateUrl: 'templates/static/pain/what.html'
-      )
+    # understanding pain -> what is pain
+    .state('app.pain_what'
+      url: '/pain/what'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/what.html'
+    )
 
-      # understanding pain -> types of pain
-      .state('app.pain_types'
-        url: '/pain/type'
-        views:
-          menuContent:
-            templateUrl: 'templates/static/pain/type.html'
-      )
+    # understanding pain -> types of pain
+    .state('app.pain_types'
+      url: '/pain/type'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/type.html'
+    )
 
-      # understanding pain -> reducing pain
-      .state('app.pain_reduce'
-        url: '/pain/reduce'
-        views:
-          menuContent:
-            templateUrl: 'templates/static/pain/reduce.html'
-      )
+    # understanding pain -> reducing pain
+    .state('app.pain_reduce'
+      url: '/pain/reduce'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/reduce.html'
+    )
 
-      # understanding pain -> pain management plan
-      .state('app.pain_plan'
-        url: '/pain/plan'
-        views:
-          menuContent:
-            templateUrl: 'templates/static/pain/plan.html'
-      )
+    # understanding pain -> pain management plan
+    .state('app.pain_plan'
+      url: '/pain/plan'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/plan.html'
+    )
 
-        # reducing pain -> pharmacological pain
-        .state('app.pain_pharmacological'
-          url: '/pain/pharmacological'
-          views:
-            menuContent:
-              templateUrl: 'templates/static/pain/pharmacological.html'
-        )
+    # reducing pain -> pharmacological pain
+    .state('app.pain_pharmacological'
+      url: '/pain/pharmacological'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/pharmacological.html'
+    )
 
-        # reducing pain -> physical pain
-        .state('app.pain_physical'
-          url: '/pain/physical'
-          views:
-            menuContent:
-              templateUrl: 'templates/static/pain/physical.html'
-        )
+    # reducing pain -> physical pain
+    .state('app.pain_physical'
+      url: '/pain/physical'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/physical.html'
+    )
 
-        # reducing pain -> psychological pain
-        .state('app.pain_psychological'
-          url: '/pain/psychological'
-          views:
-            menuContent:
-              templateUrl: 'templates/static/pain/psychological.html'
-        )
-
+    # reducing pain -> psychological pain
+    .state('app.pain_psychological'
+      url: '/pain/psychological'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/psychological.html'
+    )

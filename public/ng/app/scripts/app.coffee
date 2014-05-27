@@ -23,20 +23,12 @@
 @configModule     = angular.module 'painSquad.config', []
 
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, UserService) ->
-
-  # $rootScope.$on '$stateChangeStart', (event, toState) ->
-  #   console.log "stateChangeStart, currentUser: ", UserService.currentUser()?
-    # unless UserService.currentUser()?
-    #   event.preventDefault()
-    #   $state.go 'app.login'
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, $location, UserService) ->
 
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
-  # helper to provide $state.back() method
-  # intercepts $state transitions if there isn't a user in local storage
+  # helper to provide $state.back() method * won't work when page is reloaded
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-    # to be used for back button *won't work when page is reloaded.
     $rootScope.previousState_name   = fromState.name
     $rootScope.previousState_params = fromParams
 

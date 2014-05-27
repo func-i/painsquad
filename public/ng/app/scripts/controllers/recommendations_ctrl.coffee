@@ -1,8 +1,8 @@
 'use strict'
 
-@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $stateParams, $ionicModal, $ionicSlideBoxDelegate, $timeout, adviceResource) ->
+@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations) ->
   $scope.data              = {}
-  $scope.data.recommended  = adviceResource.advice.recommendations
+  $scope.data.recommended  = recommendations.advice.recommendations
 
   $ionicModal.fromTemplateUrl "templates/advice/modal/base-modal.html", (modal) ->
     $scope.modal = modal
@@ -34,9 +34,6 @@
   $scope.slideChange = (index) ->
     $scope.slideIndex = index
 
-  $scope.loadNestedModal = (item) ->
-    console.log item
-
   # TODO: advice scoring
   $scope.adviceCompleted = ->
     console.log "+5 Bonus Points Awarded"
@@ -60,4 +57,5 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
 
-@RecommendationsCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'adviceResource']
+
+@RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations']

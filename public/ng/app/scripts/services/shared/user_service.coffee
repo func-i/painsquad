@@ -2,6 +2,9 @@
 
 @UserService = @serviceModule.factory 'UserService', ($http) ->
 
+  isLoggedIn: ->
+    @currentUser()?
+
   currentUser: ->
     JSON.parse(@get())
 
