@@ -35,7 +35,7 @@
   $scope.atLeastOne = ->
     atLeastOne = _.some $scope.question.choices, (choice) ->
       if choice.textfield
-        choice.selected && choice.value && choice.value.length > 5
+        choice.selected && choice.custom_text && choice.custom_text.length > 5
       else
         choice.selected
     !atLeastOne

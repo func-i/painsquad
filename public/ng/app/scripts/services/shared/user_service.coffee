@@ -1,6 +1,6 @@
 'use strict'
 
-@UserService = @serviceModule.factory 'UserService', () ->
+@UserService = @serviceModule.factory 'UserService', ($http) ->
 
   currentUser: ->
     JSON.parse(@get())
@@ -15,4 +15,8 @@
   remove: ->
     localStorage.removeItem 'current_user'
 
-@UserService.$inject = [ ]
+  clearToken: ->
+    $http.defaults.headers.common['Authorization'] = ''
+
+
+@UserService.$inject = [ '$http' ]

@@ -1,10 +1,4 @@
-<ion-view hide-back-button="true" class="width-wrap" title="Pain Squad" ng-cloak>
-
-  <ion-nav-bar>
-    <ion-nav-buttons side="left">
-      <button class="button button-icon icon ion-home" ui-sref="app.home" ng-show="currentUser"></button>
-    </ion-nav-buttons>
-  </ion-nav-bar>
+<ion-view title="Pain Squad" hide-back-button="!isLoggedIn()" class="width-wrap" ng-cloak>
 
   <ion-content>
     <div class="list" ng-hide="currentUser">
@@ -34,7 +28,6 @@
         Logout
     </button>
 
-    <!-- user: {{ currentUser }} -->
   </ion-content>
 
 </ion-view>

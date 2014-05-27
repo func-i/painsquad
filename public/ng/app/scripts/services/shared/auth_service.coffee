@@ -1,8 +1,9 @@
 'use strict'
 
-@AuthService = @serviceModule.factory 'AuthService', ($state, $http, Session, UserService) ->
+@AuthService = @serviceModule.factory 'AuthService', ($state, $http, $ionicLoading, Session, UserService) ->
 
   login: (credentials) ->
+    @showLoading()
     Session.save(session: credentials).$promise
       .then (response) =>
         @onSuccess(response)
@@ -10,6 +11,7 @@
         @onError(error)
 
   onSuccess: (responseData) ->
+    @hideLoading()
     # sets user in localstorage
     UserService.set(responseData.user)
     # adds token to headers
@@ -19,6 +21,14 @@
 
   # handle errors here somehow idk maybe like show stuff to user
   onError: (errorData) ->
+    @hideLoading()
     console.log errorData.data
 
-@AuthService.$inject = ['$state', '$http', 'Session', 'UserService']
+  showLoading: ->
+    $ionicLoading.show
+      template: "Loading..."
+
+  hideLoading: ->
+    $ionicLoading.hide()
+
+@AuthService.$inject = ['$state', '$http', '$ionicModal', 'Session', 'UserService']

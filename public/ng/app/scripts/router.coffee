@@ -5,7 +5,7 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
     response
   error = (response) ->
     if response.status is 401
-      $injector.get("$state").transitionTo "login"
+      $injector.get("$state").transitionTo "app.login"
       $q.reject response
     else
       $q.reject response
@@ -16,15 +16,14 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push(interceptor)
-  $urlRouterProvider.otherwise '/login'
+  $urlRouterProvider.otherwise '/app/home'
+  # $urlRouterProvider.otherwise '/app/login'
+
+  currentUser = JSON.parse localStorage.getItem 'current_user'
+  if currentUser?
+    $httpProvider.defaults.headers.common['Authorization'] = "Token token=#{currentUser.access_token}"
 
   $stateProvider
-    .state('login',
-      url: '/login',
-      templateUrl: 'templates/shared/login.html'
-      controller: 'LoginCtrl'
-    )
-
     # abstract sidemenu state/template
     .state('app'
       url: '/app'
@@ -40,6 +39,15 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
           templateUrl: 'templates/shared/home.html'
           controller: 'HomeCtrl'
     )
+
+    .state('app.login',
+      url: '/login',
+      views:
+        menuContent:
+          templateUrl: 'templates/shared/login.html'
+          controller: 'LoginCtrl'
+    )
+
 
     # pain-case template - render individual questions as partials
     .state('app.new_survey'
