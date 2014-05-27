@@ -26,7 +26,6 @@
     else
       $scope.question = survey.questions[$scope.questionIndex]
 
-   # TODO: proper transition animations between these partials, use $state.go
   $scope.getChoicesPartial = (question) ->
     "/templates/surveys/question_types/#{question.question_type}.html"
 

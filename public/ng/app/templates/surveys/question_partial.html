@@ -1,5 +1,5 @@
 <section class="question">
-  <h4>{{ question.content }}</h4>
+  <p ng-bind-html="question.content"></p>
   <div class="fade-in-not-out" ng-include src="getChoicesPartial(question)"></div>
 </section>
 

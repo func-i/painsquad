@@ -1,4 +1,8 @@
 module Builder::Checklist
+  PAIN_CAUSE = [
+    'Your treatments', 'Medical Conditions', 'Medical Procedures', 'Everyday Pain'
+  ]
+
   DESCRIBE_PAIN = [
     'Beating', 'Burning', 'Cramping', 'Cruel', 'Cutting', 'Drilling', 'Fearful',
     'Horrible', 'Hurting', 'Itching', 'Like Needles', 'Miserable', 'Pinching',
@@ -12,6 +16,11 @@ module Builder::Checklist
     'Changes in skin', 'Diarrhea'
   ]
 
+  MEDICATION = [
+   'Acetaminophen (Tylenol)', 'Ibuprofen (Advil)', 'Naproxen', 'Codeine',
+   'Morphine (short-acting)', 'Morphine (long-acting)', 'Gabapentin', 'Amitriptyline'
+  ]
+
   OTHER_STRATEGIES = [
     'Deep breathing', 'Relaxation exercises', 'Heat', 'Cold', 'Massage/rubbing',
     'Imagery', 'Distraction (TV, books, music)', 'Talking with friends & family',
@@ -20,11 +29,6 @@ module Builder::Checklist
 
   class << self
 
-    def available_methods
-      methods = self.methods - Object.methods
-      methods[1..-1]
-    end
-
     def pain_cause survey
       question = survey.questions.create(
         question_type: 'checklist',
@@ -32,10 +36,7 @@ module Builder::Checklist
         tip:           'You can click multiple answers'
         )
       question.choices.create content: 'None', can_disable: true
-      question.choices.create content: 'Your treatments'
-      question.choices.create content: 'Medical Conditions'
-      question.choices.create content: 'Medical Procedures'
-      question.choices.create content: 'Everyday Pain'
+      PAIN_CAUSE.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other (please list)', textfield: true
     end
 
@@ -67,14 +68,7 @@ module Builder::Checklist
         tip:           'Touch the medication and then rate how helpful it was in reducing pain'
       )
       question.choices.create content: 'None', can_disable: true
-      question.choices.create content: 'Acetaminophen (Tylenol)'
-      question.choices.create content: 'Ibuprofen (Advil)'
-      question.choices.create content: 'Naproxen'
-      question.choices.create content: 'Codeine'
-      question.choices.create content: 'Morphine (short-acting)'
-      question.choices.create content: 'Morphine (long-acting)'
-      question.choices.create content: 'Gabapentin'
-      question.choices.create content: 'Amitriptyline'
+      MEDICATION.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other', textfield: true
     end
 

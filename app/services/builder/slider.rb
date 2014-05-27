@@ -1,10 +1,6 @@
 module Builder::Slider
 
   class << self
-    def available_methods
-      methods = self.methods - Object.methods
-      methods[1..-1]
-    end
 
     def current_pain survey
       question = survey.questions.create(
