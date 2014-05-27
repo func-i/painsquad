@@ -4,8 +4,8 @@ ruby '2.0.0'
 gem 'rails',       '4.1.0'
 gem 'thin',        '~> 1.6.2'
 gem 'pg',          '~> 0.17.1'
+
 gem 'rack-cors',   '~> 0.2.9'
-gem 'rails-api',   '~> 0.2.1'
 gem 'active_model_serializers', '~> 0.8.1'
 
 gem 'sorcery',     '~> 0.8.5'

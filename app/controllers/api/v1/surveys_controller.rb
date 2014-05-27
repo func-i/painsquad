@@ -1,7 +1,6 @@
 module Api
   module V1
     class SurveysController < ApplicationController
-      # skip_before_action :restrict_access
       before_action :fetch_survey
 
       def show

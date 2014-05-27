@@ -23,11 +23,12 @@
 @configModule     = angular.module 'painSquad.config', []
 
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, $location, UserService) ->
+
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
+  # helper to provide $state.back() method * won't work when page is reloaded
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
-    # to be used for back button *won't work when page is reloaded.
     $rootScope.previousState_name   = fromState.name
     $rootScope.previousState_params = fromParams
 
