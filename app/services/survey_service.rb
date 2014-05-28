@@ -3,17 +3,16 @@
 class SurveyService
 
   def initialize(user)
-    @user   = user
-    binding.pry
-    @report = @user.reports.last
+    @user       = user
+    @submission = @user.submission.last
   end
 
   def get_survey
-    if @report.nil?
+    if @submission.nil?
       send_survey :full
-    elsif @report.pain_severity == 'mild'
+    elsif @submission.pain_severity.mild?
       send_survey :truncated
-    elsif @report.pain_severity == 'moderate'
+    elsif @submission.pain_severity.moderate?
       send_survey :full
     else
       send_survey :full

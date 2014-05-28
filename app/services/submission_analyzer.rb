@@ -16,9 +16,10 @@ class SubmissionAnalyzer
   protected
 
   def parse_answers
-    @answers.each do |answer|
+    result = @answers.each do |answer|
       binding.pry
     end
+    result
   end
 
 end

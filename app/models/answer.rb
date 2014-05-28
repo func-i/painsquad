@@ -20,6 +20,10 @@ class Answer < ActiveRecord::Base
 
   serialize :data_object, JSON
 
+  scope :pain_severity_questions, -> {
+    binding.pry
+  }
+
   # TODO: fix this
   # validates :value, numericality: {
   #   greater_than_or_equal_to: 0,

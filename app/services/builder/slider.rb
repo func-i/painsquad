@@ -6,7 +6,8 @@ module Builder::Slider
       question = survey.questions.create(
         question_type: 'slider',
         content:       'How much <strong>pain</strong> do you have right now?',
-        tip:           'Touch the mark and slide it to describe your pain.'
+        tip:           'Touch the mark and slide it to describe your pain.',
+        identifier:    'current_pain'
       )
       question.choices.create
     end
@@ -14,15 +15,17 @@ module Builder::Slider
     def last_case_worst survey
       question = survey.questions.create(
         question_type: 'slider',
-        content:       'What was your pain when it was at its <strong>worst</strong> since your last case?'
+        content:       'What was your pain when it was at its <strong>worst</strong> since your last case?',
+        identifier:    'last_case_worst'
       )
       question.choices.create
     end
 
-    def last_case_least survey
+    def last_case_best survey
       question = survey.questions.create(
         question_type: 'slider',
-        content:       'What was your pain when it was at its <strong>least</strong> since your last case?'
+        content:       'What was your pain when it was at its <strong>least</strong> since your last case?',
+        identifier:    'last_case_best'
       )
       question.choices.create
     end
@@ -30,7 +33,8 @@ module Builder::Slider
     def last_case_average survey
       question = survey.questions.create(
         question_type: 'slider',
-        content:       'What was your pain when it was at its <strong>average</strong> since your last case?'
+        content:       'What was your pain when it was at its <strong>average</strong> since your last case?',
+        identifier:    'last_case_average'
       )
       question.choices.create
     end
@@ -54,7 +58,8 @@ module Builder::Slider
     def last_case_activities survey
       question = survey.questions.create(
         question_type: 'slider',
-        content:       'How much did your pain get in the way of <strong>things you did</strong> since your last case?'
+        content:       'How much did your pain get in the way of <strong>things you did</strong> since your last case?',
+        identifier:    'last_case_activities'
       )
       question.choices.create
     end
@@ -110,7 +115,8 @@ module Builder::Slider
     def pain_control survey
       question = survey.questions.create(
         question_type: 'slider',
-        content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?'
+        content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?',
+        identifier:    'pain_control'
       )
       question.choices.create
     end

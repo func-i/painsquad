@@ -21,7 +21,7 @@ class SurveyBuilder
     Builder::Other.boolean_has_pain(@survey)
     Builder::Slider.current_pain(@survey)
     Builder::Slider.last_case_worst(@survey)
-    Builder::Slider.last_case_least(@survey)
+    Builder::Slider.last_case_best(@survey)
     Builder::Slider.last_case_average(@survey)
     Builder::Other.radio_pain_duration(@survey)
     Builder::Checklist.pain_cause(@survey)
