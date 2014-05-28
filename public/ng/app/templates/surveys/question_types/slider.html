@@ -1,4 +1,4 @@
-<section class="default-slider" ng-cloak>
+<section class="default-slider" ng-cloak ng-controller="SliderCtrl">
 
   <form name="currentForm" valid-radio-form>
 
@@ -14,8 +14,6 @@
     </div>
 
     sliderValue: {{ question.choices[0].value | sliderFilter }}
-
-    showNext: {{ showNext }}
 
   </form>
 

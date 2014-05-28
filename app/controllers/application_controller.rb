@@ -2,7 +2,6 @@
 # For APIs, you may want to use :null_session instead.
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
-  # skip_before_action :verify_authenticity_token, if: proc { |c| c.request.format.json? }
 
   before_action :restrict_access
   respond_to :json

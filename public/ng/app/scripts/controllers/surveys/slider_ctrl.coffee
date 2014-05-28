@@ -1,6 +1,8 @@
 'use strict'
 
 @SliderCtrl = @controllerModule.controller "SliderCtrl", ($scope, $state) ->
-  console.log "SliderCtrl Init"
+
+  $scope.$on 'resetQuestion', (event, $scope) ->
+    event.currentScope.currentForm.$setPristine()
 
 @SliderCtrl.$inject = ['$scope', '$state']

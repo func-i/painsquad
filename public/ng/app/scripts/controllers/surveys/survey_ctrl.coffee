@@ -13,17 +13,18 @@
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
   $scope.nextQuestion = ->
-    if $scope.submission.has_pain is "false"
-      $scope.finishSurvey()
-    else
+    if !!$scope.submission.has_pain
       SurveyService.prepareSubmissionAnswer($scope.question)
       $scope.continueSurvey()
+    else
+      $scope.finishSurvey()
 
   $scope.continueSurvey = ->
     $scope.questionIndex++
-    if $scope.questionIndex > survey.questions.length - 1
+    if $scope.questionIndex > $scope.totalQuestions - 1
       $scope.finishSurvey()
     else
+      $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
 
   $scope.getChoicesPartial = (question) ->
@@ -48,6 +49,5 @@
 
   # DEFAULT ACTIONS
   $scope.startSurvey()
-  $scope.showNext = false
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']

@@ -6,6 +6,7 @@
 #  title      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  identifier :string(255)
 #
 
 FactoryGirl.define do

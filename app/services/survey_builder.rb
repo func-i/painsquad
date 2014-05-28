@@ -47,6 +47,12 @@ class SurveyBuilder
   def build_truncated_survey
     Builder::Other.boolean_has_pain(@survey)
     Builder::Slider.current_pain(@survey)
+    Builder::Slider.last_case_worst(@survey)
+    Builder::Slider.last_case_sleep(@survey)
+    Builder::Slider.last_case_activities(@survey)
+    Builder::Checklist.medication_efficacy_slider(@survey)
+    Builder::Checklist.other_strategies(@survey)
+    Builder::Slider.pain_control(@survey)
   end
 
 end

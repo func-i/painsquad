@@ -48,6 +48,3 @@ module Builder::Other
   end
 
 end
-
-
-
