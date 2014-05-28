@@ -16,10 +16,11 @@
 #  reset_password_email_sent_at    :datetime
 #
 
-# User Model, Sorcery-based authentication
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_one :api_key
+  has_many :submissions
+  has_many :reports
 
   after_create :grant_api_access
 

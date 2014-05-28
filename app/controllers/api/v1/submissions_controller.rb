@@ -2,7 +2,6 @@ module Api
   module V1
     class SubmissionsController < ApplicationController
       before_action :fetch_submission, only: [:show]
-      # skip_before_action :restrict_access
 
       def show
         render json: @submission
@@ -10,6 +9,7 @@ module Api
 
       def create
         @submission = Submission.new submission_params
+        @submission.user = @user
         if @submission.save
           render json: @submission
         else
@@ -41,6 +41,7 @@ module Api
       def fetch_submission
         @submission = Submission.includes(:answers).find(params[:id])
       end
+
     end
   end
 end

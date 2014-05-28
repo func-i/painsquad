@@ -16,7 +16,7 @@ module Api
       # TODO: Need to get the survey conditionally based on previous pain report
       # get full survey or build it if it doesn't exist!
       def fetch_survey
-        @survey = Survey.where(identifier: 'full').first
+        @survey = Survey.where(identifier: 'truncated').first
         # @survey = SurveyService.new(@user).get_survey
       end
     end
