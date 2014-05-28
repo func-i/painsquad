@@ -22,8 +22,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, $location, UserService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
 
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams

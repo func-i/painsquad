@@ -16,12 +16,12 @@ module Api
       # TODO: Need to get the survey conditionally based on previous pain report
       # get full survey or build it if it doesn't exist!
       def fetch_survey
+        # @survey = SurveyService.get_survey
         if @survey = Survey.find_by(identifier: 'full')
           @survey
         else
           @survey = SurveyBuilder.new(identifier: 'full').build
         end
-
       end
     end
   end

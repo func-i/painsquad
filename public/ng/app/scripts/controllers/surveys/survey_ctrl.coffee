@@ -50,15 +50,4 @@
   $scope.startSurvey()
   $scope.showNext = false
 
-
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']
-
-# resolve this resource before loading the controller
-@SurveyCtrl.resolve =
-  survey: (Survey, $q) ->
-    deferred = $q.defer()
-
-    Survey.query (response) ->
-      deferred.resolve response.survey
-
-    deferred.promise

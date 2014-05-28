@@ -1,6 +1,6 @@
 'use strict'
 
-interceptor = ['$q', '$injector', ($q, $injector) ->
+interceptor = ($q, $injector) ->
   success = (response) ->
     response
   error = (response) ->
@@ -11,7 +11,8 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
       $q.reject response
   (promise) ->
     promise.then success, error
-]
+
+interceptor.$inject = ['$q', '$injector']
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
@@ -37,7 +38,10 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          resolve:     HomeCtrl.resolve
+          resolve:
+            resolveUser: (UserService, $state) ->
+              unless UserService.isLoggedIn()
+                $state.go 'app.login'
     )
 
     .state('app.login',
@@ -55,7 +59,12 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
         menuContent:
           templateUrl: 'templates/surveys/new.html'
           controller:  'SurveyCtrl'
-          resolve:     SurveyCtrl.resolve
+          resolve:
+            survey: (Survey, $q) ->
+              deferred = $q.defer()
+              Survey.query (response) ->
+                deferred.resolve response.survey
+              deferred.promise
     )
 
     # temporary state - REMOVE DIS
@@ -95,6 +104,7 @@ interceptor = ['$q', '$injector', ($q, $injector) ->
           controller:  'RecommendationsCtrl'
           resolve:
             recommendations: (Advice) ->
+              console.log "Recommendations Resolve"
               Advice.query().$promise
     )
 
