@@ -20,9 +20,7 @@ class Answer < ActiveRecord::Base
 
   serialize :data_object, JSON
 
-  scope :pain_severity_questions, -> {
-    binding.pry
-  }
+  # scope :identifier_questions, joins(:question) & Question.identifiers
 
   # TODO: fix this
   # validates :value, numericality: {

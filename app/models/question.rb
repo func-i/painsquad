@@ -9,7 +9,9 @@
 #  tip           :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  identifier    :string(255)
 #
+
 class Question < ActiveRecord::Base
   QUESTION_TYPES = %w( boolean radio slider bodymap checklist checklist-grid checklist-extra textbox )
 
@@ -18,5 +20,7 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :choices, allow_destroy: true
 
   validates :question_type, inclusion: QUESTION_TYPES
+
+  scope :identifiers, -> { where.not(identifier: nil) }
 
 end
