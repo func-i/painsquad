@@ -13,7 +13,7 @@
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
   $scope.nextQuestion = ->
-    if !!$scope.submission.has_pain
+    if $scope.submission.has_pain is 'true'
       SurveyService.prepareSubmissionAnswer($scope.question)
       $scope.continueSurvey()
     else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528182953) do
+ActiveRecord::Schema.define(version: 20140528181655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,15 +84,6 @@ ActiveRecord::Schema.define(version: 20140528182953) do
     t.datetime "updated_at"
   end
 
-  create_table "reports", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "submission_id"
-    t.boolean  "has_pain"
-    t.integer  "pain_severity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "steps", force: true do |t|
     t.integer  "recommendation_id"
     t.string   "content"
@@ -109,7 +100,7 @@ ActiveRecord::Schema.define(version: 20140528182953) do
     t.datetime "updated_at"
     t.boolean  "has_pain"
     t.integer  "user_id"
-    t.integer  "report_id"
+    t.integer  "pain_severity"
   end
 
   add_index "submissions", ["survey_id"], name: "index_submissions_on_survey_id", using: :btree

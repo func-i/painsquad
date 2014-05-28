@@ -7,6 +7,8 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  has_pain   :boolean
+#  user_id    :integer
+#  report_id  :integer
 #
 
 FactoryGirl.define do

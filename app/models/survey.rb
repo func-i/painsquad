@@ -18,8 +18,15 @@ class Survey < ActiveRecord::Base
   scope :full, -> { where(identifier: 'full') }
   scope :truncated, -> { where(identifier: 'truncated') }
 
+  validates :identifier, uniqueness: true
+
   def print_tree
     SurveySerializer.new(self).to_json
+  end
+
+  def self.create_surveys!
+    SurveyBuilder.new(identifier: 'full').build
+    SurveyBuilder.new(identifier: 'truncated').build
   end
 
 end
