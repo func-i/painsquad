@@ -2,45 +2,31 @@ module SubmissionAnalyzer
   extend ActiveSupport::Concern
 
   included do
-    after_save :set_pain_severity
+    after_save :set_pain_severity, :if => :pain_severity_missing?
+  end
+
+  def pain_severity_missing?
+    has_pain && pain_severity.nil?
   end
 
   def set_pain_severity
-    identifier_answers = fetch_identifier_answers
-    relevant_values    = parse_answers(identifier_answers)
-    update(pain_severity: determine_pain_severity(relevant_values))
+    pain_levels_array = fetch_pain_levels_from_answers
+    pain_level        = pain_levels_array.max > 30 ? :moderate : :mild
+    update(pain_severity: pain_level)
   end
 
-  # finds answers with identifiers
-  def fetch_identifier_answers
-    result = []
+  def fetch_pain_levels_from_answers
+    pain_array = []
     answers.each do |answer|
-      result << answer if answer.question.identifier.present?
+      if answer.question.identifier.present?
+        if answer.question.identifier == 'pain_control'
+          pain_array << (100 - answer.value).abs
+        else
+          pain_array << answer.value
+        end
+      end
     end
-    result
-  end
-
-  # nested sub-arrays of identifiers and values
-  def parse_answers(answers_array)
-    result = []
-    answers_array.each do |answer|
-      result << { value: answer.value, identifier: answer.question.identifier }
-    end
-    result
-  end
-
-  # returns moderate or mild, used to update model value
-  def determine_pain_severity(answer_array)
-    result = 0
-    answer_array.each do |item|
-      # unpack values
-      value, identifier = item[:value], item[:identifier]
-      # inverse of pain_control edge case
-      (value - 100).abs if identifier == 'pain_control'
-      # save result if its bigger
-      result = value if value > result
-    end
-    result > 30 ? :moderate : :mild
+    pain_array
   end
 
 end

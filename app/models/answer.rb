@@ -10,7 +10,7 @@
 #  custom_text   :text
 #  created_at    :datetime
 #  updated_at    :datetime
-#  data_object   :text
+#  bodymap_data  :text
 #
 
 class Answer < ActiveRecord::Base
@@ -18,19 +18,6 @@ class Answer < ActiveRecord::Base
   belongs_to :choice
   belongs_to :question
 
-  serialize :data_object, JSON
+  serialize :bodymap_data, JSON
 
-  # scope :identifier_questions, joins(:question) & Question.identifiers
-
-  # TODO: fix this
-  # validates :value, numericality: {
-  #   greater_than_or_equal_to: 0,
-  #   less_than_or_equal_to:    100,
-  #   allow_nil:                true
-  # }
-
-
-  # belongs_to :question
-  # has_many :choices, dependent: :destroy
-  # accepts_nested_attributes_for :choices, reject_if: :all_blank
 end

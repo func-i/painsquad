@@ -76,8 +76,8 @@
   # adds bodymap object answer
   addBodymapAnswer: (answerObj, regionSelections) ->
     resultObj =
-      question_id: answerObj.question_id
-      data_object: regionSelections
+      question_id:  answerObj.question_id
+      bodymap_data: regionSelections
     @addAnswer(resultObj)
 
 @SubmissionService.$inject = [ 'BodymapService' ]

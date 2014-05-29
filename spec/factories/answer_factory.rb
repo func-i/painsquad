@@ -10,7 +10,7 @@
 #  custom_text   :text
 #  created_at    :datetime
 #  updated_at    :datetime
-#  data_object   :text
+#  bodymap_data  :text
 #
 
 FactoryGirl.define do

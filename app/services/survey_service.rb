@@ -10,11 +10,10 @@ class SurveyService
   def get_survey
     if @submission.nil?
       send_survey :full
-
-    # elsif @submission.pain_severity.mild?
-    #   send_survey :truncated
-    # elsif @submission.pain_severity.moderate?
-    #   send_survey :full
+    elsif @submission.mild?
+      send_survey :truncated
+    elsif @submission.pain_severity.moderate?
+      send_survey :full
     else
       send_survey :full
     end
