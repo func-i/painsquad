@@ -20,24 +20,7 @@
 
 ## Generating Surveys
 
-Full assessment (incomplete): `rake survey:full`
-
-Truncated assessment (incomplete): `rake survey:truncated`
-
-Test survey with all questions: `rake survey:all`
-
-Test survey with specific question: `rake survey:boolean`
-
-available questions:
-
-- boolean
-- slider
-- radio
-- bodymap
-- textbox
-- checklist
-- checklist_grid
-- checklist_extra
+`rake survey:all`
 
 
 ## Cukes
