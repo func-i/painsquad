@@ -3,17 +3,21 @@
 class SurveyService
 
   def initialize(user)
-    @user       = user
-    @submission = @user.submissions.last
+    @user                 = user
+    @last_submission      = @user.submissions.last
+    @previous_submissions = @user.previous_submissions
   end
 
+  # TODO: implement AM/PM alerts - base survey deliver off of that
+  # deliver FULL survey for AM/PM alerts (any time within 30 minutes)
+  # deliver TRUNCATED survey on 1 hour followup of AM/PM alerts
   def get_survey
-    if @submission.nil?
+    if @last_submission.nil?
       send_survey :full
-    elsif @submission.mild?
+    elsif @last_submission.mild?
       send_survey :truncated
-    elsif @submission.pain_severity.moderate?
-      send_survey :full
+    elsif @last_submission.moderate?
+     send_survey :full
     else
       send_survey :full
     end

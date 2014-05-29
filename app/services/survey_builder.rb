@@ -37,6 +37,8 @@ class SurveyBuilder
     Builder::Checklist.describe_pain_grid(@survey)
     Builder::Checklist.other_symptoms_grid(@survey)
     Builder::Checklist.medication_efficacy_slider(@survey)
+
+    # wrong spot ?
     Builder::Slider.strategy_efficacy(@survey)
     Builder::Checklist.other_strategies(@survey)
     Builder::Slider.pain_control(@survey)

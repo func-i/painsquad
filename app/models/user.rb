@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
 
   after_create :grant_api_access
 
+  def previous_submissions
+    submissions.order('updated_at DESC').take 5
+  end
+
   protected
 
   def grant_api_access

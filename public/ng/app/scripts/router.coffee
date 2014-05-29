@@ -104,7 +104,6 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'RecommendationsCtrl'
           resolve:
             recommendations: (Advice) ->
-              console.log "Recommendations Resolve"
               Advice.query().$promise
     )
 
