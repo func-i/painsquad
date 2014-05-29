@@ -1,8 +1,9 @@
 'use strict'
 
 @RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations) ->
-  $scope.data              = {}
-  $scope.data.recommended  = recommendations.advice.recommendations
+  $scope.data             = {}
+  $scope.data.recommended = recommendations.advice.recommendations
+  $scope.data.favorites   = []
 
   $ionicModal.fromTemplateUrl "templates/advice/modal/base-modal.html", (modal) ->
     $scope.modal = modal
@@ -16,11 +17,21 @@
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
-    if event.target.tagName.toLowerCase() isnt 'i'
+    if event.target.tagName.toLowerCase() is 'i'
+      $scope.toggleFavorite(item)
+    else # load the modal
       $scope.modalStyle = item.style
       setHeaderButtons(item)
       $scope.data.selectedItem = item
       $scope.modal.show()
+
+  $scope.toggleFavorite = (item) ->
+    item.favorite = !item.favorite
+    idx = $scope.data.favorites.indexOf item.id
+    if idx is -1
+      $scope.data.favorites.push item.id
+    else
+      $scope.data.favorites.splice idx, 1
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0
@@ -56,6 +67,5 @@
     $scope.modalStyle         = null
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
-
 
 @RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations']

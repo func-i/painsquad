@@ -38,7 +38,7 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          # breaking views on first pageload
+          # TODO: fix this, displays whitescreen on first rendering
           # resolve:
           #   resolveUser: (UserService, $state) ->
           #     unless UserService.isLoggedIn()

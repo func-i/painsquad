@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
   has_one :api_key
   has_many :submissions
 
-  has_many :recommendations, through: :recommendation_favorites
-  has_many :recommendations_favorites
+  has_many :recommendation_favorites, class_name: RecommendationFavorites
+  has_many :recommendations, :through => :recommendation_favorites
 
   after_create :grant_api_access
 

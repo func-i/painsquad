@@ -23,8 +23,34 @@
 
   <ion-content has-header="true" class="advice-modal">
 
-    <div ng-switch="modalStyle">
+    <div ng-show="!slideShowActivated" ng-cloak>
+      <img ng-src="{{data.selectedItem.image}}">
 
+      <section class="duration">
+        <span class="ion-ios7-alarm-outline calm"></span>
+        <span>{{ data.selectedItem.duration }}</span>
+      </section>
+
+      <section class="context">
+        <span class="ion-ios7-checkmark-outline balanced"></span>
+        <span>{{ data.selectedItem.context }}</span>
+      </section>
+
+      <section class="favorite">
+       <i ng-model="data.selectedItem.favorite"
+         style="font-size: 40px;"
+         class="badge"
+         ng-class="{ 'ion-ios7-heart': data.selectedItem.favorite, 'ion-ios7-heart-outline': !data.selectedItem.favorite }"
+         ng-click="toggleFavorite(data.selectedItem)"> </i>
+      </section>
+
+      <section class="description">
+        <p>{{data.selectedItem.description}}</p>
+        <small>{{data.selectedItem.byline}}</small>
+      </section>
+    </div>
+
+    <div ng-switch="modalStyle">
       <div ng-switch-when="slideshow">
         <section ng-include="'templates/advice/modal/slideshow.html'"></section>
       </div>
@@ -32,11 +58,7 @@
       <div ng-switch-when="nested">
         <section ng-include="'templates/advice/modal/nested.html'"></section>
       </div>
-
-      <div ng-switch-when="basic">
-        <section ng-include="'templates/advice/modal/basic.html'"></section>
-      </div>
-
     </div>
+
   </ion-content>
 </div>
