@@ -38,10 +38,11 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          resolve:
-            resolveUser: (UserService, $state) ->
-              unless UserService.isLoggedIn()
-                $state.go 'app.login'
+          # breaking views on first pageload
+          # resolve:
+          #   resolveUser: (UserService, $state) ->
+          #     unless UserService.isLoggedIn()
+          #       $state.go 'app.login'
     )
 
     .state('app.login',
