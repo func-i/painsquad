@@ -21,6 +21,9 @@ class User < ActiveRecord::Base
   has_one :api_key
   has_many :submissions
 
+  has_many :recommendations, through: :recommendation_favorites
+  has_many :recommendations_favorites
+
   after_create :grant_api_access
 
   def previous_submissions
