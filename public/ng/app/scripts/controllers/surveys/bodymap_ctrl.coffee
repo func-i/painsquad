@@ -12,8 +12,7 @@
   .then (modal) ->
     $scope.modal = modal
 
-  # $scope.$on '$destroy', ->
-  $scope.$on '$stateChangeStart', ->
+  $scope.$on '$destroy', ->
     $scope.modal.remove()
 
   $scope.contentSaved = (painRegion) ->

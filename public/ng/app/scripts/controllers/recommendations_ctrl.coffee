@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations) ->
+@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, RecommendationFavorites) ->
   $scope.data             = {}
   $scope.data.recommended = recommendations.advice.recommendations
   $scope.data.favorites   = []
@@ -11,9 +11,9 @@
     animation: "slide-in-up"
     scope: $scope
 
-  # $scope.$on '$destroy', ->
-  $scope.$on '$stateChangeStart', ->
+  $scope.$on '$destroy', ->
     $scope.modal.remove()
+    RecommendationFavorites.save(recommendation_favorite: $scope.data.favorites)
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
