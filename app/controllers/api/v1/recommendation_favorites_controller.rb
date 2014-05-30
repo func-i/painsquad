@@ -2,16 +2,11 @@ module Api
   module V1
     class RecommendationFavoritesController < ApplicationController
 
-      # TODO: fix this, weird params bug and need to create batch records
       def create
-        @recommendation_faves = RecommendationFavorite.new(
-          recommendation_id: recommendation_params,
-          user: @user
-        )
-        if @recommendation_faves.save
-          render json: @recommendation_faves
+        if @favorites = RecommendationFavorite.create(array_params)
+          render json: @favorites
         else
-          render json: { errors: @recommendation_faves.errors.full_messages}, status: :unprocessable_entity
+          render json: { errors: @favorites.errors.full_messages}, status: :unprocessable_entity
         end
       end
 
@@ -19,6 +14,13 @@ module Api
 
       def recommendation_params
         params.require(:recommendation_favorite)
+      end
+
+      # returns an array of hashes mapping { recommendation_id: id, user_id: @user.id }
+      def array_params
+        recommendation_params.inject([]) do |result, id|
+          result << { recommendation_id: id, user_id: @user.id }
+        end
       end
 
     end

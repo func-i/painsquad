@@ -12,4 +12,7 @@
 class RecommendationFavorite < ActiveRecord::Base
   belongs_to :user
   belongs_to :recommendation
+
+  validates :recommendation_id, uniqueness: { scope: :user_id }
+
 end
