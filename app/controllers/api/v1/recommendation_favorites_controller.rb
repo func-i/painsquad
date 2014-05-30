@@ -2,12 +2,24 @@ module Api
   module V1
     class RecommendationFavoritesController < ApplicationController
 
+      # TODO:
+      # - rename model 'Favorites'
+      # - POST on each individual favorite select/deselect (with setTimeout to prevent spam)
+      # - yeah, clean this up
+      def show
+        binding.pry
+      end
+
       def create
         if @favorites = RecommendationFavorite.create(array_params)
           render json: @favorites
         else
           render json: { errors: @favorites.errors.full_messages}, status: :unprocessable_entity
         end
+      end
+
+      def destroy
+        binding.pry
       end
 
       private

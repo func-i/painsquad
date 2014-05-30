@@ -38,7 +38,7 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          # TODO: fix this, displays whitescreen on first rendering
+          # TODO: fix this, displays whitescreen on first rendering in new browser/session
           # resolve:
           #   resolveUser: (UserService, $state) ->
           #     unless UserService.isLoggedIn()
@@ -123,6 +123,10 @@ interceptor.$inject = ['$q', '$injector']
       views:
         menuContent:
           templateUrl: 'templates/advice/favorites.html'
+          controller:  'FavoritesCtrl'
+          resolve:
+            favorites: (RecommendationFavorites) ->
+              RecommendationFavorites.query().$promise
     )
 
 ############################ STATIC CONTENT ####################################

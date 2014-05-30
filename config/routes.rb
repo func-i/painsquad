@@ -6,7 +6,7 @@ PainSquadApi::Application.routes.draw do
       resource :surveys
       resource :advices
       resources :submissions
-      resources :recommendation_favorites, only: [:create]
+      resources :recommendation_favorites, only: [:show, :create, :destroy]
 
       resources :users do
         put :password, on: :member

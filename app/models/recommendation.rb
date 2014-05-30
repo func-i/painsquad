@@ -28,4 +28,5 @@ class Recommendation < ActiveRecord::Base
   has_many :users, :through => :recommendation_favorites
 
   validates :style, inclusion: %w(basic slideshow nested)
+
 end
