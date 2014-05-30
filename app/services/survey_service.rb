@@ -13,11 +13,18 @@ class SurveyService
   # deliver TRUNCATED survey on 1 hour followup of AM/PM alerts
   def get_survey
     if @last_submission.nil?
-      send_survey :full
-    elsif @last_submission.mild?
+      send_survey :full # send full survey if its the first
+    elsif !@last_submission.has_pain?
+      send_survey :truncated # no pain in previous report, send truncated
+    else
+      determine_pain_severity # otherwise, determine which survey from pain_severity
+    end
+  end
+
+  def determine_pain_severity
+    if @last_submission.mild?
       send_survey :truncated
-    elsif @last_submission.moderate?
-     send_survey :full
+    # elsif @last_submission.moderate?
     else
       send_survey :full
     end

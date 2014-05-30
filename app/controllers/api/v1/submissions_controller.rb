@@ -12,8 +12,6 @@ module Api
         @submission.user = @user
         if @submission.save
           render json: @submission
-          # calling this inside the controller because after_save invokes for every assocation
-          @submission.set_pain_severity if @submission.has_pain
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
         end

@@ -20,8 +20,12 @@ class Survey < ActiveRecord::Base
 
   validates :identifier, uniqueness: true
 
-  def print_tree
-    SurveySerializer.new(self).to_json
+  def full?
+    identifier == 'full'
+  end
+
+  def truncated?
+    identifier == 'truncated'
   end
 
   def self.create_surveys!

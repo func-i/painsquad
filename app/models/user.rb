@@ -14,6 +14,7 @@
 #  reset_password_token            :string(255)
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
+#  score                           :integer
 #
 
 class User < ActiveRecord::Base
