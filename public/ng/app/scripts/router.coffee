@@ -124,9 +124,7 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/advice/favorites.html'
           controller:  'FavoritesCtrl'
-          # resolve:
-          #   favorites: (RecommendationFavorites) ->
-          #     RecommendationFavorites.query().$promise
+          resolve:     FavoritesCtrl.resolve
     )
 
 ############################ STATIC CONTENT ####################################

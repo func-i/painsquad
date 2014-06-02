@@ -4,7 +4,12 @@ module Api
       before_action :fetch_favorite, only: :destroy
 
       def index
-        binding.pry
+        @favorites = Favorite.where(user_id: current_user.id).take(5)
+        if @favorites
+          render json: @favorites
+        else
+          render json: { errors: "No favorites" }
+        end
       end
 
       def create
