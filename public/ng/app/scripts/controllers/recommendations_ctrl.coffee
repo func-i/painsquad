@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, RecommendationFavorites) ->
+@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites) ->
   $scope.data             = {}
   $scope.data.recommended = recommendations.advice.recommendations
   $scope.data.favorites   = []
@@ -13,7 +13,7 @@
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()
-    RecommendationFavorites.save(recommendation_favorite: $scope.data.favorites)
+    # RecommendationFavorites.save(recommendation_favorite: $scope.data.favorites)
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
@@ -27,11 +27,16 @@
 
   $scope.toggleFavorite = (item) ->
     item.favorite = !item.favorite
-    idx = $scope.data.favorites.indexOf item.id
-    if idx is -1
-      $scope.data.favorites.push item.id
+    if item.favorite
+      Favorites.save(recommendation_id: item.id)
     else
-      $scope.data.favorites.splice idx, 1
+      Favorites.remove(recommendation_id: item.id)
+
+    # idx = $scope.data.favorites.indexOf item.id
+    # if idx is -1
+    #   $scope.data.favorites.push item.id
+    # else
+    #   $scope.data.favorites.splice idx, 1
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: recommendation_favorites
+# Table name: favorites
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer
@@ -9,7 +9,7 @@
 #  updated_at        :datetime
 #
 
-class RecommendationFavorite < ActiveRecord::Base
+class Favorite < ActiveRecord::Base
   belongs_to :user
   belongs_to :recommendation
 end

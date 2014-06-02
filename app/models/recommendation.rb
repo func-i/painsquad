@@ -24,8 +24,8 @@ class Recommendation < ActiveRecord::Base
   has_many :nested_recommendations, class_name: 'Recommendation', foreign_key: 'parent_recommendation_id'
   belongs_to :nested_recommendation, class_name: 'Recommendation'
 
-  has_many :recommendation_favorites, class_name: RecommendationFavorite
-  has_many :users, :through => :recommendation_favorites
+  has_many :favorites, class_name: Favorite
+  has_many :users, :through => :favorites
 
   validates :style, inclusion: %w(basic slideshow nested)
 

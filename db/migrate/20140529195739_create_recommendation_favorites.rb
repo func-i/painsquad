@@ -1,6 +1,6 @@
 class CreateRecommendationFavorites < ActiveRecord::Migration
   def change
-    create_table :recommendation_favorites do |t|
+    create_table :favorites do |t|
       t.references :user
       t.references :recommendation
 

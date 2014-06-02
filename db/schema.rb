@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(version: 20140529195739) do
 
   add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
 
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recommendation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "question_type"
@@ -69,13 +76,6 @@ ActiveRecord::Schema.define(version: 20140529195739) do
   end
 
   add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
-
-  create_table "recommendation_favorites", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "recommendation_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "recommendations", force: true do |t|
     t.integer  "advice_id"
