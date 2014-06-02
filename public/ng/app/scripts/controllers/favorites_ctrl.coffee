@@ -1,10 +1,10 @@
 'use strict'
 
-@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites) ->
-  $scope.recommendedItems   = recommendations.advice.recommendations
-  $scope.favorites          = []
+@FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, UserService, FavoritesResource, Favorites) ->
+  $scope.favorites          = FavoritesResource.favorites
+  $scope.isFavorites        = $scope.favorites.length > 0
   $scope.selectedItem       = {}
-  $scope.showFavoriteButton = true
+  $scope.showFavoriteButton = false
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
@@ -16,21 +16,10 @@
     $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
-    # <i> element clicks bound to ng-model, ignore this event
-    if event.target.tagName.toLowerCase() is 'i'
-      $scope.toggleFavorite(item)
-    else # load the modal
-      $scope.modalStyle = item.style
-      setHeaderButtons(item)
-      $scope.selectedItem = item
-      $scope.modal.show()
-
-  $scope.toggleFavorite = (item) ->
-    item.favorite = !item.favorite
-    if item.favorite
-      Favorites.save(recommendation_id: item.id)
-    else
-      Favorites.remove(recommendation_id: item.id)
+    $scope.modalStyle = item.style
+    setHeaderButtons(item)
+    $scope.selectedItem = item
+    $scope.modal.show()
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0
@@ -67,4 +56,8 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
 
-@RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations']
+@FavoritesCtrl.$inject = [ '$state', '$scope', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'UserService', 'FavoritesResource', 'Favorites' ]
+
+@FavoritesCtrl.resolve =
+  FavoritesResource: (Favorites) ->
+    Favorites.query().$promise

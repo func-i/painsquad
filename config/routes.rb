@@ -6,13 +6,13 @@ PainSquadApi::Application.routes.draw do
       resource :surveys
       resource :advices
       resources :submissions
+      resources :favorites, only: [:index, :create, :destroy]
 
       resources :users do
         put :password, on: :member
       end
 
       resource :session
-
     end
   end
 

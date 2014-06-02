@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530151436) do
+ActiveRecord::Schema.define(version: 20140602155807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 20140530151436) do
 
   add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
 
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recommendation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["recommendation_id"], name: "index_favorites_on_recommendation_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "question_type"
@@ -79,7 +88,6 @@ ActiveRecord::Schema.define(version: 20140530151436) do
     t.string   "description"
     t.string   "byline"
     t.string   "style"
-    t.boolean  "favorite",                 default: false
     t.integer  "parent_recommendation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
