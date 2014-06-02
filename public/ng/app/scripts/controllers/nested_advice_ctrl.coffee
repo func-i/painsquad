@@ -1,9 +1,8 @@
 'use strict'
 
 @NestedAdviceCtrl = @controllerModule.controller 'NestedAdviceCtrl', ($scope, $state, $stateParams, $ionicModal) ->
-  console.log "Nested Advice Ctrl"
 
-  $ionicModal.fromTemplateUrl "templates/advice/modal/nested-steps.html", (modal) ->
+  $ionicModal.fromTemplateUrl "templates/advice/modal.steps.html", (modal) ->
     $scope.modal = modal
   ,
     animation: "slide-in-up"
