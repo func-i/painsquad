@@ -1,29 +1,36 @@
 module Api
   module V1
     class FavoritesController < ApplicationController
+      before_action :fetch_favorite, only: :destroy
 
       def index
         binding.pry
       end
 
       def create
-        @favorite      = Favorite.new(favorites_params)
+        @favorite      = Favorite.new favorites_params
         @favorite.user = @user
         if @favorite.save
-          render json: @favorites
+          render json: @favorite
         else
-          render json: { errors: @favorites.errors.full_messages}, status: :unprocessable_entity
+          render json: { errors: @favorite.errors.full_messages}, status: :unprocessable_entity
         end
       end
 
       def destroy
-        binding.pry
+        if @favorite.destroy
+          head :ok
+        end
       end
 
       private
 
       def favorites_params
         params.require(:favorite).permit!
+      end
+
+      def fetch_favorite
+        @favorite = Favorite.find_by(recommendation_id: params[:id])
       end
 
     end

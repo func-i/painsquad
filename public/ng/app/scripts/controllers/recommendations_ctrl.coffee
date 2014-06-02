@@ -13,7 +13,6 @@
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()
-    # RecommendationFavorites.save(recommendation_favorite: $scope.data.favorites)
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
@@ -31,12 +30,8 @@
       Favorites.save(recommendation_id: item.id)
     else
       Favorites.remove(recommendation_id: item.id)
-
-    # idx = $scope.data.favorites.indexOf item.id
-    # if idx is -1
-    #   $scope.data.favorites.push item.id
-    # else
-    #   $scope.data.favorites.splice idx, 1
+      # Favorites.remove(recommendation_id: item.id)
+      # Favorites.delete(item.id)
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0

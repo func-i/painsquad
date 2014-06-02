@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529195739) do
+ActiveRecord::Schema.define(version: 20140602155807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20140529195739) do
     t.string   "description"
     t.string   "byline"
     t.string   "style"
-    t.boolean  "favorite",                 default: false
     t.integer  "parent_recommendation_id"
     t.datetime "created_at"
     t.datetime "updated_at"

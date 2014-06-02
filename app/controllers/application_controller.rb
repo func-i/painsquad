@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def current_user
+    @user
+  end
+
   protected
 
   def restrict_access

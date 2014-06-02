@@ -6,7 +6,7 @@ PainSquadApi::Application.routes.draw do
       resource :surveys
       resource :advices
       resources :submissions
-      resource :favorites
+      resources :favorites
       # resources :favorites, only: [:index, :create, :destroy]
 
       resources :users do
@@ -14,7 +14,6 @@ PainSquadApi::Application.routes.draw do
       end
 
       resource :session
-
     end
   end
 
