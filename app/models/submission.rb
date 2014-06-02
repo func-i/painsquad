@@ -12,12 +12,16 @@
 #
 
 class Submission < ActiveRecord::Base
+  include Scoring
   include SubmissionAnalyzer
 
   belongs_to :survey
   belongs_to :user
 
   enum pain_severity: [:mild, :moderate]
+
+  scope :full, -> { survey.where(identifier: 'full') }
+  scope :truncated, -> { survey.where(identifier: 'truncated') }
 
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers
