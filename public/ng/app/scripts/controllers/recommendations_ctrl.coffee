@@ -1,9 +1,10 @@
 'use strict'
 
 @RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites) ->
-  $scope.data             = {}
-  $scope.data.recommended = recommendations.advice.recommendations
-  $scope.data.favorites   = []
+  $scope.data              = {}
+  $scope.data.recommended  = recommendations.advice.recommendations
+  $scope.data.favorites    = []
+  $scope.data.selectedItem = {}
 
   $ionicModal.fromTemplateUrl "templates/advice/modal/base-modal.html", (modal) ->
     $scope.modal = modal
@@ -61,7 +62,7 @@
 
   reset = ->
     $scope.slideShowActivated = null
-    $scope.data.selectedItem  = null
+    $scope.data.selectedItem       = null
     $scope.modalStyle         = null
     $scope.showStartButton    = null
     $scope.showDidItButton    = null

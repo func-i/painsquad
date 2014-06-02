@@ -6,7 +6,30 @@
   </ion-header-bar>
 
   <ion-content padding="true">
-  {{ favorites | json }}
+    <p ng-hide="isFavorites">No Favorites</p>
+
+    <ion-list ng-show="isFavorites" class="recommended">
+      <ion-item
+        ng-repeat="item in favorites"
+        class="item item-thumbnail-left"
+        ng-click="loadAdviceModal(item.recommendation)">
+
+          <img ng-src="{{ item.recommendation.image }}" alt="{{ item.recommendation.title }}">
+          <h2>{{ item.recommendation.title }}</h2>
+
+          <div class="duration">
+            <span class="ion-ios7-alarm-outline calm"></span>
+            <span>{{ item.recommendation.duration }}</span>
+          </div>
+
+          <div class="context">
+            <span class="ion-ios7-checkmark-outline balanced"></span>
+            <span>{{ item.recommendation.context }}</span>
+          </div>
+
+      </ion-item>
+    </ion-list>
+
   </ion-content>
 
 </ion-view>

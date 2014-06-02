@@ -1,6 +1,5 @@
 <div class="modal">
-
-  <ion-header-bar class="bar bar-header bar-positive">
+  <ion-header-bar>
     <button class="button button-icon ion-ios7-arrow-back"
       ng-click="discardAdvice()">
         Back
@@ -19,9 +18,10 @@
       ng-show="showDidItButton">
         Did it!
     </button>
+
   </ion-header-bar>
 
-  <ion-content has-header="true" class="advice-modal">
+  <ion-content has-header="true">
 
     <div ng-show="!slideShowActivated" ng-cloak>
       <img ng-src="{{data.selectedItem.image}}">
@@ -59,6 +59,5 @@
         <section ng-include="'templates/advice/modal/nested.html'"></section>
       </div>
     </div>
-
   </ion-content>
 </div>
