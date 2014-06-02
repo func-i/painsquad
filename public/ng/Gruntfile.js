@@ -1,4 +1,4 @@
-// Generated on 2014-05-26 using generator-ionic 0.3.4
+// Generated on 2014-05-29 using generator-ionic 0.3.5
 'use strict';
 
 var _ = require('lodash');
@@ -14,7 +14,6 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // coffeescript
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Define the configuration for all the tasks
@@ -38,13 +37,17 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
-      coffee: {
-        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.coffee'],
-        tasks: ['coffee:dist']
-      },
       compass: {
         files: ['<%= yeoman.app %>/<%= yeoman.styles %>/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
+      },
+      coffee: {
+        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**.{coffee,litcoffee,coffee.md}'],
+        tasks: ['newer:coffee:dist']
+      },
+      coffeeTest: {
+        files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['newer:coffee:test', 'karma']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -57,6 +60,7 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/*.html',
           '<%= yeoman.app %>/templates/**/*.html',
           '.tmp/<%= yeoman.styles %>/**/*.css',
+          '.tmp/scripts/{,*/}*.js',
           '<%= yeoman.app %>/<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -158,7 +162,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
-          src: '{,**/}*.coffee',
+          src: '{,*/}*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
         }]
@@ -173,6 +177,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -528,7 +533,7 @@ module.exports = function (grunt) {
   grunt.registerTask('coverage', ['karma:continuous', 'connect:coverage:keepalive']);
 
   grunt.registerTask('default', [
-    'coffeelint',
+    'newer:jshint',
     'karma:continuous',
     'build'
   ]);

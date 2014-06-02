@@ -2,13 +2,13 @@
 #
 # Table name: submissions
 #
-#  id         :integer          not null, primary key
-#  survey_id  :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  has_pain   :boolean
-#  user_id    :integer
-#  report_id  :integer
+#  id            :integer          not null, primary key
+#  survey_id     :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  has_pain      :boolean
+#  user_id       :integer
+#  pain_severity :integer
 #
 
 FactoryGirl.define do
