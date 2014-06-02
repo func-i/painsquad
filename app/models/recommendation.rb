@@ -11,7 +11,6 @@
 #  description              :string(255)
 #  byline                   :string(255)
 #  style                    :string(255)
-#  favorite                 :boolean          default(FALSE)
 #  parent_recommendation_id :integer
 #  created_at               :datetime
 #  updated_at               :datetime

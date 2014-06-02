@@ -30,8 +30,6 @@
       Favorites.save(recommendation_id: item.id)
     else
       Favorites.remove(recommendation_id: item.id)
-      # Favorites.remove(recommendation_id: item.id)
-      # Favorites.delete(item.id)
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0

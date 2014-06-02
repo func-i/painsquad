@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20140602155807) do
     t.datetime "updated_at"
   end
 
+  add_index "favorites", ["recommendation_id"], name: "index_favorites_on_recommendation_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.integer  "survey_id"
     t.string   "question_type"
