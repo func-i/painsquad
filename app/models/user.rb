@@ -14,7 +14,8 @@
 #  reset_password_token            :string(255)
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
-#  score                           :integer
+#  score                           :integer          default(0)
+#  rank                            :integer          default(0)
 #
 
 class User < ActiveRecord::Base
@@ -45,16 +46,16 @@ class User < ActiveRecord::Base
 
   protected
 
+  def grant_api_access
+    create_api_key!
+  end
+
   def create_initial_activity
     Activity.create(
       subject: self,
       user:    self,
       name:    'user_created'
     )
-  end
-
-  def grant_api_access
-    create_api_key!
   end
 
   def create_rank_activity

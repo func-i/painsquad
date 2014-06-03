@@ -11,7 +11,9 @@
 #  updated_at   :datetime
 #
 
-class Activity < ActiveRecord::Base
-  belongs_to :subject, polymorphic: true
-  belongs_to :user
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :activity do
+  end
 end
