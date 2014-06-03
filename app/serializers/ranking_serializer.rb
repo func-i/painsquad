@@ -1,9 +1,12 @@
 class RankingSerializer < ActiveModel::Serializer
-  attributes :rankings
-  # attributes :id, :username, :email, :rankings
+  attributes :ranks
 
-  def rankings
-    object.activities.levels
+  def ranks
+    object.activities.ranking_events
+  end
+
+  def is_unlocked
+    [true, false].sample
   end
 
 end

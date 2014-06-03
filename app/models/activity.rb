@@ -15,5 +15,6 @@ class Activity < ActiveRecord::Base
   belongs_to :subject, polymorphic: true
   belongs_to :user
 
-  scope :levels, -> { where(event: 'level_up') }
+  scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up').order('created_at ASC') }
+
 end

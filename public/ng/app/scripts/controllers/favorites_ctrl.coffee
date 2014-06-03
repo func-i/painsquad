@@ -1,8 +1,7 @@
 'use strict'
 
 @FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, UserService, favorites) ->
-  console.log favorites
-  $scope.favorites          = favorites
+  $scope.favorites          = favorites.favorites
   $scope.isFavorites        = $scope.favorites.length > 0
   $scope.selectedItem       = {}
   $scope.showFavoriteButton = false

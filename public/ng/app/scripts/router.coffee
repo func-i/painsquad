@@ -87,9 +87,10 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'AchievementsCtrl'
           resolve:
             rankings: (Ranking, $q) ->
+              # Ranking.query().$promise
               defer = $q.defer()
               Ranking.query (response) ->
-                defer.resolve response
+                defer.resolve response.ranking
               defer.promise
     )
 
@@ -133,10 +134,7 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'FavoritesCtrl'
           resolve:
             favorites: (Favorites, $q) ->
-              defer = $q.defer()
-              Favorites.query (response) ->
-                defer.resolve response.favorites
-              deferred.promise
+              Favorites.query().$promise
     )
 
 ############################ STATIC CONTENT ####################################
