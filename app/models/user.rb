@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
   after_create :grant_api_access
+  after_save :create_activity
 
   def previous_submissions
     submissions.order('updated_at DESC').take 5
@@ -46,4 +47,11 @@ class User < ActiveRecord::Base
   def grant_api_access
     create_api_key!
   end
+
+  def create_activity
+    if rank_changed?
+      binding.pry
+    end
+  end
+
 end

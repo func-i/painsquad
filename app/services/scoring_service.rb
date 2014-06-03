@@ -13,13 +13,13 @@ class ScoringService
   end
 
   def process
-    set_user_score
+    update_user_score
     update_user_ranking
   end
 
   protected
 
-  def set_user_score
+  def update_user_score
     @user.increment! :score, @score
   end
 
