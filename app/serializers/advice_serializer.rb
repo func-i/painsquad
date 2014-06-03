@@ -3,6 +3,7 @@ class AdviceSerializer < ActiveModel::Serializer
   has_many :recommendations
 
   def recommendations
+    binding.pry
     object.recommendations.includes(:steps).order('id ASC')
   end
 end

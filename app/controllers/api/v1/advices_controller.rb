@@ -1,7 +1,6 @@
 module Api
   module V1
     class AdvicesController < ApplicationController
-      # skip_before_action :restrict_access
       before_action :fetch_advice
 
       def show
@@ -18,7 +17,7 @@ module Api
       # requirements specified by SickKids
       # also, speed up this query, it sucks
       def fetch_advice
-        @advice = Advice.includes(:recommendations => :steps).first
+        @advice = Advice.includes(:recommendations => :steps, :favorites).first
       end
     end
   end

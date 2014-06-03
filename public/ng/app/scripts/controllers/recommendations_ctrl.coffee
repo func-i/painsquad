@@ -47,12 +47,12 @@
   # TODO: advice scoring
   $scope.adviceCompleted = ->
     console.log "+5 Bonus Points Awarded"
-    reset()
     $scope.modal.hide()
+    reset()
 
   $scope.discardAdvice = ->
-    reset()
     $scope.modal.hide()
+    reset()
 
   setHeaderButtons = (item) ->
     if item.style is 'slideshow'
