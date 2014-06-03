@@ -12,7 +12,6 @@
 #
 
 class Submission < ActiveRecord::Base
-  include Scoring
   include SubmissionAnalyzer
 
   belongs_to :survey
@@ -28,5 +27,11 @@ class Submission < ActiveRecord::Base
 
   validates :survey, presence: true
   validates :has_pain, inclusion: [true, false]
+
+  after_create :set_score
+
+  def set_score
+    ScoringService.set self
+  end
 
 end

@@ -25,10 +25,20 @@ class User < ActiveRecord::Base
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
 
+  enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
+
   after_create :grant_api_access
 
   def previous_submissions
     submissions.order('updated_at DESC').take 5
+  end
+
+  def display_rank
+    if rank.include? '_'
+      rank.split('_').map(&:capitalize).join(' ')
+    else
+      rank.capitalize
+    end
   end
 
   protected
