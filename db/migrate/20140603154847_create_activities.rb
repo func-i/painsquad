@@ -4,7 +4,8 @@ class CreateActivities < ActiveRecord::Migration
       t.references :user
       t.integer :subject_id, null: false
       t.string :subject_type, null: false
-      t.string :name, null: false
+      t.string :name
+      t.string :event
 
       t.timestamps
     end

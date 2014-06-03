@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     Activity.create(
       subject: self,
       user:    self,
-      name:    'user_created'
+      event:   'user_created'
     )
   end
 
@@ -63,7 +63,8 @@ class User < ActiveRecord::Base
       Activity.create(
         subject: self,
         user:    self,
-        name:    'level_up'
+        name:    rank,
+        event:   'level_up'
       )
     end
   end

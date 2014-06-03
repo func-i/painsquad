@@ -62,10 +62,10 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'SurveyCtrl'
           resolve:
             survey: (Survey, $q) ->
-              deferred = $q.defer()
+              defer = $q.defer()
               Survey.query (response) ->
-                deferred.resolve response.survey
-              deferred.promise
+                defer.resolve response.survey
+              defer.promise
     )
 
     # temporary state - REMOVE DIS
@@ -84,7 +84,13 @@ interceptor.$inject = ['$q', '$injector']
       views:
         menuContent:
           templateUrl: 'templates/achievements/main.html'
-          controller: 'AchievementsCtrl'
+          controller:  'AchievementsCtrl'
+          resolve:
+            rankings: (Ranking, $q) ->
+              defer = $q.defer()
+              Ranking.query (response) ->
+                defer.resolve response
+              defer.promise
     )
 
     # advice state
@@ -97,6 +103,7 @@ interceptor.$inject = ['$q', '$injector']
       )
 
     # advice -> recommended state
+    # TODO: convert to in-controller resolve?
     .state('app.recommended'
       url: '/recommended'
       views:
@@ -124,7 +131,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/advice/favorites.html'
           controller:  'FavoritesCtrl'
-          resolve:     FavoritesCtrl.resolve
+          resolve:
+            favorites: (Favorites, $q) ->
+              defer = $q.defer()
+              Favorites.query (response) ->
+                defer.resolve response.favorites
+              deferred.promise
     )
 
 ############################ STATIC CONTENT ####################################

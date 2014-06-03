@@ -1,7 +1,8 @@
 'use strict'
 
-@FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, UserService, FavoritesResource, Favorites) ->
-  $scope.favorites          = FavoritesResource.favorites
+@FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, UserService, favorites) ->
+  console.log favorites
+  $scope.favorites          = favorites
   $scope.isFavorites        = $scope.favorites.length > 0
   $scope.selectedItem       = {}
   $scope.showFavoriteButton = false
@@ -36,12 +37,12 @@
   # TODO: advice scoring
   $scope.adviceCompleted = ->
     console.log "+5 Bonus Points Awarded"
-    reset()
     $scope.modal.hide()
+    reset()
 
   $scope.discardAdvice = ->
-    reset()
     $scope.modal.hide()
+    reset()
 
   setHeaderButtons = (item) ->
     if item.style is 'slideshow'
@@ -56,8 +57,4 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
 
-@FavoritesCtrl.$inject = [ '$state', '$scope', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'UserService', 'FavoritesResource', 'Favorites' ]
-
-@FavoritesCtrl.resolve =
-  FavoritesResource: (Favorites) ->
-    Favorites.query().$promise
+@FavoritesCtrl.$inject = [ '$state', '$scope', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'UserService', 'favorites']

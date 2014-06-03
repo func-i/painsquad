@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140603154847) do
     t.integer  "user_id"
     t.integer  "subject_id",   null: false
     t.string   "subject_type", null: false
-    t.string   "name",         null: false
+    t.string   "name"
+    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -36,7 +36,7 @@ class Submission < ActiveRecord::Base
     Activity.create(
       subject: self,
       user:    user,
-      name:    'submission_created'
+      event:   'submission_created'
     )
   end
 

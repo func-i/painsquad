@@ -16,8 +16,9 @@ module Api
 
       # TODO: Need to populate advice -> recommendations based upon some
       # requirements specified by SickKids
+      # also, speed up this query, it sucks
       def fetch_advice
-        @advice = Advice.first
+        @advice = Advice.includes(:recommendations => :steps).first
       end
     end
   end
