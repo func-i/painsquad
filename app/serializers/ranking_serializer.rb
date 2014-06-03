@@ -5,8 +5,4 @@ class RankingSerializer < ActiveModel::Serializer
     object.activities.ranking_events
   end
 
-  def is_unlocked
-    [true, false].sample
-  end
-
 end

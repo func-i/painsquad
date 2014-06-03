@@ -87,7 +87,6 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'AchievementsCtrl'
           resolve:
             rankings: (Ranking, $q) ->
-              # Ranking.query().$promise
               defer = $q.defer()
               Ranking.query (response) ->
                 defer.resolve response.ranking
