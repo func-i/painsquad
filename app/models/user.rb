@@ -21,14 +21,15 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
+  has_many :activities
 
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
-  after_create :grant_api_access
-  after_save :create_activity
+  after_create :grant_api_access, :create_initial_activity
+  after_update :create_rank_activity
 
   def previous_submissions
     submissions.order('updated_at DESC').take 5
@@ -44,13 +45,25 @@ class User < ActiveRecord::Base
 
   protected
 
+  def create_initial_activity
+    Activity.create(
+      subject: self,
+      user:    self,
+      name:    'user_created'
+    )
+  end
+
   def grant_api_access
     create_api_key!
   end
 
-  def create_activity
+  def create_rank_activity
     if rank_changed?
-      binding.pry
+      Activity.create(
+        subject: self,
+        user:    self,
+        name:    'level_up'
+      )
     end
   end
 
