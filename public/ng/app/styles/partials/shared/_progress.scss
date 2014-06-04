@@ -22,13 +22,15 @@
     .info {
       padding-bottom: 30px;
 
-      .pull-right {
-        float: right;
+      span {
+        color: white;
+        &.text {
+          text-transform: uppercase;
+        }
+
+        &.count {}
       }
 
-      .pull-left {
-        float: left;
-      }
     }
 
     #bar {

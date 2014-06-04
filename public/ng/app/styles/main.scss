@@ -2,7 +2,8 @@
 @import 'modules/defaults',
         'modules/layout',
         'modules/variables',
-        'modules/helpers';
+        'modules/helpers',
+        'modules/overrides';
 
 // view and template-related styles
 @import 'partials/shared/intro',
@@ -25,4 +26,5 @@
         'partials/forms/checklist-extra',
         'partials/forms/textarea';
 
+// FIXME: lose the 'sidemenu' transition when we don't require the compiled ionic.css file in index.html
 @import '../bower_components/ionic/scss/ionic.scss';
