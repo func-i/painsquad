@@ -10,14 +10,19 @@
     $scope.totalQuestions = survey.questions.length
     $scope.question       = survey.questions[$scope.questionIndex]
 
+  $scope.hasPain = ->
+    $scope.submission.has_pain = true
+    $scope.continueSurvey()
+
+  $scope.noPain = ->
+    $scope.submission.has_pain = false
+    $scope.finishSurvey()
+
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
   $scope.nextQuestion = ->
-    if $scope.submission.has_pain is 'true'
-      SurveyService.prepareSubmissionAnswer($scope.question)
-      $scope.continueSurvey()
-    else
-      $scope.finishSurvey()
+    SurveyService.prepareSubmissionAnswer($scope.question)
+    $scope.continueSurvey()
 
   $scope.continueSurvey = ->
     $scope.questionIndex++

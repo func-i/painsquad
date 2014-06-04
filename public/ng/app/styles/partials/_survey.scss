@@ -1,0 +1,41 @@
+.survey {
+  // TODO: fix linear gradient background image
+  // background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $survey-gradient-start), color-stop(100%, $survey-gradient-end));
+  // background: url('/images/survey/wood-bg.jpg'), -webkit-linear-gradient(top,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* Chrome10+,Safari5.1+ */
+  background: url('/images/survey/wood-bg.jpg'), linear-gradient(to bottom,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* W3C */
+
+  .question-body {
+    height: 600px;
+    margin: 10px;
+    background: white;
+
+    .question {
+      margin-top: 20px;
+
+      .content-background {
+        margin-top:    20px;
+        display:       block;
+        height:        100px;
+        background:    url('/images/survey/content-bg.jpg');
+        opacity:       0.25;
+        border-top:    5px solid red;
+        border-bottom: 1px solid gray;
+      }
+
+      .content {
+        position:      relative;
+        top:           -90px;
+        padding-left:  20px;
+        padding-right: 20px;
+        text-align: center;
+      }
+    }
+
+    .tip {
+      p {
+        border: 1px solid red;
+      }
+    }
+  }
+
+}
