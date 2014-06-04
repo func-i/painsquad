@@ -54,9 +54,6 @@
   $scope.previous = ->
     $ionicSlideBoxDelegate.previous();
 
-  $scope.slideChange = (slideIndex) ->
-    console.log "Changing slides to index: ", slideIndex
-
   mergeAchievementData()
 
 @AchievementsCtrl.$inject = ['$scope', '$state', 'moment', '$ionicSlideBoxDelegate', 'rankings']

@@ -19,6 +19,8 @@
 #
 
 class User < ActiveRecord::Base
+  include ActivityFeed
+
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -29,12 +31,7 @@ class User < ActiveRecord::Base
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
-  after_create :grant_api_access, :create_initial_activity
-  after_update :create_rank_activity
-
-  def previous_submissions
-    submissions.order('updated_at DESC').take 5
-  end
+  after_create :grant_api_access
 
   def display_rank
     if rank.include? '_'
@@ -48,25 +45,6 @@ class User < ActiveRecord::Base
 
   def grant_api_access
     create_api_key!
-  end
-
-  def create_initial_activity
-    Activity.create(
-      subject: self,
-      user:    self,
-      event:   'user_created'
-    )
-  end
-
-  def create_rank_activity
-    if rank_changed?
-      Activity.create(
-        subject: self,
-        user:    self,
-        name:    rank,
-        event:   'level_up'
-      )
-    end
   end
 
 end

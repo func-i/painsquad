@@ -17,4 +17,6 @@ class Activity < ActiveRecord::Base
 
   scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up').order('created_at ASC') }
 
+  scope :award_events, -> { where('').order('created_at ASC') }
+
 end

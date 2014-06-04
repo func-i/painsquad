@@ -17,7 +17,7 @@ module Api
       # requirements specified by SickKids
       # also, speed up this query, it sucks
       def fetch_advice
-        @advice = Advice.includes(:recommendations => :steps, :favorites).first
+        @advice = Advice.includes(:recommendations => :steps).first
       end
     end
   end

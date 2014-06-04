@@ -5,7 +5,7 @@ PainSquadApi::Application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       resource :surveys
       resource :advices
-      resource :rankings
+      resource :achievements
       resources :submissions
       resources :favorites, only: [:index, :create, :destroy]
 
