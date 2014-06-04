@@ -1,9 +1,9 @@
 .progress {
   display: block;
-  // position: fixed;
+  // position: absolute;
 
   .progress-block {
-    // position:   absolute;
+    // position:   fixed;
     display:    block;
     clear:      both;
     height:     70px;
@@ -34,31 +34,16 @@
     }
 
     #bar {
-      width:         100%;
-      border-bottom: 1px solid #cccccc;
+      background-color: white;
+      border-radius:    13px;
+      // padding:          3px;
 
       div {
-        position:      relative;
-        background:    #E56981;
-        height:        3px;
-        transition:    0.2s ease-in-out;
-        margin-bottom: -2px;
-      }
-
-      div::after {
-        content:    '';
-        position:   absolute;
-        right:      -2px;
-        top:        -2px;
-        height:     7px;
-        width:      7px;
-        // borrowed from cssdeck.com
-        background: radial-gradient(
-          ellipse at center,
-          rgba(245, 199, 208, 1) 0%,
-          rgba(221, 70, 98, 0) 100%);
+        background-color: red;
+        transition:       0.2s ease-in-out;
+        height:           8px;
+        border-radius:    10px;
       }
     }
   }
-
 }

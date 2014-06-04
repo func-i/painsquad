@@ -18,7 +18,8 @@
         'partials/advice';
 
 // survey questions
-@import 'partials/survey';
+@import 'partials/survey',
+        'partials/questions/boolean';
 
 // form-specific styles
 @import 'partials/forms/checklist',
