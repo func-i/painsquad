@@ -22,8 +22,6 @@
 #
 
 class User < ActiveRecord::Base
-  include ActivityFeed
-
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -34,8 +32,8 @@ class User < ActiveRecord::Base
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
-  after_create :grant_api_access
-  # after_update :delegate_awards
+  after_create :grant_api_access, :register_create_event
+  after_update :register_level_event, :if => :rank_changed?
 
   def display_rank
     if rank.include? '_'
@@ -46,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def previous_submissions
-    submissions.order('updated_at DESC').take 5
+    submissions.order('updated_at DESC')
   end
 
   def submission_count
@@ -63,8 +61,21 @@ class User < ActiveRecord::Base
     create_api_key!
   end
 
-  # def delegate_awards
-  #   AwardService.new(self).perform
-  # end
+  def register_create_event
+    Activity.create(
+      subject: self,
+      user:    self,
+      event:   'user_created'
+    )
+  end
+
+  def register_level_event
+    Activity.create(
+      subject: self,
+      user:    self,
+      name:    rank,
+      event:   'level_up'
+    )
+  end
 
 end

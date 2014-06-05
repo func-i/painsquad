@@ -12,16 +12,6 @@ module Api
         end
       end
 
-      # def create
-      #   @activity      = Activity.new(activity_params)
-      #   @activity.user = @user
-      #   if @activity.save
-      #     head :ok
-      #   else
-      #      render json: { errors: @activity.errors.full_messages}, status: :unprocessable_entity
-      #   end
-      # end
-
       private
 
       def activity_params

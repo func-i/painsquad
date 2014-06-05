@@ -2,7 +2,7 @@ class AwardService
 
   def initialize(user)
     @user       = user
-    @last_event = @user.activities.most_recent
+    @last_event = @user.activities.last
   end
 
   def perform

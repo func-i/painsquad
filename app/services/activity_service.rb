@@ -21,14 +21,8 @@ class ActivityService
   end
 
   def delegate_event
-    if @event == 'submission_complete'
-      # do nothing, handled in SubmissionsController
-    elsif @event == 'recommendation_complete'
-      #increment score by 5!
-      binding.pry
-    elsif @event == 'level_up'
-      # do something here?
-      binding.pry
+    if @event == 'recommendation_complete'
+      @user.increment! :score, 5
     end
   end
 
