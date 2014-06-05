@@ -2,7 +2,6 @@
 
 @RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites, Activity) ->
   $scope.recommendedItems   = recommendations
-  $scope.favorites          = []
   $scope.selectedItem       = {}
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
@@ -28,7 +27,6 @@
     item.favorite = !item.favorite
     if item.favorite
       Favorites.save(favorite: { recommendation_id: item.id })
-      # Favorites.save(recommendation_id: item.id)
     else
       Favorites.remove(recommendation_id: item.id)
 

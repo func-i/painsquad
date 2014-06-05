@@ -28,9 +28,12 @@
     item.favorite = !item.favorite
     if item.favorite
       Favorites.save(favorite: { recommendation_id: item.id })
-      # Favorites.save(recommendation_id: item.id)
     else
       Favorites.remove(recommendation_id: item.id)
+      $scope.removeItem(item.id)
+
+  $scope.removeItem = (item_id) ->
+    $scope.favorites.splice(index, 1) for index, value of $scope.favorites when value.recommendation_id is item_id
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0
