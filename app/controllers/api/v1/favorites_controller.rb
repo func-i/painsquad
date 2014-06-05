@@ -31,7 +31,7 @@ module Api
       private
 
       def favorites_params
-        params.require(:favorite).permit!
+        params.require(:favorite).permit(:recommendation_id)
       end
 
       def fetch_favorite

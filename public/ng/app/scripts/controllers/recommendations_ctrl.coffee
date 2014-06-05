@@ -1,7 +1,6 @@
 'use strict'
 
 @RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites, Activity) ->
-  # $scope.recommendedItems   = recommendations.advice.recommendations
   $scope.recommendedItems   = recommendations
   $scope.favorites          = []
   $scope.selectedItem       = {}
@@ -29,7 +28,8 @@
   $scope.toggleFavorite = (item) ->
     item.favorite = !item.favorite
     if item.favorite
-      Favorites.save(recommendation_id: item.id)
+      Favorites.save(favorite: { recommendation_id: item.id })
+      # Favorites.save(recommendation_id: item.id)
     else
       Favorites.remove(recommendation_id: item.id)
 
