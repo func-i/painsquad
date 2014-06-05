@@ -1,11 +1,16 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :null_session
+  serialization_scope :present_user
 
   before_action :restrict_access
   respond_to :json
 
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+  def present_user
+    @user
+  end
 
   protected
 

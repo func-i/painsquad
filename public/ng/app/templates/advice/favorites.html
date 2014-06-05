@@ -26,6 +26,10 @@
             <span>{{ item.recommendation.context }}</span>
           </div>
 
+          <i ng-model="item.recommendation.favorite"
+           class="badge"
+           ng-class="{ 'ion-ios7-heart': item.recommendation.favorite, 'ion-ios7-heart-outline': !item.recommendation.favorite }"> </i>
+
       </ion-item>
     </ion-list>
 

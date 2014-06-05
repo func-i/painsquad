@@ -4,7 +4,7 @@ class RecommendationSerializer < ActiveModel::Serializer
   has_many :nested_recommendations
 
   def favorite
-    object.favorites.where(user: current_user).any?
+    object.favorites.where(user: scope).any?
   end
 
 end

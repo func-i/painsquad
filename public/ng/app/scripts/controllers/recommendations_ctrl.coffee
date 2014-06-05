@@ -4,7 +4,6 @@
   $scope.recommendedItems   = recommendations
   $scope.favorites          = []
   $scope.selectedItem       = {}
-  $scope.showFavoriteButton = true
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
