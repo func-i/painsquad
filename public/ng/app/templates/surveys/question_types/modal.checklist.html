@@ -18,6 +18,7 @@
   </ion-header-bar>
 
   <ion-content padding="true" class="has-header checklist-detail">
+
     <section class="detail-slider">
 
       <form name="currentForm" valid-modal-form>
@@ -26,7 +27,6 @@
           <p>How helpful was this in reducing your pain?</p>
         </div>
 
-        <!-- <div ng-show="detailData.currentChoice.textfield"> -->
         <div ng-if="detailData.currentChoice.textfield == true">
           <p>Please specify what other medications you took</p>
           <label class="item item-input">
@@ -39,16 +39,13 @@
           </label>
         </div>
 
-        <div class="slider-container modal">
+        <div class="slider-container">
           <div class="wedge"></div>
           <div class="overlay green" slider-gradient="detailData.currentChoice.value"></div>
         </div>
 
         <div class="range range-balanced" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">
-<!--
-             ng-class="{ 'range-positive': !detailData.currentChoice.slider_disabled,
-                         'range-assertive': detailData.currentChoice.slider_disabled }">
- -->
+
           <input
             type="range"
             name="slider"
