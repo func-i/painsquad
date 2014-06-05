@@ -1,7 +1,8 @@
 'use strict'
 
 @RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites, Activity) ->
-  $scope.recommendedItems   = recommendations.advice.recommendations
+  # $scope.recommendedItems   = recommendations.advice.recommendations
+  $scope.recommendedItems   = recommendations
   $scope.favorites          = []
   $scope.selectedItem       = {}
   $scope.showFavoriteButton = true
@@ -46,7 +47,7 @@
 
   # TODO: only allow bonus points if completed after a valid submission, prevent cheating!
   $scope.adviceCompleted = ->
-    Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'advice_complete' })
+    Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'recommendation_complete' })
     $scope.modal.hide()
     reset()
 

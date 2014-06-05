@@ -86,24 +86,15 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/achievements/main.html'
           controller:  'AchievementsCtrl'
           resolve:
-            rankings: (Ranking, $q) ->
+            rankings: (Achievement, $q) ->
               defer = $q.defer()
-              Ranking.query (response) ->
-                defer.resolve response.ranking
+              Achievement.query (response) ->
+                defer.resolve response.achievements
               defer.promise
     )
 
-    # advice state
-    .state('app.advice'
-      url: '/advice'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/main.html'
-          controller:  'AdviceCtrl'
-      )
 
     # advice -> recommended state
-    # TODO: convert to in-controller resolve?
     .state('app.recommended'
       url: '/recommended'
       views:
@@ -111,17 +102,11 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/advice/recommended.html'
           controller:  'RecommendationsCtrl'
           resolve:
-            recommendations: (Advice) ->
-              Advice.query().$promise
-    )
-
-    # recommended -> advice steps slidebox
-    .state('app.advice_steps'
-      url: '/recommended/steps/'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/steps.html'
-          controller:  'AdviceStepsCtrl'
+            recommendations: (Advice, $q) ->
+              defer = $q.defer()
+              Advice.query (response) ->
+                defer.resolve response.advice.recommendations
+              defer.promise
     )
 
     # advice -> favorites state
@@ -133,7 +118,28 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'FavoritesCtrl'
           resolve:
             favorites: (Favorites, $q) ->
-              Favorites.query().$promise
+              defer = $q.defer()
+              Favorites.query (response) ->
+                defer.resolve response.favorites
+              defer.promise
+    )
+
+    # advice state
+    .state('app.advice'
+      url: '/advice'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/main.html'
+          controller:  'AdviceCtrl'
+    )
+
+    # recommended -> advice steps slidebox
+    .state('app.advice_steps'
+      url: '/recommended/steps/'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/steps.html'
+          controller:  'AdviceStepsCtrl'
     )
 
 ############################ STATIC CONTENT ####################################
