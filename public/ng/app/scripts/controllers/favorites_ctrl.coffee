@@ -4,7 +4,6 @@
   $scope.favorites          = favorites
   $scope.isFavorites        = $scope.favorites.length > 0
   $scope.selectedItem       = {}
-  $scope.showFavoriteButton = false
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
@@ -16,10 +15,25 @@
     $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
-    $scope.modalStyle = item.style
-    setHeaderButtons(item)
-    $scope.selectedItem = item
-    $scope.modal.show()
+    # <i> element clicks bound to ng-model, ignore this event
+    if event.target.tagName.toLowerCase() is 'i'
+      $scope.toggleFavorite(item)
+    else # load the modal
+      $scope.modalStyle = item.style
+      setHeaderButtons(item)
+      $scope.selectedItem = item
+      $scope.modal.show()
+
+  $scope.toggleFavorite = (item) ->
+    item.favorite = !item.favorite
+    if item.favorite
+      Favorites.save(favorite: { recommendation_id: item.id })
+    else
+      Favorites.remove(recommendation_id: item.id)
+      $scope.removeItem(item.id)
+
+  $scope.removeItem = (item_id) ->
+    $scope.favorites.splice(index, 1) for index, value of $scope.favorites when value.recommendation_id is item_id
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0

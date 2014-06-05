@@ -1,13 +1,13 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  attributes :recommendation_id, :user_id, :is_favorited
+  attributes :recommendation_id, :user_id, :favorite
   has_one :recommendation
 
-  # def recommendation
-  #   object.recommendation.includes(:steps, :nested_recommendations)
-  # end
+  def recommendation
+    object.recommendation
+  end
 
-  def is_favorited
-    [true, false].sample
+  def favorite
+    object.user == scope
   end
 
 end
