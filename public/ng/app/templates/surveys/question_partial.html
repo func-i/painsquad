@@ -1,13 +1,15 @@
 <section class="question">
-  <p ng-bind-html="question.content"></p>
-  <div class="fade-in-not-out" ng-include src="getChoicesPartial(question)"></div>
+  <div class="content-header"></div>
+  <div class="content-actual" ng-bind-html="question.content"></div>
+  <!-- <div class="content-background"></div> -->
+  <div class="choices" ng-include src="getChoicesPartial(question)"></div>
 </section>
 
-<br>
 <section class="tip" ng-show="question.tip">
   <p>TIP: {{ question.tip }}</p>
 </section>
 
+<!--
 <hr>
 
 Answer:
@@ -17,3 +19,4 @@ Answer:
 
 Question:
 <pre ng-bind="question | json"></pre>
+-->

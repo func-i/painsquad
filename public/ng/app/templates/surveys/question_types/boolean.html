@@ -1,21 +1,13 @@
-<section ng-cloak>
+<section class="boolean" ng-cloak>
 
-  <form name="currentForm" valid-form>
+  <button class="button button-block button-balanced diagonal"
+    ng-click="hasPain()">
+      Yes
+  </button>
 
-    <div class="list" ng-repeat="choice in question.choices">
-      <label class="item item-radio">
-        <input type="radio" name="has_pain"
-          ng-model="submission.has_pain"
-          ng-value="choice.value"
-          required>
-        <div class="item-content">
-          {{ choice.content }}
-        </div>
-        <i class="radio-icon ion-checkmark"></i>
-      </label>
-    </div>
-
-  </form>
+  <button class="button button-block button-assertive"
+    ng-click="noPain()">
+      No
+  </button>
 
 </section>
-

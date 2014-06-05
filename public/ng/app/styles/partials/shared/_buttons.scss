@@ -7,3 +7,25 @@ label.checkbox {
 input[disabled]:before {
   border: 1px solid #EF4562;
 }
+
+// button.button {
+//   display:  block;
+//   position: relative;
+//   top:      0;
+//   right:    0;
+//   bottom:   0;
+//   left:     0;
+// }
+
+.button-diagonal {
+  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
+}
+
+.diagonal {
+  &::after {
+    background: url('/images/survey/content-bg.jpg');
+    opacity:    0.25;
+    z-index:    -1;
+    position:   absolute;
+  }
+}
