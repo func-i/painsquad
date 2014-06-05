@@ -16,6 +16,9 @@
 #  reset_password_email_sent_at    :datetime
 #  score                           :integer          default(0)
 #  rank                            :integer          default(0)
+#  award_level                     :integer          default(0)
+#  cross_level                     :integer          default(0)
+#  star_level                      :integer          default(0)
 #
 
 class User < ActiveRecord::Base
@@ -32,6 +35,7 @@ class User < ActiveRecord::Base
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
   after_create :grant_api_access
+  after_update :delegate_awards
 
   def display_rank
     if rank.include? '_'
@@ -41,10 +45,26 @@ class User < ActiveRecord::Base
     end
   end
 
+  def previous_submissions
+    submissions.order('updated_at DESC').take 5
+  end
+
+  def submission_count
+    activities.submission_events.count
+  end
+
+  def advice_count
+    activities.recommendation_events.count
+  end
+
   protected
 
   def grant_api_access
     create_api_key!
+  end
+
+  def delegate_awards
+    AwardService.new(self).perform
   end
 
 end

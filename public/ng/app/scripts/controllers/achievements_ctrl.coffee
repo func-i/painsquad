@@ -1,6 +1,6 @@
 'use strict'
 
-@AchievementsCtrl = @controllerModule.controller 'AchievementsCtrl', ($scope, $state, moment, $ionicSlideBoxDelegate, rankings) ->
+@AchievementsCtrl = @controllerModule.controller 'AchievementsCtrl', ($scope, $state, moment, $ionicSlideBoxDelegate, achievements) ->
   $scope.achievementData = [
       {
         name:       'rookie'
@@ -41,10 +41,10 @@
     ]
 
   mergeAchievementData = ->
-    for item, index in rankings.ranks
-      unlockAndSetDate($scope.achievementData[index], item)
+    for item, index in achievements.ranks
+      unlockAchievement($scope.achievementData[index], item)
 
-  unlockAndSetDate = (achievement, item) ->
+  unlockAchievement = (achievement, item) ->
     achievement.locked = false
     achievement.date   = moment(item.created_at).format('ll')
 
@@ -56,4 +56,4 @@
 
   mergeAchievementData()
 
-@AchievementsCtrl.$inject = ['$scope', '$state', 'moment', '$ionicSlideBoxDelegate', 'rankings']
+@AchievementsCtrl.$inject = ['$scope', '$state', 'moment', '$ionicSlideBoxDelegate', 'achievements']

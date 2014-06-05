@@ -86,7 +86,7 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/achievements/main.html'
           controller:  'AchievementsCtrl'
           resolve:
-            rankings: (Achievement, $q) ->
+            achievements: (Achievement, $q) ->
               defer = $q.defer()
               Achievement.query (response) ->
                 defer.resolve response.achievements

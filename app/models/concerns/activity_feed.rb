@@ -2,22 +2,11 @@ module ActivityFeed
   extend ActiveSupport::Concern
 
   included do
-    after_create :create_initial_activity
-    after_update :create_rank_activity
+    after_create :user_created_activity
+    after_update :rank_activity
   end
 
-  def submission_count
-  end
-
-  def submission_award?
-    submission_count % 5 == 0
-  end
-
-  def previous_submissions
-    submissions.order('updated_at DESC').take 5
-  end
-
-  def create_initial_activity
+  def user_created_activity
     Activity.create(
       subject: self,
       user:    self,
@@ -25,7 +14,7 @@ module ActivityFeed
     )
   end
 
-  def create_rank_activity
+  def rank_activity
     if rank_changed?
       Activity.create(
         subject: self,

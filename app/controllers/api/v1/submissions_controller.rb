@@ -8,9 +8,9 @@ module Api
       end
 
       def create
-        @submission      = Submission.new submission_params
-        @submission.user = @user
-        if @submission.save
+        @submission         = Submission.new(submission_params)
+        @submission_service = SubmissionService.new(@submission, @user)
+        if @submission_service.create
           render json: @submission
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
