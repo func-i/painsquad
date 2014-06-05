@@ -10,7 +10,7 @@ class AchievementsSerializer < ActiveModel::Serializer
   end
 
   def medal
-    !object.advice_count.zero?
+    !object.recommendation_count.zero?
   end
 
 end

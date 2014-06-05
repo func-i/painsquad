@@ -21,12 +21,11 @@ class SubmissionService
   end
 
   def set_score
-    ScoringService.calculate(@submission)
+    ScoringService.calculate(@submission, @user)
   end
 
   def save_event
     Activity.create(subject: @submission, user: @user, event: 'submission_complete')
-    # ActivityService.new(@submission, @user, 'submission_complete').save
   end
 
 end

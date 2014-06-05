@@ -16,14 +16,14 @@ class Activity < ActiveRecord::Base
   belongs_to :subject, polymorphic: true
   belongs_to :user
 
-  scope :most_recent, -> { order('created_at DESC').first }
+  # scope :most_recent, -> { order('created_at DESC').first }
 
   scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up').order('created_at ASC') }
   scope :recommendation_events, -> { where('event=?', 'recommendation_complete').order('created_at ASC') }
   scope :submission_events, -> { where('event=?', 'submission_complete') }
 
-  # FIXME: this doesn't belong here!
-  after_create :increment_user_points
+  # # FIXME: this doesn't belong here!
+  # after_create :increment_user_points
 
   def submission?
     subject_type == 'Submission'
@@ -33,12 +33,12 @@ class Activity < ActiveRecord::Base
     subject_type == 'Recommendation'
   end
 
-  protected
+  # protected
 
-  def increment_user_points
-    if event == 'recommendation_complete'
-      user.increment! :score, 5
-    end
-  end
+  # def increment_user_points
+  #   if event == 'recommendation_complete'
+  #     user.increment! :score, 5
+  #   end
+  # end
 
 end

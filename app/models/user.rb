@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
   after_create :grant_api_access
-  after_update :delegate_awards
+  # after_update :delegate_awards
 
   def display_rank
     if rank.include? '_'
@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
     activities.submission_events.count
   end
 
-  def advice_count
+  def recommendation_count
     activities.recommendation_events.count
   end
 
@@ -63,8 +63,8 @@ class User < ActiveRecord::Base
     create_api_key!
   end
 
-  def delegate_awards
-    AwardService.new(self).perform
-  end
+  # def delegate_awards
+  #   AwardService.new(self).perform
+  # end
 
 end

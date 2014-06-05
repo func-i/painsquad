@@ -12,6 +12,7 @@
 #
 
 class Submission < ActiveRecord::Base
+  # after_save callback to set pain_severity
   include SubmissionAnalyzer
 
   belongs_to :survey
