@@ -35,7 +35,7 @@
 
   # TODO: advice scoring
   $scope.adviceCompleted = ->
-    console.log "+5 Bonus Points Awarded"
+    Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'recommendation_complete' })
     $scope.modal.hide()
     reset()
 

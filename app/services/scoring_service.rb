@@ -25,7 +25,7 @@ class ScoringService
     @user.increment! :score, @survey_score
   end
 
-  # iterates through level thresholds, level-ups User if threshold crossed
+  # iterates through level thresholds, levels User if threshold crossed
   def update_user_ranking
     new_score    = @user.score
     current_rank = @user[:rank]

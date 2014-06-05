@@ -19,4 +19,20 @@ class Activity < ActiveRecord::Base
 
   scope :award_events, -> { where('').order('created_at ASC') }
 
+  scope :advice_events, -> { where('event=?', 'recommendation_complete').order('created_at ASC') }
+
+  after_create :increment_user_points
+
+  def increment_user_points
+    if advice_event?
+      user.increment! :score, 5
+    end
+  end
+
+  protected
+
+  def advice_event?
+    event == 'advice_complete'
+  end
+
 end

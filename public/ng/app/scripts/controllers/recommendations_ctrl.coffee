@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites) ->
+@RecommendationsCtrl = @controllerModule.controller 'RecommendationsCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites, Activity) ->
   $scope.recommendedItems   = recommendations.advice.recommendations
   $scope.favorites          = []
   $scope.selectedItem       = {}
@@ -44,9 +44,9 @@
   $scope.slideChange = (index) ->
     $scope.slideIndex = index
 
-  # TODO: advice scoring
+  # TODO: only allow bonus points if completed after a valid submission, prevent cheating!
   $scope.adviceCompleted = ->
-    console.log "+5 Bonus Points Awarded"
+    Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'advice_complete' })
     $scope.modal.hide()
     reset()
 
@@ -67,4 +67,4 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
 
-@RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations']
+@RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations', 'Favorites', 'Activity']

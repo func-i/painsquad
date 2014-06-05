@@ -42,7 +42,8 @@ module.exports = function (grunt) {
         tasks: ['compass:server', 'autoprefixer']
       },
       coffee: {
-        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**.{coffee,litcoffee,coffee.md}'],
+        // files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**.{coffee,litcoffee,coffee.md}'],
+        files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.{coffee,litcoffee,coffee.md}'],
         tasks: ['newer:coffee:dist']
       },
       coffeeTest: {
