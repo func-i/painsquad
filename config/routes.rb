@@ -5,14 +5,16 @@ PainSquadApi::Application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       resource :surveys
       resource :advices
+      resource :achievements
+      resource :activity
       resources :submissions
       resources :favorites, only: [:index, :create, :destroy]
 
-      resources :users do
-        put :password, on: :member
-      end
-
       resource :session
+      resources :users
+      # resources :users do
+      #   put :password, on: :member
+      # end
     end
   end
 

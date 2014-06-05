@@ -14,21 +14,31 @@
 #  reset_password_token            :string(255)
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
-#  score                           :integer
+#  score                           :integer          default(0)
+#  rank                            :integer          default(0)
 #
 
 class User < ActiveRecord::Base
+  include ActivityFeed
+
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
+  has_many :activities
 
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
 
+  enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
+
   after_create :grant_api_access
 
-  def previous_submissions
-    submissions.order('updated_at DESC').take 5
+  def display_rank
+    if rank.include? '_'
+      rank.split('_').map(&:capitalize).join(' ')
+    else
+      rank.capitalize
+    end
   end
 
   protected
@@ -36,4 +46,5 @@ class User < ActiveRecord::Base
   def grant_api_access
     create_api_key!
   end
+
 end

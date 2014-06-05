@@ -62,10 +62,10 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'SurveyCtrl'
           resolve:
             survey: (Survey, $q) ->
-              deferred = $q.defer()
+              defer = $q.defer()
               Survey.query (response) ->
-                deferred.resolve response.survey
-              deferred.promise
+                defer.resolve response.survey
+              defer.promise
     )
 
     # temporary state - REMOVE DIS
@@ -84,17 +84,15 @@ interceptor.$inject = ['$q', '$injector']
       views:
         menuContent:
           templateUrl: 'templates/achievements/main.html'
-          controller: 'AchievementsCtrl'
+          controller:  'AchievementsCtrl'
+          resolve:
+            rankings: (Achievement, $q) ->
+              defer = $q.defer()
+              Achievement.query (response) ->
+                defer.resolve response.achievements
+              defer.promise
     )
 
-    # advice state
-    .state('app.advice'
-      url: '/advice'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/main.html'
-          controller:  'AdviceCtrl'
-      )
 
     # advice -> recommended state
     .state('app.recommended'
@@ -104,17 +102,11 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/advice/recommended.html'
           controller:  'RecommendationsCtrl'
           resolve:
-            recommendations: (Advice) ->
-              Advice.query().$promise
-    )
-
-    # recommended -> advice steps slidebox
-    .state('app.advice_steps'
-      url: '/recommended/steps/'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/steps.html'
-          controller:  'AdviceStepsCtrl'
+            recommendations: (Advice, $q) ->
+              defer = $q.defer()
+              Advice.query (response) ->
+                defer.resolve response.advice.recommendations
+              defer.promise
     )
 
     # advice -> favorites state
@@ -124,7 +116,30 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/advice/favorites.html'
           controller:  'FavoritesCtrl'
-          resolve:     FavoritesCtrl.resolve
+          resolve:
+            favorites: (Favorites, $q) ->
+              defer = $q.defer()
+              Favorites.query (response) ->
+                defer.resolve response.favorites
+              defer.promise
+    )
+
+    # advice state
+    .state('app.advice'
+      url: '/advice'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/main.html'
+          controller:  'AdviceCtrl'
+    )
+
+    # recommended -> advice steps slidebox
+    .state('app.advice_steps'
+      url: '/recommended/steps/'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/steps.html'
+          controller:  'AdviceStepsCtrl'
     )
 
 ############################ STATIC CONTENT ####################################

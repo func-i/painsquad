@@ -1,7 +1,6 @@
 module Api
   module V1
     class AdvicesController < ApplicationController
-      # skip_before_action :restrict_access
       before_action :fetch_advice
 
       def show
@@ -16,8 +15,9 @@ module Api
 
       # TODO: Need to populate advice -> recommendations based upon some
       # requirements specified by SickKids
+      # also, speed up this query, it sucks
       def fetch_advice
-        @advice = Advice.first
+        @advice = Advice.includes(:recommendations => :steps).first
       end
     end
   end

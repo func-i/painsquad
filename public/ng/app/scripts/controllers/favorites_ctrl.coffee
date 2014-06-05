@@ -1,7 +1,7 @@
 'use strict'
 
-@FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, UserService, FavoritesResource, Favorites) ->
-  $scope.favorites          = FavoritesResource.favorites
+@FavoritesCtrl = @controllerModule.controller 'FavoritesCtrl',  ($state, $scope, $ionicModal, $ionicSlideBoxDelegate, $timeout, favorites, Favorites, Activity) ->
+  $scope.favorites          = favorites
   $scope.isFavorites        = $scope.favorites.length > 0
   $scope.selectedItem       = {}
   $scope.showFavoriteButton = false
@@ -33,15 +33,15 @@
   $scope.slideChange = (index) ->
     $scope.slideIndex = index
 
-  # TODO: advice scoring
+  # TODO: only allow bonus points if completed after a valid submission, prevent cheating!
   $scope.adviceCompleted = ->
-    console.log "+5 Bonus Points Awarded"
-    reset()
+    Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'recommendation_complete' })
     $scope.modal.hide()
+    reset()
 
   $scope.discardAdvice = ->
-    reset()
     $scope.modal.hide()
+    reset()
 
   setHeaderButtons = (item) ->
     if item.style is 'slideshow'
@@ -56,8 +56,4 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
 
-@FavoritesCtrl.$inject = [ '$state', '$scope', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'UserService', 'FavoritesResource', 'Favorites' ]
-
-@FavoritesCtrl.resolve =
-  FavoritesResource: (Favorites) ->
-    Favorites.query().$promise
+@FavoritesCtrl.$inject = [ '$state', '$scope', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'favorites', 'Favorites', 'Activity']
