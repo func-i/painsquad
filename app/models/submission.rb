@@ -27,6 +27,7 @@ class Submission < ActiveRecord::Base
   accepts_nested_attributes_for :answers
 
   validates :survey, presence: true
+  validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
 
 end

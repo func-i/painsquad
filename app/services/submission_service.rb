@@ -4,7 +4,7 @@ class SubmissionService
   def initialize(submission, user)
     @submission = submission
     @user       = user
-    save_user
+    set_user
   end
 
   def create
@@ -16,7 +16,7 @@ class SubmissionService
 
   protected
 
-  def save_user
+  def set_user
     @submission.user = @user
   end
 

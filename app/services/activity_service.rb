@@ -10,7 +10,8 @@ class ActivityService
 
   def create
     if @activity.save
-      delegate_event
+      increment_score
+      # AwardService.analyze(@user)
     end
   end
 
@@ -20,7 +21,7 @@ class ActivityService
     @activity.user = @user
   end
 
-  def delegate_event
+  def increment_score
     if @event == 'recommendation_complete'
       @user.increment! :score, 5
     end
