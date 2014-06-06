@@ -7,8 +7,13 @@
   </ion-header-bar>
 
   <ion-content has-header="true">
-    hello world
-    {{ selectedItem }}
+    <img src="{{selectedItem.badge_image_path}}" alt="{{selectedItem.name}}">
+    <br>
+    {{ selectedItem.name | capitalize }}
+    <br>
+    Achieved: {{ selectedItem.date }}
+    <br>
+    <p>Pre-filled content that goes here</p>
   </ion-content>
 
 </div>
