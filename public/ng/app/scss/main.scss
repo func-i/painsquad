@@ -28,4 +28,12 @@
         'partials/forms/textarea';
 
 // FIXME: lose the 'sidemenu' transition when we don't require the compiled ionic.css file in index.html
-@import '../bower_components/ionic/scss/ionic.scss';
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

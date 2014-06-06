@@ -1,0 +1,58 @@
+(function() {
+  'use strict';
+  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) {
+    $scope.startSurvey = function() {
+      $scope.submission = SubmissionService.init(survey.id);
+      $scope.questionIndex = 0;
+      $scope.totalQuestions = survey.questions.length;
+      return $scope.question = survey.questions[$scope.questionIndex];
+    };
+    $scope.hasPain = function() {
+      $scope.submission.has_pain = true;
+      return $scope.continueSurvey();
+    };
+    $scope.noPain = function() {
+      $scope.submission.has_pain = false;
+      return $scope.finishSurvey();
+    };
+    $scope.nextQuestion = function() {
+      SurveyService.prepareSubmissionAnswer($scope.question);
+      return $scope.continueSurvey();
+    };
+    $scope.continueSurvey = function() {
+      $scope.questionIndex++;
+      if ($scope.questionIndex > $scope.totalQuestions - 1) {
+        return $scope.finishSurvey();
+      } else {
+        $scope.$broadcast('resetQuestion');
+        return $scope.question = survey.questions[$scope.questionIndex];
+      }
+    };
+    $scope.getChoicesPartial = function(question) {
+      return "/templates/surveys/question_types/" + question.question_type + ".html";
+    };
+    $scope.finishSurvey = function() {
+      return $state.go('app.survey_complete');
+    };
+    $scope.$on('currentForm:valid', function(ev) {
+      return $scope.showNext = true;
+    });
+    $scope.$on('currentForm:invalid', function(ev) {
+      return $scope.showNext = false;
+    });
+    $scope.$watch('questionIndex', function() {
+      var surveyLength;
+      surveyLength = survey.questions.length - 1;
+      return $scope.surveyProgress = ($scope.questionIndex / surveyLength) * 100;
+    });
+    $scope.progressWidth = function() {
+      return {
+        width: "" + $scope.surveyProgress + "%"
+      };
+    };
+    return $scope.startSurvey();
+  });
+
+  this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];
+
+}).call(this);

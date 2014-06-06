@@ -1,17 +1,11 @@
 {
-  "name": "painsquad",
-  "version": "1.0.0",
+  "name": "PainSquad",
+  "version": "0.0.1",
   "dependencies": {
-    "angular":          "~1.2.12",
-    "ionic":            "v1.0.0-beta.6",
-    "angular-resource": "1.2.16",
-    "angular-cookies":  "1.2.16",
-    "angular-sanitize": "1.2.16",
     "underscore":       "~1.6.0",
     "angular-moment":   "~0.7.0"
   },
   "devDependencies": {
-    "angular-mocks":    "1.2.16",
-    "angular-scenario": "1.2.16"
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.6"
   }
 }
