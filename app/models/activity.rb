@@ -28,4 +28,10 @@ class Activity < ActiveRecord::Base
     subject_type == 'Recommendation'
   end
 
+  after_create :check_user_award_eligibility
+
+  def check_user_award_eligibility
+    AwardService.analyze(self)
+  end
+
 end

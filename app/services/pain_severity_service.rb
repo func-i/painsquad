@@ -1,4 +1,4 @@
-class PainService
+class PainSeverityService
 
   def self.analyze(submission)
     new(submission).perform

@@ -1,11 +1,12 @@
 class AwardService
 
-  def self.analyze(user)
-    new(user).perform
+  def self.analyze(activity)
+    new(activity).perform
   end
 
-  def initialize(user)
-    @user       = user
+  def initialize(activity)
+    @activity   = activity
+    @user       = @activity.user
     @last_event = @user.activities.last
   end
 

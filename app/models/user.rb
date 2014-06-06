@@ -80,9 +80,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  # def analyze_score
-  #   ScoringService.analyze(self)
-  #   # AwardService.analyze(self)
-  # end
-
 end
