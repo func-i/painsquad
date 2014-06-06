@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
   after_create :grant_api_access, :register_create_event
-  after_update :register_level_event, :analyze_score
+  after_update :register_level_event
 
   def display_rank
     if rank.include? '_'
@@ -80,8 +80,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def analyze_score
-    AwardService.analyze(self)
-  end
+  # def analyze_score
+  #   ScoringService.analyze(self)
+  #   # AwardService.analyze(self)
+  # end
 
 end
