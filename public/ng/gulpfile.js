@@ -33,7 +33,7 @@ var dest_paths = {
   css:       './www/css/',
   scripts:   './www/scripts/',
   templates: './www/templates/',
-  images:    './www/img/',
+  images:    './www/images/',
   root:      './www/'
 };
 // the options used by gulp-open when booting the test server
@@ -172,23 +172,24 @@ gulp.task('run-server', function() {
 });
 
 gulp.task('watch-styles', function(){
-  return gulp.watch(source_paths.sass, ['build-styles']);
+  return gulp.watch(source_paths.sass, { maxListeners: 999}, ['build-styles']);
 });
 
 gulp.task('watch-scripts', function(){
-  return gulp.watch(source_paths.scripts, ['build-scripts']);
+  return gulp.watch(source_paths.coffee, { maxListeners: 999}, ['build-scripts']);
+  // return gulp.watch(source_paths.scripts, { maxListeners: 999}, 'build-scripts']);
 });
 
 gulp.task('watch-templates', function(){
-  return gulp.watch(source_paths.templates, ['build-templates']);
+  return gulp.watch(source_paths.templates, { maxListeners: 999}, ['build-templates']);
 });
 
 gulp.task('watch-index_page', function(){
-  return gulp.watch(source_paths.index_page, ['build-index']);
+  return gulp.watch(source_paths.index_page, { maxListeners: 999}, ['build-index']);
 });
 
 gulp.task('watch-images', function(){
-  return gulp.watch(source_paths.images, ['build-images']);
+  return gulp.watch(source_paths.images, { maxListeners: 999}, ['build-images']);
 });
 
 gulp.task('watch', function() {
