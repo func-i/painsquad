@@ -53,44 +53,49 @@
 
   $scope.awardData = [
     {
-      name:       'commendation',
-      locked:     true,
-      image_path: 'images/awards/commendation-small.png',
-      video_path: '',
-      level:      null,
-      date:       null
+      name:             'commendation',
+      locked:           true,
+      image_path:       'images/awards/commendation-small.png',
+      badge_image_path: 'images/awards/commendation-badge.png',
+      video_path:       '',
+      level:            null,
+      date:             null
     },
     {
-      name:       'medal',
-      locked:     true,
-      image_path: 'images/awards/medal-small.png',
-      video_path: '',
-      level:      null,
-      date:       null
+      name:             'medal',
+      locked:           true,
+      image_path:       'images/awards/medal-small.png',
+      badge_image_path: 'images/awards/medal-badge.png',
+      video_path:       '',
+      level:            null,
+      date:             null
     },
     {
-      name:       'award',
-      locked:     true,
-      image_path: 'images/awards/award-small.png',
-      video_path: '',
-      level:      0,
-      date:       null
+      name:             'award',
+      locked:           true,
+      image_path:       'images/awards/award-small.png',
+      badge_image_path: 'images/awards/award-badge.png',
+      video_path:       '',
+      level:            0,
+      date:             null
     },
     {
-      name:       'cross',
-      locked:     true,
-      image_path: 'images/awards/cross-small.png',
-      video_path: '',
-      level:      0,
-      date:       null
+      name:             'cross',
+      locked:           true,
+      image_path:       'images/awards/cross-small.png',
+      badge_image_path: 'images/awards/cross-badge.png',
+      video_path:       '',
+      level:            0,
+      date:             null
     },
     {
-      name:       'star',
-      locked:     true,
-      image_path: 'images/awards/star-small.png',
-      video_path: '',
-      level:      0,
-      date:       null
+      name:             'star',
+      locked:           true,
+      image_path:       'images/awards/star-small.png',
+      badge_image_path: 'images/awards/star-badge.png',
+      video_path:       '',
+      level:            0,
+      date:             null
     }
   ]
 
@@ -118,23 +123,27 @@
   reset = ->
     $scope.selectedItem = {}
 
-  mergeAchievementData = ->
-    for item, index in achievements.ranks
-      unlockAchievement($scope.achievementData[index], item)
-
-  mergeAwardData = ->
+  mergeData = ->
     for item, index in achievements.awards
-      unlockAward($scope.awardData[index], item)
+      unlockItem($scope.awardData[index], item)
+    for item, index in achievements.ranks
+      unlockItem($scope.achievementData[index], item)
 
-  unlockAchievement = (achievement, item) ->
-    achievement.locked = false
-    achievement.date   = moment(item.created_at).format('ll')
+  unlockItem = (listItem, item) ->
+    listItem.locked = false
+    listItem.date  = moment(item.created_at).format('ll')
 
-  unlockAward = (award, item) ->
-    award.locked = false
-    award.date   = moment(item.created_at).format('ll')
+  setLevels = ->
+    for item in $scope.awardData
+      switch item.name
+        when 'award'
+          item.level = achievements.award_level
+        when 'cross'
+          item.level = achievements.cross_level
+        when 'star'
+          item.level = achievements.star_level
 
-  mergeAchievementData()
-  # mergeAwardData()
+  mergeData()
+  setLevels()
 
 @AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements']
