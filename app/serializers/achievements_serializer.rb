@@ -1,8 +1,12 @@
 class AchievementsSerializer < ActiveModel::Serializer
-  attributes :ranks, :commendation, :medal, :award_level, :cross_level, :star_level
+  attributes :ranks, :awards, :commendation, :medal, :award_level, :cross_level, :star_level
 
   def ranks
     object.activities.ranking_events
+  end
+
+  def awards
+    object.activities.award_events
   end
 
   def commendation

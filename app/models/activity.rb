@@ -16,9 +16,10 @@ class Activity < ActiveRecord::Base
   belongs_to :subject, polymorphic: true
   belongs_to :user
 
-  scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up').order('created_at ASC') }
-  scope :recommendation_events, -> { where('event=?', 'recommendation_complete').order('created_at ASC') }
+  scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up') }
+  scope :recommendation_events, -> { where('event=?', 'recommendation_complete') }
   scope :submission_events, -> { where('event=?', 'submission_complete') }
+  scope :award_events, -> { where('event=?', 'award_achieved') }
 
   def submission?
     subject_type == 'Submission'

@@ -33,7 +33,15 @@ class User < ActiveRecord::Base
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
 
   after_create :grant_api_access, :register_create_event
-  after_update :register_level_event
+  after_update :register_event
+
+  def first_submission!
+    update(commendation: true)
+  end
+
+  def first_recommendation!
+    update(medal: true)
+  end
 
   def display_rank
     if rank.include? '_'
@@ -69,15 +77,8 @@ class User < ActiveRecord::Base
     )
   end
 
-  def register_level_event
-    if rank_changed?
-      Activity.create(
-        subject: self,
-        user:    self,
-        name:    rank,
-        event:   'level_up'
-      )
-    end
+  def register_event
+    EventService.create_activity(self)
   end
 
 end

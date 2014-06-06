@@ -55,7 +55,7 @@
     {
       name:       'commendation',
       locked:     true,
-      image_path: 'images/awards/commendation-small',
+      image_path: 'images/awards/commendation-small.png',
       video_path: '',
       level:      null,
       date:       null
@@ -63,7 +63,7 @@
     {
       name:       'medal',
       locked:     true,
-      image_path: 'images/awards/medal-small',
+      image_path: 'images/awards/medal-small.png',
       video_path: '',
       level:      null,
       date:       null
@@ -71,7 +71,7 @@
     {
       name:       'award',
       locked:     true,
-      image_path: 'images/awards/award-small',
+      image_path: 'images/awards/award-small.png',
       video_path: '',
       level:      0,
       date:       null
@@ -79,7 +79,7 @@
     {
       name:       'cross',
       locked:     true,
-      image_path: 'images/awards/cross-small',
+      image_path: 'images/awards/cross-small.png',
       video_path: '',
       level:      0,
       date:       null
@@ -87,7 +87,7 @@
     {
       name:       'star',
       locked:     true,
-      image_path: 'images/awards/star-small',
+      image_path: 'images/awards/star-small.png',
       video_path: '',
       level:      0,
       date:       null
@@ -96,11 +96,24 @@
 
   $scope.loadAwardModal = (item) ->
     $scope.selectedItem = item
-    $scope.modal.show()
+    $scope.modal.show() unless item.locked
 
   $scope.closeModal = ->
     $scope.modal.hide()
     reset()
+
+  $scope.next = ->
+    $ionicSlideBoxDelegate.next();
+
+  $scope.previous = ->
+    $ionicSlideBoxDelegate.previous();
+
+  $scope.getImage = (item) ->
+    if item.locked
+      # TODO: need 'locked' images
+      'border': '5px dotted black'
+    else
+      'background-image': 'url(' + item.image_path + ')'
 
   reset = ->
     $scope.selectedItem = {}
@@ -121,13 +134,7 @@
     award.locked = false
     award.date   = moment(item.created_at).format('ll')
 
-  $scope.next = ->
-    $ionicSlideBoxDelegate.next();
-
-  $scope.previous = ->
-    $ionicSlideBoxDelegate.previous();
-
   mergeAchievementData()
-  mergeAwardData()
+  # mergeAwardData()
 
 @AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements']

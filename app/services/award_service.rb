@@ -21,13 +21,17 @@ class AwardService
   protected
 
   def check_submissions
-    if @user.submission_count % 5 == 0
+    if @user.submission_count == 1
+      @user.first_submission!
+    elsif @user.submission_count % 5 == 0
       @user.increment! :award_level
     end
   end
 
   def check_advice
-    if @user.recommendation_count % 6 == 0
+    if @user.recommendation_count == 1
+      @user.first_recommendation!
+    elsif @user.recommendation_count % 6 == 0
       @user.increment! :star_level
     elsif @user.recommendation_count % 20 == 0
       @user.increment! :cross_level
