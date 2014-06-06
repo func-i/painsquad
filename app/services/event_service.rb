@@ -12,10 +12,8 @@ class EventService
     if @user.rank_changed?
       activity_builder(@user.rank, 'level_up')
     elsif @user.commendation_changed?
-      binding.pry
       activity_builder('commendation', 'award_achieved')
     elsif @user.medal_changed?
-      binding.pry
       activity_builder('medal', 'award_achieved')
     elsif @user.award_level_changed?
       activity_builder('award', 'award_achieved')

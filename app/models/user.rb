@@ -19,6 +19,8 @@
 #  award_level                     :integer          default(0)
 #  cross_level                     :integer          default(0)
 #  star_level                      :integer          default(0)
+#  commendation                    :boolean          default(FALSE)
+#  medal                           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
