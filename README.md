@@ -21,7 +21,11 @@
 - `$ cd public/ng`
 - `npm install`
 - `bower install`
-- `grunt serve`
+- `gulp serve`
+
+Using the ios-simulator (be sure to run `sudo npm install -g cordova ios-sim` first)
+
+- `gulp build --ios --run`
 
 
 ## Generating Surveys
