@@ -4,7 +4,6 @@
   $scope.detailData =
     currentChoice = {}
 
-  # $ionicModal.fromTemplateUrl "templates/surveys/question_types/modals/checklist-detail.html", (modal) ->
   $ionicModal.fromTemplateUrl "templates/surveys/question_types/modal.checklist.html", (modal) ->
     $scope.modal = modal
   ,

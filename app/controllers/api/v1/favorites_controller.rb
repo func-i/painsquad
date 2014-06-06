@@ -13,7 +13,7 @@ module Api
       end
 
       def create
-        @favorite      = Favorite.new favorites_params
+        @favorite      = Favorite.new(favorites_params)
         @favorite.user = @user
         if @favorite.save
           render json: @favorite

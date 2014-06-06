@@ -5,7 +5,7 @@ class SurveyService
   def initialize(user)
     @user            = user
     @last_submission = @user.submissions.last
-    @previous        = @user.previous_submissions
+    # @previous        = @user.previous_submissions
   end
 
   # TODO: implement AM/PM alerts - base survey deliver off of that

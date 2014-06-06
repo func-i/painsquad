@@ -50,10 +50,11 @@
     span { text-align: center; }
 
     #circle {
-      width: 75px;
-      height: 75px;
-      border: 1px dotted black;
-      border-radius: 50px;
+      width:             75px;
+      height:            75px;
+      border-radius:     50px;
+      background-repeat: no-repeat;
+      background-size:   cover;
     }
   }
 }

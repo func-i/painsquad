@@ -5,7 +5,7 @@ label.checkbox {
 
 // set disabled checkbox styles
 input[disabled]:before {
-  border: 1px solid #EF4562;
+  border-color: #ef4562 !important;
 }
 
 // button.button {

@@ -12,8 +12,6 @@
 #
 
 class Submission < ActiveRecord::Base
-  include SubmissionAnalyzer
-
   belongs_to :survey
   belongs_to :user
 
@@ -26,22 +24,23 @@ class Submission < ActiveRecord::Base
   accepts_nested_attributes_for :answers
 
   validates :survey, presence: true
+  validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
 
-  after_create :create_activity, :set_score
+  after_save :register_event, :set_pain_severity, :set_score
 
-  protected
+  def register_event
+    Activity.create(subject: self, user: user, event: 'submission_complete')
+  end
 
-  def create_activity
-    Activity.create(
-      subject: self,
-      user:    user,
-      event:   'submission_created'
-    )
+  def set_pain_severity
+    if has_pain && pain_severity.nil?
+      PainSeverityService.analyze(self)
+    end
   end
 
   def set_score
-    ScoringService.set self
+    ScoringService.analyze(self)
   end
 
 end

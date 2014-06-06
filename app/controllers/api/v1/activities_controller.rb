@@ -3,12 +3,12 @@ module Api
     class ActivitiesController < ApplicationController
 
       def create
-        @activity      = Activity.new(activity_params)
+        @activity = Activity.new(activity_params)
         @activity.user = @user
         if @activity.save
-          head :ok
+          render json: @activity
         else
-           render json: { errors: @activity.errors.full_messages}, status: :unprocessable_entity
+          render json: { errors: @activity.errors.full_messages }, status: :unprocessable_entity
         end
       end
 

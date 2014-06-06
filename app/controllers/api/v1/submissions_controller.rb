@@ -8,7 +8,7 @@ module Api
       end
 
       def create
-        @submission      = Submission.new submission_params
+        @submission      = Submission.new(submission_params)
         @submission.user = @user
         if @submission.save
           render json: @submission

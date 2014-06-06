@@ -6,7 +6,8 @@
 #  user_id      :integer
 #  subject_id   :integer          not null
 #  subject_type :string(255)      not null
-#  name         :string(255)      not null
+#  name         :string(255)
+#  event        :string(255)
 #  created_at   :datetime
 #  updated_at   :datetime
 #
@@ -15,24 +16,23 @@ class Activity < ActiveRecord::Base
   belongs_to :subject, polymorphic: true
   belongs_to :user
 
-  scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up').order('created_at ASC') }
+  scope :ranking_events, -> { where('event=? OR event=?', 'user_created', 'level_up') }
+  scope :recommendation_events, -> { where('event=?', 'recommendation_complete') }
+  scope :submission_events, -> { where('event=?', 'submission_complete') }
+  scope :award_events, -> { where('event=?', 'award_achieved') }
 
-  scope :award_events, -> { where('').order('created_at ASC') }
-
-  scope :recommendation_events, -> { where('event=?', 'recommendation_complete').order('created_at ASC') }
-
-  after_create :increment_user_points
-
-  protected
-
-  def increment_user_points
-    if recommendation_event?
-      user.increment! :score, 5
-    end
+  def submission?
+    subject_type == 'Submission'
   end
 
-  def recommendation_event?
-    event == 'recommendation_complete'
+  def recommendation?
+    subject_type == 'Recommendation'
+  end
+
+  after_create :check_user_award_eligibility
+
+  def check_user_award_eligibility
+    AwardService.analyze(self)
   end
 
 end

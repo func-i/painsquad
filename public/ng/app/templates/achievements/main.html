@@ -28,31 +28,22 @@
       <h3>Awards</h3>
 
       <section class="row first">
-        <div id="commendation">
-          <figure id="circle"></figure>
-          <span>Commendation</span>
-        </div>
-
-        <div id="medal">
-          <figure id="circle"></figure>
-          <span>Medal</span>
+        <div class=""
+          ng-repeat="award in awardData"
+          ng-show="$index == 0 || $index == 1"
+          ng-click="loadAwardModal(award)">
+            <figure id="circle" ng-style="getImage(award)"></figure>
+            <span>{{ award.name }}</span>
         </div>
       </section>
 
       <section class="row second">
-        <div id="award">
-          <figure id="circle"></figure>
-          <span>Award</span>
-        </div>
-
-        <div id="cross">
-          <figure id="circle"></figure>
-          <span>Cross</span>
-        </div>
-
-        <div id="star">
-          <figure id="circle"></figure>
-          <span>Star</span>
+        <div class=""
+          ng-repeat="award in awardData"
+          ng-show="$index == 2 || $index == 3 || $index == 4"
+          ng-click="loadAwardModal(award)">
+            <figure id="circle" ng-style="getImage(award)"></figure>
+            <span>{{ award.name }}</span>
         </div>
       </section>
 
