@@ -1,8 +1,9 @@
 {
-  "name": "PainSquad",
-  "version": "1.0.0",
-  "description": "An Ionic project",
-  "dependencies": {},
+  "name":            "PainSquad",
+  "version":         "1.0.0",
+  "description":     "An Ionic project",
+  "dependencies":    {},
+  "repository":      {},
   "devDependencies": {
     "gulp":            "^3.5.6",
     "gulp-sass":       "^0.7.1",

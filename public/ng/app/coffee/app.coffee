@@ -7,12 +7,10 @@
   'painSquad.resources',
   'painSquad.services',
   'painSquad.filters',
-  'painSquad.config'#,
-  # 'ngResource',
-  # 'ngCookies',
-  # 'ngSanitize',
-  # 'underscore',
-  # 'angularMoment'
+  'painSquad.config',
+  'ngResource',
+  'underscore',
+  'angularMoment'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

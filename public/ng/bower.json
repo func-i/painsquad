@@ -1,7 +1,8 @@
 {
-  "name": "PainSquad",
-  "version": "0.0.1",
+  "name":         "PainSquad",
+  "version":      "1.0.0",
   "dependencies": {
+    "angular-resource": "1.2.17",
     "underscore":       "~1.6.0",
     "angular-moment":   "~0.7.0"
   },

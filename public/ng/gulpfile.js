@@ -41,18 +41,12 @@ var open_options = {
   url: "http://localhost:8080"
 };
 
-// gulp.task('default', ['sass']);
-
 gulp.task('coffee', function() {
   return gulp.src(source_paths.coffee)
     .pipe(plumber())
     .pipe(coffee())
     .pipe(gulp.dest('app/scripts'));
 });
-
-gulp.task('test'), function() {
-  runSequence('coffee');
-}
 
 gulp.task('build-scripts', ['coffee'], function() {
   gulp.src(source_paths.scripts)
@@ -64,27 +58,36 @@ gulp.task('build-scripts', ['coffee'], function() {
 
 gulp.task('build-styles', function(done) {
   gulp.src(source_paths.sass)
-    .pipe(changed(dest_paths.css))
     .pipe(sass())
-    .pipe(gulp.dest(dest_paths.css))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest(dest_paths.css))
-    .on('end', done)
-    .pipe(connect.reload());
-  gulp.src(source_paths.css)
-    .pipe(changed(dest_paths.css))
-    .pipe(gulp.dest(dest_paths.css))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest(dest_paths.css))
     .on('end', done)
     .pipe(connect.reload());
 });
+
+
+// gulp.task('build-styles', function(done) {
+//   gulp.src(source_paths.sass)
+//     .pipe(changed(dest_paths.css))
+//     .pipe(sass())
+//     .pipe(gulp.dest(dest_paths.css))
+//     .pipe(minifyCss({
+//       keepSpecialComments: 0
+//     }))
+//     .pipe(rename({ extname: '.min.css' }))
+//     .pipe(gulp.dest(dest_paths.css))
+//     .on('end', done)
+//     .pipe(connect.reload());
+//   gulp.src(source_paths.css)
+//     .pipe(changed(dest_paths.css))
+//     .pipe(gulp.dest(dest_paths.css))
+//     .pipe(minifyCss({
+//       keepSpecialComments: 0
+//     }))
+//     .pipe(rename({ extname: '.min.css' }))
+//     .pipe(gulp.dest(dest_paths.css))
+//     .on('end', done)
+//     .pipe(connect.reload());
+// });
 
 
 gulp.task('build-templates', function() {
