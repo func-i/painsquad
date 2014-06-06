@@ -27,5 +27,8 @@
         'partials/forms/checklist-extra',
         'partials/forms/textarea';
 
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
 // FIXME: lose the 'sidemenu' transition when we don't require the compiled ionic.css file in index.html
-@import '../bower_components/ionic/scss/ionic.scss';
+@import "www/lib/ionic/scss/ionic";

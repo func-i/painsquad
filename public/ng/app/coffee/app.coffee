@@ -9,8 +9,6 @@
   'painSquad.filters',
   'painSquad.config',
   'ngResource',
-  'ngCookies',
-  'ngSanitize',
   'underscore',
   'angularMoment'
 ]

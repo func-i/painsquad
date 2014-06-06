@@ -5,89 +5,72 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <title>PainSquad</title>
 
-  <!-- build:css styles/vendor.css -->
-  <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
+    <!-- @if BUILD_TARGET='development' -->
+      <link href="css/main.css" rel="stylesheet">
+    <!-- @endif -->
+    <!-- @if BUILD_TARGET='staging' || BUILD_TARGET='production' -->
+      <link href="css/main.min.css" rel="stylesheet">
+    <!-- @endif -->
 
-  <!-- build:css({.tmp,app}) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/router.js"></script>
+
+    <script src="scripts/controllers/login_ctrl.js"></script>
+    <script src="scripts/controllers/home_ctrl.js"></script>
+    <script src="scripts/controllers/achievements_ctrl.js"></script>
+    <script src="scripts/controllers/advice_ctrl.js"></script>
+    <script src="scripts/controllers/nested_advice_ctrl.js"></script>
+    <script src="scripts/controllers/recommendations_ctrl.js"></script>
+    <script src="scripts/controllers/favorites_ctrl.js"></script>
+    <script src="scripts/controllers/intro_ctrl.js"></script>
+    <script src="scripts/controllers/survey_ctrl.js"></script>
+    <script src="scripts/controllers/complete_survey_ctrl.js"></script>
+    <script src="scripts/controllers/radio_ctrl.js"></script>
+    <script src="scripts/controllers/checklist_ctrl.js"></script>
+    <script src="scripts/controllers/checklist_grid_ctrl.js"></script>
+    <script src="scripts/controllers/checklist_extra_ctrl.js"></script>
+    <script src="scripts/controllers/checklist_detail_ctrl.js"></script>
+    <script src="scripts/controllers/bodymap_ctrl.js"></script>
+    <script src="scripts/controllers/slider_ctrl.js"></script>
+
+    <script src="scripts/resources/survey_resource.js"></script>
+    <script src="scripts/resources/advice_resource.js"></script>
+    <script src="scripts/resources/session_resource.js"></script>
+    <script src="scripts/resources/submission_resource.js"></script>
+    <script src="scripts/resources/favorites_resource.js"></script>
+    <script src="scripts/resources/achievement_resource.js"></script>
+    <script src="scripts/resources/activity_resource.js"></script>
+
+    <script src="scripts/services/auth_service.js"></script>
+    <script src="scripts/services/user_service.js"></script>
+    <script src="scripts/services/underscore_service.js"></script>
+    <script src="scripts/services/survey_service.js"></script>
+    <script src="scripts/services/submission_service.js"></script>
+    <script src="scripts/services/bodymap_service.js"></script>
+
+    <script src="scripts/filters/slider_filter.js"></script>
+    <script src="scripts/filters/capitalize.js"></script>
+
+    <script src="scripts/directives/valid_form.js"></script>
+    <script src="scripts/directives/valid_radio_form.js"></script>
+    <script src="scripts/directives/valid_modal_form.js"></script>
+    <script src="scripts/directives/slider_gradient.js"></script>
+    <script src="scripts/directives/body_map_selector.js"></script>
+    <script src="scripts/directives/body_map_selector_switch.js"></script>
 
 </head>
 <body ng-app="painSquad" animation="slide-left-ios7">
   <ion-nav-view></ion-nav-view>
-
-  <!-- build:js scripts/vendor.js -->
-  <!-- <script src="vendor/someContribJs.js"></script> -->
-  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/ionic/release/js/ionic.js"></script>
-  <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/moment/moment.js"></script>
-  <script src="bower_components/angular-moment/angular-moment.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/router.js"></script>
-
-  <script src="scripts/controllers/login_ctrl.js"></script>
-  <script src="scripts/controllers/home_ctrl.js"></script>
-  <script src="scripts/controllers/achievements_ctrl.js"></script>
-  <script src="scripts/controllers/advice_ctrl.js"></script>
-  <script src="scripts/controllers/nested_advice_ctrl.js"></script>
-  <script src="scripts/controllers/recommendations_ctrl.js"></script>
-  <script src="scripts/controllers/favorites_ctrl.js"></script>
-  <script src="scripts/controllers/intro_ctrl.js"></script>
-  <script src="scripts/controllers/survey_ctrl.js"></script>
-  <script src="scripts/controllers/complete_survey_ctrl.js"></script>
-  <script src="scripts/controllers/radio_ctrl.js"></script>
-  <script src="scripts/controllers/checklist_ctrl.js"></script>
-  <script src="scripts/controllers/checklist_grid_ctrl.js"></script>
-  <script src="scripts/controllers/checklist_extra_ctrl.js"></script>
-  <script src="scripts/controllers/checklist_detail_ctrl.js"></script>
-  <script src="scripts/controllers/bodymap_ctrl.js"></script>
-  <script src="scripts/controllers/slider_ctrl.js"></script>
-
-  <script src="scripts/resources/survey_resource.js"></script>
-  <script src="scripts/resources/advice_resource.js"></script>
-  <script src="scripts/resources/session_resource.js"></script>
-  <script src="scripts/resources/submission_resource.js"></script>
-  <script src="scripts/resources/favorites_resource.js"></script>
-  <script src="scripts/resources/achievement_resource.js"></script>
-  <script src="scripts/resources/activity_resource.js"></script>
-
-  <script src="scripts/services/auth_service.js"></script>
-  <script src="scripts/services/user_service.js"></script>
-  <script src="scripts/services/underscore_service.js"></script>
-  <script src="scripts/services/survey_service.js"></script>
-  <script src="scripts/services/submission_service.js"></script>
-  <script src="scripts/services/bodymap_service.js"></script>
-
-  <script src="scripts/filters/slider_filter.js"></script>
-  <script src="scripts/filters/capitalize.js"></script>
-
-  <script src="scripts/directives/valid_form.js"></script>
-  <script src="scripts/directives/valid_radio_form.js"></script>
-  <script src="scripts/directives/valid_modal_form.js"></script>
-  <script src="scripts/directives/slider_gradient.js"></script>
-  <script src="scripts/directives/body_map_selector.js"></script>
-  <script src="scripts/directives/body_map_selector_switch.js"></script>
-  <!-- endbuild -->
-
-  <!-- cordova script (this will be a 404 during development) -->
-  <script src="cordova.js"></script>
-
 </body>
 </html>
