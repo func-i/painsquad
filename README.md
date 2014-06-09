@@ -23,9 +23,14 @@
 - `bower install`
 - `BUILD_TARGET=development gulp serve`
 
-Using the ios-simulator (be sure to run `sudo npm install -g cordova ios-sim` first)
+Using the ios-simulator - be sure to run `sudo npm install -g cordova ios-sim` first:
 
 - `BUILD_TARGET=development gulp build --ios --run`
+
+This also works, launches on iPhone 5+ screen height:
+
+- `cordova emulate emulate --target="iPhone (Retina 4-inch)"`
+
 
 
 ## Generating Surveys
