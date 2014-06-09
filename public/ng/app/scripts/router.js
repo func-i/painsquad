@@ -55,7 +55,7 @@
       url: '/surveys/new',
       views: {
         menuContent: {
-          templateUrl: 'templates/surveys/new.html',
+          templateUrl: 'templates/surveys/main.html',
           controller: 'SurveyCtrl',
           resolve: {
             survey: function(Survey, $q) {

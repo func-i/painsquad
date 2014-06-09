@@ -28,9 +28,6 @@
         return $scope.question = survey.questions[$scope.questionIndex];
       }
     };
-    $scope.getChoicesPartial = function(question) {
-      return "/templates/surveys/question_types/" + question.question_type + ".html";
-    };
     $scope.finishSurvey = function() {
       return $state.go('app.survey_complete');
     };

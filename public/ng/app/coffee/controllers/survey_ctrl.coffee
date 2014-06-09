@@ -32,9 +32,6 @@
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
 
-  $scope.getChoicesPartial = (question) ->
-    "/templates/surveys/question_types/#{question.question_type}.html"
-
   $scope.finishSurvey = ->
     $state.go('app.survey_complete')
 
