@@ -1,0 +1,9 @@
+{
+    "lib": {
+        "www": {
+            "id": "com.functionalimperative.painsquad",
+            "version": "0.0.1",
+            "uri": ""
+        }
+    }
+}

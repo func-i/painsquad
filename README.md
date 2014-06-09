@@ -23,6 +23,9 @@
 - `bower install`
 - `BUILD_TARGET=development gulp serve`
 
+
+##### Emulation:
+
 Using the ios-simulator - be sure to run `sudo npm install -g cordova ios-sim` first:
 
 - `BUILD_TARGET=development gulp build --ios --run`
@@ -30,6 +33,14 @@ Using the ios-simulator - be sure to run `sudo npm install -g cordova ios-sim` f
 This also works, launches on iPhone 5+ screen height:
 
 - `cordova emulate emulate --target="iPhone (Retina 4-inch)"`
+
+
+##### Device:
+
+Download the Phonegap Developer app [here](http://app.phonegap.com/), it will not communicate with the server
+
+- `$ cd public/ng`
+- `phonegap serve`
 
 
 
