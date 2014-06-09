@@ -35,13 +35,13 @@ This also works, launches on iPhone 5+ screen height:
 - `cordova emulate emulate --target="iPhone (Retina 4-inch)"`
 
 
-##### Device:
+##### Device Testing:
 
 Download the Phonegap Developer app [here](http://app.phonegap.com/), it will not communicate with the server
+NOTE: this will not communicate with server
 
 - `$ cd public/ng`
-- `phonegap serve`
-
+- `phonegap serve -p 4000`
 
 
 ## Generating Surveys
