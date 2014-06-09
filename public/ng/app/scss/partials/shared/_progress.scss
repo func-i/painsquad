@@ -1,6 +1,8 @@
 .progress {
-  display: block;
-  // position: absolute;
+  display:    block;
+  position:   absolute;
+  opacity:    0.5;
+  // padding: 0 !important;
 
   .progress-block {
     // position:   fixed;
