@@ -1,2 +1,2 @@
 rails: spring rails server
-grunt: sh -c 'cd public/ng/ && grunt serve'
+grunt: sh -c 'cd public/ng/ && BUILD_TARGET=development gulp serve'
