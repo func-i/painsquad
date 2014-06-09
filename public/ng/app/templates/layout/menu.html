@@ -1,51 +1,50 @@
 <ion-side-menus>
 
-  <!-- TODO: disable 'drag-left' gesture for sidemenu -->
-  <ion-pane ion-side-menu-content drag-content="false">
-
-    <ion-nav-bar class="bar-royal">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-left"></i> Back</ion-nav-back-button>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-royal nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
-
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
   <ion-side-menu side="left">
+    <header class="bar bar-header bar-royal">
+      <h1 class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item menu-close ui-sref="app.reports">
+          <i class="icon ion-stats-bars"></i>
+          View &amp; Share Reports
+        </ion-item>
 
-    <div class="list">
-      <ion-item menu-close ui-sref="app.reports">
-        <i class="icon ion-stats-bars"></i>
-        View &amp; Share Reports
-      </ion-item>
+        <ion-item menu-close ui-sref="app.settings">
+          <i class="icon ion-gear-b"></i>
+          Alert Settings
+        </ion-item>
 
-      <ion-item menu-close ui-sref="app.settings">
-        <i class="icon ion-gear-b"></i>
-        Alert Settings
-      </ion-item>
+        <div class="item item-divider"></div>
 
-      <div class="item item-divider"></div>
+        <ion-item menu-close ui-sref="app.login">
+          My Account
+        </ion-item>
 
-      <ion-item menu-close ui-sref="app.login">
-        My Account
-      </ion-item>
+        <ion-item menu-close ui-sref="app.about">
+          About
+        </ion-item>
 
-      <ion-item menu-close ui-sref="app.about">
-        About
-      </ion-item>
+        <ion-item menu-close ui-sref="app.contact">
+          Contact &amp; Support
+        </ion-item>
 
-      <ion-item menu-close ui-sref="app.contact">
-        Contact &amp; Support
-      </ion-item>
+        <ion-item menu-close ui-sref="app.terms">
+          Terms of Use
+        </ion-item>
 
-      <ion-item menu-close ui-sref="app.terms">
-        Terms of Use
-      </ion-item>
-
-      <ion-item menu-close ui-sref="app.privacy">
-        Privacy
-      </ion-item>
-
-    </div>
+        <ion-item menu-close ui-sref="app.privacy">
+          Privacy
+        </ion-item>
+      </ion-list>
+    </ion-content>
   </ion-side-menu>
 </ion-side-menus>
-

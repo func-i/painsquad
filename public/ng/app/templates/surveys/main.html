@@ -1,0 +1,80 @@
+<ion-view title="Pain Case" hide-back-button="true">
+
+  <!-- temporary button -->
+  <ion-nav-buttons side="left">
+    <button class="button" ng-click="back()">Back</button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button
+      class="button button-positive button-clear icon button-icon icon-right ion-ios7-arrow-right"
+      ng-click="nextQuestion()"
+      ng-show="showNext" style="color: white;">
+        Next
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header survey">
+
+    <div class="progress">
+      <div class="progress-block"></div>
+
+      <div class="progress-actual">
+        <div class="info">
+          <span class="pull-left text">Case Progress</span>
+          <span class="pull-right count" ng-show="questionIndex != 0">{{ questionIndex + 1 }} of {{ totalQuestions }}</span>
+        </div>
+
+        <div id="bar">
+          <div ng-style="progressWidth()"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-body">
+      <section class="question">
+        <div class="content-header"></div>
+        <div class="content-actual" ng-bind-html="question.content"></div>
+        <div class="choices" ng-switch="question.question_type">
+          <div ng-switch-when="boolean">
+            <div ng-include src="'templates/surveys/questions/boolean.html'"></div>
+          </div>
+
+          <div ng-switch-when="slider">
+            <div ng-include src="'templates/surveys/questions/slider.html'"></div>
+          </div>
+
+          <div ng-switch-when="radio">
+            <div ng-include src="'templates/surveys/questions/radio.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist">
+            <div ng-include src="'templates/surveys/questions/checklist.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist-grid">
+            <div ng-include src="'templates/surveys/questions/checklist-grid.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist-extra">
+            <div ng-include src="'templates/surveys/questions/checklist-extra.html'"></div>
+          </div>
+
+          <div ng-switch-when="bodymap">
+            <div ng-include src="'templates/surveys/questions/bodymap.html'"></div>
+          </div>
+
+          <div ng-switch-when="textbox">
+            <div ng-include src="'templates/surveys/questions/textbox.html'"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="tip" ng-show="question.tip">
+        <p>TIP: {{ question.tip }}</p>
+      </section>
+    </div>
+
+  </ion-content>
+</ion-view>
