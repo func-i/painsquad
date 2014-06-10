@@ -3,12 +3,6 @@
 
 ## Getting Started
 
-### Fast:
-
-`rake db:setup survey:all && foreman start`
-
-### Slow:
-
 #### Server:
 
 - `bundle install`
@@ -38,7 +32,6 @@ This also works, launches on iPhone 5+ screen height:
 ##### Device Testing:
 
 Download the Phonegap Developer app [here](http://app.phonegap.com/), it will not communicate with the server
-NOTE: this will not communicate with server
 
 - `$ cd public/ng`
 - `phonegap serve -p 4000`
