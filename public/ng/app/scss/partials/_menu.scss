@@ -1,4 +1,4 @@
-$gap-width:      300px;
+$gap-width:      100px;
 $item-color:     #5B6166;
 $gap-color:      #808A8F;
 $dark-item-font: #C0C0C0;
@@ -12,11 +12,6 @@ $dark-item-font: #C0C0C0;
     a {
       background-color: $item-color;
       color:            $dark-item-font;
-    }
-
-    &:last-child {
-      height: 500px;
-      a { height: 100%; }
     }
   }
 
