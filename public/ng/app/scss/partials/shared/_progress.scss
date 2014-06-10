@@ -1,17 +1,10 @@
-// .bar.bar-subheader {
-//   border-top: 0;
-//   padding:    0;
-// }
-
 .progress {
-  top:           44px;
-  display:       block;
-  position:      absolute;
-  z-index:       10;
-  height:        44px;
-  width: 100%;
-  // margin-top: 44px;
-  // top:        44px;
+  top:      44px;
+  display:  block;
+  position: absolute;
+  z-index:  10;
+  height:   44px;
+  width:    100%;
 
   .progress-block {
     display:    block;
@@ -26,7 +19,6 @@
     top:          -50px;
     margin-left:  10px;
     margin-right: 10px;
-    // padding:   0 5px 0 5px;
 
     .info {
       padding-bottom: 30px;
