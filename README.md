@@ -3,12 +3,6 @@
 
 ## Getting Started
 
-### Fast:
-
-`rake db:setup survey:all && foreman start`
-
-### Slow:
-
 #### Server:
 
 - `bundle install`
