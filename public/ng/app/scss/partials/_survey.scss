@@ -1,11 +1,7 @@
 .survey {
-  .scroll {
-    top: 44px;
-    // margin-top: 44px;
-  }
-
+  padding-top: 115px !important;
   // TODO: fix linear gradient background image
-  // background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $survey-gradient-start), color-stop(100%, $survey-gradient-end));
+  background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $survey-gradient-start), color-stop(100%, $survey-gradient-end));
   // background: url('/images/survey/wood-bg.jpg'), -webkit-linear-gradient(top,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* Chrome10+,Safari5.1+ */
   // background: url('/images/survey/wood-bg.jpg'), linear-gradient(to bottom,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* W3C */
 

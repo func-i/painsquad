@@ -1,33 +1,34 @@
-// modules are sass-only styles (variables, mixins, overrides)
-@import 'modules/defaults',
-        'modules/layout',
-        'modules/variables',
-        'modules/helpers',
-        'modules/overrides';
+@import
+  // modules are sass-only styles (variables, mixins, overrides)
+  'modules/defaults',
+  'modules/layout',
+  'modules/variables',
+  'modules/helpers',
+  'modules/overrides',
 
-// view and template-related styles
-@import 'partials/shared/intro',
-        'partials/shared/buttons',
-        'partials/shared/sidebar',
-        'partials/shared/modal',
-        'partials/shared/progress',
-        'partials/shared/slider';
+  // view and template-related styles
+  'partials/shared/intro',
+  'partials/shared/buttons',
+  'partials/shared/sidebar',
+  'partials/shared/modal',
+  'partials/shared/progress',
+  'partials/shared/slider',
 
-// state-specific partial styling
-@import 'partials/home',
-        'partials/achievements',
-        'partials/advice',
-        'partials/menu';
+  // state-specific partial styling
+  'partials/home',
+  'partials/achievements',
+  'partials/advice',
+  'partials/menu',
 
-// survey questions
-@import 'partials/survey',
-        'partials/questions/boolean';
+  // survey questions
+  'partials/survey',
+  'partials/questions/boolean',
 
-// form-specific styles
-@import 'partials/forms/checklist',
-        'partials/forms/checklist-grid',
-        'partials/forms/checklist-extra',
-        'partials/forms/textarea';
+  // form-specific styles
+  'partials/forms/checklist',
+  'partials/forms/checklist-grid',
+  'partials/forms/checklist-extra',
+  'partials/forms/textarea';
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

@@ -1,17 +1,22 @@
+// .bar.bar-subheader {
+//   border-top: 0;
+//   padding:    0;
+// }
+
 .progress {
-  padding: 0;
-  // opacity: 0.5;
-  // display:    block;
-  // position:   absolute;
-  // opacity:    0.5;
-  // padding: 0 !important;
+  top:           44px;
+  display:       block;
+  position:      absolute;
+  z-index:       10;
+  height:        44px;
+  width: 100%;
+  // margin-top: 44px;
+  // top:        44px;
 
   .progress-block {
-    // position:   fixed;
     display:    block;
     clear:      both;
     height:     70px;
-    // padding:    10px;
     opacity:    0.5;
     background: gray;
   }
