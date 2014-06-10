@@ -58,7 +58,7 @@ gulp.task('build-scripts', ['coffee'], function() {
 
 gulp.task('build-styles', function(done) {
   gulp.src(source_paths.sass)
-    .pipe(sass())
+    .pipe(sass({errLogToConsole: true}))
     .pipe(gulp.dest(dest_paths.css))
     .on('end', done)
     .pipe(connect.reload());

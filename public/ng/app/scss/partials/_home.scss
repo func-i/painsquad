@@ -1,0 +1,30 @@
+.home {
+  .rank {
+    height: 314px;
+    margin-bottom: 23px;
+
+    &::after {
+      content: " ";
+    }
+
+    img {
+      display:      block;
+      margin-left:  auto;
+      margin-right: auto;
+    }
+
+  }
+
+  .action {
+    .override {
+      // display:       block;
+      // border:        0;
+      // border-radius: 5px;
+      // font-size:     20px;
+      // height:        44px;
+      // width:         calc(100% - 140px);
+      // min-width:     150px;
+      // margin:        0 70px 10.5px 70px;
+    }
+  }
+}

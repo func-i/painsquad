@@ -8,24 +8,70 @@ input[disabled]:before {
   border-color: #ef4562 !important;
 }
 
-// button.button {
-//   display:  block;
-//   position: relative;
-//   top:      0;
-//   right:    0;
-//   bottom:   0;
-//   left:     0;
+// .button-diagonal {
+//   background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
 // }
 
-.button-diagonal {
-  background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
-}
+// .diagonal {
+//   &::after {
+//     background: url('/images/survey/content-bg.jpg');
+//     opacity:    0.25;
+//     z-index:    -1;
+//     position:   absolute;
+//   }
+// }
 
-.diagonal {
-  &::after {
-    background: url('/images/survey/content-bg.jpg');
-    opacity:    0.25;
-    z-index:    -1;
-    position:   absolute;
+button.override {
+  display:       block;
+  border:        0;
+  border-radius: 5px;
+  font-size:     20px;
+
+  &.home {
+    height:        44px;
+    width:         calc(100% - 140px);
+    min-width:     150px;
+    margin:        0 70px 10.5px 70px;
   }
+
+  &.diagonal {
+    position: relative;
+    // opacity: 0.25;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: url("/images/content-bg.jpg") no-repeat top center;
+      opacity:  0.25;
+    }
+  }
+
+  // &.diagonal {
+  //   position: relative;
+  //   display: block;
+
+  //   &::after {
+  //     content:    "";
+  //     background: url('/images/content-bg.jpg');
+  //     opacity:    0.5;
+  //     top:        0;
+  //     left:       0;
+  //     bottom:     0;
+  //     right:      0;
+  //     position:   absolute;
+  //     z-index:    -1;
+  //   }
+  // }
+
+  &.bottom-border {
+    box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $bottom-fill;
+  }
+
+  &.activated {
+    &.bottom-border {
+      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $bottom-active-fill;
+    }
+  }
+
 }

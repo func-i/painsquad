@@ -14,7 +14,7 @@
     </button>
   </ion-nav-buttons>
 
- <div class="progress bar bar-subheader">
+ <div class="progress bar bar bar-subheader">
     <div class="progress-block"></div>
 
     <div class="progress-actual">
@@ -29,29 +29,14 @@
     </div>
   </div>
 
-  <ion-content class="has-header has-subheader survey">
+  <ion-content class="has-header survey">
 
-<!--
-    <div class="progress">
-      <div class="progress-block"></div>
-
-      <div class="progress-actual">
-        <div class="info">
-          <span class="pull-left text">Case Progress</span>
-          <span class="pull-right count" ng-show="questionIndex != 0">{{ questionIndex + 1 }} of {{ totalQuestions }}</span>
-        </div>
-
-        <div id="bar">
-          <div ng-style="progressWidth()"></div>
-        </div>
-      </div>
-    </div>
- -->
     <div class="question-body">
       <section class="question">
         <div class="content-header"></div>
         <div class="content-actual" ng-bind-html="question.content"></div>
         <div class="choices" ng-switch="question.question_type">
+
           <div ng-switch-when="boolean">
             <div ng-include src="'templates/surveys/questions/boolean.html'"></div>
           </div>
