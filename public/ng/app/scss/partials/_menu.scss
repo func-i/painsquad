@@ -1,0 +1,29 @@
+$gap-width:      300px;
+$item-color:     #5B6166;
+$gap-color:      #808A8F;
+$dark-item-font: #C0C0C0;
+
+.sidemenu {
+
+  .item.item-complex {
+    border-color: gray;
+    &:nth-child(1) a, &:nth-child(2) a { color: white; }
+
+    a {
+      background-color: $item-color;
+      color:            $dark-item-font;
+    }
+
+    &:last-child {
+      height: 500px;
+      a { height: 100%; }
+    }
+  }
+
+  .item.item-divider {
+    border-color:     transparent;
+    height:           $gap-width;
+    background-color: $gap-color;
+  }
+
+}
