@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
   has_many :recommendations, :through => :favorites
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
+  LEVELS = [ 300, 700, 1200, 2000, 2800 ]
 
   after_create :grant_api_access, :register_create_event
   after_update :register_event
@@ -50,6 +51,16 @@ class User < ActiveRecord::Base
       rank.split('_').map(&:capitalize).join(' ')
     else
       rank.capitalize
+    end
+  end
+
+  def next_level
+    LEVELS.each do |level|
+      if score < level
+        return level - score
+      else
+        return 0
+      end
     end
   end
 

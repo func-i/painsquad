@@ -1,7 +1,7 @@
 class ScoringService
   FULL_SCORE      = 25
   TRUNC_SCORE     = 10
-  LEVEL_THRESHOLD = [ 300, 700, 1200, 2000, 2800 ]
+  # LEVEL_THRESHOLD = [ 300, 700, 1200, 2000, 2800 ]
 
   def self.analyze(submission)
     new(submission).process
@@ -30,7 +30,7 @@ class ScoringService
     new_score    = @user.score
     current_rank = @user[:rank]
     next_rank    = current_rank + 1
-    LEVEL_THRESHOLD.each do |threshold|
+    User::LEVELS.each do |threshold|
       if @old_score < threshold && new_score >= threshold
         @user.update(rank: next_rank)
       end

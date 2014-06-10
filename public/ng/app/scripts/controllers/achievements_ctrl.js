@@ -16,32 +16,32 @@
       {
         name: 'rookie',
         locked: true,
-        image_path: 'images/achievements/01-rookie.png',
+        image_path: 'images/achievements/rookie.png',
         date: null
       }, {
         name: 'junior_detective',
         locked: true,
-        image_path: 'images/achievements/02-jrdetective.png',
+        image_path: 'images/achievements/junior_detective.png',
         date: null
       }, {
         name: 'detective',
         locked: true,
-        image_path: 'images/achievements/03-detective.png',
+        image_path: 'images/achievements/detective.png',
         date: null
       }, {
         name: 'sergeant',
         locked: true,
-        image_path: 'images/achievements/04-lieutenant.png',
+        image_path: 'images/achievements/lieutenant.png',
         date: null
       }, {
         name: 'lieutenant',
         locked: true,
-        image_path: 'images/achievements/05-sergeant.png',
+        image_path: 'images/achievements/sergeant.png',
         date: null
       }, {
         name: 'chief',
         locked: true,
-        image_path: 'images/achievements/06-chief.png',
+        image_path: 'images/achievements/chief.png',
         date: null
       }
     ];

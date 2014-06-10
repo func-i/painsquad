@@ -38,11 +38,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          # TODO: fix this, displays whitescreen on first rendering in new browser/session
           # resolve:
-          #   resolveUser: (UserService, $state) ->
-          #     unless UserService.isLoggedIn()
-          #       $state.go 'app.login'
+          #   currentUser: (User, $q) ->
+          #     defer = $q.defer()
+          #     User.query (response) ->
+          #       defer.resolve respone
+          #     defer.promise
     )
 
     .state('app.login',

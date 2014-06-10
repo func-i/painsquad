@@ -42,8 +42,9 @@ button.override {
       content: '';
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
-      background: url("/images/content-bg.jpg") no-repeat top center;
+      background: url("/images/content-bg.jpg");
       opacity:  0.25;
+      width: 100%;
     }
   }
 

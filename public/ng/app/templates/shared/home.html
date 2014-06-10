@@ -12,13 +12,14 @@
 
     <div class="rank">
       <span class="pull-right">
-        points to promotion 175
+        points to promotion {{ currentUser.next_level }}
       </span>
       <span class="pull-left">
-        total points earned 125
+        total points earned {{ currentUser.score }}
       </span>
-      <img ng-src="images/achievements/01-rookie.png" alt="">
-    </div>
+
+      <img ng-src="images/achievements/{{currentUser.rank}}.png" alt="">
+     </div>
 
     <div class="action">
       <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">Start Case</button>
