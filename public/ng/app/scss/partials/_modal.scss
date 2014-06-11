@@ -1,0 +1,41 @@
+.modal {
+  .modal-inherit {
+    @extend .survey;
+
+    .content {
+      margin: 30px 10px 0 10px;
+      background-color: white;
+
+      .header {
+        height: 30px;
+        border-bottom: 5px solid red;
+      }
+
+      .map section svg {
+        margin: 10px;
+      }
+
+      .tip {
+        margin: 10px 30px 10px 30px;
+        padding: 10px 5px 10px 5px;
+        p {
+          padding: 5px 20px 5px 20px;
+          border: 1px solid red;
+        }
+      }
+
+      section .button-bar {
+        margin-top:   5px;
+        width:        90%;
+        margin-left:  auto;
+        margin-right: auto;
+
+        .button {
+          @extend .override;
+          @extend .diagonal;
+        }
+
+      }
+    }
+  }
+}

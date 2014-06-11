@@ -4,7 +4,7 @@
     <li class="item"
       ng-repeat="choice in question.choices"
       ng-click="openModal(choice)">
-        <img class="thumbnail" ng-src="images/bodymap/thumbnail/bodymap-{{choice.content | lowercase}}.svg">
+        <img ng-src="images/bodymap/thumbnail/bodymap-{{choice.content | lowercase}}.svg">
         <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
         <span class="content">{{ choice.content }}</span>
         <span class="icon-right ion-chevron-right"></span>

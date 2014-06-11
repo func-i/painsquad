@@ -32,23 +32,6 @@ button.override {
     }
   }
 
-  // &.diagonal {
-  //   position: relative;
-  //   display: block;
-
-  //   &::after {
-  //     content:    "";
-  //     background: url('/images/content-bg.jpg');
-  //     opacity:    0.5;
-  //     top:        0;
-  //     left:       0;
-  //     bottom:     0;
-  //     right:      0;
-  //     position:   absolute;
-  //     z-index:    -1;
-  //   }
-  // }
-
   &.bottom-border {
     box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $bottom-fill;
   }
@@ -59,4 +42,20 @@ button.override {
     }
   }
 
+}
+
+
+.button-bar > a.button {
+  &.override {
+    &:first-child {
+      border-radius: 5px 0px 0px 5px;
+    }
+    &:last-child {
+      // border-radius: 5px 0px 0px 5px;
+    }
+
+    &.active {
+      background-color: lightyellow;
+    }
+  }
 }

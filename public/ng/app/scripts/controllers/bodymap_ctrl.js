@@ -7,7 +7,7 @@
       choice: {},
       tempSelections: []
     };
-    $ionicModal.fromTemplateUrl("templates/surveys/question_types/modal.bodymap.html", {
+    $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.bodymap.html", {
       scope: $scope,
       animation: "slide-in-up"
     }).then(function(modal) {
@@ -43,7 +43,7 @@
       if ($scope.modalSelection.choice.content == null) {
         return;
       }
-      return "templates/surveys/question_types/bodymap." + (getPainRegion()) + ".html";
+      return "templates/surveys/questions/bodymap." + (getPainRegion()) + ".html";
     };
     getPainRegion = function() {
       return $scope.modalSelection.choice.content.toLowerCase();

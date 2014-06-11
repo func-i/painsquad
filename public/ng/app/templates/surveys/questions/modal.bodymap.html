@@ -1,7 +1,7 @@
 <div class="modal">
 
   <ion-header-bar class="bar bar-header bar-royal">
-    <h1 class="title">{{ painRegion.content }}</h1>
+    <h1 class="title">{{ modalSelection.choice.content }}</h1>
 
     <button
       class="button button-clear button-primary"
@@ -16,8 +16,16 @@
     </button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="has-header">
-    <ng-include src="renderBodymapPartial()"></ng-include>
+  <ion-content padding="true" class="has-header modal-inherit">
+    <div class="content">
+      <div class="header"></div>
+      <ng-include class="map" src="renderBodymapPartial()"></ng-include>
+
+      <div class="tip">
+        <p><strong>TIP: </strong>Tap on the areas on the {{ modalSelection.choice.content | lowercase }} then click Save.</p>
+      </div>
+
+    </div>
   </ion-content>
 
 </div>

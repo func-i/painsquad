@@ -82,15 +82,11 @@ li.item.item-checkbox {
 
 // BODYMAP
 .bodymap {
-  clear: right;
 
   .item {
     margin-left:  0px;
     margin-right: 0px;
-
-    .thumbnail {
-      width: 40px;
-    }
+    padding:      10px;
 
     .ion-checkmark-circled {
       position: absolute;
