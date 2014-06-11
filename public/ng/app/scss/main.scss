@@ -19,17 +19,8 @@
   'partials/achievements',
   'partials/advice',
   'partials/menu',
-
-  // survey questions
   'partials/survey',
-  'partials/questions/boolean',
-
-  // form-specific styles
-  'partials/forms/checklist',
-  'partials/forms/checklist-grid',
-  'partials/forms/checklist-extra',
-  'partials/forms/textarea',
-  'partials/forms/radio';
+  'partials/forms';
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

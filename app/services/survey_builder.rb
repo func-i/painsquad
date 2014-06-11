@@ -58,7 +58,6 @@ class SurveyBuilder
   end
 
   def build_test_survey
-    Builder::Checklist.pain_cause(@survey)
     Builder::Other.bodymap(@survey)
     Builder::Checklist.describe_pain_grid(@survey)
     Builder::Checklist.medication_efficacy_slider(@survey)

@@ -23,7 +23,7 @@ $checkbox-checked: #FD4461;
 
 .checkbox input::before, .checkbox-icon::before {
   border-radius: 0 !important;
-  border-color: $checkbox-border !important;
+  border-color:  $checkbox-border !important;
 }
 
 .checkbox input:checked {

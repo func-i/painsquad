@@ -1,14 +1,14 @@
-<section ng-controller="BodymapCtrl" ng-cloak>
+<section ng-controller="BodymapCtrl" ng-cloak class="bodymap">
 
-  <ion-list>
-    <a class="item"
+  <ul>
+    <li class="item"
       ng-repeat="choice in question.choices"
       ng-click="openModal(choice)">
-        {{ choice.content }}
-      <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
-    </a>
-    <!-- selections: {{ selections | json }} -->
-  </ion-list>
-
+        <img class="thumbnail" ng-src="images/bodymap/thumbnail/bodymap-{{choice.content | lowercase}}.svg">
+        <span class="ion-checkmark-circled" ng-show="contentSaved(choice.content)"></span>
+        <span class="content">{{ choice.content }}</span>
+        <span class="icon-right ion-chevron-right"></span>
+    </li>
+  </ul>
 
 </section>

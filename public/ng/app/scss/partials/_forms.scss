@@ -1,0 +1,109 @@
+// GENERAL STYLES
+li.item, .item.item-checkbox {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+// BOOLEAN
+.boolean {
+  height:       300px;
+  padding:      0 20px 0 20px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+// RADIO
+label.item.item-radio {
+  // background-color: red;
+  // margin: 5px;
+}
+
+
+// CHECKLIST
+section.checklist {
+  width: 100%;
+}
+
+label.other-textbox {
+  position: relative;
+  border-top: 0;
+  margin: 5px;
+  border: 1px solid gray;
+}
+
+li.item.item-checkbox {
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.textfield {
+    border-bottom: 0;
+  }
+}
+
+.item.item-input.other-textbox {
+  border-color: lightgray;
+  margin: 0 10px 0 60px;
+}
+
+.item-input textarea {
+  resize: none;
+}
+
+
+// CHECKLIST GRID
+.checklist-grid {
+  .row.grid-list {
+    flex-wrap: wrap;
+
+    .col {
+      flex: none;
+      width: 50%;
+      .content {
+        border: 1px dotted black;
+      }
+    }
+    .last {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  label {
+    line-height: 30px;
+    .pull-right {
+      float: right;
+    }
+  }
+}
+
+// BODYMAP
+.bodymap {
+  clear: right;
+
+  .item {
+    margin-left:  0px;
+    margin-right: 0px;
+
+    .thumbnail {
+      width: 40px;
+    }
+
+    .ion-checkmark-circled {
+      position: absolute;
+    }
+
+    .content {
+      margin-left: 15px;
+      top: -10px;
+    }
+
+    .icon-right {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+}
