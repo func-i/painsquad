@@ -3,24 +3,6 @@ label.checkbox {
   width: 100%;
 }
 
-// set disabled checkbox styles
-input[disabled]:before {
-  border-color: #ef4562 !important;
-}
-
-// .button-diagonal {
-//   background: repeating-linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
-// }
-
-// .diagonal {
-//   &::after {
-//     background: url('/images/survey/content-bg.jpg');
-//     opacity:    0.25;
-//     z-index:    -1;
-//     position:   absolute;
-//   }
-// }
-
 button.override {
   display:       block;
   border:        0;
@@ -42,9 +24,11 @@ button.override {
       content: '';
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
-      background: url("/images/content-bg.jpg");
-      opacity:  0.25;
+      background-image: url('/images/content-bg-25.png');
       width: 100%;
+      // background: url("/images/content-bg-25.png");
+      // background-color: rgba(0,0,0,0.25);
+      // opacity:  0.2;
     }
   }
 

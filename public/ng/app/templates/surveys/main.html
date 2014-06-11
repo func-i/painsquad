@@ -29,7 +29,9 @@
     </div>
   </div>
 
-  <ion-content class="has-header survey">
+  <!-- <ion-content class="has-header survey"> -->
+  <ion-content class="survey">
+    <div class="progress-mock" style="height: 60px;"></div>
 
     <div class="question-body">
       <section class="question">
@@ -73,7 +75,7 @@
       </section>
 
       <section class="tip" ng-show="question.tip">
-        <p>TIP: {{ question.tip }}</p>
+        <p><strong>TIP:</strong> {{ question.tip }}</p>
       </section>
     </div>
 

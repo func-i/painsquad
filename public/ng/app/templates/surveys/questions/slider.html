@@ -8,8 +8,12 @@
     </div>
 
     <div class="range-container">
-      <span class="pull-left">0</span>
-      <span class="pull-right">10</span>
+
+      <div class="upper">
+        <span class="pull-left number">0</span>
+        <span class="pull-right number">10</span>
+        <div style="clear: both; height: 0;">&nbsp;</div>
+      </div>
 
       <div class="range range-assertive">
         <input required
@@ -17,8 +21,10 @@
           ng-model="question.choices[0].value">
       </div>
 
-      <span class="pull-left">no pain</span>
-      <span class="pull-right">worst possible pain</span>
+      <div class="lower">
+        <span class="pull-left text">no pain</span>
+        <span class="pull-right text">worst possible pain</span>
+      </div>
     </div>
 
     <!-- sliderValue: {{ question.choices[0].value | sliderFilter }} -->
