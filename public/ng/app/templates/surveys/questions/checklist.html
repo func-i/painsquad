@@ -3,7 +3,7 @@
   <form name="currentForm" valid-form>
     <ul>
       <div ng-repeat="choice in question.choices">
-        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled }">
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled, 'textbox': choice.textfield }">
             <label class="checkbox">
 
               <input

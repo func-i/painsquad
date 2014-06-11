@@ -53,13 +53,14 @@
 
     .range {}
 
-    .text {
-      text-transform: uppercase;
-      font-size:      10px;
-      margin-top:     -15px;
-      &:nth-child(1) { margin-left: 15px; }
-      &:nth-child(2) { margin-right: 15px; }
+    .lower {
+      .text {
+        text-transform: uppercase;
+        font-size:      10px;
+        margin-top:     -15px;
+        &:nth-child(1) { margin-left: 15px; }
+        &:nth-child(2) { margin-right: 15px; }
+      }
     }
   }
-
 }

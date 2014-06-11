@@ -1,6 +1,3 @@
-$checkbox-border:  #808A8F;
-$checkbox-checked: #FD4461;
-
 // checkbox survey partial
 section.checklist {
   width: 100%;
@@ -10,18 +7,12 @@ label.other-textbox {
   position: relative;
 }
 
-.checkbox input::before, .checkbox-icon::before {
-  border-radius: 0 !important;
-  border-color: $checkbox-border !important;
-}
-
-.checkbox input:checked {
-  &:before, + .checkbox-icon:before {
-    background: $checkbox-checked !important;
-    border-color: $checkbox-checked !important;
+.item.item-checkbox {
+  &.disabled {
+    opacity: 0.5;
   }
-}
 
-.item.item-checkbox.disabled {
-  opacity: 0.5;
+  &.textfield {
+    border-bottom: 0;
+  }
 }

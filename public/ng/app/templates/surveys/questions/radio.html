@@ -1,13 +1,18 @@
 <section class="radio" ng-controller="RadioCtrl" ng-cloak>
 
   <form name="currentForm" valid-radio-form>
-    <ion-radio
-      ng-repeat="choice in question.choices"
-      ng-value="true"
-      ng-model="choice.selected"
-      ng-change="setRadioAnswer(question, choice)">
+    <ul>
+      <li class="item item-checkbox margin-fix" ng-repeat="choice in question.choices">
+        <label id="radio" class="checkbox">
+          <input
+            type="checkbox"
+            ng-model="choice.selected"
+            ng-change="deselectOtherSelections(choice)">
+
+        </label>
         {{ choice.content }}
-    </ion-radio>
+      </li>
+    </ul>
   </form>
 
 </section>

@@ -2,9 +2,9 @@
 
 @RadioCtrl = @controllerModule.controller "RadioCtrl", ($scope, $state) ->
 
-  $scope.setRadioAnswer = (question, choice) ->
-    for c in question.choices
-      delete c.selected
-    choice.selected = true
+  $scope.deselectOtherSelections = (selectedChoice) ->
+    for choice in $scope.question.choices
+      choice.selected = false unless choice is selectedChoice
+
 
 @RadioCtrl.$inject = ['$scope', '$state']
