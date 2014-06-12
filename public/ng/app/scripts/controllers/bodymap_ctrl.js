@@ -9,7 +9,7 @@
     };
     $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.bodymap.html", {
       scope: $scope,
-      animation: "slide-in-up"
+      animation: "slide-left-right-ios7"
     }).then(function(modal) {
       return $scope.modal = modal;
     });

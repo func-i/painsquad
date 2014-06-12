@@ -5,9 +5,12 @@ $royal: #00aed7;
 $assertive: #df4461;
 // blue button
 $positive: #33bedf;
+// gray button
+$stable: #D9DCDE;
 
 
 // HEADER/SIDEMENU
+// FIXME: these do not work on device/emulator, likely due to lack of specificity
 ion-nav-bar.bar.bar-royal {
   border-color: transparent !important;
 }

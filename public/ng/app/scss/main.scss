@@ -7,12 +7,11 @@
   'modules/overrides',
 
   // view and template-related styles
-  'partials/shared/intro',
-  'partials/shared/buttons',
-  'partials/shared/sidebar',
-  'partials/shared/modal',
-  'partials/shared/progress',
-  'partials/shared/slider',
+  'partials/intro',
+  'partials/buttons',
+  'partials/sidebar',
+  'partials/progress',
+  'partials/slider',
 
   // state-specific partial styling
   'partials/home',
@@ -20,7 +19,7 @@
   'partials/advice',
   'partials/menu',
   'partials/survey',
-  'partials/forms',
+  'partials/survey_questions',
   'partials/modal';
 
 

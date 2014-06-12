@@ -28,11 +28,11 @@
       height:   100%;
 
       &.red {
-        background-image: $redGradient;
+        background-image: $slider-red-gradient;
       }
 
       &.green {
-        background-image: $greenGradient;
+        background-image: $slider-green-gradient;
       }
     }
   }

@@ -1,12 +1,23 @@
-$primaryGray:   #515151;
-$primaryWhite:  #EBEBEB;
+// BUTTONS
+// home buttons
+$button-bottom-fill:        #e88d4d;
+$button-bottom-fill-active: #b45a1a;
 
-$survey-gradient-start: #00aed7;
-$survey-gradient-end:   #1b4b9f;
+// button-bar inactive button
+$button-gray: #fff;
 
-$redGradient:   linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
-$greenGradient: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+// GRADIENTS
+// slider gradients
+$slider-red-gradient:   linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+$slider-green-gradient: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+
+$background-gradient-start: #00AED7;
+$background-gradient-end: #1B4B9F;
 
 
-$bottom-fill:        #e88d4d;
-$bottom-active-fill: #b45a1a;
+// MISC COLORS
+// $primary-gray:   #515151;
+// $primary-white:  #EBEBEB;
+
+// buttonbar inactive font:
+$inactive-font: #7F8A8E;
