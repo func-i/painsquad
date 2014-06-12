@@ -3,6 +3,8 @@
   padding-left:    10px;
   padding-right:   10px;
 
+  &.disabled { opacity: 0.25; }
+
   .wedge-container {
     position:         relative;
     height:           150px;

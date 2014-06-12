@@ -24,59 +24,74 @@
 
       <form name="currentForm" valid-modal-form>
 
-        <div class="" ng-show="!detailData.currentChoice.textfield">
+        <div class="content-actual" ng-show="!detailData.currentChoice.textfield">
           <p>How helpful was this in reducing your pain?</p>
         </div>
 
-        <div ng-if="detailData.currentChoice.textfield == true">
+        <div class="content-actual" ng-if="detailData.currentChoice.textfield == true">
           <p>Please specify what other medications you took</p>
+        </div>
 
+        <div class="content-textarea" ng-if="detailData.currentChoice.textfield == true">
           <label class="item item-input">
-            <textarea rows="5"
+            <textarea rows="3"
               ng-required="ifTextareaPresent(detailData.currentChoice)"
-              name="custom_text"
               placeholder="Please specify"
               ng-model="detailData.currentChoice.custom_text"></textarea>
           </label>
         </div>
 
-        <div class="slider-container">
-          <div class="wedge"></div>
-          <div class="overlay green" slider-gradient="detailData.currentChoice.value"></div>
-        </div>
+        <div class="slider-container" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">
+          <div class="wedge-container">
+            <div class="wedge"></div>
+            <div class="overlay green" slider-gradient="detailData.currentChoice.value"></div>
+          </div>
 
-        <div class="range range-balanced" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">
+          <div class="range-container">
 
-          <input
-            type="range"
-            name="slider"
-            min="0"
-            max="100"
-            ng-model="detailData.currentChoice.value"
-            ng-disabled="detailData.currentChoice.slider_disabled"
-            ng-required="ifSliderNull(detailData.currentChoice)"
-          />
+            <div class="upper">
+              <span class="pull-left number">0</span>
+              <span class="pull-right number">10</span>
+              <div style="clear: both; height: 0;">&nbsp;</div>
+            </div>
+
+          <div class="range range-balanced">
+            <input
+              type="range"
+              name="slider"
+              min="0"
+              max="100"
+              ng-model="detailData.currentChoice.value"
+              ng-disabled="detailData.currentChoice.slider_disabled"
+              ng-required="ifSliderNull(detailData.currentChoice)"/>
+          </div>
+
+            <div class="lower">
+              <span class="pull-left text">not helpful</span>
+              <span class="pull-right text">very helpful</span>
+            </div>
+          </div>
         </div>
-        {{ detailData.currentChoice.value | sliderFilter }}
 
         <div class="slider-disable">
-          <div class="item item-checkbox">
-           <label class="checkbox">
-            <input
-              type="checkbox"
-              name="slider_disable"
-              ng-required="ifSliderNull(detailData.currentChoice)"
-              ng-model="detailData.currentChoice.slider_disabled"
-            />
-           </label>
-           Don't Know
-         </div>
+          <ul class="list">
+            <li class="item item-checkbox" style="width: 100%;">
+              <label class="checkbox">
+                <input
+                  type="checkbox"
+                  name="slider_disable"
+                  ng-required="ifSliderNull(detailData.currentChoice)"
+                  ng-model="detailData.currentChoice.slider_disabled" />
+             </label>
+             Don't Know
+
+            </li>
+          </ul>
         </div>
       </form>
+
+      <!-- detailData: {{ detailData.currentChoice | json }} <br/> -->
+
     </section>
-
-    detailData: {{ detailData.currentChoice | json }} <br/>
-
   </ion-content>
-
 </div>

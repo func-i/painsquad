@@ -11,6 +11,36 @@
         border-bottom: 5px solid red;
       }
 
+      .content-actual {
+        font-size:     18px;
+        position:      relative;
+        height:        80px;
+        border-bottom: 1px solid lightgray;
+        text-align:    center;
+        padding:       15px;
+        display:       block;
+
+        &::before {
+          content:    '';
+          position:   absolute;
+          top:        0; left: 0; bottom: 0; right: 0;
+          background: url('/images/content-bg.jpg');
+          opacity:    0.2;
+          width:      100%;
+        }
+      }
+
+      .content-textarea {
+        // margin: 20px 20px 0 20px;
+        padding: 20px;
+        // padding-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+
+        textarea {
+          resize: none;
+        }
+      }
+
       .map section svg {
         margin: 10px;
       }
@@ -34,7 +64,13 @@
           @extend .override;
           @extend .diagonal;
         }
+      }
 
+      .slider-disable {
+        .item.item-checkbox {
+          width: 100%;
+          margin-bottom: 20px;
+        }
       }
     }
   }
