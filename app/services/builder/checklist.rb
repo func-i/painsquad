@@ -5,7 +5,7 @@ module Builder::Checklist
 
   DESCRIBE_PAIN = [
     'Beating', 'Burning', 'Cramping', 'Cruel', 'Cutting', 'Drilling', 'Fearful',
-    'Horrible', 'Hurting', 'Itching', 'Like Needles', 'Miserable', 'Pinching',
+    'Horrible', 'Hurting', 'Itching', 'Needles', 'Miserable', 'Pinching',
     'Pounding', 'Prickling', 'Pulling', 'Shooting', 'Sickening', 'Squeezing',
     'Stinging', 'Throbbing', 'Tingling', 'Tiring', 'Unbearable', 'Uncomfortable'
   ]
@@ -46,7 +46,6 @@ module Builder::Checklist
         content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last report',
         tip:           'You can click multiple answers'
       )
-      question.choices.create content: 'None', can_disable: true
       DESCRIBE_PAIN.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other', textfield: true
     end

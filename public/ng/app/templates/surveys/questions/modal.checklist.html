@@ -1,7 +1,7 @@
 <div class="modal" ng-controller="ChecklistDetailCtrl" ng-cloak>
 
-  <ion-header-bar class="bar bar-header bar-light">
-    <h1 class="title">{{ detailData.currentChoice.content }}</h1>
+  <ion-header-bar class="bar bar-header bar-royal">
+    <h1 class="title">Pain Case</h1>
 
     <button
       class="button button-clear button-primary"
@@ -17,20 +17,21 @@
     </button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="has-header checklist-detail">
+  <ion-content padding="true" class="has-header modal-inherit checklist-detail">
 
-    <section class="detail-slider">
+    <section class="detail-slider content">
+      <div class="header"></div>
 
       <form name="currentForm" valid-modal-form>
 
-        <div ng-show="!detailData.currentChoice.textfield">
+        <div class="" ng-show="!detailData.currentChoice.textfield">
           <p>How helpful was this in reducing your pain?</p>
         </div>
 
         <div ng-if="detailData.currentChoice.textfield == true">
           <p>Please specify what other medications you took</p>
-          <label class="item item-input">
 
+          <label class="item item-input">
             <textarea rows="5"
               ng-required="ifTextareaPresent(detailData.currentChoice)"
               name="custom_text"

@@ -39,11 +39,13 @@
     }
 
     .tip {
-      margin: 10px 30px 10px 30px;
+      clear:   both;
+      color:   rgb(80, 80, 80);
+      margin:  10px 30px 10px 30px;
       padding: 10px 5px 10px 5px;
       p {
         padding: 5px 20px 5px 20px;
-        border: 1px solid red;
+        border:  1px solid red;
       }
     }
   }

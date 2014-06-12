@@ -1,26 +1,23 @@
 <section class="checklist-grid" ng-controller="ChecklistGridCtrl" ng-cloak>
 
   <form name="currentForm" valid-form>
-    <div class="row grid-list">
-      <div class="col" ng-repeat="choice in question.choices" ng-class="{'last': $last}">
-
-        <label class="checkbox content">
-          {{ choice.content }}
-          <input
-          type="checkbox"
-          class="pull-right"
-          ng-required="atLeastOne()"
-          ng-model="choice.selected" />
+    <div ng-repeat="choice in question.choices">
+      <li class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox"
+            ng-required="atLeastOne()"
+            ng-model="choice.selected"/>
         </label>
+        <span class="content">{{ choice.content }}</span>
 
-        <label ng-show="choice.textfield && choice.selected" class="item item-input">
-          <textarea
-            ng-model="choice.value"
-            placeholder="Please specify"
-            rows="5"></textarea>
-        </label>
-
-      </div>
+      </li>
+      <label ng-show="choice.textfield && choice.selected" class="item item-input">
+        <textarea
+          ng-model="choice.value"
+          placeholder="Please specify"
+          rows="5"></textarea>
+      </label>
+      <hr class="divider">
     </div>
   </form>
 

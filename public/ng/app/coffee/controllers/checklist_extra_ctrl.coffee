@@ -4,7 +4,7 @@
   $scope.detailData =
     currentChoice = {}
 
-  $ionicModal.fromTemplateUrl "templates/surveys/question/modal.checklist.html", (modal) ->
+  $ionicModal.fromTemplateUrl "templates/surveys/questions/modal.checklist.html", (modal) ->
     $scope.modal = modal
   ,
     animation: "slide-in-up"
@@ -30,13 +30,13 @@
         choice.selected = false
         choice.disabled = !choice.disabled
 
-  # TODO: remove underscore depencency and clean this up
   $scope.atLeastOne = ->
-    atLeastOne = _.some $scope.question.choices, (choice) ->
+    inverse = null
+    for choice in $scope.question.choices
       if choice.textfield
-        choice.selected && choice.custom_text && choice.custom_text.length > 5
-      else
-        choice.selected
-    !atLeastOne
+        inverse = true if choice.selected and choice.value and choice.value.length > 5
+      else if choice.selected
+        inverse = true
+    !inverse
 
 @ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']

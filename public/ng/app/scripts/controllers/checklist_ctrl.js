@@ -22,15 +22,20 @@
       return _results;
     };
     return $scope.atLeastOne = function() {
-      var atLeastOne;
-      atLeastOne = _.some($scope.question.choices, function(choice) {
+      var choice, inverse, _i, _len, _ref;
+      inverse = null;
+      _ref = $scope.question.choices;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        choice = _ref[_i];
         if (choice.textfield) {
-          return choice.selected && choice.value && choice.value.length > 5;
-        } else {
-          return choice.selected;
+          if (choice.selected && choice.value && choice.value.length > 5) {
+            inverse = true;
+          }
+        } else if (choice.selected) {
+          inverse = true;
         }
-      });
-      return !atLeastOne;
+      }
+      return !inverse;
     };
   });
 
