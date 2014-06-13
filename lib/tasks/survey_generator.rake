@@ -20,7 +20,7 @@ namespace :survey do
   desc 'Test Survey'
   task :test => [:environment] do
     Rake::Task['survey:clear_all'].invoke
-    SurveyBuilder.new(identifier: 'full').build
+    SurveyBuilder.new(identifier: 'test').build
   end
 
   task :all => [:environment, :full, :truncated] do

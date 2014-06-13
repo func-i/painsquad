@@ -1,6 +1,6 @@
 // full-width clickable checkboxes
 label.checkbox {
-  width: 100%;
+  // width: 100%;
 }
 
 // diagonal transparent background
@@ -11,10 +11,9 @@ label.checkbox {
     content: '';
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background-image: url('/images/content-bg-25.png');
+    background-image: url('/images/content-bg.png');
     width: 100%;
-    // opacity: 0.25;
-    // background-image: url('/images/content-bg.jpg');
+    opacity: 0.1;
   }
 }
 

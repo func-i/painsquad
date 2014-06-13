@@ -22,6 +22,7 @@
     $scope.continueSurvey = function() {
       $scope.questionIndex++;
       if ($scope.questionIndex > $scope.totalQuestions - 1) {
+        $scope.showSubmit = true;
         return $scope.finishSurvey();
       } else {
         $scope.$broadcast('resetQuestion');
@@ -48,7 +49,8 @@
         width: "" + $scope.surveyProgress + "%"
       };
     };
-    return $scope.startSurvey();
+    $scope.startSurvey();
+    return $scope.showSubmit = false;
   });
 
   this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];

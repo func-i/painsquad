@@ -27,6 +27,7 @@
   $scope.continueSurvey = ->
     $scope.questionIndex++
     if $scope.questionIndex > $scope.totalQuestions - 1
+      $scope.showSubmit = true
       $scope.finishSurvey()
     else
       $scope.$broadcast 'resetQuestion'
@@ -52,5 +53,6 @@
 
   # DEFAULT ACTIONS
   $scope.startSurvey()
+  $scope.showSubmit = false
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']

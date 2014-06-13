@@ -9,17 +9,15 @@
     <button
       class="button button-positive button-clear icon button-icon icon-right ion-ios7-arrow-right"
       ng-click="nextQuestion()"
-      ng-show="showNext" style="color: white;">
+      ng-if="showNext" style="color: white;">
         Next
     </button>
 
-<!--
     <button
       class="button button-positive button-clear"
-      ng-show="showSubmit" style="color: white;">
+      ng-if="showSubmit" style="color: white;">
         Submit
     </button>
- -->
   </ion-nav-buttons>
 
   <div class="progress">
@@ -38,7 +36,7 @@
   </div>
 
   <ion-content class="survey">
-    <div class="progress-mock" style="height: 60px;"></div>
+  <div class="progress-mock"></div>
 
     <div class="question-body">
       <section class="question">
@@ -79,10 +77,11 @@
           </div>
 
         </div>
-      </section>
 
-      <section class="tip" ng-show="question.tip">
-        <p><strong>TIP:</strong> {{ question.tip }}</p>
+        <div class="tip" ng-show="question.tip">
+          <p><strong>TIP:</strong> {{ question.tip}} </p>
+        </div>
+
       </section>
    </div>
 
