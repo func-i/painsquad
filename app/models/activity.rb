@@ -32,13 +32,9 @@ class Activity < ActiveRecord::Base
   after_save :process_interaction
 
   def process_interaction
-    UserInteractorService.process(user: user, interaction_object: self, interaction_type: :recommendation_complete)
+    if recommendation?
+      UserInteractorService.process(user: user, interaction_object: self, interaction_type: :recommendation_complete)
+    end
   end
-
-  # after_create :check_user_award_eligibility
-
-  # def check_user_award_eligibility
-  #   AwardService.analyze(self)
-  # end
 
 end
