@@ -58,7 +58,6 @@ class SurveyBuilder
   end
 
   def build_test_survey
-    Builder::Checklist.medication_efficacy_slider(@survey)
     Builder::Other.textbox(@survey)
   end
 
