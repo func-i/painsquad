@@ -13,6 +13,8 @@
 #
 
 class Activity < ActiveRecord::Base
+  include UserInteractor
+
   belongs_to :subject, polymorphic: true
   belongs_to :user
 
@@ -29,12 +31,12 @@ class Activity < ActiveRecord::Base
     subject_type == 'Recommendation'
   end
 
-  after_save :process_interaction
+  # after_save :process_interaction
 
-  def process_interaction
-    if recommendation?
-      UserInteractorService.process(user: user, interaction_object: self, interaction_type: :recommendation_complete)
-    end
-  end
+  # def process_interaction
+  #   if recommendation?
+  #     UserInteractorService.process(user: user, interaction_object: self, interaction_type: :recommendation_complete)
+  #   end
+  # end
 
 end

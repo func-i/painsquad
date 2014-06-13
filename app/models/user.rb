@@ -24,6 +24,8 @@
 #
 
 class User < ActiveRecord::Base
+  include UserInteractor
+
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -37,20 +39,8 @@ class User < ActiveRecord::Base
 
   after_create :grant_api_access, :register_create_event
 
-  def first_submission!
-    update(commendation: true)
-  end
-
-  def first_recommendation!
-    update(medal: true)
-  end
-
   def display_rank
-    if rank.include? '_'
-      rank.split('_').map(&:capitalize).join(' ')
-    else
-      rank.capitalize
-    end
+    rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
   end
 
   def next_level

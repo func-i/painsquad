@@ -12,6 +12,8 @@
 #
 
 class Submission < ActiveRecord::Base
+  include UserInteractor
+
   belongs_to :survey
   belongs_to :user
 
@@ -26,11 +28,5 @@ class Submission < ActiveRecord::Base
   validates :survey, presence: true
   validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
-
-  after_save :process_interaction
-
-  def process_interaction
-    UserInteractorService.process(user: user, interaction_object: self, interaction_type: :submission_complete)
-  end
 
 end
