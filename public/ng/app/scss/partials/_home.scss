@@ -1,4 +1,5 @@
 .home {
+
   .rank {
     height: 314px;
     margin-bottom: 23px;
@@ -18,6 +19,9 @@
   }
 
   .action {
+    button.not-assertive {
+      background-color: $alternate-assertive;
+    }
     .override {
       // display:       block;
       // border:        0;

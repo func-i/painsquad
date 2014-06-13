@@ -1,9 +1,4 @@
 .survey {
-  // TODO: fix linear gradient background image
-  background: url('/images/survey/survey-bg.png');
-  // background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $background-gradient-start), color-stop(100%, $background-gradient-end));
-  // background: url('/images/survey/wood-bg.jpg'), -webkit-linear-gradient(top,  $background-gradient-start 0%, $background-gradient-end 100%);
-  // background: url('/images/survey/wood-bg.jpg'), linear-gradient(to bottom,  $background-gradient-start 0%, $background-gradient-end 100%);
 
   .progress-mock { height: 60px; }
 
@@ -32,7 +27,7 @@
           content:    '';
           position:   absolute;
           top:        0; left: 0; bottom: 0; right: 0;
-          background: url('/images/content-bg.png');
+          background: url('/images/background/content.png');
           background-color: lightgray;
           opacity:    0.1;
           width:      100%;
@@ -51,5 +46,4 @@
       }
     }
   }
-
 }
