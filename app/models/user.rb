@@ -24,8 +24,6 @@
 #
 
 class User < ActiveRecord::Base
-  include UserInteractor
-
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -38,6 +36,7 @@ class User < ActiveRecord::Base
   LEVELS = [ 300, 700, 1200, 2000, 2800 ]
 
   after_create :grant_api_access, :register_create_event
+  after_update :create_rank_event, :if => :rank_changed?
 
   def display_rank
     rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
@@ -78,6 +77,10 @@ class User < ActiveRecord::Base
 
   def register_create_event
     Activity.create(subject: self, user: self, event: 'user_created')
+  end
+
+  def create_rank_event
+    Activity.create(subject: self, user: self, name: rank, event: 'level_up')
   end
 
 end

@@ -3,7 +3,6 @@ module UserInteractor
 
   included do
     after_save :process_save_interaction
-    # after_update :process_update_interaction
   end
 
   def process_save_interaction
@@ -12,18 +11,10 @@ module UserInteractor
       set_pain_severity
       calculate_score
     elsif self.class == Activity
-      if event == 'recommendation_complete'
-        handle_advice_events
-      end
+      user.increment!(:score, 5) if recommendation? && user.advice_score_unlocked?
     end
+    EventService.analyze(self.user)
   end
-
-  def process_update_interaction
-    if self.class == User
-      analyze_user_score
-    end
-  end
-
 
   # Submission Events
   def register_submission_event
@@ -38,21 +29,6 @@ module UserInteractor
 
   def calculate_score
     ScoringService.analyze(self)
-  end
-
-
-  # Activity Events
-  def handle_advice_events
-    debug "inside handle_advice_events"
-  end
-
-  def debug(msg)
-    logger.info "----------------------#{msg}"
-  end
-
-  # User Events
-  def analyze_user_score
-    AwardService.analyze(self)
   end
 
 end

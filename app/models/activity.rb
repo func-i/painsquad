@@ -31,12 +31,4 @@ class Activity < ActiveRecord::Base
     subject_type == 'Recommendation'
   end
 
-  # after_save :process_interaction
-
-  # def process_interaction
-  #   if recommendation?
-  #     UserInteractorService.process(user: user, interaction_object: self, interaction_type: :recommendation_complete)
-  #   end
-  # end
-
 end
