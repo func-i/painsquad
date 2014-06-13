@@ -38,12 +38,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          # resolve:
-          #   currentUser: (User, $q) ->
-          #     defer = $q.defer()
-          #     User.query (response) ->
-          #       defer.resolve respone
-          #     defer.promise
+          resolve:
+            userScore: (User, $q) ->
+              defer = $q.defer()
+              User.query (response) ->
+                defer.resolve response.user
+              defer.promise
     )
 
     .state('app.login',

@@ -40,7 +40,17 @@
       views: {
         menuContent: {
           templateUrl: 'templates/shared/home.html',
-          controller: 'HomeCtrl'
+          controller: 'HomeCtrl',
+          resolve: {
+            userScore: function(User, $q) {
+              var defer;
+              defer = $q.defer();
+              User.query(function(response) {
+                return defer.resolve(response.user);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.login', {

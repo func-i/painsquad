@@ -1,7 +1,6 @@
 class ScoringService
-  FULL_SCORE      = 25
-  TRUNC_SCORE     = 10
-  # LEVEL_THRESHOLD = [ 300, 700, 1200, 2000, 2800 ]
+  FULL_SCORE  = 25
+  TRUNC_SCORE = 10
 
   def self.analyze(submission)
     new(submission).process

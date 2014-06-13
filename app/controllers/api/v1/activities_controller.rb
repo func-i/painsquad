@@ -7,6 +7,8 @@ module Api
         @activity.user = @user
         if @activity.save
           render json: @activity
+          # TODO: find a better place for this, only allow once for survey completed
+          @activity.user.increment! :score, 5
         else
           render json: { errors: @activity.errors.full_messages }, status: :unprocessable_entity
         end
