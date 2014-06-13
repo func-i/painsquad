@@ -8,7 +8,7 @@
 
   $ionicModal.fromTemplateUrl "templates/surveys/questions/modal.bodymap.html",
     scope: $scope
-    animation: "slide-left-right-ios7"
+    animation: "slide-left-right"
   .then (modal) ->
     $scope.modal = modal
 

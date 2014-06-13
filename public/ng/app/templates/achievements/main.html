@@ -13,7 +13,7 @@
             <div class="wrapper">
               <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
               <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
-              <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
+              <img ng-src="{{slide.image_path}}" ng-if="!slide.locked" style="width: 200px;">
             </div>
 
             <h4 ng-if="!slide.locked">{{ slide.title }}</h4>

@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
   LEVELS = [ 300, 700, 1200, 2000, 2800 ]
 
   after_create :grant_api_access, :register_create_event
-  after_update :register_event
 
   def first_submission!
     update(commendation: true)
@@ -76,6 +75,11 @@ class User < ActiveRecord::Base
     activities.recommendation_events.count
   end
 
+  # TODO: must only allow advice scoring within certain restraints
+  def advice_score_unlocked?
+    true
+  end
+
   protected
 
   def grant_api_access
@@ -84,10 +88,6 @@ class User < ActiveRecord::Base
 
   def register_create_event
     Activity.create(subject: self, user: self, event: 'user_created')
-  end
-
-  def register_event
-    EventService.create_activity(self)
   end
 
 end

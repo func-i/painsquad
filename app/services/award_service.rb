@@ -16,6 +16,7 @@ class AwardService
     elsif @last_event.recommendation?
       check_advice
     end
+    register_event
   end
 
   protected
@@ -38,4 +39,28 @@ class AwardService
     end
   end
 
+  def register_event
+    if @user.rank_changed?
+      activity_builder(@user.rank, 'level_up')
+    elsif @user.commendation_changed?
+      activity_builder('commendation', 'award_achieved')
+    elsif @user.medal_changed?
+      activity_builder('medal', 'award_achieved')
+    elsif @user.award_level_changed?
+      activity_builder('award', 'award_achieved')
+    elsif @user.cross_level_changed?
+      activity_builder('cross', 'award_achieved')
+    elsif @user.star_level_changed?
+      activity_builder('star', 'award_achieved')
+    end
+  end
+
+  private
+
+  def activity_builder(name, event)
+    return unless name && event
+    Activity.create(subject: @user, user: @user, name: name, event: event)
+  end
+
 end
+

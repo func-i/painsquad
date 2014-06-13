@@ -11,7 +11,7 @@ module Builder::Checklist
   ]
 
   OTHER_SYMPTOMS = [
-    'Nausea', 'Feeling drowsy', 'Numbness/Tingling', 'Vomiting', 'Itching',
+    'Nausea', 'Drowsiness', 'Tingling', 'Numbness', 'Vomiting', 'Itching',
     'Lack of appetite', 'Difficulty swallowing', 'Mouth sores', 'Constipation',
     'Changes in skin', 'Diarrhea'
   ]
@@ -55,7 +55,6 @@ module Builder::Checklist
         question_type: 'checklist-grid',
         content:       'What other <strong>symptoms</strong> have you experienced in the last 12 hours?'
       )
-      question.choices.create content: 'None', can_disable: true
       OTHER_SYMPTOMS.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other', textfield: true
     end

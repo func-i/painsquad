@@ -16,7 +16,8 @@ class UserInteractorService
       set_pain_severity
       set_score
     elsif advice_interaction?
-      binding.pry
+      set_advice_score
+      check_award_eligibility
     end
   end
 
@@ -42,6 +43,15 @@ class UserInteractorService
 
   def set_score
     ScoringService.analyze(@interaction_object)
+  end
+
+  def set_advice_score
+    @user.increment!(:score, 5) if @user.advice_score_unlocked?
+  end
+
+  # checks last user event to determine if user eligible for award
+  def check_award_eligibility
+    AwardService.analyze(@interaction_object)
   end
 
 end
