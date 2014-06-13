@@ -27,20 +27,10 @@ class Submission < ActiveRecord::Base
   validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
 
-  after_save :register_event, :set_pain_severity, :set_score
+  after_save :process_interaction
 
-  def register_event
-    Activity.create(subject: self, user: user, event: 'submission_complete')
-  end
-
-  def set_pain_severity
-    if has_pain && pain_severity.nil?
-      PainSeverityService.analyze(self)
-    end
-  end
-
-  def set_score
-    ScoringService.analyze(self)
+  def process_interaction
+    UserInteractorService.process(user: user, interaction_object: self, interaction_type: :submission_complete)
   end
 
 end

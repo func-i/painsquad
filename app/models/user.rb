@@ -83,11 +83,7 @@ class User < ActiveRecord::Base
   end
 
   def register_create_event
-    Activity.create(
-      subject: self,
-      user:    self,
-      event:   'user_created'
-    )
+    Activity.create(subject: self, user: self, event: 'user_created')
   end
 
   def register_event
