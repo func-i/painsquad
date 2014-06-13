@@ -3,7 +3,7 @@
   <form name="currentForm" valid-form>
     <ul>
       <div ng-repeat="choice in question.choices">
-        <li class="item item-checkbox">
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled, 'textfield': choice.textfield }">
             <label class="checkbox">
 
               <input
@@ -21,8 +21,8 @@
 
             <textarea
               ng-model="choice.value"
-              placeholder="Please specify"
-              rows="5"></textarea>
+              placeholder="Please specify..."
+              rows="4"></textarea>
 
           </label>
         </li>

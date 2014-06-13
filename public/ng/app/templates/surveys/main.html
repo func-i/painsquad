@@ -12,9 +12,17 @@
       ng-show="showNext" style="color: white;">
         Next
     </button>
+
+<!--
+    <button
+      class="button button-positive button-clear"
+      ng-show="showSubmit" style="color: white;">
+        Submit
+    </button>
+ -->
   </ion-nav-buttons>
 
- <div class="progress bar bar bar-subheader">
+  <div class="progress">
     <div class="progress-block"></div>
 
     <div class="progress-actual">
@@ -29,7 +37,8 @@
     </div>
   </div>
 
-  <ion-content class="has-header survey">
+  <ion-content class="survey">
+    <div class="progress-mock" style="height: 60px;"></div>
 
     <div class="question-body">
       <section class="question">
@@ -73,9 +82,9 @@
       </section>
 
       <section class="tip" ng-show="question.tip">
-        <p>TIP: {{ question.tip }}</p>
+        <p><strong>TIP:</strong> {{ question.tip }}</p>
       </section>
-    </div>
+   </div>
 
   </ion-content>
 </ion-view>

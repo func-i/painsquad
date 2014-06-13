@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) {
+  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $stateParams, $ionicScrollDelegate, survey, AuthService, SurveyService, SubmissionService, BodymapService) {
     $scope.startSurvey = function() {
       $scope.submission = SubmissionService.init(survey.id);
       $scope.questionIndex = 0;
@@ -25,7 +25,8 @@
         return $scope.finishSurvey();
       } else {
         $scope.$broadcast('resetQuestion');
-        return $scope.question = survey.questions[$scope.questionIndex];
+        $scope.question = survey.questions[$scope.questionIndex];
+        return $ionicScrollDelegate.scrollTop();
       }
     };
     $scope.finishSurvey = function() {
@@ -50,6 +51,6 @@
     return $scope.startSurvey();
   });
 
-  this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];
+  this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];
 
 }).call(this);

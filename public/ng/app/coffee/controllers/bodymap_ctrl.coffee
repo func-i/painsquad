@@ -6,9 +6,9 @@
     choice:         {}
     tempSelections: []
 
-  $ionicModal.fromTemplateUrl "templates/surveys/question_types/modal.bodymap.html",
+  $ionicModal.fromTemplateUrl "templates/surveys/questions/modal.bodymap.html",
     scope: $scope
-    animation: "slide-in-up"
+    animation: "slide-left-right-ios7"
   .then (modal) ->
     $scope.modal = modal
 
@@ -40,7 +40,7 @@
   # render bodymap partial from selected pain region
   $scope.renderBodymapPartial = ->
     return unless $scope.modalSelection.choice.content?
-    "templates/surveys/question_types/bodymap.#{getPainRegion()}.html"
+    "templates/surveys/questions/bodymap.#{getPainRegion()}.html"
 
   # convenience method to pass around pain region
   getPainRegion = ->

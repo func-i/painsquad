@@ -1,14 +1,19 @@
 (function() {
   'use strict';
   this.RadioCtrl = this.controllerModule.controller("RadioCtrl", function($scope, $state) {
-    return $scope.setRadioAnswer = function(question, choice) {
-      var c, _i, _len, _ref;
-      _ref = question.choices;
+    return $scope.deselectOtherSelections = function(selectedChoice) {
+      var choice, _i, _len, _ref, _results;
+      _ref = $scope.question.choices;
+      _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        c = _ref[_i];
-        delete c.selected;
+        choice = _ref[_i];
+        if (choice !== selectedChoice) {
+          _results.push(choice.selected = false);
+        } else {
+          _results.push(void 0);
+        }
       }
-      return choice.selected = true;
+      return _results;
     };
   });
 

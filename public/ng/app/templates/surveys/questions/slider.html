@@ -1,19 +1,33 @@
 <section class="default-slider" ng-cloak ng-controller="SliderCtrl">
 
-  <form name="currentForm" valid-radio-form>
+  <form name="currentForm" valid-radio-form class="slider-container">
 
-    <div class="slider-container">
+    <div class="wedge-container">
       <div class="wedge"></div>
       <div class="overlay red" slider-gradient="question.choices[0].value"></div>
     </div>
 
-    <div class="range range-assertive">
-      <input required
-        type="range"
-        ng-model="question.choices[0].value">
+    <div class="range-container">
+
+      <div class="upper">
+        <span class="pull-left number">0</span>
+        <span class="pull-right number">10</span>
+        <div style="clear: both; height: 0;">&nbsp;</div>
+      </div>
+
+      <div class="range range-assertive">
+        <input required
+          type="range"
+          ng-model="question.choices[0].value">
+      </div>
+
+      <div class="lower">
+        <span class="pull-left text">no pain</span>
+        <span class="pull-right text">worst possible pain</span>
+      </div>
     </div>
 
-    sliderValue: {{ question.choices[0].value | sliderFilter }}
+    <!-- sliderValue: {{ question.choices[0].value | sliderFilter }} -->
 
   </form>
 

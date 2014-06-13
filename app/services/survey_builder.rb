@@ -1,5 +1,5 @@
 class SurveyBuilder
-  VALID_SURVEYS = %w( full truncated )
+  VALID_SURVEYS = %w( full truncated test )
 
   def initialize(params = {})
     @identifier = params.fetch :identifier
@@ -55,6 +55,10 @@ class SurveyBuilder
     Builder::Checklist.medication_efficacy_slider(@survey)
     Builder::Checklist.other_strategies(@survey)
     Builder::Slider.pain_control(@survey)
+  end
+
+  def build_test_survey
+    Builder::Other.textbox(@survey)
   end
 
 end

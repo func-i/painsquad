@@ -2,7 +2,7 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, survey, AuthService, SurveyService, SubmissionService, BodymapService) ->
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $stateParams, $ionicScrollDelegate, survey, AuthService, SurveyService, SubmissionService, BodymapService) ->
 
   $scope.startSurvey = ->
     $scope.submission     = SubmissionService.init(survey.id)
@@ -31,6 +31,7 @@
     else
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
+      $ionicScrollDelegate.scrollTop()
 
   $scope.finishSurvey = ->
     $state.go('app.survey_complete')
@@ -52,4 +53,4 @@
   # DEFAULT ACTIONS
   $scope.startSurvey()
 
-@SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']
+@SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']

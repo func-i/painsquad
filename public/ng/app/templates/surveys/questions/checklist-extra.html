@@ -4,7 +4,7 @@
     <ul>
       <div ng-repeat="choice in question.choices">
 
-        <li class="item item-checkbox">
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled }">
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox"
               ng-click="goToSectionOrDisable(choice)"
@@ -13,8 +13,7 @@
               ng-disabled="choice.disabled" />
           </label>
           {{ choice.content }}
-          <span class="icon-right ion-chevron-right" style="float: right;"
-            ng-hide="choice.can_disable"></span>
+          <span class="icon-right ion-chevron-right" style="float: right;"></span>
         </li>
 
       </div>

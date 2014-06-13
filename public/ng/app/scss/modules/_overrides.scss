@@ -1,18 +1,50 @@
-
+// VARIABLE OVERRIDES
 // topbar
 $royal: #00aed7;
-
 // red button
 $assertive: #df4461;
-// $assertive: #D22C4D;
-
 // blue button
 $positive: #33bedf;
+// gray button
+$stable: #D9DCDE;
 
+
+// HEADER/SIDEMENU
+// FIXME: these do not work on device/emulator, likely due to lack of specificity
 ion-nav-bar.bar.bar-royal {
   border-color: transparent !important;
 }
 
 ion-side-menu.menu-left.menu {
   background-color: #5B6166 !important;
+}
+
+
+// FORM/INPUT OVERRIDES
+$checkbox-border:  #808A8F;
+$checkbox-checked: #FD4461;
+
+.checkbox input::before, .checkbox-icon::before {
+  border-radius: 0 !important;
+  border-color:  $checkbox-border !important;
+}
+
+.checkbox input:checked {
+  &:before, + .checkbox-icon:before {
+    background: $checkbox-checked !important;
+    border-color: $checkbox-checked !important;
+  }
+}
+
+// pseudo-radio checkbox override
+.checkbox#radio input::before, .checkbox-icon::before {
+  border-radius: 28px !important;
+}
+
+.checkbox#radio input:checked {
+  &::after, + .checkbox-icon::after {
+    // content: '\f16f' !important;
+    // background: $checkbox-checked !important;
+    // border-color: $checkbox-checked !important;
+  }
 }

@@ -1,0 +1,62 @@
+// full-width clickable checkboxes
+label.checkbox {
+  width: 100%;
+}
+
+// diagonal transparent background
+// FIXME: for some reason it has some opacity issue
+.diagonal {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: url('/images/content-bg-25.png');
+    width: 100%;
+    // opacity: 0.25;
+    // background-image: url('/images/content-bg.jpg');
+  }
+}
+
+button.override {
+  display:       block;
+  border:        0;
+  border-radius: 5px;
+  font-size:     20px;
+
+  &.home {
+    height:        44px;
+    width:         calc(100% - 140px);
+    min-width:     150px;
+    margin:        0 70px 10px 70px;
+  }
+
+  &.bottom-border {
+    box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
+  }
+
+  &.activated {
+    &.bottom-border {
+      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
+    }
+  }
+}
+
+
+.button-bar > a.button {
+  &.override {
+    color: $inactive-font;
+
+    &:first-child {
+      border-radius: 5px 0px 0px 5px;
+    }
+    &:last-child {
+      border-radius: 0px 5px 5px 0px;
+    }
+
+    &.active {
+      background-color:    $assertive;
+      color:               white;
+    }
+  }
+}

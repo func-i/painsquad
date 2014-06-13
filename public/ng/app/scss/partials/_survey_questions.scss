@@ -1,0 +1,133 @@
+// GENERAL STYLES
+li.item, .item.item-checkbox {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+// BOOLEAN
+.boolean {
+  height:       300px;
+  padding:      0 20px 0 20px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+
+// RADIO
+label.item.item-radio {
+  // background-color: red;
+  // margin: 5px;
+}
+
+
+// CHECKLIST
+section.checklist {
+  width: 100%;
+}
+
+label.other-textbox {
+  position: relative;
+  border-top: 0;
+  margin: 5px;
+  border: 1px solid gray;
+}
+
+li.item.item-checkbox {
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.textfield {
+    border-bottom: 0;
+  }
+}
+
+.item.item-input.other-textbox {
+  border-color: lightgray;
+  margin:       0 10px 0 60px;
+
+  textarea {
+    resize: none;
+  }
+}
+
+// CHECKLIST-GRID
+.checklist-grid {
+  div {
+    min-width: 50%;
+    max-width: 100%;
+    float: left;
+
+    .divider {
+      color: lightgrey;
+    }
+
+    li.item {
+      margin-top:       1px;
+      margin-bottom:    1px;
+      border:           0;
+      width:            100%;
+    }
+
+    .item.item-input {
+      border-color: lightgray;
+      margin:       0 10px 0 60px;
+
+      textarea {
+        resize: none;
+      }
+    }
+
+    &.last {
+      clear: left;
+      width: 100%;
+    }
+  }
+}
+
+// CHECKLIST-EXTRA
+
+.checklist-extra {
+
+}
+
+
+// BODYMAP
+.bodymap {
+
+  .item {
+    margin-left:  0px;
+    margin-right: 0px;
+    padding:      10px;
+
+    .ion-checkmark-circled {
+      position: absolute;
+      top:      35px;
+      left:     40px;
+    }
+
+    .content {
+      margin-left: 15px;
+      top: -10px;
+    }
+
+    .icon-right.ion-chevron-right {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+}
+
+
+// TEXTAREA
+
+.textbox {
+  padding: 20px;
+
+  textarea {
+    resize: none;
+  }
+
+}

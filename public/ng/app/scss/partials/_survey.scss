@@ -1,53 +1,51 @@
 .survey {
-  .scroll {
-    top: 44px;
-    // margin-top: 44px;
-  }
-
   // TODO: fix linear gradient background image
-  // background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $survey-gradient-start), color-stop(100%, $survey-gradient-end));
-  // background: url('/images/survey/wood-bg.jpg'), -webkit-linear-gradient(top,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* Chrome10+,Safari5.1+ */
-  // background: url('/images/survey/wood-bg.jpg'), linear-gradient(to bottom,  $survey-gradient-start 0%, $survey-gradient-end 100%); /* W3C */
+  background: url('/images/survey/wood-bg.jpg'), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $background-gradient-start), color-stop(100%, $background-gradient-end));
+  background: url('/images/survey/wood-bg.jpg'), -webkit-linear-gradient(top,  $background-gradient-start 0%, $background-gradient-end 100%);
+  background: url('/images/survey/wood-bg.jpg'), linear-gradient(to bottom,  $background-gradient-start 0%, $background-gradient-end 100%);
 
   .question-body {
-    height: 600px;
-    margin: 10px;
+    margin:     0 10px 0 10px;
     background: white;
 
     .question {
       .content-header {
-        height: 40px;
+        height: 30px;
+        border-bottom: 5px solid red;
       }
 
       .content-actual {
-        height:        100px;
-        border-top:    5px solid red;
-        border-bottom: 1px solid gray;
+        font-size:     18px;
+        position:      relative;
+        height:        80px;
+        border-bottom: 1px solid lightgray;
         text-align:    center;
         padding:       15px;
         display:       block;
-        position:      relative;
 
-        &:after {
-          position:   absolute;
-          height:     100px;
+        &::before {
           content:    '';
-          top:        0;
-          left:       0;
-          background: url('/images/survey/content-bg.jpg');
-          opacity:    0.25;
-          z-index:    -1;
+          position:   absolute;
+          top:        0; left: 0; bottom: 0; right: 0;
+          background: url('/images/content-bg.jpg');
+          opacity:    0.2;
+          width:      100%;
         }
       }
 
-      .choices {
-        margin-top: 20px;
-      }
+      // .choices {
+      //   height: 200px;
+      // }
     }
 
     .tip {
+      clear:   both;
+      color:   rgb(80, 80, 80);
+      margin:  10px 30px 10px 30px;
+      padding: 10px 5px 10px 5px;
       p {
-        border: 1px solid red;
+        padding: 5px 20px 5px 20px;
+        border:  1px solid red;
       }
     }
   }
