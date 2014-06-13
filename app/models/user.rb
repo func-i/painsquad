@@ -42,12 +42,11 @@ class User < ActiveRecord::Base
     rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
   end
 
+  # TODO: fix this method, not correct
   def next_level
     LEVELS.each do |level|
       if score < level
         return level - score
-      else
-        return 0
       end
     end
   end
