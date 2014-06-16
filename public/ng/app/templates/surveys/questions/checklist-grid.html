@@ -1,6 +1,7 @@
 <section class="checklist-grid" ng-controller="ChecklistGridCtrl" ng-cloak>
 
   <form name="currentForm" valid-form>
+
     <div ng-repeat="choice in question.choices">
       <li class="item item-checkbox">
         <label class="checkbox">
@@ -17,8 +18,9 @@
           placeholder="Please specify"
           rows="5"></textarea>
       </label>
-      <hr class="divider">
+      <!-- <hr class="divider"> -->
     </div>
+
   </form>
 
 </section>

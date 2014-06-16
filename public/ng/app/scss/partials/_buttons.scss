@@ -3,20 +3,6 @@ label.checkbox {
   // width: 100%;
 }
 
-// diagonal transparent background
-// FIXME: for some reason it has some opacity issue
-.diagonal {
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: url('/images/background/content.png');
-    width: 100%;
-    opacity: 0.1;
-  }
-}
-
 button.override {
   display:       block;
   border:        0;

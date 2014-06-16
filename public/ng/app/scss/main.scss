@@ -1,7 +1,6 @@
 @import
   // modules are sass-only styles (variables, mixins, overrides)
   'modules/defaults',
-  'modules/layout',
   'modules/variables',
   'modules/helpers',
   'modules/overrides',
@@ -9,7 +8,6 @@
   // view and template-related styles
   'partials/intro',
   'partials/buttons',
-  'partials/sidebar',
   'partials/progress',
 
   // state-specific partial styling
