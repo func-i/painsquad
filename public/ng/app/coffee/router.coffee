@@ -16,7 +16,7 @@ interceptor.$inject = ['$q', '$injector']
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  # $httpProvider.responseInterceptors.push(interceptor)
+  $httpProvider.responseInterceptors.push(interceptor)
   $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'
@@ -38,12 +38,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
-          # resolve:
-          #   userScore: (User, $q) ->
-          #     defer = $q.defer()
-          #     User.query (response) ->
-          #       defer.resolve response.user
-          #     defer.promise
+          resolve:
+            userScore: (User, $q) ->
+              defer = $q.defer()
+              User.query (response) ->
+                defer.resolve response.user
+              defer.promise
     )
 
     .state('app.login',

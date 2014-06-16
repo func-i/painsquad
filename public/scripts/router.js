@@ -25,6 +25,7 @@
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    $httpProvider.responseInterceptors.push(interceptor);
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
@@ -39,7 +40,17 @@
       views: {
         menuContent: {
           templateUrl: 'templates/shared/home.html',
-          controller: 'HomeCtrl'
+          controller: 'HomeCtrl',
+          resolve: {
+            userScore: function(User, $q) {
+              var defer;
+              defer = $q.defer();
+              User.query(function(response) {
+                return defer.resolve(response.user);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.login', {
