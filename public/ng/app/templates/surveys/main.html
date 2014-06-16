@@ -39,54 +39,51 @@
   <div class="progress-mock"></div>
 
     <div class="content-wrapper">
+      <img class="content-header" ng-src="images/background/binder-clips.png">
 
-      <img class="content-header" ng-src="images/background/binder-clips.png" alt="">
+      <section class="question">
+        <div class="content-actual" ng-bind-html="question.content"></div>
+        <div class="choices" ng-switch="question.question_type">
 
-      <div class="question-body">
-        <section class="question">
-          <div class="content-actual" ng-bind-html="question.content"></div>
-          <div class="choices" ng-switch="question.question_type">
-
-            <div ng-switch-when="boolean">
-              <div ng-include src="'templates/surveys/questions/boolean.html'"></div>
-            </div>
-
-            <div ng-switch-when="slider">
-              <div ng-include src="'templates/surveys/questions/slider.html'"></div>
-            </div>
-
-            <div ng-switch-when="radio">
-              <div ng-include src="'templates/surveys/questions/radio.html'"></div>
-            </div>
-
-            <div ng-switch-when="checklist">
-              <div ng-include src="'templates/surveys/questions/checklist.html'"></div>
-            </div>
-
-            <div ng-switch-when="checklist-grid">
-              <div ng-include src="'templates/surveys/questions/checklist-grid.html'"></div>
-            </div>
-
-            <div ng-switch-when="checklist-extra">
-              <div ng-include src="'templates/surveys/questions/checklist-extra.html'"></div>
-            </div>
-
-            <div ng-switch-when="bodymap">
-              <div ng-include src="'templates/surveys/questions/bodymap.html'"></div>
-            </div>
-
-            <div ng-switch-when="textbox">
-              <div ng-include src="'templates/surveys/questions/textbox.html'"></div>
-            </div>
-
+          <div ng-switch-when="boolean">
+            <div ng-include src="'templates/surveys/questions/boolean.html'"></div>
           </div>
 
-          <div class="tip" ng-show="question.tip">
-            <p><strong>TIP:</strong> {{ question.tip}} </p>
+          <div ng-switch-when="slider">
+            <div ng-include src="'templates/surveys/questions/slider.html'"></div>
           </div>
 
-        </section>
-     </div>
+          <div ng-switch-when="radio">
+            <div ng-include src="'templates/surveys/questions/radio.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist">
+            <div ng-include src="'templates/surveys/questions/checklist.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist-grid">
+            <div ng-include src="'templates/surveys/questions/checklist-grid.html'"></div>
+          </div>
+
+          <div ng-switch-when="checklist-extra">
+            <div ng-include src="'templates/surveys/questions/checklist-extra.html'"></div>
+          </div>
+
+          <div ng-switch-when="bodymap">
+            <div ng-include src="'templates/surveys/questions/bodymap.html'"></div>
+          </div>
+
+          <div ng-switch-when="textbox">
+            <div ng-include src="'templates/surveys/questions/textbox.html'"></div>
+          </div>
+
+        </div>
+
+        <div class="tip" ng-show="question.tip">
+          <p><strong>TIP:</strong> {{ question.tip}} </p>
+        </div>
+
+      </section>
     </div>
 
   </ion-content>

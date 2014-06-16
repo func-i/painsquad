@@ -10,42 +10,39 @@
       display: block;
     }
 
-    .question-body {
+    .question {
       background: white;
+      min-height: 370px;
 
-      .question {
-        min-height: 370px;
+      .content-actual {
+        font-size:     18px;
+        position:      relative;
+        height:        80px;
+        border-bottom: 1px solid lightgray;
+        text-align:    center;
+        padding:       15px;
+        display:       block;
 
-        .content-actual {
-          font-size:     18px;
-          position:      relative;
-          height:        80px;
-          border-bottom: 1px solid lightgray;
-          text-align:    center;
-          padding:       15px;
-          display:       block;
-
-          &::before {
-            content:    '';
-            position:   absolute;
-            top:        0; left: 0; bottom: 0; right: 0;
-            background: url('/images/background/content.png');
-            background-color: lightgray;
-            opacity:    0.1;
-            width:      100%;
-          }
+        &::before {
+          content:    '';
+          position:   absolute;
+          top:        0; left: 0; bottom: 0; right: 0;
+          background: url('/images/background/content.png');
+          background-color: lightgray;
+          opacity:    0.1;
+          width:      100%;
         }
       }
+    }
 
-      .tip {
-        clear:   both;
-        color:   rgb(80, 80, 80);
-        margin:  10px 30px 10px 30px;
-        padding: 10px 5px 10px 5px;
-        p {
-          padding: 5px 20px 5px 20px;
-          border:  1px solid red;
-        }
+    .tip {
+      clear:   both;
+      color:   rgb(80, 80, 80);
+      margin:  10px 30px 10px 30px;
+      padding: 10px 5px 10px 5px;
+      p {
+        padding: 5px 20px 5px 20px;
+        border:  1px solid red;
       }
     }
   }

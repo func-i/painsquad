@@ -7,8 +7,8 @@
           <input
             type="checkbox"
             ng-model="choice.selected"
-            ng-change="deselectOtherSelections(choice)">
-
+            ng-disabled="preventDeselect(choice)"
+            ng-change="deselectOther(choice)">
         </label>
         {{ choice.content }}
       </li>

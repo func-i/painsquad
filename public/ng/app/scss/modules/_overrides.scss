@@ -41,14 +41,23 @@ $checkbox-checked: #FD4461;
 }
 
 // pseudo-radio checkbox override
-.checkbox#radio input::before, .checkbox-icon::before {
-  border-radius: 28px !important;
-}
+label#radio { top: 58%; }
 
-.checkbox#radio input:checked {
-  &::after, + .checkbox-icon::after {
-    // content: '\f16f' !important;
-    // background: $checkbox-checked !important;
-    // border-color: $checkbox-checked !important;
+.checkbox#radio input, .checkbox-icon#radio {
+  height: 20px;
+  width: 20px;
+
+  &::before {
+    border-radius: 28px !important;
+  }
+
+  &::after {
+    border-radius: 14px;
+    background-color: white;
+    height: 8px;
+    width:  8px;
+    top:    30%;
+    left:   30%;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 1);
   }
 }

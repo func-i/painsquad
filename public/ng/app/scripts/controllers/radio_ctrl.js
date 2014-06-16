@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.RadioCtrl = this.controllerModule.controller("RadioCtrl", function($scope, $state) {
-    return $scope.deselectOtherSelections = function(selectedChoice) {
+    $scope.deselectOther = function(selectedChoice) {
       var choice, _i, _len, _ref, _results;
       _ref = $scope.question.choices;
       _results = [];
@@ -14,6 +14,11 @@
         }
       }
       return _results;
+    };
+    return $scope.preventDeselect = function(selectedChoice) {
+      if (selectedChoice.selected) {
+        return true;
+      }
     };
   });
 
