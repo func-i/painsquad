@@ -16,7 +16,7 @@ interceptor.$inject = ['$q', '$injector']
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  $httpProvider.responseInterceptors.push(interceptor)
+  # $httpProvider.responseInterceptors.push(interceptor)
   $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'

@@ -25,7 +25,6 @@
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $httpProvider.responseInterceptors.push(interceptor);
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
