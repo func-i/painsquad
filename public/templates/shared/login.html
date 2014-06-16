@@ -1,0 +1,38 @@
+<ion-view title="Login">
+
+  <ion-header-bar>
+    <div class="buttons" ng-show="isLoggedIn">
+      <button ng-click="back()" class="button button-icon icon ion-ios7-arrow-back">Back</button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="has-header" padding="true">
+    <div class="list" ng-hide="isLoggedIn">
+      <form name="loginForm" ng-submit="login()">
+        <label class="item item-input">
+          <input type="email" placeholder="Email" ng-model="credentials.email" required />
+        </label>
+
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="credentials.password" ng-minlength="5" required />
+        </label>
+
+        <button
+          type="submit"
+          class="button button-block button-positive"
+          ng-disabled="loginForm.$invalid">
+            Submit
+        </button>
+
+      </form>
+    </div>
+
+    <button
+      class="button button-block button-assertive"
+      ng-show="isLoggedIn"
+      ng-click="logout()">
+        Logout
+    </button>
+  </ion-content>
+
+</ion-view>

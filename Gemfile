@@ -11,6 +11,9 @@ gem 'active_model_serializers', '~> 0.8.1'
 gem 'sorcery',     '~> 0.8.5'
 gem 'pundit',      '~> 0.2.3'
 
+gem 'angularjs-rails'
+gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git"
+
 group :production do
   gem 'rails_12factor'
   gem 'sprockets-rails', :require => 'sprockets/railtie'

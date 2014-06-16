@@ -25,6 +25,8 @@ PainSquadApi::Application.routes.draw do
     put :password, on: :member
   end
 
+  root to: 'angular#index'
+
   # resources :session, only: [:new, :create, :destroy]
   # resources :users
 

@@ -1,0 +1,38 @@
+<ion-view title="Favorites">
+
+  <ion-header-bar>
+    <button class="button button-clear button-primary" ng-click="back()">Back</button>
+  </ion-header-bar>
+
+  <ion-content padding="true">
+    <p ng-hide="isFavorites">No Favorites</p>
+
+    <ion-list ng-show="isFavorites" class="recommended">
+      <ion-item
+        ng-repeat="item in favorites"
+        class="item item-thumbnail-left"
+        ng-click="loadAdviceModal(item.recommendation)">
+
+          <img ng-src="{{ item.recommendation.image }}" alt="{{ item.recommendation.title }}">
+          <h2>{{ item.recommendation.title }}</h2>
+
+          <div class="duration">
+            <span class="ion-ios7-alarm-outline calm"></span>
+            <span>{{ item.recommendation.duration }}</span>
+          </div>
+
+          <div class="context">
+            <span class="ion-ios7-checkmark-outline balanced"></span>
+            <span>{{ item.recommendation.context }}</span>
+          </div>
+
+          <i ng-model="item.recommendation.favorite"
+           class="badge"
+           ng-class="{ 'ion-ios7-heart': item.recommendation.favorite, 'ion-ios7-heart-outline': !item.recommendation.favorite }"> </i>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>

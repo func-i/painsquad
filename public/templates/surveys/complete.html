@@ -1,0 +1,10 @@
+<ion-view title="Pain Case" hide-back-button="true">
+
+  <ion-content padding="true" class="has-header">
+
+    <span>Survey complete!</span>
+    <button class="button" ui-sref="app.home" ng-click="submitSurvey(submission)">Submit &amp; Go Home</button>
+
+    <pre ng-bind="submission | json"></pre>
+  </ion-content>
+</ion-view>
