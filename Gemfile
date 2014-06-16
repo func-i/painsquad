@@ -11,6 +11,12 @@ gem 'active_model_serializers', '~> 0.8.1'
 gem 'sorcery',     '~> 0.8.5'
 gem 'pundit',      '~> 0.2.3'
 
+group :production do
+  gem 'rails_12factor'
+  gem 'sprockets-rails', :require => 'sprockets/railtie'
+end
+
+
 # gem 'sass-rails',   '~> 4.0.3'
 # gem 'simple_form',  '~> 3.0.2'
 # gem 'uglifier',     '~> 2.5.0'
