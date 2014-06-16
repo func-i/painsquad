@@ -41,7 +41,7 @@ Download the Phonegap Developer app [here](http://app.phonegap.com/), it will no
 
 `rake survey:all`
 
-` rake survey:full`
+`rake survey:full`
 
 `rake survey:truncated`
 
@@ -56,3 +56,11 @@ Run specific file: `bundle exec cucumber features/feature_name.feature`
 
 Run specific scenario: `bundle exec cucumber features/feature_name.feature:5`
 
+
+## Deployment
+
+
+- `$ cd public/ng && BUILD_TARGET=production gulp build`
+- Copy all files/folders in `www/` directory to `public/` directory
+- Commit and push to `origin:heroku`
+- Finally: `git push heroku heroku:master`
