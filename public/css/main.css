@@ -437,6 +437,7 @@ li.item.item-checkbox.textfield {
       width: 100%;
       display: block; }
     .modal .modal-inherit .content-wrapper .content {
+      padding-top: 10px;
       background-color: white; }
       .modal .modal-inherit .content-wrapper .content .content-actual {
         font-size: 18px;
