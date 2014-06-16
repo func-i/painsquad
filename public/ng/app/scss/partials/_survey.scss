@@ -2,47 +2,50 @@
 
   .progress-mock { height: 60px; }
 
-  .question-body {
-    margin:     0 10px 0 10px;
-    background: white;
+  .content-wrapper {
+    margin: 0 10px 0 10px;
 
-    .question {
-      min-height: 370px;
-
-      .content-header {
-        height: 30px;
-        border-bottom: 5px solid red;
-      }
-
-      .content-actual {
-        font-size:     18px;
-        position:      relative;
-        height:        80px;
-        border-bottom: 1px solid lightgray;
-        text-align:    center;
-        padding:       15px;
-        display:       block;
-
-        &::before {
-          content:    '';
-          position:   absolute;
-          top:        0; left: 0; bottom: 0; right: 0;
-          background: url('/images/background/content.png');
-          background-color: lightgray;
-          opacity:    0.1;
-          width:      100%;
-        }
-      }
+    .content-header {
+      width:   100%;
+      display: block;
     }
 
-    .tip {
-      clear:   both;
-      color:   rgb(80, 80, 80);
-      margin:  10px 30px 10px 30px;
-      padding: 10px 5px 10px 5px;
-      p {
-        padding: 5px 20px 5px 20px;
-        border:  1px solid red;
+    .question-body {
+      background: white;
+
+      .question {
+        min-height: 370px;
+
+        .content-actual {
+          font-size:     18px;
+          position:      relative;
+          height:        80px;
+          border-bottom: 1px solid lightgray;
+          text-align:    center;
+          padding:       15px;
+          display:       block;
+
+          &::before {
+            content:    '';
+            position:   absolute;
+            top:        0; left: 0; bottom: 0; right: 0;
+            background: url('/images/background/content.png');
+            background-color: lightgray;
+            opacity:    0.1;
+            width:      100%;
+          }
+        }
+      }
+
+      .tip {
+        clear:   both;
+        color:   rgb(80, 80, 80);
+        margin:  10px 30px 10px 30px;
+        padding: 10px 5px 10px 5px;
+        p {
+          padding: 5px 20px 5px 20px;
+          border:  1px solid red;
+        }
       }
     }
   }
