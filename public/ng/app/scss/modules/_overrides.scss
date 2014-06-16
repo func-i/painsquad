@@ -26,19 +26,29 @@ ion-side-menu.menu-left.menu {
 
 // FORM/INPUT OVERRIDES
 $checkbox-border:  #808A8F;
-$checkbox-checked: #FD4461;
+$checkbox-checked: #D22C4D;
 
-.checkbox input::before, .checkbox-icon::before {
-  border-radius: 0 !important;
-  border-color:  $checkbox-border !important;
-}
+.checkbox input, .checkbox-icon {
+  width: 23px;
+  height: 23px;
+  top: 55%;
 
-.checkbox input:checked {
-  &:before, + .checkbox-icon:before {
+  &::before {
+    border-radius: 0 !important;
+    border-color:  $checkbox-border !important;
+  }
+
+  &::after {}
+
+  &:checked::before {
     background: $checkbox-checked !important;
     border-color: $checkbox-checked !important;
   }
+
+  &:checked::after {}
+
 }
+
 
 // pseudo-radio checkbox override
 label#radio { top: 58%; }
@@ -58,6 +68,6 @@ label#radio { top: 58%; }
     width:  8px;
     top:    30%;
     left:   30%;
-    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 1);
   }
 }
