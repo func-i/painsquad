@@ -16,15 +16,18 @@
     </button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="has-header modal-inherit">
-    <div class="content">
-      <div class="header"></div>
-      <ng-include class="map" src="renderBodymapPartial()"></ng-include>
+  <ion-content padding="true" class="has-header modal-inherit content-background">
 
-      <div class="tip">
-        <p><strong>TIP: </strong>Tap on the areas on the {{ modalSelection.choice.content | lowercase }} then click Save.</p>
+    <div class="content-wrapper">
+      <img class="content-header" ng-src="images/background/binder-clips.png">
+      <div class="content">
+        <ng-include class="map" src="renderBodymapPartial()"></ng-include>
+
+        <div class="tip">
+          <p><strong>TIP: </strong>Tap on the areas on the {{ modalSelection.choice.content | lowercase }} then click Save.</p>
+        </div>
+
       </div>
-
     </div>
   </ion-content>
 

@@ -8,72 +8,75 @@
   .modal-inherit {
     @extend .survey;
 
-    .content {
+    .content-wrapper {
       margin: 30px 10px 0 10px;
-      background-color: white;
 
-      .header {
-        height: 30px;
-        border-bottom: 5px solid red;
+      .content-header {
+        width: 100%;
+        display: block;
       }
 
-      .content-actual {
-        font-size:     18px;
-        position:      relative;
-        height:        80px;
-        border-bottom: 1px solid lightgray;
-        text-align:    center;
-        padding:       15px;
-        display:       block;
+      .content {
+        background-color: white;
 
-        &::before {
-          content:    '';
-          position:   absolute;
-          top:        0; left: 0; bottom: 0; right: 0;
-          background: url('/images/background/content.png');
-          opacity:    0.2;
-          width:      100%;
+        .content-actual {
+          font-size:     18px;
+          position:      relative;
+          height:        80px;
+          border-bottom: 1px solid lightgray;
+          text-align:    center;
+          padding:       15px;
+          display:       block;
+
+          &::before {
+            content:    '';
+            position:   absolute;
+            top:        0; left: 0; bottom: 0; right: 0;
+            background: url('/images/background/content.png');
+            opacity:    0.2;
+            width:      100%;
+          }
         }
-      }
 
-      .content-textarea {
-        padding: 20px;
-        border-bottom: 1px solid lightgray;
+        .content-textarea {
+          padding: 20px;
+          border-bottom: 1px solid lightgray;
 
-        textarea {
-          resize: none;
+          textarea {
+            resize: none;
+          }
         }
-      }
 
-      .map section svg {
-        margin: 10px;
-      }
-
-      .tip {
-        margin: 10px 30px 10px 30px;
-        padding: 10px 5px 10px 5px;
-        p {
-          padding: 5px 20px 5px 20px;
-          border: 1px solid red;
+        .map section svg {
+          margin: 10px;
         }
-      }
 
-      section .button-bar {
-        margin-top:   5px;
-        width:        90%;
-        margin-left:  auto;
-        margin-right: auto;
-
-        .button {
-          @extend .override;
-          @extend .diagonal;
+        .tip {
+          margin: 10px 30px 10px 30px;
+          padding: 10px 5px 10px 5px;
+          p {
+            padding: 5px 20px 5px 20px;
+            border: 1px solid red;
+          }
         }
-      }
 
-      .slider-disable {
-        .item.item-checkbox {
-          width: 100%;
-          margin-bottom: 20px;
+        section .button-bar {
+          margin-top:   5px;
+          width:        90%;
+          margin-left:  auto;
+          margin-right: auto;
+
+          .button {
+            @extend .override;
+            @extend .diagonal;
+          }
+        }
+
+        .slider-disable {
+          .item.item-checkbox {
+            width: 100%;
+            margin-bottom: 20px;
+          }
         }
       }
     }
