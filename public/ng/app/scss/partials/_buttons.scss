@@ -3,103 +3,143 @@ label.checkbox {
   // width: 100%;
 }
 
-button.override {
-  display:       block;
-  border:        0;
-  border-radius: 5px;
-  font-size:     20px;
-
-  &.home {
-    height:        44px;
-    width:         calc(100% - 140px);
-    min-width:     150px;
-    margin:        0 70px 10px 70px;
-  }
-
-  &.not-assertive {
-    background-color: $assertive-alternate;
-    &.activated { background-color: $assertive-alternate-active; }
-  }
-
-  &.bottom-border {
-    box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
-  }
-
-  &.activated {
-    &.bottom-border {
-      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
-    }
-  }
-}
-
-.button-bar > a.button {
+button {
   &.override {
-    color: $inactive-font;
+    display:       block;
+    border:        0;
+    border-radius: 5px;
+    font-size:     20px;
 
-    &:first-child {
-      border-radius: 5px 0px 0px 5px;
-    }
-    &:last-child {
-      border-radius: 0px 5px 5px 0px;
+    &.home {
+      height:        44px;
+      width:         calc(100% - 140px);
+      min-width:     150px;
+      margin:        0 70px 10px 70px;
     }
 
-    &.active {
-      background-color:    $assertive;
-      color:               white;
+    &.not-assertive {
+      background-color: $assertive-alternate;
+      &.activated { background-color: $assertive-alternate-active; }
+    }
+
+    &.bottom-border {
+      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
+    }
+
+    &.activated {
+      &.bottom-border {
+        box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
+      }
     }
   }
 }
 
-// input[type="range"] {
-//   height: 500px !important;
-//   display: inline-block;
-//   overflow: hidden;
-//   margin-top: 5px;
-//   margin-bottom: 5px;
-//   padding-right: 2px;
-//   padding-left: 1px;
-//   width: auto;
-//   height: $range-slider-height + 15;
-//   outline: none;
-//   // background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $range-default-track-bg), color-stop(100%, $range-default-track-bg));
-//   // background: linear-gradient(to right, $range-default-track-bg 0%, $range-default-track-bg 100%);
-//   background: $slider-gradient-red;
-//   background-position: center;
-//   background-size: 99% $range-track-height;
-//   background-repeat: no-repeat;
-//   -webkit-appearance: none;
+button.button {
+  &.show-active {
+    color: white;
+  }
+  &.show-inactive {
+    color: #737D80;
+  }
+}
 
-//   &::-webkit-slider-thumb {
-//     position: relative;
-//     width: $range-slider-width;
-//     height: $range-slider-height;
-//     border-radius: $range-slider-border-radius;
-//     background-color: $toggle-handle-off-bg-color;
-//     box-shadow: 0 0 2px rgba(0,0,0,.5), 1px 3px 5px rgba(0,0,0,0.25);
-//     cursor: pointer;
-//     -webkit-appearance: none;
+// button.override {
+//   display:       block;
+//   border:        0;
+//   border-radius: 5px;
+//   font-size:     20px;
+
+//   &.home {
+//     height:        44px;
+//     width:         calc(100% - 140px);
+//     min-width:     150px;
+//     margin:        0 70px 10px 70px;
 //   }
 
-//   &::-webkit-slider-thumb:before {
-//     /* what creates the colorful line on the left side of the slider */
-//     position: absolute;
-//     top: ($range-slider-height / 2) - ($range-track-height / 2);
-//     left: -2001px;
-//     width: 2000px;
-//     height: $range-track-height;
-//     background: $dark;
-//     content: ' ';
+//   &.not-assertive {
+//     background-color: $assertive-alternate;
+//     &.activated { background-color: $assertive-alternate-active; }
 //   }
 
-//   &::-webkit-slider-thumb:after {
-//     /* create a larger (but hidden) hit area */
-//     position: absolute;
-//     top: -20px;
-//     left: -20px;
-//     padding: 30px;
-//     content: ' ';
-//     //background: red;
-//     //opacity: .5;
+//   &.bottom-border {
+//     box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
 //   }
 
+//   &.activated {
+//     &.bottom-border {
+//       box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
+//     }
+//   }
 // }
+
+// .button-bar > a.button {
+//   &.override {
+//     color: $inactive-font;
+
+//     &:first-child {
+//       border-radius: 5px 0px 0px 5px;
+//     }
+//     &:last-child {
+//       border-radius: 0px 5px 5px 0px;
+//     }
+
+//     &.active {
+//       background-color:    $assertive;
+//       color:               white;
+//     }
+//   }
+// }
+
+// // input[type="range"] {
+// //   height: 500px !important;
+// //   display: inline-block;
+// //   overflow: hidden;
+// //   margin-top: 5px;
+// //   margin-bottom: 5px;
+// //   padding-right: 2px;
+// //   padding-left: 1px;
+// //   width: auto;
+// //   height: $range-slider-height + 15;
+// //   outline: none;
+// //   // background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $range-default-track-bg), color-stop(100%, $range-default-track-bg));
+// //   // background: linear-gradient(to right, $range-default-track-bg 0%, $range-default-track-bg 100%);
+// //   background: $slider-gradient-red;
+// //   background-position: center;
+// //   background-size: 99% $range-track-height;
+// //   background-repeat: no-repeat;
+// //   -webkit-appearance: none;
+
+// //   &::-webkit-slider-thumb {
+// //     position: relative;
+// //     width: $range-slider-width;
+// //     height: $range-slider-height;
+// //     border-radius: $range-slider-border-radius;
+// //     background-color: $toggle-handle-off-bg-color;
+// //     box-shadow: 0 0 2px rgba(0,0,0,.5), 1px 3px 5px rgba(0,0,0,0.25);
+// //     cursor: pointer;
+// //     -webkit-appearance: none;
+// //   }
+
+// //   &::-webkit-slider-thumb:before {
+// //     /* what creates the colorful line on the left side of the slider */
+// //     position: absolute;
+// //     top: ($range-slider-height / 2) - ($range-track-height / 2);
+// //     left: -2001px;
+// //     width: 2000px;
+// //     height: $range-track-height;
+// //     background: $dark;
+// //     content: ' ';
+// //   }
+
+// //   &::-webkit-slider-thumb:after {
+// //     /* create a larger (but hidden) hit area */
+// //     position: absolute;
+// //     top: -20px;
+// //     left: -20px;
+// //     padding: 30px;
+// //     content: ' ';
+// //     //background: red;
+// //     //opacity: .5;
+// //   }
+
+// // }

@@ -9,6 +9,7 @@
     };
     $scope.hasPain = function() {
       $scope.submission.has_pain = true;
+      $scope.showNextButton = true;
       return $scope.continueSurvey();
     };
     $scope.noPain = function() {
@@ -34,10 +35,12 @@
       return $state.go('app.survey_complete');
     };
     $scope.$on('currentForm:valid', function(ev) {
-      return $scope.showNext = true;
+      $scope.showNext = true;
+      return console.log($scope.showNext);
     });
     $scope.$on('currentForm:invalid', function(ev) {
-      return $scope.showNext = false;
+      $scope.showNext = false;
+      return console.log($scope.showNext);
     });
     $scope.$watch('questionIndex', function() {
       var surveyLength;
@@ -50,7 +53,8 @@
       };
     };
     $scope.startSurvey();
-    return $scope.showSubmit = false;
+    $scope.showSubmit = false;
+    return $scope.showNextButton = false;
   });
 
   this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];

@@ -12,6 +12,7 @@
 
   $scope.hasPain = ->
     $scope.submission.has_pain = true
+    $scope.showNextButton = true
     $scope.continueSurvey()
 
   $scope.noPain = ->
@@ -39,9 +40,11 @@
 
   $scope.$on 'currentForm:valid', (ev) ->
     $scope.showNext = true
+    console.log $scope.showNext
 
   $scope.$on 'currentForm:invalid', (ev) ->
     $scope.showNext = false
+    console.log $scope.showNext
 
   # PROGRESS BAR
   $scope.$watch 'questionIndex', ->
@@ -54,5 +57,6 @@
   # DEFAULT ACTIONS
   $scope.startSurvey()
   $scope.showSubmit = false
+  $scope.showNextButton = false
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']

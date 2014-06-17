@@ -1,10 +1,11 @@
 <ion-view title="Pain Case" hide-back-button="true">
 
   <ion-nav-buttons side="right">
-    <button
-      class="button button-positive button-clear icon button-icon icon-right ion-ios7-arrow-right"
+
+    <button class="button button-icon icon-right ion-ios7-arrow-right"
       ng-click="nextQuestion()"
-      ng-if="showNext" style="color: white;">
+      ng-if="showNextButton"
+      ng-class="{ 'show-active': showNext, 'show-inactive': !showNext }">
         Next
     </button>
 
