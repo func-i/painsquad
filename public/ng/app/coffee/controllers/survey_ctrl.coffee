@@ -26,14 +26,23 @@
     SurveyService.prepareSubmissionAnswer($scope.question)
     $scope.continueSurvey()
 
+
   $scope.continueSurvey = ->
     $scope.questionIndex++
-    if $scope.questionIndex > $scope.totalQuestions - 1
-      $state.go('app.survey_complete')
+    # if we are on the last question - prepare for textbox
+    if $scope.questionIndex is ($scope.totalQuestions - 1)
+      # $scope.showNext         = true
+      $scope.showNextButton   = false
+      $scope.showSubmitButton = true
+      $scope.question         = survey.questions[$scope.questionIndex]
     else
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
-      $ionicScrollDelegate.scrollTop()
+    $ionicScrollDelegate.scrollTop()
+
+  $scope.submit = ->
+    SurveyService.prepareSubmissionAnswer($scope.question)
+    $state.go('app.survey_complete')
 
   $scope.$on 'currentForm:valid', (ev) ->
     $scope.showNext = true
@@ -51,7 +60,5 @@
 
   # DEFAULT ACTIONS
   $scope.startSurvey()
-  # $scope.showSubmitButton = false
-  # $scope.showNextButton = false
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']

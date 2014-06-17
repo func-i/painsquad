@@ -1,6 +1,6 @@
 <ion-view title="Pain Case" hide-back-button="true">
 
-  <ion-nav-buttons side="right">
+  <ion-nav-buttons side="right" ng-cloak>
 
     <button class="button button-icon icon-right ion-ios7-arrow-right show-next"
       ng-click="nextQuestion()"
@@ -9,9 +9,10 @@
         Next
     </button>
 
-    <button
+    <button style="color: white;"
       class="button button-positive button-clear"
-      ng-if="showSubmit">
+      ng-show="showSubmitButton"
+      ng-click="submit()">
         Submit
     </button>
   </ion-nav-buttons>

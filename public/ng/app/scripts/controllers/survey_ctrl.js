@@ -25,13 +25,19 @@
     };
     $scope.continueSurvey = function() {
       $scope.questionIndex++;
-      if ($scope.questionIndex > $scope.totalQuestions - 1) {
-        return $state.go('app.survey_complete');
+      if ($scope.questionIndex === ($scope.totalQuestions - 1)) {
+        $scope.showNextButton = false;
+        $scope.showSubmitButton = true;
+        $scope.question = survey.questions[$scope.questionIndex];
       } else {
         $scope.$broadcast('resetQuestion');
         $scope.question = survey.questions[$scope.questionIndex];
-        return $ionicScrollDelegate.scrollTop();
       }
+      return $ionicScrollDelegate.scrollTop();
+    };
+    $scope.submit = function() {
+      SurveyService.prepareSubmissionAnswer($scope.question);
+      return $state.go('app.survey_complete');
     };
     $scope.$on('currentForm:valid', function(ev) {
       return $scope.showNext = true;
