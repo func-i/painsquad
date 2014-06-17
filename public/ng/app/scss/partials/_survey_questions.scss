@@ -49,8 +49,7 @@ li.item.item-checkbox {
   clear: both;
 
   form div {
-    min-width: 50%;
-    max-width: 100%;
+    width: 50%;
     float: left;
     border-bottom: 1px solid black;
 
@@ -58,10 +57,11 @@ li.item.item-checkbox {
     textarea { resize: none; }
 
     li.item {
-      margin-top:       1px;
-      margin-bottom:    1px;
-      border:           0;
-      width:            100%;
+      margin-top:    1px;
+      margin-bottom: 1px;
+      border:        0;
+      width:         100%;
+      font-size:     15px;
     }
 
     .item.item-input {
@@ -69,9 +69,17 @@ li.item.item-checkbox {
       margin:       0 10px 0 60px;
     }
 
+    &:nth-last-child(2).even {
+      color: red;
+      width: 100%;
+    }
+
     &.last {
       clear: left;
       width: 100%;
+      float: none;
+      border: none;
+      padding-bottom: 25px;
     }
   }
 }
