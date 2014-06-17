@@ -52,4 +52,7 @@
       choice:         {}
       tempSelections: []
 
+  # INIT
+  $scope.$emit 'currentForm:invalid'
+
 @BodymapCtrl.$inject = ['$scope', '$state', '$ionicModal', 'BodymapService']

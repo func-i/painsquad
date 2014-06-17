@@ -17,30 +17,27 @@
       return $scope.finishSurvey();
     };
     $scope.nextQuestion = function() {
+      if (!$scope.showNext) {
+        return;
+      }
       SurveyService.prepareSubmissionAnswer($scope.question);
       return $scope.continueSurvey();
     };
     $scope.continueSurvey = function() {
       $scope.questionIndex++;
       if ($scope.questionIndex > $scope.totalQuestions - 1) {
-        $scope.showSubmit = true;
-        return $scope.finishSurvey();
+        return $state.go('app.survey_complete');
       } else {
         $scope.$broadcast('resetQuestion');
         $scope.question = survey.questions[$scope.questionIndex];
         return $ionicScrollDelegate.scrollTop();
       }
     };
-    $scope.finishSurvey = function() {
-      return $state.go('app.survey_complete');
-    };
     $scope.$on('currentForm:valid', function(ev) {
-      $scope.showNext = true;
-      return console.log($scope.showNext);
+      return $scope.showNext = true;
     });
     $scope.$on('currentForm:invalid', function(ev) {
-      $scope.showNext = false;
-      return console.log($scope.showNext);
+      return $scope.showNext = false;
     });
     $scope.$watch('questionIndex', function() {
       var surveyLength;
@@ -52,9 +49,7 @@
         width: "" + $scope.surveyProgress + "%"
       };
     };
-    $scope.startSurvey();
-    $scope.showSubmit = false;
-    return $scope.showNextButton = false;
+    return $scope.startSurvey();
   });
 
   this.SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];

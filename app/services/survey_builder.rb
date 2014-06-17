@@ -58,13 +58,8 @@ class SurveyBuilder
   end
 
   def build_test_survey
+    Builder::Other.boolean_has_pain(@survey)
     Builder::Slider.current_pain(@survey)
-    Builder::Slider.last_case_worst(@survey)
-    Builder::Slider.last_case_best(@survey)
-    Builder::Slider.last_case_average(@survey)
-
-    Builder::Checklist.describe_pain_grid(@survey)
-    Builder::Checklist.other_symptoms_grid(@survey)
     Builder::Other.textbox(@survey)
   end
 

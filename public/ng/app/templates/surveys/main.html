@@ -2,7 +2,7 @@
 
   <ion-nav-buttons side="right">
 
-    <button class="button button-icon icon-right ion-ios7-arrow-right"
+    <button class="button button-icon icon-right ion-ios7-arrow-right show-next"
       ng-click="nextQuestion()"
       ng-if="showNextButton"
       ng-class="{ 'show-active': showNext, 'show-inactive': !showNext }">
@@ -11,7 +11,7 @@
 
     <button
       class="button button-positive button-clear"
-      ng-if="showSubmit" style="color: white;">
+      ng-if="showSubmit">
         Submit
     </button>
   </ion-nav-buttons>

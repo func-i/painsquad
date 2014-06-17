@@ -22,29 +22,24 @@
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
   $scope.nextQuestion = ->
+    return unless $scope.showNext
     SurveyService.prepareSubmissionAnswer($scope.question)
     $scope.continueSurvey()
 
   $scope.continueSurvey = ->
     $scope.questionIndex++
     if $scope.questionIndex > $scope.totalQuestions - 1
-      $scope.showSubmit = true
-      $scope.finishSurvey()
+      $state.go('app.survey_complete')
     else
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
       $ionicScrollDelegate.scrollTop()
 
-  $scope.finishSurvey = ->
-    $state.go('app.survey_complete')
-
   $scope.$on 'currentForm:valid', (ev) ->
     $scope.showNext = true
-    console.log $scope.showNext
 
   $scope.$on 'currentForm:invalid', (ev) ->
     $scope.showNext = false
-    console.log $scope.showNext
 
   # PROGRESS BAR
   $scope.$watch 'questionIndex', ->
@@ -56,7 +51,7 @@
 
   # DEFAULT ACTIONS
   $scope.startSurvey()
-  $scope.showSubmit = false
-  $scope.showNextButton = false
+  # $scope.showSubmitButton = false
+  # $scope.showNextButton = false
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService']
