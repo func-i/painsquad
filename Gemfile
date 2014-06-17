@@ -32,7 +32,7 @@ end
 
 group :development do
   gem 'foreman',            '~> 0.63.0'
-  gem 'spring',             '~> 1.1.2'
+  gem 'spring',             '~> 1.1.3'
   gem 'quiet_assets',       '~> 1.0.2'
   gem 'better_errors',      '~> 1.1.0'
   gem 'binding_of_caller',  '~> 0.7.2'
