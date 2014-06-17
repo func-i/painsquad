@@ -108,6 +108,10 @@ button.override, .modal .modal-inherit .content-wrapper .content section .button
     width: calc(100% - 140px);
     min-width: 150px;
     margin: 0 70px 10px 70px; }
+  button.override.not-assertive, .modal .modal-inherit .content-wrapper .content section .button-bar button.not-assertive.button {
+    background-color: #DD4460; }
+    button.override.not-assertive.activated, .modal .modal-inherit .content-wrapper .content section .button-bar button.not-assertive.activated.button {
+      background-color: #A4213B; }
   button.override.bottom-border, .modal .modal-inherit .content-wrapper .content section .button-bar button.bottom-border.button {
     box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px #e88d4d; }
   button.override.activated.bottom-border, .modal .modal-inherit .content-wrapper .content section .button-bar button.activated.bottom-border.button {
@@ -175,8 +179,6 @@ button.override, .modal .modal-inherit .content-wrapper .content section .button
     margin-right: auto;
     width: 200px;
     max-width: 200px; }
-.home .action button.not-assertive {
-  background-color: #DF4461; }
 
 .awards {
   border: 1px dotted black;
@@ -338,8 +340,7 @@ li.item.item-checkbox.textfield {
 .checklist-grid {
   clear: both; }
   .checklist-grid form div {
-    min-width: 50%;
-    max-width: 100%;
+    width: 50%;
     float: left;
     border-bottom: 1px solid black; }
     .checklist-grid form div .divider {
@@ -350,13 +351,20 @@ li.item.item-checkbox.textfield {
       margin-top: 1px;
       margin-bottom: 1px;
       border: 0;
-      width: 100%; }
+      width: 100%;
+      font-size: 15px; }
     .checklist-grid form div .item.item-input {
       border-color: lightgray;
       margin: 0 10px 0 60px; }
+    .checklist-grid form div:nth-last-child(2).even {
+      color: red;
+      width: 100%; }
     .checklist-grid form div.last {
       clear: left;
-      width: 100%; }
+      width: 100%;
+      float: none;
+      border: none;
+      padding-bottom: 25px; }
 
 .bodymap .item {
   margin-left: 0px;
@@ -437,7 +445,6 @@ li.item.item-checkbox.textfield {
       width: 100%;
       display: block; }
     .modal .modal-inherit .content-wrapper .content {
-      padding-top: 10px;
       background-color: white; }
       .modal .modal-inherit .content-wrapper .content .content-actual {
         font-size: 18px;
