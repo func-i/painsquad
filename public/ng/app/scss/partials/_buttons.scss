@@ -41,6 +41,7 @@ button.button.show-next {
 .button-bar > a.button {
   &.override {
     color: $inactive-font;
+    border: 0;
 
     &:first-child {
       border-radius: 5px 0px 0px 5px;
@@ -50,8 +51,8 @@ button.button.show-next {
     }
 
     &.active {
-      background-color:    $assertive;
-      color:               white;
+      background-color: $red-button;
+      color: white;
     }
   }
 }
