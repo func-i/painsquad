@@ -1,40 +1,47 @@
-// full-width clickable checkboxes
-label.checkbox {
-  // width: 100%;
+button {
+  &.override {
+    display:       block;
+    border:        0;
+    border-radius: 5px;
+    font-size:     20px;
+
+    &.home {
+      height:        44px;
+      width:         calc(100% - 140px);
+      min-width:     150px;
+      margin:        0 70px 10px 70px;
+    }
+
+    &.not-assertive {
+      background-color: $assertive-alternate;
+      &.activated { background-color: $assertive-alternate-active; }
+    }
+
+    &.bottom-border {
+      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
+    }
+
+    &.activated {
+      &.bottom-border {
+        box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
+      }
+    }
+  }
 }
 
-button.override {
-  display:       block;
-  border:        0;
-  border-radius: 5px;
-  font-size:     20px;
-
-  &.home {
-    height:        44px;
-    width:         calc(100% - 140px);
-    min-width:     150px;
-    margin:        0 70px 10px 70px;
+button.button.show-next {
+  &.show-active {
+    color: white;
   }
-
-  &.not-assertive {
-    background-color: $assertive-alternate;
-    &.activated { background-color: $assertive-alternate-active; }
-  }
-
-  &.bottom-border {
-    box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill;
-  }
-
-  &.activated {
-    &.bottom-border {
-      box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px $button-bottom-fill-active;
-    }
+  &.show-inactive {
+    color: #737D80;
   }
 }
 
 .button-bar > a.button {
   &.override {
     color: $inactive-font;
+    border: 0;
 
     &:first-child {
       border-radius: 5px 0px 0px 5px;
@@ -44,8 +51,8 @@ button.override {
     }
 
     &.active {
-      background-color:    $assertive;
-      color:               white;
+      background-color: $red-button;
+      color: white;
     }
   }
 }
@@ -101,5 +108,4 @@ button.override {
 //     //background: red;
 //     //opacity: .5;
 //   }
-
 // }
