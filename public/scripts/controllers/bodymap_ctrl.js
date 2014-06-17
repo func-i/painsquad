@@ -48,12 +48,13 @@
     getPainRegion = function() {
       return $scope.modalSelection.choice.content.toLowerCase();
     };
-    return resetModalSelection = function() {
+    resetModalSelection = function() {
       return $scope.modalSelection = {
         choice: {},
         tempSelections: []
       };
     };
+    return $scope.$emit('currentForm:invalid');
   });
 
   this.BodymapCtrl.$inject = ['$scope', '$state', '$ionicModal', 'BodymapService'];

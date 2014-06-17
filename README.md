@@ -59,6 +59,8 @@ Run specific scenario: `bundle exec cucumber features/feature_name.feature:5`
 
 ## Deployment
 
+* Temporary solution *
+
 - `$ cd public/ng && BUILD_TARGET=production gulp build`
 - Copy all files/folders in `www/` directory to `public/` directory
 - Commit and push to `origin:heroku-deployment`

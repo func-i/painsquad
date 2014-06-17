@@ -4,6 +4,9 @@ body {
 input, button, select, textarea {
   font-family: ArialMT, Arial, Helvetica, sans-serif !important; }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+  display: none !important; }
+
 .pull-right {
   float: right; }
 
@@ -117,14 +120,20 @@ button.override, .modal .modal-inherit .content-wrapper .content section .button
   button.override.activated.bottom-border, .modal .modal-inherit .content-wrapper .content section .button-bar button.activated.bottom-border.button {
     box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px #b45a1a; }
 
+button.button.show-next.show-active {
+  color: white; }
+button.button.show-next.show-inactive {
+  color: #737D80; }
+
 .button-bar > a.button.override, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button {
-  color: #7F8A8E; }
+  color: #7F8A8E;
+  border: 0; }
   .button-bar > a.button.override:first-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:first-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:first-child {
     border-radius: 5px 0px 0px 5px; }
   .button-bar > a.button.override:last-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:last-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:last-child {
     border-radius: 0px 5px 5px 0px; }
   .button-bar > a.button.override.active, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button.active, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button.active {
-    background-color: #b3364e;
+    background-color: #DF4461;
     color: white; }
 
 .progress {
@@ -478,7 +487,7 @@ li.item.item-checkbox.textfield {
           padding: 5px 20px 5px 20px;
           border: 1px solid red; }
       .modal .modal-inherit .content-wrapper .content section .button-bar {
-        margin-top: 5px;
+        padding-top: 10px;
         width: 90%;
         margin-left: auto;
         margin-right: auto; }
