@@ -10,14 +10,14 @@ gem 'active_model_serializers', '~> 0.8.1'
 
 gem 'sorcery',     '~> 0.8.5'
 gem 'pundit',      '~> 0.2.3'
+gem 'uglifier',     '~> 2.5.0'
+gem 'jquery-rails', '~> 3.1.0'
 
 group :production do
   gem 'rails_12factor'
   gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
 
-gem 'uglifier',     '~> 2.5.0'
-gem 'jquery-rails', '~> 3.1.0'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.14.2'
