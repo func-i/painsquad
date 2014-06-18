@@ -2,10 +2,11 @@
   'use strict';
   this.SubmissionService = this.serviceModule.service('SubmissionService', function(BodymapService) {
     return {
-      init: function(survey_id) {
+      init: function(survey) {
         return this.submission = {
-          survey_id: survey_id,
+          survey_id: survey.id,
           has_pain: null,
+          xp_points: survey.xp_points,
           answers_attributes: []
         };
       },
@@ -14,6 +15,13 @@
       },
       addAnswer: function(answerObj) {
         return this.submission.answers_attributes.push(answerObj);
+      },
+      prepareSubmissionAnswer: function(question) {
+        if (question.question_type === 'bodymap') {
+          return this.prepareAnswer(question, BodymapService.getSelections());
+        } else {
+          return this.prepareAnswer(question);
+        }
       },
       prepareAnswer: function(answerObj, regionSelections) {
         if (regionSelections == null) {
@@ -44,7 +52,7 @@
           selected: true
         });
         if (selectedChoices.length > 1) {
-          return this.recursiveExtractAnswers(answerObj, selectedChoices);
+          return this.extractAnswers(answerObj, selectedChoices);
         } else {
           resultObj = {
             question_id: answerObj.question_id,
@@ -54,7 +62,7 @@
           return this.addAnswer(resultObj);
         }
       },
-      recursiveExtractAnswers: function(answerObj, selectedChoices) {
+      extractAnswers: function(answerObj, selectedChoices) {
         var item, resultObj;
         if (!selectedChoices.length) {
           return;
@@ -67,7 +75,7 @@
           custom_text: item.custom_text
         };
         this.addAnswer(resultObj);
-        return this.recursiveExtractAnswers(answerObj, selectedChoices);
+        return this.extractAnswers(answerObj, selectedChoices);
       },
       addSliderAnswer: function(answerObj) {
         var resultObj;

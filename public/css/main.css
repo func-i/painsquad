@@ -316,6 +316,18 @@ button.button.show-next.show-inactive {
     height: 100px;
     background-color: #808A8F; }
 
+.survey.survey-complete .content-wrapper .question .content-actual, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+  height: 60px;
+  padding: 10px; }
+  .survey.survey-complete .content-wrapper .question .content-actual .top, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
+    color: #DD4460; }
+  .survey.survey-complete .content-wrapper .question .content-actual .bottom, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
+    font-size: 14px; }
+.survey.survey-complete .content-wrapper .question .summary, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+  padding: 20px;
+  text-align: center; }
+.survey.survey-complete .content-wrapper .question .points, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+  text-align: center; }
 .survey .progress-mock, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
   height: 60px; }
 .survey .content-wrapper, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
@@ -342,7 +354,7 @@ button.button.show-next.show-inactive {
         bottom: 0;
         right: 0;
         background: url('/images/background/content.png');
-        background-color: lightgray;
+        background-color: #989898;
         opacity: 0.1;
         width: 100%; }
   .survey .content-wrapper .tip, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
