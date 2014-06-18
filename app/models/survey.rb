@@ -33,4 +33,8 @@ class Survey < ActiveRecord::Base
     SurveyBuilder.new(identifier: 'truncated').build
   end
 
+  def xp_points
+    full? ? 25 : 10
+  end
+
 end

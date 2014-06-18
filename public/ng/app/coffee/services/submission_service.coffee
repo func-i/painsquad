@@ -3,10 +3,11 @@
 @SubmissionService = @serviceModule.service 'SubmissionService', (BodymapService) ->
 
   # new singleton object
-  init: (survey_id) ->
+  init: (survey) ->
     @submission =
-      survey_id:          survey_id
+      survey_id:          survey.id
       has_pain:           null
+      xp_points:          survey.xp_points
       answers_attributes: []
 
   # retrieves singleton object
@@ -16,6 +17,12 @@
   # adds object to answer payload
   addAnswer: (answerObj) ->
     @submission.answers_attributes.push answerObj
+
+  prepareSubmissionAnswer: (question) ->
+    if question.question_type is 'bodymap'
+      @prepareAnswer(question, BodymapService.getSelections())
+    else
+      @prepareAnswer(question)
 
   # answer object pre-requisite
   prepareAnswer: (answerObj, regionSelections = null) ->
@@ -39,7 +46,7 @@
   addSelectionAnswer: (answerObj) ->
     selectedChoices = _.where(answerObj.choices, selected: true)
     if selectedChoices.length > 1
-      @recursiveExtractAnswers(answerObj, selectedChoices)
+      @extractAnswers(answerObj, selectedChoices)
     else
       resultObj =
         question_id: answerObj.question_id
@@ -48,7 +55,7 @@
       @addAnswer(resultObj)
 
   # extracts items from selectedChoices and pushes to answers array
-  recursiveExtractAnswers: (answerObj, selectedChoices) ->
+  extractAnswers: (answerObj, selectedChoices) ->
     return unless selectedChoices.length
     item = selectedChoices.shift()
     resultObj =
@@ -57,7 +64,7 @@
       value:       (if item.slider_disabled then "N/A" else item.value)
       custom_text: item.custom_text
     @addAnswer(resultObj)
-    @recursiveExtractAnswers(answerObj, selectedChoices)
+    @extractAnswers(answerObj, selectedChoices)
 
   # adds integer 'value' to Answer for simple slider questions
   addSliderAnswer: (answerObj) ->

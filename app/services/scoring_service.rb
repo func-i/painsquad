@@ -15,7 +15,7 @@ class ScoringService
 
   def process
     update_user_score
-    update_user_ranking
+    update_user_ranking unless @user.last_rank?
   end
 
   protected

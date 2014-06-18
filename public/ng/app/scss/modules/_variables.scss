@@ -1,3 +1,20 @@
+// VARIABLE OVERRIDES
+// topbar
+$royal: #00aed7;
+// blue button
+$positive: #33bedf;
+// gray button
+$stable: #D9DCDE;
+// green button
+$balanced: #2E7E30;
+// red button
+$assertive: #b3364e;
+$assertive-alternate: #DD4460;
+$assertive-alternate-active: #A4213B;
+
+// pattern-overlay background color
+$overlay-bg: #989898;
+
 // SIDEMENU
 $menu-gap-width:   100px;
 $menu-item-color: #5B6166;
@@ -9,8 +26,6 @@ $menu-dark-font:  #C0C0C0;
 $button-bottom-fill:        #e88d4d;
 $button-bottom-fill-active: #b45a1a;
 
-$assertive-alternate: #DD4460;
-$assertive-alternate-active: #A4213B;
 
 // button-bar inactive button
 $button-gray: #fff;
@@ -21,6 +36,5 @@ $slider-red-gradient:   linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
 $slider-green-gradient: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
 
 // MISC COLORS
-
 // buttonbar inactive font:
 $inactive-font: #7F8A8E;
