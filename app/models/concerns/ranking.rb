@@ -15,7 +15,7 @@ module Ranking
 
   # TODO: fix this method, not correct
   def points_for_next_rank
-    LEVELS.each do |level|
+    User::LEVELS.each do |level|
       if score < level
         return level - score
       end
