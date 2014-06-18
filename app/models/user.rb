@@ -24,6 +24,7 @@
 #
 
 class User < ActiveRecord::Base
+  include Ranking
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -37,28 +38,6 @@ class User < ActiveRecord::Base
 
   after_create :grant_api_access, :register_create_event
   after_update :create_rank_event, :if => :rank_changed?
-
-  def display_rank(submitted_rank = nil)
-    rank = submitted_rank || self.rank
-    rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
-  end
-
-  def next_rank
-    display_rank(User.ranks.key(self[:rank] + 1))
-  end
-
-  # TODO: fix this method, not correct
-  def points_for_next_rank
-    LEVELS.each do |level|
-      if score < level
-        return level - score
-      end
-    end
-  end
-
-  def last_rank?
-    self[:rank] == 5
-  end
 
   def previous_submissions
     submissions.order('updated_at DESC')
