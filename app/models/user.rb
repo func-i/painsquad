@@ -56,6 +56,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def last_rank?
+    self[:rank] == 5
+  end
+
   def previous_submissions
     submissions.order('updated_at DESC')
   end

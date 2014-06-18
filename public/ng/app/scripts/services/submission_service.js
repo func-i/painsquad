@@ -2,11 +2,11 @@
   'use strict';
   this.SubmissionService = this.serviceModule.service('SubmissionService', function(BodymapService) {
     return {
-      init: function(survey_id) {
+      init: function(survey) {
         return this.submission = {
-          survey_id: survey_id,
+          survey_id: survey.id,
           has_pain: null,
-          xp_points: 0,
+          xp_points: survey.xp_points,
           answers_attributes: []
         };
       },

@@ -5,7 +5,7 @@
     $scope.submission = SubmissionService.getSubmission();
     $scope.data = {
       submission_message: "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future... maybe even a commendation or award!",
-      xp_points: 10
+      xp_points: $scope.submission.xp_points
     };
     return $scope.home = function() {
       return $state.go('app.home');

@@ -3,11 +3,11 @@
 @SubmissionService = @serviceModule.service 'SubmissionService', (BodymapService) ->
 
   # new singleton object
-  init: (survey_id) ->
+  init: (survey) ->
     @submission =
-      survey_id:          survey_id
+      survey_id:          survey.id
       has_pain:           null
-      xp_points:          0
+      xp_points:          survey.xp_points
       answers_attributes: []
 
   # retrieves singleton object

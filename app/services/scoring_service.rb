@@ -15,7 +15,7 @@ class ScoringService
 
   def process
     update_user_score
-    update_user_ranking
+    update_user_ranking unless @user.last_rank?
   end
 
   protected
@@ -29,6 +29,7 @@ class ScoringService
     new_score    = @user.score
     current_rank = @user[:rank]
     next_rank    = current_rank + 1
+    binding.pry
     User::LEVELS.each do |threshold|
       if @old_score < threshold && new_score >= threshold
         @user.update(rank: next_rank)
