@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.ChecklistDetailCtrl = this.controllerModule.controller("ChecklistDetailCtrl", function($scope, $state, $stateParams, $ionicModal) {
+  this.ChecklistModalCtrl = this.controllerModule.controller("ChecklistModalCtrl", function($scope, $state, $stateParams, $ionicModal) {
     $scope.ifSliderNull = function(choice) {
       if (choice && !((choice.value != null) || choice.slider_disabled === true)) {
         return true;
@@ -29,6 +29,6 @@
     });
   });
 
-  this.ChecklistDetailCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal'];
+  this.ChecklistModalCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal'];
 
 }).call(this);
