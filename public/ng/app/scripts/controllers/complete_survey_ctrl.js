@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.CompleteSurveyCtrl = this.controllerModule.controller("CompleteSurveyCtrl", function($scope, $state, SubmissionService, SubmissionResource, UserService) {
+  this.CompleteSurveyCtrl = this.controllerModule.controller("CompleteSurveyCtrl", function($scope, $state, SubmissionService, UserService) {
     $scope.currentUser = UserService.currentUser();
     $scope.submission = SubmissionService.getSubmission();
     $scope.data = {
@@ -12,6 +12,6 @@
     };
   });
 
-  this.CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'SubmissionResource', 'UserService'];
+  this.CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'UserService'];
 
 }).call(this);

@@ -1,6 +1,6 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, SubmissionService, SubmissionResource, UserService) ->
+@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, SubmissionService, UserService) ->
   $scope.currentUser = UserService.currentUser()
   $scope.submission  = SubmissionService.getSubmission()
 
@@ -13,4 +13,4 @@
     $state.go 'app.home'
 
 
-@CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'SubmissionResource', 'UserService']
+@CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'UserService']
