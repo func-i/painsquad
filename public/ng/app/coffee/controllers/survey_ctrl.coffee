@@ -12,7 +12,7 @@
 
   $scope.hasPain = ->
     $scope.submission.has_pain = true
-    $scope.showNextButton = true
+    $scope.showNextButton      = true
     $scope.continueSurvey()
 
   $scope.noPain = ->
