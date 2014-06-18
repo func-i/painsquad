@@ -1,6 +1,6 @@
 'use strict'
 
-@ChecklistDetailCtrl = @controllerModule.controller "ChecklistDetailCtrl", ($scope, $state, $stateParams, $ionicModal) ->
+@ChecklistModalCtrl = @controllerModule.controller "ChecklistModalCtrl", ($scope, $state, $stateParams, $ionicModal) ->
 
   $scope.ifSliderNull = (choice) ->
     if choice and !(choice.value? || choice.slider_disabled is true)
@@ -27,4 +27,4 @@
   $scope.$on 'detailModal:invalid', (event) ->
     $scope.showSave = false
 
-@ChecklistDetailCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']
+@ChecklistModalCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']
