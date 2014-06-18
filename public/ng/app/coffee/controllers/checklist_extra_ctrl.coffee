@@ -4,11 +4,12 @@
   $scope.detailData =
     currentChoice = {}
 
-  $ionicModal.fromTemplateUrl "templates/surveys/questions/modal.checklist.html", (modal) ->
-    $scope.modal = modal
-  ,
-    animation: "slide-in-up"
+  $ionicModal.fromTemplateUrl "templates/surveys/questions/modal.checklist.html",
     scope: $scope
+    animation: "slide-left-right"
+  .then (modal) ->
+    $scope.modal = modal
+
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()

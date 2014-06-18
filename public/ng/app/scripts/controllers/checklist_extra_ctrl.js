@@ -3,11 +3,11 @@
   this.ChecklistExtraCtrl = this.controllerModule.controller("ChecklistExtraCtrl", function($scope, $state, $stateParams, $ionicModal) {
     var currentChoice;
     $scope.detailData = currentChoice = {};
-    $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.checklist.html", function(modal) {
+    $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.checklist.html", {
+      scope: $scope,
+      animation: "slide-left-right"
+    }).then(function(modal) {
       return $scope.modal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
     });
     $scope.$on('$destroy', function() {
       return $scope.modal.remove();
