@@ -38,12 +38,17 @@ class User < ActiveRecord::Base
   after_create :grant_api_access, :register_create_event
   after_update :create_rank_event, :if => :rank_changed?
 
-  def display_rank
+  def display_rank(submitted_rank = nil)
+    rank = submitted_rank || self.rank
     rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
   end
 
+  def next_rank
+    display_rank(User.ranks.key(self[:rank] + 1))
+  end
+
   # TODO: fix this method, not correct
-  def next_level
+  def points_for_next_rank
     LEVELS.each do |level|
       if score < level
         return level - score

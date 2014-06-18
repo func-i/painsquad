@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :email, :created_at, :updated_at, :access_token, :display_rank, :rank, :score, :next_level
+  attributes :id, :username, :email, :created_at, :updated_at, :access_token, :display_rank, :rank, :next_rank, :points_for_next_rank, :score
 
   def access_token
     object.api_key.access_token

@@ -1,10 +1,15 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, SubmissionService, SubmissionResource) ->
+@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, SubmissionService, SubmissionResource, UserService) ->
+  $scope.currentUser = UserService.currentUser()
+  $scope.submission  = SubmissionService.getSubmission()
 
-  $scope.submitSurvey = () ->
-    SubmissionResource.save(submission: $scope.submission)
+  $scope.data =
+    submission_message: "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future... maybe even a commendation or award!"
+    xp_points:          10
 
-  $scope.submission = SubmissionService.getSubmission()
+  $scope.home = ->
+    $state.go 'app.home'
 
-@CompleteSurveyCtrl.$inject = ['$scope', 'SubmissionService', 'SubmissionResource']
+
+@CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'SubmissionResource', 'UserService']

@@ -1,8 +1,8 @@
 (function() {
   'use strict';
-  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $rootScope, $ionicScrollDelegate, survey, AuthService, SurveyService, SubmissionService, BodymapService) {
+  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $rootScope, $ionicScrollDelegate, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) {
     $scope.startSurvey = function() {
-      $scope.submission = SubmissionService.init(survey.id);
+      $scope.submission = SubmissionService.init(survey);
       $scope.questionIndex = 0;
       $scope.totalQuestions = survey.questions.length;
       return $scope.question = survey.questions[$scope.questionIndex];
@@ -20,7 +20,7 @@
       if (!$scope.showNext) {
         return;
       }
-      SurveyService.prepareSubmissionAnswer($scope.question);
+      SubmissionService.prepareSubmissionAnswer($scope.question);
       return $scope.continueSurvey();
     };
     $scope.continueSurvey = function() {
@@ -36,7 +36,10 @@
       return $ionicScrollDelegate.scrollTop();
     };
     $scope.submit = function() {
-      SurveyService.prepareSubmissionAnswer($scope.question);
+      SubmissionService.prepareSubmissionAnswer($scope.question);
+      SubmissionResource.save({
+        submission: $scope.submission
+      });
       return $state.go('app.survey_complete');
     };
     $scope.$on('currentForm:valid', function(ev) {
@@ -59,6 +62,6 @@
     return $rootScope.sideMenuEnabled = false;
   });
 
-  this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', 'survey', 'AuthService', 'SurveyService', 'SubmissionService', 'BodymapService'];
+  this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', 'survey', 'AuthService', 'SubmissionService', 'BodymapService'];
 
 }).call(this);
