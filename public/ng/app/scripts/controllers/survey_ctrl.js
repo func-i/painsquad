@@ -14,7 +14,7 @@
     };
     $scope.noPain = function() {
       $scope.submission.has_pain = false;
-      return $scope.finishSurvey();
+      return $scope.submit();
     };
     $scope.nextQuestion = function() {
       if (!$scope.showNext) {

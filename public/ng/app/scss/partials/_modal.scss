@@ -17,8 +17,10 @@
       }
 
       .content {
+        background: white;
+        min-height: 370px;
         // padding-top: 10px;
-        background-color: white;
+        // background-color: white;
 
         .content-actual {
           font-size:     18px;
@@ -34,7 +36,8 @@
             position:   absolute;
             top:        0; left: 0; bottom: 0; right: 0;
             background: url('/images/background/content.png');
-            opacity:    0.2;
+            background-color: lightgray;
+            opacity:    0.1;
             width:      100%;
           }
         }

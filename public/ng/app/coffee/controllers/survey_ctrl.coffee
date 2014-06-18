@@ -12,12 +12,12 @@
 
   $scope.hasPain = ->
     $scope.submission.has_pain = true
-    $scope.showNextButton = true
+    $scope.showNextButton      = true
     $scope.continueSurvey()
 
   $scope.noPain = ->
     $scope.submission.has_pain = false
-    $scope.finishSurvey()
+    $scope.submit()
 
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial

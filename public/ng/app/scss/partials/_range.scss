@@ -1,0 +1,47 @@
+// overrides for custom range inputs
+$thumb-height: 30px;
+
+.range.override {
+  input[type="range"] {
+    height: $thumb-height + 10;
+
+    &::-webkit-slider-thumb {
+      height:        $thumb-height !important;
+      width:         $thumb-height !important;
+      border-radius: $thumb-height !important;
+      border:        1px solid $assertive;
+    }
+
+    &::-webkit-slider-thumb:before {
+      display: none !important;
+    }
+  }
+}
+
+.range {
+  &.range-assertive.override {
+    input {
+      border-radius:    20px !important;
+      background-image: $slider-red-gradient !important;
+      background-size:  97% 15px;
+
+      &::-webkit-slider-thumb {
+        border: 1px solid $assertive;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  &.range-balanced.override {
+    input {
+      border-radius:    20px !important;
+      background-image: $slider-green-gradient !important;
+      background-size:  97% 15px;
+
+      &::-webkit-slider-thumb {
+        border: 1px solid $balanced;
+        border-radius: 20px;
+      }
+    }
+  }
+}

@@ -3,11 +3,11 @@
   this.ChecklistExtraCtrl = this.controllerModule.controller("ChecklistExtraCtrl", function($scope, $state, $stateParams, $ionicModal) {
     var currentChoice;
     $scope.detailData = currentChoice = {};
-    $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.checklist.html", function(modal) {
+    $ionicModal.fromTemplateUrl("templates/surveys/questions/modal.checklist.html", {
+      scope: $scope,
+      animation: "slide-left-right"
+    }).then(function(modal) {
       return $scope.modal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
     });
     $scope.$on('$destroy', function() {
       return $scope.modal.remove();
@@ -48,11 +48,7 @@
       _ref = $scope.question.choices;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         choice = _ref[_i];
-        if (choice.textfield) {
-          if (choice.selected && choice.value && choice.value.length > 5) {
-            inverse = true;
-          }
-        } else if (choice.selected) {
+        if (choice.selected) {
           inverse = true;
         }
       }

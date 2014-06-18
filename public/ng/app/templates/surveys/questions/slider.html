@@ -5,7 +5,8 @@
     <div class="wedge-container">
       <div class="wedge"></div>
       <div class="overlay red" slider-gradient="question.choices[0].value"></div>
-      <div class="actual-overlay" slider-gradient="question.choices[0].value"></div>
+      <!-- <div class="overlay red"></div> -->
+      <!-- <div class="actual-overlay"></div> -->
     </div>
 
     <div class="range-container">
@@ -16,7 +17,7 @@
         <div style="clear: both; height: 0;">&nbsp;</div>
       </div>
 
-      <div class="range range-assertive">
+      <div class="range range-assertive override">
         <input required
           type="range"
           ng-model="question.choices[0].value">

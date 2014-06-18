@@ -132,8 +132,8 @@ li.item.item-checkbox {
     position:         relative;
     height:           150px;
     background-color: #E7E7E7;
-    width:            90%;
-    margin-left:      15px;
+    width:            85%;
+    margin:           auto;
 
     .wedge {
       position:     absolute;
@@ -160,11 +160,27 @@ li.item.item-checkbox {
         background-image: $slider-green-gradient;
       }
     }
+
+    // .actual-overlay {
+    //   position:   absolute;
+    //   margin:     0 auto;
+    //   z-index:    0;
+    //   top:        0;
+    //   left:       0;
+    //   width:      100%;
+    //   height:     100%;
+    //   z-index:    5;
+    //   // width: 10%;
+    //   // width:      100%;
+    //   background: white;
+    // }
   }
 
   .range-container {
 
     .upper {
+      margin-top: 10px;
+
       .number {
         font-size:     27px;
         margin-top:    5px;
@@ -175,9 +191,13 @@ li.item.item-checkbox {
       }
     }
 
-    .range {}
+    .range {
+      margin-top: 10px;
+    }
 
     .lower {
+      margin-top: 10px;
+
       .text {
         text-transform: uppercase;
         font-size:      10px;
