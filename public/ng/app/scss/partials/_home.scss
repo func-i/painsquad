@@ -1,5 +1,5 @@
 .home {
-  clear: right;
+  clear: both;
 
   .transparent-header {
     height:           70px;
@@ -7,7 +7,7 @@
     background-color: rgba(0, 0, 0, 0.2);
 
     span {
-      padding: 10px;
+      padding:        10px;
       display:        inline-block;
       font-size:      10px;
       font-weight:    bold;
