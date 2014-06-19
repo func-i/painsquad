@@ -12,6 +12,9 @@ class SurveyService
   # deliver FULL survey for AM/PM alerts (any time within 30 minutes)
   # deliver TRUNCATED survey on 1 hour followup of AM/PM alerts
   def get_survey
+    # TEMP CODE FOR TESTING!
+    return send_test_survey if Rails.env.development?
+
     if @last_submission.nil?
       send_survey :full # send full survey if its the first
     elsif !@last_submission.has_pain?
@@ -19,6 +22,10 @@ class SurveyService
     else
       determine_pain_severity # otherwise, determine which survey from pain_severity
     end
+  end
+
+  def send_test_survey
+    Survey.where(identifier: :test).first
   end
 
   def determine_pain_severity
