@@ -2,7 +2,7 @@
 
   <form name="currentForm" valid-form>
 
-    <div ng-repeat="choice in question.choices" ng-class="{even: $even, odd: $odd, last: $last}">
+    <div ng-repeat="choice in question.choices" ng-class="{even: $even, odd: $odd, last: $last}" grid-order>
       <li class="item item-checkbox">
         <label class="checkbox">
           <input type="checkbox"
