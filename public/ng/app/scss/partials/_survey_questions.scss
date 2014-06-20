@@ -92,6 +92,8 @@ li.item.item-checkbox {
     margin-right: 0px;
     padding:      10px;
 
+    img { background-color: $bodymap-bg; }
+
     .ion-checkmark-circled {
       position: absolute;
       top:      35px;

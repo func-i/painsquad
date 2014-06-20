@@ -59,9 +59,8 @@ class SurveyBuilder
 
   def build_test_survey
     Builder::Other.boolean_has_pain(@survey)
-    Builder::Slider.current_pain(@survey)
+    Builder::Other.bodymap(@survey)
     Builder::Checklist.medication_efficacy_slider(@survey)
-    Builder::Slider.pain_control(@survey)
     Builder::Other.textbox(@survey)
   end
 
