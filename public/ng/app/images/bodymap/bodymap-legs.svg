@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="478px" height="400px" viewBox="0 0 478 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg id="legs" viewBox="0 0 478 545" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
 <g id="legs">
+
     <g id="selections">
         <path id="ankle_right" fill="#DDC9B2" d="M182.745,404.983c2.535,20.445,2.666,33.937,1.379,43.641
             c8.167,1.591,22.652,1.714,37.565-3.711c-0.426-1.483-0.817-2.946-1.131-4.357c-1.128-5.08-1.474-19.261-0.393-34.416
