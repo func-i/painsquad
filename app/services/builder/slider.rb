@@ -130,7 +130,7 @@ module Builder::Slider
         question_type: 'slider',
         content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?',
         identifier:    'pain_control',
-        extremes:      { least: 'no control', most: 'total control' }
+        extremes:      { least: 'not at all', most: 'a lot' }
 
       )
       question.choices.create
