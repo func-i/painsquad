@@ -2,7 +2,13 @@
 <svg id="head" viewBox="0 0 494 462" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 
 <g id="head">
-	Left
+    <text id="Left" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="38" font-weight="100">
+        <tspan x="420" y="40">Left</tspan>
+    </text>
+    <text id="Right" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="38" font-weight="100">
+        <tspan x="10" y="40">Right</tspan>
+    </text>
+
     <g id="selections">
       <path id="neck_left" fill="#DDC9B2" d="M369.393,390.374c-19.824-6.673-36.869-13.54-46.021-21.091
             c-11.059-9.121-7.449-53.393-7.449-53.393c-4.98,4.664-31.615,27.309-66.221,27.309v91.74l0.014,0.005L369.393,390.374z"

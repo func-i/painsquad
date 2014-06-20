@@ -2,6 +2,13 @@
 <svg id="torso" viewBox="0 0 494 462" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 
 <g id="torso">
+    <text id="Left" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="38" font-weight="100">
+        <tspan x="400" y="40">Right</tspan>
+    </text>
+    <text id="Right" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="38" font-weight="100">
+        <tspan x="10" y="40">Left</tspan>
+    </text>
+
     <g id="selections">
         <path id="upper_back" fill="#DDC9B2" d="M261.94,139.801c42.684,0,87.558-19.132,87.558-19.132l0.14-0.064l0.34-1.37
             c-79.896-32.252-84.207-68.535-84.207-68.535h-13.133h-6.088h-13.134c0,0-4.31,36.283-84.206,68.535l0.479,1.435
