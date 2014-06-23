@@ -2,7 +2,8 @@
 
   <form name="currentForm" valid-form>
 
-    <div ng-repeat="choice in question.choices" ng-class="{even: $even, odd: $odd, last: $last}" grid-order>
+    <div ng-repeat="choice in question.choices | orderByWidth" ng-class="{wide: choice.wide, even: $even, odd: $odd, last: $last}">
+
       <li class="item item-checkbox">
         <label class="checkbox">
           <input type="checkbox"
@@ -10,7 +11,6 @@
             ng-model="choice.selected"/>
         </label>
         <span class="content">{{ choice.content }}</span>
-
       </li>
       <label ng-show="choice.textfield && choice.selected" class="item item-input">
         <textarea
@@ -18,7 +18,7 @@
           placeholder="Please specify"
           rows="5"></textarea>
       </label>
-      <!-- <hr class="divider"> -->
+
     </div>
 
   </form>
