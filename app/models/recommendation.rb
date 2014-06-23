@@ -17,7 +17,6 @@
 #
 
 class Recommendation < ActiveRecord::Base
-  belongs_to :advice
   has_many :steps
 
   has_many :nested_recommendations, class_name: 'Recommendation', foreign_key: 'parent_recommendation_id'

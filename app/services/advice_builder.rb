@@ -9,6 +9,7 @@ class AdviceBuilder
   ### PHARMACOLOGICAL
   def numbing_cream
     Recommendation.create(
+      # group:
       section:     'pharmacological',
       style:       'basic',
       title:       'Numbing Cream',
