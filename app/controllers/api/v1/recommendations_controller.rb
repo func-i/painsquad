@@ -13,10 +13,7 @@ module Api
 
       private
 
-      # TODO: Need to populate advice -> recommendations based upon some
-      # requirements specified by SickKids
-      # also, speed up this query, it sucks
-      def fetch_advice
+      def fetch_recommendations
         @recommendations = RecommendationService.new(@user).get_recommendations
       end
     end

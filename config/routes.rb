@@ -12,9 +12,6 @@ PainSquadApi::Application.routes.draw do
 
       resource :session
       resources :users
-      # resources :users do
-      #   put :password, on: :member
-      # end
     end
   end
 

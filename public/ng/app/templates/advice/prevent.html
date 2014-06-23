@@ -4,19 +4,25 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
-    Pharmacological:
-      - numbing cream
-    <br>
-    Psychological
-      - behavioural rehearsal
-      - distraction
-      - mental games
-      - imagery
-    <br>
-    Physical
-      - belly breathing
-      - relaxation
+  <ion-content>
+     <div class="list">
+
+      <a class="item" ui-sref="app.pain_pharmacological">
+        Pharmacological pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+      <a class="item" ui-sref="app.pain_physical">
+        Physical pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+      <a class="item" ui-sref="app.pain_psychological">
+        Psychological pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+    </div>
   </ion-content>
 
 </ion-view>

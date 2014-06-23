@@ -105,8 +105,7 @@ interceptor.$inject = ['$q', '$injector']
             recommendations: (Recommendation, $q) ->
               defer = $q.defer()
               Recommendation.query (response) ->
-                debugger
-                # defer.resolve response.advice.recommendations
+                defer.resolve response.recommendations
               defer.promise
     )
 

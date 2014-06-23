@@ -4,7 +4,7 @@
     return $resource("" + CONFIG.apiUrl + "/recommendations", {}, {
       query: {
         method: 'GET',
-        isArray: true
+        isArray: false
       }
     });
   });

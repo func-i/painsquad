@@ -4,22 +4,25 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
-    Pharmacological:
-      - take your pain medication regularly
-      - take any 'as needed' medication
-    <br>
-    Psychological
-      - relaxation
-      - mini-relaxation
-      - distraction
-      - mental games
-      - imagery
-    <br>
-    Physical
-      - belly breathing
-      - gentle exercise
-      - stretching / yoga
+  <ion-content>
+     <div class="list">
+
+      <a class="item" ui-sref="app.pain_pharmacological">
+        Pharmacological pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+      <a class="item" ui-sref="app.pain_physical">
+        Physical pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+      <a class="item" ui-sref="app.pain_psychological">
+        Psychological pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </a>
+
+    </div>
   </ion-content>
 
 </ion-view>

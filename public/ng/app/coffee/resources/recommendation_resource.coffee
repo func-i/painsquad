@@ -4,6 +4,6 @@
   $resource "#{CONFIG.apiUrl}/recommendations", {},
     query:
       method: 'GET'
-      isArray: true
+      isArray: false
 
 @RecommendationResource.$inject = ['$http', '$resource', 'CONFIG']

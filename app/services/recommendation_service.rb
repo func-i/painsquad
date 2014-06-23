@@ -1,9 +1,13 @@
 class RecommendationService
 
   def initialize(user)
-    @user            = user
-    # @last_submission = @user.submissions.last
-    # @previous        = @user.previous_submissions
+    @user              = user
+    # @pain_severity     = @user.submissions.last.pain_severity
+  end
+
+  # TODO: implement algorithm here yo
+  def get_recommendations
+    Recommendation.all.take(3)
   end
 
 end

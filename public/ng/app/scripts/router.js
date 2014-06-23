@@ -116,7 +116,7 @@
               var defer;
               defer = $q.defer();
               Recommendation.query(function(response) {
-                debugger;
+                return defer.resolve(response.recommendations);
               });
               return defer.promise;
             }
