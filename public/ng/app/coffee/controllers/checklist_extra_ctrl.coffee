@@ -10,15 +10,18 @@
   .then (modal) ->
     $scope.modal = modal
 
-
   $scope.$on '$destroy', ->
     $scope.modal.remove()
 
-  # convenience method to pass choice object to checklist detail view
-  $scope.goToSectionOrDisable = (choice) ->
+  $scope.delegateSelection = (choice) ->
+    # if its none, disable everything
     if @choice.can_disable
       $scope.disableAllChoices()
+    # if its already selected, deselect it
+    else if @choice.selected
+      @choice.selected = false
     else
+      # load the modal
       $scope.detailData.currentChoice = choice
       $scope.modal.show()
 

@@ -52,7 +52,6 @@ li.item.item-checkbox {
     float: left;
     border-bottom: 1px solid black;
 
-    .divider { color: lightgrey; }
     textarea { resize: none; }
 
     li.item {
@@ -68,8 +67,7 @@ li.item.item-checkbox {
       margin:       0 10px 0 60px;
     }
 
-    &:nth-last-child(2).even {
-      color: red;
+    &.wide {
       width: 100%;
     }
 
@@ -91,6 +89,8 @@ li.item.item-checkbox {
     margin-left:  0px;
     margin-right: 0px;
     padding:      10px;
+
+    img { background-color: $bodymap-bg; }
 
     .ion-checkmark-circled {
       position: absolute;

@@ -14,7 +14,6 @@ module Api
       private
 
       def fetch_survey
-        # @survey = Survey.last
         @survey = SurveyService.new(@user).get_survey
       end
     end

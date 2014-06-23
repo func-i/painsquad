@@ -12,6 +12,14 @@ button {
       margin:        0 70px 10px 70px;
     }
 
+
+    &.done {
+      height:           25px;
+      width:            60px;
+      font-size:        16px;
+      background-color: $assertive-alternate;
+    }
+
     &.not-assertive {
       background-color: $assertive-alternate;
       &.activated { background-color: $assertive-alternate-active; }

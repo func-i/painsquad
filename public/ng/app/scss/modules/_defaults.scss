@@ -1,8 +1,15 @@
+@font-face {
+  font-family: 'ArialMT';
+  src:         url('/fonts/Arial.ttf') format('truetype');
+  font-weight: normal;
+  font-style:  normal;
+}
+
 body {
   font-family: ArialMT, Arial, Helvetica, sans-serif !important;
 }
 
-input, button, select, textarea {
+input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
  font-family: ArialMT, Arial, Helvetica, sans-serif !important;
 }
 

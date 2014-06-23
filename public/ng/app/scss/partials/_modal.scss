@@ -52,7 +52,18 @@
         }
 
         .map section svg {
-          margin: 10px;
+          height:      50%;
+          background-color: $bodymap-bg;
+
+          &#torso, &#arms {
+            margin: 10px 15px 0 15px;
+            width: 90%;
+          }
+          &#legs, &#head {
+            margin: 20px 20px 0 15px;
+            width: 90%;
+          }
+
         }
 
         .tip {
