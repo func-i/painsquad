@@ -12,10 +12,7 @@
       else if item.textfield
         lastItem.push(item)
       else
-        item = 0
-        item = 1 + 2
-        console.log item
-        console.log "HEllo wolrd?!?!?!"
         array.push(item)
 
-    # array.concat(pushToEnd).concat(lastItem)
+    array[array.length - 1].wide = true if array.length % 2 != 0
+    return array.concat(pushToEnd).concat(lastItem)
