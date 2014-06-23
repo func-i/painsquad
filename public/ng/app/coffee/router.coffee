@@ -143,6 +143,22 @@ interceptor.$inject = ['$q', '$injector']
           controller:  'AdviceStepsCtrl'
     )
 
+    # advice state
+    .state('app.prevent_pain'
+      url: '/advice/prevent'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/prevent.html'
+    )
+
+    # advice state
+    .state('app.manage_pain'
+      url: '/advice/manage'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/manage.html'
+    )
+
 ############################ STATIC CONTENT ####################################
     # settings state
     .state('app.settings'

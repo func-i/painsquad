@@ -157,6 +157,20 @@
           controller: 'AdviceStepsCtrl'
         }
       }
+    }).state('app.prevent_pain', {
+      url: '/advice/prevent',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/prevent.html'
+        }
+      }
+    }).state('app.manage_pain', {
+      url: '/advice/manage',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/manage.html'
+        }
+      }
     }).state('app.settings', {
       url: '/settings',
       views: {

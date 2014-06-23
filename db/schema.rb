@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619210244) do
+ActiveRecord::Schema.define(version: 20140623175225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140619210244) do
     t.integer  "parent_recommendation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "section"
   end
 
   create_table "steps", force: true do |t|

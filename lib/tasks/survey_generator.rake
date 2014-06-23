@@ -23,7 +23,4 @@ namespace :survey do
     SurveyBuilder.new(identifier: 'test').build
   end
 
-  task :all => [:environment, :full, :truncated] do
-  end
-
 end

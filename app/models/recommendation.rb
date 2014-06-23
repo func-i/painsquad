@@ -27,5 +27,7 @@ class Recommendation < ActiveRecord::Base
   has_many :users, :through => :favorites
 
   validates :style, inclusion: %w(basic slideshow nested)
+  validates :section, inclusion: %w(pharmacological psychological physical)
+
 
 end
