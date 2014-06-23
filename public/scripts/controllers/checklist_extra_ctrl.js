@@ -12,9 +12,11 @@
     $scope.$on('$destroy', function() {
       return $scope.modal.remove();
     });
-    $scope.goToSectionOrDisable = function(choice) {
+    $scope.delegateSelection = function(choice) {
       if (this.choice.can_disable) {
         return $scope.disableAllChoices();
+      } else if (this.choice.selected) {
+        return this.choice.selected = false;
       } else {
         $scope.detailData.currentChoice = choice;
         return $scope.modal.show();
