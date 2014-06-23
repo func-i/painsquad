@@ -45,6 +45,10 @@ Download the Phonegap Developer app [here](http://app.phonegap.com/), it will no
 
 `rake survey:truncated`
 
+## Generating Advice
+
+`rake advice:all`
+
 
 ## Cukes
 

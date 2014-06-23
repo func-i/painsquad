@@ -69,7 +69,6 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
-    # temporary state - REMOVE DIS
     .state('app.survey_complete'
       url: '/surveys/complete'
       views:
@@ -103,10 +102,11 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/advice/recommended.html'
           controller:  'RecommendationsCtrl'
           resolve:
-            recommendations: (Advice, $q) ->
+            recommendations: (Recommendation, $q) ->
               defer = $q.defer()
-              Advice.query (response) ->
-                defer.resolve response.advice.recommendations
+              Recommendation.query (response) ->
+                debugger
+                # defer.resolve response.advice.recommendations
               defer.promise
     )
 

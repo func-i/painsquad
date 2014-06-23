@@ -112,11 +112,11 @@
           templateUrl: 'templates/advice/recommended.html',
           controller: 'RecommendationsCtrl',
           resolve: {
-            recommendations: function(Advice, $q) {
+            recommendations: function(Recommendation, $q) {
               var defer;
               defer = $q.defer();
-              Advice.query(function(response) {
-                return defer.resolve(response.advice.recommendations);
+              Recommendation.query(function(response) {
+                debugger;
               });
               return defer.promise;
             }

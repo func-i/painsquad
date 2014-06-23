@@ -1,4 +1,4 @@
-module Builder::Checklist
+module Builder::Questions::Checklist
   PAIN_CAUSE = [
     'Your treatments', 'Medical Conditions', 'Medical Procedures', 'Everyday Pain'
   ]
