@@ -18,6 +18,6 @@
     };
   });
 
-  this.PhysicalPainCtrl.$inject = ['$scope', 'PainService'];
+  this.PhysicalPainCtrl.$inject = ['$scope', 'PainService', 'Favorites'];
 
 }).call(this);

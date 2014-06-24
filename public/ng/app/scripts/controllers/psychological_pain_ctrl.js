@@ -18,6 +18,6 @@
     };
   });
 
-  this.PsychologicalPainCtrl.$inject = ['$scope', 'PainService'];
+  this.PsychologicalPainCtrl.$inject = ['$scope', 'PainService', 'Favorites'];
 
 }).call(this);

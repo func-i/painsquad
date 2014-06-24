@@ -30,6 +30,10 @@ class Recommendation < ActiveRecord::Base
   validates :group, inclusion: %w(prevent manage both), allow_nil: true
 
   scope :prevent, -> { where(group: %w(prevent both)) }
-  scope :manage, -> { where(group: %w(manage both)) }
+  scope :manage,  -> { where(group: %w(manage both)) }
+
+  scope :pharmacological, -> { where(section: 'pharmacological') }
+  scope :psychological,   -> { where(section: 'psychological') }
+  scope :physical,        -> { where(section: 'physical') }
 
 end
