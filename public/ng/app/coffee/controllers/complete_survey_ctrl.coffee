@@ -1,6 +1,6 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, SubmissionService, UserService) ->
+@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, $rootScope, SubmissionService, UserService) ->
   $scope.currentUser = UserService.currentUser()
   $scope.submission  = SubmissionService.getSubmission()
 
@@ -11,6 +11,10 @@
 
   $scope.home = ->
     $state.go 'app.home'
+    triggerPopupEvent()
 
+  triggerPopupEvent = ->
+    $rootScope.$broadcast 'surveyComplete'
+    # $rootScope.$emit 'surveyComplete'
 
-@CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'UserService']
+@CompleteSurveyCtrl.$inject = ['$scope', '$state', '$rootScope', 'SubmissionService', 'UserService']
