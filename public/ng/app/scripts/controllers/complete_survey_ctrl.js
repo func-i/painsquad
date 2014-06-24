@@ -9,11 +9,13 @@
       xp_points: $scope.submission.xp_points
     };
     $scope.home = function() {
-      $state.go('app.home');
+      $state.go('app.home', {
+        'showEvent': true
+      });
       return triggerPopupEvent();
     };
     return triggerPopupEvent = function() {
-      return $rootScope.$broadcast('surveyComplete');
+      return $scope.$emit('surveyComplete');
     };
   });
 
