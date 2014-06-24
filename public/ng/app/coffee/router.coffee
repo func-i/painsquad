@@ -46,6 +46,14 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
+    .state('app.home.complete'
+      url: '/:action'
+      views:
+        menuContent:
+          templateUrl: 'templates/shared/home.html'
+          controller:  'HomeCtrl'
+    )
+
     .state('app.login',
       url: '/login',
       views:

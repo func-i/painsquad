@@ -123,6 +123,7 @@
   reset = ->
     $scope.selectedItem = {}
 
+  # this is broken!
   mergeData = ->
     for item, index in achievements.awards
       unlockItem($scope.awardData[index], item)
@@ -130,6 +131,11 @@
       unlockItem($scope.achievementData[index], item)
 
   unlockItem = (listItem, item) ->
+    unless listItem?
+      debugger
+    unless item?
+      debugger
+
     listItem.locked = false
     listItem.date  = moment(item.created_at).format('ll')
 
