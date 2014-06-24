@@ -4,12 +4,12 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
+  <ion-content padding="true" ng-controller="RecommendationsModalCtrl">
 
     <ion-list class="recommended">
 
       <ion-item
-        ng-repeat="item in recommendedItems"
+        ng-repeat="item in recommendations"
         class="item item-thumbnail-left"
         ng-click="loadAdviceModal(item)">
 
