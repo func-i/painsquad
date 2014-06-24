@@ -4,7 +4,7 @@ module Api
       before_action :fetch_favorite, only: :destroy
 
       def index
-        @favorites = Favorite.includes(:recommendation).where(user_id: @user.id).take(5)
+        @favorites = Favorite.includes(:recommendation).where(user_id: @user.id).take(4)
         if @favorites
           render json: @favorites
         else

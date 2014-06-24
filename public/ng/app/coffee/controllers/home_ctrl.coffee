@@ -1,8 +1,10 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, UserService, userScore) ->
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, UserService, userScore) ->
   $scope.currentUser = UserService.currentUser()
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
 
-@HomeCtrl.$inject = ['$scope', '$state', 'UserService', 'userScore']
+  $rootScope.sideMenuEnabled = true
+
+@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', 'UserService', 'userScore']

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619210244) do
+ActiveRecord::Schema.define(version: 20140623205015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +29,6 @@ ActiveRecord::Schema.define(version: 20140619210244) do
   add_index "activities", ["subject_id"], name: "index_activities_on_subject_id", using: :btree
   add_index "activities", ["subject_type"], name: "index_activities_on_subject_type", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
-
-  create_table "advices", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "answers", force: true do |t|
     t.integer  "submission_id"
@@ -95,27 +89,29 @@ ActiveRecord::Schema.define(version: 20140619210244) do
   add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
 
   create_table "recommendations", force: true do |t|
-    t.integer  "advice_id"
     t.string   "title"
     t.string   "image"
     t.string   "duration"
     t.string   "context"
-    t.string   "description"
-    t.string   "byline"
+    t.text     "description"
+    t.text     "byline"
     t.string   "style"
     t.integer  "parent_recommendation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "section"
+    t.string   "group"
   end
 
   create_table "steps", force: true do |t|
     t.integer  "recommendation_id"
-    t.string   "content"
+    t.text     "content"
     t.string   "tip"
     t.string   "audio_path"
     t.string   "video_path"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_path"
   end
 
   create_table "submissions", force: true do |t|

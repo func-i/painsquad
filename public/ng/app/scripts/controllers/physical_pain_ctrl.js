@@ -1,7 +1,7 @@
 (function() {
   'use strict';
-  this.RecommendationsCtrl = this.controllerModule.controller('RecommendationsCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, recommendations, Favorites, Activity) {
-    $scope.recommendations = recommendations;
+  this.PhysicalPainCtrl = this.controllerModule.controller('PhysicalPainCtrl', function($scope, PainService, Favorites) {
+    $scope.recommendations = PainService.getItems('physical');
     return $scope.toggleFavorite = function(item) {
       item.favorite = !item.favorite;
       if (item.favorite) {
@@ -18,6 +18,6 @@
     };
   });
 
-  this.RecommendationsCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'recommendations', 'Favorites', 'Activity'];
+  this.PhysicalPainCtrl.$inject = ['$scope', 'PainService', 'Favorites'];
 
 }).call(this);

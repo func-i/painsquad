@@ -17,7 +17,6 @@
 #
 
 class Recommendation < ActiveRecord::Base
-  belongs_to :advice
   has_many :steps
 
   has_many :nested_recommendations, class_name: 'Recommendation', foreign_key: 'parent_recommendation_id'
@@ -27,5 +26,14 @@ class Recommendation < ActiveRecord::Base
   has_many :users, :through => :favorites
 
   validates :style, inclusion: %w(basic slideshow nested)
+  validates :section, inclusion: %w(pharmacological psychological physical), allow_nil: true
+  validates :group, inclusion: %w(prevent manage both), allow_nil: true
+
+  scope :prevent, -> { where(group: %w(prevent both)) }
+  scope :manage,  -> { where(group: %w(manage both)) }
+
+  scope :pharmacological, -> { where(section: 'pharmacological') }
+  scope :psychological,   -> { where(section: 'psychological') }
+  scope :physical,        -> { where(section: 'physical') }
 
 end
