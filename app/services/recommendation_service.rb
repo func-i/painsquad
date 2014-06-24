@@ -17,15 +17,3 @@ class RecommendationService
   end
 
 end
-
-
-# Pain Severity Advice Algorithm
-# MILD:
-  # order Psychological -> Physical -> Pharmacological
-  # prioritise psychological/physical
-
-# MODERATE/SEVERE:
-  # order Pharmacological (x2) -> Psych x1 -> Physical x1
-  # random from psych/physical
-
-# After completing a survey, alert popup to bring user to recommended advice section*
