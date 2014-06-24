@@ -1,7 +1,7 @@
 module Api
   module V1
     class RecommendationsController < ApplicationController
-      before_action :fetch_recommendations
+      before_action :fetch_recommendations, only: :show
 
       def show
         if @recommendations
@@ -9,6 +9,16 @@ module Api
         else
           render json: nil, status: 404
         end
+      end
+
+      def prevent
+        @recommendations = Recommendation.prevent
+        render json: @recommendations
+      end
+
+      def manage
+        @recommendations = Recommendation.manage
+        render json: @recommendations
       end
 
       private

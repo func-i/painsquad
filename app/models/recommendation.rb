@@ -29,7 +29,7 @@ class Recommendation < ActiveRecord::Base
   validates :section, inclusion: %w(pharmacological psychological physical), allow_nil: true
   validates :group, inclusion: %w(prevent manage both), allow_nil: true
 
-  # scope :manage
-  # scope :prevent
+  scope :prevent, -> { where(group: %w(prevent both)) }
+  scope :manage, -> { where(group: %w(manage both)) }
 
 end
