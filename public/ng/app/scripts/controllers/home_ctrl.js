@@ -14,8 +14,7 @@
         buttons: [
           {
             text: 'No',
-            type: 'button-default',
-            onTap: function(ev) {}
+            type: 'button-default'
           }, {
             text: 'Yes',
             type: 'button-positive',
