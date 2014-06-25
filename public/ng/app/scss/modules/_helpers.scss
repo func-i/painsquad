@@ -13,7 +13,7 @@
 }
 
 .content-background {
-  background-image: url('/images/background/survey.png');
+  background-image: url('../images/background/survey.png');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -26,7 +26,8 @@
     content: '';
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    background: url('/images/background/content.png');
+    // background: url('/images/background/content.png');
+    background-image: url('/images/background/content.png');
     width: 100%;
     opacity: 0.1;
   }
