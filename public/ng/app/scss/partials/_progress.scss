@@ -1,5 +1,16 @@
+body {
+  &.platform-ios .progress {
+    top: 60px;
+  }
+
+  &.platform-browser .progress {
+    top: 44px;
+  }
+}
+
 .progress {
-  top:      44px;
+  // top:      44px;
+  // top:      60px;
   display:  block;
   position: absolute;
   z-index:  10;
@@ -9,8 +20,9 @@
     display:    block;
     clear:      both;
     height:     50px;
-    opacity:    0.5;
+    // opacity:    0.5;
     background: gray;
+    background-image: url('../images/background/survey.png');
   }
 
   .progress-actual {
