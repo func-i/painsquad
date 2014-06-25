@@ -4,12 +4,10 @@ $menu-item-color: #5B6166;
 $menu-gap-color:  #808A8F;
 $menu-dark-font:  #C0C0C0;
 
-.spacer {
-  height: 20px;
-  color: red !important;
-  background-color: green !important;
-  // background-color: $royal !important;
-}
+// .spacer {
+//   height: 20px;
+//   background-color: $royal !important;
+// }
 
 ion-content.sidemenu {
   top: 20px;
@@ -36,7 +34,3 @@ ion-content.sidemenu {
   }
 
 }
-
-// .pane, .view {
-//   background-color: none !important;
-// }
