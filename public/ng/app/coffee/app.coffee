@@ -35,4 +35,6 @@
     $state.go $rootScope.previousState_name, $rootScope.previousState_params
 
   $ionicPlatform.ready ->
-    StatusBar.styleDefault() if window.StatusBar
+    StatusBar.backgroundColorByName("cyan") if window.StatusBar
+    # StatusBar.styleLightContent() if window.StatusBar
+    # StatusBar.styleDefault() if window.StatusBar
