@@ -134,6 +134,12 @@
       return _results;
     };
     unlockItem = function(listItem, item) {
+      if (listItem == null) {
+        debugger;
+      }
+      if (item == null) {
+        debugger;
+      }
       listItem.locked = false;
       return listItem.date = moment(item.created_at).format('ll');
     };

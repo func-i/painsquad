@@ -88,6 +88,9 @@ li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
     left: 30%;
     box-shadow: 0px 5px 8px 0px black; }
 
+div.popup.popup-showing.active div.popup-body {
+  text-align: center; }
+
 .logo {
   display: block;
   margin: 15px auto;

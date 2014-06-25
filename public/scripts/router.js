@@ -22,7 +22,7 @@
 
   interceptor.$inject = ['$q', '$injector'];
 
-  this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) {
+  this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     $httpProvider.responseInterceptors.push(interceptor);
@@ -51,6 +51,14 @@
               return defer.promise;
             }
           }
+        }
+      }
+    }).state('app.home.complete', {
+      url: '/:action',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/shared/home.html',
+          controller: 'HomeCtrl'
         }
       }
     }).state('app.login', {
@@ -105,6 +113,13 @@
           }
         }
       }
+    }).state('app.advice', {
+      url: '/advice',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/main.html'
+        }
+      }
     }).state('app.recommended', {
       url: '/recommended',
       views: {
@@ -112,11 +127,11 @@
           templateUrl: 'templates/advice/recommended.html',
           controller: 'RecommendationsCtrl',
           resolve: {
-            recommendations: function(Advice, $q) {
+            recommendations: function(Recommendation, $q) {
               var defer;
               defer = $q.defer();
-              Advice.query(function(response) {
-                return defer.resolve(response.advice.recommendations);
+              Recommendation.query(function(response) {
+                return defer.resolve(response.recommendations);
               });
               return defer.promise;
             }
@@ -141,20 +156,81 @@
           }
         }
       }
-    }).state('app.advice', {
-      url: '/advice',
-      views: {
-        menuContent: {
-          templateUrl: 'templates/advice/main.html',
-          controller: 'AdviceCtrl'
-        }
-      }
     }).state('app.advice_steps', {
       url: '/recommended/steps/',
       views: {
         menuContent: {
-          templateUrl: 'templates/advice/steps.html',
-          controller: 'AdviceStepsCtrl'
+          templateUrl: 'templates/advice/steps.html'
+        }
+      }
+    }).state('app.prevent_pain', {
+      url: '/advice/prevent',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/prevent.html',
+          controller: 'PreventCtrl',
+          resolve: {
+            PreventionRecommendations: function($q, $http) {
+              var defer;
+              defer = $q.defer();
+              $http({
+                method: 'GET',
+                url: "" + CONFIG.apiUrl + "/recommendations/prevent/"
+              }).success(function(response) {
+                return defer.resolve(response.recommendations);
+              }).error(function(data) {
+                return false;
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.manage_pain', {
+      url: '/advice/manage',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/manage.html',
+          controller: 'ManageCtrl',
+          resolve: {
+            ManagementRecommendations: function($q, $http) {
+              var defer;
+              defer = $q.defer();
+              $http({
+                method: 'GET',
+                url: "" + CONFIG.apiUrl + "/recommendations/manage/"
+              }).success(function(response) {
+                return defer.resolve(response.recommendations);
+              }).error(function(data) {
+                return false;
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.pain_pharmacological', {
+      url: '/pain/pharmacological',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/pharmacological.html',
+          controller: "PharmacologicalPainCtrl"
+        }
+      }
+    }).state('app.pain_physical', {
+      url: '/pain/physical',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/physical.html',
+          controller: "PhysicalPainCtrl"
+        }
+      }
+    }).state('app.pain_psychological', {
+      url: '/pain/psychological',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/advice/psychological.html',
+          controller: "PsychologicalPainCtrl"
         }
       }
     }).state('app.settings', {
@@ -247,27 +323,6 @@
       views: {
         menuContent: {
           templateUrl: 'templates/static/pain/plan.html'
-        }
-      }
-    }).state('app.pain_pharmacological', {
-      url: '/pain/pharmacological',
-      views: {
-        menuContent: {
-          templateUrl: 'templates/static/pain/pharmacological.html'
-        }
-      }
-    }).state('app.pain_physical', {
-      url: '/pain/physical',
-      views: {
-        menuContent: {
-          templateUrl: 'templates/static/pain/physical.html'
-        }
-      }
-    }).state('app.pain_psychological', {
-      url: '/pain/psychological',
-      views: {
-        menuContent: {
-          templateUrl: 'templates/static/pain/psychological.html'
         }
       }
     });
