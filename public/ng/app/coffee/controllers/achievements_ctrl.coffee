@@ -3,15 +3,6 @@
 @AchievementsCtrl = @controllerModule.controller 'AchievementsCtrl', ($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements) ->
   $scope.selectedAward = {}
 
-  $ionicModal.fromTemplateUrl "templates/achievements/modal.award.html", (modal) ->
-    $scope.modal = modal
-  ,
-    animation: "slide-in-up"
-    scope: $scope
-
-  $scope.$on '$destroy', ->
-    $scope.modal.remove()
-
   $scope.achievementData = [
       {
         name:       'rookie'
@@ -99,6 +90,15 @@
     }
   ]
 
+  $ionicModal.fromTemplateUrl "templates/achievements/modal.award.html", (modal) ->
+    $scope.modal = modal
+  ,
+    animation: "slide-in-up"
+    scope: $scope
+
+  $scope.$on '$destroy', ->
+    $scope.modal.remove()
+
   $scope.loadAwardModal = (item) ->
     $scope.selectedItem = item
     $scope.modal.show() unless item.locked
@@ -115,20 +115,18 @@
 
   $scope.getImage = (item) ->
     if item.locked
-      # TODO: need 'locked' images
-      'border': '5px dotted black'
+      'background-image': 'url(images/awards/locked.gif)'
     else
       'background-image': 'url(' + item.image_path + ')'
 
   reset = ->
     $scope.selectedItem = {}
 
-  # this is broken!
   mergeData = ->
-    for item, index in achievements.awards
-      unlockItem($scope.awardData[index], item)
     for item, index in achievements.ranks
       unlockItem($scope.achievementData[index], item)
+    for item, index in achievements.awards
+      unlockItem($scope.awardData[index], item)
 
   unlockItem = (listItem, item) ->
     listItem.locked = false

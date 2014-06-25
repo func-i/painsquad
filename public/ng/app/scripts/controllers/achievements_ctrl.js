@@ -3,15 +3,6 @@
   this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements) {
     var mergeData, reset, setLevels, unlockItem;
     $scope.selectedAward = {};
-    $ionicModal.fromTemplateUrl("templates/achievements/modal.award.html", function(modal) {
-      return $scope.modal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
-    });
-    $scope.$on('$destroy', function() {
-      return $scope.modal.remove();
-    });
     $scope.achievementData = [
       {
         name: 'rookie',
@@ -88,6 +79,15 @@
         date: null
       }
     ];
+    $ionicModal.fromTemplateUrl("templates/achievements/modal.award.html", function(modal) {
+      return $scope.modal = modal;
+    }, {
+      animation: "slide-in-up",
+      scope: $scope
+    });
+    $scope.$on('$destroy', function() {
+      return $scope.modal.remove();
+    });
     $scope.loadAwardModal = function(item) {
       $scope.selectedItem = item;
       if (!item.locked) {
@@ -107,7 +107,7 @@
     $scope.getImage = function(item) {
       if (item.locked) {
         return {
-          'border': '5px dotted black'
+          'background-image': 'url(images/awards/locked.gif)'
         };
       } else {
         return {
@@ -120,16 +120,16 @@
     };
     mergeData = function() {
       var index, item, _i, _j, _len, _len1, _ref, _ref1, _results;
-      _ref = achievements.awards;
+      _ref = achievements.ranks;
       for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
         item = _ref[index];
-        unlockItem($scope.awardData[index], item);
+        unlockItem($scope.achievementData[index], item);
       }
-      _ref1 = achievements.ranks;
+      _ref1 = achievements.awards;
       _results = [];
       for (index = _j = 0, _len1 = _ref1.length; _j < _len1; index = ++_j) {
         item = _ref1[index];
-        _results.push(unlockItem($scope.achievementData[index], item));
+        _results.push(unlockItem($scope.awardData[index], item));
       }
       return _results;
     };
