@@ -27,7 +27,7 @@
     };
     return $ionicPlatform.ready(function() {
       if (window.StatusBar) {
-        return StatusBar.styleDefault();
+        return StatusBar.styleLightContent();
       }
     });
   });
