@@ -1,4 +1,4 @@
-module Builder::Slider
+module Builder::Questions::Slider
 
   class << self
 

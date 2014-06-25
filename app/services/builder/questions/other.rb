@@ -1,4 +1,4 @@
-module Builder::Other
+module Builder::Questions::Other
 
   class << self
 

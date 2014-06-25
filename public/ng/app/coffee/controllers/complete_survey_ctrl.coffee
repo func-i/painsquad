@@ -1,6 +1,6 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, SubmissionService, UserService) ->
+@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, $rootScope, SubmissionService, UserService) ->
   $scope.currentUser = UserService.currentUser()
   $scope.submission  = SubmissionService.getSubmission()
 
@@ -10,7 +10,6 @@
     # message: "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future... maybe even a commendation or award!"
 
   $scope.home = ->
-    $state.go 'app.home'
+    $state.transitionTo('app.home.complete', { action: 'surveyComplete'} )
 
-
-@CompleteSurveyCtrl.$inject = ['$scope', '$state', 'SubmissionService', 'UserService']
+@CompleteSurveyCtrl.$inject = ['$scope', '$state', '$rootScope', 'SubmissionService', 'UserService']

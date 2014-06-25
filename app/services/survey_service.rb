@@ -16,11 +16,14 @@ class SurveyService
     return send_test_survey if Rails.env.development?
 
     if @last_submission.nil?
-      send_survey :full # send full survey if its the first
+      # send full survey if its the first
+      send_survey :full
     elsif !@last_submission.has_pain?
-      send_survey :truncated # no pain in previous report, send truncated
+      # no pain in previous report, send truncated
+      send_survey :truncated
     else
-      determine_pain_severity # otherwise, determine which survey from pain_severity
+      # otherwise, determine which survey from pain_severity
+      determine_pain_severity
     end
   end
 

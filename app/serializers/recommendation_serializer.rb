@@ -1,5 +1,5 @@
 class RecommendationSerializer < ActiveModel::Serializer
-  attributes :id, :title, :image, :duration, :context, :description, :byline, :style, :favorite
+  attributes :id, :title, :image, :duration, :context, :description, :byline, :style, :favorite, :section, :group
   has_many :steps
   has_many :nested_recommendations
 

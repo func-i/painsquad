@@ -14,7 +14,7 @@ interceptor = ($q, $injector) ->
 
 interceptor.$inject = ['$q', '$injector']
 
-@painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider) ->
+@painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push(interceptor)
   $urlRouterProvider.otherwise '/app/home'
@@ -46,6 +46,14 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
+    .state('app.home.complete'
+      url: '/:action'
+      views:
+        menuContent:
+          templateUrl: 'templates/shared/home.html'
+          controller:  'HomeCtrl'
+    )
+
     .state('app.login',
       url: '/login',
       views:
@@ -69,7 +77,6 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
-    # temporary state - REMOVE DIS
     .state('app.survey_complete'
       url: '/surveys/complete'
       views:
@@ -95,6 +102,14 @@ interceptor.$inject = ['$q', '$injector']
     )
 
 
+    # advice state
+    .state('app.advice'
+      url: '/advice'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/main.html'
+    )
+
     # advice -> recommended state
     .state('app.recommended'
       url: '/recommended'
@@ -103,10 +118,10 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/advice/recommended.html'
           controller:  'RecommendationsCtrl'
           resolve:
-            recommendations: (Advice, $q) ->
+            recommendations: (Recommendation, $q) ->
               defer = $q.defer()
-              Advice.query (response) ->
-                defer.resolve response.advice.recommendations
+              Recommendation.query (response) ->
+                defer.resolve response.recommendations
               defer.promise
     )
 
@@ -125,22 +140,75 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
-    # advice state
-    .state('app.advice'
-      url: '/advice'
-      views:
-        menuContent:
-          templateUrl: 'templates/advice/main.html'
-          controller:  'AdviceCtrl'
-    )
-
     # recommended -> advice steps slidebox
     .state('app.advice_steps'
       url: '/recommended/steps/'
       views:
         menuContent:
           templateUrl: 'templates/advice/steps.html'
-          controller:  'AdviceStepsCtrl'
+    )
+
+    # advice -> prevent pain state
+    .state('app.prevent_pain'
+      url: '/advice/prevent'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/prevent.html'
+          controller: 'PreventCtrl'
+          resolve:
+            PreventionRecommendations: ($q, $http) ->
+              defer = $q.defer()
+              $http({method: 'GET', url: "#{CONFIG.apiUrl}/recommendations/prevent/"})
+              .success (response) ->
+                defer.resolve response.recommendations
+              .error (data) ->
+                return false
+              defer.promise
+    )
+
+    # advice -> manage pain state
+    .state('app.manage_pain'
+      url: '/advice/manage'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/manage.html'
+          controller: 'ManageCtrl'
+          resolve:
+            ManagementRecommendations: ($q, $http) ->
+              defer = $q.defer()
+              $http({method: 'GET', url: "#{CONFIG.apiUrl}/recommendations/manage/"})
+              .success (response) ->
+                defer.resolve response.recommendations
+              .error (data) ->
+                return false
+              defer.promise
+    )
+
+    # reducing pain -> pharmacological pain
+    .state('app.pain_pharmacological'
+      url: '/pain/pharmacological'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/pharmacological.html'
+          controller: "PharmacologicalPainCtrl"
+    )
+
+    # reducing pain -> physical pain
+    .state('app.pain_physical'
+      url: '/pain/physical'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/physical.html'
+          controller: "PhysicalPainCtrl"
+    )
+
+    # reducing pain -> psychological pain
+    .state('app.pain_psychological'
+      url: '/pain/psychological'
+      views:
+        menuContent:
+          templateUrl: 'templates/advice/psychological.html'
+          controller: "PsychologicalPainCtrl"
     )
 
 ############################ STATIC CONTENT ####################################
@@ -247,28 +315,4 @@ interceptor.$inject = ['$q', '$injector']
       views:
         menuContent:
           templateUrl: 'templates/static/pain/plan.html'
-    )
-
-    # reducing pain -> pharmacological pain
-    .state('app.pain_pharmacological'
-      url: '/pain/pharmacological'
-      views:
-        menuContent:
-          templateUrl: 'templates/static/pain/pharmacological.html'
-    )
-
-    # reducing pain -> physical pain
-    .state('app.pain_physical'
-      url: '/pain/physical'
-      views:
-        menuContent:
-          templateUrl: 'templates/static/pain/physical.html'
-    )
-
-    # reducing pain -> psychological pain
-    .state('app.pain_psychological'
-      url: '/pain/psychological'
-      views:
-        menuContent:
-          templateUrl: 'templates/static/pain/psychological.html'
     )
