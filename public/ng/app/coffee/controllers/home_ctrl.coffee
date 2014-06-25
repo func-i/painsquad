@@ -14,7 +14,6 @@
         {
           text: 'No'
           type: 'button-default'
-          onTap: (ev) ->
         },
         {
           text: 'Yes'
