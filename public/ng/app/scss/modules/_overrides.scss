@@ -14,12 +14,12 @@ $checkbox-border:  #808A8F;
 $checkbox-checked: #D22C4D;
 
 .checkbox input, .checkbox-icon {
-  width: 23px;
+  width:  23px;
   height: 23px;
-  top: 55%;
+  top:    55%;
 
   &::before {
-    border-radius: 0 !important;
+    border-radius: 0;
     border-color:  $checkbox-border !important;
   }
 
@@ -35,51 +35,49 @@ $checkbox-checked: #D22C4D;
 }
 
 
+li.item.item-checkbox label.checkbox input, .checkbox-icon {
+  height: 20px;
+  width: 20px;
+
+  &::before {
+    border-radius: 0;
+  }
+
+  &::after {
+    display:           block;
+    top:               5px !important;
+    left:              3px !important;
+    height:            8.33px;
+    border-radius:     0;
+    transform:         rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+    border-width:      2px;
+    box-shadow:        0px 5px 8px -1px rgba(0, 0, 0, 1);
+  }
+}
+
 // pseudo-radio checkbox override
 li.item.item-checkbox label.checkbox, #radio {
   top: 58%;
 }
 
-li.item.item-checkbox label.checkbox input, .checkbox-icon {
-  height: 20px;
-  width: 20px;
-
-  &::before {}
-  &::after {
-    transform:         rotate(-50deg);
-    -webkit-transform: rotate(-50deg);
-    border-width:      2px;
-    top:               18%;
-    left:              15%;
-    height:            8.33px;
-    box-shadow: 0px 5px 8px -2px rgba(0, 0, 0, 1);
-  }
-}
-
 li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
-  height: 20px;
-  width: 20px;
+  height:  20px;
+  width:   20px;
+  opacity: 1 !important;
 
   &::before {
-    border-radius: 28px !important;
+    border-radius: 28px;
   }
 
   &::after {
-    border-radius: 14px;
+    display:          block;
+    top:              6px !important;
+    left:             6px !important;
+    height:           8px;
+    width:            8px;
+    border-radius:    50% !important;
     background-color: white;
-    height: 8px;
-    width:  8px;
-    top:    30%;
-    left:   30%;
-    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 1);
-  }
-}
-
-
-// POPUP ALERT TEXT CENTERING
-div.popup.popup-showing.active {
-  div.popup-head {}
-  div.popup-body {
-    text-align: center;
+    box-shadow:       0px 5px 8px 0px rgba(0, 0, 0, 1);
   }
 }

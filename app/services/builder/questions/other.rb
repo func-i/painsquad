@@ -14,8 +14,7 @@ module Builder::Questions::Other
     def radio_pain_duration survey
       question = survey.questions.create(
         question_type: 'radio',
-        content:       'When you had pain in the last 12 hours, how long did it <strong>usually</strong> last?',
-        tip:           'Tell us how much it hurts'
+        content:       'When you had pain in the last 12 hours, how long did it <strong>usually</strong> last?'
       )
       question.choices.create content: 'Just a few minutes'
       question.choices.create content: 'About an hour'
