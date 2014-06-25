@@ -2,7 +2,7 @@
 
   <form name="currentForm" valid-form>
     <ul>
-      <div ng-repeat="choice in question.choices">
+      <div ng-repeat="choice in question.choices" ng-class="{even: $even, odd: $odd, last: $last}">
         <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled, 'textfield': choice.textfield }">
             <label class="checkbox">
 
@@ -16,7 +16,7 @@
             </label>
             {{ choice.content }}
         </li>
-        <li ng-show="choice.textfield && choice.selected">
+        <li class="textfield" ng-show="choice.textfield && choice.selected">
           <label class="item item-input other-textbox">
 
             <textarea
