@@ -27,7 +27,7 @@
     };
     return $ionicPlatform.ready(function() {
       if (window.StatusBar) {
-        return StatusBar.backgroundColorByName("cyan");
+        return StatusBar.styleLightContent();
       }
     });
   });
