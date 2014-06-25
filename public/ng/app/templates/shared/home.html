@@ -8,18 +8,29 @@
     <button class="button button-icon icon ion-android-information" ui-sref="app.about"></button>
   </ion-nav-buttons>
 
-  <ion-content padding="true" class="has-header home content-background">
-
-    <div class="rank">
-      <span class="pull-right">
-        points to promotion {{ userScore.points_for_next_rank }}
+  <ion-content class="has-header home content-background">
+    <section class="transparent-header">
+      <span class="next-level">
+        points to promotion
+        <i>{{ userScore.points_for_next_rank }}</i>
       </span>
-      <span class="pull-left">
-        total points earned {{ userScore.score }}
+      <span class="current-points">
+        total points earned
+        <i> {{ userScore.score }} </i>
       </span>
+    </section>
 
-      <img ng-src="{{rankBadge}}">
+    <img class="rank" ng-src="{{rankBadge}}"></img>
+
+    <!--
+    <div class="radial-wrapper">
+      <div class="wrap">
+        <div class="progress-radial progress-20">
+          <div class="overlay"></div>
+        </div>
+      </div>
     </div>
+    -->
 
     <div class="action">
       <button class="button button-assertive override home bottom-border not-assertive" ui-sref="app.new_survey">Start Case</button>
