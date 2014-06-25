@@ -37,7 +37,7 @@
   $scope.atLeastOne = ->
     inverse = null
     for choice in $scope.question.choices
-      inverse = true if choice.selected
+        inverse = true if choice.selected and choice.value and choice.value.length >= 5
     !inverse
 
 @ChecklistExtraCtrl.$inject = ['$scope', '$state', '$stateParams', '$ionicModal']

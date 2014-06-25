@@ -50,7 +50,7 @@
       _ref = $scope.question.choices;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         choice = _ref[_i];
-        if (choice.selected) {
+        if (choice.selected && choice.value && choice.value.length >= 5) {
           inverse = true;
         }
       }

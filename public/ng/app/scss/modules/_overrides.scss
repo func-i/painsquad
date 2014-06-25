@@ -45,14 +45,14 @@ li.item.item-checkbox label.checkbox input, .checkbox-icon {
 
   &::after {
     display:           block;
-    top:               5px !important;
+    top:               4px !important;
     left:              3px !important;
     height:            8.33px;
     border-radius:     0;
     transform:         rotate(-50deg);
     -webkit-transform: rotate(-50deg);
     border-width:      2px;
-    box-shadow:        0px 5px 8px -1px rgba(0, 0, 0, 1);
+    box-shadow:        -1px 5px 6px -1px rgba(0, 0, 0, 1);
   }
 }
 

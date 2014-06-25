@@ -129,8 +129,9 @@
       unlockItem($scope.awardData[index], item)
 
   unlockItem = (listItem, item) ->
-    listItem.locked = false
-    listItem.date  = moment(item.created_at).format('ll')
+    if listItem
+      listItem.locked = false
+      listItem.date  = moment(item.created_at).format('ll')
 
   setLevels = ->
     for item in $scope.awardData

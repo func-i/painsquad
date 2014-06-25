@@ -134,8 +134,10 @@
       return _results;
     };
     unlockItem = function(listItem, item) {
-      listItem.locked = false;
-      return listItem.date = moment(item.created_at).format('ll');
+      if (listItem) {
+        listItem.locked = false;
+        return listItem.date = moment(item.created_at).format('ll');
+      }
     };
     setLevels = function() {
       var item, _i, _len, _ref, _results;
