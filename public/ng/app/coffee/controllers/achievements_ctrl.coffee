@@ -131,11 +131,6 @@
       unlockItem($scope.achievementData[index], item)
 
   unlockItem = (listItem, item) ->
-    unless listItem?
-      debugger
-    unless item?
-      debugger
-
     listItem.locked = false
     listItem.date  = moment(item.created_at).format('ll')
 
