@@ -48,7 +48,7 @@ module Builder
           duration:    '1 min.',
           context:     'Surgery, Headaches, Abdomen Pain',
           description: 'Make sure you are sticking to the medication schedule your doctor recommends.',
-          byline:      "If taking your medications is difficult, you can speak to your pharmacist about useful options such as setting reminders on a cell phone or using post-it notes. Make sure to talk to your doctor, nurse, or pharmacist if you’re having trouble taking your medications, if they are not working or if you’re having side effects from them."
+          byline:      "If taking your medications is difficult, you can speak to your pharmacist about useful options such as setting reminders on a cell phone or using post-it notes. <br/>Make sure to talk to your doctor, nurse, or pharmacist if you’re having trouble taking your medications, if they are not working or if you’re having side effects from them."
         )
       end
 
@@ -62,7 +62,7 @@ module Builder
           duration:    '1 min.',
           context:     'Surgery, Headaches, Abdomen Pain',
           description: 'If your doctor has given you a medication for break-through pain AND it is time to take it, consider taking it now.',
-          byline:      "You can talk to your parents or healthcare team if you’re not sure about when and how to take these medications. Make sure to talk to your doctor, nurse, or pharmacist if you’re having trouble taking your medications, if they are not working or if you’re having side effects from them."
+          byline:      "You can talk to your parents or healthcare team if you’re not sure about when and how to take these medications. <br/>Make sure to talk to your doctor, nurse, or pharmacist if you’re having trouble taking your medications, if they are not working or if you’re having side effects from them."
         )
       end
 

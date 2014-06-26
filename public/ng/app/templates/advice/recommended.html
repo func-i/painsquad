@@ -12,27 +12,31 @@
       <ion-item
         ng-repeat="item in recommendations"
         class="item item-thumbnail-left"
-        ng-click="loadAdviceModal(item)">
+        ng-click="loadAdviceModal(item)"
+        ng-class="{ 'first': $first }">
 
           <img ng-src="{{ item.image }}" alt="{{ item.title }}">
           <h2>{{ item.title }}</h2>
 
-          <div class="duration">
-            <span class="ion-ios7-clock-outline calm"></span>
-            <span>{{ item.duration }}</span>
+          <div class="duration row">
+            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+            <div class="col col-90"><span>{{ item.duration }}</span></div>
           </div>
 
-          <div class="context">
-            <span class="ion-ios7-checkmark-outline balanced"></span>
-            <span>{{ item.context }}</span>
+          <div class="context row">
+            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+            <div class="col col-90"><span>{{ item.context }}</span></div>
           </div>
 
-          <i ng-model="item.favorite"
-             class="badge"
-             ng-class="{ 'ion-ios7-heart': item.favorite, 'ion-ios7-heart-outline': !item.favorite }"> </i>
+          <div class="badge" ng-class="{ 'favorite': item.favorite }">
+            <i ng-model="item.favorite" class="ion-ios7-heart-outline"> </i>
+          </div>
+
       </ion-item>
 
     </ion-list>
+
+    <div class="extension"></div>
 
   </ion-content>
 

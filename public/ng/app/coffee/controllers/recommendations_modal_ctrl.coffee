@@ -1,6 +1,7 @@
 'use strict'
 
 @RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) ->
+  console.log "recommendation modal ctrl"
   $scope.selectedItem = {}
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
@@ -37,10 +38,12 @@
   # TODO: only allow bonus points if completed after a valid submission, prevent cheating!
   $scope.adviceCompleted = ->
     Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'recommendation_complete' })
-    $scope.modal.hide()
-    reset()
+    closeModal()
 
   $scope.discardAdvice = ->
+    closeModal()
+
+  closeModal = ->
     $scope.modal.hide()
     reset()
 
@@ -52,9 +55,9 @@
 
   reset = ->
     $scope.slideShowActivated = null
-    $scope.selectedItem       = null
     $scope.modalStyle         = null
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
+    $scope.selectedItem       = null
 
 @RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'Favorites', 'Activity']

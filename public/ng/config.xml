@@ -4,6 +4,7 @@
     <description></description>
     <author></author>
     <content src="index.html" />
+    <icon src="images/icon/painsquad.png"/>
     <access origin="*" />
     <feature name="Logger">
       <param name="ios-package" value="CDVLogger" />

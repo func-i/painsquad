@@ -1,7 +1,8 @@
 (function() {
   'use strict';
   this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
-    var reset, setHeaderButtons;
+    var closeModal, reset, setHeaderButtons;
+    console.log("recommendation modal ctrl");
     $scope.selectedItem = {};
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
@@ -43,10 +44,12 @@
           event: 'recommendation_complete'
         }
       });
-      $scope.modal.hide();
-      return reset();
+      return closeModal();
     };
     $scope.discardAdvice = function() {
+      return closeModal();
+    };
+    closeModal = function() {
       $scope.modal.hide();
       return reset();
     };
@@ -59,10 +62,10 @@
     };
     return reset = function() {
       $scope.slideShowActivated = null;
-      $scope.selectedItem = null;
       $scope.modalStyle = null;
       $scope.showStartButton = null;
-      return $scope.showDidItButton = null;
+      $scope.showDidItButton = null;
+      return $scope.selectedItem = null;
     };
   });
 
