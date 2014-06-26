@@ -49,15 +49,13 @@
         <section class="description">
           <p>{{selectedItem.description}}</p>
           <p class="byline" ng-bind-html="selectedItem.byline"></p>
-          <!-- <p class="byline">{{selectedItem.byline}}</p> -->
-          <!-- <small>{{selectedItem.byline}}</small> -->
         </section>
       </div>
 
       <div ng-switch="modalStyle">
         <div ng-switch-when="slideshow">
-          <div class="actual" ng-show="slideShowActivated" ng-cloak style="height: 200px;">
-            Step {{ slideIndex + 1 }}
+          <div class="slide" ng-show="slideShowActivated" ng-cloak>
+            <div class="header">Step {{ slideIndex + 1 }}</div>
 
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps">
@@ -74,7 +72,7 @@
           <div ng-controller="NestedAdviceCtrl">
             <ion-list>
               <ion-item ng-repeat="item in selectedItem.nested_recommendations"
-                ng-click="loadNestedModal(item)" class="nested">
+                ng-click="loadNestedModal(item)" class="margin-fix">
                   {{ item.title }}
                 <i class="ion-chevron-right pull-right"></i>
               </ion-item>
