@@ -1,5 +1,6 @@
 <div class="modal">
-  <ion-header-bar>
+
+  <ion-header-bar class="bar bar-header bar-royal">
     <button class="button button-icon ion-ios7-arrow-back"
       ng-click="discardAdvice()">
         Back
@@ -21,7 +22,7 @@
 
   </ion-header-bar>
 
-  <ion-content has-header="true">
+  <ion-content has-header="true" class="content-background">
 
     <div ng-show="!slideShowActivated" ng-cloak>
       <img ng-src="{{selectedItem.image}}">

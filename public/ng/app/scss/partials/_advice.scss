@@ -1,4 +1,8 @@
-$yellow-item: #CFB745;
+.blue-bar {
+  height: 7px;
+  background-color: $royal;
+  width: 100%;
+}
 
 .advice {
   padding-left: 5px;
@@ -7,25 +11,26 @@ $yellow-item: #CFB745;
   .top {
     display:       inline-block;
     margin-top:    10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     height:        100%;
     width:         100%;
 
     .item {
       @extend .diagonal;
-      height:           190px;
-      width:            49%;
+      width:            141px;
+      height:           189px;
       float:            left;
       border-radius:    5px;
-      background-color: $yellow-item;
+      background-color: $yellow-advice-item;
       color:            white;
       border:           0;
       text-align:       center;
-      padding:          10px 10px;
+      padding:          15px 10px;
 
       h2 {
         display:     block;
         font-weight: bold;
+        font-size:   16px;
         color:       white;
         white-space: normal;
       }
@@ -38,29 +43,28 @@ $yellow-item: #CFB745;
 
       &:last-child {
         margin-left: 8.8px;
-        background-color: $assertive;
+        background-color: $red-two;
       }
     }
   }
 
   .bottom {
+    position: relative;
 
     .item {
+      margin-left: auto;
+      margin-right: auto;
+
       &:first-child {
-        border-top: 7px solid blue;
+        border-top: 0;
       }
     }
 
-    // height: 500px;
-    // background-color: white;
-    // margin-left: -1px;
-    // margin-right: -1px;
-
+    // FIXME: background-color white is overriding the diagonal pattern ??
     .extension {
       @extend .diagonal;
-      height: 500px;
+      height:   200px;
       background-color: white;
-
     }
   }
 }
@@ -69,29 +73,30 @@ $yellow-item: #CFB745;
   position: relative;
 
   .item {
-    .duration {
-      // border: 1px dotted black;
+    margin-left: auto;
+    margin-right: auto;
+
+    .duration, .context {
+      display: block;
+      font-size: 12px;
+
+      span:last-child {
+        white-space: normal;
+        border: 1px solid black;
+        // display: inline-block;
+      }
     }
 
-    .context {
-      // border: 1px dotted black;
-    }
-
-    .context > span:last-child {
-      // border: 1px dotted black;
-      word-break: break-all;
-      white-space: normal;
-    }
-  }
-
-  .badge {
-    position:  absolute;
-    top:       0px;
-    right:     0px;
-    font-size: 20px;
-
-    &:hover {
-      font-size: 25px;
+    .badge {
+      position:      absolute;
+      font-size:     20px;
+      top:           -3px;
+      right:         0px;
+      color:         white;
+      border-radius: 4px;
+      width:         30px;
+      margin:        0 5px;
+      background-color: $red-two;
     }
   }
 }

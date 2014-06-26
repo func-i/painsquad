@@ -7,6 +7,7 @@
   <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
 
     <ion-list class="recommended">
+      <div class="blue-bar"></div>
 
       <ion-item
         ng-repeat="item in recommendations"
@@ -17,7 +18,7 @@
           <h2>{{ item.title }}</h2>
 
           <div class="duration">
-            <span class="ion-ios7-alarm-outline calm"></span>
+            <span class="ion-ios7-clock-outline calm"></span>
             <span>{{ item.duration }}</span>
           </div>
 
