@@ -244,7 +244,18 @@
       url: '/reports',
       views: {
         menuContent: {
-          templateUrl: 'templates/static/reports.html'
+          templateUrl: 'templates/static/reports.html',
+          controller: "ReportCtrl",
+          resolve: {
+            reports: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.query(function(response) {
+                return defer.resolve(response);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.about', {

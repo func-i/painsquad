@@ -225,7 +225,14 @@ interceptor.$inject = ['$q', '$injector']
       url: '/reports'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports.html'
+          templateUrl: 'templates/static/reports.html',
+          controller: "ReportCtrl",
+          resolve:
+            reports: (Report, $q) ->
+              defer = $q.defer()
+              Report.query (response) ->
+                defer.resolve response
+              defer.promise
     )
 
     # about state

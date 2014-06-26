@@ -14,6 +14,8 @@ PainSquadApi::Application.routes.draw do
         member { get :prevent; get :manage }
       end
 
+      resources :reports
+
       resource :session
       resources :users
     end

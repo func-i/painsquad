@@ -15,6 +15,7 @@
 - `$ cd public/ng`
 - `npm install`
 - `bower install`
+-  sudo npm install -g gulp
 - `BUILD_TARGET=development gulp serve`
 
 

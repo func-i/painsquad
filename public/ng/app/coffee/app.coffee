@@ -10,7 +10,8 @@
   'painSquad.config',
   'ngResource',
   'underscore',
-  'angularMoment'
+  'angularMoment',
+  'googlechart'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
