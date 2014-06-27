@@ -2,6 +2,10 @@
 
 @PainReportCtrl = @controllerModule.controller "PainReportCtrl", ($scope, $state, report) ->
 
+  # Variables
+
+  $scope.reportTitle = "Pain Report"
+
   # Functions
 
   chartOptions = ->

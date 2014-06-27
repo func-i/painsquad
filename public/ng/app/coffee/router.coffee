@@ -225,7 +225,7 @@ interceptor.$inject = ['$q', '$injector']
       url: '/reports/action'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports/action.html',
+          templateUrl: 'templates/static/report.html',
           controller: "ActionReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -240,7 +240,7 @@ interceptor.$inject = ['$q', '$injector']
       url: '/reports/cause'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports/cause.html',
+          templateUrl: 'templates/static/report.html',
           controller: "CauseReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -256,7 +256,7 @@ interceptor.$inject = ['$q', '$injector']
       url: '/reports/effect'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports/effect.html',
+          templateUrl: 'templates/static/report.html',
           controller: "EffectReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -272,7 +272,7 @@ interceptor.$inject = ['$q', '$injector']
       url: '/reports/pain'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports/pain.html',
+          templateUrl: 'templates/static/report.html',
           controller: "PainReportCtrl",
           resolve:
             report: (Report, $q) ->

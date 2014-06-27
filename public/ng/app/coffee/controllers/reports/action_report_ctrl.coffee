@@ -2,6 +2,10 @@
 
 @ActionReportCtrl = @controllerModule.controller "ActionReportCtrl", ($scope, $state, report) ->
 
+  # Variables
+
+  $scope.reportTitle = "Action Report"
+
   # Functions
 
   chartOptions = ->

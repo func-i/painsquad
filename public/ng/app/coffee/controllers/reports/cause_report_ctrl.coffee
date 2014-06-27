@@ -1,25 +1,35 @@
 'use strict'
 
-@EffectReportCtrl = @controllerModule.controller "EffectReportCtrl", ($scope, $state, report) ->
+@CauseReportCtrl = @controllerModule.controller "CauseReportCtrl", ($scope, $state, report) ->
+
+  # Variables
+
+  $scope.reportTitle = "Cause Report"
 
   # Functions
 
   chartOptions = ->
+    values = []
+    for k,v of report
+      values.push v
+
+    max = Math.max.apply @, values
+
     width: 300
     height: 400
     legend:
       position: 'none'
     colors: ["green"]
     hAxis:
-      title: 'Average Impact'
+      title: 'Cause Frequency'
       titleTextStyle:
         fontSize: 16
         bold: true
       viewWindow:
         min: 0
-        max: 100
-      gridlines:
-        count: 11
+        max: max
+       gridlines:
+          count: max + 1
     vAxis:
       textPosition: 'in'
       textStyle:
@@ -28,15 +38,15 @@
         color: 'white'
         auraColor: 'none'
     chartArea:
-     width: '100%'
+     width: '90%'
      height: '80%'
 
   chartData = ->
     data = [["Medication", "Frequency"]]
 
     if Object.keys(report).length > 0
-      for label, hsh of report
-        data.push [label, hsh.average]
+      for label, freq of report
+        data.push [label, freq]
     else
       data.push ["", 0]
 
@@ -54,4 +64,4 @@
   loadChart()
 
 
-@EffectReportCtrl.$inject = ['$scope', '$state', 'report']
+@CauseReportCtrl.$inject = ['$scope', '$state', 'report']
