@@ -267,6 +267,22 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
+    # Pain Report state
+    .state('app.pain_report'
+      url: '/reports/pain'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/reports/pain.html',
+          controller: "PainReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'pain', (response) ->
+                defer.resolve response.report
+
+              defer.promise
+    )
+
     # about state
     .state('app.about'
       url: '/about'

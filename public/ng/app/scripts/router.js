@@ -300,6 +300,26 @@
           }
         }
       }
+    }).state('app.pain_report', {
+      url: '/reports/pain',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/reports/pain.html',
+          controller: "PainReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'pain'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
     }).state('app.about', {
       url: '/about',
       views: {

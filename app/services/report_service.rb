@@ -18,6 +18,8 @@ class ReportService
       cause_data
     when "effect"
       effect_data
+    when "pain"
+      pain_data
     end
 
     {report: @graph_data}
@@ -88,6 +90,25 @@ class ReportService
           @graph_data[effect_question.report_label][:count] += 1
           @graph_data[effect_question.report_label][:total] = @graph_data[effect_question.report_label][:total] + answer.value
           @graph_data[effect_question.report_label][:average] = @graph_data[effect_question.report_label][:total] / @graph_data[effect_question.report_label][:count]
+        end
+      end
+    end
+  end
+
+  def pain_data
+    @submissions.each do |submission|
+      submission.survey.questions.where(tag: 'intensity').each do |pain_question|
+
+         # => Get the answers for this submission
+        submission.answers.where(question_id: pain_question.id).each do |answer|
+          @graph_data[submission.created_at] ||= {
+            now: 0,
+            worst: 0,
+            least: 0,
+            average: 0
+          }
+
+          @graph_data[submission.created_at][pain_question.report_label.downcase.to_sym] = answer.value
         end
       end
     end
