@@ -2,7 +2,6 @@
   'use strict';
   this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
     var closeModal, reset, setHeaderButtons;
-    console.log("recommendation modal ctrl");
     $scope.selectedItem = {};
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;

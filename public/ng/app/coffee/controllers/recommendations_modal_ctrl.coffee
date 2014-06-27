@@ -1,7 +1,6 @@
 'use strict'
 
 @RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) ->
-  console.log "recommendation modal ctrl"
   $scope.selectedItem = {}
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->

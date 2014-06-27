@@ -9,11 +9,13 @@
   <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
 
     <ion-list class="recommended">
+      <div class="blue-bar"></div>
 
       <ion-item
         ng-repeat="item in recommendations"
         class="item item-thumbnail-left"
-        ng-click="loadAdviceModal(item)">
+        ng-click="loadAdviceModal(item)"
+        ng-class="{ 'first': $first }">
 
           <img ng-src="{{ item.image }}" alt="{{ item.title }}">
           <h2>{{ item.title }}</h2>
