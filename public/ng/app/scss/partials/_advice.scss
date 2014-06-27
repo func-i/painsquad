@@ -150,13 +150,18 @@
     }
 
     .detail {
-      padding: 7px 0 7px 5px;
+      height: 100%;
       background-color: rgb(241, 241, 241);
+      background-image: url('../images/background/content.png');
 
       .duration, .context {
-        @extend .diagonal;
-        display: block;
-        padding-left: 10px;
+        i { font-size: 16px; }
+        span { font-size: 12px; }
+        max-width:     80%;
+      }
+
+      .duration {
+        padding-bottom: 0;
       }
 
       .badge {
@@ -239,6 +244,42 @@
     }
     .slider-pager .slider-pager-page.active {
       color: $royal;
+    }
+  }
+}
+
+.modal .nested {
+
+  .container {
+    .header {
+      background-image: url('../images/background/content.png');
+      background-color: #FAFAFA;
+      height:    50px;
+      color:     $royal;
+      font-size: 16px;
+      text-align: left;
+      span {
+        display: block;
+        padding: 13px 0;
+        margin-left: 17px;
+      }
+    }
+
+    .list-wrapper {
+      padding: 20px 35px;
+
+      ol {
+        list-style-type: decimal;
+        li {
+          color: $red-one;
+          font-weight: bold;
+          p {
+            color: black;
+            // color: #424547;
+            font-weight: normal;
+          }
+        }
+      }
     }
   }
 }

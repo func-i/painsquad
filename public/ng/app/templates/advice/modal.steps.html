@@ -8,12 +8,18 @@
     <h1 class="title">{{nestedSelection.title}}</h1>
   </ion-header-bar>
 
-  <ion-content has-header="true" class="content-background">
-    <ul>
-      <li ng-repeat="step in nestedSelection.steps track by $index">
-        <strong>Step {{ $index + 1 }}</strong>
-        <p ng-bind="step.content"></p>
-      </li>
-    </ul>
+  <ion-content has-header="true" class="content-background nested">
+    <div class="container">
+      <div class="blue-bar"></div>
+      <div class="header"><span>How To Play</span></div>
+        <div class="list-wrapper">
+          <ol>
+            <li ng-repeat="step in nestedSelection.steps track by $index">
+              <!-- <strong>Step {{ $index + 1 }}</strong> -->
+              <p ng-bind="step.content"></p>
+            </li>
+          </ol>
+        </div>
+    </div>
   </ion-content>
 </div>

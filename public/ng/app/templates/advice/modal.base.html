@@ -31,15 +31,15 @@
         <img ng-src="{{selectedItem.image}}">
 
         <div class="detail">
-          <section class="duration">
-            <span class="ion-ios7-alarm-outline calm"></span>
-            <span>{{ selectedItem.duration }}</span>
-          </section>
+          <div class="duration row">
+            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+            <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
+          </div>
 
-          <section class="context">
-            <span class="ion-ios7-checkmark-outline balanced"></span>
-            <span>{{ selectedItem.context }}</span>
-          </section>
+          <div class="context row">
+            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+            <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
+          </div>
 
           <div class="badge" ng-class="{ 'favorite': selectedItem.favorite }" ng-click="toggleFavorite(selectedItem)">
             <i ng-model="selectedItem.favorite" class="ion-ios7-heart-outline"> </i>
@@ -61,16 +61,12 @@
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps">
                 <p ng-bind="step.content"></p>
-
-                <div class="spacer"></div>
-
+                <!-- <div class="spacer"></div> -->
                 <div class="tip" ng-show="step.tip">
                   TIP: <small ng-bind="step.tip"></small>
                 </div>
-
               </ion-slide>
             </ion-slide-box>
-
           </div>
         </div>
 
