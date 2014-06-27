@@ -58,7 +58,7 @@ module Builder
           section:     'pharmacological',
           style:       'basic',
           title:       'Take an "as needed" medication',
-          image:       '../images/advice/as_needed_medication.jpg',
+          image:       '../images/advice/as_needed_medication.jpeg',
           duration:    '1 min.',
           context:     'Surgery, Headaches, Abdomen Pain',
           description: 'If your doctor has given you a medication for break-through pain AND it is time to take it, consider taking it now.',
