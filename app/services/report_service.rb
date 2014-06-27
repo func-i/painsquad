@@ -16,6 +16,8 @@ class ReportService
       action_data
     when "cause"
       cause_data
+    when "effect"
+      effect_data
     end
 
     {report: @graph_data}
@@ -62,6 +64,30 @@ class ReportService
         submission.answers.where(question_id: pain_question.id).each do |answer|
           @graph_data[answer.choice.content] ||= 0
           @graph_data[answer.choice.content] += 1
+        end
+      end
+    end
+  end
+
+  def effect_data
+    @submissions.each do |submission|
+
+      # => Get all the effect questions, there are multiple questions unlike
+      # => the reports above that have 1 question and multiple answers for it
+      submission.survey.questions.where(tag: 'effect').each do |effect_question|
+
+        # => Get the answers for this submission
+        submission.answers.where(question_id: effect_question.id).each do |answer|
+          @graph_data[effect_question.report_label] ||= {
+            count: 0,
+            total: 0,
+            average: 0
+          }
+
+           # => Increment the number of times this was answered
+          @graph_data[effect_question.report_label][:count] += 1
+          @graph_data[effect_question.report_label][:total] = @graph_data[effect_question.report_label][:total] + answer.value
+          @graph_data[effect_question.report_label][:average] = @graph_data[effect_question.report_label][:total] / @graph_data[effect_question.report_label][:count]
         end
       end
     end

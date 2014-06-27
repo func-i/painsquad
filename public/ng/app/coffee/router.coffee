@@ -220,7 +220,7 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/static/settings.html'
     )
 
-    # reports state
+    # Action Report state
     .state('app.action_report'
       url: '/reports/action'
       views:
@@ -235,6 +235,7 @@ interceptor.$inject = ['$q', '$injector']
               defer.promise
     )
 
+    # Cause Report state
     .state('app.cause_report'
       url: '/reports/cause'
       views:
@@ -245,6 +246,22 @@ interceptor.$inject = ['$q', '$injector']
             report: (Report, $q) ->
               defer = $q.defer()
               Report.get report_id: 'cause', (response) ->
+                defer.resolve response.report
+
+              defer.promise
+    )
+
+    # Effect Report state
+    .state('app.effect_report'
+      url: '/reports/effect'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/reports/effect.html',
+          controller: "EffectReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'effect', (response) ->
                 defer.resolve response.report
 
               defer.promise

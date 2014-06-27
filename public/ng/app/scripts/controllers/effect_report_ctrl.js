@@ -1,15 +1,8 @@
 (function() {
   'use strict';
-  this.CauseReportCtrl = this.controllerModule.controller("CauseReportCtrl", function($scope, $state, report) {
+  this.EffectReportCtrl = this.controllerModule.controller("EffectReportCtrl", function($scope, $state, report) {
     var chartData, chartOptions, loadChart;
     chartOptions = function() {
-      var k, max, v, values;
-      values = [];
-      for (k in report) {
-        v = report[k];
-        values.push(v);
-      }
-      max = Math.max.apply(this, values);
       return {
         width: 300,
         height: 400,
@@ -18,17 +11,17 @@
         },
         colors: ["green"],
         hAxis: {
-          title: 'Cause Frequency',
+          title: 'Average Impact',
           titleTextStyle: {
             fontSize: 16,
             bold: true
           },
           viewWindow: {
             min: 0,
-            max: max
+            max: 100
           },
           gridlines: {
-            count: max + 1
+            count: 11
           }
         },
         vAxis: {
@@ -41,18 +34,18 @@
           }
         },
         chartArea: {
-          width: '90%',
+          width: '100%',
           height: '80%'
         }
       };
     };
     chartData = function() {
-      var data, freq, label;
+      var data, hsh, label;
       data = [["Medication", "Frequency"]];
       if (Object.keys(report).length > 0) {
         for (label in report) {
-          freq = report[label];
-          data.push([label, freq]);
+          hsh = report[label];
+          data.push([label, hsh.average]);
         }
       } else {
         data.push(["", 0]);
@@ -70,6 +63,6 @@
     return loadChart();
   });
 
-  this.CauseReportCtrl.$inject = ['$scope', '$state', 'report'];
+  this.EffectReportCtrl.$inject = ['$scope', '$state', 'report'];
 
 }).call(this);

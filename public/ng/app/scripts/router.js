@@ -280,6 +280,26 @@
           }
         }
       }
+    }).state('app.effect_report', {
+      url: '/reports/effect',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/reports/effect.html',
+          controller: "EffectReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'effect'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
     }).state('app.about', {
       url: '/about',
       views: {
