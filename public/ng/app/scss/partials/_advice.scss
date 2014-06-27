@@ -5,9 +5,11 @@
 }
 
 .extension {
-  @extend .diagonal;
   height: 200px;
-  background-color: white;
+  background-color: #FAFAFA;
+  &.extra {
+    height: 375px;
+  }
 }
 
 .advice {
@@ -22,12 +24,10 @@
     width:         100%;
 
     .item {
-      @extend .diagonal;
       width:            141px;
       height:           189px;
       float:            left;
       border-radius:    5px;
-      background-color: $yellow-advice-item;
       color:            white;
       border:           0;
       text-align:       center;
@@ -47,9 +47,19 @@
         font-size: 50px;
       }
 
-      &:last-child {
+      &.yellow {
+        background-color: $yellow-advice-item;
+        &.active {
+          background-color: rgb(155, 135, 45);
+        }
+      }
+
+      &.red {
         margin-left: 8.8px;
         background-color: $red-two;
+        &.active {
+          background-color: rgb(160, 35, 60);
+        }
       }
     }
   }
@@ -179,7 +189,7 @@
           font-size: 12px;
 
           br {
-            padding: 10px 0;
+            line-height: 35px;
           }
         }
       }

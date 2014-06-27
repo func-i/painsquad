@@ -18,3 +18,7 @@ input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
 .ng-hide {
     display: none !important;
 }
+
+.ion-ios7-heart-outline::before {
+  font-weight: bold !important;
+}

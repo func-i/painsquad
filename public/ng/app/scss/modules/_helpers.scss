@@ -32,6 +32,20 @@
   }
 }
 
+.pattern-bg {
+  position: relative;
+  display: block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: url('../images/background/content.png');
+    opacity: 0.2;
+  }
+}
+
 .margin-fix {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -40,3 +54,4 @@
 h1.title {
   font-weight: bold;
 }
+
