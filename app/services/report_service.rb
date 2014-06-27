@@ -101,14 +101,16 @@ class ReportService
 
          # => Get the answers for this submission
         submission.answers.where(question_id: pain_question.id).each do |answer|
-          @graph_data[submission.created_at] ||= {
+
+          date = submission.created_at.strftime("%b %e, %Y %H:%M%P")
+          @graph_data[date] ||= {
             now: 0,
             worst: 0,
             least: 0,
             average: 0
           }
 
-          @graph_data[submission.created_at][pain_question.report_label.downcase.to_sym] = answer.value
+          @graph_data[date][pain_question.report_label.downcase.to_sym] = answer.value
         end
       end
     end

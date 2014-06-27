@@ -12,23 +12,16 @@
       alignment: 'start'
       maxLines: 2
     colors: ["blue", "green", "red", "orange"]
-    # hAxis:
-    #   title: 'Average Impact'
-    #   titleTextStyle:
-    #     fontSize: 16
-    #     bold: true
-    #   viewWindow:
-    #     min: 0
-    #     max: 100
-    #   gridlines:
-    #     count: 11
-    # vAxis:
-    #   textPosition: 'in'
-    #   textStyle:
-    #     fontSize: 12
-    #     bold: true
-    #     color: 'white'
-    #     auraColor: 'none'
+    hAxis:
+      direction: -1
+      slantedText: true
+      slantedTextAngle: 180
+      textStyle:
+        fontSize: 8
+      gridlines:
+        color: '#CCC'
+    vAxis:
+      title: 'Pain Intensity'
 
   chartData = ->
     data = [["Date", "Now", "Worst", "Least", "Average"]]

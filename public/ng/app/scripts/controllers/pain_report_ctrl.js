@@ -11,7 +11,21 @@
           alignment: 'start',
           maxLines: 2
         },
-        colors: ["blue", "green", "red", "orange"]
+        colors: ["blue", "green", "red", "orange"],
+        hAxis: {
+          direction: -1,
+          slantedText: true,
+          slantedTextAngle: 180,
+          textStyle: {
+            fontSize: 8
+          },
+          gridlines: {
+            color: '#CCC'
+          }
+        },
+        vAxis: {
+          title: 'Pain Intensity'
+        }
       };
     };
     chartData = function() {
