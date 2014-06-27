@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.ReportCtrl = this.controllerModule.controller("ActionReportCtrl", function($scope, $state, reports) {
+  this.ActionReportCtrl = this.controllerModule.controller("ActionReportCtrl", function($scope, $state, report) {
     var chartData, chartOptions, loadChart;
     chartOptions = function() {
       return {
@@ -11,20 +11,27 @@
         },
         vAxes: {
           0: {
+            title: 'Action Frequency',
             gridlines: {
               color: 'transparent'
             }
           },
           1: {
+            title: 'Average Action Effectiveness',
             gridlines: {
-              color: 'transparent'
+              color: 'transparent',
+              count: 11
+            },
+            viewWindow: {
+              min: 0,
+              max: 100
             }
           }
         },
         hAxis: {
           direction: -1,
           slantedText: true,
-          slantedTextAngle: 90
+          slantedTextAngle: 180
         },
         series: {
           0: {
@@ -41,12 +48,15 @@
       };
     };
     chartData = function() {
-      var data, hsh, label, report;
-      report = reports[0].data;
+      var data, hsh, label;
       data = [["Medication", "Frequency", "Effectiveness"]];
-      for (label in report) {
-        hsh = report[label];
-        data.push([label, hsh.count, hsh.average]);
+      if (Object.keys(report).length > 0) {
+        for (label in report) {
+          hsh = report[label];
+          data.push([label, hsh.count, hsh.average]);
+        }
+      } else {
+        data.push(["", 0, 0]);
       }
       return data;
     };
@@ -61,6 +71,6 @@
     return loadChart();
   });
 
-  this.ReportCtrl.$inject = ['$scope', '$state', 'reports'];
+  this.ActionReportCtrl.$inject = ['$scope', '$state', 'report'];
 
 }).call(this);

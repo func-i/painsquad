@@ -240,18 +240,40 @@
           templateUrl: 'templates/static/settings.html'
         }
       }
-    }).state('app.reports', {
-      url: '/reports',
+    }).state('app.action_report', {
+      url: '/reports/action',
       views: {
         menuContent: {
-          templateUrl: 'templates/static/reports.html',
-          controller: "ReportCtrl",
+          templateUrl: 'templates/static/reports/action.html',
+          controller: "ActionReportCtrl",
           resolve: {
-            reports: function(Report, $q) {
+            report: function(Report, $q) {
               var defer;
               defer = $q.defer();
-              Report.query(function(response) {
-                return defer.resolve(response);
+              Report.get({
+                report_id: 'action'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.cause_report', {
+      url: '/reports/cause',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/reports/cause.html',
+          controller: "CauseReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'cause'
+              }, function(response) {
+                return defer.resolve(response.report);
               });
               return defer.promise;
             }

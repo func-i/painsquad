@@ -1,8 +1,8 @@
 class Api::V1::ReportsController < ApplicationController
 
-  def index
+  def show
     # => TODO support multiple reports
-    render json: [ReportService.new(@user).report_data], root: false
+    render json: ReportService.new(@user, params[:id]).report_data
   end
 
 end

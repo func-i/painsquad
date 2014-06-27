@@ -1,0 +1,12 @@
+<ion-view title="Action Report">
+  <ion-header-bar>
+    <div class="buttons">
+      <button ng-click="back()" class="button button-icon icon ion-ios7-arrow-back">Back</button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="has-header" padding="true">
+    <div google-chart chart="chart" ng-show="chart" />
+    <h2 ng-show="!chart">You do not have any Action Report Data</h2>
+  </ion-content>
+</ion-view>
