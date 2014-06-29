@@ -35,4 +35,8 @@
     $state.go $rootScope.previousState_name, $rootScope.previousState_params
 
   $ionicPlatform.ready ->
-    StatusBar.styleLightContent() if window.StatusBar
+    if window.cordova and window.cordova.plugins.Keyboard
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
+
+    if window.StatusBar
+      StatusBar.styleLightContent()

@@ -26,6 +26,9 @@
       return $state.go($rootScope.previousState_name, $rootScope.previousState_params);
     };
     return $ionicPlatform.ready(function() {
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();
       }
