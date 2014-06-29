@@ -29,5 +29,6 @@
       $scope.showPopup()
 
   init($rootScope)
+  # $rootScope.checkConnection()
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore']

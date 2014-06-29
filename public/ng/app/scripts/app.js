@@ -15,7 +15,6 @@
   this.configModule = angular.module('painSquad.config', []);
 
   this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams) {
-    var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
@@ -26,19 +25,21 @@
     $rootScope.back = function() {
       return $state.go($rootScope.previousState_name, $rootScope.previousState_params);
     };
-    checkConnection = function() {
+    $rootScope.checkConnection = function() {
       var networkState, states;
-      networkState = navigator.connection.type;
-      states = {};
-      states[Connection.UNKNOWN] = "Unknown connection";
-      states[Connection.ETHERNET] = "Ethernet connection";
-      states[Connection.WIFI] = "WiFi connection";
-      states[Connection.CELL_2G] = "Cell 2G connection";
-      states[Connection.CELL_3G] = "Cell 3G connection";
-      states[Connection.CELL_4G] = "Cell 4G connection";
-      states[Connection.CELL] = "Cell generic connection";
-      states[Connection.NONE] = "No network connection";
-      return alert("Connection type: " + states[networkState]);
+      if (navigator.connection.type) {
+        networkState = navigator.connection.type;
+        states = {};
+        states[Connection.UNKNOWN] = "Unknown connection";
+        states[Connection.ETHERNET] = "Ethernet connection";
+        states[Connection.WIFI] = "WiFi connection";
+        states[Connection.CELL_2G] = "Cell 2G connection";
+        states[Connection.CELL_3G] = "Cell 3G connection";
+        states[Connection.CELL_4G] = "Cell 4G connection";
+        states[Connection.CELL] = "Cell generic connection";
+        states[Connection.NONE] = "No network connection";
+        return alert("Connection type: " + states[networkState]);
+      }
     };
     return $ionicPlatform.ready(function() {
       if (window.cordova && window.cordova.plugins.Keyboard) {

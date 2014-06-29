@@ -13,4 +13,6 @@
     UserService.clearToken()
     $state.go $state.current, {}, {reload: true}
 
+  # $rootScope.checkConnection()
+
 @LoginCtrl.$inject = [ '$state', '$scope', 'AuthService', 'UserService' ]
