@@ -30,8 +30,7 @@
         return $scope.showPopup();
       }
     };
-    init($rootScope);
-    return $rootScope.checkConnection();
+    return init($rootScope);
   });
 
   this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore'];

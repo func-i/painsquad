@@ -7,14 +7,13 @@
     $scope.login = function() {
       return AuthService.login($scope.credentials);
     };
-    $scope.logout = function() {
+    return $scope.logout = function() {
       UserService.remove();
       UserService.clearToken();
       return $state.go($state.current, {}, {
         reload: true
       });
     };
-    return $rootScope.checkConnection();
   });
 
   this.LoginCtrl.$inject = ['$state', '$scope', 'AuthService', 'UserService'];
