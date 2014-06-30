@@ -26,6 +26,7 @@ var source_paths = {
   scripts:    ['./app/scripts/**/*.js'],
   templates:  ['./app/templates/**/*.html'],
   images:     ['./app/images/**/*.*'],
+  icons:      ['./app/res/**/*.png'],
   index_page: ['./app/index.html'],
   fonts:      ['./app/fonts/**.ttf']
 };
@@ -35,7 +36,8 @@ var dest_paths = {
   scripts:   './www/scripts/',
   templates: './www/templates/',
   images:    './www/images/',
-  fonts:     './www/fonts',
+  icons:     './www/res/',
+  fonts:     './www/fonts/',
   root:      './www/'
 };
 // the options used by gulp-open when booting the test server
@@ -69,6 +71,11 @@ gulp.task('build-styles', function(done) {
 gulp.task('fonts', function() {
   gulp.src(source_paths.fonts)
     .pipe(gulp.dest(dest_paths.fonts))
+});
+
+gulp.task('icons', function() {
+  gulp.src(source_paths.icons)
+    .pipe(gulp.dest(dest_paths.icons))
 });
 
 
@@ -163,7 +170,8 @@ gulp.task('compile-all', function(callback) {
                'build-templates',
                'build-index',
                'build-images',
-               'fonts'
+               'fonts',
+               'icons'
               ],
                callback
             );
@@ -206,7 +214,8 @@ gulp.task('watch', function() {
                         'watch-templates',
                         'watch-index_page',
                         'watch-images',
-                        'fonts'
+                        'fonts',
+                        'icons'
                       ]);
 });
 

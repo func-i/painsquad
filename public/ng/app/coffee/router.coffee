@@ -26,8 +26,8 @@ interceptor.$inject = ['$q', '$injector']
   $stateProvider
     # abstract sidemenu state/template
     .state('app'
-      url: '/app'
-      abstract: true
+      url:         '/app'
+      abstract:    true
       templateUrl: 'templates/layout/menu.html'
     )
 
