@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
-    var closeModal, onError, onSuccess, reset, setAudioPosition, setHeaderButtons;
+    var closeModal, onError, onSuccess, reset, setHeaderButtons;
     $scope.selectedItem = {};
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
@@ -49,38 +49,18 @@
       return closeModal();
     };
     $scope.playAudio = function(src) {
-      var mediaTimer, my_media;
-      src = "..images/advice/audio/" + src + ".mp3";
-      my_media = new Media(src, onSuccess, onError);
-      my_media.play();
-      if (typeof mediaTimer === "undefined" || mediaTimer === null) {
-        return mediaTimer = setInterval(function() {
-          return my_media.getCurrentPosition((function(position) {
-            if (position > -1) {
-              return setAudioPosition(position + " sec");
-            }
-          }), function(e) {
-            console.log("Error getting pos=" + e);
-            return setAudioPosition("Error: " + e);
-          });
-        }, 1000);
+      src = "./images/advice/audio/" + src + ".mp3";
+      $scope.my_media = new Media(src, onSuccess, onError);
+      if (!$scope.mediaPlaying) {
+        $scope.my_media.play();
+        return $scope.mediaPlaying = true;
       }
     };
     $scope.pauseAudio = function() {
-      if (my_media) {
-        return my_media.pause();
+      if ($scope.my_media && $scope.mediaPlaying) {
+        $scope.my_media.pause();
+        return $scope.mediaPlaying = false;
       }
-    };
-    $scope.stopAudio = function() {
-      var mediaTimer;
-      if (my_media) {
-        my_media.stop();
-      }
-      clearInterval(mediaTimer);
-      return mediaTimer = null;
-    };
-    setAudioPosition = function(position) {
-      return document.getElementById("audio_position").innerHTML = position;
     };
     onSuccess = function() {
       return console.log("playAudio():Audio Success");

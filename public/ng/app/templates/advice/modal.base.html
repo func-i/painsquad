@@ -65,11 +65,9 @@
                 <p ng-show="step.content" ng-bind="step.content"></p>
 
                 <div class="audio-block" ng-show="step.audio_path">
-                  <a href="#" class="btn large" ng-click="playAudio(step.audio_path)">Play Audio</a>
-                  <a href="#" class="btn large" ng-click="pauseAudio()">Pause Playing Audio</a>
-                  <a href="#" class="btn large" ng-click="stopAudio()">Stop Playing Audio</a>
+                  <button class="button button-balanced" ng-click="playAudio(step.audio_path)" ng-disabled="mediaPlaying">Play</button>
+                  <button class="button button-assertive" ng-click="pauseAudio()" ng-disabled="!mediaPlaying">Stop</button>
                   <p id="audio_position"></p>
-                  <!-- <button class="button" ng-click="playAudio(step.audio_path)">Play Audio</button> -->
                 </div>
 
                 <div class="tip" ng-show="step.tip">
