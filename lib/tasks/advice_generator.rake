@@ -4,6 +4,7 @@ namespace :advice do
   desc "Creates 'Full Assessment' Survey"
   task :all => [:environment] do
     Recommendation.destroy_all
+    Favorite.destroy_all
     Builder::RecommendationBuilder.generate
   end
 

@@ -61,7 +61,8 @@
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps">
 
-                <p ng-bind="step.content"></p>
+                <img ng-show="step.image_path" ng-src="../images/advice/steps/{{ step.image_path }}.png">
+                <p ng-show="step.content" ng-bind="step.content"></p>
                 <!-- <div class="spacer"></div> -->
 
                 <div class="tip" ng-show="step.tip">

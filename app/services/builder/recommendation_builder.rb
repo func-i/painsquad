@@ -192,28 +192,30 @@ module Builder
           section:     'physical',
           style:       'slideshow',
           title:       'Belly Breathing',
-          image:       'belly_breathing',
+          image:       'fallback',
           duration:    '5 min. to 30 min.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
           description: 'Belly breathing is one of the best and easiest ways to relax. It can help you manage pain and also distract you from unpleasant situations.',
           byline:      nil
         )
-        rec.steps.create(
-          # content:    "Lie down, knees bent, place 1 hand on your chest and 1 hand just above your belly button."
-          image_path: ""
-        )
-        rec.steps.create(
-          # content:    "Take a deep breath in through your nose, pushing your belly out. Feel your bottom hand, on your belly, move out. The top hand on your chest should stay still. Notice how long your inhaled breath is by counting. When your belly is all the way out, pause for a moment..."
-          image_path: ""
-        )
-        rec.steps.create(
-          # content:    "…now breathe out slowly, through puckered lips, to the same count you used to breathe in. Let your belly come down until it is flat."
-          image_path: ""
-        )
-        rec.steps.create(
-          # content:    "Repeat slowly a few times.  Notice your body beginning to feel relaxed with each breath out. After you have practiced this exercise a few times, you can make the count longer to get an even deeper, more relaxing breath."
-          image_path: ""
-        )
+        rec.steps.create(image_path: 'belly_breathing_1')
+        rec.steps.create(image_path: 'belly_breathing_2')
+        rec.steps.create(image_path: 'belly_breathing_3')
+        rec.steps.create(image_path: 'belly_breathing_4')
+        rec.steps.create(image_path: 'belly_breathing_5')
+        rec.steps.create(image_path: 'belly_breathing_6')
+        # rec.steps.create(
+        #   # content:    "Lie down, knees bent, place 1 hand on your chest and 1 hand just above your belly button."
+        # )
+        # rec.steps.create(
+        #   # content:    "Take a deep breath in through your nose, pushing your belly out. Feel your bottom hand, on your belly, move out. The top hand on your chest should stay still. Notice how long your inhaled breath is by counting. When your belly is all the way out, pause for a moment..."
+        # )
+        # rec.steps.create(
+        #   # content:    "…now breathe out slowly, through puckered lips, to the same count you used to breathe in. Let your belly come down until it is flat."
+        # )
+        # rec.steps.create(
+        #   # content:    "Repeat slowly a few times.  Notice your body beginning to feel relaxed with each breath out. After you have practiced this exercise a few times, you can make the count longer to get an even deeper, more relaxing breath."
+        # )
       end
 
       def mental_relaxation
@@ -274,7 +276,7 @@ module Builder
           section:     'physical',
           style:       'nested',
           title:       'Stretching (yoga)',
-          image:       'yoga',
+          image:       'fallback',
           duration:    '10 min. to 40 min.',
           context:     'Muscle Pain, Headache, Abdominal Pain, Surgeries',
           description: 'Yoga aims to restore the balance between one’s body, mind, and spirit through a series of gentle exercises and breathing techniques.',

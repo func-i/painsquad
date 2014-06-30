@@ -7,4 +7,8 @@ class RecommendationSerializer < ActiveModel::Serializer
     object.favorites.where(user: scope).any?
   end
 
+  def steps
+    object.steps.order('created_at ASC')
+  end
+
 end

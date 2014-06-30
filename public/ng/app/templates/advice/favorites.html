@@ -13,9 +13,7 @@
         Add Some Favourites
         <span class="icon-right ion-chevron-right pull-right"></span>
       </div>
-
     </ion-list>
-
 
     <ion-list ng-show="isFavorites" class="recommended">
       <div class="blue-bar"></div>
@@ -26,7 +24,7 @@
         ng-click="loadAdviceModal(item.recommendation)"
         ng-class="{ 'first': $first }">
 
-        <img ng-src="{{ item.recommendation.image }}" alt="{{ item.recommendation.title }}">
+        <img ng-src="../images/advice/thumb/{{ item.recommendation.image }}.png">
         <h2>{{ item.recommendation.title }}</h2>
 
         <div class="duration row">
