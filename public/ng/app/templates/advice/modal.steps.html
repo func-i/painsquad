@@ -13,8 +13,9 @@
 
     <div class="container">
       <div class="blue-bar"></div>
-      <!-- <div class="header"><span>{{ nestedDescription }}</span></div> -->
-      <div class="header"><span>How To Play</span></div>
+      <div class="header" ng-show="selectedItem.section"><span>{{nestedSelection.title}}</span></div>
+      <div class="header" ng-hide="selectedItem.section"><span>How To Play</span></div>
+
         <div class="list-wrapper">
           <ol>
             <li ng-repeat="step in nestedSelection.steps track by $index">

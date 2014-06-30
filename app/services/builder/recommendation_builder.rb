@@ -30,7 +30,7 @@ module Builder
           section:     'pharmacological',
           style:       'basic',
           title:       'Numbing Cream',
-          image:       'http://placeotter.com/80/80',
+          image:       'fallback',
           duration:    '45 min. to 60 min.',
           context:     'Before Procedures',
           description: "Remember to apply pain numbing cream (topical anesthetic) 45-60 minutes before the procedure if your healthcare team has said it's okay.",
@@ -44,7 +44,7 @@ module Builder
           section:     'pharmacological',
           style:       'basic',
           title:       'Take Your Pain Medication Regularly',
-          image:       '../images/advice/pain_medication.jpg',
+          image:       'pain_medication',
           duration:    '1 min.',
           context:     'Surgery, Headaches, Abdomen Pain',
           description: 'Make sure you are sticking to the medication schedule your doctor recommends.',
@@ -58,7 +58,7 @@ module Builder
           section:     'pharmacological',
           style:       'basic',
           title:       'Take an "as needed" medication',
-          image:       '../images/advice/as_needed_medication.jpeg',
+          image:       'as_needed_medication',
           duration:    '1 min.',
           context:     'Surgery, Headaches, Abdomen Pain',
           description: 'If your doctor has given you a medication for break-through pain AND it is time to take it, consider taking it now.',
@@ -73,7 +73,7 @@ module Builder
           section:     'psychological',
           style:       'slideshow',
           title:       'Behaviour Rehearsal',
-          image:       '../images/advice/behaviour_rehearsal.jpg',
+          image:       'behaviour_rehearsal',
           duration:    '5 min. to 10 min.',
           context:     'Before Procedures',
           description: 'Behaviour rehearsal helps you to prepare for an event that you think will be stressful before it even happens, like a painful procedure.',
@@ -91,7 +91,7 @@ module Builder
           section:     'psychological',
           style:       'basic',
           title:       'Distraction',
-          image:       '../images/advice/distraction.jpg',
+          image:       'distraction',
           duration:    '5 min. to 30 min.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
           description: 'By turning your attention to something else, you can block out unpleasant or stressful thoughts.',
@@ -105,7 +105,7 @@ module Builder
           section:     'psychological',
           style:       'nested',
           title:       'Mental Games',
-          image:       '../images/advice/mental_games.jpg',
+          image:       'mental_games',
           duration:    '5 min. to 10 min.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
           description: 'Relaxation is an effective way to help you cope with pain and stress',
@@ -129,7 +129,7 @@ module Builder
           section:     'psychological',
           style:       'slideshow',
           title:       'Imagery',
-          image:       '../images/advice/imagery.jpg',
+          image:       'imagery',
           duration:    '5 min. to 30 min.',
           context:     'During Procedures, Headaches, Abdomen Pain',
           description: 'Imagery is like daydreaming except you are doing it on purpose',
@@ -145,7 +145,7 @@ module Builder
           section:     'psychological',
           style:       'slideshow',
           title:       'Mini-relaxation',
-          image:       '../images/advice/mini_relaxation.jpg',
+          image:       'mini_relaxation',
           duration:    '5 mins.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
           description: 'Mini-relaxation is a very quick and easy way to relax when you feel stressed or are feeling pain wherever you are.',
@@ -164,7 +164,7 @@ module Builder
           section:     'physical',
           style:       'basic',
           title:       'Applying Cold',
-          image:       'http://placeotter.com/80/80',
+          image:       'fallback',
           duration:    '15 min. to 20 min.',
           context:     'Mouth Sores, Muscle Pain',
           description: 'Cold temperatures can help reduce pain.',
@@ -178,7 +178,7 @@ module Builder
           section:     'physical',
           style:       'basic',
           title:       'Applying Heat',
-          image:       'http://placeotter.com/80/80',
+          image:       'fallback',
           duration:    '15 min. to 20 min.',
           context:     'Abdomen Pain, Muscle Pain',
           description: 'Warm temperatures can help reduce pain.',
@@ -192,23 +192,27 @@ module Builder
           section:     'physical',
           style:       'slideshow',
           title:       'Belly Breathing',
-          image:       '../images/advice/belly_breathing.jpg',
+          image:       'belly_breathing',
           duration:    '5 min. to 30 min.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
           description: 'Belly breathing is one of the best and easiest ways to relax. It can help you manage pain and also distract you from unpleasant situations.',
           byline:      nil
         )
         rec.steps.create(
-          content:    "Lie down, knees bent, place 1 hand on your chest and 1 hand just above your belly button."
+          # content:    "Lie down, knees bent, place 1 hand on your chest and 1 hand just above your belly button."
+          image_path: ""
         )
         rec.steps.create(
-          content:    "Take a deep breath in through your nose, pushing your belly out. Feel your bottom hand, on your belly, move out. The top hand on your chest should stay still. Notice how long your inhaled breath is by counting. When your belly is all the way out, pause for a moment..."
+          # content:    "Take a deep breath in through your nose, pushing your belly out. Feel your bottom hand, on your belly, move out. The top hand on your chest should stay still. Notice how long your inhaled breath is by counting. When your belly is all the way out, pause for a moment..."
+          image_path: ""
         )
         rec.steps.create(
-          content:    "…now breathe out slowly, through puckered lips, to the same count you used to breathe in. Let your belly come down until it is flat."
+          # content:    "…now breathe out slowly, through puckered lips, to the same count you used to breathe in. Let your belly come down until it is flat."
+          image_path: ""
         )
         rec.steps.create(
-          content:    "Repeat slowly a few times.  Notice your body beginning to feel relaxed with each breath out. After you have practiced this exercise a few times, you can make the count longer to get an even deeper, more relaxing breath."
+          # content:    "Repeat slowly a few times.  Notice your body beginning to feel relaxed with each breath out. After you have practiced this exercise a few times, you can make the count longer to get an even deeper, more relaxing breath."
+          image_path: ""
         )
       end
 
@@ -218,7 +222,7 @@ module Builder
           section:     'physical',
           style:       'slideshow',
           title:       'Mental Relaxation',
-          image:       '../images/advice/mental_relaxation.jpg',
+          image:       'mental_relaxation',
           duration:    '10 min.',
           context:     'Surgeries, Headaches, Abdomen Pain, Muscle Pain',
           description: 'Mental relaxation is an effective way to help you cope with pain and stress.',
@@ -237,7 +241,7 @@ module Builder
           section:     'physical',
           style:       'slideshow',
           title:       'Muscle Relaxation',
-          image:       '../images/advice/mini_relaxation.jpg',
+          image:       'muscle_relaxation',
           duration:    '15 min.',
           context:     'Headaches, Abdomen Pain, Muscle Pain',
           description: 'Muscle relaxation is a way to relieve muscle tension and pain by tensing and then relaxing different groups of muscles in your body.',
@@ -256,7 +260,7 @@ module Builder
           section:     'physical',
           style:       'basic',
           title:       'Gentle Exercise',
-          image:       '../images/advice/gentle_exercise.jpg',
+          image:       'gentle_exercise',
           duration:    '10 min. to 40 min.',
           context:     'Muscle Pain, Headache, Abdominal Pain, Surgeries',
           description: 'Try going for a walk or carefully walking up and down the stairs at home.',
@@ -270,16 +274,17 @@ module Builder
           section:     'physical',
           style:       'nested',
           title:       'Stretching (yoga)',
-          image:       'http://placeotter.com/80/80',
+          image:       'yoga',
           duration:    '10 min. to 40 min.',
           context:     'Muscle Pain, Headache, Abdominal Pain, Surgeries',
           description: 'Yoga aims to restore the balance between one’s body, mind, and spirit through a series of gentle exercises and breathing techniques.',
           byline:      'There are lots of poses you can do in yoga.'
         )
         mountain = rec.nested_recommendations.create(
-          title: "Mountain (tadasana) pose",
-          style: "nested",
-          image: '../images/advice/yoga_mountain.jpg'
+          title:   "Mountain (tadasana) pose",
+          style:   "nested",
+          section: 'nested_yoga',
+          image:   'yoga_mountain'
         )
         mountain.steps.create(content: "Stand with feet hip-width apart and your weight evenly balanced between them.")
         mountain.steps.create(content: "Pull up through the top of your forehead and try to make your spine feel longer.")
@@ -289,9 +294,10 @@ module Builder
         mountain.steps.create(content: "Tell yourself a positive phrase like “I am strong and brave”.")
 
         archer = rec.nested_recommendations.create(
-          title: "Archer pose",
-          style: "nested",
-          image: '../images/advice/yoga_archer.jpg'
+          title:   "Archer pose",
+          style:   "nested",
+          section: 'nested_yoga',
+          image:   'yoga_archer'
         )
         archer.steps.create(content: "While standing, step forward with your left leg so your legs are about 2.5 feet apart.")
         archer.steps.create(content: "Turn your right foot out at a 45-degree angle.")
@@ -301,9 +307,10 @@ module Builder
         archer.steps.create(content: "Look at your left fist and feel like a strong warrior.")
 
         tree = rec.nested_recommendations.create(
-          title: "Tree pose",
-          style: "nested",
-          image: '../images/advice/yoga_tree.jpg'
+          title:   "Tree pose",
+          style:   "nested",
+          section: 'nested_yoga',
+          image:   'yoga_tree'
         )
         tree.steps.create(content: "Stand upright and shift your weight to 1 foot.")
         tree.steps.create(content: "When you feel stable, place your other foot either at your ankle or inner thigh. Focus on a spot in front of you to help you balance.")
@@ -311,18 +318,20 @@ module Builder
         tree.steps.create(content: "Hold for a few minutes and then switch legs.")
 
         ego = rec.nested_recommendations.create(
-          title: "Ego pose",
-          style: "nested",
-          image: '../images/advice/yoga_ego.jpg'
+          title:   "Ego pose",
+          style:   "nested",
+          section: 'nested_yoga',
+          image:   'yoga_ego'
         )
         ego.steps.create(content: "Sitting at the edge of the bed, raise your arms overhead in a V shape.")
         ego.steps.create(content: "Stretch your thumbs to the sky and curl your fingers onto the palms of your hand.")
         ego.steps.create(content: "Breathe in and out slowly. Hold for as long as you can, up to a minute.")
 
         life_nerve = rec.nested_recommendations.create(
-          title: "Life nerve stretch",
-          style: "nested",
-          image: '../images/advice/yoga_nerve.jpg'
+          title:   "Life nerve stretch",
+          style:   "nested",
+          section: 'nested_yoga',
+          image:   'yoga_nerve'
         )
         life_nerve.steps.create(content: "Sitting up, flex both feet back towards the head.")
         life_nerve.steps.create(content: "Keeping a straight back, reach as far down your legs as you can – it might be your shins or your toes, or somewhere in between.")
