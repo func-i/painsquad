@@ -255,9 +255,11 @@
   .container {
     height: 100%;
 
-    img {
+    .image-block {
+      text-align: center;
+      vertical-align: bottom;
       height: 50%;
-      // margin: 0 auto;
+      img { height: 50%; }
     }
 
     .header {
