@@ -253,6 +253,13 @@
 .modal .nested {
 
   .container {
+    height: 100%;
+
+    img {
+      height: 50%;
+      // margin: 0 auto;
+    }
+
     .header {
       background-image: url('../images/background/content.png');
       background-color: #FAFAFA;
