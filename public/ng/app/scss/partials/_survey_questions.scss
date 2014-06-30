@@ -36,6 +36,10 @@ li.item, .item.item-checkbox {
     &.textfield { border-bottom: 0; }
   }
 
+  li.other-textarea {
+    padding-bottom: 10px;
+  }
+
   .item.item-input.other-textbox {
     border-color: lightgray;
     margin:       0 10px 10px 60px;
