@@ -27,6 +27,10 @@
       <icon src="www/res/icons/ios/icon-57-2x.png" width="114" height="114" />
     </platform>
 
+    <feature name="NetworkStatus">
+      <param name="ios-package" value="CDVConnection" />
+    </feature>
+
     <feature name="StatusBar">
       <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>

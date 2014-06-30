@@ -20,7 +20,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
 
   $rootScope.$state       = $state
@@ -34,19 +34,15 @@
   $rootScope.back = ->
     $state.go $rootScope.previousState_name, $rootScope.previousState_params
 
-  $rootScope.checkConnection = ->
-    if navigator.connection.type
-      networkState = navigator.connection.type
-      states = {}
-      states[Connection.UNKNOWN] = "Unknown connection"
-      states[Connection.ETHERNET] = "Ethernet connection"
-      states[Connection.WIFI] = "WiFi connection"
-      states[Connection.CELL_2G] = "Cell 2G connection"
-      states[Connection.CELL_3G] = "Cell 3G connection"
-      states[Connection.CELL_4G] = "Cell 4G connection"
-      states[Connection.CELL] = "Cell generic connection"
-      states[Connection.NONE] = "No network connection"
-      alert "Connection type: " + states[networkState]
+  checkConnection = ->
+    NetworkService.isOnline()
+      .then (isConnected) ->
+        # $state.go 'app.home'
+        console.log isConnected
+      .catch (err) ->
+        # $state.go 'app.login'
+        console.log err
+
 
   $ionicPlatform.ready ->
     if window.cordova and window.cordova.plugins.Keyboard
