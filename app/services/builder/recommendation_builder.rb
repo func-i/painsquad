@@ -232,8 +232,8 @@ module Builder
         )
         rec.steps.create(content: "Find a comfortable, quiet place to sit.")
         rec.steps.create(
-          content: "When you hit play, an audio recording will start. The audio recording will lead you through the relaxation exercise.",
-          audio_path: "NEED THESE ASSETS YO"
+          content:    "When you hit play, an audio recording will start. The audio recording will lead you through the relaxation exercise.",
+          audio_path: "mental_relaxation"
         )
       end
 
@@ -251,8 +251,8 @@ module Builder
         )
         rec.steps.create(content: "Find a comfortable, quiet place to sit.")
         rec.steps.create(
-          content: "When you hit play, an audio recording will start. The audio recording will lead you through the relaxation exercise.",
-          audio_path: "NEED THESE ASSETS YO"
+          content:    "When you hit play, an audio recording will start. The audio recording will lead you through the relaxation exercise.",
+          audio_path: "muscle_relaxation"
         )
       end
 

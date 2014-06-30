@@ -42,6 +42,36 @@
   $scope.discardAdvice = ->
     closeModal()
 
+  $scope.playAudio = (src) ->
+    src = "..images/advice/audio/#{src}.mp3"
+    my_media = new Media(src, onSuccess, onError)
+    my_media.play()
+    unless mediaTimer?
+      mediaTimer = setInterval(->
+        my_media.getCurrentPosition ((position) ->
+          setAudioPosition (position) + " sec"  if position > -1
+        ), (e) ->
+          console.log "Error getting pos=" + e
+          setAudioPosition "Error: " + e
+      , 1000)
+
+  $scope.pauseAudio = ->
+    my_media.pause() if my_media
+
+  $scope.stopAudio = ->
+    my_media.stop() if my_media
+    clearInterval mediaTimer
+    mediaTimer = null
+
+  setAudioPosition = (position) ->
+    document.getElementById("audio_position").innerHTML = position
+
+  onSuccess = ->
+    console.log "playAudio():Audio Success"
+
+  onError = (error) ->
+    alert "code: " + error.code + "\n" + "message: " + error.message + "\n"
+
   closeModal = ->
     $scope.modal.hide()
     reset()

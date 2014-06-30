@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
-    var closeModal, reset, setHeaderButtons;
+    var closeModal, onError, onSuccess, reset, setAudioPosition, setHeaderButtons;
     $scope.selectedItem = {};
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
@@ -47,6 +47,46 @@
     };
     $scope.discardAdvice = function() {
       return closeModal();
+    };
+    $scope.playAudio = function(src) {
+      var mediaTimer, my_media;
+      src = "..images/advice/audio/" + src + ".mp3";
+      my_media = new Media(src, onSuccess, onError);
+      my_media.play();
+      if (typeof mediaTimer === "undefined" || mediaTimer === null) {
+        return mediaTimer = setInterval(function() {
+          return my_media.getCurrentPosition((function(position) {
+            if (position > -1) {
+              return setAudioPosition(position + " sec");
+            }
+          }), function(e) {
+            console.log("Error getting pos=" + e);
+            return setAudioPosition("Error: " + e);
+          });
+        }, 1000);
+      }
+    };
+    $scope.pauseAudio = function() {
+      if (my_media) {
+        return my_media.pause();
+      }
+    };
+    $scope.stopAudio = function() {
+      var mediaTimer;
+      if (my_media) {
+        my_media.stop();
+      }
+      clearInterval(mediaTimer);
+      return mediaTimer = null;
+    };
+    setAudioPosition = function(position) {
+      return document.getElementById("audio_position").innerHTML = position;
+    };
+    onSuccess = function() {
+      return console.log("playAudio():Audio Success");
+    };
+    onError = function(error) {
+      return alert("code: " + error.code + "\n" + "message: " + error.message + "\n");
     };
     closeModal = function() {
       $scope.modal.hide();

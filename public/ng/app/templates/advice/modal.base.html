@@ -28,7 +28,7 @@
       <div class="blue-bar"></div>
 
       <div ng-hide="slideShowActivated" ng-cloak>
-        <img ng-src="../images/advice/banner/{{ selectedItem.image }}.png">
+        <img ng-if="selectedItem.image" ng-src="../images/advice/banner/{{ selectedItem.image }}.png">
 
         <div class="detail">
           <div class="duration row">
@@ -61,9 +61,16 @@
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps">
 
-                <img ng-show="step.image_path" ng-src="../images/advice/steps/{{ step.image_path }}.png">
+                <img ng-if="step.image_path" ng-src="../images/advice/steps/{{ step.image_path }}.png">
                 <p ng-show="step.content" ng-bind="step.content"></p>
-                <!-- <div class="spacer"></div> -->
+
+                <div class="audio-block" ng-show="step.audio_path">
+                  <a href="#" class="btn large" ng-click="playAudio(step.audio_path)">Play Audio</a>
+                  <a href="#" class="btn large" ng-click="pauseAudio()">Pause Playing Audio</a>
+                  <a href="#" class="btn large" ng-click="stopAudio()">Stop Playing Audio</a>
+                  <p id="audio_position"></p>
+                  <!-- <button class="button" ng-click="playAudio(step.audio_path)">Play Audio</button> -->
+                </div>
 
                 <div class="tip" ng-show="step.tip">
                   TIP: <small ng-bind="step.tip"></small>
