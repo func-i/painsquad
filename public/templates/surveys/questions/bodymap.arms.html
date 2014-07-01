@@ -1,0 +1,28 @@
+<section ng-init="activeTab = 'left'">
+
+  <div class="button-bar">
+    <a href
+      class="button override diagonal"
+      ng-click="activeTab = 'left'"
+      ng-class="{ 'active': activeTab === 'left' }">
+      <span>Left</span>
+    </a>
+
+    <a href
+      class="button override diagonal"
+      ng-click="activeTab = 'right'"
+      ng-class="{ 'active': activeTab === 'right' }">
+      <span>Right</span>
+    </a>
+  </div>
+  <div ng-switch="activeTab">
+    <div ng-switch-when="left">
+      <section region="left" body-map-selector-switch ng-include="'images/bodymap/bodymap-armleft.svg'"></section>
+    </div>
+
+    <div ng-switch-when="right">
+      <section region="right" body-map-selector-switch ng-include="'images/bodymap/bodymap-armright.svg'"></section>
+    </div>
+  </div>
+
+</section>

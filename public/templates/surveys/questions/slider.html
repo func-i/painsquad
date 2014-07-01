@@ -1,0 +1,36 @@
+<section class="default-slider" ng-controller="SliderCtrl" ng-cloak>
+
+  <form name="currentForm" valid-radio-form class="slider-container">
+
+    <div class="wedge-container">
+      <div class="wedge"></div>
+      <div class="overlay red"
+        ng-class="{ 'green': question.identifier == 'pain_control' }"
+        slider-gradient="question.choices[0].value"></div>
+    </div>
+
+    <div class="range-container">
+
+      <div class="upper">
+        <span class="pull-left number">0</span>
+        <span class="pull-right number">10</span>
+        <div style="clear: both; height: 0;">&nbsp;</div>
+      </div>
+
+      <div class="range range-assertive override" ng-class="{ 'range-balanced': question.identifier == 'pain_control' }">
+        <input required
+          type="range"
+          ng-model="question.choices[0].value">
+      </div>
+
+      <div class="lower">
+        <span class="pull-left text">{{ question.extremes.least }}</span>
+        <span class="pull-right text">{{ question.extremes.most }}</span>
+      </div>
+    </div>
+
+    <!-- sliderValue: {{ question.choices[0].value | sliderFilter }} -->
+
+  </form>
+
+</section>
