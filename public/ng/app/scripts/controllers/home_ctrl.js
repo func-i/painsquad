@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore) {
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) {
     var init;
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
@@ -26,13 +26,13 @@
       });
     };
     init = function($rootScope) {
-      if ($state.params.action === 'surveyComplete' && $rootScope.previousState_name === 'app.survey_complete') {
+      if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();
       }
     };
     return init($rootScope);
   });
 
-  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore'];
+  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];
 
 }).call(this);

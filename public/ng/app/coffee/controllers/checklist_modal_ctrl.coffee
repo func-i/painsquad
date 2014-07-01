@@ -7,7 +7,7 @@
       true
 
   $scope.ifTextareaPresent = (choice) ->
-    if choice and !(choice.custom_text and choice.custom_text.length < 5)
+    if choice and !(choice.custom_text and choice.custom_text.length < 1)
       true
 
   $scope.saveDetails = (choice) ->

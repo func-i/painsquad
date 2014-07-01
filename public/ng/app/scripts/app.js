@@ -14,7 +14,8 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
+    var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
@@ -24,6 +25,13 @@
     });
     $rootScope.back = function() {
       return $state.go($rootScope.previousState_name, $rootScope.previousState_params);
+    };
+    checkConnection = function() {
+      return NetworkService.isOnline().then(function(isConnected) {
+        return console.log(isConnected);
+      })["catch"](function(err) {
+        return console.log(err);
+      });
     };
     return $ionicPlatform.ready(function() {
       if (window.StatusBar) {

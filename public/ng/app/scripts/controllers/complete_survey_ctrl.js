@@ -8,9 +8,7 @@
       xp_points: $scope.submission.xp_points
     };
     return $scope.home = function() {
-      return $state.transitionTo('app.home.complete', {
-        action: 'surveyComplete'
-      });
+      return $state.go('app.home');
     };
   });
 

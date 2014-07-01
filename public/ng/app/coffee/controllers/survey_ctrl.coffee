@@ -36,7 +36,11 @@
     else
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
+    $scope.reloadScroll()
+
+  $scope.reloadScroll = ->
     $ionicScrollDelegate.scrollTop()
+    $ionicScrollDelegate.resize()
 
   $scope.submit = ->
     SubmissionService.prepareSubmissionAnswer($scope.question)

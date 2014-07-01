@@ -26,8 +26,8 @@ interceptor.$inject = ['$q', '$injector']
   $stateProvider
     # abstract sidemenu state/template
     .state('app'
-      url: '/app'
-      abstract: true
+      url:         '/app'
+      abstract:    true
       templateUrl: 'templates/layout/menu.html'
     )
 
@@ -44,14 +44,6 @@ interceptor.$inject = ['$q', '$injector']
               User.query (response) ->
                 defer.resolve response.user
               defer.promise
-    )
-
-    .state('app.home.complete'
-      url: '/:action'
-      views:
-        menuContent:
-          templateUrl: 'templates/shared/home.html'
-          controller:  'HomeCtrl'
     )
 
     .state('app.login',
