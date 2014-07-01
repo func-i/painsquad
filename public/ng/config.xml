@@ -21,7 +21,6 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
 
     <platform name="ios">
       <!-- iOS 7.0+ -->
@@ -54,11 +53,6 @@
 
     <feature name="Logger">
       <param name="ios-package" value="CDVLogger" />
-    </feature>
-
-    <feature name="SplashScreen">
-      <param name="ios-package" value="CDVSplashScreen" />
-      <param name="onload" value="true" />
     </feature>
 
 </widget>
