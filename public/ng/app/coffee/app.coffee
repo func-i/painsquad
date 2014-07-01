@@ -43,11 +43,10 @@
         # $state.go 'app.login'
         console.log err
 
-
   $ionicPlatform.ready ->
-    if window.cordova and window.cordova.plugins.Keyboard
-      # cordova.plugins.Keyboard.shrinkView true
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
+    # if window.cordova and window.cordova.plugins.Keyboard
+    #   cordova.plugins.Keyboard.shrinkView true
+    #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
 
     if window.StatusBar
       StatusBar.styleLightContent()
