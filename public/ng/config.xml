@@ -4,7 +4,6 @@
     <description></description>
     <author></author>
     <content src="index.html" />
-    <icon src="images/icon/painsquad.png"/>
     <access origin="*" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
@@ -12,9 +11,18 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="orientation" value="portrait" />
+    <preference name="TopActivityIndicator" value="white"/>
     <preference name="AllowInlineMediaPlayback" value="false" />
 
-    <preference name="SplashScreen" value="screen" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+
     <gap:splash src="www/res/screens/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
     <gap:splash src="www/res/screens/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
     <gap:splash src="www/res/screens/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
@@ -27,6 +35,10 @@
       <icon src="www/res/icons/ios/icon-57.png" width="57" height="57" />
       <icon src="www/res/icons/ios/icon-57-2x.png" width="114" height="114" />
     </platform>
+
+    <feature name="Device">
+      <param name="ios-package" value="CDVDevice" />
+    </feature>
 
     <feature name="Media">
       <param name="ios-package" value="CDVSound" />
@@ -46,5 +58,11 @@
 
     <feature name="Logger">
       <param name="ios-package" value="CDVLogger" />
-  </feature>
+    </feature>
+
+    <feature name="SplashScreen">
+      <param name="ios-package" value="CDVSplashScreen" />
+      <param name="onload" value="true" />
+    </feature>
+
 </widget>

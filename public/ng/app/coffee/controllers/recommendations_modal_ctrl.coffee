@@ -11,6 +11,9 @@
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()
+    if $scope.audio
+      $scope.audio.stop()
+      $scope.audio.release()
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
@@ -44,13 +47,20 @@
 
   $scope.playAudio = (src) ->
     src = "./images/advice/audio/#{src}.mp3"
-    $scope.my_media = new Media(src, onSuccess, onError)
-    unless $scope.mediaPlaying
-      $scope.my_media.play()
-      $scope.mediaPlaying = true
+    $scope.audio = new Media(src, onSuccess, onError)
+    if $scope.mediaPlaying
+      $scope.audio.pause()
+      $scope.mediaPlaying = !$scope.mediaPlaying
+    else
+      $scope.audio.play()
+      $scope.mediaPlaying = !$scope.mediaPlaying
+
+    # unless $scope.mediaPlaying
+    #   $scope.audio.play()
+    #   $scope.mediaPlaying = true
     # unless mediaTimer?
     #   mediaTimer = setInterval(->
-    #     my_media.getCurrentPosition ((position) ->
+    #     audio.getCurrentPosition ((position) ->
     #       setAudioPosition (position) + " sec"  if position > -1
     #     ), (e) ->
     #       console.log "Error getting pos=" + e
@@ -58,18 +68,19 @@
     #   , 1000)
 
   $scope.pauseAudio = ->
-    if $scope.my_media and $scope.mediaPlaying
-      $scope.my_media.pause()
+    if $scope.audio and $scope.mediaPlaying
+      $scope.audio.pause()
       $scope.mediaPlaying = false
 
   onSuccess = ->
     console.log "playAudio():Audio Success"
 
   onError = (error) ->
-    alert "code: " + error.code + "\n" + "message: " + error.message + "\n"
+    console.log "playAudio():Audio Failure"
+    # alert "code: " + error.code + "\n" + "message: " + error.message + "\n"
 
   # $scope.stopAudio = ->
-  #   my_media.stop() if my_media
+  #   audio.stop() if audio
   #   clearInterval mediaTimer
   #   mediaTimer = null
 

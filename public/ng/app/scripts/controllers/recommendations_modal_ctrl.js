@@ -10,7 +10,11 @@
       scope: $scope
     });
     $scope.$on('$destroy', function() {
-      return $scope.modal.remove();
+      $scope.modal.remove();
+      if ($scope.audio) {
+        $scope.audio.stop();
+        return $scope.audio.release();
+      }
     });
     $scope.loadAdviceModal = function(item) {
       if (event.target.tagName.toLowerCase() === 'i') {
@@ -50,15 +54,18 @@
     };
     $scope.playAudio = function(src) {
       src = "./images/advice/audio/" + src + ".mp3";
-      $scope.my_media = new Media(src, onSuccess, onError);
-      if (!$scope.mediaPlaying) {
-        $scope.my_media.play();
-        return $scope.mediaPlaying = true;
+      $scope.audio = new Media(src, onSuccess, onError);
+      if ($scope.mediaPlaying) {
+        $scope.audio.pause();
+        return $scope.mediaPlaying = !$scope.mediaPlaying;
+      } else {
+        $scope.audio.play();
+        return $scope.mediaPlaying = !$scope.mediaPlaying;
       }
     };
     $scope.pauseAudio = function() {
-      if ($scope.my_media && $scope.mediaPlaying) {
-        $scope.my_media.pause();
+      if ($scope.audio && $scope.mediaPlaying) {
+        $scope.audio.pause();
         return $scope.mediaPlaying = false;
       }
     };
@@ -66,7 +73,7 @@
       return console.log("playAudio():Audio Success");
     };
     onError = function(error) {
-      return alert("code: " + error.code + "\n" + "message: " + error.message + "\n");
+      return console.log("playAudio():Audio Failure");
     };
     closeModal = function() {
       $scope.modal.hide();
