@@ -25,7 +25,7 @@
 
   init = ($rootScope) ->
     # only show popup after transitioning from survey_complete
-    if $state.params.action is 'surveyComplete' and $rootScope.previousState_name is 'app.survey_complete'
+    if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
   init($rootScope)

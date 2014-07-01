@@ -25,7 +25,6 @@
     return unless $scope.showNext
     SubmissionService.prepareSubmissionAnswer($scope.question)
     $scope.continueSurvey()
-    $scope.reloadScroll()
 
   $scope.continueSurvey = ->
     $scope.questionIndex++
@@ -37,11 +36,11 @@
     else
       $scope.$broadcast 'resetQuestion'
       $scope.question = survey.questions[$scope.questionIndex]
+    $scope.reloadScroll()
 
   $scope.reloadScroll = ->
-    $timeout ->
-      $ionicScrollDelegate.resize()
-      $ionicScrollDelegate.scrollTop()
+    $ionicScrollDelegate.scrollTop()
+    $ionicScrollDelegate.resize()
 
   $scope.submit = ->
     SubmissionService.prepareSubmissionAnswer($scope.question)

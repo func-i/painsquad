@@ -151,10 +151,11 @@
     }
 
     .detail {
+      background-color: #FAFAFA;
+      background-image: url('../images/background/content.png');
       margin-top:       -5px;
       height:           100%;
-      background-color: rgb(241, 241, 241);
-      background-image: url('../images/background/content.png');
+      background-color: #FAFAFA;
 
       .duration, .context {
         i { font-size: 16px; }
@@ -215,11 +216,11 @@
 
   .header {
     background-color: #FAFAFA;
+    background-image: url('../images/background/content.png');
     height:    50px;
     color:     $royal;
     font-size: 16px;
     padding:   10px;
-    background-image: url('../images/background/content.png');
   }
 
   .slider {
@@ -236,6 +237,20 @@
       .audio-block {
         height: 100px;
         margin: 20px;
+
+        #bar {
+          margin: 10px;
+          background-color: gray;
+          border-radius:    13px;
+          height:           5px;
+
+          div {
+            background-color: $royal;
+            transition:       0.2s ease-in-out;
+            height:           inherit;
+            border-radius:    10px;
+          }
+        }
       }
 
       .tip {
@@ -263,8 +278,8 @@
     }
 
     .header {
-      background-image: url('../images/background/content.png');
       background-color: #FAFAFA;
+      background-image: url('../images/background/content.png');
       height:    50px;
       color:     $royal;
       font-size: 16px;
@@ -286,7 +301,6 @@
           font-weight: bold;
           p {
             color: black;
-            // color: #424547;
             font-weight: normal;
           }
         }

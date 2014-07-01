@@ -1,7 +1,8 @@
 'use strict'
 
-@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) ->
+@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, $interval, Favorites, Activity) ->
   $scope.selectedItem = {}
+  $scope.audio = null
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
@@ -11,9 +12,6 @@
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()
-    if $scope.audio
-      $scope.audio.stop()
-      $scope.audio.release()
 
   $scope.loadAdviceModal = (item) ->
     # <i> element clicks bound to ng-model, ignore this event
@@ -47,7 +45,7 @@
 
   $scope.playAudio = (src) ->
     src = "./images/advice/audio/#{src}.mp3"
-    $scope.audio = new Media(src, onSuccess, onError)
+    initAudio(src) unless $scope.audio
     if $scope.mediaPlaying
       $scope.audio.pause()
       $scope.mediaPlaying = !$scope.mediaPlaying
@@ -55,38 +53,24 @@
       $scope.audio.play()
       $scope.mediaPlaying = !$scope.mediaPlaying
 
-    # unless $scope.mediaPlaying
-    #   $scope.audio.play()
-    #   $scope.mediaPlaying = true
-    # unless mediaTimer?
-    #   mediaTimer = setInterval(->
-    #     audio.getCurrentPosition ((position) ->
-    #       setAudioPosition (position) + " sec"  if position > -1
-    #     ), (e) ->
-    #       console.log "Error getting pos=" + e
-    #       setAudioPosition "Error: " + e
-    #   , 1000)
+  # $scope.$watch '$scope.mediaPlaying', ->
+  #   $interval ->
+  #     $scope.audio.getCurrentPosition ((position) ->
+  #       $scope.currentAudioPosition = position
+  #       console.log "debuggin position from $scope.mediaPlaying watch ", position
+  #     ), (e) ->
+  #       console.log "Error getting pos=" + e
+  #   , 1000
 
-  $scope.pauseAudio = ->
-    if $scope.audio and $scope.mediaPlaying
-      $scope.audio.pause()
-      $scope.mediaPlaying = false
+  initAudio = (src) ->
+    $scope.audio = new Media(src, onAudioSuccess, onAudioError)
 
-  onSuccess = ->
+  onAudioSuccess = ->
     console.log "playAudio():Audio Success"
 
-  onError = (error) ->
+  onAudioError = (error) ->
     console.log "playAudio():Audio Failure"
     # alert "code: " + error.code + "\n" + "message: " + error.message + "\n"
-
-  # $scope.stopAudio = ->
-  #   audio.stop() if audio
-  #   clearInterval mediaTimer
-  #   mediaTimer = null
-
-  # setAudioPosition = (position) ->
-  #   document.getElementById("audio_position").innerHTML = position
-
 
   closeModal = ->
     $scope.modal.hide()
@@ -104,5 +88,8 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
     $scope.selectedItem       = null
+    if $scope.audio
+      $scope.audio.stop()
+      $scope.audio.release()
 
-@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'Favorites', 'Activity']
+@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', 'Favorites', 'Activity']

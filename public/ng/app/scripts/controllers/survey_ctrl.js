@@ -21,25 +21,23 @@
         return;
       }
       SubmissionService.prepareSubmissionAnswer($scope.question);
-      $scope.continueSurvey();
-      return $scope.reloadScroll();
+      return $scope.continueSurvey();
     };
     $scope.continueSurvey = function() {
       $scope.questionIndex++;
       if ($scope.questionIndex === ($scope.totalQuestions - 1)) {
         $scope.showNextButton = false;
         $scope.showSubmitButton = true;
-        return $scope.question = survey.questions[$scope.questionIndex];
+        $scope.question = survey.questions[$scope.questionIndex];
       } else {
         $scope.$broadcast('resetQuestion');
-        return $scope.question = survey.questions[$scope.questionIndex];
+        $scope.question = survey.questions[$scope.questionIndex];
       }
+      return $scope.reloadScroll();
     };
     $scope.reloadScroll = function() {
-      return $timeout(function() {
-        $ionicScrollDelegate.resize();
-        return $ionicScrollDelegate.scrollTop();
-      });
+      $ionicScrollDelegate.scrollTop();
+      return $ionicScrollDelegate.resize();
     };
     $scope.submit = function() {
       SubmissionService.prepareSubmissionAnswer($scope.question);

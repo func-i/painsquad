@@ -1,8 +1,9 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
-    var closeModal, onError, onSuccess, reset, setHeaderButtons;
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, $interval, Favorites, Activity) {
+    var closeModal, initAudio, onAudioError, onAudioSuccess, reset, setHeaderButtons;
     $scope.selectedItem = {};
+    $scope.audio = null;
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
     }, {
@@ -10,11 +11,7 @@
       scope: $scope
     });
     $scope.$on('$destroy', function() {
-      $scope.modal.remove();
-      if ($scope.audio) {
-        $scope.audio.stop();
-        return $scope.audio.release();
-      }
+      return $scope.modal.remove();
     });
     $scope.loadAdviceModal = function(item) {
       if (event.target.tagName.toLowerCase() === 'i') {
@@ -54,7 +51,9 @@
     };
     $scope.playAudio = function(src) {
       src = "./images/advice/audio/" + src + ".mp3";
-      $scope.audio = new Media(src, onSuccess, onError);
+      if (!$scope.audio) {
+        initAudio(src);
+      }
       if ($scope.mediaPlaying) {
         $scope.audio.pause();
         return $scope.mediaPlaying = !$scope.mediaPlaying;
@@ -63,16 +62,13 @@
         return $scope.mediaPlaying = !$scope.mediaPlaying;
       }
     };
-    $scope.pauseAudio = function() {
-      if ($scope.audio && $scope.mediaPlaying) {
-        $scope.audio.pause();
-        return $scope.mediaPlaying = false;
-      }
+    initAudio = function(src) {
+      return $scope.audio = new Media(src, onAudioSuccess, onAudioError);
     };
-    onSuccess = function() {
+    onAudioSuccess = function() {
       return console.log("playAudio():Audio Success");
     };
-    onError = function(error) {
+    onAudioError = function(error) {
       return console.log("playAudio():Audio Failure");
     };
     closeModal = function() {
@@ -91,10 +87,14 @@
       $scope.modalStyle = null;
       $scope.showStartButton = null;
       $scope.showDidItButton = null;
-      return $scope.selectedItem = null;
+      $scope.selectedItem = null;
+      if ($scope.audio) {
+        $scope.audio.stop();
+        return $scope.audio.release();
+      }
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', 'Favorites', 'Activity'];
 
 }).call(this);

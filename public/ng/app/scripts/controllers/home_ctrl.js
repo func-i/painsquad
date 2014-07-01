@@ -26,7 +26,7 @@
       });
     };
     init = function($rootScope) {
-      if ($state.params.action === 'surveyComplete' && $rootScope.previousState_name === 'app.survey_complete') {
+      if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();
       }
     };

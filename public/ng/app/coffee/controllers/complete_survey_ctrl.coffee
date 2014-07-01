@@ -10,6 +10,6 @@
     # message: "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future... maybe even a commendation or award!"
 
   $scope.home = ->
-    $state.transitionTo('app.home.complete', { action: 'surveyComplete'} )
+    $state.go 'app.home'
 
 @CompleteSurveyCtrl.$inject = ['$scope', '$state', '$rootScope', 'SubmissionService', 'UserService']
