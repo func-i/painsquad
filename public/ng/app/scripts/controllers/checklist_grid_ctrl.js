@@ -1,6 +1,12 @@
 (function() {
   'use strict';
-  this.ChecklistGridCtrl = this.controllerModule.controller("ChecklistGridCtrl", function($scope, $state) {
+  this.ChecklistGridCtrl = this.controllerModule.controller("ChecklistGridCtrl", function($scope, $state, $ionicScrollDelegate) {
+    $scope.resizeIfOther = function() {
+      if (this.choice.textfield) {
+        $ionicScrollDelegate.resize();
+        return $ionicScrollDelegate.scrollBottom();
+      }
+    };
     return $scope.atLeastOne = function() {
       var choice, inverse, _i, _len, _ref;
       inverse = null;
@@ -19,6 +25,6 @@
     };
   });
 
-  this.ChecklistGridCtrl.$inject = ['$scope', '$state'];
+  this.ChecklistGridCtrl.$inject = ['$scope', '$state', '$ionicScrollDelegate'];
 
 }).call(this);
