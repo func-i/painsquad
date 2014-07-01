@@ -1,0 +1,19 @@
+<div class="modal">
+
+  <ion-header-bar class="bar bar-header bar-royal">
+    <button class="button button-icon ion-ios7-arrow-back" ng-click="closeModal()">
+      Back
+    </button>
+  </ion-header-bar>
+
+  <ion-content has-header="true">
+    <img ng-src="{{ selectedItem.badge_image_path }}" alt="{{selectedItem.name}}">
+    <br>
+    {{ selectedItem.name | capitalize }}
+    <br>
+    Achieved: {{ selectedItem.date }}
+    <br>
+    <p>Pre-filled content that goes here</p>
+  </ion-content>
+
+</div>

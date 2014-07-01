@@ -1,0 +1,49 @@
+<ion-view title="Favorites">
+
+  <ion-header-bar>
+    <button class="button button-clear button-primary" ng-click="back()">Back</button>
+  </ion-header-bar>
+
+  <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
+
+    <ion-list ng-hide="isFavorites" class="recommended">
+      <div class="blue-bar"></div>
+
+      <div class="item margin-fix" ui-sref="app.recommended">
+        Add Some Favourites
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </div>
+    </ion-list>
+
+    <ion-list ng-show="isFavorites" class="recommended">
+      <div class="blue-bar"></div>
+
+      <ion-item
+        ng-repeat="item in favorites"
+        class="item item-thumbnail-left"
+        ng-click="loadAdviceModal(item.recommendation)"
+        ng-class="{ 'first': $first }">
+
+        <img ng-src="./images/advice/thumb/{{ item.recommendation.image }}.png">
+        <h2>{{ item.recommendation.title }}</h2>
+
+        <div class="duration row">
+          <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+          <div class="col col-90"><span>{{ item.recommendation.duration }}</span></div>
+        </div>
+
+        <div class="context row">
+          <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+          <div class="col col-90"><span>{{ item.recommendation.context }}</span></div>
+        </div>
+
+        <div class="badge" ng-class="{ 'favorite': item.recommendation.favorite }">
+          <i ng-model="item.recommendation.favorite" class="ion-ios7-heart-outline"> </i>
+        </div>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>
