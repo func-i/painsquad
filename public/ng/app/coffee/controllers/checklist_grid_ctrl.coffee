@@ -1,6 +1,11 @@
 'use strict'
 
-@ChecklistGridCtrl = @controllerModule.controller "ChecklistGridCtrl", ($scope, $state) ->
+@ChecklistGridCtrl = @controllerModule.controller "ChecklistGridCtrl", ($scope, $state, $ionicScrollDelegate) ->
+
+  $scope.resizeIfOther = ->
+    if @choice.textfield
+      $ionicScrollDelegate.resize()
+      $ionicScrollDelegate.scrollBottom()
 
   $scope.atLeastOne = ->
     inverse = null
@@ -12,4 +17,4 @@
     !inverse
 
 
-@ChecklistGridCtrl.$inject = ['$scope', '$state']
+@ChecklistGridCtrl.$inject = [ '$scope', '$state', '$ionicScrollDelegate' ]
