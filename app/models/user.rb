@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   end
 
   def previous_submissions
-    submissions.order('updated_at DESC')
+    submissions.order('created_at DESC')
   end
 
   def submission_count

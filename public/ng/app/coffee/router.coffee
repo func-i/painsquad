@@ -79,7 +79,6 @@ interceptor.$inject = ['$q', '$injector']
             surveyResult: (SurveyResults, $q) ->
               defer = $q.defer()
               SurveyResults.query (response) ->
-                debugger
                 defer.resolve response.survey_results
               defer.promise
     )

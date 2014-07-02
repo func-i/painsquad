@@ -90,7 +90,6 @@
               var defer;
               defer = $q.defer();
               SurveyResults.query(function(response) {
-                debugger;
                 return defer.resolve(response.survey_results);
               });
               return defer.promise;
