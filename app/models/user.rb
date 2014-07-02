@@ -25,6 +25,8 @@
 
 class User < ActiveRecord::Base
   include Ranking
+  include PainReporting
+
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
