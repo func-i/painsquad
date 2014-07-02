@@ -146,13 +146,11 @@
     }
 
     img {
-      // height: 100px;
       height: 100%;
     }
 
     .detail {
-      background-color: #FAFAFA;
-      background-image: url('../images/background/content.png');
+      @extend .gray-diagonal;
       margin-top:       -5px;
       height:           100%;
       background-color: #FAFAFA;
@@ -215,8 +213,7 @@
   height: 350px;
 
   .header {
-    background-color: #FAFAFA;
-    background-image: url('../images/background/content.png');
+    @extend .gray-diagonal;
     height:    50px;
     color:     $royal;
     font-size: 16px;
@@ -278,8 +275,7 @@
     }
 
     .header {
-      background-color: #FAFAFA;
-      background-image: url('../images/background/content.png');
+      @extend .gray-diagonal;
       height:    50px;
       color:     $royal;
       font-size: 16px;

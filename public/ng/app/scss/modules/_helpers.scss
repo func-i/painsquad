@@ -18,6 +18,13 @@
   background-repeat: no-repeat;
 }
 
+.gray-diagonal {
+  background-color: #E1E1E1;
+  // background-color: #FAFAFA;
+  background-image: url('../images/background/content.png');
+}
+
+
 // diagonal transparent background
 // FIXME: for some reason it has some opacity issue
 .diagonal {

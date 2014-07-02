@@ -4,21 +4,20 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
+  <ion-content padding="true" class="achievements content-background">
 
     <article class="awards">
       <ion-slide-box>
         <ion-slide ng-repeat="slide in achievementData">
 
-            <div class="wrapper">
-              <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
-              <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
-              <img ng-src="{{slide.image_path}}" ng-if="!slide.locked" style="width: 200px;">
-            </div>
-
-            <h4 ng-if="!slide.locked">{{ slide.title }}</h4>
-            <h4 ng-if="slide.locked">Locked</h4>
-            <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+          <div class="wrapper">
+            <h3 ng-if="!slide.locked">Rank</h3>
+            <h3 ng-if="slide.locked">Locked</h3>
+            <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
+            <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
+            <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
+            <img ng-src="images/achievements/locked.png" ng-if="slide.locked">
+          </div>
 
         </ion-slide>
       </ion-slide-box>

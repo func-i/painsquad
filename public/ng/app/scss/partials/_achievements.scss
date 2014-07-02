@@ -1,21 +1,36 @@
 .awards {
-  border: 1px dotted black;
-  height: 450px;
+  background-color: transparent;
+
+  .slider .slider-pager {
+    @include slider-override;
+    // @extend .slider-pager-override;
+  }
 
   .slider-slide {
-    padding-top: 20px;
+    background-color: transparent;
+    padding-top: 7px;
 
     .wrapper {
+      background-color: transparent;
       position: relative;
+      height: 250px;
+
+      h3 {
+        color: white;
+        font-weight: bold;
+      }
 
       img {
-        margin: auto;
+        width: 150px;
+        text-align: center;
+        margin: 0 auto;
       }
 
       aside {
-        margin-top: 125px;
-        color: rgba(128, 128, 128, 0.92);
-        font-size: 50px;
+        color: white;
+        font-size: 70px;
+        font-weight: normal;
+        margin-top: 50px;
 
         &.back {
           float: left;
@@ -31,11 +46,15 @@
 }
 
 .badges {
-  border: 1px dotted black;
-  height: 250px;
+  border-top: 6px solid $red-two;
+  @extend .gray-diagonal;
 
   h3 {
+    padding-top: 10px;
     text-align: center;
+    color: $red-two;
+    font-weight: bold;
+    font-size: 20px;
   }
 
   .row {
