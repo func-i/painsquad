@@ -6,14 +6,24 @@
     </button>
   </ion-header-bar>
 
-  <ion-content has-header="true" class="content-background">
-    <img ng-src="{{ selectedItem.badge_image_path }}" alt="{{selectedItem.name}}">
-    <br>
-    {{ selectedItem.name | capitalize }}
-    <br>
-    Achieved: {{ selectedItem.date }}
-    <br>
-    <p>Pre-filled content that goes here</p>
+  <ion-content padding="true" has-header="true" class="award content-background">
+
+    <div class="image">
+      <img ng-src="{{ selectedItem.badge_image_path }}" alt="{{selectedItem.name}}">
+    </div>
+
+    <article>
+      <div class="header-bar bar-red"></div>
+      <div class="header">
+        <p>{{selectedItem.name | capitalize }}</p>
+        <p>Achieved {{ selectedItem.date }}</p>
+      </div>
+      <div class="body">
+        Wow! Having complete your first case, you have achieved the Commendation award. Keep up the great work.
+      </div>
+      <button class="button button-assertive override diagonal">Play Video</button>
+    </article>
+
   </ion-content>
 
 </div>
