@@ -75,6 +75,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/surveys/complete.html'
           controller: 'CompleteSurveyCtrl'
+          resolve:
+            surveyResult: (SurveyResults, $q) ->
+              defer = $q.defer()
+              SurveyResults.query (response) ->
+                defer.resolve response.survey_results
+              defer.promise
     )
 
 
@@ -212,12 +218,67 @@ interceptor.$inject = ['$q', '$injector']
           templateUrl: 'templates/static/settings.html'
     )
 
-    # reports state
-    .state('app.reports'
-      url: '/reports'
+    # Action Report state
+    .state('app.action_report'
+      url: '/reports/action'
       views:
         menuContent:
-          templateUrl: 'templates/static/reports.html'
+          templateUrl: 'templates/static/report.html',
+          controller: "ActionReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'action', (response) ->
+                defer.resolve response.report
+              defer.promise
+    )
+
+    # Cause Report state
+    .state('app.cause_report'
+      url: '/reports/cause'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/report.html',
+          controller: "CauseReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'cause', (response) ->
+                defer.resolve response.report
+
+              defer.promise
+    )
+
+    # Effect Report state
+    .state('app.effect_report'
+      url: '/reports/effect'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/report.html',
+          controller: "EffectReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'effect', (response) ->
+                defer.resolve response.report
+
+              defer.promise
+    )
+
+    # Pain Report state
+    .state('app.pain_report'
+      url: '/reports/pain'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/report.html',
+          controller: "PainReportCtrl",
+          resolve:
+            report: (Report, $q) ->
+              defer = $q.defer()
+              Report.get report_id: 'pain', (response) ->
+                defer.resolve response.report
+
+              defer.promise
     )
 
     # about state

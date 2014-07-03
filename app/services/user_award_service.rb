@@ -1,4 +1,4 @@
-class EventService
+class UserAwardService
 
   def self.analyze(user)
     new(user).process

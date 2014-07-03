@@ -7,12 +7,15 @@ PainSquadApi::Application.routes.draw do
       resources :favorites, only: [:index, :create, :destroy]
 
       resource :surveys
+      resource :survey_results
       resource :achievements
       resource :activity
 
       resource :recommendations do
         member { get :prevent; get :manage }
       end
+
+      resources :reports
 
       resource :session
       resources :users

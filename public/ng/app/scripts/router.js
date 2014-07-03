@@ -84,7 +84,17 @@
       views: {
         menuContent: {
           templateUrl: 'templates/surveys/complete.html',
-          controller: 'CompleteSurveyCtrl'
+          controller: 'CompleteSurveyCtrl',
+          resolve: {
+            surveyResult: function(SurveyResults, $q) {
+              var defer;
+              defer = $q.defer();
+              SurveyResults.query(function(response) {
+                return defer.resolve(response.survey_results);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.achievements', {
@@ -232,11 +242,84 @@
           templateUrl: 'templates/static/settings.html'
         }
       }
-    }).state('app.reports', {
-      url: '/reports',
+    }).state('app.action_report', {
+      url: '/reports/action',
       views: {
         menuContent: {
-          templateUrl: 'templates/static/reports.html'
+          templateUrl: 'templates/static/report.html',
+          controller: "ActionReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'action'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.cause_report', {
+      url: '/reports/cause',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/report.html',
+          controller: "CauseReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'cause'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.effect_report', {
+      url: '/reports/effect',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/report.html',
+          controller: "EffectReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'effect'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.pain_report', {
+      url: '/reports/pain',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/report.html',
+          controller: "PainReportCtrl",
+          resolve: {
+            report: function(Report, $q) {
+              var defer;
+              defer = $q.defer();
+              Report.get({
+                report_id: 'pain'
+              }, function(response) {
+                return defer.resolve(response.report);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.about', {

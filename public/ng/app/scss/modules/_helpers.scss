@@ -18,6 +18,29 @@
   background-repeat: no-repeat;
 }
 
+.gray-diagonal {
+  background-color: #E1E1E1;
+  // background-color: #FAFAFA;
+  background-image: url('../images/background/content.png');
+}
+
+.header-bar {
+  height: 7px;
+  width: 100%;
+  &.bar-blue {
+    background-color: $royal;
+  }
+  &.bar-red {
+    background-color: $red-two;
+  }
+}
+
+.margin-fix {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
 // diagonal transparent background
 // FIXME: for some reason it has some opacity issue
 .diagonal {
@@ -45,13 +68,3 @@
     opacity: 0.2;
   }
 }
-
-.margin-fix {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-h1.title {
-  font-weight: bold;
-}
-

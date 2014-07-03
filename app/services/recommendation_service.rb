@@ -11,10 +11,23 @@ class RecommendationService
     @favorites     = @user.favorites.pluck(:recommendation_id)
   end
 
+  # fetch recommendation, gives 2X weighting to favorites
+  # if recommendation already in array, get another
   def get_recommendations
-    DIST[@pain_severity].inject([]) do |result, element|
-      result << weighted_sample(Recommendation.send(element))
+    result = []
+    DIST[@pain_severity].each do |element|
+      unique = false
+      while !unique
+        recommendation = weighted_sample(Recommendation.send(element))
+        if result.include? recommendation
+          recommendation = weighted_sample(Recommendation.send(element))
+        else
+          result << recommendation
+          unique = true
+        end
+      end
     end
+    result
   end
 
   protected

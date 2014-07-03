@@ -1,21 +1,44 @@
 .awards {
-  border: 1px dotted black;
-  height: 450px;
+  background-color: transparent;
+  position: relative;
+
+  .slider .slider-pager {
+    @include slider-override;
+  }
+
+  time {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 200px;
+    left: 75px;
+  }
 
   .slider-slide {
-    padding-top: 20px;
+    background-color: transparent;
+    padding: 0;
 
     .wrapper {
+      background-color: transparent;
       position: relative;
+      height: 250px;
+
+      h4 {
+        color: white;
+        font-weight: bold;
+      }
 
       img {
-        margin: auto;
+        width: 150px;
+        text-align: center;
+        margin: 0 auto;
       }
 
       aside {
-        margin-top: 125px;
-        color: rgba(128, 128, 128, 0.92);
-        font-size: 50px;
+        color: white;
+        font-size: 70px;
+        font-weight: normal;
+        margin-top: 50px;
 
         &.back {
           float: left;
@@ -31,30 +54,130 @@
 }
 
 .badges {
-  border: 1px dotted black;
-  height: 250px;
+  @extend .gray-diagonal;
+  height: 260px;
 
   h3 {
     text-align: center;
+    color: $red-two;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 4px 0;
   }
 
   .row {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 
     div {
-      margin: 0 20px 0 20px;
+      margin: 9px;
+      position: relative;
+
+      p {
+        text-align: center;
+        margin: auto;
+        font-size: 12px;
+        color: rgb(82, 82, 82);
+      }
+
+      &.first p {
+        margin-left: -10px;
+      }
+
+      .badge-level {
+        position: absolute;
+        background-color: rgb(50, 86, 114);
+        border:         2px solid white;
+        color:          white;
+        border-radius:  15px;
+        height:         30px;
+        width:          30px;
+        font-size:      16px;
+        top:            22px;
+        left:           38px;
+        text-align:     center;
+        span {
+          position: relative;
+          top: 10%;
+        }
+        &.two {
+          font-size: 14px;
+        }
+        &.three {
+          font-size: 11px;
+        }
+      }
     }
 
-    span { text-align: center; }
-
     #circle {
-      width:             75px;
-      height:            75px;
+      width: 60px;
+      height: 60px;
       border-radius:     50px;
       background-repeat: no-repeat;
       background-size:   cover;
+    }
+  }
+}
+
+
+.modal {
+  .award {
+    // position: relative;
+
+    // img {
+    //   position: absolute;
+    //   top: 0%;
+    //   left: 7%;
+    //   height: 200px;
+    //   width: 200px;
+    // }
+
+    .image {
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      img {
+        margin: 5% 20%;
+        height: 200px;
+        width: 200px;
+      }
+    }
+
+    article {
+      margin: 10px;
+      height: 500px;
+      background-color: white;
+      text-align: center;
+
+      .header {
+        @extend .gray-diagonal;
+
+        p {
+          margin: 0 auto;
+        }
+
+        p:first-child {
+          color: $red-two;
+          font-size: 16px;
+          font-weight: bold;
+          padding-top: 5px;
+        }
+
+        p:last-child {
+          color: $gray-font;
+          font-size: 14px;
+          padding-bottom: 5px;
+        }
+      }
+      .body {
+        margin: 15px;
+        color: $gray-font;
+      }
+
+      button {
+        width: 90%;
+        margin: 0 auto;
+      }
     }
   }
 }
