@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :restrict_access
   respond_to :json
 
-  include Pundit
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
   def present_user
     @user
   end

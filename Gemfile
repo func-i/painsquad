@@ -9,7 +9,6 @@ gem 'rack-cors',   '~> 0.2.9'
 gem 'active_model_serializers', '~> 0.8.1'
 
 gem 'sorcery',     '~> 0.8.5'
-gem 'pundit',      '~> 0.2.3'
 gem 'uglifier',     '~> 2.5.0'
 gem 'jquery-rails', '~> 3.1.0'
 
