@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, $interval, AudioPlayer, Favorites, Activity) {
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, AudioPlayer, Favorites, Activity) {
     var closeModal, reset, setHeaderButtons;
     $scope.selectedItem = {};
     $scope.showInit = true;
@@ -80,14 +80,10 @@
       $scope.modalStyle = null;
       $scope.showStartButton = null;
       $scope.showDidItButton = null;
-      $scope.selectedItem = null;
-      if ($scope.audio) {
-        $scope.audio.stop();
-        return $scope.audio.release();
-      }
+      return $scope.selectedItem = null;
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', 'AudioPlayer', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'AudioPlayer', 'Favorites', 'Activity'];
 
 }).call(this);

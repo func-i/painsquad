@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, $interval, AudioPlayer, Favorites, Activity) ->
+@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, AudioPlayer, Favorites, Activity) ->
   $scope.selectedItem = {}
   $scope.showInit     = true
   $scope.player       = AudioPlayer
@@ -74,8 +74,5 @@
     $scope.showStartButton    = null
     $scope.showDidItButton    = null
     $scope.selectedItem       = null
-    if $scope.audio
-      $scope.audio.stop()
-      $scope.audio.release()
 
-@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', 'AudioPlayer', 'Favorites', 'Activity']
+@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'AudioPlayer', 'Favorites', 'Activity']
