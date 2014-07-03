@@ -4,36 +4,38 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
+  <ion-content padding="true" class="achievements content-background">
 
     <article class="awards">
       <ion-slide-box>
         <ion-slide ng-repeat="slide in achievementData">
 
-            <div class="wrapper">
-              <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
-              <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
-              <img ng-src="{{slide.image_path}}" ng-if="!slide.locked" style="width: 200px;">
-            </div>
-
-            <h4 ng-if="!slide.locked">{{ slide.title }}</h4>
+          <div class="wrapper">
+            <h4 ng-if="!slide.locked">Rank</h4>
             <h4 ng-if="slide.locked">Locked</h4>
-            <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+            <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
+            <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
+            <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
+            <img ng-src="images/achievements/locked.png" ng-if="slide.locked">
+          </div>
+          <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
 
         </ion-slide>
       </ion-slide-box>
     </article>
 
     <article class="badges">
+      <div class="header-bar bar-red"></div>
       <h3>Awards</h3>
 
       <section class="row first">
         <div class=""
           ng-repeat="award in awardData"
           ng-show="$index == 0 || $index == 1"
-          ng-click="loadAwardModal(award)">
+          ng-click="loadAwardModal(award)"
+          ng-class="{ 'first': $first }">
             <figure id="circle" ng-style="getImage(award)"></figure>
-            <span>{{ award.name }}</span>
+            <p>{{ award.name | capitalize }}</p>
         </div>
       </section>
 
@@ -43,7 +45,12 @@
           ng-show="$index == 2 || $index == 3 || $index == 4"
           ng-click="loadAwardModal(award)">
             <figure id="circle" ng-style="getImage(award)"></figure>
-            <span>{{ award.name }}</span>
+            <div class="badge-level"
+              ng-show="award.level"
+              ng-class="{ 'three': award.level > 100, 'two': award.level > 10 }">
+              <span>{{award.level}}x</span>
+            </div>
+            <p>{{ award.name | capitalize }}</p>
         </div>
       </section>
 

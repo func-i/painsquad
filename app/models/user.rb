@@ -25,6 +25,8 @@
 
 class User < ActiveRecord::Base
   include Ranking
+  include PainReporting
+
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
@@ -32,6 +34,10 @@ class User < ActiveRecord::Base
 
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
+
+  validates :award_level, numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
+  validates :cross_level, numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
+  validates :star_level,  numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
   LEVELS = [ 300, 700, 1200, 2000, 2800 ]
@@ -44,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def previous_submissions
-    submissions.order('updated_at DESC')
+    submissions.order('created_at DESC')
   end
 
   def submission_count
@@ -55,7 +61,7 @@ class User < ActiveRecord::Base
     activities.recommendation_events.count
   end
 
-  # TODO: must only allow advice scoring within certain restraints
+  # TODO: must only allow advice scoring within certain constraints
   def advice_score_unlocked?
     true
   end

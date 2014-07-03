@@ -75,6 +75,12 @@ interceptor.$inject = ['$q', '$injector']
         menuContent:
           templateUrl: 'templates/surveys/complete.html'
           controller: 'CompleteSurveyCtrl'
+          resolve:
+            surveyResult: (SurveyResults, $q) ->
+              defer = $q.defer()
+              SurveyResults.query (response) ->
+                defer.resolve response.survey_results
+              defer.promise
     )
 
 

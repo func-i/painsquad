@@ -7,7 +7,6 @@ var minifyCss   = require('gulp-minify-css');
 var rename      = require('gulp-rename');
 var sh          = require('shelljs');
 require('shelljs/global');
-var preprocess  = require('gulp-preprocess');
 var runSequence = require('run-sequence');
 var argv        = require('yargs').argv;
 var jshint      = require('gulp-jshint');
@@ -55,7 +54,6 @@ gulp.task('coffee', function() {
 gulp.task('build-scripts', ['coffee'], function() {
   gulp.src(source_paths.scripts)
     .pipe(changed(dest_paths.scripts))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.scripts))
     .pipe(connect.reload());
 });
@@ -107,7 +105,6 @@ gulp.task('icons', function() {
 gulp.task('build-templates', function() {
   gulp.src(source_paths.templates)
     .pipe(changed(dest_paths.templates))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.templates))
     .pipe(connect.reload());
 });
@@ -115,7 +112,6 @@ gulp.task('build-templates', function() {
 gulp.task('build-index', function() {
   gulp.src(source_paths.index_page)
     .pipe(changed(dest_paths.root))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.root))
     .pipe(connect.reload());
 });

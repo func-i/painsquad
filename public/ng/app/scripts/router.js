@@ -84,7 +84,17 @@
       views: {
         menuContent: {
           templateUrl: 'templates/surveys/complete.html',
-          controller: 'CompleteSurveyCtrl'
+          controller: 'CompleteSurveyCtrl',
+          resolve: {
+            surveyResult: function(SurveyResults, $q) {
+              var defer;
+              defer = $q.defer();
+              SurveyResults.query(function(response) {
+                return defer.resolve(response.survey_results);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.achievements', {

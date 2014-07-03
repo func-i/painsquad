@@ -4,7 +4,7 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true">
+  <ion-content padding="true" class="achievements content-background">
 
     <article class="awards">
       <ion-slide-box>
@@ -17,7 +17,9 @@
             </div>
 
             <h4 ng-if="!slide.locked">{{ slide.title }}</h4>
-            <h4 ng-if="slide.locked">Locked</h4>
+            <h4 ng-if="slide.locked">
+              <img ng-src="">
+            </h4>
             <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
 
         </ion-slide>
@@ -25,6 +27,7 @@
     </article>
 
     <article class="badges">
+      <div class="header-bar bar-red"></div>
       <h3>Awards</h3>
 
       <section class="row first">
@@ -44,6 +47,7 @@
           ng-click="loadAwardModal(award)">
             <figure id="circle" ng-style="getImage(award)"></figure>
             <span>{{ award.name }}</span>
+            <span>{{ award.level }}</span>
         </div>
       </section>
 
