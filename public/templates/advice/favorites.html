@@ -7,7 +7,7 @@
   <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
 
     <ion-list ng-hide="isFavorites" class="recommended">
-      <div class="blue-bar"></div>
+      <div class="header-bar bar-blue"></div>
 
       <div class="item margin-fix" ui-sref="app.recommended">
         Add Some Favourites
@@ -16,7 +16,7 @@
     </ion-list>
 
     <ion-list ng-show="isFavorites" class="recommended">
-      <div class="blue-bar"></div>
+      <div class="header-bar bar-blue"></div>
 
       <ion-item
         ng-repeat="item in favorites"

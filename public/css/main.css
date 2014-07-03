@@ -16,6 +16,9 @@ input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
 .ion-ios7-heart-outline::before {
   font-weight: bold !important; }
 
+h1.title {
+  font-weight: bold; }
+
 .pull-right {
   float: right; }
 
@@ -31,6 +34,22 @@ input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
   background-image: url('../images/background/survey.png');
   background-size: 100%;
   background-repeat: no-repeat; }
+
+.gray-diagonal, .badges, .modal .award article .header, .modal .container .detail, .modal .container .slide .header, .modal .nested .container .header {
+  background-color: #E1E1E1;
+  background-image: url('../images/background/content.png'); }
+
+.header-bar {
+  height: 7px;
+  width: 100%; }
+  .header-bar.bar-blue {
+    background-color: #00aed7; }
+  .header-bar.bar-red {
+    background-color: #DF4461; }
+
+.margin-fix {
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 .diagonal, .modal .modal-inherit .content-wrapper .content section .button-bar .button {
   position: relative; }
@@ -58,13 +77,6 @@ input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
     right: 0;
     background: url('../images/background/content.png');
     opacity: 0.2; }
-
-.margin-fix {
-  margin-left: auto !important;
-  margin-right: auto !important; }
-
-h1.title {
-  font-weight: bold; }
 
 ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
   border-color: transparent !important;
@@ -412,18 +424,41 @@ body.platform-browser .progress {
     margin-top: 25px; }
 
 .awards {
-  border: 1px dotted black;
-  height: 450px; }
+  background-color: transparent;
+  position: relative; }
+  .awards .slider .slider-pager .slider-pager-page {
+    font-size: 80%;
+    width: 4%;
+    margin: 0 auto;
+    color: #879094;
+    opacity: 1; }
+    .awards .slider .slider-pager .slider-pager-page.active {
+      color: #00aed7; }
+  .awards time {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    top: 200px;
+    left: 75px; }
   .awards .slider-slide {
-    padding-top: 20px; }
+    background-color: transparent;
+    padding: 0; }
     .awards .slider-slide .wrapper {
-      position: relative; }
+      background-color: transparent;
+      position: relative;
+      height: 250px; }
+      .awards .slider-slide .wrapper h4 {
+        color: white;
+        font-weight: bold; }
       .awards .slider-slide .wrapper img {
-        margin: auto; }
+        width: 150px;
+        text-align: center;
+        margin: 0 auto; }
       .awards .slider-slide .wrapper aside {
-        margin-top: 125px;
-        color: rgba(128, 128, 128, 0.92);
-        font-size: 50px; }
+        color: white;
+        font-size: 70px;
+        font-weight: normal;
+        margin-top: 50px; }
         .awards .slider-slide .wrapper aside.back {
           float: left;
           margin-left: 10px; }
@@ -432,29 +467,82 @@ body.platform-browser .progress {
           margin-right: 10px; }
 
 .badges {
-  border: 1px dotted black;
-  height: 250px; }
+  height: 260px; }
   .badges h3 {
-    text-align: center; }
+    text-align: center;
+    color: #DF4461;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 4px 0; }
   .badges .row {
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px; }
+    justify-content: center; }
     .badges .row div {
-      margin: 0 20px 0 20px; }
-    .badges .row span {
-      text-align: center; }
+      margin: 9px;
+      position: relative; }
+      .badges .row div p {
+        text-align: center;
+        margin: auto;
+        font-size: 12px;
+        color: #525252; }
+      .badges .row div.first p {
+        margin-left: -10px; }
+      .badges .row div .badge-level {
+        position: absolute;
+        background-color: #325672;
+        border: 2px solid white;
+        color: white;
+        border-radius: 15px;
+        height: 30px;
+        width: 30px;
+        font-size: 16px;
+        top: 22px;
+        left: 38px;
+        text-align: center; }
+        .badges .row div .badge-level span {
+          position: relative;
+          top: 10%; }
+        .badges .row div .badge-level.two {
+          font-size: 14px; }
+        .badges .row div .badge-level.three {
+          font-size: 11px; }
     .badges .row #circle {
-      width: 75px;
-      height: 75px;
+      width: 60px;
+      height: 60px;
       border-radius: 50px;
       background-repeat: no-repeat;
       background-size: cover; }
 
-.blue-bar {
-  height: 7px;
-  background-color: #00aed7;
-  width: 100%; }
+.modal .award .image {
+  height: 50%;
+  top: 50%;
+  left: 50%; }
+  .modal .award .image img {
+    margin: 5% 20%;
+    height: 200px;
+    width: 200px; }
+.modal .award article {
+  margin: 10px;
+  height: 500px;
+  background-color: white;
+  text-align: center; }
+  .modal .award article .header p {
+    margin: 0 auto; }
+  .modal .award article .header p:first-child {
+    color: #DF4461;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px; }
+  .modal .award article .header p:last-child {
+    color: #3f414c;
+    font-size: 14px;
+    padding-bottom: 5px; }
+  .modal .award article .body {
+    margin: 15px;
+    color: #3f414c; }
+  .modal .award article button {
+    width: 90%;
+    margin: 0 auto; }
 
 .extension {
   height: 200px;
@@ -554,8 +642,6 @@ body.platform-browser .progress {
   .modal .container img {
     height: 100%; }
   .modal .container .detail {
-    background-color: #FAFAFA;
-    background-image: url('../images/background/content.png');
     margin-top: -5px;
     height: 100%;
     background-color: #FAFAFA; }
@@ -596,12 +682,18 @@ body.platform-browser .progress {
 .modal .container .slide {
   height: 350px; }
   .modal .container .slide .header {
-    background-color: #FAFAFA;
-    background-image: url('../images/background/content.png');
     height: 50px;
     color: #00aed7;
     font-size: 16px;
     padding: 10px; }
+  .modal .container .slide .slider .slider-pager .slider-pager-page {
+    font-size: 80%;
+    width: 4%;
+    margin: 0 auto;
+    color: #879094;
+    opacity: 1; }
+    .modal .container .slide .slider .slider-pager .slider-pager-page.active {
+      color: #00aed7; }
   .modal .container .slide .slider {
     height: 100%; }
     .modal .container .slide .slider .slider-slide {
@@ -638,8 +730,6 @@ body.platform-browser .progress {
     .modal .nested .container .image-block img {
       height: 50%; }
   .modal .nested .container .header {
-    background-color: #FAFAFA;
-    background-image: url('../images/background/content.png');
     height: 50px;
     color: #00aed7;
     font-size: 16px;
@@ -675,6 +765,15 @@ ion-content.sidemenu {
     border-color: transparent;
     height: 100px;
     background-color: #808A8F; }
+  ion-content.sidemenu .list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear; }
+  ion-content.sidemenu .list .item.item-accordion.ng-hide {
+    line-height: 0px; }
+  ion-content.sidemenu .list .item.item-accordion.ng-hide-add, ion-content.sidemenu .list .item.item-accordion.ng-hide-remove {
+    display: block !important; }
 
 .survey.survey-complete .content-wrapper .question .content-actual, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
   height: 60px;
