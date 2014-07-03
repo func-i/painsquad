@@ -1,7 +1,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      # skip_before_action :restrict_access, only: [:create]
+      skip_before_action :restrict_access, only: [:create]
 
       def index
         render json: present_user
