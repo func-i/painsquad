@@ -172,18 +172,14 @@ button.override, .modal .modal-inherit .content-wrapper .content section .button
   font-size: 20px; }
   button.override.home, .modal .modal-inherit .content-wrapper .content section .button-bar button.home.button {
     height: 44px;
-    width: calc(100% - 140px);
+    width: calc(100% - 70px);
     min-width: 150px;
-    margin: 0 70px 10px 70px; }
+    margin: 10px auto; }
   button.override.done, .modal .modal-inherit .content-wrapper .content section .button-bar button.done.button {
     height: 25px;
     width: 60px;
     font-size: 16px;
     background-color: #DD4460; }
-  button.override.not-assertive, .modal .modal-inherit .content-wrapper .content section .button-bar button.not-assertive.button {
-    background-color: #b3364e; }
-    button.override.not-assertive.activated, .modal .modal-inherit .content-wrapper .content section .button-bar button.not-assertive.activated.button {
-      background-color: #A4213B; }
   button.override.bottom-border, .modal .modal-inherit .content-wrapper .content section .button-bar button.bottom-border.button {
     box-shadow: inset 0px 0px 0px, 0px 3px 0px 0px #e88d4d; }
   button.override.activated.bottom-border, .modal .modal-inherit .content-wrapper .content section .button-bar button.activated.bottom-border.button {
@@ -422,6 +418,17 @@ body.platform-browser .progress {
     margin-right: auto; }
   .home .action {
     margin-top: 25px; }
+    .home .action button {
+      text-align: center;
+      position: relative;
+      display: block; }
+      .home .action button img {
+        position: absolute;
+        height: 70%;
+        border: 2px solid white;
+        border-radius: 20px;
+        right: 10px;
+        top: 6px; }
 
 .awards {
   background-color: transparent;
@@ -751,25 +758,25 @@ body.platform-browser .progress {
 
 ion-content.sidemenu {
   top: 20px;
-  background-color: #5B6166 !important; }
+  background-color: #5B6166; }
   ion-content.sidemenu .scroll-content {
-    background-color: #5B6166 !important; }
+    background-color: #5B6166; }
   ion-content.sidemenu .item {
-    border-color: gray; }
-    ion-content.sidemenu .item:nth-child(1) a, ion-content.sidemenu .item:nth-child(2) a {
-      color: white; }
+    border-color: gray;
+    background-color: #5B6166; }
+    ion-content.sidemenu .item .ion-plus, ion-content.sidemenu .item .ion-minus {
+      margin-right: 28px; }
     ion-content.sidemenu .item a {
       background-color: #5B6166;
       color: #C0C0C0; }
+  ion-content.sidemenu .item.white {
+    color: white; }
+    ion-content.sidemenu .item.white a {
+      color: white; }
   ion-content.sidemenu .item.item-divider {
     border-color: transparent;
     height: 100px;
     background-color: #808A8F; }
-  ion-content.sidemenu .list .item.item-accordion {
-    line-height: 38px;
-    padding-top: 0;
-    padding-bottom: 0;
-    transition: 0.09s all linear; }
   ion-content.sidemenu .list .item.item-accordion.ng-hide {
     line-height: 0px; }
   ion-content.sidemenu .list .item.item-accordion.ng-hide-add, ion-content.sidemenu .list .item.item-accordion.ng-hide-remove {
@@ -787,6 +794,8 @@ ion-content.sidemenu {
   text-align: center; }
 .survey.survey-complete .content-wrapper .question .points, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
   text-align: center; }
+  .survey.survey-complete .content-wrapper .question .points img, .survey.survey-complete .content-wrapper .question .points .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .points .survey-complete.modal-inherit {
+    width: 85%; }
 .survey .progress-mock, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
   height: 60px; }
 .survey .content-wrapper, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
