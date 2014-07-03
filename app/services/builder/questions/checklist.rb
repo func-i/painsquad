@@ -33,7 +33,8 @@ module Builder::Questions::Checklist
       question = survey.questions.create(
         question_type: 'checklist',
         content:       'What do you think your pain was <strong>due to</strong> in the last 12 hours?',
-        tip:           'You can click multiple answers'
+        tip:           'You can click multiple answers',
+        tag:           'pain_cause'
         )
       question.choices.create content: 'None', can_disable: true
       PAIN_CAUSE.each { |content| question.choices.create content: content }
@@ -63,7 +64,8 @@ module Builder::Questions::Checklist
       question = survey.questions.create(
         question_type: 'checklist-extra',
         content:       'What <strong>medications</strong> have you taken to reduce your pain since your last report?',
-        tip:           'Touch the medication and then rate how helpful it was in reducing pain'
+        tip:           'Touch the medication and then rate how helpful it was in reducing pain',
+        tag:           'medications'
       )
       question.choices.create content: 'None', can_disable: true
       MEDICATION.each { |content| question.choices.create content: content }

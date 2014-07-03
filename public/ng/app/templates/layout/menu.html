@@ -10,13 +10,33 @@
 
   </ion-pane>
 
-  <ion-side-menu side="left" is-enabled="sideMenuEnabled">
+  <ion-side-menu side="left" is-enabled="sideMenuEnabled" ng-init="reportMenu = false">
 
     <ion-content class="sidemenu">
       <ion-list>
-        <ion-item menu-close ui-sref="app.reports">
+        <ion-item ng-click="$parent.reportMenu = !$parent.reportMenu">
           <i class="icon ion-stats-bars"></i>
           View &amp; Share Reports
+          <i class="icon" ng-class="$parent.reportMenu ? 'ion-minus' : 'ion-plus'"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-show="$parent.reportMenu" ui-sref="app.action_report" ng-click="$parent.reportMenu = false" menu-close>
+          Action Reports
+          <i class="icon ion-chevron-right pull-right"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-show="$parent.reportMenu" ui-sref="app.cause_report" ng-click="$parent.reportMenu = false" menu-close>
+          Cause Reports
+          <i class="icon ion-chevron-right pull-right"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-show="$parent.reportMenu" ui-sref="app.effect_report" ng-click="$parent.reportMenu = false" menu-close>
+          Effect Reports
+          <i class="icon ion-chevron-right pull-right"></i>
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-show="$parent.reportMenu" ui-sref="app.pain_report" ng-click="$parent.reportMenu = false" menu-close>
+          Pain Reports
           <i class="icon ion-chevron-right pull-right"></i>
         </ion-item>
 
