@@ -35,9 +35,9 @@ class User < ActiveRecord::Base
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
 
-  validates :award_level, numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
-  validates :cross_level, numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
-  validates :star_level,  numericality: { :greater_than => 0, :less_than_or_equal_to => 999 }
+  validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
+  validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
+  validates :star_level,  numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
 
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
   LEVELS = [ 300, 700, 1200, 2000, 2800 ]
