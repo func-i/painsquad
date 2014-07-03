@@ -1,0 +1,106 @@
+<div class="modal">
+
+  <ion-header-bar class="bar bar-header bar-royal">
+    <button class="button button-icon ion-ios7-arrow-back"
+      ng-click="discardAdvice()">
+        Back
+    </button>
+
+    <h1 class="title">{{selectedItem.title | truncate: 19 }}</h1>
+
+    <button class="button button-icon ion-ios7-arrow-forward icon-right pull-right"
+      ng-click="startSlideshow()"
+      ng-show="showStartButton">
+        Start
+    </button>
+
+    <button class="button button-assertive override done"
+      ng-click="adviceCompleted()"
+      ng-show="showDidItButton">
+        Did it!
+    </button>
+
+  </ion-header-bar>
+
+  <ion-content has-header="true" class="content-background">
+
+    <div class="container" ng-class="{ 'show-slides': slideShowActivated }">
+      <div class="header-bar bar-blue"></div>
+
+      <div ng-hide="slideShowActivated" ng-cloak>
+        <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image }}.png">
+
+        <div class="detail">
+          <div class="duration row">
+            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+            <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
+          </div>
+
+          <div class="context row">
+            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+            <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
+          </div>
+
+          <div class="badge" ng-class="{ 'favorite': selectedItem.favorite }" ng-click="toggleFavorite(selectedItem)">
+            <i ng-model="selectedItem.favorite" class="ion-ios7-heart-outline"> </i>
+          </div>
+        </div>
+
+        <section class="description">
+          <p>{{selectedItem.description}}</p>
+          <p class="byline" ng-bind-html="selectedItem.byline"></p>
+        </section>
+      </div>
+
+      <div ng-switch="modalStyle">
+        <div ng-switch-when="slideshow" ng-cloak>
+
+          <div class="slide" ng-show="slideShowActivated">
+            <div class="header">Step {{ slideIndex + 1 }}</div>
+
+            <ion-slide-box on-slide-changed="slideChange(index)">
+              <ion-slide ng-repeat="step in selectedItem.steps">
+
+                <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
+                <p ng-show="step.content" ng-bind="step.content"></p>
+
+                <div class="audio-block" ng-show="step.audio_path">
+                  <button class="button icon button-royal pattern-bg" ng-click="playAudio(step.audio_path)">
+                      <i class="icon ion-ios7-play" ng-show="!mediaPlaying" ng-hide="mediaPlaying"></i>
+                      <i class="icon ion-ios7-pause" ng-show="mediaPlaying" ng-hide="!mediaPlaying"></i>
+                  </button>
+                <!--
+                  <div id="bar">
+                    <div ng-style="currentAudioPosition"></div>
+                  </div>
+               -->
+                </div>
+
+                <div class="tip" ng-show="step.tip">
+                  TIP: <small ng-bind="step.tip"></small>
+                </div>
+
+              </ion-slide>
+            </ion-slide-box>
+          </div>
+        </div>
+
+        <div ng-switch-when="nested">
+          <div ng-controller="NestedAdviceCtrl">
+
+            <ion-list>
+              <ion-item ng-repeat="item in selectedItem.nested_recommendations"
+                ng-click="loadNestedModal(item)" class="margin-fix">
+                  {{ item.title }}
+                <i class="ion-chevron-right pull-right"></i>
+              </ion-item>
+            </ion-list>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+</div>

@@ -1,0 +1,35 @@
+<ion-view title="" hide-back-button="true">
+
+  <ion-nav-buttons side="right" ng-cloak>
+
+    <button class="button button-assertive override done" ng-click="home()">
+      Done
+    </button>
+
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header survey survey-complete content-background">
+
+    <div class="content-wrapper">
+      <img class="content-header" ng-src="images/background/binder-clips.png">
+      <section class="question">
+        <div class="content-actual">
+          <div class="top">Case Filed!</div>
+          <div class="bottom">Next Rank: {{ currentUser.next_rank }}</div>
+        </div>
+
+        <div class="summary">
+          <p> {{ data.message }} </p>
+        </div>
+
+        <div class="points">
+          +{{ data.xp_points }} Experience Points
+        </div>
+
+        <!-- <pre ng-bind="submission | json"></pre> -->
+
+      </section>
+    </div>
+
+  </ion-content>
+</ion-view>
