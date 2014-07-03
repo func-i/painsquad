@@ -33,7 +33,11 @@
         $scope.$broadcast('resetQuestion');
         $scope.question = survey.questions[$scope.questionIndex];
       }
-      return $ionicScrollDelegate.scrollTop();
+      return $scope.reloadScroll();
+    };
+    $scope.reloadScroll = function() {
+      $ionicScrollDelegate.scrollTop();
+      return $ionicScrollDelegate.resize();
     };
     $scope.submit = function() {
       SubmissionService.prepareSubmissionAnswer($scope.question);

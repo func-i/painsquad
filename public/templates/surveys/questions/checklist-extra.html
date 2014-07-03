@@ -7,7 +7,7 @@
         <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled }">
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox"
-              ng-click="goToSectionOrDisable(choice)"
+              ng-click="delegateSelection(choice)"
               ng-model="choice.selected"
               ng-required="atLeastOne()"
               ng-disabled="choice.disabled" />

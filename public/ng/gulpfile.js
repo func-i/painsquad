@@ -7,7 +7,6 @@ var minifyCss   = require('gulp-minify-css');
 var rename      = require('gulp-rename');
 var sh          = require('shelljs');
 require('shelljs/global');
-var preprocess  = require('gulp-preprocess');
 var runSequence = require('run-sequence');
 var argv        = require('yargs').argv;
 var jshint      = require('gulp-jshint');
@@ -26,6 +25,7 @@ var source_paths = {
   scripts:    ['./app/scripts/**/*.js'],
   templates:  ['./app/templates/**/*.html'],
   images:     ['./app/images/**/*.*'],
+  icons:      ['./app/res/**/*.png'],
   index_page: ['./app/index.html'],
   fonts:      ['./app/fonts/**.ttf']
 };
@@ -35,7 +35,8 @@ var dest_paths = {
   scripts:   './www/scripts/',
   templates: './www/templates/',
   images:    './www/images/',
-  fonts:     './www/fonts',
+  icons:     './www/res/',
+  fonts:     './www/fonts/',
   root:      './www/'
 };
 // the options used by gulp-open when booting the test server
@@ -53,7 +54,6 @@ gulp.task('coffee', function() {
 gulp.task('build-scripts', ['coffee'], function() {
   gulp.src(source_paths.scripts)
     .pipe(changed(dest_paths.scripts))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.scripts))
     .pipe(connect.reload());
 });
@@ -69,6 +69,11 @@ gulp.task('build-styles', function(done) {
 gulp.task('fonts', function() {
   gulp.src(source_paths.fonts)
     .pipe(gulp.dest(dest_paths.fonts))
+});
+
+gulp.task('icons', function() {
+  gulp.src(source_paths.icons)
+    .pipe(gulp.dest(dest_paths.icons))
 });
 
 
@@ -100,7 +105,6 @@ gulp.task('fonts', function() {
 gulp.task('build-templates', function() {
   gulp.src(source_paths.templates)
     .pipe(changed(dest_paths.templates))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.templates))
     .pipe(connect.reload());
 });
@@ -108,7 +112,6 @@ gulp.task('build-templates', function() {
 gulp.task('build-index', function() {
   gulp.src(source_paths.index_page)
     .pipe(changed(dest_paths.root))
-    .pipe(preprocess())
     .pipe(gulp.dest(dest_paths.root))
     .pipe(connect.reload());
 });
@@ -163,7 +166,8 @@ gulp.task('compile-all', function(callback) {
                'build-templates',
                'build-index',
                'build-images',
-               'fonts'
+               'fonts',
+               'icons'
               ],
                callback
             );
@@ -206,7 +210,8 @@ gulp.task('watch', function() {
                         'watch-templates',
                         'watch-index_page',
                         'watch-images',
-                        'fonts'
+                        'fonts',
+                        'icons'
                       ]);
 });
 

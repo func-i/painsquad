@@ -13,10 +13,9 @@
           }
         });
       } else {
-        Favorites.remove({
+        return Favorites.remove({
           recommendation_id: item.id
         });
-        return $scope.removeItem(item.id);
       }
     };
     return $scope.removeItem = function(item_id) {

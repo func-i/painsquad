@@ -12,11 +12,44 @@ $assertive: #DD4460;
 $assertive-alternate: #b3364e;
 $assertive-alternate-active: #A4213B;
 
+// color palette stuff
+$cyan-one:   #008FB0;
+$cyan-two:   #00AED7;
+$cyan-three: #33BEDF;
+$cyan-four:  #7FD6EB;
+$cyan-five:  #B3E7F3;
+
+$blue-one:   #223C7F;
+$blue-two:   #1B4B9F;
+$blue-three: #496FB2;
+$blue-four:  #8DA5CF;
+$blue-five:  #BBC9E2;
+
 $red-one:   #B3364E;
 $red-two:   #DF4461;
 $red-three: #E56981;
 $red-four:  #EFA1B0;
 $red-five:  #F5C7D0;
+
+// $primary-yellow-one: #;
+// $primary-yellow-two: #;
+// $primary-yellow-three: #;
+// $primary-yellow-four: #;
+// $primary-yellow-five: #;
+
+// $secondary-yellow-one: #;
+// $secondary-yellow-two: #;
+// $secondary-yellow-three: #;
+// $secondary-yellow-four: #;
+// $secondary-yellow-five: #;
+
+$gray-one:   #5B6166;
+$gray-two:   #808A8F;
+$gray-three: #99A1A5;
+$gray-four:  #BFC4C7;
+$gray-five:  #D9DCDE;
+
+$gray-font: rgb(63, 65, 76);
 
 
 // pattern-overlay background color
@@ -48,3 +81,6 @@ $inactive-font: #7F8A8E;
 
 // bodymap background color
 $bodymap-bg: rgb(242, 243, 235);
+
+// ADVICE
+$yellow-advice-item: #CFB745;

@@ -5,14 +5,14 @@
       class="button override diagonal"
       ng-click="activeTab = 'left'"
       ng-class="{ 'active': activeTab === 'left' }">
-        Left
+      <span>Left</span>
     </a>
 
     <a href
       class="button override diagonal"
       ng-click="activeTab = 'right'"
       ng-class="{ 'active': activeTab === 'right' }">
-        Right
+      <span>Right</span>
     </a>
   </div>
   <div ng-switch="activeTab">

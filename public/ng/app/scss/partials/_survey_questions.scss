@@ -17,8 +17,12 @@ li.item, .item.item-checkbox {
 .radio {}
 
 // CHECKLIST-EXTRA
-.checklist-extra {}
-
+.checklist-extra {
+  li.item.item-checkbox {
+    &.disabled { opacity: 0.5 ; }
+    &.textfield { border-bottom: 0; }
+  }
+}
 
 // CHECKLIST
 .checklist {
@@ -34,6 +38,10 @@ li.item, .item.item-checkbox {
   li.item.item-checkbox {
     &.disabled { opacity: 0.5 ; }
     &.textfield { border-bottom: 0; }
+  }
+
+  li.other-textarea {
+    padding-bottom: 10px;
   }
 
   .item.item-input.other-textbox {
@@ -82,7 +90,12 @@ li.item, .item.item-checkbox {
 }
 
 
+
 // BODYMAP
+.button-bar a span {
+  font-size: 18px;
+}
+
 .bodymap {
 
   .item {

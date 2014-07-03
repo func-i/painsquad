@@ -21,7 +21,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
 
   $rootScope.$state       = $state
@@ -35,5 +35,19 @@
   $rootScope.back = ->
     $state.go $rootScope.previousState_name, $rootScope.previousState_params
 
+  checkConnection = ->
+    NetworkService.isOnline()
+      .then (isConnected) ->
+        # $state.go 'app.home'
+        console.log isConnected
+      .catch (err) ->
+        # $state.go 'app.login'
+        console.log err
+
   $ionicPlatform.ready ->
-    StatusBar.styleLightContent() if window.StatusBar
+    # if window.cordova and window.cordova.plugins.Keyboard
+    #   cordova.plugins.Keyboard.shrinkView true
+    #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
+
+    if window.StatusBar
+      StatusBar.styleLightContent()

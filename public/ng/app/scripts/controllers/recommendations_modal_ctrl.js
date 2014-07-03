@@ -1,8 +1,9 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
-    var reset, setHeaderButtons;
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, $interval, Favorites, Activity) {
+    var closeModal, initAudio, onAudioError, onAudioSuccess, reset, setHeaderButtons;
     $scope.selectedItem = {};
+    $scope.audio = null;
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
     }, {
@@ -13,7 +14,7 @@
       return $scope.modal.remove();
     });
     $scope.loadAdviceModal = function(item) {
-      if (event.target.tagName.toLowerCase() === 'i') {
+      if (event.target.tagName.toLowerCase() === 'i' || event.target.className.toLowerCase() === 'badge') {
         return $scope.toggleFavorite(item);
       } else {
         $scope.modalStyle = item.style;
@@ -43,10 +44,34 @@
           event: 'recommendation_complete'
         }
       });
-      $scope.modal.hide();
-      return reset();
+      return closeModal();
     };
     $scope.discardAdvice = function() {
+      return closeModal();
+    };
+    $scope.playAudio = function(src) {
+      src = "./images/advice/audio/" + src + ".mp3";
+      if (!$scope.audio) {
+        initAudio(src);
+      }
+      if ($scope.mediaPlaying) {
+        $scope.audio.pause();
+        return $scope.mediaPlaying = !$scope.mediaPlaying;
+      } else {
+        $scope.audio.play();
+        return $scope.mediaPlaying = !$scope.mediaPlaying;
+      }
+    };
+    initAudio = function(src) {
+      return $scope.audio = new Media(src, onAudioSuccess, onAudioError);
+    };
+    onAudioSuccess = function() {
+      return console.log("playAudio():Audio Success");
+    };
+    onAudioError = function(error) {
+      return console.log("playAudio():Audio Failure");
+    };
+    closeModal = function() {
       $scope.modal.hide();
       return reset();
     };
@@ -59,13 +84,17 @@
     };
     return reset = function() {
       $scope.slideShowActivated = null;
-      $scope.selectedItem = null;
       $scope.modalStyle = null;
       $scope.showStartButton = null;
-      return $scope.showDidItButton = null;
+      $scope.showDidItButton = null;
+      $scope.selectedItem = null;
+      if ($scope.audio) {
+        $scope.audio.stop();
+        return $scope.audio.release();
+      }
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', 'Favorites', 'Activity'];
 
 }).call(this);

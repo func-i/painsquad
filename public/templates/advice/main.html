@@ -4,41 +4,41 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="advice">
+  <ion-content padding="true" class="advice content-background">
 
     <section class="top">
-
-      <div class="item" ui-sref="app.recommended">
-        <h2>Recommended For You</h2>
-        <i class="ion-ios7-lightbulb-outline"></i>
+      <div class="item yellow pattern-bg" ui-sref="app.recommended"
+        ng-class="{ 'active': isActiveOne }" ng-init="isActiveOne = false" ng-click="isActiveOne = !isActiveOne">
+          <h2>Recommended For You</h2>
+          <i class="ion-ios7-lightbulb-outline"></i>
       </div>
 
-      <div class="item" ui-sref="app.favorites">
-        <h2>Your Favorites</h2>
-        <i class="ion-heart"></i>
+      <div class="item red pattern-bg" ui-sref="app.favorites"
+        ng-class="{ 'active': isActiveTwo }" ng-init="isActiveTwo = false" ng-click="isActiveTwo = !isActiveTwo">
+          <h2>Your Favourites</h2>
+          <i class="ion-heart"></i>
       </div>
-
     </section>
-
-    <!-- <hr> -->
 
     <section class="bottom">
 
       <ion-list>
+        <div class="blue-bar"></div>
 
-        <div class="item" ui-sref="app.prevent_pain">
+        <div class="item margin-fix" ui-sref="app.prevent_pain">
            Prevent Pain from Procedures
           <span class="icon-right ion-chevron-right pull-right"></span>
         </div>
 
-        <div class="item" ui-sref="app.manage_pain">
+        <div class="item margin-fix" ui-sref="app.manage_pain">
           Manage your Pain
           <span class="icon-right ion-chevron-right pull-right"></span>
         </div>
-
       </ion-list>
 
     </section>
+
+    <div class="extension pattern-bg"></div>
 
   </ion-content>
 </ion-view>

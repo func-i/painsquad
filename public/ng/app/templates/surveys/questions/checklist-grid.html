@@ -8,7 +8,8 @@
         <label class="checkbox">
           <input type="checkbox"
             ng-required="atLeastOne()"
-            ng-model="choice.selected"/>
+            ng-model="choice.selected"
+            ng-click="resizeIfOther()"/>
         </label>
         <span class="content">{{ choice.content }}</span>
       </li>

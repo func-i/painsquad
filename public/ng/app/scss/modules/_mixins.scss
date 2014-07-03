@@ -1,0 +1,12 @@
+@mixin slider-override {
+  .slider-pager-page {
+    font-size: 80%;
+    width: 4%;
+    margin: 0 auto;
+    color: rgb(135, 144, 148);
+    opacity: 1;
+    &.active {
+      color: $royal;
+    }
+  }
+}

@@ -14,7 +14,6 @@ class SurveyService
   def get_survey
     # TEMP CODE FOR TESTING!
     #return send_test_survey if Rails.env.development?
-
     if @last_submission.nil?
       # send full survey if its the first
       send_survey :full
@@ -34,7 +33,6 @@ class SurveyService
   def determine_pain_severity
     if @last_submission.mild?
       send_survey :truncated
-    # elsif @last_submission.moderate?
     else
       send_survey :full
     end

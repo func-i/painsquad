@@ -26,7 +26,7 @@ class Recommendation < ActiveRecord::Base
   has_many :users, :through => :favorites
 
   validates :style, inclusion: %w(basic slideshow nested)
-  validates :section, inclusion: %w(pharmacological psychological physical), allow_nil: true
+  validates :section, inclusion: %w(pharmacological psychological physical nested_yoga), allow_nil: true
   validates :group, inclusion: %w(prevent manage both), allow_nil: true
 
   scope :prevent, -> { where(group: %w(prevent both)) }

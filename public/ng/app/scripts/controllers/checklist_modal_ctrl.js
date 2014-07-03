@@ -7,7 +7,7 @@
       }
     };
     $scope.ifTextareaPresent = function(choice) {
-      if (choice && !(choice.custom_text && choice.custom_text.length < 5)) {
+      if (choice && !(choice.custom_text && choice.custom_text.length < 1)) {
         return true;
       }
     };

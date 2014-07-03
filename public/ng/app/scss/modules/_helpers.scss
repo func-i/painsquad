@@ -18,6 +18,29 @@
   background-repeat: no-repeat;
 }
 
+.gray-diagonal {
+  background-color: #E1E1E1;
+  // background-color: #FAFAFA;
+  background-image: url('../images/background/content.png');
+}
+
+.header-bar {
+  height: 7px;
+  width: 100%;
+  &.bar-blue {
+    background-color: $royal;
+  }
+  &.bar-red {
+    background-color: $red-two;
+  }
+}
+
+.margin-fix {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
 // diagonal transparent background
 // FIXME: for some reason it has some opacity issue
 .diagonal {
@@ -29,5 +52,19 @@
     background-image: url('../images/background/content.png');
     width: 100%;
     opacity: 0.1;
+  }
+}
+
+.pattern-bg {
+  position: relative;
+  display: block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: url('../images/background/content.png');
+    opacity: 0.2;
   }
 }

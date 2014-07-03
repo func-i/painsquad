@@ -1,11 +1,15 @@
 // HEADER/SIDEMENU
-// FIXME: these do not work on device/emulator, likely due to lack of specificity
-ion-nav-bar.bar.bar-royal {
+ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
   border-color: transparent !important;
+  background-image: none !important;
 }
 
 ion-side-menu.menu-left.menu {
   background-color: #5B6166 !important;
+}
+
+.button {
+  border: 0 !important;
 }
 
 
