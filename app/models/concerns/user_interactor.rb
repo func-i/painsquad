@@ -13,7 +13,7 @@ module UserInteractor
     elsif self.class == Activity
       user.increment!(:score, 5) if recommendation? && user.advice_score_unlocked?
     end
-    EventService.analyze(self.user)
+    UserAwardService.analyze(self.user)
   end
 
   # Submission Events

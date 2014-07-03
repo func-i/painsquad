@@ -50,7 +50,8 @@
       badge_image_path: 'images/awards/commendation-badge.png',
       video_path:       '',
       level:            null,
-      date:             null
+      date:             null,
+      message:          'Wow! Having completed your first case, you have achieved the Commendation award. Keep up the great work.'
     },
     {
       name:             'medal',
@@ -59,7 +60,8 @@
       badge_image_path: 'images/awards/medal-badge.png',
       video_path:       '',
       level:            null,
-      date:             null
+      date:             null,
+      message:          "Great! Having completed your first advice, you've achieved the Medal award, keep it up!"
     },
     {
       name:             'award',
@@ -68,7 +70,8 @@
       badge_image_path: 'images/awards/award-badge.png',
       video_path:       '',
       level:            0,
-      date:             null
+      date:             null,
+      message:          "Awesome! For completing five cases, you've earned an Award, keep going!"
     },
     {
       name:             'cross',
@@ -77,7 +80,8 @@
       badge_image_path: 'images/awards/cross-badge.png',
       video_path:       '',
       level:            0,
-      date:             null
+      date:             null,
+      message:          "Nice! You've earned a Cross award for receiving 100 points from advice!"
     },
     {
       name:             'star',
@@ -86,7 +90,8 @@
       badge_image_path: 'images/awards/star-badge.png',
       video_path:       '',
       level:            0,
-      date:             null
+      date:             null,
+      message:          "Great job! You've been awarded a Star for completing six different pain recommendations!"
     }
   ]
 
@@ -122,28 +127,30 @@
   reset = ->
     $scope.selectedItem = {}
 
-  mergeData = ->
+  mergeRankData = ->
     for item, index in achievements.ranks
       unlockItem($scope.achievementData[index], item)
-    for item, index in achievements.awards
-      unlockItem($scope.awardData[index], item)
 
   unlockItem = (listItem, item) ->
     if listItem
       listItem.locked = false
       listItem.date  = moment(item.created_at).format('ll')
 
-  setLevels = ->
+  setAwardLevelsAndDates = ->
     for item in $scope.awardData
       switch item.name
         when 'award'
-          item.level = achievements.award_level
+          debugger
+          item.level = achievements.award_level if achievements.award_level
+          item.date  = moment(achievements.latest_award_date).format('ll') if achievements.latest_award_date
         when 'cross'
           item.level = achievements.cross_level
+          item.date  = moment(achievements.latest_cross_date).format('ll') if achievements.latest_cross_date
         when 'star'
           item.level = achievements.star_level
+          item.date  = moment(achievements.latest_star_date).format('ll') if achievements.latest_star_date
 
-  mergeData()
-  setLevels()
+  mergeRankData()
+  setAwardLevelsAndDates()
 
 @AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements']

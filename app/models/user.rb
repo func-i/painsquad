@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
     activities.recommendation_events.count
   end
 
-  # TODO: must only allow advice scoring within certain restraints
+  # TODO: must only allow advice scoring within certain constraints
   def advice_score_unlocked?
     true
   end
