@@ -136,21 +136,34 @@
       listItem.locked = false
       listItem.date  = moment(item.created_at).format('ll')
 
-  setAwardLevelsAndDates = ->
+  unlockAwardsAndSetDates = ->
     for item in $scope.awardData
       switch item.name
+        when 'commendation'
+          if achievements.commendation
+            item.locked = false
+            item.date   = moment(achievements.commendation_date).format('ll')
+        when 'medal'
+          if achievements.medal
+            item.locked = false
+            item.date   = moment(achievements.medal_date).format('ll')
         when 'award'
-          debugger
-          item.level = achievements.award_level if achievements.award_level
-          item.date  = moment(achievements.latest_award_date).format('ll') if achievements.latest_award_date
+          if achievements.award_level > 0
+            item.locked = false
+            item.level  = achievements.award_level
+            item.date   = moment(achievements.latest_award_date).format('ll')
         when 'cross'
-          item.level = achievements.cross_level
-          item.date  = moment(achievements.latest_cross_date).format('ll') if achievements.latest_cross_date
+          if achievements.cross_level > 0
+            item.locked = false
+            item.level  = achievements.cross_level
+            item.date   = moment(achievements.latest_cross_date).format('ll')
         when 'star'
-          item.level = achievements.star_level
-          item.date  = moment(achievements.latest_star_date).format('ll') if achievements.latest_star_date
+          if achievements.star_level > 0
+            item.locked = false
+            item.level  = achievements.star_level
+            item.date   = moment(achievements.latest_star_date).format('ll')
 
   mergeRankData()
-  setAwardLevelsAndDates()
+  unlockAwardsAndSetDates()
 
 @AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements']

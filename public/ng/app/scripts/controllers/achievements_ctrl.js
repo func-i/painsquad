@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements) {
-    var mergeRankData, reset, setAwardLevelsAndDates, unlockItem;
+    var mergeRankData, reset, unlockAwardsAndSetDates, unlockItem;
     $scope.selectedAward = {};
     $scope.achievementData = [
       {
@@ -139,35 +139,51 @@
         return listItem.date = moment(item.created_at).format('ll');
       }
     };
-    setAwardLevelsAndDates = function() {
+    unlockAwardsAndSetDates = function() {
       var item, _i, _len, _ref, _results;
       _ref = $scope.awardData;
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         item = _ref[_i];
         switch (item.name) {
-          case 'award':
-            debugger;
-            if (achievements.award_level) {
-              item.level = achievements.award_level;
+          case 'commendation':
+            if (achievements.commendation) {
+              item.locked = false;
+              _results.push(item.date = moment(achievements.commendation_date).format('ll'));
+            } else {
+              _results.push(void 0);
             }
-            if (achievements.latest_award_date) {
+            break;
+          case 'medal':
+            if (achievements.medal) {
+              item.locked = false;
+              _results.push(item.date = moment(achievements.medal_date).format('ll'));
+            } else {
+              _results.push(void 0);
+            }
+            break;
+          case 'award':
+            if (achievements.award_level > 0) {
+              item.locked = false;
+              item.level = achievements.award_level;
               _results.push(item.date = moment(achievements.latest_award_date).format('ll'));
             } else {
               _results.push(void 0);
             }
             break;
           case 'cross':
-            item.level = achievements.cross_level;
-            if (achievements.latest_cross_date) {
+            if (achievements.cross_level > 0) {
+              item.locked = false;
+              item.level = achievements.cross_level;
               _results.push(item.date = moment(achievements.latest_cross_date).format('ll'));
             } else {
               _results.push(void 0);
             }
             break;
           case 'star':
-            item.level = achievements.star_level;
-            if (achievements.latest_star_date) {
+            if (achievements.star_level > 0) {
+              item.locked = false;
+              item.level = achievements.star_level;
               _results.push(item.date = moment(achievements.latest_star_date).format('ll'));
             } else {
               _results.push(void 0);
@@ -180,7 +196,7 @@
       return _results;
     };
     mergeRankData();
-    return setAwardLevelsAndDates();
+    return unlockAwardsAndSetDates();
   });
 
   this.AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements'];

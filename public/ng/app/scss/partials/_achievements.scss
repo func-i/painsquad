@@ -71,6 +71,7 @@
 
     div {
       margin: 9px;
+      position: relative;
 
       p {
         text-align: center;
@@ -80,8 +81,31 @@
       }
 
       &.first p {
+        margin-left: -10px;
+      }
+
+      .badge-level {
         position: absolute;
-        left: 80px;
+        background-color: rgb(50, 86, 114);
+        border:         2px solid white;
+        color:          white;
+        border-radius:  15px;
+        height:         30px;
+        width:          30px;
+        font-size:      16px;
+        top:            22px;
+        left:           38px;
+        text-align:     center;
+        span {
+          position: relative;
+          top: 10%;
+        }
+        &.two {
+          font-size: 14px;
+        }
+        &.three {
+          font-size: 11px;
+        }
       }
     }
 

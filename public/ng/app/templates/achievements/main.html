@@ -45,6 +45,11 @@
           ng-show="$index == 2 || $index == 3 || $index == 4"
           ng-click="loadAwardModal(award)">
             <figure id="circle" ng-style="getImage(award)"></figure>
+            <div class="badge-level"
+              ng-show="award.level"
+              ng-class="{ 'three': award.level > 100, 'two': award.level > 10 }">
+              <span>{{award.level}}x</span>
+            </div>
             <p>{{ award.name | capitalize }}</p>
         </div>
       </section>
