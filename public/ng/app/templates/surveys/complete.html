@@ -11,7 +11,7 @@
   <ion-content padding="true" class="has-header survey survey-complete content-background">
 
     <div class="content-wrapper">
-      <img class="content-header" ng-src="images/background/binder-clips.png">
+      <img class="content-header" ng-src="./images/background/binder-clips.png">
       <section class="question">
         <div class="content-actual">
           <div class="top">Case Filed!</div>
@@ -23,11 +23,8 @@
         </div>
 
         <div class="points">
-          +{{ data.xp_points }} Experience Points
+          <img ng-src="./images/awards/{{data.xp_points}}.png">
         </div>
-
-        <!-- <pre ng-bind="submission | json"></pre> -->
-
       </section>
     </div>
 

@@ -65,15 +65,9 @@
                 <p ng-show="step.content" ng-bind="step.content"></p>
 
                 <div class="audio-block" ng-show="step.audio_path">
-                  <button class="button icon button-royal pattern-bg" ng-click="playAudio(step.audio_path)">
-                      <i class="icon ion-ios7-play" ng-show="!mediaPlaying" ng-hide="mediaPlaying"></i>
-                      <i class="icon ion-ios7-pause" ng-show="mediaPlaying" ng-hide="!mediaPlaying"></i>
-                  </button>
-                <!--
-                  <div id="bar">
-                    <div ng-style="currentAudioPosition"></div>
-                  </div>
-               -->
+                  <button class="button icon ion-ios7-play button-royal pattern-bg" ng-show="showInit" ng-click="initAudio(step.audio_path)"></button>
+                  <button class="button icon ion-ios7-pause button-royal pattern-bg" ng-show="mediaPlaying" ng-click="pauseAudio()"></button>
+                  <button class="button icon ion-ios7-play button-royal pattern-bg"  ng-hide="showInit || mediaPlaying" ng-hide="mediaPlaying" ng-click="resumeAudio()"></button>
                 </div>
 
                 <div class="tip" ng-show="step.tip">
