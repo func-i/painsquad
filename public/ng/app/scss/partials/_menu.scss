@@ -1,14 +1,18 @@
 ion-content.sidemenu {
   top: 20px;
-  background-color: $menu-item-color !important;
+  background-color: $menu-item-color;
 
   .scroll-content {
-    background-color: $menu-item-color !important;
+    background-color: $menu-item-color;
   }
 
   .item {
     border-color: gray;
-    &:nth-child(1) a, &:nth-child(2) a { color: white; }
+    background-color: $menu-item-color;
+
+    .ion-plus, .ion-minus {
+      margin-right: 28px;
+    }
 
     a {
       background-color: $menu-item-color;
@@ -16,17 +20,15 @@ ion-content.sidemenu {
     }
   }
 
+  .item.white {
+    color: white;
+    a { color: white; }
+  }
+
   .item.item-divider {
     border-color:     transparent;
     height:           $menu-gap-width;
     background-color: $menu-gap-color;
-  }
-
-  .list .item.item-accordion {
-    line-height: 38px;
-    padding-top: 0;
-    padding-bottom: 0;
-    transition: 0.09s all linear;
   }
 
   .list .item.item-accordion.ng-hide {
