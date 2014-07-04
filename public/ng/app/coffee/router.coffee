@@ -209,14 +209,15 @@ interceptor.$inject = ['$q', '$injector']
           controller: "PsychologicalPainCtrl"
     )
 
-############################ STATIC CONTENT ####################################
     # settings state
     .state('app.settings'
       url: '/settings'
       views:
         menuContent:
           templateUrl: 'templates/static/settings.html'
+          controller:  'SettingsCtrl'
     )
+
 
     # Action Report state
     .state('app.action_report'
@@ -280,6 +281,8 @@ interceptor.$inject = ['$q', '$injector']
 
               defer.promise
     )
+
+############################ STATIC CONTENT ####################################
 
     # about state
     .state('app.about'

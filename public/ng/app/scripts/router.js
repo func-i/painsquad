@@ -239,7 +239,8 @@
       url: '/settings',
       views: {
         menuContent: {
-          templateUrl: 'templates/static/settings.html'
+          templateUrl: 'templates/static/settings.html',
+          controller: 'SettingsCtrl'
         }
       }
     }).state('app.action_report', {
