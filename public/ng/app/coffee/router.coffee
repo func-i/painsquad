@@ -29,6 +29,7 @@ interceptor.$inject = ['$q', '$injector']
       url:         '/app'
       abstract:    true
       templateUrl: 'templates/layout/menu.html'
+      controller:  'AppCtrl'
     )
 
     # root template

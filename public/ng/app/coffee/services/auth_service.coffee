@@ -1,6 +1,6 @@
 'use strict'
 
-@AuthService = @serviceModule.factory 'AuthService', ($state, $http, $ionicLoading, Session, UserService) ->
+@AuthService = @serviceModule.factory 'AuthService', ($rootScope, $state, $http, $ionicLoading, Session, UserService) ->
 
   login: (credentials) ->
     @showLoading()
@@ -10,19 +10,20 @@
       , (error) =>
         @onError(error)
 
+  logout: ->
+    UserService.remove()
+    UserService.clearToken()
+    $rootScope.$broadcast('event:auth-logout-complete');
+
   onSuccess: (responseData) ->
     @hideLoading()
-    # sets user in localstorage
     UserService.set(responseData.user)
-    # adds token to headers
     $http.defaults.headers.common['Authorization'] = "Token token=#{responseData.user.access_token}"
-    # go to home view!
     $state.go 'app.home'
 
-  # handle errors here somehow idk maybe like show stuff to user
   onError: (errorData) ->
     @hideLoading()
-    console.log errorData.data
+    $rootScope.$broadcast('event:auth-login-failed', errorData)
 
   showLoading: ->
     $ionicLoading.show
@@ -31,4 +32,4 @@
   hideLoading: ->
     $ionicLoading.hide()
 
-@AuthService.$inject = ['$state', '$http', '$ionicModal', 'Session', 'UserService']
+@AuthService.$inject = [ '$rootScope', '$state', '$http', '$ionicModal', 'Session', 'UserService' ]

@@ -6,8 +6,10 @@
     </div>
   </ion-header-bar>
 
-  <ion-content class="has-header" padding="true">
+  <ion-content class="has-header content-background" padding="true">
+
     <div class="list">
+      <div class="header-bar bar-blue"></div>
 
       <div class="item item-divider">
         Alert Settings
@@ -51,9 +53,17 @@
         Account Settings
       </div>
 
-      <a class="item">
-        <!-- Butterfinger -->
-      </a>
+      <ion-item ng-show="isLoggedIn">
+        Logged in as: {{ currentUser.username }}
+        <button
+          class="button button-block button-assertive"
+          ng-show="isLoggedIn"
+          ng-click="logout()">
+            Logout
+        </button>
+      </ion-item>
+
+      <div class="extension"></div>
     </div>
 
   </ion-content>

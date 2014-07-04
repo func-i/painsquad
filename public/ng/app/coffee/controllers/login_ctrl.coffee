@@ -1,16 +1,30 @@
 'use strict'
 
-@LoginCtrl = @controllerModule.controller 'LoginCtrl',  ($state, $scope, AuthService, UserService) ->
-  $scope.currentUser = UserService.currentUser()
-  $scope.isLoggedIn  = UserService.isLoggedIn()
-  $scope.credentials = {}
+@LoginCtrl = @controllerModule.controller 'LoginCtrl',  ($rootScope, $state, $scope, AuthService, UserService) ->
+  $scope.message = ""
+  $scope.user =
+    email:    null
+    password: null
 
   $scope.login = ->
-    AuthService.login($scope.credentials)
+    AuthService.login $scope.user
 
-  $scope.logout = ->
-    UserService.remove()
-    UserService.clearToken()
-    $state.go $state.current, {}, {reload: true}
+  $scope.$on "event:auth-loginRequired", (e, rejection) ->
+    $scope.loginModal.show()
 
-@LoginCtrl.$inject = [ '$state', '$scope', 'AuthService', 'UserService' ]
+  $scope.$on "event:auth-loginConfirmed", ->
+    $scope.email    = null
+    $scope.password = null
+    $scope.loginModal.hide()
+
+  $scope.$on "event:auth-login-failed", (e, status) ->
+    if status.status is 401
+      error = "Invalid Username or Password."
+    else
+      error = "Login failed."
+    $scope.message = error
+
+  $scope.$on "event:auth-logout-complete", ->
+    $state.go "app.login", {}, reload: true, inherit: false
+
+@LoginCtrl.$inject = [ '$rootScope', '$state', '$scope', 'AuthService', 'UserService' ]
