@@ -14,7 +14,7 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationSettingsService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, $timeout, NetworkService, NotificationSettingsService) {
     var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.$state = $state;
@@ -41,8 +41,13 @@
         });
       }
       if (window.StatusBar) {
-        return StatusBar.styleLightContent();
+        StatusBar.styleLightContent();
       }
+      return window.plugin.notification.local.onclick = function(id, state, json) {
+        return $timeout(function() {
+          return alert("json: " + (JSON.stringify(json)));
+        }, 2000);
+      };
     });
   });
 

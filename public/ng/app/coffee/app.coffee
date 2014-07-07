@@ -21,7 +21,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationSettingsService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, $timeout, NetworkService, NotificationSettingsService) ->
   $rootScope.sideMenuEnabled = true
 
   $rootScope.$state       = $state
@@ -56,6 +56,11 @@
 
     if window.StatusBar
       StatusBar.styleLightContent()
+
+    window.plugin.notification.local.onclick = (id, state, json) ->
+      $timeout ->
+        alert "json: #{JSON.stringify(json)}"
+      , 2000
 
     # if window.plugin
     #   NotificationService.onclick = ->

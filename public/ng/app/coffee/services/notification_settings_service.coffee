@@ -17,17 +17,19 @@
 
     setDefaultNotifications: ->
       now = new Date()
-      now.setSeconds(now.getSeconds() + 30)
+      now.setSeconds(now.getSeconds() + 15)
       @addAlert(now, 0)
 
     addAlert: (date, index) ->
-      NotificationService.add
+      note = NotificationService.add
         id:      index.toString()
         message: 'Headquarters has just assigned you a case!'
         repeat:  'daily'
         date:    date
         badge:   0
         json:    JSON.stringify({'type': 'full'})
+
+      console.log note
 
     handleClick: (id, state, json) ->
       $state.go 'app.new_survey'

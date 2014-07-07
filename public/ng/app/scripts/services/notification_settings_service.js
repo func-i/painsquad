@@ -4,11 +4,12 @@
       setDefaultNotifications: function() {
         var now;
         now = new Date();
-        now.setSeconds(now.getSeconds() + 30);
+        now.setSeconds(now.getSeconds() + 15);
         return this.addAlert(now, 0);
       },
       addAlert: function(date, index) {
-        return NotificationService.add({
+        var note;
+        note = NotificationService.add({
           id: index.toString(),
           message: 'Headquarters has just assigned you a case!',
           repeat: 'daily',
@@ -18,6 +19,7 @@
             'type': 'full'
           })
         });
+        return console.log(note);
       },
       handleClick: function(id, state, json) {
         return $state.go('app.new_survey');

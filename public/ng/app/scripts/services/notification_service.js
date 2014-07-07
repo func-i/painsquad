@@ -71,7 +71,7 @@
         return window.plugin.notification.local.ontrigger;
       },
       onclick: function() {
-        return window.plugin.notification.local.onclick;
+        return false;
       },
       oncancel: function() {
         return window.plugin.notification.local.oncancel;
