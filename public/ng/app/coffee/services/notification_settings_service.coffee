@@ -16,10 +16,9 @@
     #     @addAlert(date, index)
 
     setDefaultNotifications: ->
-      d = new Date()
-      v = new Date()
-      v.setMinutes d.getMinutes() + 1
-      @addAlert(v, 0)
+      now = new Date()
+      now.setSeconds(now.getSeconds() + 30)
+      @addAlert(now, 0)
 
     addAlert: (date, index) ->
       NotificationService.add
@@ -34,7 +33,6 @@
       $state.go 'app.new_survey'
       # alert("handling alert event, id: #{id}, state: #{state}, json: #{json}")
       # console.log("handling alert event, id: #{id}, state: #{state}, json: #{json}")
-
 
     # addAlerts: (datesArray) ->
     #   id =  0

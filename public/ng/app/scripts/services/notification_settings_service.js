@@ -2,11 +2,10 @@
   this.NotificationSettingsService = this.serviceModule.factory('NotificationSettingsService', function($rootScope, $state, $q, NotificationService) {
     return {
       setDefaultNotifications: function() {
-        var d, v;
-        d = new Date();
-        v = new Date();
-        v.setMinutes(d.getMinutes() + 1);
-        return this.addAlert(v, 0);
+        var now;
+        now = new Date();
+        now.setSeconds(now.getSeconds() + 30);
+        return this.addAlert(now, 0);
       },
       addAlert: function(date, index) {
         return NotificationService.add({
