@@ -64,7 +64,7 @@
       window.plugin.notification.local.ontrigger
 
     onclick: ->
-      return false
+      window.plugin.notification.local.onclick
 
     oncancel: ->
       window.plugin.notification.local.oncancel

@@ -28,13 +28,13 @@
         date:    date
         badge:   0
         json:    JSON.stringify({'type': 'full'})
-
-      console.log note
+      # , NotificationService.onclick(note.id, 'background', note.json)
+      # , @handleClick(note)
 
     handleClick: (id, state, json) ->
-      $state.go 'app.new_survey'
       # alert("handling alert event, id: #{id}, state: #{state}, json: #{json}")
       # console.log("handling alert event, id: #{id}, state: #{state}, json: #{json}")
+      $state.go 'app.new_survey'
 
     # addAlerts: (datesArray) ->
     #   id =  0
