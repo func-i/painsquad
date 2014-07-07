@@ -1,30 +1,22 @@
 (function() {
   'use strict';
-  this.SettingsCtrl = this.controllerModule.controller('SettingsCtrl', function($rootScope, $scope, AuthService, UserService, NotificationService) {
-    var debugNotifications, setDefaultNotification;
+  this.SettingsCtrl = this.controllerModule.controller('SettingsCtrl', function($rootScope, $scope, AuthService, UserService, NotificationSettingsService, NotificationService) {
     $scope.currentUser = UserService.currentUser();
     $scope.isLoggedIn = UserService.isLoggedIn();
     $scope.logout = function() {
       return AuthService.logout();
     };
-    debugNotifications = function() {
-      return console.log('getDefaults', NotificationService.getDefaults());
+    return $scope.debugNotifications = function() {
+      if (window.plugin) {
+        return NotificationService.getScheduledIds($scope).then(function(data) {
+          return console.log(data);
+        });
+      } else {
+        return console.log('cannot debug in browser');
+      }
     };
-    setDefaultNotification = function() {
-      var time;
-      time = new Date();
-      time.setSeconds(time.getSeconds() + 30);
-      return NotificationService.add({
-        id: 1,
-        title: "PainSquad",
-        message: "Time for a pain case!",
-        repeat: "minutely",
-        date: time
-      }, $scope);
-    };
-    return setDefaultNotification();
   });
 
-  this.SettingsCtrl.$inject = ['$rootScope', '$scope', 'AuthService', 'UserService'];
+  this.SettingsCtrl.$inject = ['$rootScope', '$scope', 'AuthService', 'UserService', 'NotificationSettingsService', 'NotificationService'];
 
 }).call(this);

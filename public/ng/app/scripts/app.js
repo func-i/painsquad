@@ -14,7 +14,7 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationSettingsService) {
     var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.$state = $state;
@@ -34,8 +34,22 @@
       });
     };
     return $ionicPlatform.ready(function() {
+      if (window.cordova && window.cordova.plugins) {
+        window.cordova.plugins.notification.badge.clear();
+        window.cordova.plugins.notification.badge.configure({
+          autoClear: true
+        });
+      }
       if (window.StatusBar) {
-        return StatusBar.styleLightContent();
+        StatusBar.styleLightContent();
+      }
+      if (window.plugin) {
+        NotificationService.cancelAll().then(function() {
+          return NotificationSettingsService.setDefaultNotifications();
+        });
+        return window.plugin.notification.local.onclick = function(id, state, json) {
+          return NotificationSettingsService.handleClick(id, state, json);
+        };
       }
     });
   });

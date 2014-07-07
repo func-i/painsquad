@@ -21,7 +21,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationSettingsService) ->
   $rootScope.sideMenuEnabled = true
 
   $rootScope.$state       = $state
@@ -49,5 +49,17 @@
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
 
+    if window.cordova and window.cordova.plugins
+      window.cordova.plugins.notification.badge.clear()
+      window.cordova.plugins.notification.badge.configure
+        autoClear: true
+
     if window.StatusBar
       StatusBar.styleLightContent()
+
+    if window.plugin
+      NotificationService.cancelAll().then ->
+        NotificationSettingsService.setDefaultNotifications()
+
+      window.plugin.notification.local.onclick = (id, state, json) ->
+        NotificationSettingsService.handleClick(id, state, json)

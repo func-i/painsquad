@@ -53,6 +53,10 @@
         Account Settings
       </div>
 
+      <ion-item>
+        <button class="button" ng-click="debugNotifications()">Debug Notifications</button>
+      </ion-item>
+
       <ion-item ng-show="isLoggedIn">
         Logged in as: {{ currentUser.username }}
         <button

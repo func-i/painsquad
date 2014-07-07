@@ -1,38 +1,23 @@
 'use strict'
 
-@SettingsCtrl = @controllerModule.controller 'SettingsCtrl', ($rootScope, $scope, AuthService, UserService, NotificationService) ->
+@SettingsCtrl = @controllerModule.controller 'SettingsCtrl', ($rootScope, $scope, AuthService, UserService, NotificationSettingsService, NotificationService) ->
   $scope.currentUser = UserService.currentUser()
   $scope.isLoggedIn  = UserService.isLoggedIn()
 
   $scope.logout = ->
     AuthService.logout()
 
-  debugNotifications = ->
-    console.log 'getDefaults', NotificationService.getDefaults()
-    # NotificationService.getScheduledIds.then ->
-      # console.log
-    # console.log 'getScheduledIds', NotificationService.getScheduledIds($scope).then -> console.log
+  $scope.debugNotifications = ->
+    if window.plugin
+      NotificationService.getScheduledIds($scope).then (data) ->
+        console.log data
+    else
+      console.log 'cannot debug in browser'
 
-  setDefaultNotification = ->
-    time = new Date()
-    time.setSeconds time.getSeconds() + 30
-    NotificationService.add
-      id:      1
-      title:   "PainSquad"
-      message: "Time for a pain case!"
-      repeat:  "minutely"
-      date:    time
-    , $scope
+  # setNotifications = ->
+  #   if window.plugin
+  #     NotificationSettingsService.setDefaultNotifications()
 
-  # debugNotifications()
-  setDefaultNotification()
+  # setNotifications()
 
-@SettingsCtrl.$inject = [ '$rootScope', '$scope', 'AuthService', 'UserService' ]
-
-# $scope.showLocal = ->
-#   NotificationService.add
-#     id:         '123'
-#     date:       Date.now()
-#     message:    'Test 123'
-#     repeat:     'minutely'
-#     autoCancel: true
+@SettingsCtrl.$inject = [ '$rootScope', '$scope', 'AuthService', 'UserService', 'NotificationSettingsService', 'NotificationService' ]
