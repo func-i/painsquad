@@ -57,9 +57,9 @@
     if window.StatusBar
       StatusBar.styleLightContent()
 
-    if window.plugin
-      NotificationService.cancelAll().then ->
-        NotificationSettingsService.setDefaultNotifications()
+    # if window.plugin
+    #   NotificationService.onclick = ->
+    #     NotificationSettingsService.handleClick(id, state, json)
 
-      window.plugin.notification.local.onclick = (id, state, json) ->
-        NotificationSettingsService.handleClick(id, state, json)
+    #   # window.plugin.notification.local.onclick = (id, state, json) ->
+    #   #   NotificationSettingsService.handleClick(id, state, json)

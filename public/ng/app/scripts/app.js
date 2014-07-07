@@ -41,15 +41,7 @@
         });
       }
       if (window.StatusBar) {
-        StatusBar.styleLightContent();
-      }
-      if (window.plugin) {
-        NotificationService.cancelAll().then(function() {
-          return NotificationSettingsService.setDefaultNotifications();
-        });
-        return window.plugin.notification.local.onclick = function(id, state, json) {
-          return NotificationSettingsService.handleClick(id, state, json);
-        };
+        return StatusBar.styleLightContent();
       }
     });
   });

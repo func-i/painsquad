@@ -1,5 +1,5 @@
 (function() {
-  this.NotificationSettingsService = this.serviceModule.factory('NotificationSettingsService', function($rootScope, $q, NotificationService) {
+  this.NotificationSettingsService = this.serviceModule.factory('NotificationSettingsService', function($rootScope, $state, $q, NotificationService) {
     return {
       setDefaultNotifications: function() {
         var d, v;
@@ -21,11 +21,11 @@
         });
       },
       handleClick: function(id, state, json) {
-        return alert("handling alert event, id: " + id + ", state: " + state + ", json: " + json);
+        return $state.go('app.new_survey');
       }
     };
   });
 
-  this.NotificationSettingsService.$inject = ['$rootScope', '$q', 'NotificationService'];
+  this.NotificationSettingsService.$inject = ['$rootScope', '$state', '$q', 'NotificationService'];
 
 }).call(this);

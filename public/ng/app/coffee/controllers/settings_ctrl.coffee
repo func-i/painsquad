@@ -14,10 +14,13 @@
     else
       console.log 'cannot debug in browser'
 
-  # setNotifications = ->
-  #   if window.plugin
-  #     NotificationSettingsService.setDefaultNotifications()
+  $scope.setNotifications = ->
+    if window.plugin
+      NotificationSettingsService.setDefaultNotifications()
 
-  # setNotifications()
+  $scope.clearAll = ->
+    if window.plugin
+      NotificationService.cancelAll().then ->
+        console.log 'cancelAll notifications'
 
 @SettingsCtrl.$inject = [ '$rootScope', '$scope', 'AuthService', 'UserService', 'NotificationSettingsService', 'NotificationService' ]

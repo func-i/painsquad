@@ -1,6 +1,6 @@
 # 'use strict'
 
-@NotificationSettingsService = @serviceModule.factory 'NotificationSettingsService', ($rootScope, $q, NotificationService) ->
+@NotificationSettingsService = @serviceModule.factory 'NotificationSettingsService', ($rootScope, $state, $q, NotificationService) ->
 
     # setDefaultNotifications: ->
     #   # 8:30 am
@@ -31,7 +31,10 @@
         json:    JSON.stringify({'type': 'full'})
 
     handleClick: (id, state, json) ->
-      alert("handling alert event, id: #{id}, state: #{state}, json: #{json}")
+      $state.go 'app.new_survey'
+      # alert("handling alert event, id: #{id}, state: #{state}, json: #{json}")
+      # console.log("handling alert event, id: #{id}, state: #{state}, json: #{json}")
+
 
     # addAlerts: (datesArray) ->
     #   id =  0
@@ -46,4 +49,4 @@
     #     , $rootScope
     #     id++
 
-@NotificationSettingsService.$inject = [ '$rootScope', '$q', 'NotificationService' ]
+@NotificationSettingsService.$inject = [ '$rootScope', '$state', '$q', 'NotificationService' ]
