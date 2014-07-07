@@ -31,14 +31,14 @@
     };
     chartData = function() {
       var data, hsh, label;
-      data = [["Date", "Now", "Worst", "Least", "Average"]];
+      data = [["Date", "Now", "Worst", "Least", "Avg."]];
       if (Object.keys(report).length > 0) {
         for (label in report) {
           hsh = report[label];
           data.push([label, hsh.now, hsh.worst, hsh.least, hsh.average]);
         }
       } else {
-        data.push(["", 0]);
+        data.push(["", 0, 0, 0, 0]);
       }
       return data;
     };

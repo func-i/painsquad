@@ -28,13 +28,13 @@
       title: 'Pain Intensity'
 
   chartData = ->
-    data = [["Date", "Now", "Worst", "Least", "Average"]]
+    data = [["Date", "Now", "Worst", "Least", "Avg."]]
 
     if Object.keys(report).length > 0
       for label, hsh of report
         data.push [label, hsh.now, hsh.worst, hsh.least, hsh.average]
     else
-      data.push ["", 0]
+      data.push ["", 0, 0, 0, 0]
 
     data
 
