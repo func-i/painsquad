@@ -45,7 +45,7 @@
       for label, hsh of report
         data.push [label, hsh.least, hsh.worst]
     else
-      data.push ["", 0, 0, 0]
+      data.push ["", 0, 0]
 
     data
 
