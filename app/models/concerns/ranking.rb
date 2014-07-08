@@ -13,12 +13,12 @@ module Ranking
     display_rank(User.ranks.key(self[:rank] + 1))
   end
 
-  # TODO: fix this method, not correct
+
   def points_for_next_rank
     points_needed = 0
     User::LEVELS.each do |level|
       if score < level
-        points_needed = level - score
+        return points_needed = level - score
       end
     end
     points_needed
