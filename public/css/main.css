@@ -313,26 +313,34 @@ body.platform-browser .progress {
     background-image: linear-gradient(90deg, #DD4460 50%, transparent 50%, transparent), linear-gradient(270deg, #DD4460 50%, #add8e6 50%, #add8e6); }
 
 .range.override input[type="range"], .range.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.override .range.button {
-  height: 40px; }
+  height: 40px;
+  padding-left: 0;
+  padding-right: 0; }
   .range.override input[type="range"]::-webkit-slider-thumb, .range.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.override .range.button {
-    height: 30px !important;
-    width: 30px !important;
-    border-radius: 30px !important;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
     border: 1px solid #DD4460; }
   .range.override input[type="range"]::-webkit-slider-thumb:before, .range.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.override .range.button {
-    display: none !important; }
+    display: none; }
 
 .range.range-assertive.override input, .range.range-assertive.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-assertive.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-assertive.override .range.range-assertive.button {
-  border-radius: 20px !important;
-  background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%) !important;
-  background-size: 97% 15px; }
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+  background-size: 100% 100%;
+  height: 15px;
+  margin: 10px;
+  overflow: visible; }
   .range.range-assertive.override input::-webkit-slider-thumb, .range.range-assertive.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-assertive.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-assertive.override .range.range-assertive.button {
     border: 1px solid #DD4460;
     border-radius: 20px; }
 .range.range-balanced.override input, .range.range-balanced.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.override .range.range-balanced.button {
-  border-radius: 20px !important;
-  background-image: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%) !important;
-  background-size: 97% 15px; }
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+  background-size: 100% 100%;
+  height: 15px;
+  margin: 10px;
+  overflow: visible; }
   .range.range-balanced.override input::-webkit-slider-thumb, .range.range-balanced.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.override .range.range-balanced.button {
     border: 1px solid #2E7E30;
     border-radius: 20px; }
@@ -343,30 +351,35 @@ body.platform-browser .progress {
   padding-right: 10px; }
   .slider-container.disabled {
     opacity: 0.25; }
-  .slider-container .wedge-container {
-    position: relative;
-    height: 150px;
-    background-color: #E7E7E7;
-    width: 85%;
-    margin: auto; }
-    .slider-container .wedge-container .wedge {
-      position: absolute;
-      z-index: 10;
-      border-style: solid;
-      border-width: 0 0 150px 270px;
-      border-color: transparent transparent transparent white; }
-    .slider-container .wedge-container .overlay {
-      position: absolute;
-      margin: 0 auto;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%; }
-      .slider-container .wedge-container .overlay.red {
-        background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%); }
-      .slider-container .wedge-container .overlay.green {
-        background-image: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%); }
+  .slider-container .wedge-outer-container {
+    margin: 20px;
+    max-width: 280px; }
+    .slider-container .wedge-outer-container .wedge-container {
+      position: relative;
+      height: 100px;
+      z-index: 0; }
+      .slider-container .wedge-outer-container .wedge-container .wedge {
+        position: absolute;
+        z-index: 10;
+        border-style: solid;
+        border-width: 0 0 100px 250px;
+        border-color: transparent transparent transparent white; }
+      .slider-container .wedge-outer-container .wedge-container .wedge-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+        .slider-container .wedge-outer-container .wedge-container .wedge-overlay.red {
+          background-image: linear-gradient(to right, #F5C7D0 0%, #DD4662 100%); }
+        .slider-container .wedge-outer-container .wedge-container .wedge-overlay.green {
+          background-image: linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%); }
+      .slider-container .wedge-outer-container .wedge-container .rect {
+        position: absolute;
+        height: 100%;
+        right: 0%;
+        z-index: 1;
+        background-color: #E7E7E7; }
   .slider-container .range-container .upper {
     margin-top: 10px; }
     .slider-container .range-container .upper .number {
@@ -393,7 +406,7 @@ body.platform-browser .progress {
 .home {
   clear: both; }
   .home .transparent-header {
-    height: 70px;
+    height: 60px;
     color: white;
     background-color: rgba(0, 0, 0, 0.2); }
     .home .transparent-header span {
@@ -411,13 +424,13 @@ body.platform-browser .progress {
         text-align: right;
         float: right; }
   .home .rank {
-    margin-top: 5px;
-    width: 200px;
+    margin-top: 10px;
+    width: 175px;
     display: block;
     margin-left: auto;
     margin-right: auto; }
   .home .action {
-    margin-top: 25px; }
+    margin-top: 20px; }
     .home .action button {
       text-align: center;
       position: relative;
@@ -429,6 +442,12 @@ body.platform-browser .progress {
         border-radius: 20px;
         right: 10px;
         top: 6px; }
+
+.login form {
+  background-color: white; }
+  .login form .item-divider {
+    font-weight: normal;
+    text-align: center; }
 
 .awards {
   background-color: transparent;
@@ -567,14 +586,16 @@ body.platform-browser .progress {
     height: 100%;
     width: 100%; }
     .advice .top .item {
-      width: 141px;
-      height: 189px;
+      width: 49%;
+      height: 50%;
       float: left;
       border-radius: 5px;
       color: white;
       border: 0;
       text-align: center;
       padding: 15px 10px; }
+      .advice .top .item img {
+        width: 80%; }
       .advice .top .item h2 {
         display: block;
         font-weight: bold;
@@ -979,6 +1000,9 @@ li.item, .item.item-checkbox {
       .modal .modal-inherit .content-wrapper .content .slider-disable .item.item-checkbox {
         width: 100%;
         margin-bottom: 20px; }
+
+.chart-wrapper {
+  padding: 20px 10px; }
 
 /*!
   Ionicons, v1.5.2

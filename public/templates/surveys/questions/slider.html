@@ -2,11 +2,12 @@
 
   <form name="currentForm" valid-radio-form class="slider-container">
 
-    <div class="wedge-container">
-      <div class="wedge"></div>
-      <div class="overlay red"
-        ng-class="{ 'green': question.identifier == 'pain_control' }"
-        slider-gradient="question.choices[0].value"></div>
+    <div class="wedge-outer-container">
+      <div class="wedge-container">
+        <div class="wedge"></div>
+        <div class="wedge-overlay red" ng-class="{ 'green': question.identifier == 'pain_control' }"></div>
+        <div class="rect" slider-gradient="question.choices[0].value"></div>
+      </div>
     </div>
 
     <div class="range-container">
@@ -18,9 +19,11 @@
       </div>
 
       <div class="range range-assertive override" ng-class="{ 'range-balanced': question.identifier == 'pain_control' }">
+        <span class="left-border"></span>
         <input required
           type="range"
-          ng-model="question.choices[0].value">
+          ng-model="question.choices[0].value" />
+        <span class="right-border"></span>
       </div>
 
       <div class="lower">
@@ -28,8 +31,6 @@
         <span class="pull-right text">{{ question.extremes.most }}</span>
       </div>
     </div>
-
-    <!-- sliderValue: {{ question.choices[0].value | sliderFilter }} -->
 
   </form>
 

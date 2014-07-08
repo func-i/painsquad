@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AuthService = this.serviceModule.factory('AuthService', function($state, $http, $ionicLoading, Session, UserService) {
+  this.AuthService = this.serviceModule.factory('AuthService', function($rootScope, $state, $http, $ionicLoading, Session, UserService) {
     return {
       login: function(credentials) {
         this.showLoading();
@@ -16,6 +16,11 @@
           };
         })(this));
       },
+      logout: function() {
+        UserService.remove();
+        UserService.clearToken();
+        return $rootScope.$broadcast('event:auth-logout-complete');
+      },
       onSuccess: function(responseData) {
         this.hideLoading();
         UserService.set(responseData.user);
@@ -24,7 +29,7 @@
       },
       onError: function(errorData) {
         this.hideLoading();
-        return console.log(errorData.data);
+        return $rootScope.$broadcast('event:auth-login-failed', errorData);
       },
       showLoading: function() {
         return $ionicLoading.show({
@@ -37,6 +42,6 @@
     };
   });
 
-  this.AuthService.$inject = ['$state', '$http', '$ionicModal', 'Session', 'UserService'];
+  this.AuthService.$inject = ['$rootScope', '$state', '$http', '$ionicModal', 'Session', 'UserService'];
 
 }).call(this);
