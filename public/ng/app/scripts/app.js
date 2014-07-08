@@ -43,11 +43,21 @@
       if (window.StatusBar) {
         StatusBar.styleLightContent();
       }
-      return window.plugin.notification.local.onclick = function(id, state, json) {
-        return $timeout(function() {
-          return alert("json: " + (JSON.stringify(json)));
-        }, 2000);
-      };
+      if (window.plugin) {
+        window.plugin.backgroundMode.enable();
+        window.plugin.notification.local.onclick = function(id, state, json) {
+          alert('notification click with params');
+          return $timeout(function() {
+            return alert('notification click with params');
+          }, 2000);
+        };
+        return window.plugin.notification.local.onclick = function() {
+          alert('notification click');
+          return $timeout(function() {
+            return alert('notification click');
+          }, 2000);
+        };
+      }
     });
   });
 

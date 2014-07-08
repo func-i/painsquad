@@ -57,10 +57,21 @@
     if window.StatusBar
       StatusBar.styleLightContent()
 
-    window.plugin.notification.local.onclick = (id, state, json) ->
-      $timeout ->
-        alert "json: #{JSON.stringify(json)}"
-      , 2000
+    if window.plugin
+      window.plugin.backgroundMode.enable()
+
+      window.plugin.notification.local.onclick = (id, state, json) ->
+        alert 'notification click with params'
+        $timeout ->
+          alert 'notification click with params'
+        , 2000
+
+      window.plugin.notification.local.onclick = ->
+        alert 'notification click'
+        $timeout ->
+          alert 'notification click'
+        , 2000
+
 
     # if window.plugin
     #   NotificationService.onclick = ->

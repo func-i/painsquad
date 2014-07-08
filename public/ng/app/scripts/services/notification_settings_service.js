@@ -19,9 +19,6 @@
             'type': 'full'
           })
         });
-      },
-      handleClick: function(id, state, json) {
-        return $state.go('app.new_survey');
       }
     };
   });
