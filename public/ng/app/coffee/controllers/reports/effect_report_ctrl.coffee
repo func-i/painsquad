@@ -9,31 +9,37 @@
   # Functions
 
   chartOptions = ->
-    width: 300
-    height: 400
+    width:  300
+    height: 450
     legend:
       position: 'none'
     colors: ["green"]
+
+    title: 'Pain Impact %'
+    titlePosition :'out'
+    titleTextStyle:
+      fontSize: 16
+      bold:     true
+      italic:   true
+
     hAxis:
-      title: 'Average Impact'
-      titleTextStyle:
-        fontSize: 16
-        bold: true
       viewWindow:
         min: 0
         max: 100
-      gridlines:
-        count: 11
+       gridlines:
+        count: 10
+
     vAxis:
       textPosition: 'in'
       textStyle:
-        fontSize: 12
-        bold: true
-        color: 'white'
-        auraColor: 'none'
+        fontSize:  12
+        bold:      true
+        color:     'white'
+        auraColor: 'gray'
+
     chartArea:
-     width: '100%'
-     height: '80%'
+     width:  '90%'
+     height: '85%'
 
   chartData = ->
     data = [["Medication", "Frequency"]]

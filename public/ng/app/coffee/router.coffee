@@ -29,6 +29,7 @@ interceptor.$inject = ['$q', '$injector']
       url:         '/app'
       abstract:    true
       templateUrl: 'templates/layout/menu.html'
+      controller:  'AppCtrl'
     )
 
     # root template
@@ -209,14 +210,15 @@ interceptor.$inject = ['$q', '$injector']
           controller: "PsychologicalPainCtrl"
     )
 
-############################ STATIC CONTENT ####################################
     # settings state
     .state('app.settings'
       url: '/settings'
       views:
         menuContent:
           templateUrl: 'templates/static/settings.html'
+          controller:  'SettingsCtrl'
     )
+
 
     # Action Report state
     .state('app.action_report'
@@ -245,7 +247,6 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'cause', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
 
@@ -261,7 +262,6 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'effect', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
 
@@ -277,9 +277,10 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'pain', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
+
+############################ STATIC CONTENT ####################################
 
     # about state
     .state('app.about'

@@ -4,32 +4,27 @@
     var chartData, chartOptions, loadChart;
     $scope.reportTitle = "Cause Report";
     chartOptions = function() {
-      var k, max, v, values;
-      values = [];
-      for (k in report) {
-        v = report[k];
-        values.push(v);
-      }
-      max = Math.max.apply(this, values);
       return {
         width: 300,
-        height: 400,
+        height: 450,
         legend: {
           position: 'none'
         },
         colors: ["green"],
+        title: 'Pain Cause %',
+        titlePosition: 'out',
+        titleTextStyle: {
+          fontSize: 16,
+          bold: true,
+          italic: true
+        },
         hAxis: {
-          title: 'Cause Frequency',
-          titleTextStyle: {
-            fontSize: 16,
-            bold: true
-          },
           viewWindow: {
             min: 0,
-            max: max
+            max: 100
           },
           gridlines: {
-            count: max + 1
+            count: 10
           }
         },
         vAxis: {
@@ -38,12 +33,12 @@
             fontSize: 12,
             bold: true,
             color: 'white',
-            auraColor: 'none'
+            auraColor: 'gray'
           }
         },
         chartArea: {
           width: '90%',
-          height: '80%'
+          height: '85%'
         }
       };
     };

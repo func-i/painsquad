@@ -5,8 +5,7 @@ class ReportService
     @report_type = report_type
 
     # => Get all the user's submissions
-    # => TODO: Only get the submissions between a date period
-    @submissions = Submission.where(user_id: @user.id)
+    @submissions = Submission.where(user_id: @user.id).by_date.take(100)
     @graph_data = {}
   end
 
@@ -39,6 +38,7 @@ class ReportService
         answers = submission.answers.where(question_id: med_question.id)
 
         answers.each do |answer|
+          next if answer.choice.textfield || answer.choice.can_disable
           @graph_data[answer.choice.content] ||= {
             count: 0,
             total: 0
@@ -64,6 +64,7 @@ class ReportService
       if pain_question
          # => Load the answers for the medical question
         submission.answers.where(question_id: pain_question.id).each do |answer|
+          next if answer.choice.textfield || answer.choice.can_disable
           @graph_data[answer.choice.content] ||= 0
           @graph_data[answer.choice.content] += 1
         end
@@ -80,6 +81,7 @@ class ReportService
 
         # => Get the answers for this submission
         submission.answers.where(question_id: effect_question.id).each do |answer|
+          next if answer.choice.textfield || answer.choice.can_disable
           @graph_data[effect_question.report_label] ||= {
             count: 0,
             total: 0,
@@ -96,18 +98,16 @@ class ReportService
   end
 
   def pain_data
-    @submissions.each do |submission|
+    @submissions.order('created_at DESC').each do |submission|
       submission.survey.questions.where(tag: 'intensity').each do |pain_question|
 
          # => Get the answers for this submission
         submission.answers.where(question_id: pain_question.id).each do |answer|
-
-          date = submission.created_at.strftime("%b %e, %Y %H:%M%P")
+          next if answer.choice.textfield || answer.choice.can_disable
+          date = submission.created_at.strftime("%b %e, %Y")
           @graph_data[date] ||= {
-            now: 0,
             worst: 0,
-            least: 0,
-            average: 0
+            least: 0
           }
 
           @graph_data[date][pain_question.report_label.downcase.to_sym] = answer.value

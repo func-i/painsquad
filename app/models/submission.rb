@@ -22,11 +22,17 @@ class Submission < ActiveRecord::Base
   scope :full, -> { survey.where(identifier: 'full') }
   scope :truncated, -> { survey.where(identifier: 'truncated') }
 
+  scope :by_date, -> { order('created_at DESC') }
+
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers
 
   validates :survey, presence: true
   validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
+
+  def print_tree
+    SubmissionSerializer.new(self).to_json
+  end
 
 end

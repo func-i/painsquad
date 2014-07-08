@@ -10,9 +10,11 @@
 
   chartOptions = ->
     width: 300
-    height: 400
+    height: 450
     legend:
       position: 'top'
+      alignment: 'center'
+      maxLines: 2
     vAxes:
       0:
         title: 'Action Frequency'
@@ -31,6 +33,10 @@
       direction: -1
       slantedText: true
       slantedTextAngle: 180
+      textStyle:
+        fontSize: 8
+      gridlines:
+        color: '#CCC'
     series:
       0:
         targetAxisIndex: 0
@@ -38,9 +44,12 @@
         lineWidth: 0
         pointSize: 5
         targetAxisIndex: 1
-
         type: 'line'
+
     colors: ["red", "green"]
+    chartArea:
+     width:  '75%'
+     height: '75%'
 
   chartData = ->
     data = [["Medication", "Frequency", "Effectiveness"]]

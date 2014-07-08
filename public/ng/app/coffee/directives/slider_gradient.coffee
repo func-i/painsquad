@@ -8,4 +8,4 @@
   link: (scope, elem, attr) ->
     scope.$watch 'sliderGradient', (value) ->
       value ||= 50
-      elem.css('width', "#{parseInt(value)}%")
+      elem.css('left', "#{parseInt(value)}%")

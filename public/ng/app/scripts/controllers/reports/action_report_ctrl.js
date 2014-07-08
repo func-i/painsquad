@@ -6,9 +6,11 @@
     chartOptions = function() {
       return {
         width: 300,
-        height: 400,
+        height: 450,
         legend: {
-          position: 'top'
+          position: 'top',
+          alignment: 'center',
+          maxLines: 2
         },
         vAxes: {
           0: {
@@ -32,7 +34,13 @@
         hAxis: {
           direction: -1,
           slantedText: true,
-          slantedTextAngle: 180
+          slantedTextAngle: 180,
+          textStyle: {
+            fontSize: 8
+          },
+          gridlines: {
+            color: '#CCC'
+          }
         },
         series: {
           0: {
@@ -45,7 +53,11 @@
             type: 'line'
           }
         },
-        colors: ["red", "green"]
+        colors: ["red", "green"],
+        chartArea: {
+          width: '75%',
+          height: '75%'
+        }
       };
     };
     chartData = function() {

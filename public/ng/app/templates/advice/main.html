@@ -10,13 +10,13 @@
       <div class="item yellow pattern-bg" ui-sref="app.recommended"
         ng-class="{ 'active': isActiveOne }" ng-init="isActiveOne = false" ng-click="isActiveOne = !isActiveOne">
           <h2>Recommended For You</h2>
-          <i class="ion-ios7-lightbulb-outline"></i>
+          <img ng-src="./images/advice/main/rec.png">
       </div>
 
       <div class="item red pattern-bg" ui-sref="app.favorites"
         ng-class="{ 'active': isActiveTwo }" ng-init="isActiveTwo = false" ng-click="isActiveTwo = !isActiveTwo">
           <h2>Your Favourites</h2>
-          <i class="ion-heart"></i>
+          <img ng-src="./images/advice/main/fav.png">
       </div>
     </section>
 

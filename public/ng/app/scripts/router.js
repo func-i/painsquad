@@ -34,7 +34,8 @@
     return $stateProvider.state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'templates/layout/menu.html'
+      templateUrl: 'templates/layout/menu.html',
+      controller: 'AppCtrl'
     }).state('app.home', {
       url: '/home',
       views: {
@@ -239,7 +240,8 @@
       url: '/settings',
       views: {
         menuContent: {
-          templateUrl: 'templates/static/settings.html'
+          templateUrl: 'templates/static/settings.html',
+          controller: 'SettingsCtrl'
         }
       }
     }).state('app.action_report', {

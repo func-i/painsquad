@@ -18,14 +18,18 @@
     width:         100%;
 
     .item {
-      width:            141px;
-      height:           189px;
-      float:            left;
-      border-radius:    5px;
-      color:            white;
-      border:           0;
-      text-align:       center;
-      padding:          15px 10px;
+      width:         49%;
+      height:        50%;
+      float:         left;
+      border-radius: 5px;
+      color:         white;
+      border:        0;
+      text-align:    center;
+      padding:       15px 10px;
+
+      img {
+        width: 80%;
+      }
 
       h2 {
         display:     block;

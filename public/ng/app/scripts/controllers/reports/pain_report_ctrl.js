@@ -6,19 +6,20 @@
     chartOptions = function() {
       return {
         width: 300,
-        height: 400,
+        height: 450,
         legend: {
           position: 'top',
-          alignment: 'start',
+          alignment: 'center',
           maxLines: 2
         },
-        colors: ["blue", "green", "red", "orange"],
+        colors: ["blue", "red"],
         hAxis: {
           direction: -1,
           slantedText: true,
           slantedTextAngle: 180,
           textStyle: {
-            fontSize: 8
+            fontSize: 10,
+            maxValue: 5
           },
           gridlines: {
             color: '#CCC'
@@ -26,19 +27,23 @@
         },
         vAxis: {
           title: 'Pain Intensity'
+        },
+        chartArea: {
+          width: '75%',
+          height: '75%'
         }
       };
     };
     chartData = function() {
       var data, hsh, label;
-      data = [["Date", "Now", "Worst", "Least", "Average"]];
+      data = [['Date', 'Least', 'Most']];
       if (Object.keys(report).length > 0) {
         for (label in report) {
           hsh = report[label];
-          data.push([label, hsh.now, hsh.worst, hsh.least, hsh.average]);
+          data.push([label, hsh.least, hsh.worst]);
         }
       } else {
-        data.push(["", 0]);
+        data.push(["", 0, 0, 0]);
       }
       return data;
     };
