@@ -1,17 +1,16 @@
 class SubmissionSeedGenerator
 
-  # simulates completing 100 full surveys
   def self.build
     new.generate
   end
 
   def initialize
-    @user       = User.last
-    @survey     = Survey.full.first
+    @user   = User.last
+    @survey = Survey.full.first
   end
 
   def generate
-    100.times do |n|
+    rand(1000).times do |n|
       @submission = Submission.new(has_pain: true, survey: @survey, user: @user, pain_severity: %w(mild moderate).sample) do |sub|
         random_radio_answers(sub)
         random_slider_answers(sub)
@@ -19,6 +18,8 @@ class SubmissionSeedGenerator
         # random_bodymap_answers(sub)
       end
       @submission.save!
+      date = rand(30.days).ago
+      @submission.update(created_at: date, updated_at: date)
     end
   end
 
