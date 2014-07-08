@@ -1,0 +1,41 @@
+<ion-view title="Pharmalogical">
+
+  <ion-header-bar>
+    <div class="buttons">
+      <button ng-click="back()" class="button button-icon icon ion-ios7-arrow-back">Back</button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
+
+    <ion-list class="recommended">
+      <div class="header-bar bar-blue"></div>
+
+      <ion-item
+        ng-repeat="item in recommendations"
+        class="item item-thumbnail-left"
+        ng-click="loadAdviceModal(item)"
+        ng-class="{ 'first': $first }">
+
+          <img ng-src="./images/advice/thumb/{{ item.image }}.png">
+          <h2>{{ item.title }}</h2>
+
+          <div class="duration row">
+            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+            <div class="col col-90"><span>{{ item.duration }}</span></div>
+          </div>
+
+          <div class="context row">
+            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+            <div class="col col-90"><span>{{ item.context }}</span></div>
+          </div>
+
+          <div class="badge" ng-class="{ 'favorite': item.favorite }">
+            <i ng-model="item.favorite" class="ion-ios7-heart-outline"> </i>
+          </div>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>
