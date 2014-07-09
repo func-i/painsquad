@@ -1,0 +1,86 @@
+.modal#levelup {
+  top:      15%;
+  left:     3%;
+  width:    94%;
+  overflow: initial;
+
+  ion-content {
+    overflow: initial;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    .close-icon {
+      position: absolute;
+      font-size: 20px;
+    }
+
+  }
+
+  .circle-wrapper {
+    position: relative;
+    z-index:  15;
+    overflow: visible;
+
+    .circle {
+      position:         absolute;
+      top:              -5px;
+      right:            -5px;
+      width:            30px;
+      height:           30px;
+      border-radius:    30px;
+      border:           2px solid white;
+      color:            white;
+      text-align:       center;
+      font-weight:      100;
+      font-size:        20px;
+      line-height:      24px;
+      background-color: $assertive;
+    }
+  }
+
+  .header {
+    border-top: 7px solid $red-two;
+    height:     50px;
+    text-align: center;
+    color:      $red-two;
+    font-size:  16px;
+    font-weight: bold;
+    padding:    10px;
+    // background-color: $gray-five;
+    background-color: rgb(233, 234, 235);
+    background-image: url('../images/background/content.png');
+  }
+
+  img {
+    margin: 15px 0;
+    width: 40%;
+  }
+
+  p {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+
+  button.button {}
+}
+
+
+// <div class="modal" id="levelup" scroll="false">
+
+//   <ion-content has-header="true" padding="true">
+//     <div class="circle" ng-click="closeModal()">X</div>
+//     <div class="bar-header header-red"></div>
+//     <div class="header pattern-bg">You've Moved Up!</div>
+
+//     <img src="./images/achievements/chief.png">
+
+//     <p>Looks like it's time to drop the 'Junior' from your rank. A communication just came across from Headquarters, you are now officially a full-fledged Detective in PainSquad</p>
+//     <!-- <p>{{ msg }}</p> -->
+
+//     <button class="button button-block button-assertive">Play Video</button>
+//     <button class="button button-block" ng-click="closeModal()">Close Modal</button>
+//   </ion-content>
+
+// </div>

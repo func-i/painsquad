@@ -8,8 +8,22 @@
       animation: "slide-in-up",
       focusFirstInput: true
     });
+    $ionicModal.fromTemplateUrl("templates/shared/levelup.html", function(modal) {
+      return $scope.levelupModal = modal;
+    }, {
+      scope: $scope,
+      animation: "slide-in-up",
+      focusFirstInput: true
+    });
+    $scope.loadModal = function() {
+      return $scope.levelupModal.show();
+    };
+    $scope.closeModal = function() {
+      return $scope.levelupModal.hide();
+    };
     return $scope.$on("$destroy", function() {
-      return $scope.loginModal.remove();
+      $scope.loginModal.remove();
+      return $scope.levelupModal.remove();
     });
   });
 
