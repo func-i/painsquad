@@ -28,7 +28,7 @@
       <div class="header-bar bar-blue"></div>
 
       <div ng-hide="slideShowActivated" ng-cloak>
-        <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image }}.png">
+        <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image  || 'fallback' }}.png">
 
         <div class="detail">
           <div class="duration row">

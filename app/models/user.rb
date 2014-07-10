@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
   after_create :grant_api_access, :register_create_event
   after_update :create_rank_event, :if => :rank_changed?
 
+  def level_up_event?
+    self.activities.last.event == 'level_up'
+  end
+
   def last_pain_report
     submissions.last.try(:pain_severity) || 'mild'
   end

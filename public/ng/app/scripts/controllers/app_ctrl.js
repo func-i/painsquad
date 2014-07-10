@@ -23,12 +23,7 @@
       return $scope.levelupModal.remove();
     };
     $rootScope.$on('event:levelup', function(event, args) {
-      $scope.levelUp.image = args.image;
-      $scope.levelUp.prev_rank = args.prev_rank;
-      $scope.levelUp.rank = args.rank;
-      if ($scope.levelupModal) {
-        return $scope.levelupModal.show();
-      }
+      return console.log("event, args", event, args);
     });
     return $scope.$on("$destroy", function() {
       $scope.loginModal.remove();

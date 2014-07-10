@@ -21,7 +21,7 @@
       <div class="header" ng-hide="nestedSelection.section"><span>How To Play</span></div>
 
       <div class="image-block" ng-show="nestedSelection.image">
-        <img ng-src="./images/advice/nested/{{ nestedSelection.image }}.png">
+        <img ng-src="./images/advice/nested/{{ nestedSelection.image || 'yoga_tree' }}.png">
       </div>
       <div class="list-wrapper">
         <ol>

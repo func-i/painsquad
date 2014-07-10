@@ -1,6 +1,6 @@
 'use strict'
 
-interceptor = ($q, $injector) ->
+authInterceptor = ($q, $injector) ->
   success = (response) ->
     response
   error = (response) ->
@@ -12,11 +12,20 @@ interceptor = ($q, $injector) ->
   (promise) ->
     promise.then success, error
 
-interceptor.$inject = ['$q', '$injector']
+rankInterceptor = ($q, $rootScope) ->
+  (promise) ->
+    promise.then ((response) ->
+      if response.activity
+        $rootScope.$broadcast 'event:levelup'
+        # return $q.reject(response) unless response.activity
+      response
+    ), (response) ->
+      $q.reject response
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  $httpProvider.responseInterceptors.push(interceptor)
+  $httpProvider.responseInterceptors.push(authInterceptor)
+  $httpProvider.responseInterceptors.push(rankInterceptor)
   $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'

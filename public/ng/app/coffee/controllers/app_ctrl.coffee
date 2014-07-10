@@ -25,11 +25,12 @@
     # $scope.levelupModal.hide()
 
   $rootScope.$on 'event:levelup', (event, args) ->
-    $scope.levelUp.image     = args.image
-    $scope.levelUp.prev_rank = args.prev_rank
-    $scope.levelUp.rank      = args.rank
-    if $scope.levelupModal
-      $scope.levelupModal.show()
+    console.log "event, args", event, args
+    # $scope.levelUp.image     = args.image
+    # $scope.levelUp.prev_rank = args.prev_rank
+    # $scope.levelUp.rank      = args.rank
+    # if $scope.levelupModal
+    #   $scope.levelupModal.show()
 
   # $rootScope.$on 'event:levelup:close', (ev) ->
   #   if $scope.levelupModal

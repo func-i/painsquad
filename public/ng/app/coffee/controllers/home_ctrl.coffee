@@ -26,7 +26,7 @@
         }
       ]
 
-  init = ($rootScope) ->
+  init = ->
     # only show popup after transitioning from survey_complete
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
@@ -34,6 +34,6 @@
     if $scope.userScore and $scope.userScore.has_ranked_up
       $rootScope.$broadcast 'event:levelup', { image: $scope.userScore.rank, prev_rank: $scope.userScore.prev_rank, rank: $scope.userScore.display_rank }
 
-  init($rootScope)
+  init()
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']

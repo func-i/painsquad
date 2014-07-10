@@ -1,8 +1,8 @@
 (function() {
   'use strict';
-  var interceptor;
+  var authInterceptor, rankInterceptor;
 
-  interceptor = function($q, $injector) {
+  authInterceptor = function($q, $injector) {
     var error, success;
     success = function(response) {
       return response;
@@ -20,12 +20,24 @@
     };
   };
 
-  interceptor.$inject = ['$q', '$injector'];
+  rankInterceptor = function($q, $rootScope) {
+    return function(promise) {
+      return promise.then((function(response) {
+        if (response.activity) {
+          $rootScope.$broadcast('event:levelup');
+        }
+        return response;
+      }), function(response) {
+        return $q.reject(response);
+      });
+    };
+  };
 
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $httpProvider.responseInterceptors.push(interceptor);
+    $httpProvider.responseInterceptors.push(authInterceptor);
+    $httpProvider.responseInterceptors.push(rankInterceptor);
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
