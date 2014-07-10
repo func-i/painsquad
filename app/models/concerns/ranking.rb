@@ -4,6 +4,11 @@ module Ranking
   included do
   end
 
+  # todo: flag if user has ranked up
+  def level_up
+    # self.rank.changed?
+  end
+
   def display_rank(submitted_rank = nil)
     rank = submitted_rank || self.rank
     rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
@@ -13,6 +18,9 @@ module Ranking
     display_rank(User.ranks.key(self[:rank] + 1))
   end
 
+  def prev_rank
+    display_rank(User.ranks.key(self[:rank] - 1))
+  end
 
   def points_for_next_rank
     points_needed = 0

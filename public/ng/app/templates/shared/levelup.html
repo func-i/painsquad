@@ -8,12 +8,11 @@
 
     <div class="header pattern-bg">You've Moved Up!</div>
 
-    <img src="./images/achievements/chief.png">
+    <img ng-src="./images/achievements/{{levelUp.image}}.png">
 
-    <p>Looks like it's time to drop the 'Junior' from your rank. A communication just came across from Headquarters, you are now officially a full-fledged Detective in PainSquad</p>
-    <!-- <p>{{ msg }}</p> -->
+    <p>Looks like it's time to drop the "{{levelUp.prev_rank}}"" from your rank. A communication just came across from Headquarters, you are now officially a full-fledged {{levelUp.rank}} in PainSquad</p>
 
-    <button class="button button-block button-assertive">Play Video</button>
+    <button class="button button-assertive override diagonal">Play Video</button>
   </ion-content>
 
 </div>

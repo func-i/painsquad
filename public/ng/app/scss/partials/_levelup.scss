@@ -3,6 +3,7 @@
   left:     3%;
   width:    94%;
   overflow: initial;
+  text-align: center;
 
   ion-content {
     overflow: initial;
@@ -33,28 +34,26 @@
       color:            white;
       text-align:       center;
       font-weight:      100;
-      font-size:        20px;
-      line-height:      24px;
+      font-size:        23px;
+      line-height:      25px;
       background-color: $assertive;
     }
   }
 
   .header {
-    border-top: 7px solid $red-two;
-    height:     50px;
-    text-align: center;
-    color:      $red-two;
-    font-size:  16px;
+    @extend .gray-diagonal;
+    border-top:  7px solid $red-two;
+    height:      50px;
+    text-align:  center;
+    color:       $red-two;
+    font-size:   16px;
     font-weight: bold;
-    padding:    10px;
-    // background-color: $gray-five;
-    background-color: rgb(233, 234, 235);
-    background-image: url('../images/background/content.png');
+    padding:     10px;
   }
 
   img {
     margin: 15px 0;
-    width: 40%;
+    width: 120px;
   }
 
   p {
@@ -63,24 +62,8 @@
     text-align: center;
   }
 
-  button.button {}
+  .button {
+    width:       75%;
+    margin-left: 12%;
+  }
 }
-
-
-// <div class="modal" id="levelup" scroll="false">
-
-//   <ion-content has-header="true" padding="true">
-//     <div class="circle" ng-click="closeModal()">X</div>
-//     <div class="bar-header header-red"></div>
-//     <div class="header pattern-bg">You've Moved Up!</div>
-
-//     <img src="./images/achievements/chief.png">
-
-//     <p>Looks like it's time to drop the 'Junior' from your rank. A communication just came across from Headquarters, you are now officially a full-fledged Detective in PainSquad</p>
-//     <!-- <p>{{ msg }}</p> -->
-
-//     <button class="button button-block button-assertive">Play Video</button>
-//     <button class="button button-block" ng-click="closeModal()">Close Modal</button>
-//   </ion-content>
-
-// </div>
