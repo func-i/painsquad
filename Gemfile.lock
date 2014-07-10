@@ -247,7 +247,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.8.1)
-  annotate (~> 2.6.3)
+  annotate (~> 2.6.5)
   better_errors (~> 1.1.0)
   binding_of_caller (~> 0.7.2)
   cucumber-rails (~> 1.4.0)

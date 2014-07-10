@@ -20,7 +20,7 @@
       return $scope.levelupModal.show();
     };
     $scope.closeModal = function() {
-      return $scope.levelupModal.hide();
+      return $scope.levelupModal.remove();
     };
     $rootScope.$on('event:levelup', function(event, args) {
       $scope.levelUp.image = args.image;
@@ -28,11 +28,6 @@
       $scope.levelUp.rank = args.rank;
       if ($scope.levelupModal) {
         return $scope.levelupModal.show();
-      }
-    });
-    $rootScope.$on('event:levelup:close', function(ev) {
-      if ($scope.levelupModal) {
-        return $scope.levelupModal.hide();
       }
     });
     return $scope.$on("$destroy", function() {

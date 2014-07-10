@@ -6,10 +6,7 @@ module Ranking
   end
 
   def has_ranked_up
-    self.activities.take(3).each do |activity|
-      return true if activity.event == 'level_up'
-    end
-    false
+    return true if self.activities.last.event == 'level_up'
   end
 
   def display_rank(submitted_rank = nil)

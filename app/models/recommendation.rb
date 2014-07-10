@@ -3,17 +3,18 @@
 # Table name: recommendations
 #
 #  id                       :integer          not null, primary key
-#  advice_id                :integer
 #  title                    :string(255)
 #  image                    :string(255)
 #  duration                 :string(255)
 #  context                  :string(255)
-#  description              :string(255)
-#  byline                   :string(255)
+#  description              :text
+#  byline                   :text
 #  style                    :string(255)
 #  parent_recommendation_id :integer
 #  created_at               :datetime
 #  updated_at               :datetime
+#  section                  :string(255)
+#  group                    :string(255)
 #
 
 class Recommendation < ActiveRecord::Base

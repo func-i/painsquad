@@ -21,7 +21,8 @@
     $scope.levelupModal.show()
 
   $scope.closeModal = ->
-    $scope.levelupModal.hide()
+    $scope.levelupModal.remove()
+    # $scope.levelupModal.hide()
 
   $rootScope.$on 'event:levelup', (event, args) ->
     $scope.levelUp.image     = args.image
@@ -30,9 +31,9 @@
     if $scope.levelupModal
       $scope.levelupModal.show()
 
-  $rootScope.$on 'event:levelup:close', (ev) ->
-    if $scope.levelupModal
-      $scope.levelupModal.hide()
+  # $rootScope.$on 'event:levelup:close', (ev) ->
+  #   if $scope.levelupModal
+  #     $scope.levelupModal.hide()
 
   $scope.$on "$destroy", ->
     $scope.loginModal.remove()
