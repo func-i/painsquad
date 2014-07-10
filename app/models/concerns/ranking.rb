@@ -4,9 +4,12 @@ module Ranking
   included do
   end
 
-  # todo: flag if user has ranked up
-  def level_up
-    # self.rank.changed?
+  def has_ranked_up
+    if self.activities.last.event == 'level_up'
+      true
+    else
+      false
+    end
   end
 
   def display_rank(submitted_rank = nil)
@@ -22,6 +25,10 @@ module Ranking
     display_rank(User.ranks.key(self[:rank] - 1))
   end
 
+  def last_rank?
+    self[:rank] == 5
+  end
+
   def points_for_next_rank
     points_needed = 0
     User::LEVELS.each do |level|
@@ -30,10 +37,6 @@ module Ranking
       end
     end
     points_needed
-  end
-
-  def last_rank?
-    self[:rank] == 5
   end
 
 end

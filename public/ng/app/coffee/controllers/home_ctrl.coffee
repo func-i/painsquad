@@ -31,7 +31,7 @@
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
     # fire levelup modal is user reached next rank
-    if $scope.userScore and $scope.userScore.level_up
+    if $scope.userScore and $scope.userScore.has_ranked_up
       $rootScope.$broadcast 'event:levelup', { image: $scope.userScore.rank, prev_rank: $scope.userScore.prev_rank, rank: $scope.userScore.display_rank }
 
   init($rootScope)

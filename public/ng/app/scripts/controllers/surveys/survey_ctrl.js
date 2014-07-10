@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $rootScope, $ionicScrollDelegate, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) {
+  this.SurveyCtrl = this.controllerModule.controller("SurveyCtrl", function($scope, $state, $rootScope, $ionicScrollDelegate, $timeout, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) {
     $scope.startSurvey = function() {
       $scope.submission = SubmissionService.init(survey);
       $scope.questionIndex = 0;
@@ -24,16 +24,18 @@
       return $scope.continueSurvey();
     };
     $scope.continueSurvey = function() {
-      $scope.questionIndex++;
-      if ($scope.questionIndex === ($scope.totalQuestions - 1)) {
-        $scope.showNextButton = false;
-        $scope.showSubmitButton = true;
-        $scope.question = survey.questions[$scope.questionIndex];
-      } else {
-        $scope.$broadcast('resetQuestion');
-        $scope.question = survey.questions[$scope.questionIndex];
-      }
-      return $scope.reloadScroll();
+      return $timeout(function() {
+        $scope.questionIndex++;
+        if ($scope.questionIndex === ($scope.totalQuestions - 1)) {
+          $scope.showNextButton = false;
+          $scope.showSubmitButton = true;
+          $scope.question = survey.questions[$scope.questionIndex];
+        } else {
+          $scope.$broadcast('resetQuestion');
+          $scope.question = survey.questions[$scope.questionIndex];
+        }
+        return $scope.reloadScroll();
+      }, 100);
     };
     $scope.reloadScroll = function() {
       $ionicScrollDelegate.scrollTop();
@@ -66,6 +68,6 @@
     return $rootScope.sideMenuEnabled = false;
   });
 
-  this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', 'survey', 'AuthService', 'SubmissionService', 'BodymapService'];
+  this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$timeout', 'survey', 'AuthService', 'SubmissionService', 'BodymapService'];
 
 }).call(this);

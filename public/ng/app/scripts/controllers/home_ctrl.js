@@ -32,7 +32,7 @@
       if ($rootScope.previousState_name === 'app.survey_complete') {
         $scope.showPopup();
       }
-      if ($scope.userScore && $scope.userScore.level_up) {
+      if ($scope.userScore && $scope.userScore.has_ranked_up) {
         return $rootScope.$broadcast('event:levelup', {
           image: $scope.userScore.rank,
           prev_rank: $scope.userScore.prev_rank,

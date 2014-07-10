@@ -2,7 +2,7 @@
 
 # Parent controller responsible for handling survey navigation
 # Survey question-specific logic delegated to sub-controllers
-@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $rootScope, $ionicScrollDelegate, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) ->
+@SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $rootScope, $ionicScrollDelegate, $timeout, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) ->
 
   $scope.startSurvey = ->
     $scope.submission     = SubmissionService.init(survey)
@@ -27,16 +27,18 @@
     $scope.continueSurvey()
 
   $scope.continueSurvey = ->
-    $scope.questionIndex++
-    # if we are on the last question - prepare for textbox
-    if $scope.questionIndex is ($scope.totalQuestions - 1)
-      $scope.showNextButton   = false
-      $scope.showSubmitButton = true
-      $scope.question         = survey.questions[$scope.questionIndex]
-    else
-      $scope.$broadcast 'resetQuestion'
-      $scope.question = survey.questions[$scope.questionIndex]
-    $scope.reloadScroll()
+    $timeout ->
+      $scope.questionIndex++
+      # if we are on the last question - prepare for textbox
+      if $scope.questionIndex is ($scope.totalQuestions - 1)
+        $scope.showNextButton   = false
+        $scope.showSubmitButton = true
+        $scope.question         = survey.questions[$scope.questionIndex]
+      else
+        $scope.$broadcast 'resetQuestion'
+        $scope.question = survey.questions[$scope.questionIndex]
+      $scope.reloadScroll()
+    , 100
 
   $scope.reloadScroll = ->
     $ionicScrollDelegate.scrollTop()
@@ -65,4 +67,4 @@
   $scope.startSurvey()
   $rootScope.sideMenuEnabled = false
 
-@SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', 'survey', 'AuthService', 'SubmissionService', 'BodymapService']
+@SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$timeout', 'survey', 'AuthService', 'SubmissionService', 'BodymapService']
