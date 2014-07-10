@@ -2,14 +2,14 @@ module Ranking
   extend ActiveSupport::Concern
 
   included do
+    after_update :update_user_ranking
   end
 
   def has_ranked_up
-    if self.activities.last.event == 'level_up'
-      true
-    else
-      false
+    self.activities.take(3).each do |activity|
+      return true if activity.event == 'level_up'
     end
+    false
   end
 
   def display_rank(submitted_rank = nil)
@@ -37,6 +37,17 @@ module Ranking
       end
     end
     points_needed
+  end
+
+  # iterates through level thresholds, levels User if threshold crossed
+  def update_user_ranking
+    return if last_rank? || self.changes[:score].nil? || self.changes[:rank].present?
+    old_score, new_score = self.changes[:score]
+    User::LEVELS.each do |threshold|
+      if old_score < threshold && new_score >= threshold
+        self.update(rank: self[:rank] + 1)
+      end
+    end
   end
 
 end

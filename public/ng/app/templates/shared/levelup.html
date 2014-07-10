@@ -8,7 +8,7 @@
 
     <div class="header pattern-bg">You've Moved Up!</div>
 
-    <img ng-src="./images/achievements/{{levelUp.image}}.png">
+    <img ng-src="./images/achievements/{{ levelUp.image || 'rookie' }}.png">
 
     <p>Looks like it's time to drop the "{{levelUp.prev_rank}}"" from your rank. A communication just came across from Headquarters, you are now officially a full-fledged {{levelUp.rank}} in PainSquad</p>
 
