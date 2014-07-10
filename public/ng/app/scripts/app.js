@@ -34,28 +34,12 @@
       });
     };
     return $ionicPlatform.ready(function() {
-      if (window.cordova && window.cordova.plugins) {
-        window.cordova.plugins.notification.badge.clear();
-        window.cordova.plugins.notification.badge.configure({
-          autoClear: true
-        });
-      }
       if (window.StatusBar) {
         StatusBar.styleLightContent();
       }
       if (window.plugin) {
-        window.plugin.backgroundMode.enable();
-        window.plugin.notification.local.onclick = function(id, state, json) {
-          alert('notification click with params');
-          return $timeout(function() {
-            return alert('notification click with params');
-          }, 2000);
-        };
-        return window.plugin.notification.local.onclick = function() {
-          alert('notification click');
-          return $timeout(function() {
-            return alert('notification click');
-          }, 2000);
+        return window.plugin.notification.local.onclick = function(id, state, json) {
+          return alert("id: " + id + ", state: " + state + ", json: " + json);
         };
       }
     });

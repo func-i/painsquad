@@ -17,7 +17,8 @@
           badge: 0,
           json: JSON.stringify({
             'type': 'full'
-          })
+          }),
+          autoCancel: false
         });
       }
     };

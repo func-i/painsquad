@@ -22,20 +22,13 @@
 
     addAlert: (date, index) ->
       note = NotificationService.add
-        id:      index.toString()
-        message: 'Headquarters has just assigned you a case!'
-        repeat:  'daily'
-        date:    date
-        badge:   0
-        json:    JSON.stringify({'type': 'full'})
-      # , @handleClick(note)
-
-    # handleClick: (id, state, json) ->
-    #   if window.plugin
-    #     window.plugin.backgroundMode.enable();
-      # alert("handling alert event, id: #{id}, state: #{state}, json: #{json}")
-      # console.log("handling alert event, id: #{id}, state: #{state}, json: #{json}")
-      # $state.go 'app.new_survey'
+        id:         index.toString()
+        message:    'Headquarters has just assigned you a case!'
+        repeat:     'daily'
+        date:       date
+        badge:      0
+        json:       JSON.stringify({'type': 'full'})
+        autoCancel: false
 
     # addAlerts: (datesArray) ->
     #   id =  0

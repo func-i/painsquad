@@ -49,33 +49,14 @@
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
 
-    if window.cordova and window.cordova.plugins
-      window.cordova.plugins.notification.badge.clear()
-      window.cordova.plugins.notification.badge.configure
-        autoClear: true
+    # if window.cordova and window.cordova.plugins
+    #   window.cordova.plugins.notification.badge.clear()
+    #   window.cordova.plugins.notification.badge.configure
+    #     autoClear: true
 
     if window.StatusBar
       StatusBar.styleLightContent()
 
     if window.plugin
-      window.plugin.backgroundMode.enable()
-
       window.plugin.notification.local.onclick = (id, state, json) ->
-        alert 'notification click with params'
-        $timeout ->
-          alert 'notification click with params'
-        , 2000
-
-      window.plugin.notification.local.onclick = ->
-        alert 'notification click'
-        $timeout ->
-          alert 'notification click'
-        , 2000
-
-
-    # if window.plugin
-    #   NotificationService.onclick = ->
-    #     NotificationSettingsService.handleClick(id, state, json)
-
-    #   # window.plugin.notification.local.onclick = (id, state, json) ->
-    #   #   NotificationSettingsService.handleClick(id, state, json)
+        alert "id: #{id}, state: #{state}, json: #{json}"
