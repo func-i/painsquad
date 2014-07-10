@@ -28,4 +28,8 @@ namespace :survey do
   task :all => [:environment, :full, :truncated] do
   end
 
+  task :mock_results => [:environment] do
+    SubmissionSeedGenerator.build
+  end
+
 end

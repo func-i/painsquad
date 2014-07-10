@@ -43,10 +43,15 @@
           </div>
 
           <div class="slider-container" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">
-            <div class="wedge-container">
-              <div class="wedge"></div>
-              <div class="overlay green" slider-gradient="detailData.currentChoice.value"></div>
+
+            <div class="wedge-outer-container">
+              <div class="wedge-container">
+                <div class="wedge"></div>
+                <div class="wedge-overlay green"></div>
+                <div class="rect" slider-gradient="detailData.currentChoice.value"></div>
+              </div>
             </div>
+
 
             <div class="range-container">
 

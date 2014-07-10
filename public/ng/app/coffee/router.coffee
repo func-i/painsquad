@@ -247,7 +247,6 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'cause', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
 
@@ -263,7 +262,6 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'effect', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
 
@@ -279,7 +277,6 @@ interceptor.$inject = ['$q', '$injector']
               defer = $q.defer()
               Report.get report_id: 'pain', (response) ->
                 defer.resolve response.report
-
               defer.promise
     )
 
