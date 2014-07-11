@@ -6,6 +6,7 @@
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
     $rootScope.sideMenuEnabled = true;
+    console.log('rootScope.showLevelupModal: ', $rootScope.showLevelupModal);
     $scope.$on("$destroy", function() {
       return $rootScope.$broadcast('event:levelup:close');
     });
@@ -33,11 +34,12 @@
         $scope.showPopup();
       }
       if ($scope.userScore && $scope.userScore.has_ranked_up) {
-        return $rootScope.$broadcast('event:levelup', {
+        $rootScope.$broadcast('event:levelup', {
           image: $scope.userScore.rank,
           prev_rank: $scope.userScore.prev_rank,
           rank: $scope.userScore.display_rank
         });
+        return $rootScope.showLevelupModal = true;
       }
     };
     return init();

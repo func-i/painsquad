@@ -1,7 +1,9 @@
 (function() {
   'use strict';
   this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal) {
+    console.log('rootScope.showLevelupModal: ', $rootScope.showLevelupModal);
     $scope.levelUp = {};
+    $rootScope.showLevelupModal = false;
     $ionicModal.fromTemplateUrl("templates/shared/login.html", function(modal) {
       return $scope.loginModal = modal;
     }, {
@@ -20,10 +22,16 @@
       return $scope.levelupModal.show();
     };
     $scope.closeModal = function() {
-      return $scope.levelupModal.remove();
+      $scope.levelupModal.hide();
+      return $rootScope.showLevelupModal = false;
     };
     $rootScope.$on('event:levelup', function(event, args) {
-      return console.log("event, args", event, args);
+      $scope.levelUp.image = args.image;
+      $scope.levelUp.prev_rank = args.prev_rank;
+      $scope.levelUp.rank = args.rank;
+      if ($scope.levelupModal && $rootScope.showLevelupModal) {
+        return $scope.levelupModal.show();
+      }
     });
     return $scope.$on("$destroy", function() {
       $scope.loginModal.remove();

@@ -1,7 +1,9 @@
 'use strict'
 
 @AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal) ->
+  console.log 'rootScope.showLevelupModal: ', $rootScope.showLevelupModal
   $scope.levelUp = {}
+  $rootScope.showLevelupModal = false
 
   $ionicModal.fromTemplateUrl "templates/shared/login.html", (modal) ->
     $scope.loginModal = modal
@@ -21,20 +23,15 @@
     $scope.levelupModal.show()
 
   $scope.closeModal = ->
-    $scope.levelupModal.remove()
-    # $scope.levelupModal.hide()
+    $scope.levelupModal.hide()
+    $rootScope.showLevelupModal = false
 
   $rootScope.$on 'event:levelup', (event, args) ->
-    console.log "event, args", event, args
-    # $scope.levelUp.image     = args.image
-    # $scope.levelUp.prev_rank = args.prev_rank
-    # $scope.levelUp.rank      = args.rank
-    # if $scope.levelupModal
-    #   $scope.levelupModal.show()
-
-  # $rootScope.$on 'event:levelup:close', (ev) ->
-  #   if $scope.levelupModal
-  #     $scope.levelupModal.hide()
+    $scope.levelUp.image     = args.image
+    $scope.levelUp.prev_rank = args.prev_rank
+    $scope.levelUp.rank      = args.rank
+    if $scope.levelupModal and $rootScope.showLevelupModal
+      $scope.levelupModal.show()
 
   $scope.$on "$destroy", ->
     $scope.loginModal.remove()
