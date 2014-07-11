@@ -49,8 +49,7 @@
           badge: 0,
           json: JSON.stringify({
             'type': 'full'
-          }),
-          autoCancel: true
+          })
         };
         return this.addAlert(alert);
       },

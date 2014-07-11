@@ -14,7 +14,7 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationService) {
     var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.notificationID = 0;
@@ -35,25 +35,14 @@
       });
     };
     return $ionicPlatform.ready(function() {
-      if (window.plugin) {
-        window.plugin.notification.local.onclick = function(id, state, json) {
-          alert("ONCLICK id: " + id + ", state: " + state + ", json: " + json);
-          return console.log("ONCLICK id: " + id + ", state: " + state + ", json: " + json);
-        };
-        window.plugin.notification.local.ontrigger = function(id, state, json) {
-          alert("ONTRIGGER id: " + id + ", state: " + state + ", json: " + json);
-          return console.log("ONTRIGGER id: " + id + ", state: " + state + ", json: " + json);
-        };
-      }
       if (window.StatusBar) {
         StatusBar.styleLightContent();
       }
       if (window.plugin) {
-        window.plugin.notification.local.onclick = function(id, state, json) {
-          return alert("id: " + id + ", state: " + state + ", json: " + json);
-        };
-        return window.plugin.notification.local.ontrigger = function(id, state, json) {
-          return alert("id: " + id + ", state: " + state + ", json: " + json);
+        return window.plugin.notification.local.onclick = function(id, state, json) {
+          var parsedJson;
+          parsedJson = JSON.parse(json);
+          return alert("id: " + id + ", state: " + state + ", json: " + parsedJson);
         };
       }
     });

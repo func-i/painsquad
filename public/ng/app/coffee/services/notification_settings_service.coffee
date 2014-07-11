@@ -48,13 +48,12 @@
 
     setTestAlert: ->
       alert =
-        id:         $rootScope.notificationID.toString()
-        date:       moment().add('s', 15)
-        message:    'Headquarters has just assigned you a case!'
-        repeat:     'daily'
-        badge:      0
-        json:       JSON.stringify({'type': 'full'})
-        autoCancel: true
+        id:      $rootScope.notificationID.toString()
+        date:    moment().add('s', 15)
+        message: 'Headquarters has just assigned you a case!'
+        repeat:  'daily'
+        badge:   0
+        json:    JSON.stringify({'type': 'full'})
       @addAlert(alert)
 
     addAlert: (alert) ->
