@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $state, $ionicModal, NotificationService, NotificationSettingsService) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, NotificationService, NotificationSettingsService) ->
   $scope.levelUp = {}
 
   $ionicModal.fromTemplateUrl "templates/shared/login.html", (modal) ->
@@ -34,4 +34,4 @@
   #   if window.cordova
   #     NotificationSettingsService.handleClick(id, state, json)
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', 'NotificationService', 'NotificationSettingsService' ]
