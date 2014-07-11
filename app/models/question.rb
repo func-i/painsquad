@@ -10,6 +10,9 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  identifier    :string(255)
+#  extremes      :string(255)
+#  tag           :string(255)
+#  report_label  :string(255)
 #
 
 class Question < ActiveRecord::Base

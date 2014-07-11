@@ -25,12 +25,12 @@
         ]
       });
     };
-    init = function($rootScope) {
+    init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();
       }
     };
-    return init($rootScope);
+    return init();
   });
 
   this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];

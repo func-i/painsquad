@@ -1,9 +1,14 @@
+@media (min-width: 680px) {
+  #fullscreen {
+    top:    0 !important;
+    bottom: 0 !important;
+    left:   0 !important;
+    right:  0 !important;
+    width:  100% !important;
+  }
+}
+
 .modal {
-  top:    0;
-  bottom: 0;
-  left:   0;
-  right:  0;
-  width:  100%;
 
   .modal-inherit {
     @extend .survey;

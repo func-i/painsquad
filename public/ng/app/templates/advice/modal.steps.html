@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal" id="fullscreen">
 
   <ion-header-bar class="bar bar-header bar-positive">
     <button class="button button-icon ion-ios7-arrow-back" ng-click="modal.hide()">
@@ -21,7 +21,7 @@
       <div class="header" ng-hide="nestedSelection.section"><span>How To Play</span></div>
 
       <div class="image-block" ng-show="nestedSelection.image">
-        <img ng-src="./images/advice/nested/{{ nestedSelection.image }}.png">
+        <img ng-src="./images/advice/nested/{{ nestedSelection.image || 'yoga_tree' }}.png">
       </div>
       <div class="list-wrapper">
         <ol>
