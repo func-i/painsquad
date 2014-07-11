@@ -1,9 +1,9 @@
 'use strict'
 
 @HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) ->
-  $scope.currentUser = UserService.currentUser()
-  $scope.userScore   = userScore
-  $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
+  $scope.currentUser         = UserService.currentUser()
+  $scope.userScore           = userScore
+  $scope.rankBadge           = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
   $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->
@@ -23,11 +23,11 @@
         }
       ]
 
-  init = ($rootScope) ->
+  init = ->
     # only show popup after transitioning from survey_complete
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
-  init($rootScope)
+  init()
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']

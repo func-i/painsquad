@@ -3,7 +3,7 @@ module Api
     class ActivitiesController < ApplicationController
 
       def create
-        @activity = Activity.new(activity_params)
+        @activity      = Activity.new(activity_params)
         @activity.user = @user
         if @activity.save
           render json: @activity

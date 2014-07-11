@@ -31,8 +31,4 @@ class Submission < ActiveRecord::Base
   validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
 
-  def print_tree
-    SubmissionSerializer.new(self).to_json
-  end
-
 end

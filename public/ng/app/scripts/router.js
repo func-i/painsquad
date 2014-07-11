@@ -1,31 +1,10 @@
 (function() {
   'use strict';
-  var interceptor;
-
-  interceptor = function($q, $injector) {
-    var error, success;
-    success = function(response) {
-      return response;
-    };
-    error = function(response) {
-      if (response.status === 401) {
-        $injector.get("$state").transitionTo("app.login");
-        return $q.reject(response);
-      } else {
-        return $q.reject(response);
-      }
-    };
-    return function(promise) {
-      return promise.then(success, error);
-    };
-  };
-
-  interceptor.$inject = ['$q', '$injector'];
-
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $httpProvider.responseInterceptors.push(interceptor);
+    $httpProvider.responseInterceptors.push('AuthInterceptor');
+    $httpProvider.responseInterceptors.push('RankInterceptor');
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {

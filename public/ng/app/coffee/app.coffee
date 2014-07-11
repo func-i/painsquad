@@ -21,11 +21,11 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, $timeout, NetworkService, NotificationSettingsService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
+  $rootScope.$state          = $state
+  $rootScope.$stateParams    = $stateParams
 
-  $rootScope.$state       = $state
-  $rootScope.$stateParams = $stateParams
   # helper to provide $state.back() method * won't work when page is reloaded
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
     $rootScope.previousState_name   = fromState.name
