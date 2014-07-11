@@ -28,13 +28,25 @@
     }
   }
 
-  .rank {
-    margin-top:   10px;
-    width:        175px;
-    display:      block;
-    margin-left:  auto;
-    margin-right: auto;
+  .radial-wrapper {
+    position: relative;
+    margin: 20px auto;
+
+    .radial {
+      position: absolute;
+      top:      -20%;
+      left:     13%;
+    }
+
+    .rank {
+      margin-top:   10px;
+      width:        175px;
+      display:      block;
+      margin-left:  auto;
+      margin-right: auto;
+    }
   }
+
 
   .action {
     margin-top: 20px;

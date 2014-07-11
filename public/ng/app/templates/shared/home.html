@@ -20,7 +20,20 @@
       </span>
     </section>
 
-    <img class="rank" ng-src="{{rankBadge}}"></img>
+    <div class="radial-wrapper">
+      <img class="rank" ng-src="{{rankBadge}}"></img>
+      <div class="radial">
+        <div
+          round-progress
+          max="100"
+          current="50"
+          color="#D12D4E"
+          bgcolor="#C7DBEA"
+          radius="100"
+          stroke="20">
+        </div>
+      </div>
+    </div>
 
     <!--
     <div class="radial-wrapper">
