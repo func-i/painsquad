@@ -6,18 +6,9 @@
     $scope.logout = function() {
       return AuthService.logout();
     };
-    $scope.debugNotifications = function() {
-      if (window.plugin) {
-        return NotificationService.getScheduledIds($scope).then(function(data) {
-          return console.log(data);
-        });
-      } else {
-        return console.log('cannot debug in browser');
-      }
-    };
     $scope.setNotifications = function() {
       if (window.plugin) {
-        return NotificationSettingsService.setDefaultNotifications();
+        return NotificationSettingsService.setTestAlert();
       }
     };
     return $scope.clearAll = function() {

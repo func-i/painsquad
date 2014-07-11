@@ -7,16 +7,9 @@
   $scope.logout = ->
     AuthService.logout()
 
-  $scope.debugNotifications = ->
-    if window.plugin
-      NotificationService.getScheduledIds($scope).then (data) ->
-        console.log data
-    else
-      console.log 'cannot debug in browser'
-
   $scope.setNotifications = ->
     if window.plugin
-      NotificationSettingsService.setDefaultNotifications()
+      NotificationSettingsService.setTestAlert()
 
   $scope.clearAll = ->
     if window.plugin

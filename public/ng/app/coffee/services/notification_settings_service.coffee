@@ -1,46 +1,78 @@
-# 'use strict'
+@NotificationSettingsService = @serviceModule.factory 'NotificationSettingsService', ($rootScope, $state, $q, NotificationService, moment) ->
 
-@NotificationSettingsService = @serviceModule.factory 'NotificationSettingsService', ($rootScope, $state, $q, NotificationService) ->
+  # TODO:
+  # need follow-up alerts after the initial morning/evening alerts are triggered
+  # these happen 1 hour after the initial one and have the truncated type
 
-    # setDefaultNotifications: ->
-    #   # 8:30 am
-    #   morningAlert     = `new Date().setHours(8, 30, 00, 000)`
-    #   morningRepeatOne = `new Date().setHours(8, 45, 00, 000)`
-    #   morningRepeatTwo = `new Date().setHours(9, 00, 00, 000)`
-    #   # 6:30 pm
-    #   eveningAlert     = `new Date().setHours(18, 30, 00, 000)`
-    #   eveningRepeatOne = `new Date().setHours(18, 45, 00, 000)`
-    #   eveningRepeatTwo = `new Date().setHours(19, 00, 00, 000)`
-    #   dates = [morningAlert, morningRepeatOne, morningRepeatTwo, eveningAlert, eveningRepeatOne, eveningRepeatTwo]
-    #   for date, index in dates
-    #     @addAlert(date, index)
+  morningAlert =
+    id:         $rootScope.notificationID.toString()
+    message:    'Headquarters has just assigned you a case!'
+    repeat:     'daily'
+    date:       `new Date().setHours(8, 30, 00, 000)`
+    json:       JSON.stringify({'type': 'full'})
+    autoCancel: false
 
-    setDefaultNotifications: ->
-      now = new Date()
-      now.setSeconds(now.getSeconds() + 15)
-      @addAlert(now, 0)
+  eveningAlert =
+    id:         $rootScope.notificationID.toString()
+    message:    'Headquarters has just assigned you a case!'
+    repeat:     'daily'
+    date:       `new Date().setHours(18, 30, 00, 000)`
+    json:       JSON.stringify({'type': 'full'})
+    autoCancel: false
 
-    addAlert: (date, index) ->
-      note = NotificationService.add
-        id:         index.toString()
+
+    defaultAlert: (submittedTime) ->
+      return item =
+        id:      $rootScope.notificationID.toString()
+        message: 'Headquarters has just assigned you a case!'
+        repeat:  'none'
+        date:    submittedTime
+
+
+    setDefaults: ->
+      for alert in [morningAlert, eveningAlert]
+        @addAlert(alert)
+
+# window.plugin.notification.local.add({
+#     id:         String,  // A unique id of the notifiction
+#     date:       Date,    // This expects a date object
+#     message:    String,  // The message that is displayed
+#     title:      String,  // The title of the message
+#     repeat:     String,  // Either 'secondly', 'minutely', 'hourly', 'daily', 'weekly', 'monthly' or 'yearly'
+#     badge:      Number,  // Displays number badge to notification
+#     sound:      String,  // A sound to be played
+#     json:       String,  // Data to be passed through the notification
+#     autoCancel: Boolean, // Setting this flag and the notification is automatically canceled when the user clicks it
+#     ongoing:    Boolean, // Prevent clearing of notification (Android only)
+# }, callback, scope);
+
+    setTestAlert: ->
+      alert =
+        id:         $rootScope.notificationID.toString()
+        date:       moment().add('s', 15)
         message:    'Headquarters has just assigned you a case!'
         repeat:     'daily'
-        date:       date
         badge:      0
         json:       JSON.stringify({'type': 'full'})
-        autoCancel: false
+        autoCancel: true
+      @addAlert(alert)
 
-    # addAlerts: (datesArray) ->
-    #   id =  0
-    #   for dateElement in datesArray
-    #     NotificationService.add
-    #       id:      id
-    #       message: 'Headquarters has just assigned you a case!'
-    #       repeat:  'daily'
-    #       date:    dateElement
-    #       badge:   0
-    #       json:    JSON.stringify({type: 'full'})
-    #     , $rootScope
-    #     id++
+    addAlert: (alert) ->
+      NotificationService.add(alert).then ->
+        @iterateID()
 
-@NotificationSettingsService.$inject = [ '$rootScope', '$state', '$q', 'NotificationService' ]
+    addFollowupAlert: (currentTime) ->
+      console.log priorAlert
+
+    iterateID: ->
+      $rootScope.notificationID++
+
+    handleClick: (id, state, json) ->
+      parsedJson = JSON.parse(json)
+      alert("Debugging onclick event, id: #{id}, state: #{state}, json: #{parsedJson}")
+      # $state.go('app.new_survey_by_type', type: parsedJson.type)
+      # if parsedJson.type is 'full'
+      #   alert = @defaultAlert(moment().add('h', 1))
+      #   @addFollowupAlert(alert)
+
+@NotificationSettingsService.$inject = [ '$rootScope', '$state', '$q', 'NotificationService', 'moment' ]

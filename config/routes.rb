@@ -6,7 +6,10 @@ PainSquadApi::Application.routes.draw do
       resources :submissions
       resources :favorites, only: [:index, :create, :destroy]
 
-      resource :surveys
+      resource :surveys do
+        member { get 'full'; get 'truncated'; }
+      end
+
       resource :survey_results
       resource :achievements
       resource :activity

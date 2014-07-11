@@ -23,6 +23,7 @@
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
+  $rootScope.notificationID  = 0
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 
@@ -45,6 +46,16 @@
         console.log err
 
   $ionicPlatform.ready ->
+    if window.plugin
+      window.plugin.notification.local.onclick = (id, state, json) ->
+        alert "ONCLICK id: #{id}, state: #{state}, json: #{json}"
+        console.log "ONCLICK id: #{id}, state: #{state}, json: #{json}"
+
+      window.plugin.notification.local.ontrigger = (id, state, json) ->
+        alert "ONTRIGGER id: #{id}, state: #{state}, json: #{json}"
+        console.log "ONTRIGGER id: #{id}, state: #{state}, json: #{json}"
+
+
     # if window.cordova and window.cordova.plugins.Keyboard
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
@@ -58,5 +69,16 @@
       StatusBar.styleLightContent()
 
     if window.plugin
+      # NotificationSettingsService.setDefaults()
+      # NotificationSettingsService.setTestAlert()
+
       window.plugin.notification.local.onclick = (id, state, json) ->
         alert "id: #{id}, state: #{state}, json: #{json}"
+
+      window.plugin.notification.local.ontrigger = (id, state, json) ->
+        alert "id: #{id}, state: #{state}, json: #{json}"
+
+      # parsedJson = JSON.parse(json)
+      # alert("Debugging onclick event, id: #{id}, state: #{state}, json: #{parsedJson}")
+
+        # NotificationSettingsService.handleClick(id, state, json)

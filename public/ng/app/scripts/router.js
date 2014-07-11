@@ -42,7 +42,7 @@
         }
       }
     }).state('app.new_survey', {
-      url: '/surveys/new',
+      url: '/surveys/new/',
       views: {
         menuContent: {
           templateUrl: 'templates/surveys/main.html',
@@ -52,6 +52,26 @@
               var defer;
               defer = $q.defer();
               Survey.query(function(response) {
+                return defer.resolve(response.survey);
+              });
+              return defer.promise;
+            }
+          }
+        }
+      }
+    }).state('app.new_survey_by_type', {
+      url: '/surveys/new/:type',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/surveys/main.html',
+          controller: 'SurveyCtrl',
+          resolve: {
+            survey: function(Survey, $q, $stateParams) {
+              var defer;
+              defer = $q.defer();
+              Survey.query({
+                type: $stateParams.type
+              }, function(response) {
                 return defer.resolve(response.survey);
               });
               return defer.promise;
