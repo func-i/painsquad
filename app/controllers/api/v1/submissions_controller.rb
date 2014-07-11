@@ -11,7 +11,8 @@ module Api
         @submission      = Submission.new(submission_params)
         @submission.user = @user
         if @submission.save
-          render json: @submission
+          # uses custom response serializer to intercept level_up event for client modal
+          render json: @submission, serializer: ActivitySerializer
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
         end

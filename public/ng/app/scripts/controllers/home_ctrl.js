@@ -6,10 +6,6 @@
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
     $rootScope.sideMenuEnabled = true;
-    console.log('rootScope.showLevelupModal: ', $rootScope.showLevelupModal);
-    $scope.$on("$destroy", function() {
-      return $rootScope.$broadcast('event:levelup:close');
-    });
     $scope.showPopup = function() {
       var confirmPopup;
       return confirmPopup = $ionicPopup.show({
@@ -31,15 +27,7 @@
     };
     init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
-        $scope.showPopup();
-      }
-      if ($scope.userScore && $scope.userScore.has_ranked_up) {
-        $rootScope.$broadcast('event:levelup', {
-          image: $scope.userScore.rank,
-          prev_rank: $scope.userScore.prev_rank,
-          rank: $scope.userScore.display_rank
-        });
-        return $rootScope.showLevelupModal = true;
+        return $scope.showPopup();
       }
     };
     return init();

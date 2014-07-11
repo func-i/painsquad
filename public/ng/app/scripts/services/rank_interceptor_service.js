@@ -4,7 +4,6 @@
     var error, success;
     success = function(response, b) {
       if (response && response.data.activity && response.data.activity.show_level_up_modal) {
-        $rootScope.showLevelupModal = true;
         $rootScope.$broadcast('event:levelup', {
           image: response.data.activity.rank,
           prev_rank: response.data.activity.prev_rank,
