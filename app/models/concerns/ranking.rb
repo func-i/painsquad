@@ -27,15 +27,15 @@ module Ranking
   end
 
   def calculate_percent_complete
-    ((self.score - lower_threshold).to_f / (upper_threshold - lower_threshold)) * 100
+    ((self.score - lower_threshold).to_f / (upper_threshold - lower_threshold).to_f) * 100
   end
 
   def percent_completed
-    calculate_percent_complete.zero? ? 0.6 : calculate_percent_complete
+    calculate_percent_complete < 0 ? 0.6 : calculate_percent_complete
   end
 
   def points_for_next_rank
-    upper_threshold - score
+    upper_threshold.zero? ? 0 : upper_threshold - score
   end
 
   def upper_threshold
