@@ -1,10 +1,11 @@
 (function() {
   'use strict';
   this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, AudioPlayer, Favorites, Activity) {
-    var closeModal, reset, setHeaderButtons;
+    var closeModal, resetState, setHeaderButtons;
     $scope.selectedItem = {};
     $scope.showInit = true;
     $scope.player = AudioPlayer;
+    $scope.mediaPlaying = false;
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
     }, {
@@ -61,12 +62,23 @@
       $scope.player.play();
       return $scope.mediaPlaying = true;
     };
+    $scope.stopAudio = function() {
+      $scope.player.stop();
+      return $scope.mediaPlaying = false;
+    };
     $scope.discardAdvice = function() {
       return closeModal();
     };
+    $scope.$watch((function() {
+      return AudioPlayer.progress;
+    }), (function(newVal, oldVal) {
+      console.log(newVal);
+      return console.log(oldVal);
+    }), true);
     closeModal = function() {
       $scope.modal.hide();
-      return reset();
+      $scope.stopAudio();
+      return resetState();
     };
     setHeaderButtons = function(item) {
       if (item.style === 'slideshow') {
@@ -75,7 +87,7 @@
         return $scope.showDidItButton = true;
       }
     };
-    return reset = function() {
+    return resetState = function() {
       $scope.slideShowActivated = null;
       $scope.modalStyle = null;
       $scope.showStartButton = null;

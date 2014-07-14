@@ -4,6 +4,8 @@
   $scope.selectedItem = {}
   $scope.showInit     = true
   $scope.player       = AudioPlayer
+  $scope.mediaPlaying = false
+  # $scope.progress     = if $scope.player.progress() then $scope.player.progress() else 0.5
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
@@ -36,7 +38,6 @@
   $scope.slideChange = (index) ->
     $scope.slideIndex = index
 
-  # TODO: only allow bonus points if completed after a valid submission, prevent cheating!
   $scope.adviceCompleted = ->
     Activity.save(activity: { subject_id: $scope.selectedItem.id, subject_type: 'Recommendation', event: 'recommendation_complete' })
     closeModal()
@@ -44,23 +45,35 @@
   $scope.initAudio = (src) ->
     $scope.player.initAudio(src)
     $scope.player.play()
-    $scope.showInit = false
+    $scope.showInit     = false
     $scope.mediaPlaying = true
 
-  $scope.pauseAudio = () ->
+  $scope.pauseAudio = ->
     $scope.player.pause()
     $scope.mediaPlaying = false
 
-  $scope.resumeAudio = () ->
+  $scope.resumeAudio = ->
     $scope.player.play()
     $scope.mediaPlaying = true
+
+  $scope.stopAudio = ->
+    $scope.player.stop()
+    $scope.mediaPlaying = false
 
   $scope.discardAdvice = ->
     closeModal()
 
+  $scope.$watch (->
+    AudioPlayer.progress
+  ), ((newVal, oldVal) ->
+    console.log newVal
+    console.log oldVal
+  ), true
+
   closeModal = ->
     $scope.modal.hide()
-    reset()
+    $scope.stopAudio()
+    resetState()
 
   setHeaderButtons = (item) ->
     if item.style is 'slideshow'
@@ -68,7 +81,7 @@
     else
       $scope.showDidItButton = true
 
-  reset = ->
+  resetState = ->
     $scope.slideShowActivated = null
     $scope.modalStyle         = null
     $scope.showStartButton    = null

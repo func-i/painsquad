@@ -234,21 +234,23 @@
       }
 
       .audio-block {
-        height: 100px;
-        margin: 20px;
+        position:     relative;
+        width:        200px;
+        height:       200px;
+        display:      block;
+        margin-left:  auto;
+        margin-right: auto;
 
-        #bar {
-          margin: 10px;
-          background-color: gray;
-          border-radius:    13px;
-          height:           5px;
+        .round-progress {
+          position: absolute;
+          top:      20px;
+          left:     30px;
+        }
 
-          div {
-            background-color: $royal;
-            transition:       0.2s ease-in-out;
-            height:           inherit;
-            border-radius:    10px;
-          }
+        .button {
+          position: absolute;
+          top:      67px;
+          left:     80px;
         }
       }
 
