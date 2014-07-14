@@ -11,8 +11,7 @@
   'ngResource',
   'underscore',
   'angularMoment',
-  'googlechart',
-  'angular-svg-round-progress'
+  'googlechart'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

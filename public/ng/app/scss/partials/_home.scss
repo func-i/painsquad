@@ -4,12 +4,11 @@
   .transparent-header {
     height:           60px;
     color:            white;
-    background-color: rgba(0, 0, 0, 0.2);
 
     span {
       padding:        10px;
       display:        inline-block;
-      font-size:      10px;
+      font-size: 8px;
       font-weight:    bold;
       text-transform: uppercase;
 
@@ -28,41 +27,28 @@
     }
   }
 
-  .radial-wrapper {
-    position: relative;
-    margin: 20px auto;
+  .body-wrapper {
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
 
-    .radial {
-      position: absolute;
-      top:      -20%;
-      left:     13%;
-    }
+    .action {
+      margin-top: 20px;
 
-    .rank {
-      margin-top:   10px;
-      width:        175px;
-      display:      block;
-      margin-left:  auto;
-      margin-right: auto;
-    }
-  }
-
-
-  .action {
-    margin-top: 20px;
-
-    button {
-      text-align: center;
-      position: relative;
-      display: block;
-      img {
-        position:      absolute;
-        height:        70%;
-        border:        2px solid white;
-        border-radius: 20px;
-        right:         10px;
-        top:           6px;
+      button {
+        text-align: center;
+        position: relative;
+        display: block;
+        img {
+          position:      absolute;
+          height:        70%;
+          border:        2px solid white;
+          border-radius: 20px;
+          right:         10px;
+          top:           6px;
+        }
       }
     }
+
   }
+
 }

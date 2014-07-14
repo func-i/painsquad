@@ -5,6 +5,7 @@
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
+    $scope.progress = userScore ? 100 * (userScore.score / userScore.points_for_next_rank) : 0;
     $rootScope.sideMenuEnabled = true;
     $scope.showPopup = function() {
       var confirmPopup;

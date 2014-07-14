@@ -4,6 +4,7 @@
   $scope.currentUser         = UserService.currentUser()
   $scope.userScore           = userScore
   $scope.rankBadge           = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
+  $scope.progress            = if userScore then 100 * (userScore.score / userScore.points_for_next_rank) else 0
   $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->

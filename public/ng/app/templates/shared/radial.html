@@ -1,14 +1,35 @@
-<svg class="round-progress" xmlns="http://www.w3.org/2000/svg"
-  round-progress=""
+<img class="rank" ng-src="{{rankBadge}}"></img>
+<svg
+  class="round-progress"
+  xmlns="http://www.w3.org/2000/svg"
+  round-progress
   max="100"
-  current="50"
+  current="progress"
   color="#D12D4E"
   bgcolor="#C7DBEA"
   radius="100"
-  stroke="20"
-  width="240"
-  height="240"
+  stroke="16"
+  width="232"
+  height="232"
+  semi="false"
   style="overflow: hidden;">
-    <circle fill="none" cx="100" cy="100" transform="translate(20, 20)" r="100" stroke="#C7DBEA" stroke-width="20"></circle>
-    <path fill="none" stroke="#D12D4E" stroke-width="20" transform="" d="M 120.00008726646257 219.99999999996191 A 100 100 0 0 0 120 20"></path>
+
+    <circle
+      fill="none"
+      cx="100"
+      cy="100"
+      transform="translate(16, 16)"
+      r="100"
+      stroke="#C7DBEA"
+      stroke-width="16">
+    </circle>
+
+    <path
+      fill="black"
+      stroke="#D12D4E"
+      stroke-width="16"
+      stroke-antialiasing="true"
+      d="M 188.89690694824924 184.45466351811461 A 100 100 0 0 0 116 16">
+    </path>
+
 </svg>
