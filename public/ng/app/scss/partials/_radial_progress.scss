@@ -20,12 +20,12 @@ $circle-fill: #D12D4E;
   .line-left, .line-right {
     position: absolute;
     height:   20px;
-    width:    45px;
+    width:    30px;
     top:      -42px;
   }
 
   .line-left {
-    left:         71px;
+    left:         86px;
     border-top:   2px solid $circle-bg;
     border-right: 4px solid $circle-bg;
   }
