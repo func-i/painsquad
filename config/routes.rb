@@ -29,6 +29,8 @@ PainSquadApi::Application.routes.draw do
     put :password, on: :member
   end
 
+  # root to: 'admin#home'
+
   # resources :session, only: [:new, :create, :destroy]
   # resources :users
 

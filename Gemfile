@@ -32,7 +32,7 @@ group :development do
   gem 'quiet_assets',       '~> 1.0.2'
   gem 'better_errors',      '~> 1.1.0'
   gem 'binding_of_caller',  '~> 0.7.2'
-  gem 'annotate',           '~> 2.6.3'
+  gem 'annotate',           '~> 2.6.5'
 end
 
 group :test do

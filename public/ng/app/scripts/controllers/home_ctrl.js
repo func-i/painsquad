@@ -5,6 +5,7 @@
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
+    $scope.progress = userScore ? userScore.percent_completed : 1;
     $rootScope.sideMenuEnabled = true;
     $scope.showPopup = function() {
       var confirmPopup;
@@ -25,12 +26,13 @@
         ]
       });
     };
-    init = function($rootScope) {
+    init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();
       }
     };
-    return init($rootScope);
+    init();
+    return console.log("$scope.progress: " + $scope.progress);
   });
 
   this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];

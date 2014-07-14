@@ -31,4 +31,8 @@ class Activity < ActiveRecord::Base
     subject_type == 'Recommendation'
   end
 
+  def level_up?
+    event == 'level_up'
+  end
+
 end

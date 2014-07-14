@@ -1,0 +1,69 @@
+.modal#levelup {
+  top:      15%;
+  left:     3%;
+  width:    94%;
+  overflow: initial;
+  text-align: center;
+
+  ion-content {
+    overflow: initial;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    .close-icon {
+      position: absolute;
+      font-size: 20px;
+    }
+
+  }
+
+  .circle-wrapper {
+    position: relative;
+    z-index:  15;
+    overflow: visible;
+
+    .circle {
+      position:         absolute;
+      top:              -5px;
+      right:            -5px;
+      width:            30px;
+      height:           30px;
+      border-radius:    30px;
+      border:           2px solid white;
+      color:            white;
+      text-align:       center;
+      font-weight:      100;
+      font-size:        20px;
+      line-height:      25px;
+      background-color: $assertive;
+    }
+  }
+
+  .header {
+    @extend .gray-diagonal;
+    border-top:  7px solid $red-two;
+    height:      50px;
+    text-align:  center;
+    color:       $red-two;
+    font-size:   16px;
+    font-weight: bold;
+    padding:     10px;
+  }
+
+  img {
+    margin: 15px 0;
+    width: 120px;
+  }
+
+  p {
+    margin:     0 auto;
+    padding:    10px;
+    text-align: center;
+  }
+
+  .button {
+    width:       75%;
+    margin-left: 12%;
+  }
+}

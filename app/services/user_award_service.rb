@@ -41,4 +41,5 @@ class UserAwardService
     return unless name && event
     Activity.create(subject: @user, user: @user, name: name, event: event)
   end
+
 end

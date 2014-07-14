@@ -1,22 +1,9 @@
 'use strict'
 
-interceptor = ($q, $injector) ->
-  success = (response) ->
-    response
-  error = (response) ->
-    if response.status is 401
-      $injector.get("$state").transitionTo "app.login"
-      $q.reject response
-    else
-      $q.reject response
-  (promise) ->
-    promise.then success, error
-
-interceptor.$inject = ['$q', '$injector']
-
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  $httpProvider.responseInterceptors.push(interceptor)
+  $httpProvider.responseInterceptors.push('AuthInterceptor')
+  $httpProvider.responseInterceptors.push('RankInterceptor')
   $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'

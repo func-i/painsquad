@@ -22,7 +22,7 @@
 @configModule     = angular.module 'painSquad.config', []
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
-  $rootScope.sideMenuEnabled = true
+  $rootScope.sideMenuEnabled  = true
 
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
