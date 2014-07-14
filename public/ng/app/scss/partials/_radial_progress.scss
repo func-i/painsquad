@@ -5,6 +5,9 @@
 // $overlay-color: transparent;
 // $bg-color:      #2f3439;
 
+$circle-bg: #C7DBEA;
+$circle-fill: #D12D4E;
+
 
 .home .radial-wrapper {
   position:     relative;
@@ -14,24 +17,35 @@
   margin-left:  auto;
   margin-right: auto;
 
-  img.rank {
+  .line-left, .line-right {
+    position: absolute;
+    height:   20px;
+    width:    45px;
+    top:      -42px;
+  }
+
+  .line-left {
+    left:         71px;
+    border-top:   2px solid $circle-bg;
+    border-right: 4px solid $circle-bg;
+  }
+
+  .line-right {
+    left:        116px;
+    border-top:  2px solid $circle-fill;
+    border-left: 4px solid $circle-fill;
+  }
+
+  img {
+    position: absolute;
     width: 165px;
     display: block;
+    top:      -4px;
+    left:     33px;
   }
 
-  .radial {
+  svg {
     position: absolute;
-
-    img {
-      position: absolute;
-      top:      -4px;
-      left:     33px;
-    }
-
-    svg {
-      position: absolute;
-      top:      -35px;
-    }
+    top: -35px;
   }
-
 }

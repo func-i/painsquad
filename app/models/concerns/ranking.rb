@@ -6,7 +6,7 @@ module Ranking
   end
 
   def has_ranked_up
-    return true if self.activities.last.event == 'level_up'
+    return true if self.activities.last.level_up?
   end
 
   def display_rank(submitted_rank = nil)
@@ -26,17 +26,27 @@ module Ranking
     self[:rank] == 5
   end
 
-  def points_for_next_rank
-    points_needed = 0
-    User::LEVELS.each do |level|
-      if score < level
-        return points_needed = level - score
-      end
-    end
-    points_needed
+  def calculate_percent_complete
+    ((self.score - lower_threshold).to_f / (upper_threshold - lower_threshold)) * 100
   end
 
-  # iterates through level thresholds, levels User if threshold crossed
+  def percent_completed
+    calculate_percent_complete.zero? ? 0.6 : calculate_percent_complete
+  end
+
+  def points_for_next_rank
+    upper_threshold - score
+  end
+
+  def upper_threshold
+    User::LEVELS.select { |i| i > self.score }.first || 0
+  end
+
+  def lower_threshold
+    User::LEVELS.select { |i| i <= self.score }.last || 0
+  end
+
+  # iterates through level thresholds, increases rank if threshold crossed
   def update_user_ranking
     return if last_rank? || self.changes[:score].nil? || self.changes[:rank].present?
     old_score, new_score = self.changes[:score]

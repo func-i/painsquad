@@ -5,7 +5,7 @@
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
-    $scope.progress = userScore ? 100 * (userScore.score / userScore.points_for_next_rank) : 0;
+    $scope.progress = userScore ? userScore.percent_completed : 1;
     $rootScope.sideMenuEnabled = true;
     $scope.showPopup = function() {
       var confirmPopup;
@@ -31,7 +31,8 @@
         return $scope.showPopup();
       }
     };
-    return init();
+    init();
+    return console.log("$scope.progress: " + $scope.progress);
   });
 
   this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];

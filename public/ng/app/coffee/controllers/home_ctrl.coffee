@@ -4,7 +4,7 @@
   $scope.currentUser         = UserService.currentUser()
   $scope.userScore           = userScore
   $scope.rankBadge           = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
-  $scope.progress            = if userScore then 100 * (userScore.score / userScore.points_for_next_rank) else 0
+  $scope.progress            = if userScore then userScore.percent_completed else 1
   $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->
@@ -30,5 +30,6 @@
       $scope.showPopup()
 
   init()
+  console.log "$scope.progress: #{$scope.progress}"
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']
