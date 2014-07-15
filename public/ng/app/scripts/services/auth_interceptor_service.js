@@ -10,6 +10,7 @@
         $injector.get("$state").transitionTo("app.login");
         return $q.reject(response);
       } else {
+        $injector.get("$state").transitionTo("app.login");
         return $q.reject(response);
       }
     };

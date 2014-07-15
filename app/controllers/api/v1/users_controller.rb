@@ -4,7 +4,11 @@ module Api
       skip_before_action :restrict_access, only: [:create]
 
       def index
-        render json: present_user
+        if present_user
+          render json: present_user
+        else
+          render json: nil, status: 404
+        end
       end
 
       def create

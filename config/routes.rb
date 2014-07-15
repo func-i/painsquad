@@ -31,14 +31,4 @@ PainSquadApi::Application.routes.draw do
 
   get :admin, to: 'users#index'
 
-  # root to: 'users#index'
-
-  # resources :session, only: [:new, :create, :destroy]
-  # resources :users
-
-  # get  "signup", to: "users#new",        as: :signup
-  # post "login",  to: "sessions#create",  as: :create_session
-  # get  "login",  to: "sessions#new",     as: :login
-  # get  "logout", to: "sessions#destroy", as: :logout
-
 end
