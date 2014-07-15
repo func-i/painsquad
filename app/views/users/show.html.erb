@@ -18,5 +18,5 @@
 </table>
 
 <%= link_to 'Edit', edit_user_path(@user), class: 'button tiny radius' %>
-<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius alert' %>
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius' %>
 <%= link_to 'Back', users_path, class: 'button tiny radius alert' %>
