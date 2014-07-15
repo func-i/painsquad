@@ -35,6 +35,9 @@ class User < ActiveRecord::Base
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
 
+  validates :email, presence: true, email: true
+  validates :healthcare_provider_email, presence: true, email: true
+
   validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :star_level,  numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }

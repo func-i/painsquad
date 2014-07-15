@@ -24,12 +24,14 @@ PainSquadApi::Application.routes.draw do
 
   resource :session, only: [:create, :destroy]
 
-  resources :users, only: [:show, :create, :update, :destroy] do
+  resources :users do
     get :current, on: :collection
     put :password, on: :member
   end
 
-  # root to: 'admin#home'
+  get :admin, to: 'users#index'
+
+  # root to: 'users#index'
 
   # resources :session, only: [:new, :create, :destroy]
   # resources :users
