@@ -10,6 +10,9 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li><%= link_to 'Launch Client App', '/', target: '_' %></li>
+      <%- if current_user %>
+        <li><%= link_to 'Logout', :logout, method: :delete %></li>
+      <% end %>
     </ul>
 
   </section>
