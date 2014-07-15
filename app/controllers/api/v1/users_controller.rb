@@ -1,6 +1,6 @@
 module Api
   module V1
-    class UsersController < ApplicationController
+    class UsersController < BaseController
       skip_before_action :restrict_access, only: [:create]
 
       def index

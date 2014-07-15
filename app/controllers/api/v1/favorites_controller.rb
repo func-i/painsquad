@@ -1,6 +1,6 @@
 module Api
   module V1
-    class FavoritesController < ApplicationController
+    class FavoritesController < BaseController
       before_action :fetch_favorite, only: :destroy
 
       def index

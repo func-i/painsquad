@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SubmissionsController < ApplicationController
+    class SubmissionsController < BaseController
       before_action :fetch_submission, only: [:show]
 
       def show

@@ -11,27 +11,36 @@ $circle-fill: #D12D4E;
 
   .line-left, .line-right {
     position: absolute;
-    height:   20px;
+    height:   22px;
     width:    30px;
     top:      -42px;
+    z-index:  5;
   }
 
   .line-left {
     left:         86px;
     border-top:   2px solid $circle-bg;
-    border-right: 4px solid $circle-bg;
+    border-right: 7px solid $circle-bg;
+
+    &.red {
+      // z-index: 0;
+      // border-top:    2px solid $circle-fill;
+      // border-right:  4px solid $circle-fill;
+      // transition:    0.3s linear;
+      // transition: border-top 0.3s linear;
+    }
   }
 
   .line-right {
     left:        116px;
     border-top:  2px solid $circle-fill;
-    border-left: 4px solid $circle-fill;
+    border-left: 7px solid $circle-fill;
   }
 
   img {
     position: absolute;
-    width: 165px;
-    display: block;
+    width:    165px;
+    display:  block;
     top:      -4px;
     left:     33px;
   }
