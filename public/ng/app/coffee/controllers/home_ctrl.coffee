@@ -29,6 +29,9 @@
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
+  $scope.fireEvent = ->
+    $rootScope.$broadcast 'event:adviceAward'
+
   init()
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']

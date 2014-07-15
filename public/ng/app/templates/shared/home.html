@@ -26,8 +26,7 @@
         <div class="line-left"></div>
         <div class="line-right"></div>
         <img class="rank" ng-src="{{rankBadge}}"></img>
-
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <div
           round-progress
           class="round-progress"
           max="100"
@@ -38,34 +37,15 @@
           stroke="16"
           width="232"
           height="232"
-          semi="false"
-          style="overflow: hidden;">
-
-            <circle
-              fill="#C7DBEA"
-              cx="100"
-              cy="100"
-              transform="translate(16, 16)"
-              r="100"
-              stroke="#C7DBEA"
-              stroke-width="16"
-              stroke-linejoin="round"
-              stroke-antialiasing="true">
-            </circle>
-
-            <path
-              fill="#D12D4E"
-              stroke="#D12D4E"
-              stroke-width="16"
-              stroke-antialiasing="true"
-              stroke-linejoin="round"
-              d="M 188.89690694824924 184.45466351811461 A 100 100 0 0 0 116 16">
-            </path>
-
-        </svg>
+          semi="false">
+        </div>
       </div>
 
       <div class="action">
+        <button class="button button-stable override home" ng-click="fireEvent()">
+          Advice Animation
+        </button>
+
         <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
           Start Case
           <img ng-src="./images/buttons/start_case_icon.png">

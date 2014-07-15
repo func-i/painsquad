@@ -1,0 +1,15 @@
+.modal#advice {
+  height:           10%;
+  width:            100%;
+  max-height:       60px;
+  min-height:       60px;
+  top:              75%;
+  text-align:       center;
+  background-color: rgba(42, 169, 211, 0.8);
+  color:            white;
+
+  ion-content {
+    padding: 10px 0;
+  }
+
+}
