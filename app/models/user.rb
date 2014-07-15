@@ -21,6 +21,8 @@
 #  star_level                      :integer          default(0)
 #  commendation                    :boolean          default(FALSE)
 #  medal                           :boolean          default(FALSE)
+#  healthcare_provider_email       :string(255)
+#  admin                           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
