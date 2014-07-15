@@ -11,7 +11,8 @@
   'ngResource',
   'underscore',
   'angularMoment',
-  'googlechart'
+  'googlechart',
+  'angular-progress-arc'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

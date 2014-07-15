@@ -39,5 +39,9 @@ $circle-fill: #D12D4E;
   svg {
     position: absolute;
     top: -35px;
+    circle {
+      transition: stroke-dashoffset 0.3s linear;
+      stroke-linecap: round;
+    }
   }
 }
