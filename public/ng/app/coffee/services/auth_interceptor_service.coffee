@@ -9,6 +9,7 @@
         $injector.get("$state").transitionTo "app.login"
         $q.reject response
       else
+        $injector.get("$state").transitionTo "app.login"
         $q.reject response
     (promise) ->
       promise.then success, error

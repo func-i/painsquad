@@ -1,2 +1,22 @@
-<h3>User</h3>
-<p>Email: <%= @user.email if @user.email %></p>
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user.username %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.created_at %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user), class: 'button tiny radius' %>
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius' %>
+<%= link_to 'Back', users_path, class: 'button tiny radius alert' %>

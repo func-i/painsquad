@@ -31,7 +31,7 @@ module Ranking
   end
 
   def percent_completed
-    calculate_percent_complete < 0 ? 0.6 : calculate_percent_complete
+    calculate_percent_complete <= 0 ? 0.6 : calculate_percent_complete
   end
 
   def points_for_next_rank
