@@ -2,6 +2,7 @@
 
 @AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) ->
   $scope.levelUp = {}
+  $scope.advice  = {}
 
   $ionicModal.fromTemplateUrl 'templates/shared/login.html', (modal) ->
     $scope.loginModal = modal
@@ -34,11 +35,12 @@
     $scope.levelUp.rank      = args.rank
     $scope.levelupModal.show()
 
-  $rootScope.$on 'event:adviceAward', (event, args) ->
+  $rootScope.$on 'event:advice', (event, args) ->
+    $scope.advice.name = args.name
     $scope.adviceModal.show()
     $timeout ->
       $scope.adviceModal.hide()
-    , 1000
+    , 2000
 
   $scope.$on "$destroy", ->
     $scope.loginModal.remove()

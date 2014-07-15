@@ -31,9 +31,6 @@
         return $scope.showPopup();
       }
     };
-    $scope.fireEvent = function() {
-      return $rootScope.$broadcast('event:adviceAward');
-    };
     return init();
   });
 

@@ -2,6 +2,7 @@
   'use strict';
   this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) {
     $scope.levelUp = {};
+    $scope.advice = {};
     $ionicModal.fromTemplateUrl('templates/shared/login.html', function(modal) {
       return $scope.loginModal = modal;
     }, {
@@ -33,11 +34,12 @@
       $scope.levelUp.rank = args.rank;
       return $scope.levelupModal.show();
     });
-    $rootScope.$on('event:adviceAward', function(event, args) {
+    $rootScope.$on('event:advice', function(event, args) {
+      $scope.advice.name = args.name;
       $scope.adviceModal.show();
       return $timeout(function() {
         return $scope.adviceModal.hide();
-      }, 1000);
+      }, 2000);
     });
     return $scope.$on("$destroy", function() {
       $scope.loginModal.remove();
