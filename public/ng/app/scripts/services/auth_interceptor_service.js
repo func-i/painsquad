@@ -6,7 +6,7 @@
       return response;
     };
     error = function(response) {
-      if (response.status === 401) {
+      if (response.status === 401 || response.status === 404) {
         $injector.get("$state").transitionTo("app.login");
         return $q.reject(response);
       } else {
