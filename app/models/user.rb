@@ -26,6 +26,7 @@
 class User < ActiveRecord::Base
   include Ranking
   include PainReporting
+  include AdviceScoring
 
   authenticates_with_sorcery!
   has_one :api_key
@@ -63,11 +64,6 @@ class User < ActiveRecord::Base
 
   def recommendation_count
     activities.recommendation_events.count
-  end
-
-  # TODO: must only allow advice scoring within certain constraints
-  def advice_score_unlocked?
-    true
   end
 
   protected

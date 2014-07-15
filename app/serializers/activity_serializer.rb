@@ -3,7 +3,7 @@ class ActivitySerializer < ActiveModel::Serializer
   attributes :show_advice_modal, :advice_name
 
   def show_advice_modal
-    true
+    object.user.advice_score_unlocked?
   end
 
   def advice_name
