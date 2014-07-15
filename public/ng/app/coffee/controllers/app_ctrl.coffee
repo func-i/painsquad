@@ -3,26 +3,24 @@
 @AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) ->
   $scope.levelUp = {}
 
-  $ionicModal.fromTemplateUrl "templates/shared/login.html", (modal) ->
+  $ionicModal.fromTemplateUrl 'templates/shared/login.html', (modal) ->
     $scope.loginModal = modal
   ,
     scope: $scope
-    animation: "slide-in-up"
+    animation: 'fade-in'
     focusFirstInput: true
 
-  $ionicModal.fromTemplateUrl "templates/shared/levelup.html", (modal) ->
+  $ionicModal.fromTemplateUrl 'templates/shared/levelup.html', (modal) ->
     $scope.levelupModal = modal
   ,
     scope: $scope
-    animation: "slide-in-up"
-    focusFirstInput: true
+    animation: 'nav-title-slide-ios7'
 
-
-  $ionicModal.fromTemplateUrl "templates/shared/advice.html", (modal) ->
+  $ionicModal.fromTemplateUrl 'templates/shared/advice.html', (modal) ->
     $scope.adviceModal = modal
   ,
     scope: $scope
-    animation: "slide-left-right"
+    animation: 'slide-left-right'
 
   $scope.closeModal = ->
     $scope.levelupModal.hide()

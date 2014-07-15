@@ -2,7 +2,7 @@
   'use strict';
   this.RankInterceptor = this.serviceModule.factory('RankInterceptor', function($q, $injector, $rootScope) {
     var error, success;
-    success = function(response, b) {
+    success = function(response) {
       if (response && response.data.activity && response.data.activity.show_level_up_modal) {
         $rootScope.$broadcast('event:levelup', {
           image: response.data.activity.rank,

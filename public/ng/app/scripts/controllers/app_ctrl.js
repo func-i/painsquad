@@ -2,25 +2,24 @@
   'use strict';
   this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) {
     $scope.levelUp = {};
-    $ionicModal.fromTemplateUrl("templates/shared/login.html", function(modal) {
+    $ionicModal.fromTemplateUrl('templates/shared/login.html', function(modal) {
       return $scope.loginModal = modal;
     }, {
       scope: $scope,
-      animation: "slide-in-up",
+      animation: 'fade-in',
       focusFirstInput: true
     });
-    $ionicModal.fromTemplateUrl("templates/shared/levelup.html", function(modal) {
+    $ionicModal.fromTemplateUrl('templates/shared/levelup.html', function(modal) {
       return $scope.levelupModal = modal;
     }, {
       scope: $scope,
-      animation: "slide-in-up",
-      focusFirstInput: true
+      animation: 'nav-title-slide-ios7'
     });
-    $ionicModal.fromTemplateUrl("templates/shared/advice.html", function(modal) {
+    $ionicModal.fromTemplateUrl('templates/shared/advice.html', function(modal) {
       return $scope.adviceModal = modal;
     }, {
       scope: $scope,
-      animation: "slide-left-right"
+      animation: 'slide-left-right'
     });
     $scope.closeModal = function() {
       return $scope.levelupModal.hide();
