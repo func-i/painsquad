@@ -15,11 +15,11 @@ body {
   width:    100%;
 
   .progress-block {
-    display:    block;
-    clear:      both;
-    height:     50px;
-    background: gray;
-    background-image: url('../images/background/survey.png');
+    position:         relative;
+    display:          block;
+    clear:            both;
+    height:           50px;
+    background-image: url('../images/background/survey-darken.png');
   }
 
   .progress-actual {
