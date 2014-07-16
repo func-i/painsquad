@@ -8,13 +8,16 @@ gem 'pg',          '~> 0.17.1'
 gem 'rack-cors',   '~> 0.2.9'
 gem 'active_model_serializers', '~> 0.8.1'
 
-gem 'sorcery',     '~> 0.8.5'
-gem 'uglifier',     '~> 2.5.0'
-gem 'jquery-rails', '~> 3.1.0'
+gem 'sorcery',          '~> 0.8.5'
+gem 'uglifier',         '~> 2.5.0'
+gem 'jquery-rails',     '~> 3.1.0'
+gem 'foundation-rails', '~> 5.3.0.1'
+gem 'sass-rails',       '~> 4.0.3'
+gem 'modernizr-rails',  '~> 2.7.1'
 
 group :production do
-  gem 'rails_12factor'
-  gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'rails_12factor', '~> 0.0.2'
+  # gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
 
 

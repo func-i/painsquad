@@ -21,11 +21,14 @@
 #  star_level                      :integer          default(0)
 #  commendation                    :boolean          default(FALSE)
 #  medal                           :boolean          default(FALSE)
+#  healthcare_provider_email       :string(255)
+#  admin                           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
   include Ranking
   include PainReporting
+  include AdviceScoring
 
   authenticates_with_sorcery!
   has_one :api_key
@@ -34,6 +37,9 @@ class User < ActiveRecord::Base
 
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
+
+  validates :email, presence: true, email: true
+  validates :healthcare_provider_email, presence: true, email: true
 
   validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
@@ -53,6 +59,10 @@ class User < ActiveRecord::Base
     submissions.last.try(:pain_severity) || 'mild'
   end
 
+  def recommendation_events
+    activities.where(event: 'recommendation_complete')
+  end
+
   def previous_submissions
     submissions.order('created_at DESC')
   end
@@ -63,11 +73,6 @@ class User < ActiveRecord::Base
 
   def recommendation_count
     activities.recommendation_events.count
-  end
-
-  # TODO: must only allow advice scoring within certain constraints
-  def advice_score_unlocked?
-    true
   end
 
   protected

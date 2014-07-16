@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ActivitiesController < ApplicationController
+    class ActivitiesController < BaseController
 
       def create
         @activity      = Activity.new(activity_params)

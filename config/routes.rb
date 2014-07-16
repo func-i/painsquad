@@ -5,6 +5,7 @@ PainSquadApi::Application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       resources :submissions
       resources :favorites, only: [:index, :create, :destroy]
+      resources :reports
 
       resource :surveys
       resource :survey_results
@@ -15,28 +16,21 @@ PainSquadApi::Application.routes.draw do
         member { get :prevent; get :manage }
       end
 
-      resources :reports
-
       resource :session
       resources :users
     end
   end
 
   resource :session, only: [:create, :destroy]
+  get :login, to: 'sessions#new'
+  post :login, to: 'sessions#create'
+  delete :logout, to: 'sessions#destroy'
 
-  resources :users, only: [:show, :create, :update, :destroy] do
+  resources :users do
     get :current, on: :collection
     put :password, on: :member
   end
 
-  # root to: 'admin#home'
-
-  # resources :session, only: [:new, :create, :destroy]
-  # resources :users
-
-  # get  "signup", to: "users#new",        as: :signup
-  # post "login",  to: "sessions#create",  as: :create_session
-  # get  "login",  to: "sessions#new",     as: :login
-  # get  "logout", to: "sessions#destroy", as: :logout
+  get :admin, to: 'users#index'
 
 end

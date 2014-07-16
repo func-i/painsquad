@@ -4,6 +4,7 @@
   .transparent-header {
     height:           60px;
     color:            white;
+    background-color: rgba(0, 0, 0, 0.2);
 
     span {
       padding:        10px;
@@ -28,11 +29,13 @@
   }
 
   .body-wrapper {
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.2);
+    // height: 500px;
+    // min-height: 500px;
+    // max-height: 100%;
+    // background-color: rgba(0, 0, 0, 0.2);
 
     .action {
-      margin-top: 20px;
+      margin-top: 10px;
 
       button {
         text-align: center;
@@ -48,7 +51,5 @@
         }
       }
     }
-
   }
-
 }
