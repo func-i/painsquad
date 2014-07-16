@@ -11,6 +11,7 @@
       scope: $scope
     });
     $scope.$on('$destroy', function() {
+      $scope.currentAudio.$destroy();
       return $scope.modal.remove();
     });
     $scope.loadAdviceModal = function(item) {
