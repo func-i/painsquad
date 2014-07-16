@@ -21,14 +21,6 @@ $circle-fill: #D12D4E;
     left:         86px;
     border-top:   2px solid $circle-bg;
     border-right: 7px solid $circle-bg;
-
-    &.red {
-      // z-index: 0;
-      // border-top:    2px solid $circle-fill;
-      // border-right:  4px solid $circle-fill;
-      // transition:    0.3s linear;
-      // transition: border-top 0.3s linear;
-    }
   }
 
   .line-right {

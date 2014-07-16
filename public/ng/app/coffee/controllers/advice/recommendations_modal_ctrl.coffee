@@ -1,11 +1,8 @@
 'use strict'
 
-@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, AudioPlayer, Favorites, Activity) ->
+@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) ->
   $scope.selectedItem = {}
   $scope.showInit     = true
-  $scope.player       = AudioPlayer
-  $scope.mediaPlaying = false
-  # $scope.progress     = if $scope.player.progress() then $scope.player.progress() else 0.5
 
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
@@ -43,36 +40,13 @@
     closeModal()
 
   $scope.initAudio = (src) ->
-    $scope.player.initAudio(src)
-    $scope.player.play()
-    $scope.showInit     = false
-    $scope.mediaPlaying = true
-
-  $scope.pauseAudio = ->
-    $scope.player.pause()
-    $scope.mediaPlaying = false
-
-  $scope.resumeAudio = ->
-    $scope.player.play()
-    $scope.mediaPlaying = true
-
-  $scope.stopAudio = ->
-    $scope.player.stop()
-    $scope.mediaPlaying = false
+    "./images/advice/audio/#{src}.mp3"
 
   $scope.discardAdvice = ->
     closeModal()
 
-  $scope.$watch (->
-    AudioPlayer.progress
-  ), ((newVal, oldVal) ->
-    console.log newVal
-    console.log oldVal
-  ), true
-
   closeModal = ->
     $scope.modal.hide()
-    $scope.stopAudio()
     resetState()
 
   setHeaderButtons = (item) ->
@@ -88,4 +62,4 @@
     $scope.showDidItButton    = null
     $scope.selectedItem       = null
 
-@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'AudioPlayer', 'Favorites', 'Activity']
+@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', '$document', 'AudioPlayer', 'Favorites', 'Activity']
