@@ -23,22 +23,17 @@
     <div class="body-wrapper">
 
       <div class="radial-wrapper">
-        <div class="line-left"></div>
+        <div class="line-left" ng-class="{ 'red': progress >= 0.97}"></div>
         <div class="line-right"></div>
         <img class="rank" ng-src="{{rankBadge}}"></img>
-        <div
-          round-progress
-          class="round-progress"
-          max="100"
-          current="progress"
-          color="#D12D4E"
-          bgcolor="#C7DBEA"
-          radius="100"
-          stroke="16"
-          width="232"
-          height="232"
-          semi="false">
-        </div>
+        <progress-arc
+          size="232"
+          stroke="#D12D4E"
+          stroke-width="14"
+          progress="progress"
+          counter-clockwise="false"
+          background="#C7DBEA">
+        </progress-arc>
       </div>
 
       <div class="action">

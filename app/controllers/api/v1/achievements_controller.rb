@@ -1,6 +1,6 @@
 module Api
   module V1
-    class AchievementsController < ApplicationController
+    class AchievementsController < BaseController
 
       def show
         render json: @user, serializer: AchievementsSerializer

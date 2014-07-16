@@ -27,11 +27,22 @@ module Ranking
   end
 
   def calculate_percent_complete
-    ((self.score - lower_threshold).to_f / (upper_threshold - lower_threshold).to_f) * 100
+    ((self.score - lower_threshold).to_f / (upper_threshold - lower_threshold).to_f) - variance_percent
+  end
+
+  # subtracts variance percentage from percent complete score to make progress bar look nice
+  def variance_percent
+     if [300, 700, 1200].include? upper_threshold
+      0.01
+    elsif [2000, 2800].include? upper_threshold
+      0.015
+    else
+      0
+    end
   end
 
   def percent_completed
-    calculate_percent_complete < 0 ? 0.6 : calculate_percent_complete
+    calculate_percent_complete <= 0 ? 0.01 : calculate_percent_complete
   end
 
   def points_for_next_rank

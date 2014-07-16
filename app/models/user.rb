@@ -21,6 +21,8 @@
 #  star_level                      :integer          default(0)
 #  commendation                    :boolean          default(FALSE)
 #  medal                           :boolean          default(FALSE)
+#  healthcare_provider_email       :string(255)
+#  admin                           :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -35,6 +37,9 @@ class User < ActiveRecord::Base
 
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
+
+  validates :email, presence: true, email: true
+  validates :healthcare_provider_email, presence: true, email: true
 
   validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
