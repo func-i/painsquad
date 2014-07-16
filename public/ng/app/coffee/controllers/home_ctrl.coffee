@@ -30,6 +30,5 @@
       $scope.showPopup()
 
   init()
-  console.log "$scope.progress: #{$scope.progress}"
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']

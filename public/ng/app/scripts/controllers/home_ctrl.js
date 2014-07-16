@@ -31,8 +31,7 @@
         return $scope.showPopup();
       }
     };
-    init();
-    return console.log("$scope.progress: " + $scope.progress);
+    return init();
   });
 
   this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];
