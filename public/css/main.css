@@ -96,8 +96,8 @@ ion-side-menu.menu-left.menu {
     border-radius: 0;
     border-color: #808A8F !important; }
   .checkbox input:checked::before, .checkbox-icon:checked::before {
-    background: #D22C4D !important;
-    border-color: #D22C4D !important; }
+    background: #DF4461 !important;
+    border-color: #DF4461 !important; }
 
 li.item.item-checkbox label.checkbox input, .checkbox-icon {
   height: 20px;
@@ -106,14 +106,15 @@ li.item.item-checkbox label.checkbox input, .checkbox-icon {
     border-radius: 0; }
   li.item.item-checkbox label.checkbox input::after, .checkbox-icon::after {
     display: block;
-    top: 4px !important;
-    left: 3px !important;
+    top: 4px;
+    left: 4px;
     height: 8.33px;
+    width: 13px;
     border-radius: 0;
     transform: rotate(-50deg);
     -webkit-transform: rotate(-50deg);
     border-width: 2px;
-    box-shadow: -1px 5px 6px -1px black; }
+    box-shadow: 0px 3px 6px -2px black; }
 
 li.item.item-checkbox label.checkbox, #radio {
   top: 58%; }
@@ -212,11 +213,11 @@ body.platform-browser .progress {
   z-index: 10;
   width: 100%; }
   .progress .progress-block {
+    position: relative;
     display: block;
     clear: both;
     height: 50px;
-    background: gray;
-    background-image: url('../images/background/survey.png'); }
+    background-image: url('../images/background/survey-darken.png'); }
   .progress .progress-actual {
     position: relative;
     top: -50px;
@@ -310,8 +311,9 @@ body.platform-browser .progress {
   margin: 10px;
   overflow: visible; }
   .range.range-balanced.override input::-webkit-slider-thumb, .range.range-balanced.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.range-balanced.override .range.range-balanced.button {
-    border: 1px solid #2E7E30;
-    border-radius: 20px; }
+    border: 1px solid #76C6AE;
+    border-radius: 20px;
+    box-shadow: 0; }
 
 .slider-container {
   margin: auto;
@@ -691,7 +693,8 @@ body.platform-browser .progress {
       height: 85%;
       padding-top: 10px; }
       .modal .container .slide .slider .slider-slide p {
-        margin: 7px 15px; }
+        margin: 7px 15px;
+        text-align: left; }
       .modal .container .slide .slider .slider-slide .audio-block {
         position: relative;
         width: 200px;
@@ -857,6 +860,8 @@ li.item, .item.item-checkbox {
     margin: 0 10px 10px 60px; }
     .checklist .item.item-input.other-textbox textarea {
       resize: none; }
+      .checklist .item.item-input.other-textbox textarea::-webkit-input-placeholder {
+        font-style: italic; }
 
 .checklist-grid {
   clear: both; }
@@ -866,6 +871,8 @@ li.item, .item.item-checkbox {
     border-bottom: 1px solid black; }
     .checklist-grid form div textarea {
       resize: none; }
+      .checklist-grid form div textarea::-webkit-input-placeholder {
+        font-style: italic; }
     .checklist-grid form div li.item {
       margin-top: 1px;
       margin-bottom: 1px;
@@ -908,6 +915,8 @@ li.item, .item.item-checkbox {
   padding: 20px; }
   .textbox textarea {
     resize: none; }
+    .textbox textarea::-webkit-input-placeholder {
+      font-style: italic; }
 
 @media (min-width: 680px) {
   #fullscreen {
@@ -949,6 +958,8 @@ li.item, .item.item-checkbox {
       border-bottom: 1px solid lightgray; }
       .modal .modal-inherit .content-wrapper .content .content-textarea textarea {
         resize: none; }
+        .modal .modal-inherit .content-wrapper .content .content-textarea textarea::-webkit-input-placeholder {
+          font-style: italic; }
     .modal .modal-inherit .content-wrapper .content .map section svg {
       height: 50%;
       background-color: #f2f3eb; }
