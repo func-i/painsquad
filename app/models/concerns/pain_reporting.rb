@@ -40,7 +40,7 @@ module PainReporting
 
   def check_last_three_reports
     if last_three_reports.collect(&:pain_severity).all? { |value| value == 'moderate' }
-      return UserMailer.pain_alert(self)
+      return UserMailer.pain_alert(self).deliver
     end
   end
 
