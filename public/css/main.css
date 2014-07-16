@@ -255,17 +255,18 @@ body.platform-browser .progress {
   margin-right: auto; }
   .home .radial-wrapper .line-left, .home .radial-wrapper .line-right {
     position: absolute;
-    height: 20px;
+    height: 22px;
     width: 30px;
-    top: -42px; }
+    top: -42px;
+    z-index: 5; }
   .home .radial-wrapper .line-left {
     left: 86px;
     border-top: 2px solid #C7DBEA;
-    border-right: 4px solid #C7DBEA; }
+    border-right: 7px solid #C7DBEA; }
   .home .radial-wrapper .line-right {
     left: 116px;
     border-top: 2px solid #D12D4E;
-    border-left: 4px solid #D12D4E; }
+    border-left: 7px solid #D12D4E; }
   .home .radial-wrapper img {
     position: absolute;
     width: 165px;
@@ -275,6 +276,9 @@ body.platform-browser .progress {
   .home .radial-wrapper svg {
     position: absolute;
     top: -35px; }
+    .home .radial-wrapper svg circle {
+      transition: stroke-dashoffset 0.3s linear;
+      stroke-linecap: round; }
 
 .range.override input[type="range"], .range.override .modal .modal-inherit .content-wrapper .content section .button-bar .range.button, .modal .modal-inherit .content-wrapper .content section .button-bar .range.override .range.button {
   height: 40px;
@@ -371,7 +375,8 @@ body.platform-browser .progress {
   clear: both; }
   .home .transparent-header {
     height: 60px;
-    color: white; }
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2); }
     .home .transparent-header span {
       padding: 10px;
       display: inline-block;
@@ -386,22 +391,19 @@ body.platform-browser .progress {
       .home .transparent-header span.current-points {
         text-align: right;
         float: right; }
-  .home .body-wrapper {
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.2); }
-    .home .body-wrapper .action {
-      margin-top: 20px; }
-      .home .body-wrapper .action button {
-        text-align: center;
-        position: relative;
-        display: block; }
-        .home .body-wrapper .action button img {
-          position: absolute;
-          height: 70%;
-          border: 2px solid white;
-          border-radius: 20px;
-          right: 10px;
-          top: 6px; }
+  .home .body-wrapper .action {
+    margin-top: 10px; }
+    .home .body-wrapper .action button {
+      text-align: center;
+      position: relative;
+      display: block; }
+      .home .body-wrapper .action button img {
+        position: absolute;
+        height: 70%;
+        border: 2px solid white;
+        border-radius: 20px;
+        right: 10px;
+        top: 6px; }
 
 .login form {
   background-color: white; }
@@ -972,7 +974,9 @@ li.item, .item.item-checkbox {
   left: 3%;
   width: 94%;
   overflow: initial;
-  text-align: center; }
+  text-align: center;
+  max-height: 375px;
+  min-height: 375px; }
   .modal#levelup ion-content {
     overflow: initial; }
   .modal#levelup .icon-wrapper {
@@ -1016,6 +1020,18 @@ li.item, .item.item-checkbox {
   .modal#levelup .button {
     width: 75%;
     margin-left: 12%; }
+
+.modal#advice {
+  width: 100%;
+  min-height: 60px;
+  height: auto;
+  max-height: 70px;
+  top: 75%;
+  text-align: center;
+  background-color: rgba(42, 169, 211, 0.8);
+  color: white; }
+  .modal#advice ion-content {
+    padding: 10px 0; }
 
 /*!
   Ionicons, v1.5.2
