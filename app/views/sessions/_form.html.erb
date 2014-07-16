@@ -1,7 +1,24 @@
-<%= simple_form_for :session, url: create_session_path do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.input :remember_me, as: :boolean %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="large-12 columns" style="margin: 50px 0;">
+
+    <%- if flash[:alert] %>
+      <div data-alert class="alert-box alert">
+        <%= flash[:alert] %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+
+    <%= form_tag login_path do %>
+      <div class="field">
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions"><%= submit_tag "Log in", class: 'button radius' %></div>
+    <% end %>
+
+  </div>
+</div>

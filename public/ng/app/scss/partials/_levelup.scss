@@ -1,9 +1,11 @@
 .modal#levelup {
-  top:      15%;
-  left:     3%;
-  width:    94%;
-  overflow: initial;
+  top:        15%;
+  left:       3%;
+  width:      94%;
+  overflow:   initial;
   text-align: center;
+  max-height: 375px;
+  min-height: 375px;
 
   ion-content {
     overflow: initial;

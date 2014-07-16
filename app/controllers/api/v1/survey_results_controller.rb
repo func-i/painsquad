@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SurveyResultsController < ApplicationController
+    class SurveyResultsController < BaseController
 
       def show
         render json: @user, serializer: SurveyResultsSerializer

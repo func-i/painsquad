@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SubmissionsController < ApplicationController
+    class SubmissionsController < BaseController
       before_action :fetch_submission, only: [:show]
 
       def show
@@ -13,6 +13,8 @@ module Api
         if @submission.save
           # uses custom response serializer to intercept level_up event for client modal
           render json: @submission, serializer: ActivitySerializer
+          # prevent this from being called multiple times in a callback
+          @submission.user.check_last_three_reports
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
         end
