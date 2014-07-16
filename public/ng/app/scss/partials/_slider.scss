@@ -47,8 +47,9 @@ $thumb-height: 30px;
       overflow:         visible;
 
       &::-webkit-slider-thumb {
-        border: 1px solid $balanced;
+        border:        1px solid #76C6AE;
         border-radius: 20px;
+        box-shadow:    0;
       }
     }
   }
