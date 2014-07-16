@@ -1,10 +1,9 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, AudioPlayer, Favorites, Activity) {
-    var closeModal, reset, setHeaderButtons;
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
+    var closeModal, resetState, setHeaderButtons;
     $scope.selectedItem = {};
     $scope.showInit = true;
-    $scope.player = AudioPlayer;
     $ionicModal.fromTemplateUrl("templates/advice/modal.base.html", function(modal) {
       return $scope.modal = modal;
     }, {
@@ -48,25 +47,14 @@
       return closeModal();
     };
     $scope.initAudio = function(src) {
-      $scope.player.initAudio(src);
-      $scope.player.play();
-      $scope.showInit = false;
-      return $scope.mediaPlaying = true;
-    };
-    $scope.pauseAudio = function() {
-      $scope.player.pause();
-      return $scope.mediaPlaying = false;
-    };
-    $scope.resumeAudio = function() {
-      $scope.player.play();
-      return $scope.mediaPlaying = true;
+      return "./images/advice/audio/" + src + ".mp3";
     };
     $scope.discardAdvice = function() {
       return closeModal();
     };
     closeModal = function() {
       $scope.modal.hide();
-      return reset();
+      return resetState();
     };
     setHeaderButtons = function(item) {
       if (item.style === 'slideshow') {
@@ -75,7 +63,7 @@
         return $scope.showDidItButton = true;
       }
     };
-    return reset = function() {
+    return resetState = function() {
       $scope.slideShowActivated = null;
       $scope.modalStyle = null;
       $scope.showStartButton = null;
@@ -84,6 +72,6 @@
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', 'AudioPlayer', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', '$document', 'AudioPlayer', 'Favorites', 'Activity'];
 
 }).call(this);

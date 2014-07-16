@@ -12,7 +12,8 @@
   'underscore',
   'angularMoment',
   'googlechart',
-  'angular-progress-arc'
+  'angular-progress-arc',
+  'mediaPlayer'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

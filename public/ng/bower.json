@@ -5,12 +5,12 @@
     "angular-resource": "1.2.17",
     "underscore": "~1.6.0",
     "angular-moment": "~0.7.0",
-    "angular-svg-round-progressbar": "~0.1.0",
     "angular-google-chart": "~0.0.10",
     "ionic": "driftyco/ionic-bower#master",
-    "angular-progress-arc": "~0.3.0"
+    "angular-progress-arc": "~0.3.0",
+    "angular-media-player": "~0.5.5"
   },
   "resolutions": {
-    "angular": ">=1.2.19"
+    "angular": "~1.2.20"
   }
 }

@@ -693,18 +693,25 @@ body.platform-browser .progress {
       .modal .container .slide .slider .slider-slide p {
         margin: 7px 15px; }
       .modal .container .slide .slider .slider-slide .audio-block {
-        height: 100px;
-        margin: 20px; }
-        .modal .container .slide .slider .slider-slide .audio-block #bar {
-          margin: 10px;
-          background-color: gray;
-          border-radius: 13px;
-          height: 5px; }
-          .modal .container .slide .slider .slider-slide .audio-block #bar div {
-            background-color: #00aed7;
-            transition: 0.2s ease-in-out;
-            height: inherit;
-            border-radius: 10px; }
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; }
+        .modal .container .slide .slider .slider-slide .audio-block .round-progress {
+          position: absolute;
+          top: 17px;
+          left: 28px; }
+          .modal .container .slide .slider .slider-slide .audio-block .round-progress circle {
+            stroke-linecap: round; }
+        .modal .container .slide .slider .slider-slide .audio-block .button {
+          position: absolute;
+          top: 65px;
+          left: 78px;
+          height: 50px;
+          width: 50px;
+          border-radius: 25px; }
       .modal .container .slide .slider .slider-slide .tip {
         margin: 10px;
         border: 1px solid red;
