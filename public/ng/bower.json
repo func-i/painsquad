@@ -11,6 +11,6 @@
     "angular-media-player": "~0.5.5"
   },
   "resolutions": {
-    "angular": ">=1.2.19"
+    "angular": "~1.2.20"
   }
 }

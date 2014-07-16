@@ -11,7 +11,6 @@
     scope: $scope
 
   $scope.$on '$destroy', ->
-    $scope.currentAudio.$destroy()
     $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
