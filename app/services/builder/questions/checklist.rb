@@ -44,7 +44,7 @@ module Builder::Questions::Checklist
     def describe_pain_grid survey
       question = survey.questions.create(
         question_type: 'checklist-grid',
-        content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last report',
+        content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last case',
         tip:           'You can click multiple answers'
       )
       DESCRIBE_PAIN.each { |content| question.choices.create content: content }
@@ -63,7 +63,7 @@ module Builder::Questions::Checklist
     def medication_efficacy_slider survey
       question = survey.questions.create(
         question_type: 'checklist-extra',
-        content:       'What <strong>medications</strong> have you taken to reduce your pain since your last report?',
+        content:       'What <strong>medications</strong> have you taken to reduce your pain since your last case?',
         tip:           'Touch the medication and then rate how helpful it was in reducing pain',
         tag:           'medications'
       )
