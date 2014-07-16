@@ -1,0 +1,58 @@
+<ion-view title="Pain Squad&#43;" hide-back-button="true" ng-cloak>
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-information" ui-sref="app.about"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header home content-background">
+    <section class="transparent-header">
+      <span class="next-level">
+        points to promotion
+        <i>{{ userScore.points_for_next_rank }}</i>
+      </span>
+      <span class="current-points">
+        total points earned
+        <i>{{ userScore.score }}</i>
+      </span>
+    </section>
+
+    <div class="body-wrapper">
+
+      <div class="radial-wrapper">
+        <div class="line-left"></div>
+        <div class="line-right"></div>
+        <img class="rank" ng-src="{{rankBadge}}"></img>
+        <progress-arc
+          size="232"
+          stroke="#D12D4E"
+          stroke-width="14"
+          progress="progress"
+          counter-clockwise="false"
+          background="#C7DBEA">
+        </progress-arc>
+      </div>
+
+      <div class="action">
+        <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
+          Start Case
+          <img ng-src="./images/buttons/start_case_icon.png">
+        </button>
+
+        <button class="button button-positive override diagonal home" ui-sref="app.achievements">
+          Achievements
+          <img ng-src="./images/buttons/achievements_icon.png">
+        </button>
+
+        <button class="button button-positive override diagonal home" ui-sref="app.advice">
+          Get Advice
+          <img ng-src="./images/buttons/advice_icon.png">
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
