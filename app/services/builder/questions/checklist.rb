@@ -32,7 +32,7 @@ module Builder::Questions::Checklist
     def pain_cause survey
       question = survey.questions.create(
         question_type: 'checklist',
-        content:       'What do you think your pain was <strong>due to</strong> in the last 12 hours?',
+        content:       'What do you think your pain was <strong>due to</strong>?',
         tip:           'You can click multiple answers',
         tag:           'pain_cause'
         )
