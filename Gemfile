@@ -16,8 +16,8 @@ gem 'sass-rails',       '~> 4.0.3'
 gem 'modernizr-rails',  '~> 2.7.1'
 
 group :production do
-  gem 'rails_12factor'
-  gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'rails_12factor', '~> 0.0.2'
+  # gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
 
 
