@@ -1,8 +1,17 @@
-<p id="notice"><%= notice %></p>
+<p>
+<%- if flash[:alert] || flash[:notice] %>
+  <div data-alert class="alert-box">
+    <%= flash[:alert] if flash[:alert] %>
+    <%= flash[:notice] if flash[:notice] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+</p>
 
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Username</th>
       <th>Email</th>
       <th>Created</th>
@@ -10,6 +19,7 @@
   </thead>
   <tbody>
     <tr>
+      <td><%= @user.id %></td>
       <td><%= @user.username %></td>
       <td><%= @user.email %></td>
       <td><%= @user.created_at %></td>
