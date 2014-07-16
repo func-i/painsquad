@@ -15,7 +15,7 @@
     $scope.levelupModal = modal
   ,
     scope: $scope
-    animation: 'nav-title-slide-ios7'
+    animation: 'slide-left-right'
 
   $ionicModal.fromTemplateUrl 'templates/shared/advice.html', (modal) ->
     $scope.adviceModal = modal
