@@ -108,8 +108,7 @@ module Builder
           image:       'mental_games',
           duration:    '5 min. to 10 min.',
           context:     'During Procedures, Headaches, Abdomen Pain, Muscle Pain',
-          description: 'Relaxation is an effective way to help you cope with pain and stress',
-          byline:      'Use relaxation when you are worried about a procedure and during the procedure'
+          description: 'Mental games turn your attention away from pain and keep your mind busy with another activity. As a result, your mind isn’t available to think about pain.'
         )
         nest1 = rec.nested_recommendations.create(title: 'Alphabet Games', style: 'nested')
         nest1.steps.create(content: "Think of any category of interest, such as sports, cars, teams, animals or countries")
