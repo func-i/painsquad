@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
     submissions.last.try(:pain_severity) || 'mild'
   end
 
+  def recommendation_events
+    activities.where(event: 'recommendation_complete')
+  end
+
   def previous_submissions
     submissions.order('created_at DESC')
   end

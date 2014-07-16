@@ -7,7 +7,11 @@ class ActivitySerializer < ActiveModel::Serializer
   end
 
   def advice_name
-    object.subject.title
+    if object.is_a? Submission
+      nil
+    else
+      object.subject.title
+    end
   end
 
   def show_level_up_modal
