@@ -72,31 +72,20 @@ Rails.application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
-  # ActionMailer::Base.smtp_settings = {
-  #   :port =>           '587',
-  #   :address =>        'smtp.mandrillapp.com',
-  #   :user_name =>      ENV['MANDRILL_USERNAME'],
-  #   :password =>       ENV['MANDRILL_APIKEY'],
-  #   :domain =>         'heroku.com',
-  #   :authentication => :plain
-  # }
-
-  # ActionMailer::Base.delivery_method = :smtp
-
   config.action_mailer.smtp_settings = {
-    address:        "smtp.mandrillapp.com",
-    port:           587,
-    domain:         'heroku.com',
-    authentication: :plain,
-    user_name:      ENV['MANDRILL_USERNAME'],
-    password:       ENV['MANDRILL_APIKEY'],
+    address:              "smtp.mandrillapp.com",
+    port:                 587,
+    domain:               'heroku.com',
+    authentication:       :plain,
+    user_name:            ENV['MANDRILL_USERNAME'],
+    password:             ENV['MANDRILL_APIKEY'],
+    enable_starttls_auto: true
   }
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'painsquad.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
-
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
