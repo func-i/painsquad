@@ -24,9 +24,21 @@
   background-image: url('../images/background/content.png');
 }
 
+.extension {
+  height: 200px;
+  background-color: #FAFAFA;
+  &.extra {
+    height: 375px;
+  }
+}
+
 .header-bar {
   height: 7px;
   width: 100%;
+
+  &.bar-darkblue {
+    background-color: #1B2D6D;
+  }
   &.bar-blue {
     background-color: $royal;
   }
@@ -39,7 +51,6 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
 
 // diagonal transparent background
 // FIXME: for some reason it has some opacity issue
