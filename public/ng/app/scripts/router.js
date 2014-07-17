@@ -240,7 +240,17 @@
       views: {
         menuContent: {
           templateUrl: 'templates/static/settings.html',
-          controller: 'SettingsCtrl'
+          controller: 'SettingsCtrl',
+          resolve: {
+            settings: function(Setting, $q) {
+              var defer;
+              defer = $q.defer();
+              Setting.query(function(response) {
+                return defer.resolve(response.alerts);
+              });
+              return defer.promise;
+            }
+          }
         }
       }
     }).state('app.action_report', {

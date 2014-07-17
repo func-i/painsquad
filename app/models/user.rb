@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   include Ranking
   include PainReporting
   include AdviceScoring
+  include NotificationEvents
 
   authenticates_with_sorcery!
   has_one :api_key

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715195800) do
+ActiveRecord::Schema.define(version: 20140717172427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,22 @@ ActiveRecord::Schema.define(version: 20140715195800) do
   end
 
   add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "favorites", force: true do |t|
     t.integer  "user_id"
@@ -155,6 +171,8 @@ ActiveRecord::Schema.define(version: 20140715195800) do
     t.boolean  "medal",                           default: false
     t.string   "healthcare_provider_email"
     t.boolean  "admin",                           default: false
+    t.datetime "morning_alert"
+    t.datetime "evening_alert"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

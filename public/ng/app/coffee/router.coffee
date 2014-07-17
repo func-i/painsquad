@@ -218,8 +218,13 @@
         menuContent:
           templateUrl: 'templates/static/settings.html'
           controller:  'SettingsCtrl'
+          resolve:
+            settings: (Setting, $q) ->
+              defer = $q.defer()
+              Setting.query (response) ->
+                defer.resolve response.alerts
+              defer.promise
     )
-
 
     # Action Report state
     .state('app.action_report'

@@ -14,7 +14,7 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
     var checkConnection;
     $rootScope.sideMenuEnabled = true;
     $rootScope.notificationID = 0;

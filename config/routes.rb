@@ -3,24 +3,23 @@ PainSquadApi::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+      resources :users
       resources :submissions
-      resources :favorites, only: [:index, :create, :destroy]
       resources :reports
+      resources :favorites, only: [:index, :create, :destroy]
+      resource :survey_results
+      resource :achievements
+      resource :activity
+      resource :settings
+      resource :session
 
       resource :surveys do
         member { get 'full'; get 'truncated'; }
       end
 
-      resource :survey_results
-      resource :achievements
-      resource :activity
-
       resource :recommendations do
         member { get :prevent; get :manage }
       end
-
-      resource :session
-      resources :users
     end
   end
 

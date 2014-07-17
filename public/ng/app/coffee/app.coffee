@@ -25,6 +25,7 @@
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
+  $rootScope.notificationID  = 0
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 

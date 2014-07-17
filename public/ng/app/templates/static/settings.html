@@ -20,15 +20,7 @@
           Morning Alert
         </div>
         <select>
-          <option>8:00am</option>
-          <option>8:15am</option>
-          <option selected>8:30am</option>
-          <option>8:45am</option>
-          <option>9:00am</option>
-          <option>9:15am</option>
-          <option>9:30am</option>
-          <option>9:45am</option>
-          <option>10:00am</option>
+          <option ng-repeat="alert in defaultMorningAlerts">{{ alert }}</option>
         </select>
       </label>
 
@@ -37,29 +29,16 @@
           Evening Alert
         </div>
         <select>
-          <option>6:00pm</option>
-          <option>6:15pm</option>
-          <option selected>6:30pm</option>
-          <option>6:45pm</option>
-          <option>7:00pm</option>
-          <option>7:15pm</option>
-          <option>7:30pm</option>
-          <option>7:45pm</option>
-          <option>8:00pm</option>
+          <option ng-repeat="alert in defaultEveningAlerts">{{ alert }}</option>
         </select>
       </label>
+
 
       <div class="item item-divider">
         Account Settings
       </div>
 
-      <ion-item>
-        <button class="button" ng-click="setNotifications()">Set Notifications</button>
-      </ion-item>
-
-      <ion-item>
-        <button class="button" ng-click="clearAll()">Clear Notifications</button>
-      </ion-item>
+      {{ settings }}
 
       <ion-item ng-show="isLoggedIn">
         Logged in as: {{ currentUser.username }}
