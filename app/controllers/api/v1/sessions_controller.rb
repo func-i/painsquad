@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SessionsController < ApplicationController
+    class SessionsController < BaseController
       skip_before_action :restrict_access
 
       def create

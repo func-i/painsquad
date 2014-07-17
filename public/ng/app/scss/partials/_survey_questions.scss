@@ -47,7 +47,12 @@ li.item, .item.item-checkbox {
   .item.item-input.other-textbox {
     border-color: lightgray;
     margin:       0 10px 10px 60px;
-    textarea { resize: none; }
+    textarea {
+      resize: none;
+      &::-webkit-input-placeholder {
+        font-style: italic;
+      }
+    }
   }
 }
 
@@ -60,7 +65,12 @@ li.item, .item.item-checkbox {
     float: left;
     border-bottom: 1px solid black;
 
-    textarea { resize: none; }
+    textarea {
+      resize: none;
+      &::-webkit-input-placeholder {
+        font-style: italic;
+      }
+    }
 
     li.item {
       margin-top:    1px;
@@ -129,6 +139,8 @@ li.item, .item.item-checkbox {
 
   textarea {
     resize: none;
+    &::-webkit-input-placeholder {
+      font-style: italic;
+    }
   }
-
 }

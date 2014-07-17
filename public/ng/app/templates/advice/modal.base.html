@@ -64,10 +64,23 @@
                 <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
                 <p ng-show="step.content" ng-bind="step.content"></p>
 
-                <div class="audio-block" ng-show="step.audio_path">
-                  <button class="button icon ion-ios7-play button-royal pattern-bg" ng-show="showInit" ng-click="initAudio(step.audio_path)"></button>
-                  <button class="button icon ion-ios7-pause button-royal pattern-bg" ng-show="mediaPlaying" ng-click="pauseAudio()"></button>
-                  <button class="button icon ion-ios7-play button-royal pattern-bg"  ng-hide="showInit || mediaPlaying" ng-hide="mediaPlaying" ng-click="resumeAudio()"></button>
+                <div class="audio-block" ng-if="step.audio_path">
+                  <progress-arc
+                    class="round-progress"
+                    size="150"
+                    stroke="#1A9ECD"
+                    stroke-width="14"
+                    progress="(currentAudio.currentTime / currentAudio.duration) * -1"
+                    counter-clockwise="false"
+                    background="#C7DBEA">
+                  </progress-arc>
+
+                  <audio media-player="currentAudio">
+                    <source ng-src="{{ initAudio(step.audio_path) }}" type="audio/mp3"></source>
+                  </audio>
+
+                  <button class="button icon ion-ios7-play button-royal" ng-hide="currentAudio.playing" ng-click="currentAudio.play()"></button>
+                  <button class="button icon ion-ios7-pause button-royal" ng-show="currentAudio.playing" ng-click="currentAudio.pause()"></button>
                 </div>
 
                 <div class="tip" ng-show="step.tip">

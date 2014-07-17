@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   serialization_scope :present_user
 
   before_action :restrict_access
+  before_action :require_login
+
   respond_to :json
 
   def present_user
@@ -23,8 +25,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def user_not_authorized
-    flash[:alert] = 'Access denied'
-    redirect_to request.referrer || root_path
+  def not_authenticated
+    redirect_to :login
   end
+
 end

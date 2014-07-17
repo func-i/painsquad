@@ -1,0 +1,19 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to 'PainSquad Admin', :admin %></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li><%= link_to 'Launch Client App', '/', target: '_' %></li>
+      <%- if current_user %>
+        <li><%= link_to 'Logout', :logout, method: :delete %></li>
+      <% end %>
+    </ul>
+
+  </section>
+</nav>

@@ -1,6 +1,6 @@
 module Api
   module V1
-    class RecommendationsController < ApplicationController
+    class RecommendationsController < BaseController
       before_action :fetch_recommendations, only: :show
 
       def show

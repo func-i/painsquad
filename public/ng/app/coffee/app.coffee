@@ -11,7 +11,9 @@
   'ngResource',
   'underscore',
   'angularMoment',
-  'googlechart'
+  'googlechart',
+  'angular-progress-arc',
+  'mediaPlayer'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
@@ -21,9 +23,8 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, NotificationService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
-  $rootScope.notificationID  = 0
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 

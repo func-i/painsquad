@@ -13,7 +13,8 @@ class SurveyService
   # deliver TRUNCATED survey on 1 hour followup of AM/PM alerts
   def get_survey
     # TEMP CODE FOR TESTING!
-    # return send_test_survey if Rails.env.development?
+    return send_test_survey if Rails.env.development?
+
     if @last_submission.nil?
       # send full survey if its the first
       send_survey :full

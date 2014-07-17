@@ -24,8 +24,6 @@
       .content {
         background: white;
         min-height: 370px;
-        // padding-top: 10px;
-        // background-color: white;
 
         .content-actual {
           font-size:     18px;
@@ -53,6 +51,9 @@
 
           textarea {
             resize: none;
+            &::-webkit-input-placeholder {
+              font-style: italic;
+            }
           }
         }
 
