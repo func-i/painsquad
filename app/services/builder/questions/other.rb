@@ -39,7 +39,7 @@ module Builder::Questions::Other
     def textbox survey
       question = survey.questions.create(
         question_type: 'textbox',
-        content:       '<strong>Tell us</strong> anything else about your pain in the last 12 hours'
+        content: 'Please type in anything else you want to tell us about your pain in the last 12 hours'
       )
       question.choices.create textfield: true
     end

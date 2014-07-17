@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SurveysController < ApplicationController
+    class SurveysController < BaseController
       before_action :fetch_survey, only: :show
 
       def show
