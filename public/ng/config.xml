@@ -13,14 +13,7 @@
     <preference name="orientation" value="portrait" />
     <preference name="TopActivityIndicator" value="white"/>
     <preference name="AllowInlineMediaPlayback" value="false" />
-
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.network-information" />
+    <preference name="AutoHideSplashScreen" value="false" />
 
     <platform name="ios">
       <!-- iOS 7.0+ -->
@@ -31,12 +24,12 @@
       <icon src="www/res/icons/ios/icon-57-2x.png" width="114" height="114" />
     </platform>
 
-    <feature name="Device">
-      <param name="ios-package" value="CDVDevice" />
+    <feature name="Keyboard">
+      <param name="ios-package" value="IonicKeyboard" onload="true" />
     </feature>
 
-    <feature name="Media">
-      <param name="ios-package" value="CDVSound" />
+    <feature name="Device">
+      <param name="ios-package" value="CDVDevice" />
     </feature>
 
     <feature name="NetworkStatus">
@@ -45,10 +38,6 @@
 
     <feature name="StatusBar">
       <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
-
-    <feature name="Keyboard">
-      <param name="ios-package" value="IonicKeyboard" onload="true" />
     </feature>
 
     <feature name="Logger">

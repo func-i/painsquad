@@ -25,6 +25,7 @@
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.sideMenuEnabled = true
+  $rootScope.notificationID  = 0
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 
@@ -51,5 +52,19 @@
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
 
+    # if window.cordova and window.cordova.plugins
+    #   window.cordova.plugins.notification.badge.clear()
+    #   window.cordova.plugins.notification.badge.configure
+    #     autoClear: true
+
     if window.StatusBar
       StatusBar.styleLightContent()
+
+    if window.plugin
+      # NotificationService.onclick = (id, state, json) ->
+      #   parsedJson = JSON.parse(json)
+      #   alert "id: #{id}, state: #{state}, json: #{parsedJson}"
+
+      window.plugin.notification.local.onclick = (id, state, json) ->
+        parsedJson = JSON.parse(json)
+        alert "id: #{id}, state: #{state}, json: #{parsedJson}"

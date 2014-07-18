@@ -7,7 +7,7 @@ module Api
         if present_user
           render json: present_user
         else
-          render json: nil, status: 404
+          render json: nil, status: 401
         end
       end
 

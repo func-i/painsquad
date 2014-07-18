@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, NotificationService, NotificationSettingsService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -47,4 +47,4 @@
     $scope.levelupModal.remove()
     $scope.adviceModal.remove()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', 'NotificationService', 'NotificationSettingsService' ]

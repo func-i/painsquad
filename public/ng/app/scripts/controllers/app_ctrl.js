@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicBackdrop, $timeout) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, NotificationService, NotificationSettingsService) {
     $scope.levelUp = {};
     $scope.advice = {};
     $ionicModal.fromTemplateUrl('templates/shared/login.html', function(modal) {
@@ -48,6 +48,6 @@
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', 'NotificationService', 'NotificationSettingsService'];
 
 }).call(this);

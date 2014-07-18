@@ -24,11 +24,15 @@
         }
       ]
 
+  # $scope.testFull = ->
+  #   $state.go('app.new_survey_by_type', type: 'full')
+
   init = ->
     # only show popup after transitioning from survey_complete
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
   init()
+
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']

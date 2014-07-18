@@ -1,2 +1,2 @@
-rails: spring rails server
-grunt: sh -c 'cd public/ng/ && BUILD_TARGET=development gulp serve'
+rails:   spring rails server
+worker:  bundle exec rake jobs:work
