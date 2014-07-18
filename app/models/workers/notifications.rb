@@ -18,7 +18,7 @@ module Workers
     end
 
     def user_lookup
-      current_time = Time.zone.now
+      current_time = Time.zone.now.strftime("%H:%M:%S %z")
       five_minutes = 5.minutes.from_now
       users        = []
       User.all.each do |user|
