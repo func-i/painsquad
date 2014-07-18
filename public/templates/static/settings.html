@@ -1,0 +1,66 @@
+<ion-view title="Settings">
+
+  <ion-header-bar>
+    <div class="buttons">
+      <button ng-click="back()" class="button button-icon icon ion-ios7-arrow-back">Back</button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="has-header content-background" padding="true">
+
+    <div class="list">
+      <div class="header-bar bar-blue"></div>
+
+      <div class="item item-divider">
+        Alert Settings
+      </div>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Morning Alert
+        </div>
+        <select
+          ng-change="handleSelection(selectedMorningAlert, morningAlerts)"
+          ng-model="selectedMorningAlert"
+          ng-options="alert as alert.display_time for alert in morningAlerts">
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Evening Alert
+        </div>
+        <select
+          ng-change="handleSelection(selectedEveningAlert, eveningAlerts)"
+          ng-model="selectedEveningAlert"
+          ng-options="alert as alert.display_time for alert in eveningAlerts">
+        </select>
+      </label>
+
+
+      <div class="item item-divider">
+        Account Settings
+      </div>
+
+      <ion-item style="font-size: 10px;">
+        selectedMorning: {{ selectedMorningAlert }}
+        <br/>
+        selectedEvening: {{ selectedEveningAlert }}
+      </ion-item>
+
+      <ion-item ng-show="isLoggedIn">
+        Logged in as: {{ currentUser.username }}
+        <button
+          class="button button-block button-assertive"
+          ng-show="isLoggedIn"
+          ng-click="logout()">
+            Logout
+        </button>
+      </ion-item>
+
+      <div class="extension"></div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,23 @@
+<section class="checklist-extra" ng-controller="ChecklistExtraCtrl" ng-cloak>
+
+  <form name="currentForm" valid-form>
+    <ul>
+      <div ng-repeat="choice in question.choices">
+
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled }">
+          <label class="checkbox" style="width: 100%;">
+            <input type="checkbox"
+              ng-click="delegateSelection(choice)"
+              ng-model="choice.selected"
+              ng-required="atLeastOne()"
+              ng-disabled="choice.disabled" />
+          </label>
+          {{ choice.content }}
+          <span class="icon-right ion-chevron-right" style="float: right;"></span>
+        </li>
+
+      </div>
+    </ul>
+  </form>
+
+</section>
