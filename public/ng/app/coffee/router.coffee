@@ -219,9 +219,9 @@
           templateUrl: 'templates/static/settings.html'
           controller:  'SettingsCtrl'
           resolve:
-            settings: (Setting, $q) ->
+            settings: (SettingResource, $q) ->
               defer = $q.defer()
-              Setting.query (response) ->
+              SettingResource.query (response) ->
                 defer.resolve response.alerts
               defer.promise
     )

@@ -10,6 +10,10 @@ module Api
         end
       end
 
+      def update
+        binding.pry
+      end
+
     end
   end
 end

@@ -242,10 +242,10 @@
           templateUrl: 'templates/static/settings.html',
           controller: 'SettingsCtrl',
           resolve: {
-            settings: function(Setting, $q) {
+            settings: function(SettingResource, $q) {
               var defer;
               defer = $q.defer();
-              Setting.query(function(response) {
+              SettingResource.query(function(response) {
                 return defer.resolve(response.alerts);
               });
               return defer.promise;
