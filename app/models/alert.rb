@@ -9,7 +9,15 @@ class Alert < ActiveRecord::Base
   scope :evening, -> { where(category: 'evening_alert') }
 
   def self.default_alerts
-    where('time = ? or time = ?', Time.zone.now.change({hour: 8, min: 30}), Time.zone.now.change({hour: 18, min: 30}))
+    Proc.new { where('time = ? or time = ?', Time.zone.now.change({hour: 8, min: 30}), Time.zone.now.change({hour: 18, min: 30})) }
+  end
+
+  def self.default_morning_alert
+    where('time = ?', Time.zone.now.change({hour: 8, min: 30}))
+  end
+
+  def self.default_evening_alert
+    where('time = ?', Time.zone.now.change({hour: 18, min: 30}))
   end
 
   def display_time
