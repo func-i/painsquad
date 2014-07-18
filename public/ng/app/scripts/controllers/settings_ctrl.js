@@ -8,7 +8,7 @@
     $scope.eveningAlerts = settings.evening_alerts;
     $scope.selectedMorningAlert = {};
     $scope.selectedEveningAlert = {};
-    $scope.handleSelection = function(alert, alertArray, morningOrEvening) {
+    $scope.handleSelection = function(alert, alertArray) {
       var date, index, _i, _len;
       for (index = _i = 0, _len = alertArray.length; _i < _len; index = ++_i) {
         date = alertArray[index];
@@ -20,12 +20,10 @@
           alert = alertArray[index];
         }
       }
-      return saveSelection(alert, alertArray, morningOrEvening);
+      return saveSelection(alert);
     };
-    saveSelection = function(alert, alertArray, morningOrEvening) {
-      return SettingResource.update({
-        bee: 'boop'
-      });
+    saveSelection = function(alert) {
+      return SettingResource.update(alert);
     };
     init = function() {
       var date, index, _i, _j, _len, _len1, _ref, _ref1, _results;

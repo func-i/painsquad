@@ -5,7 +5,6 @@
   $http.defaults.useXDomain = true
   $resource "#{CONFIG.apiUrl}/settings/", {},
     query: { method: 'GET', isArray: false },
-    update: { method: 'PUT', isArray: false }
-
+    update: { method: 'PUT' }
 
 @SettingResource.$inject = [ '$http', '$resource', 'CONFIG' ]

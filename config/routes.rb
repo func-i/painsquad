@@ -10,8 +10,9 @@ PainSquadApi::Application.routes.draw do
       resource :survey_results
       resource :achievements
       resource :activity
-      resource :settings
       resource :session
+
+      resource :settings, only: [:show, :update]
 
       resource :surveys do
         member { get 'full'; get 'truncated'; }

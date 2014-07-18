@@ -8,8 +8,7 @@
         isArray: false
       },
       update: {
-        method: 'PUT',
-        isArray: false
+        method: 'PUT'
       }
     });
   });

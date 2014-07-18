@@ -8,7 +8,7 @@
   $scope.selectedMorningAlert = {}
   $scope.selectedEveningAlert = {}
 
-  $scope.handleSelection = (alert, alertArray, morningOrEvening) ->
+  $scope.handleSelection = (alert, alertArray) ->
     for date, index in alertArray
       # set selected false for old selection
       if date.selected
@@ -17,11 +17,10 @@
       if alert is date
         date.selected = !date.selected
         alert = alertArray[index]
-    saveSelection(alert, alertArray, morningOrEvening)
+    saveSelection(alert)
 
-  saveSelection = (alert, alertArray, morningOrEvening) ->
-    SettingResource.update({bee: 'boop'})
-    # debugger
+  saveSelection = (alert) ->
+    SettingResource.update(alert)
 
   init = ->
     for date, index in $scope.morningAlerts

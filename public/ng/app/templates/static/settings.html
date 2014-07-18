@@ -20,7 +20,7 @@
           Morning Alert
         </div>
         <select
-          ng-change="handleSelection(selectedMorningAlert, morningAlerts, 'morning')"
+          ng-change="handleSelection(selectedMorningAlert, morningAlerts)"
           ng-model="selectedMorningAlert"
           ng-options="alert as alert.label for alert in morningAlerts">
         </select>
@@ -31,7 +31,7 @@
           Evening Alert
         </div>
         <select
-          ng-change="handleSelection(selectedEveningAlert, eveningAlerts, 'evening')"
+          ng-change="handleSelection(selectedEveningAlert, eveningAlerts)"
           ng-model="selectedEveningAlert"
           ng-options="alert as alert.label for alert in eveningAlerts">
         </select>
