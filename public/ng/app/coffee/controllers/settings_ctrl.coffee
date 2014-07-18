@@ -20,7 +20,7 @@
     saveSelection(alert)
 
   saveSelection = (alert) ->
-    SettingResource.update(alert)
+    SettingResource.update({ alert.id, alert.time, alert.display_time, alert.category })
 
   init = ->
     for date, index in $scope.morningAlerts
@@ -29,7 +29,6 @@
     for date, index in $scope.eveningAlerts
       if date.selected
         $scope.selectedEveningAlert = $scope.eveningAlerts[index]
-
 
   init()
 

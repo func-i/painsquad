@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717172427) do
+ActiveRecord::Schema.define(version: 20140718192201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20140717172427) do
   add_index "activities", ["subject_id"], name: "index_activities_on_subject_id", using: :btree
   add_index "activities", ["subject_type"], name: "index_activities_on_subject_type", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "alerts", force: true do |t|
+    t.datetime "time"
+    t.string   "display_time"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "answers", force: true do |t|
     t.integer  "submission_id"
@@ -150,6 +158,11 @@ ActiveRecord::Schema.define(version: 20140717172427) do
     t.string   "identifier"
   end
 
+  create_table "user_alerts", force: true do |t|
+    t.integer "alert_id"
+    t.integer "user_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "email",                                           null: false
@@ -171,8 +184,6 @@ ActiveRecord::Schema.define(version: 20140717172427) do
     t.boolean  "medal",                           default: false
     t.string   "healthcare_provider_email"
     t.boolean  "admin",                           default: false
-    t.datetime "morning_alert"
-    t.datetime "evening_alert"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
