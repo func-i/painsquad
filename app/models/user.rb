@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, email: true
   validates :healthcare_provider_email, presence: true, email: true
+  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "invalid phone number format" }
 
   validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
