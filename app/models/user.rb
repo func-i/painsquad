@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
   has_many :user_alerts
-  has_many :alerts, through: :user_alerts
+  has_many :alerts, -> { distinct }, through: :user_alerts
 
   validates :email, presence: true, email: true
   validates :healthcare_provider_email, presence: true, email: true

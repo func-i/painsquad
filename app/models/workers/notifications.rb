@@ -20,8 +20,13 @@ module Workers
     def user_lookup
       current_time = Time.now
       five_minutes = 5.minutes.from_now
-      User.where('morning_alert between ? and ? OR evening_alert between ? and ?',
-        current_time, five_minutes, current_time, five_minutes)
+      users        = []
+      User.all.each do |user|
+        if user.alerts.any? && user.alerts.where(time: current_time..five_minutes).any?
+          users << user
+        end
+      end
+      users
     end
 
   end

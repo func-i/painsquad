@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20140718211933) do
 
   create_table "alerts", force: true do |t|
     t.datetime "time"
-    t.string   "display_time"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"

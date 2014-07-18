@@ -24,7 +24,7 @@ module Api
       private
 
       def setting_params
-        params.require(:setting).permit(:id, :time, :display_time, :category, :selected)
+        params.require(:setting).permit(:id, :time, :category, :selected)
       end
 
       def fetch_alert

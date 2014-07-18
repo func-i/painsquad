@@ -24,8 +24,7 @@ PainSquadApi::Application.routes.draw do
     end
   end
 
-  post 'twilio/voice' => 'twilio#voice'
-  post 'twilio/text' => 'twilio#text'
+  # post 'twilio/text' => 'twilio#text'
 
   resource :session, only: [:create, :destroy]
   get :login, to: 'sessions#new'
