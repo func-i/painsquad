@@ -1,19 +1,19 @@
 def times
   [
-    { time: Time.now.change({hour: 8, min: 00}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 8, min: 30}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 9, min: 00}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 9, min: 30}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 10, min: 00}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 10, min: 30}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 11, min: 00}), category: 'morning_alert' },
-    { time: Time.now.change({hour: 18, min: 00}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 18, min: 30}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 19, min: 00}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 19, min: 30}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 20, min: 00}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 20, min: 30}), category: 'evening_alert' },
-    { time: Time.now.change({hour: 21, min: 00}), category: 'evening_alert' }
+    { time: Time.zone.now.change({hour: 8, min: 00}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 8, min: 30}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 9, min: 00}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 9, min: 30}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 10, min: 00}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 10, min: 30}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 11, min: 00}), category: 'morning_alert' },
+    { time: Time.zone.now.change({hour: 18, min: 00}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 18, min: 30}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 19, min: 00}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 19, min: 30}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 20, min: 00}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 20, min: 30}), category: 'evening_alert' },
+    { time: Time.zone.now.change({hour: 21, min: 00}), category: 'evening_alert' }
   ]
 end
 
