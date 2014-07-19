@@ -7,7 +7,7 @@ class Alert < ActiveRecord::Base
 
   scope :morning, -> { where(category: 'morning_alert') }
   scope :evening, -> { where(category: 'evening_alert') }
-  scope :default_alerts, -> { where('time = ? or time = ?', Time.zone.now.change({hour: 8, min: 30}), Time.zone.now.change({hour: 18, min: 30})) }
+  scope :default_alerts, -> { where('time = ? or time = ?', Time.zone.now.change({hour: 8, min: 30}).strftime("%H:%M:%S %z"), Time.zone.now.change({hour: 18, min: 30}).strftime("%H:%M:%S %z")) }
 
   def display_time
     time.strftime('%I:%M:%S %p')

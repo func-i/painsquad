@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718211933) do
+ActiveRecord::Schema.define(version: 20140719000011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140718211933) do
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "alerts", force: true do |t|
-    t.datetime "time"
+    t.time     "time"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
