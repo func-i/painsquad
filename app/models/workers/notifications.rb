@@ -24,7 +24,7 @@ module Workers
       five_minutes = less_five.strftime("%H:%M:%S")
       users        = []
       User.all.each do |user|
-        if user.alerts.any? && user.alerts.where(time: current_time..five_minutes).any?
+        if user.alerts.any? && user.alerts.where(time: five_minutes..current_time).any?
           users << user
         end
       end
