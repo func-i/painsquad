@@ -29,17 +29,20 @@ class User < ActiveRecord::Base
   include Ranking
   include PainReporting
   include AdviceScoring
+  include NotificationEvents
 
   authenticates_with_sorcery!
   has_one :api_key
   has_many :submissions
   has_many :activities
-
   has_many :favorites, class_name: Favorite
   has_many :recommendations, :through => :favorites
+  has_many :user_alerts
+  has_many :alerts, -> { distinct }, through: :user_alerts
 
   validates :email, presence: true, email: true
   validates :healthcare_provider_email, presence: true, email: true
+  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "invalid phone number format" }
 
   validates :award_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }

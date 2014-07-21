@@ -3,23 +3,28 @@ PainSquadApi::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+      resources :users
       resources :submissions
-      resources :favorites, only: [:index, :create, :destroy]
       resources :reports
-
-      resource :surveys
+      resources :favorites, only: [:index, :create, :destroy]
       resource :survey_results
       resource :achievements
       resource :activity
+      resource :session
+
+      resource :settings, only: [:show, :update]
+
+      resource :surveys do
+        member { get 'full'; get 'truncated'; }
+      end
 
       resource :recommendations do
         member { get :prevent; get :manage }
       end
-
-      resource :session
-      resources :users
     end
   end
+
+  # post 'twilio/text' => 'twilio#text'
 
   resource :session, only: [:create, :destroy]
   get :login, to: 'sessions#new'

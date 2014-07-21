@@ -44,7 +44,7 @@
 
     # pain-case template - render individual questions as partials
     .state('app.new_survey'
-      url: '/surveys/new'
+      url: '/surveys/new/'
       views:
         menuContent:
           templateUrl: 'templates/surveys/main.html'
@@ -53,6 +53,20 @@
             survey: (Survey, $q) ->
               defer = $q.defer()
               Survey.query (response) ->
+                defer.resolve response.survey
+              defer.promise
+    )
+
+    .state('app.new_survey_by_type'
+      url: '/surveys/new/:type'
+      views:
+        menuContent:
+          templateUrl: 'templates/surveys/main.html'
+          controller:  'SurveyCtrl'
+          resolve:
+            survey: (Survey, $q, $stateParams) ->
+              defer = $q.defer()
+              Survey.query {type: $stateParams.type}, (response) ->
                 defer.resolve response.survey
               defer.promise
     )
@@ -204,8 +218,13 @@
         menuContent:
           templateUrl: 'templates/static/settings.html'
           controller:  'SettingsCtrl'
+          resolve:
+            settings: (SettingResource, $q) ->
+              defer = $q.defer()
+              SettingResource.query (response) ->
+                defer.resolve response.alerts
+              defer.promise
     )
-
 
     # Action Report state
     .state('app.action_report'

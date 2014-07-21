@@ -17,6 +17,7 @@
   this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
     var checkConnection;
     $rootScope.sideMenuEnabled = true;
+    $rootScope.notificationID = 0;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
@@ -35,7 +36,14 @@
     };
     return $ionicPlatform.ready(function() {
       if (window.StatusBar) {
-        return StatusBar.styleLightContent();
+        StatusBar.styleLightContent();
+      }
+      if (window.plugin) {
+        return window.plugin.notification.local.onclick = function(id, state, json) {
+          var parsedJson;
+          parsedJson = JSON.parse(json);
+          return alert("id: " + id + ", state: " + state + ", json: " + parsedJson);
+        };
       }
     });
   });
