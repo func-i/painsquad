@@ -1,0 +1,103 @@
+<div class="modal" ng-controller="ChecklistModalCtrl" id="fullscreen" ng-cloak>
+
+  <ion-header-bar class="bar bar-header bar-royal">
+    <h1 class="title">Pain Case</h1>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="discardDetails(detailData.currentChoice)">
+        Cancel
+    </button>
+
+    <button
+      class="button button-clear button-primary"
+      ng-click="saveDetails(detailData.currentChoice)"
+      ng-show="showSave">
+        Save
+    </button>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="has-header modal-inherit checklist-detail content-background">
+
+    <div class="content-wrapper">
+      <img class="content-header" ng-src="images/background/binder-clips.png">
+      <div class="content detail-slider">
+
+        <form name="currentForm" valid-modal-form>
+
+          <div class="content-actual" ng-show="!detailData.currentChoice.textfield">
+            <p>How helpful was this in reducing your pain?</p>
+          </div>
+
+          <div class="content-actual" ng-if="detailData.currentChoice.textfield == true">
+            <p>Please specify what other medications you took</p>
+          </div>
+
+          <div class="content-textarea" ng-if="detailData.currentChoice.textfield == true">
+            <label class="item item-input">
+              <textarea rows="3"
+                ng-required="ifTextareaPresent(detailData.currentChoice)"
+                placeholder="Please specify..."
+                ng-model="detailData.currentChoice.custom_text"></textarea>
+            </label>
+          </div>
+
+          <div class="slider-container" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">
+
+            <div class="wedge-outer-container">
+              <div class="wedge-container">
+                <div class="wedge"></div>
+                <div class="wedge-overlay green"></div>
+                <div class="rect" slider-gradient="detailData.currentChoice.value"></div>
+              </div>
+            </div>
+
+
+            <div class="range-container">
+
+              <div class="upper">
+                <span class="pull-left number">0</span>
+                <span class="pull-right number">10</span>
+                <div style="clear: both; height: 0;">&nbsp;</div>
+              </div>
+
+            <div class="range range-balanced override">
+              <input
+                type="range"
+                name="slider"
+                min="0"
+                max="100"
+                ng-model="detailData.currentChoice.value"
+                ng-disabled="detailData.currentChoice.slider_disabled"
+                ng-required="ifSliderNull(detailData.currentChoice)"/>
+            </div>
+
+              <div class="lower">
+                <span class="pull-left text">not helpful</span>
+                <span class="pull-right text">very helpful</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-disable">
+            <ul class="list">
+              <li class="item item-checkbox" style="width: 100%;">
+                <label class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="slider_disable"
+                    ng-required="ifSliderNull(detailData.currentChoice)"
+                    ng-model="detailData.currentChoice.slider_disabled" />
+               </label>
+               Don't Know
+
+              </li>
+            </ul>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </ion-content>
+</div>

@@ -1,0 +1,32 @@
+<div class="modal" id="fullscreen">
+
+  <ion-header-bar class="bar bar-header bar-royal">
+    <button class="button button-icon ion-ios7-arrow-back" ng-click="closeModal()">
+      Back
+    </button>
+
+    <h1 class="title">{{ selectedItem.name | capitalize }}</h1>
+
+  </ion-header-bar>
+
+  <ion-content padding="true" has-header="true" class="award content-background">
+
+    <div class="image">
+      <img ng-src="{{ selectedItem.badge_image_path }}" alt="{{selectedItem.name}}">
+    </div>
+
+    <article>
+      <div class="header-bar bar-red"></div>
+      <div class="header">
+        <p>{{selectedItem.name | capitalize }}</p>
+        <p>Achieved {{ selectedItem.date }}</p>
+      </div>
+      <div class="body">
+        <p>{{ selectedItem.message }}</p>
+      </div>
+      <button class="button button-assertive override diagonal">Play Video</button>
+    </article>
+
+  </ion-content>
+
+</div>
