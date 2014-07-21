@@ -376,3 +376,27 @@
         menuContent:
           templateUrl: 'templates/static/pain/plan.html'
     )
+
+    # understanding pain -> pain management plan
+    .state('app.physical'
+      url: '/pain/static/physical'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/physical.html'
+    )
+
+    # understanding pain -> pain management plan
+    .state('app.pharmacological'
+      url: '/pain/static/pharmacological'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/pharmacological.html'
+    )
+
+    # understanding pain -> pain management plan
+    .state('app.psychological'
+      url: '/pain/static/psychological'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/pain/psychological.html'
+    )

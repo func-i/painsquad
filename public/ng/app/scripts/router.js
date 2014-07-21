@@ -411,6 +411,27 @@
           templateUrl: 'templates/static/pain/plan.html'
         }
       }
+    }).state('app.physical', {
+      url: '/pain/static/physical',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/pain/physical.html'
+        }
+      }
+    }).state('app.pharmacological', {
+      url: '/pain/static/pharmacological',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/pain/pharmacological.html'
+        }
+      }
+    }).state('app.psychological', {
+      url: '/pain/static/psychological',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/pain/psychological.html'
+        }
+      }
     });
   });
 
