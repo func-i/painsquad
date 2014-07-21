@@ -1,32 +1,32 @@
-<ion-view title="Reduce Pain">
+<ion-view title="Reducing Pain">
 
-  <ion-header-bar>
-    <div class="buttons">
-      <button ng-click="back()" class="button button-icon icon ion-ios7-arrow-back">Back</button>
-    </div>
-  </ion-header-bar>
+  <ion-content class="has-header content-background reduce" padding="true">
 
-  <ion-content class="has-header">
-    <p>Your health care team will know all about the 3 Ps of pain reduction – pharmacological (medications), physical, and psychological!</p>
+    <ion-list>
+      <div class="header-bar bar-darkblue"></div>
 
-     <div class="list">
+      <p class="explanation">
+        Your health care team will know all about the 3 Ps of pain reduction – pharmacological (medications), physical, and psychological!
+      </p>
 
-      <a class="item" ui-sref="app.pain_pharmacological">
+      <a class="item margin-fix" ui-sref="app.pain_pharmacological">
         Pharmacological pain
         <span class="icon-right ion-chevron-right pull-right"></span>
       </a>
 
-      <a class="item" ui-sref="app.pain_physical">
+      <a class="item margin-fix" ui-sref="app.pain_physical">
         Physical pain
         <span class="icon-right ion-chevron-right pull-right"></span>
       </a>
 
-      <a class="item" ui-sref="app.pain_psychological">
+      <a class="item margin-fix" ui-sref="app.pain_psychological">
         Psychological pain
         <span class="icon-right ion-chevron-right pull-right"></span>
       </a>
+    </ion-list>
 
-    </div>
+    <div class="extension extra diagonal"></div>
 
   </ion-content>
+
 </ion-view>

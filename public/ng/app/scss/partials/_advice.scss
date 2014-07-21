@@ -26,7 +26,7 @@
       h2 {
         display:     block;
         font-weight: bold;
-        font-size:   16px;
+        font-size:   15px;
         color:       white;
         white-space: normal;
       }
@@ -45,7 +45,7 @@
       }
 
       &.red {
-        margin-left: 8.8px;
+        margin-left: 2%;
         background-color: $red-two;
         &.active {
           background-color: rgb(160, 35, 60);

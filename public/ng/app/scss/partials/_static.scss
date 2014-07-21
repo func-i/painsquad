@@ -1,0 +1,63 @@
+.static {
+  .terms-container {
+    background-color: white;
+    font-size:        12px;
+    padding:          15px;
+  }
+
+  .types-container {
+    background-color: white;
+    font-size: 12px;
+    padding: 15px;
+    ol li {
+      padding-bottom: 20px;
+      em { font-style: italic; }
+    }
+  }
+}
+
+.acknowledgements {
+
+  .image-container {
+    height:           100px;
+    position:         relative;
+    background-color: white;
+
+    img {
+      position:   absolute;
+      max-height: 75px;
+      max-width:  100%;
+      margin:     auto;
+      top: 0; right: 0; bottom: 0; left: 0;
+    }
+  }
+
+  .upper-container, .lower-container {
+    padding: 10px 25px;
+  }
+
+  .upper-container {
+    font-size:        13px;
+    line-height:      25px;
+    border-top:       1px solid $gray-three;
+    background-color: lightgray;
+    font-size:        11px;
+  }
+
+  .lower-container {
+    background-color: white;
+    color:            $gray-one;
+    font-size:        12px;
+  }
+
+}
+
+.reduce {
+
+  .explanation {
+    background-color: white;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+}
