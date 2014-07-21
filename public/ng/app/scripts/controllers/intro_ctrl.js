@@ -4,9 +4,13 @@
     $scope.next = function() {
       return $ionicSlideBoxDelegate.next();
     };
-    return $scope.previous = function() {
+    $scope.previous = function() {
       return $ionicSlideBoxDelegate.previous();
     };
+    $scope.goHome = function() {
+      return $state.go('app.home');
+    };
+    return $rootScope.sideMenuEnabled = false;
   });
 
   this.IntroCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicSlideBoxDelegate'];

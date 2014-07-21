@@ -8,6 +8,9 @@
   $scope.previous = ->
     $ionicSlideBoxDelegate.previous()
 
-  # $rootScope.sideMenuEnabled = false
+  $scope.goHome = ->
+    $state.go 'app.home'
+
+  $rootScope.sideMenuEnabled = false
 
 @IntroCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicSlideBoxDelegate' ]
