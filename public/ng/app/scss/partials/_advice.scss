@@ -11,16 +11,16 @@
 
     .item {
       width:         49%;
-      height:        50%;
+      // height:        50%;
       float:         left;
       border-radius: 5px;
       color:         white;
       border:        0;
       text-align:    center;
-      padding:       15px 10px;
+      padding: 10px 10px 0 10px;
 
       img {
-        width: 80%;
+        width: 100%;
       }
 
       h2 {
@@ -29,6 +29,7 @@
         font-size:   15px;
         color:       white;
         white-space: normal;
+        height:      40px;
       }
 
       i {
