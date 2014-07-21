@@ -1,6 +1,15 @@
 ion-content.sidemenu {
-  top: 20px;
-  background-color: $menu-item-color;
+  position: relative;
+
+  .top-bar {
+    background-color: $royal;
+    height: 20px;
+    top: -20px;
+  }
+
+  .scroll {
+    top: -20px;
+  }
 
   .scroll-content {
     background-color: $menu-item-color;
@@ -9,19 +18,30 @@ ion-content.sidemenu {
   .item {
     border-color: gray;
     background-color: $menu-item-color;
+    height: 47px;
 
-    .ion-plus, .ion-minus {
-      margin-right: 28px;
+    .ion-chevron-down, .ion-chevron-right {
+      margin-right: -10px;
+    }
+
+    .override {
+      margin-right: 19px;
     }
 
     a {
       background-color: $menu-item-color;
       color:            $menu-dark-font;
     }
+
+    &.no-border {
+      &.top { border-top: 0; }
+      &.bottom { border-bottom: 0; }
+    }
   }
 
   .item.white {
     color: white;
+    border-color: #4B4A46;
     a { color: white; }
   }
 

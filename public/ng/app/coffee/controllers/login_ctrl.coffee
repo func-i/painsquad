@@ -1,7 +1,8 @@
 'use strict'
 
 @LoginCtrl = @controllerModule.controller 'LoginCtrl',  ($rootScope, $state, $scope, AuthService, UserService) ->
-  $scope.message = ""
+  # $rootScope.sideMenuEnabled = false
+  $scope.message             = ""
   $scope.user =
     email:    null
     password: null
