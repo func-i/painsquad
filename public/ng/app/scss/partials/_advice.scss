@@ -221,7 +221,8 @@
     .slider-slide {
       height: 85%;
       padding-top: 10px;
-      // box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
+      // border-right: 1px solid black;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8), -1px 0px 15px -4px rgba(0, 0, 0, 0.8);
 
       p {
         margin: 7px 15px;
@@ -261,9 +262,6 @@
         border: 1px solid red;
         background-color: #FAFAFA;
       }
-    }
-    .slider-pager .slider-pager-page.active {
-      color: $royal;
     }
   }
 }
