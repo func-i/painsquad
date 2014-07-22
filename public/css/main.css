@@ -60,9 +60,9 @@ h1.title {
   margin-left: auto !important;
   margin-right: auto !important; }
 
-.diagonal, .modal .modal-inherit .content-wrapper .content section .button-bar .button {
+.diagonal, .modal .modal-inherit .content-wrapper .content section .button-bar .button, .popup .popup-buttons.row .button {
   position: relative; }
-  .diagonal::before, .modal .modal-inherit .content-wrapper .content section .button-bar .button::before {
+  .diagonal::before, .modal .modal-inherit .content-wrapper .content section .button-bar .button::before, .popup .popup-buttons.row .button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -71,7 +71,7 @@ h1.title {
     right: 0;
     background-image: url('../images/background/content.png');
     width: 100%;
-    opacity: 0.1; }
+    opacity: 0.2; }
 
 .pattern-bg {
   position: relative;
@@ -96,6 +96,10 @@ ion-side-menu.menu-left.menu {
 
 .button {
   border: 0 !important; }
+
+.item {
+  height: 47px;
+  padding-top: 13px; }
 
 .checkbox input, .checkbox-icon {
   width: 23px;
@@ -141,8 +145,7 @@ li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
     height: 8px;
     width: 8px;
     border-radius: 50% !important;
-    background-color: white;
-    box-shadow: 0px 5px 8px 0px black; }
+    background-color: white; }
 
 .intro {
   z-index: 1; }
@@ -292,7 +295,8 @@ body.platform-browser .progress {
     width: 165px;
     display: block;
     top: -4px;
-    left: 33px; }
+    left: 33px;
+    border-radius: 50%; }
   .home .radial-wrapper svg {
     position: absolute;
     top: -35px; }
@@ -341,7 +345,7 @@ body.platform-browser .progress {
   .slider-container.disabled {
     opacity: 0.25; }
   .slider-container .wedge-outer-container {
-    margin: 20px;
+    margin: 11px;
     max-width: 280px; }
     .slider-container .wedge-outer-container .wedge-container {
       position: relative;
@@ -406,6 +410,7 @@ body.platform-browser .progress {
       text-transform: uppercase; }
       .home .transparent-header span i {
         font-size: 24px;
+        font-weight: normal;
         display: block; }
       .home .transparent-header span.next-level {
         text-align: left; }
@@ -455,13 +460,13 @@ body.platform-browser .progress {
     .awards .slider-slide .wrapper {
       background-color: transparent;
       position: relative;
-      height: 250px; }
+      height: 250px;
+      text-align: center; }
       .awards .slider-slide .wrapper h4 {
         color: white;
         font-weight: bold; }
       .awards .slider-slide .wrapper img {
         width: 150px;
-        text-align: center;
         margin: 0 auto; }
       .awards .slider-slide .wrapper aside {
         color: white;
@@ -563,7 +568,7 @@ body.platform-browser .progress {
     margin-bottom: 15px;
     height: 100%;
     width: 100%; }
-    .advice .top .item {
+    .advice .top .advice-item {
       width: 49%;
       float: left;
       border-radius: 5px;
@@ -571,27 +576,27 @@ body.platform-browser .progress {
       border: 0;
       text-align: center;
       padding: 10px 10px 0 10px; }
-      .advice .top .item img {
+      .advice .top .advice-item img {
         width: 100%; }
-      .advice .top .item h2 {
+      .advice .top .advice-item h2 {
         display: block;
         font-weight: bold;
         font-size: 15px;
         color: white;
         white-space: normal;
         height: 40px; }
-      .advice .top .item i {
+      .advice .top .advice-item i {
         left: 50%;
         top: 50%;
         font-size: 50px; }
-      .advice .top .item.yellow {
+      .advice .top .advice-item.yellow {
         background-color: #CFB745; }
-        .advice .top .item.yellow.active {
+        .advice .top .advice-item.yellow.active {
           background-color: #9b872d; }
-      .advice .top .item.red {
+      .advice .top .advice-item.red {
         margin-left: 2%;
         background-color: #DF4461; }
-        .advice .top .item.red.active {
+        .advice .top .advice-item.red.active {
           background-color: #a0233c; }
   .advice .bottom {
     position: relative; }
@@ -774,12 +779,11 @@ ion-content.sidemenu {
     background-color: #5B6166; }
   ion-content.sidemenu .item {
     border-color: gray;
-    background-color: #5B6166;
-    height: 47px; }
+    background-color: #5B6166; }
     ion-content.sidemenu .item .ion-chevron-down, ion-content.sidemenu .item .ion-chevron-right {
       margin-right: -10px; }
-    ion-content.sidemenu .item .override, ion-content.sidemenu .item .modal .modal-inherit .content-wrapper .content section .button-bar .button, .modal .modal-inherit .content-wrapper .content section .button-bar ion-content.sidemenu .item .button {
-      margin-right: 19px; }
+    ion-content.sidemenu .item img {
+      width: 10%; }
     ion-content.sidemenu .item a {
       background-color: #5B6166;
       color: #C0C0C0; }
@@ -795,63 +799,67 @@ ion-content.sidemenu {
   ion-content.sidemenu .item.item-divider {
     border-color: transparent;
     height: 150px;
-    background-color: #808A8F; }
+    background-color: #4b4e51; }
   ion-content.sidemenu .list .item.item-accordion.ng-hide {
     line-height: 0px; }
   ion-content.sidemenu .list .item.item-accordion.ng-hide-add, ion-content.sidemenu .list .item.item-accordion.ng-hide-remove {
     display: block !important; }
 
-.survey.survey-complete .content-wrapper .question .content-actual, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
-  height: 60px;
-  padding: 10px; }
-  .survey.survey-complete .content-wrapper .question .content-actual .top, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
-    color: #b3364e; }
-  .survey.survey-complete .content-wrapper .question .content-actual .bottom, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
-    font-size: 14px; }
-.survey.survey-complete .content-wrapper .question .summary, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
-  padding: 20px;
-  text-align: center; }
-.survey.survey-complete .content-wrapper .question .points, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
-  text-align: center; }
-  .survey.survey-complete .content-wrapper .question .points img, .survey.survey-complete .content-wrapper .question .points .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .points .survey-complete.modal-inherit {
-    width: 85%; }
-.survey .progress-mock, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
-  height: 60px; }
-.survey .content-wrapper, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
-  margin: 0 10px 0 10px; }
-  .survey .content-wrapper .content-header, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
-    width: 100%;
-    display: block; }
-  .survey .content-wrapper .question, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
-    background: white;
-    min-height: 370px; }
-    .survey .content-wrapper .question .content-actual, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
-      font-size: 18px;
-      position: relative;
-      height: 80px;
-      border-bottom: 1px solid lightgray;
-      text-align: center;
-      padding: 15px;
+.survey, .modal .modal-inherit {
+  min-height: 320px; }
+  .survey.survey-complete .content-wrapper .question .content-actual, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+    height: 60px;
+    padding: 10px; }
+    .survey.survey-complete .content-wrapper .question .content-actual .top, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
+      color: #b3364e; }
+    .survey.survey-complete .content-wrapper .question .content-actual .bottom, .survey.survey-complete .content-wrapper .question .content-actual .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .content-actual .survey-complete.modal-inherit {
+      font-size: 14px; }
+  .survey.survey-complete .content-wrapper .question .summary, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+    padding: 20px;
+    text-align: center; }
+  .survey.survey-complete .content-wrapper .question .points, .survey.survey-complete .content-wrapper .question .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .survey-complete.modal-inherit {
+    text-align: center; }
+    .survey.survey-complete .content-wrapper .question .points img, .survey.survey-complete .content-wrapper .question .points .modal .survey-complete.modal-inherit, .modal .survey.survey-complete .content-wrapper .question .points .survey-complete.modal-inherit {
+      width: 85%; }
+  .survey .progress-mock, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
+    height: 60px; }
+  .survey .content-wrapper, .survey .modal .modal-inherit, .modal .survey .modal-inherit {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 10px 0 10px; }
+    .survey .content-wrapper .content-header, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
+      width: 100%;
       display: block; }
-      .survey .content-wrapper .question .content-actual::before, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        opacity: 0.2;
-        width: 100%;
-        background-image: url('../images/background/content.png');
-        background-color: #989898; }
-  .survey .content-wrapper .tip, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
-    clear: both;
-    color: #505050;
-    margin: 10px 30px 10px 30px;
-    padding: 10px 5px 10px 5px; }
-    .survey .content-wrapper .tip p, .survey .content-wrapper .tip .modal .modal-inherit, .modal .survey .content-wrapper .tip .modal-inherit {
-      padding: 5px 20px 5px 20px;
-      border: 1px solid red; }
+    .survey .content-wrapper .question, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
+      background: white;
+      min-height: 370px; }
+      .survey .content-wrapper .question .content-actual, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
+        font-size: 18px;
+        position: relative;
+        height: 80px;
+        border-bottom: 1px solid lightgray;
+        text-align: center;
+        padding: 15px;
+        display: block; }
+        .survey .content-wrapper .question .content-actual::before, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          opacity: 0.2;
+          width: 100%;
+          background-image: url('../images/background/content.png');
+          background-color: #989898; }
+    .survey .content-wrapper .tip, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
+      clear: both;
+      color: #505050;
+      margin: 10px 30px 10px 30px;
+      padding: 10px 5px 10px 5px; }
+      .survey .content-wrapper .tip p, .survey .content-wrapper .tip .modal .modal-inherit, .modal .survey .content-wrapper .tip .modal-inherit {
+        padding: 5px 20px 5px 20px;
+        border: 1px solid red; }
 
 li.item, .item.item-checkbox {
   margin-left: 0px;
@@ -920,21 +928,23 @@ li.item, .item.item-checkbox {
   font-size: 18px; }
 
 .bodymap .item {
+  height: 60px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 10px; }
   .bodymap .item img {
-    background-color: #f2f3eb; }
+    width: 16%; }
   .bodymap .item .ion-checkmark-circled {
     position: absolute;
-    top: 35px;
-    left: 40px; }
+    top: 40px;
+    left: 44px; }
   .bodymap .item .content {
     margin-left: 15px;
-    top: -10px; }
+    top: -13px; }
   .bodymap .item .icon-right.ion-chevron-right {
     float: right;
-    margin-top: 15px; }
+    margin-top: 12px;
+    background-color: white; }
 
 .textbox {
   padding: 20px; }
@@ -952,6 +962,8 @@ li.item, .item.item-checkbox {
     width: 100% !important; } }
 
 .modal .modal-inherit .content-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 30px 10px 0 10px; }
   .modal .modal-inherit .content-wrapper .content-header {
     width: 100%;
@@ -988,18 +1000,16 @@ li.item, .item.item-checkbox {
     .modal .modal-inherit .content-wrapper .content .map section svg {
       height: 50%;
       background-color: #f2f3eb; }
-      .modal .modal-inherit .content-wrapper .content .map section svg#torso, .modal .modal-inherit .content-wrapper .content .map section svg#arms {
-        margin: 10px 15px 0 15px;
-        width: 90%; }
-      .modal .modal-inherit .content-wrapper .content .map section svg#legs, .modal .modal-inherit .content-wrapper .content .map section svg#head {
-        margin: 20px 20px 0 15px;
-        width: 90%; }
+      .modal .modal-inherit .content-wrapper .content .map section svg#head, .modal .modal-inherit .content-wrapper .content .map section svg#torso, .modal .modal-inherit .content-wrapper .content .map section svg#arms, .modal .modal-inherit .content-wrapper .content .map section svg#legs {
+        width: 85%;
+        margin: 10px 20px; }
     .modal .modal-inherit .content-wrapper .content .tip {
-      margin: 10px 30px 10px 30px;
-      padding: 10px 5px 10px 5px; }
+      text-align: center;
+      color: #5B6166;
+      margin: 10px 20px; }
       .modal .modal-inherit .content-wrapper .content .tip p {
         padding: 5px 20px 5px 20px;
-        border: 1px solid red; }
+        border: 1px solid #EFA1B0; }
     .modal .modal-inherit .content-wrapper .content section .button-bar {
       padding-top: 10px;
       width: 90%;
@@ -1008,6 +1018,16 @@ li.item, .item.item-checkbox {
     .modal .modal-inherit .content-wrapper .content .slider-disable .item.item-checkbox {
       width: 100%;
       margin-bottom: 20px; }
+
+.popup .popup-head {
+  text-align: center; }
+  .popup .popup-head .popup-title {
+    font-size: 16px; }
+.popup .popup-body {
+  text-align: center;
+  color: #5B6166; }
+.popup .popup-buttons.row .button {
+  border-radius: 5px; }
 
 .chart-wrapper {
   padding: 20px 10px; }
