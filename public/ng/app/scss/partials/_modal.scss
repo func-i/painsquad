@@ -63,23 +63,33 @@
           height:      50%;
           background-color: $bodymap-bg;
 
-          &#torso, &#arms {
-            margin: 10px 15px 0 15px;
-            width: 90%;
+          &#head, &#torso, &#arms, &#legs {
+            width: 85%;
+            margin: 10px 20px;
           }
-          &#legs, &#head {
-            margin: 20px 20px 0 15px;
-            width: 90%;
-          }
+
+          // &#torso, &#arms {
+          //   margin-top:    10px;
+          //   margin-right:  20px;
+          //   margin-bottom: 10px;
+          //   margin-left:   15px;
+          // }
+          // &#legs, &#head {
+          //   margin-top:    10px;
+          //   margin-right:  20px;
+          //   margin-bottom: 10px;
+          //   margin-left:   15px;
+          // }
 
         }
 
         .tip {
-          margin: 10px 30px 10px 30px;
-          padding: 10px 5px 10px 5px;
+          text-align: center;
+          color:      #5B6166;
+          margin:     10px 20px;
           p {
             padding: 5px 20px 5px 20px;
-            border: 1px solid red;
+            border: 1px solid $red-four;
           }
         }
 
