@@ -64,8 +64,7 @@ $thumb-height: 30px;
   &.disabled { opacity: 0.25; }
 
   .wedge-outer-container {
-    // margin: 20px;
-    margin:    11px;
+    margin: 0 11px;
     max-width: 280px;
 
     .wedge-container {
@@ -113,6 +112,7 @@ $thumb-height: 30px;
       margin-top: 10px;
 
       .number {
+        color: $gray-font;
         font-size:     27px;
         margin-top:    5px;
         margin-bottom: -15px;

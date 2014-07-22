@@ -1,11 +1,6 @@
 <ion-view title="Favorites">
 
-  <ion-header-bar>
-    <button class="button button-clear button-primary" ng-click="back()">Back</button>
-  </ion-header-bar>
-
   <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
-
     <ion-list ng-hide="isFavorites" class="recommended">
       <div class="header-bar bar-blue"></div>
 
@@ -40,6 +35,8 @@
         <div class="badge" ng-class="{ 'favorite': item.recommendation.favorite }">
           <i ng-model="item.recommendation.favorite" class="ion-ios7-heart-outline"> </i>
         </div>
+
+        <span class="chevron-icon ion-chevron-right"></span>
 
       </ion-item>
     </ion-list>

@@ -1,13 +1,14 @@
 <section class="textbox" ng-cloak>
 
   <form name="currentForm" valid-form>
+    <textarea
+      placeholder="How's it going?"
+      ng-model="question.choices[0].value">
+    </textarea>
+<!--
     <label class="item item-input">
-      <textarea
-        required
-        placeholder="How's it going?"
-        rows="5"
-        ng-model="question.choices[0].value"></textarea>
     </label>
+ -->
   </form>
 
 </section>

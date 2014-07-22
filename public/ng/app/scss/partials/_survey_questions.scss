@@ -7,9 +7,12 @@ li.item, .item.item-checkbox {
 
 // BOOLEAN
 .boolean {
-  padding:      0 20px 0 20px;
+  padding: 15px;
   margin-left:  auto;
   margin-right: auto;
+  .button.button-block {
+    margin: 5px 0;
+  }
 }
 
 
@@ -63,7 +66,7 @@ li.item, .item.item-checkbox {
   form div {
     width: 50%;
     float: left;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $gray-five;
 
     textarea {
       resize: none;
@@ -75,9 +78,14 @@ li.item, .item.item-checkbox {
     li.item {
       margin-top:    1px;
       margin-bottom: 1px;
+      padding: 0;
       border:        0;
       width:         100%;
-      font-size:     15px;
+      font-size:     16px;
+      span {
+        top:  14px;
+        left: 45px;
+      }
     }
 
     .item.item-input {
@@ -102,14 +110,11 @@ li.item, .item.item-checkbox {
 
 
 // BODYMAP
-.button-bar a span {
-  font-size: 18px;
-}
-
 .bodymap {
 
   .item {
-    height:       60px;
+    position: relative;
+    height:       62px;
     margin-left:  0px;
     margin-right: 0px;
     padding:      10px;
@@ -119,9 +124,12 @@ li.item, .item.item-checkbox {
     }
 
     .ion-checkmark-circled {
-      position: absolute;
-      top:      40px;
-      left:     44px;
+      position:         absolute;
+      top:              36px;
+      left:             42px;
+      font-size:        20px;
+      border-radius:    50%;
+      background-color: white;
     }
 
     .content {
@@ -130,8 +138,9 @@ li.item, .item.item-checkbox {
     }
 
     .icon-right.ion-chevron-right {
-      float:      right;
-      margin-top: 12px;
+      position:         absolute;
+      margin-top:       12px;
+      right:            20px;
       background-color: white;
     }
   }
@@ -142,7 +151,11 @@ li.item, .item.item-checkbox {
   padding: 20px;
 
   textarea {
-    resize: none;
+    padding: 10px;
+    border:  1px solid $gray-five;
+    height:  100px;
+    resize:  none;
+
     &::-webkit-input-placeholder {
       font-style: italic;
     }

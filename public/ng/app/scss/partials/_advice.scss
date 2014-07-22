@@ -78,6 +78,7 @@
   .item {
     margin-left: auto;
     margin-right: auto;
+    min-height: 110px;
 
     .duration, .context {
       color: $gray-one;
@@ -117,6 +118,12 @@
         left:      4px;
       }
     }
+
+    .chevron-icon {
+      position: absolute;
+      top:      50px;
+      right:    10px;
+    }
   }
 }
 
@@ -128,10 +135,22 @@
 
   .container {
     margin:  15px 10px;
-    height:  550px;
     background-color: white;
 
+    &.basic {
+      min-height: 480px;
+    }
+
+    &.slideshow {
+      min-height: 480px;
+    }
+
+    &.nested {
+      min-height: 480px;
+    }
+
     &.show-slides {
+      min-height: 0;
       height: 0%;
     }
 
@@ -183,17 +202,19 @@
 
     .description {
       p {
-        padding: 20px 20px 0 20px;
+        font-size: 16px;
+        padding:   20px 20px 0 20px;
+        color:     $dark-gray-font;
 
         &.byline {
-          font-size: 12px;
+          color:     $gray-font;
+          font-size: 14px;
 
           br {
             line-height: 35px;
           }
         }
       }
-
     }
   }
 }
@@ -206,7 +227,7 @@
     @extend .gray-diagonal;
     height:    50px;
     color:     $royal;
-    font-size: 16px;
+    font-size: 20px;
     padding:   10px;
   }
 
@@ -268,6 +289,7 @@
 .modal .nested {
 
   .container {
+    min-height: 400px;
     height: 100%;
 
     .image-block {
@@ -279,9 +301,9 @@
 
     .header {
       @extend .gray-diagonal;
-      height:    50px;
-      color:     $royal;
-      font-size: 16px;
+      height:     50px;
+      color:      $royal;
+      font-size:  20px;
       text-align: left;
       span {
         display: block;
