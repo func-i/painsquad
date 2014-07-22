@@ -18,6 +18,11 @@ ion-side-menu.menu-left.menu {
   border: 0 !important;
 }
 
+.item {
+  height:         47px;
+  padding-top:    13px;
+}
+
 // FORM/INPUT OVERRIDES
 $checkbox-border:  #808A8F;
 $checkbox-checked: #DF4461;

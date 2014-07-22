@@ -1,3 +1,9 @@
+// SIDEMENU
+$menu-gap-width:  150px;
+$menu-item-color: #5B6166;
+$menu-gap-color:  $gray-two;
+$menu-dark-font:  #C0C0C0;
+
 ion-content.sidemenu {
   position: relative;
 
@@ -18,7 +24,6 @@ ion-content.sidemenu {
   .item {
     border-color: gray;
     background-color: $menu-item-color;
-    height: 47px;
 
     .ion-chevron-down, .ion-chevron-right {
       margin-right: -10px;
@@ -48,7 +53,8 @@ ion-content.sidemenu {
   .item.item-divider {
     border-color:     transparent;
     height:           $menu-gap-width;
-    background-color: $menu-gap-color;
+    background-color: rgb(75, 78, 81);
+    // background-color: $menu-gap-color;
   }
 
   .list .item.item-accordion.ng-hide {
