@@ -30,11 +30,15 @@ $circle-fill: #D12D4E;
   }
 
   img {
-    position: absolute;
-    width:    165px;
-    display:  block;
-    top:      -4px;
-    left:     33px;
+    position:           absolute;
+    width:              165px;
+    display:            block;
+    top:                -4px;
+    left:               33px;
+    border-radius:      50%;
+    // -webkit-box-shadow: 7px 7px 28px 0px rgba(50, 50, 50, 0.7);
+    // -moz-box-shadow:    7px 7px 28px 0px rgba(50, 50, 50, 0.7);
+    // box-shadow:         43px 43px 30px 0px rgba(50, 50, 50, 1);
   }
 
   svg {

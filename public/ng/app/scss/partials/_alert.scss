@@ -1,0 +1,22 @@
+.popup {
+
+  .popup-head {
+    text-align: center;
+    .popup-title {
+      font-size: 16px;
+    }
+  }
+
+  .popup-body {
+    text-align: center;
+    color: $gray-one;
+  }
+
+  .popup-buttons.row {
+    .button {
+      @extend .diagonal;
+      border-radius: 5px;
+    }
+  }
+
+}
