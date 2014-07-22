@@ -1,4 +1,5 @@
 .survey {
+  min-height: 320px;
 
   &.survey-complete {
     .content-wrapper .question {
@@ -31,6 +32,8 @@
   .progress-mock { height: 60px; }
 
   .content-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 0 10px 0 10px;
 
     .content-header {

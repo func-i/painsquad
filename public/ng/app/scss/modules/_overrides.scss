@@ -18,6 +18,11 @@ ion-side-menu.menu-left.menu {
   border: 0 !important;
 }
 
+.item {
+  height:         47px;
+  padding-top:    13px;
+}
+
 // FORM/INPUT OVERRIDES
 $checkbox-border:  #808A8F;
 $checkbox-checked: #DF4461;
@@ -88,6 +93,5 @@ li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
     width:            8px;
     border-radius:    50% !important;
     background-color: white;
-    box-shadow:       0px 5px 8px 0px rgba(0, 0, 0, 1);
   }
 }

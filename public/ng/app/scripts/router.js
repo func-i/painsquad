@@ -253,6 +253,13 @@
           }
         }
       }
+    }).state('app.reports', {
+      url: '/reports/',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/reports/main.html'
+        }
+      }
     }).state('app.action_report', {
       url: '/reports/action',
       views: {

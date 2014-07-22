@@ -224,6 +224,15 @@
               SettingResource.query (response) ->
                 defer.resolve response.alerts
               defer.promise
+
+    )
+
+
+    .state('app.reports'
+      url: '/reports/'
+      views:
+        menuContent:
+          templateUrl: 'templates/reports/main.html'
     )
 
     # Action Report state
