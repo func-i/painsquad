@@ -51,6 +51,8 @@ h1.title {
   width: 100%; }
   .header-bar.bar-darkblue {
     background-color: #1B2D6D; }
+  .header-bar.bar-altblue {
+    background-color: #223C7F; }
   .header-bar.bar-blue {
     background-color: #00aed7; }
   .header-bar.bar-red {
@@ -214,7 +216,8 @@ button.button.show-next.show-inactive {
   color: #737D80; }
 
 .button-bar > a.button.override, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button {
-  color: #7F8A8E;
+  color: #5B6166;
+  font-size: 20px;
   border: 0; }
   .button-bar > a.button.override:first-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:first-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:first-child {
     border-radius: 5px 0px 0px 5px; }
@@ -345,7 +348,7 @@ body.platform-browser .progress {
   .slider-container.disabled {
     opacity: 0.25; }
   .slider-container .wedge-outer-container {
-    margin: 11px;
+    margin: 0 11px;
     max-width: 280px; }
     .slider-container .wedge-outer-container .wedge-container {
       position: relative;
@@ -376,6 +379,7 @@ body.platform-browser .progress {
   .slider-container .range-container .upper {
     margin-top: 10px; }
     .slider-container .range-container .upper .number {
+      color: #404548;
       font-size: 27px;
       margin-top: 5px;
       margin-bottom: -15px; }
@@ -549,12 +553,12 @@ body.platform-browser .progress {
     font-weight: bold;
     padding-top: 5px; }
   .modal .award article .header p:last-child {
-    color: #3f414c;
+    color: #404548;
     font-size: 14px;
     padding-bottom: 5px; }
   .modal .award article .body {
     margin: 15px;
-    color: #3f414c; }
+    color: #404548; }
   .modal .award article button {
     width: 90%;
     margin: 0 auto; }
@@ -612,7 +616,8 @@ body.platform-browser .progress {
     border-top: 0; }
   .recommended .item {
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    min-height: 110px; }
     .recommended .item .duration, .recommended .item .context {
       color: #5B6166; }
       .recommended .item .duration .row, .recommended .item .duration .col, .recommended .item .duration .col-90, .recommended .item .duration .col-10, .recommended .item .context .row, .recommended .item .context .col, .recommended .item .context .col-90, .recommended .item .context .col-10 {
@@ -640,15 +645,25 @@ body.platform-browser .progress {
         font-size: 16px;
         top: 8px;
         left: 4px; }
+    .recommended .item .chevron-icon {
+      position: absolute;
+      top: 50px;
+      right: 10px; }
 
 .modal button.button {
   padding-left: 0;
   padding-right: 0; }
 .modal .container {
   margin: 15px 10px;
-  height: 550px;
   background-color: white; }
+  .modal .container.basic {
+    min-height: 480px; }
+  .modal .container.slideshow {
+    min-height: 480px; }
+  .modal .container.nested {
+    min-height: 480px; }
   .modal .container.show-slides {
+    min-height: 0;
     height: 0%; }
   .modal .container img {
     height: 100%; }
@@ -684,9 +699,12 @@ body.platform-browser .progress {
         top: 8px;
         left: 4px; }
   .modal .container .description p {
-    padding: 20px 20px 0 20px; }
+    font-size: 16px;
+    padding: 20px 20px 0 20px;
+    color: #303436; }
     .modal .container .description p.byline {
-      font-size: 12px; }
+      color: #404548;
+      font-size: 14px; }
       .modal .container .description p.byline br {
         line-height: 35px; }
 
@@ -695,7 +713,7 @@ body.platform-browser .progress {
   .modal .container .slide .header {
     height: 50px;
     color: #00aed7;
-    font-size: 16px;
+    font-size: 20px;
     padding: 10px; }
   .modal .container .slide .slider .slider-pager .slider-pager-page {
     font-size: 80%;
@@ -740,6 +758,7 @@ body.platform-browser .progress {
         background-color: #FAFAFA; }
 
 .modal .nested .container {
+  min-height: 400px;
   height: 100%; }
   .modal .nested .container .image-block {
     text-align: center;
@@ -750,7 +769,7 @@ body.platform-browser .progress {
   .modal .nested .container .header {
     height: 50px;
     color: #00aed7;
-    font-size: 16px;
+    font-size: 20px;
     text-align: left; }
     .modal .nested .container .header span {
       display: block;
@@ -779,7 +798,8 @@ ion-content.sidemenu {
     background-color: #5B6166; }
   ion-content.sidemenu .item {
     border-color: gray;
-    background-color: #5B6166; }
+    background-color: #5B6166;
+    font-family: 'ArialMT'; }
     ion-content.sidemenu .item .ion-chevron-down, ion-content.sidemenu .item .ion-chevron-right {
       margin-right: -10px; }
     ion-content.sidemenu .item img {
@@ -832,15 +852,16 @@ ion-content.sidemenu {
       display: block; }
     .survey .content-wrapper .question, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
       background: white;
-      min-height: 370px; }
+      min-height: 370px;
+      padding-bottom: 10px; }
       .survey .content-wrapper .question .content-actual, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
-        font-size: 18px;
-        position: relative;
+        font-size: 16px;
         height: 80px;
         border-bottom: 1px solid lightgray;
         text-align: center;
         padding: 15px;
-        display: block; }
+        display: block;
+        position: relative; }
         .survey .content-wrapper .question .content-actual::before, .survey .content-wrapper .question .modal .modal-inherit, .modal .survey .content-wrapper .question .modal-inherit {
           content: '';
           position: absolute;
@@ -851,24 +872,29 @@ ion-content.sidemenu {
           opacity: 0.2;
           width: 100%;
           background-image: url('../images/background/content.png');
-          background-color: #989898; }
+          background-color: rgba(77, 77, 77, 0.5); }
     .survey .content-wrapper .tip, .survey .content-wrapper .modal .modal-inherit, .modal .survey .content-wrapper .modal-inherit {
+      text-align: center;
       clear: both;
-      color: #505050;
-      margin: 10px 30px 10px 30px;
-      padding: 10px 5px 10px 5px; }
+      color: #404548;
+      margin: 24px;
+      font-size: 12px;
+      background-image: url('../images/background/content.png');
+      background-color: rgba(217, 220, 222, 0.2); }
       .survey .content-wrapper .tip p, .survey .content-wrapper .tip .modal .modal-inherit, .modal .survey .content-wrapper .tip .modal-inherit {
-        padding: 5px 20px 5px 20px;
-        border: 1px solid red; }
+        padding: 2px 5px;
+        border: 1px solid #EFA1B0; }
 
 li.item, .item.item-checkbox {
   margin-left: 0px;
   margin-right: 0px; }
 
 .boolean {
-  padding: 0 20px 0 20px;
+  padding: 15px;
   margin-left: auto;
   margin-right: auto; }
+  .boolean .button.button-block {
+    margin: 5px 0; }
 
 .checklist-extra li.item.item-checkbox.disabled {
   opacity: 0.5; }
@@ -901,7 +927,7 @@ li.item, .item.item-checkbox {
   .checklist-grid form div {
     width: 50%;
     float: left;
-    border-bottom: 1px solid black; }
+    border-bottom: 1px solid #D9DCDE; }
     .checklist-grid form div textarea {
       resize: none; }
       .checklist-grid form div textarea::-webkit-input-placeholder {
@@ -909,9 +935,13 @@ li.item, .item.item-checkbox {
     .checklist-grid form div li.item {
       margin-top: 1px;
       margin-bottom: 1px;
+      padding: 0;
       border: 0;
       width: 100%;
-      font-size: 15px; }
+      font-size: 16px; }
+      .checklist-grid form div li.item span {
+        top: 14px;
+        left: 45px; }
     .checklist-grid form div .item.item-input {
       border-color: lightgray;
       margin: 0 10px 0 60px; }
@@ -924,11 +954,9 @@ li.item, .item.item-checkbox {
       border: none;
       padding-bottom: 10px; }
 
-.button-bar a span {
-  font-size: 18px; }
-
 .bodymap .item {
-  height: 60px;
+  position: relative;
+  height: 62px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 10px; }
@@ -936,19 +964,26 @@ li.item, .item.item-checkbox {
     width: 16%; }
   .bodymap .item .ion-checkmark-circled {
     position: absolute;
-    top: 40px;
-    left: 44px; }
+    top: 36px;
+    left: 42px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: white; }
   .bodymap .item .content {
     margin-left: 15px;
     top: -13px; }
   .bodymap .item .icon-right.ion-chevron-right {
-    float: right;
+    position: absolute;
     margin-top: 12px;
+    right: 20px;
     background-color: white; }
 
 .textbox {
   padding: 20px; }
   .textbox textarea {
+    padding: 10px;
+    border: 1px solid #D9DCDE;
+    height: 100px;
     resize: none; }
     .textbox textarea::-webkit-input-placeholder {
       font-style: italic; }
@@ -964,7 +999,7 @@ li.item, .item.item-checkbox {
 .modal .modal-inherit .content-wrapper {
   padding-left: 15px;
   padding-right: 15px;
-  margin: 30px 10px 0 10px; }
+  margin: 20px 10px 0 10px; }
   .modal .modal-inherit .content-wrapper .content-header {
     width: 100%;
     display: block; }
@@ -972,13 +1007,13 @@ li.item, .item.item-checkbox {
     background: white;
     min-height: 370px; }
     .modal .modal-inherit .content-wrapper .content .content-actual {
-      font-size: 18px;
-      position: relative;
+      font-size: 16px;
       height: 80px;
       border-bottom: 1px solid lightgray;
       text-align: center;
       padding: 15px;
-      display: block; }
+      display: block;
+      position: relative; }
       .modal .modal-inherit .content-wrapper .content .content-actual::before {
         content: '';
         position: absolute;
@@ -988,15 +1023,20 @@ li.item, .item.item-checkbox {
         right: 0;
         background: url('/images/background/content.png');
         background-color: lightgray;
-        opacity: 0.1;
+        opacity: 0.2;
         width: 100%; }
+    .modal .modal-inherit .content-wrapper .content .upper .number {
+      color: #404548; }
     .modal .modal-inherit .content-wrapper .content .content-textarea {
       padding: 20px;
       border-bottom: 1px solid lightgray; }
-      .modal .modal-inherit .content-wrapper .content .content-textarea textarea {
-        resize: none; }
-        .modal .modal-inherit .content-wrapper .content .content-textarea textarea::-webkit-input-placeholder {
-          font-style: italic; }
+      .modal .modal-inherit .content-wrapper .content .content-textarea label.item.item-input {
+        border-color: lightgray; }
+        .modal .modal-inherit .content-wrapper .content .content-textarea label.item.item-input textarea {
+          padding-top: 20px;
+          resize: none; }
+          .modal .modal-inherit .content-wrapper .content .content-textarea label.item.item-input textarea::-webkit-input-placeholder {
+            font-style: italic; }
     .modal .modal-inherit .content-wrapper .content .map section svg {
       height: 50%;
       background-color: #f2f3eb; }
@@ -1005,10 +1045,13 @@ li.item, .item.item-checkbox {
         margin: 10px 20px; }
     .modal .modal-inherit .content-wrapper .content .tip {
       text-align: center;
-      color: #5B6166;
-      margin: 10px 20px; }
+      color: #404548;
+      margin: 24px;
+      font-size: 12px;
+      background-image: url('../images/background/content.png');
+      background-color: rgba(217, 220, 222, 0.2); }
       .modal .modal-inherit .content-wrapper .content .tip p {
-        padding: 5px 20px 5px 20px;
+        padding: 2px 5px;
         border: 1px solid #EFA1B0; }
     .modal .modal-inherit .content-wrapper .content section .button-bar {
       padding-top: 10px;
@@ -1017,7 +1060,13 @@ li.item, .item.item-checkbox {
       margin-right: auto; }
     .modal .modal-inherit .content-wrapper .content .slider-disable .item.item-checkbox {
       width: 100%;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      position: relative;
+      margin-top: 20px;
+      font-size: 14px; }
+      .modal .modal-inherit .content-wrapper .content .slider-disable .item.item-checkbox span.idk {
+        position: absolute;
+        top: 13px; }
 
 .popup .popup-head {
   text-align: center; }
