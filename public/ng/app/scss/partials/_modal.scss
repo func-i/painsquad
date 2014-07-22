@@ -16,7 +16,7 @@
     .content-wrapper {
       padding-left: 15px;
       padding-right: 15px;
-      margin: 30px 10px 0 10px;
+      margin: 20px 10px 0 10px;
 
       .content-header {
         width: 100%;
@@ -28,13 +28,13 @@
         min-height: 370px;
 
         .content-actual {
-          font-size:     18px;
-          position:      relative;
+          font-size:     16px;
           height:        80px;
           border-bottom: 1px solid lightgray;
           text-align:    center;
           padding:       15px;
           display:       block;
+          position:      relative;
 
           &::before {
             content:    '';
@@ -42,19 +42,31 @@
             top:        0; left: 0; bottom: 0; right: 0;
             background: url('/images/background/content.png');
             background-color: lightgray;
-            opacity:    0.1;
+            opacity:    0.2;
             width:      100%;
           }
+        }
+
+        .upper .number {
+          color: $gray-font;
+        }
+
+        .slider-container {
+          // padding-top: 10px;
         }
 
         .content-textarea {
           padding: 20px;
           border-bottom: 1px solid lightgray;
 
-          textarea {
-            resize: none;
-            &::-webkit-input-placeholder {
-              font-style: italic;
+          label.item.item-input {
+            border-color: lightgray;
+            textarea {
+              padding-top: 20px;
+              resize: none;
+              &::-webkit-input-placeholder {
+                font-style: italic;
+              }
             }
           }
         }
@@ -95,6 +107,14 @@
           .item.item-checkbox {
             width: 100%;
             margin-bottom: 20px;
+            position: relative;
+            margin-top: 20px;
+            font-size: 14px;
+
+            span.idk {
+              position: absolute;
+              top:      13px;
+            }
           }
         }
       }

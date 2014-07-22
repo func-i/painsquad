@@ -61,9 +61,9 @@ module Builder
     def build_test_survey
       Questions::Other.boolean_has_pain(@survey)
       Questions::Slider.current_pain(@survey)
-      Questions::Slider.last_case_worst(@survey)
-      Questions::Slider.last_case_best(@survey)
-      Questions::Slider.last_case_average(@survey)
+      Questions::Checklist.pain_cause(@survey)
+      Questions::Other.bodymap(@survey)
+      Questions::Checklist.describe_pain_grid(@survey)
       Questions::Other.textbox(@survey)
     end
 

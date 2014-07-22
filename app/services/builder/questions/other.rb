@@ -27,7 +27,7 @@ module Builder::Questions::Other
     def bodymap survey
       question = survey.questions.create(
         question_type: 'bodymap',
-        content:       '<strong>Where did it hurt</strong> since your last report?',
+        content:       '<strong>Where did it hurt</strong> since your last case',
         tip:           'Touch the area of the body and then select parts in that area'
       )
       question.choices.create content: 'Head'

@@ -42,7 +42,8 @@ button.button.show-next {
 
 .button-bar > a.button {
   &.override {
-    color: $inactive-font;
+    color: $gray-one;
+    font-size: 20px;
     border: 0;
 
     &:first-child {
