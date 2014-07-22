@@ -59,6 +59,7 @@ module Builder
     end
 
     def build_test_survey
+      Questions::Other.bodymap(@survey)
       Questions::Checklist.medication_efficacy_slider(@survey)
       Questions::Other.textbox(@survey)
     end

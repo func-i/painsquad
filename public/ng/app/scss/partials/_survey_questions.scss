@@ -109,26 +109,30 @@ li.item, .item.item-checkbox {
 .bodymap {
 
   .item {
+    height:       60px;
     margin-left:  0px;
     margin-right: 0px;
     padding:      10px;
 
-    img { background-color: $bodymap-bg; }
+    img {
+      width:       16%;
+    }
 
     .ion-checkmark-circled {
       position: absolute;
-      top:      35px;
-      left:     40px;
+      top:      40px;
+      left:     44px;
     }
 
     .content {
       margin-left: 15px;
-      top: -10px;
+      top:         -16px;
     }
 
     .icon-right.ion-chevron-right {
-      float: right;
-      margin-top: 15px;
+      float:      right;
+      margin-top: 12px;
+      background-color: white;
     }
   }
 }
