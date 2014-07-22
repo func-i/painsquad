@@ -83,10 +83,14 @@
 
         .tip {
           text-align: center;
-          color:      #5B6166;
-          margin:     10px 20px;
+          color:      $gray-font;
+          margin:     24px;
+          font-size:  12px;
+          background-image: url('../images/background/content.png');
+          background-color: rgba(217, 220, 222, 0.2);
+
           p {
-            padding: 5px 20px 5px 20px;
+            padding: 2px 5px;
             border: 1px solid $red-four;
           }
         }

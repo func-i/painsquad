@@ -5,7 +5,7 @@ module Builder::Questions::Other
     def boolean_has_pain survey
       question = survey.questions.create(
         question_type: 'boolean',
-        content:       'Did you have <strong>pain</strong> in the last 12 hours?'
+        content:       'Did you have <strong>pain</strong> since your last case?'
       )
       question.choices.create content: 'Yes', value: 'true'
       question.choices.create content: 'No', value: 'false'

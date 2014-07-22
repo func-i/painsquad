@@ -111,15 +111,15 @@ module Builder
           description: 'Mental games turn your attention away from pain and keep your mind busy with another activity. As a result, your mind isn’t available to think about pain.'
         )
         nest1 = rec.nested_recommendations.create(title: 'Alphabet Games', style: 'nested')
-        nest1.steps.create(content: "Think of any category of interest, such as sports, cars, teams, animals or countries")
-        nest1.steps.create(content: "Try to name as many as you can that start with the letter A")
-        nest1.steps.create(content: "When you're done, move on to the letters B, C, and so on through Z")
+        nest1.steps.create(content: "Think of any category of interest, such as sports, cars, teams, animals or countries.")
+        nest1.steps.create(content: "Try to name as many as you can that start with the letter A.")
+        nest1.steps.create(content: "When you're done, move on to the letters B, C, and so on through Z.")
 
         nest2 = rec.nested_recommendations.create(title: "Song Lyrics", style: "nested")
-        nest2.steps.create(content: "Try to remember all the words to your favourite song")
+        nest2.steps.create(content: "Try to remember all the words to your favourite song.")
 
         nest3 = rec.nested_recommendations.create(title: "Counting Tiles", style: "nested")
-        nest3.steps.create(content: "Count the number of tiles on the floor or dots on an area of the ceiling")
+        nest3.steps.create(content: "Count the number of tiles on the floor or dots on an area of the ceiling.")
       end
 
       def imagery

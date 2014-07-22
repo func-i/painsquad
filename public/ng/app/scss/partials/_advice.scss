@@ -227,7 +227,7 @@
     @extend .gray-diagonal;
     height:    50px;
     color:     $royal;
-    font-size: 16px;
+    font-size: 20px;
     padding:   10px;
   }
 
@@ -301,9 +301,9 @@
 
     .header {
       @extend .gray-diagonal;
-      height:    50px;
-      color:     $royal;
-      font-size: 16px;
+      height:     50px;
+      color:      $royal;
+      font-size:  20px;
       text-align: left;
       span {
         display: block;

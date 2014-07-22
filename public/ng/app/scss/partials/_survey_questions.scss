@@ -7,9 +7,12 @@ li.item, .item.item-checkbox {
 
 // BOOLEAN
 .boolean {
-  padding:      0 20px 0 20px;
+  padding: 15px;
   margin-left:  auto;
   margin-right: auto;
+  .button.button-block {
+    margin: 5px 0;
+  }
 }
 
 
@@ -121,10 +124,12 @@ li.item, .item.item-checkbox {
     }
 
     .ion-checkmark-circled {
-      position:  absolute;
-      top:       36px;
-      left:      42px;
-      font-size: 20px;
+      position:         absolute;
+      top:              36px;
+      left:             42px;
+      font-size:        20px;
+      border-radius:    50%;
+      background-color: white;
     }
 
     .content {
@@ -143,12 +148,16 @@ li.item, .item.item-checkbox {
 
 // TEXTAREA
 .textbox {
-  // padding: 20px;
+  padding: 20px;
 
-  // textarea {
-  //   resize: none;
-  //   &::-webkit-input-placeholder {
-  //     font-style: italic;
-  //   }
-  // }
+  textarea {
+    padding: 10px;
+    border:  1px solid $gray-five;
+    height:  100px;
+    resize:  none;
+
+    &::-webkit-input-placeholder {
+      font-style: italic;
+    }
+  }
 }
