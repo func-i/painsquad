@@ -11,7 +11,7 @@
 
       <ion-item
         ng-repeat="item in recommendations"
-        class="item fat-item item-thumbnail-left"
+        class="item item-thumbnail-left"
         ng-click="loadAdviceModal(item)"
         ng-class="{ 'first': $first }">
 
@@ -32,6 +32,8 @@
           <div class="badge" ng-class="{ 'favorite': item.favorite }">
             <i ng-model="item.favorite" class="ion-ios7-heart-outline"> </i>
           </div>
+
+          <span class="chevron-icon ion-chevron-right"></span>
 
       </ion-item>
 
