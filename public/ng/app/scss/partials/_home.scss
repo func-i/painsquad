@@ -1,8 +1,19 @@
+.bar-royal .button.active, .bar-royal .button.activated {
+  border-color: 0;
+  background-color: 0;
+  color: 0;
+}
+
 .image-button {
+  position: absolute;
+  display: none;
   top: 5px;
-  img { width: 50%; }
-  &.right { left: 5px; }
-  &.left { right: 5px; }
+  img {
+    position: relative;
+    width: 50%;
+  }
+  // &.left { left: 10px; }
+  // &.right { left: -40px; }
 }
 
 .home {
