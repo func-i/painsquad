@@ -4,6 +4,25 @@ $menu-item-color: #5B6166;
 $menu-gap-color:  $gray-two;
 $menu-dark-font:  #C0C0C0;
 
+.no-padding-top .list {
+  padding-top: 0;
+}
+
+ion-item {
+  border: 0;
+  &.special-bottom-border {
+    border-bottom: 2px solid black;
+  }
+  &.special-top-border {
+    border-top: 1px solid $gray-two;
+  }
+
+  &.special-border-lower {
+    border-top: 1px solid $gray-two;
+    border-bottom: 2px solid black;
+  }
+}
+
 ion-content.sidemenu {
   position: relative;
 
@@ -22,7 +41,6 @@ ion-content.sidemenu {
   }
 
   .item {
-    border-color: gray;
     background-color: $menu-item-color;
     font-family: 'ArialMT';
 
@@ -47,24 +65,21 @@ ion-content.sidemenu {
 
   .item.white {
     color: white;
-    border-color: #4B4A46;
     a { color: white; }
   }
 
   .item.item-divider {
-    border-color:     transparent;
-    height:           $menu-gap-width;
-    background-color: rgb(75, 78, 81);
-    // background-color: $menu-gap-color;
+    border-color: transparent;
+    height:       160px;
+    position: relative;
+    &::before {
+      content:    '';
+      position:   absolute;
+      top:        0; left: 0; bottom: 0; right: 0;
+      opacity:    0.1;
+      width:      100%;
+      background-image: url('../images/background/content.png');
+      background-color: $overlay-bg;
+    }
   }
-
-  .list .item.item-accordion.ng-hide {
-    line-height: 0px;
-  }
-
-  .list .item.item-accordion.ng-hide-add,
-  .list .item.item-accordion.ng-hide-remove {
-    display: block !important;
-  }
-
 }

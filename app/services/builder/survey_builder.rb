@@ -60,11 +60,7 @@ module Builder
 
     def build_test_survey
       Questions::Other.boolean_has_pain(@survey)
-      Questions::Other.radio_pain_duration(@survey)
-      Questions::Slider.current_pain(@survey)
-      Questions::Slider.last_case_worst(@survey)
-      Questions::Slider.last_case_sleep(@survey)
-      Questions::Slider.last_case_activities(@survey)
+      Questions::Checklist.medication_efficacy_slider(@survey)
       Questions::Other.textbox(@survey)
     end
 

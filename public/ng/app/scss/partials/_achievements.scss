@@ -4,15 +4,16 @@
 
   .slider .slider-pager {
     @include slider-override;
+    bottom: 40px;
   }
 
-  time {
-    color: white;
-    font-size: 16px;
-    position: absolute;
-    top: 200px;
-    left: 75px;
-  }
+  // time {
+  //   color: white;
+  //   font-size: 16px;
+  //   position: absolute;
+  //   top: 200px;
+  //   left: 75px;
+  // }
 
   .slider-slide {
     background-color: transparent;
@@ -75,14 +76,13 @@
       position: relative;
 
       p {
-        text-align: center;
         margin: auto;
-        font-size: 12px;
+        font-size: 13px;
         color: rgb(82, 82, 82);
       }
 
       &.first p {
-        margin-left: -10px;
+        margin-left: -14px;
       }
 
       .badge-level {
@@ -94,8 +94,8 @@
         height:           22px;
         width:            22px;
         font-size:        13px;
-        top:              22px;
-        left:             38px;
+        top:              30px;
+        left:             43px;
         text-align:       center;
 
         span {
@@ -115,8 +115,8 @@
     }
 
     #circle {
-      width: 60px;
-      height: 60px;
+      width:             65px;
+      height:            65px;
       border-radius:     50px;
       background-repeat: no-repeat;
       background-size:   cover;
