@@ -1,16 +1,15 @@
-.bar-royal .button.active, .bar-royal .button.activated {
-  border-color: 0;
-  background-color: 0;
-  color: 0;
-}
-
 .image-button {
-  position: absolute;
-  top: 5px;
+  background-color: transparent !important;
+  border-color:     transparent !important;
+  box-shadow:       none !important;
+  position:         absolute;
+  top:              5px;
   img {
     position: relative;
-    width: 50%;
+    width:    50%;
   }
+  &.left { right: 5px; }
+  &.right { left: 5px; }
 }
 
 .home {
