@@ -41,8 +41,14 @@
             <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
           </div>
 
-          <div class="badge" ng-class="{ 'favorite': selectedItem.favorite }" ng-click="toggleFavorite(selectedItem)">
-            <i ng-model="selectedItem.favorite" class="ion-ios7-heart-outline"> </i>
+          <div class="badge">
+            <i ng-if="selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
+              <img ng-src="./images/buttons/advice-fav.png">
+            </i>
+
+            <i ng-if="!selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
+              <img ng-src="./images/buttons/advice-not-fav.png">
+            </i>
           </div>
         </div>
 
@@ -56,7 +62,7 @@
         <div ng-switch-when="slideshow" ng-cloak>
 
           <div class="slide" ng-show="slideShowActivated">
-            <div class="header">Step {{ slideIndex + 1 }}</div>
+            <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps">
@@ -102,7 +108,6 @@
                 <i class="ion-chevron-right pull-right"></i>
               </ion-item>
             </ion-list>
-
           </div>
         </div>
       </div>

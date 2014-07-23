@@ -30,8 +30,14 @@
             <div class="col col-90"><span>{{ item.context }}</span></div>
           </div>
 
-          <div class="badge" ng-class="{ 'favorite': item.favorite }">
-            <i ng-model="item.favorite" class="ion-ios7-heart-outline"> </i>
+          <div class="badge">
+            <i ng-if="item.favorite" ng-model="item.favorite">
+              <img ng-src="./images/buttons/advice-fav.png">
+            </i>
+
+            <i ng-if="!item.favorite" ng-model="item.favorite">
+              <img ng-src="./images/buttons/advice-not-fav.png">
+            </i>
           </div>
 
           <span class="chevron-icon ion-chevron-right"></span>

@@ -4,7 +4,7 @@
     <ion-list ng-hide="isFavorites" class="recommended">
       <div class="header-bar bar-blue"></div>
 
-      <div class="item margin-fix" ui-sref="app.recommended">
+      <div class="item skinny-item margin-fix" ui-sref="app.recommended">
         Add Some Favourites
         <span class="icon-right ion-chevron-right pull-right"></span>
       </div>
@@ -32,10 +32,15 @@
           <div class="col col-90"><span>{{ item.recommendation.context }}</span></div>
         </div>
 
-        <div class="badge" ng-class="{ 'favorite': item.recommendation.favorite }">
-          <i ng-model="item.recommendation.favorite" class="ion-ios7-heart-outline"> </i>
-        </div>
+        <div class="badge">
+          <i ng-if="item.recommendation.favorite" ng-model="item.recommendation.favorite">
+            <img ng-src="./images/buttons/advice-fav.png">
+          </i>
 
+          <i ng-if="!item.recommendation.favorite" ng-model="item.recommendation.favorite">
+            <img ng-src="./images/buttons/advice-not-fav.png">
+          </i>
+        </div>
         <span class="chevron-icon ion-chevron-right"></span>
 
       </ion-item>

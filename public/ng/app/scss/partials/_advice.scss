@@ -51,8 +51,6 @@
       &.red {
         margin-left: 2%;
         background-color: $red-two;
-        // padding-left: 10px;
-        // padding: 0 5px;
         &.active {
           background-color: rgb(160, 35, 60);
         }
@@ -87,6 +85,12 @@
     margin-right: auto;
     min-height: 110px;
 
+    &.skinny-item {
+      height: 45px;
+      min-height: 0;
+      padding-top: 13px;
+    }
+
     .duration, .context {
       color: $dark-gray-font;
 
@@ -103,27 +107,9 @@
     }
 
     .badge {
-      display: block;
-      height:  27px;
-      width:   22px;
-      left:    272px;
-      top:     -1px;
-      border-radius: 0;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-      background-color: rgb(193, 193, 193);
-
-      &.favorite {
-        background-color: $red-two;
-      }
-
-      i {
-        position:  absolute;
-        color:     white;
-        font-size: 15px;
-        top:       8px;
-        left:      0.4em;
-      }
+      top:   -3px;
+      right: -2px;
+      i img { width: 22px; }
     }
 
     .chevron-icon {
@@ -189,27 +175,9 @@
 
       .badge {
         position: absolute;
-        display: block;
-        height:  27px;
-        width:   22px;
-        top:     107px;
-        left:    284px;
-        border-radius: 0;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        background-color: rgb(193, 193, 193);
-
-        &.favorite {
-          background-color: $red-two;
-        }
-
-        i {
-          position:  absolute;
-          color:     white;
-          font-size: 15px;
-          top:       8px;
-          left:      0.4em;
-        }
+        top:      104px;
+        right:    7px;
+        i img { width: 22px; }
       }
     }
 
