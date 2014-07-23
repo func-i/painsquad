@@ -103,7 +103,7 @@
 
           .button {
             @extend .override;
-            @extend .diagonal;
+            @extend .stripe-pattern;
           }
         }
 

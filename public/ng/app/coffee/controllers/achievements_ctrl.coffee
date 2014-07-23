@@ -134,7 +134,7 @@
   unlockItem = (listItem, item) ->
     if listItem
       listItem.locked = false
-      listItem.date  = moment(item.created_at).format('ll')
+      listItem.date  = moment(item.created_at).format('MMM. D, YYYY')
 
   unlockAwardsAndSetDates = ->
     for item in $scope.awardData
@@ -142,26 +142,26 @@
         when 'commendation'
           if achievements.commendation
             item.locked = false
-            item.date   = moment(achievements.commendation_date).format('ll')
+            item.date   = moment(achievements.commendation_date).format('MMM. D, YYYY')
         when 'medal'
           if achievements.medal
             item.locked = false
-            item.date   = moment(achievements.medal_date).format('ll')
+            item.date   = moment(achievements.medal_date).format('MMM. D, YYYY')
         when 'award'
           if achievements.award_level > 0
             item.locked = false
             item.level  = achievements.award_level
-            item.date   = moment(achievements.latest_award_date).format('ll')
+            item.date   = moment(achievements.latest_award_date).format('MMM. D, YYYY')
         when 'cross'
           if achievements.cross_level > 0
             item.locked = false
             item.level  = achievements.cross_level
-            item.date   = moment(achievements.latest_cross_date).format('ll')
+            item.date   = moment(achievements.latest_cross_date).format('MMM. D, YYYY')
         when 'star'
           if achievements.star_level > 0
             item.locked = false
             item.level  = achievements.star_level
-            item.date   = moment(achievements.latest_star_date).format('ll')
+            item.date   = moment(achievements.latest_star_date).format('MMM. D, YYYY')
 
   mergeRankData()
   unlockAwardsAndSetDates()

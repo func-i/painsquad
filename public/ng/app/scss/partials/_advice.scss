@@ -2,6 +2,10 @@
   padding-left: 5px;
   padding-right: 5px;
 
+  .scroll {
+    padding-bottom: 0;
+  }
+
   .top {
     display:       inline-block;
     margin-top:    10px;
@@ -47,6 +51,8 @@
       &.red {
         margin-left: 2%;
         background-color: $red-two;
+        // padding-left: 10px;
+        // padding: 0 5px;
         &.active {
           background-color: rgb(160, 35, 60);
         }
@@ -60,6 +66,7 @@
     .item {
       margin-left: auto;
       margin-right: auto;
+      color: $dark-gray-font;
 
       &:first-child {
         border-top: 0;
@@ -81,7 +88,7 @@
     min-height: 110px;
 
     .duration, .context {
-      color: $gray-one;
+      color: $dark-gray-font;
 
       .row, .col, .col-90, .col-10 {
         padding: 0;
@@ -98,7 +105,7 @@
     .badge {
       display: block;
       height:  27px;
-      width:   20px;
+      width:   22px;
       left:    272px;
       top:     -1px;
       border-radius: 0;
@@ -113,9 +120,9 @@
       i {
         position:  absolute;
         color:     white;
-        font-size: 16px;
+        font-size: 15px;
         top:       8px;
-        left:      4px;
+        left:      0.4em;
       }
     }
 
@@ -165,9 +172,15 @@
       background-color: #FAFAFA;
 
       .duration, .context {
-        i { font-size: 16px; }
-        span { font-size: 12px; }
-        max-width:     80%;
+        color:     $dark-gray-font;
+        max-width: 80%;
+        i {
+          font-size: 16px;
+        }
+        span {
+          font-size: 12px;
+          line-height: 1px;
+        }
       }
 
       .duration {
@@ -178,7 +191,7 @@
         position: absolute;
         display: block;
         height:  27px;
-        width:   20px;
+        width:   22px;
         top:     107px;
         left:    284px;
         border-radius: 0;
@@ -193,9 +206,9 @@
         i {
           position:  absolute;
           color:     white;
-          font-size: 16px;
+          font-size: 15px;
           top:       8px;
-          left:      4px;
+          left:      0.4em;
         }
       }
     }
@@ -224,7 +237,6 @@
   height: 350px;
 
   .header {
-    @extend .gray-diagonal;
     height:    50px;
     color:     $royal;
     font-size: 20px;
@@ -241,7 +253,6 @@
     .slider-slide {
       height: 85%;
       padding-top: 10px;
-      // border-right: 1px solid black;
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8), -1px 0px 15px -4px rgba(0, 0, 0, 0.8);
 
       p {
@@ -300,7 +311,6 @@
     }
 
     .header {
-      @extend .gray-diagonal;
       height:     50px;
       color:      $royal;
       font-size:  20px;
@@ -318,10 +328,10 @@
       ol {
         list-style-type: decimal;
         li {
-          color: $red-one;
+          color: $red-two;
           font-weight: bold;
           p {
-            color: black;
+            color: $dark-gray-font;
             font-weight: normal;
           }
         }

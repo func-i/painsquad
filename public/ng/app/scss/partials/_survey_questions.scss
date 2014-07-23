@@ -17,7 +17,11 @@ li.item, .item.item-checkbox {
 
 
 // RADIO
-.radio {}
+.radio {
+  .content {
+    top: -1px;
+  }
+}
 
 // CHECKLIST-EXTRA
 .checklist-extra {

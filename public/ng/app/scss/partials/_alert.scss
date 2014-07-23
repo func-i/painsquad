@@ -14,7 +14,7 @@
 
   .popup-buttons.row {
     .button {
-      @extend .diagonal;
+      @extend .stripe-pattern;
       border-radius: 5px;
     }
   }

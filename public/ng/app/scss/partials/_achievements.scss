@@ -60,7 +60,7 @@
 
   h3 {
     text-align: center;
-    color: $red-two;
+    color: $royal;
     font-weight: bold;
     font-size: 20px;
     margin: 10px 0 4px 0;
@@ -86,26 +86,30 @@
       }
 
       .badge-level {
-        position: absolute;
+        position:         absolute;
         background-color: rgb(50, 86, 114);
-        border:         2px solid white;
-        color:          white;
-        border-radius:  15px;
-        height:         30px;
-        width:          30px;
-        font-size:      16px;
-        top:            22px;
-        left:           38px;
-        text-align:     center;
+        border:           2px solid white;
+        color:            white;
+        border-radius:    15px;
+        height:           22px;
+        width:            22px;
+        font-size:        13px;
+        top:              22px;
+        left:             38px;
+        text-align:       center;
+
         span {
-          position: relative;
-          top: 10%;
+          position: absolute;
+          top: -1px;
+          left: 2px;
         }
         &.two {
-          font-size: 14px;
+          font-size: 10px;
+          span { left: 1px; }
         }
         &.three {
-          font-size: 11px;
+          font-size: 8px;
+          span { left: 0; top: 0; }
         }
       }
     }
@@ -125,44 +129,49 @@
   .award {
 
     .image {
-      height: 50%;
-      top: 50%;
-      left: 50%;
+      text-align: center;
       img {
-        margin: 5% 20%;
-        height: 200px;
-        width: 200px;
+        height: 150px;
+        width:  150px;
+        margin: 8% auto;
+        // margin: 8% 27%;
       }
     }
 
     article {
-      margin: 10px;
-      min-height: 200px;
+      margin:           10px;
+      min-height:       300px;
+      height:           auto;
       background-color: white;
-      text-align: center;
+      text-align:       center;
 
       .header {
         @extend .gray-diagonal;
+        height: auto;
+        // min-height: 50px;
+        padding: 10px 0;
 
         p {
           margin: 0 auto;
         }
 
         p:first-child {
-          color: $red-two;
-          font-size: 16px;
+          color:       $royal;
+          font-size:   18px;
           font-weight: bold;
           padding-top: 5px;
+          padding-bottom: 5px;
+          text-transform: uppercase;
         }
 
         p:last-child {
           color: $gray-font;
-          font-size: 14px;
+          font-size: 12px;
           padding-bottom: 5px;
         }
       }
       .body {
-        margin: 15px;
+        margin: 20px;
         color: $gray-font;
       }
 

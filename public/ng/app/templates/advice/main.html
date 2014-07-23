@@ -4,16 +4,16 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="advice content-background">
+  <ion-content padding="true" class="advice content-background-no-objects">
 
     <section class="top">
-      <div class="advice-item yellow diagonal" ui-sref="app.recommended"
+      <div class="advice-item yellow stripe-pattern" ui-sref="app.recommended"
         ng-class="{ 'active': isActiveOne }" ng-init="isActiveOne = false" ng-click="isActiveOne = !isActiveOne">
           <h2>Recommended For You</h2>
           <img ng-src="./images/advice/main/rec.png">
       </div>
 
-      <div class="advice-item red diagonal" ui-sref="app.favorites"
+      <div class="advice-item red stripe-pattern" ui-sref="app.favorites"
         ng-class="{ 'active': isActiveTwo }" ng-init="isActiveTwo = false" ng-click="isActiveTwo = !isActiveTwo">
           <h2>Your Favourites</h2>
           <img ng-src="./images/advice/main/fav.png">
@@ -38,7 +38,7 @@
 
     </section>
 
-    <div class="extension pattern-bg"></div>
+    <div class="extension stripe-pattern"></div>
 
   </ion-content>
 </ion-view>

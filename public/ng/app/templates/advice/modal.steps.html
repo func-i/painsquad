@@ -17,8 +17,8 @@
 
     <div class="container">
       <div class="header-bar bar-blue"></div>
-      <div class="header" ng-show="nestedSelection.section"><span>{{nestedSelection.title}}</span></div>
-      <div class="header" ng-hide="nestedSelection.section"><span>How To Play</span></div>
+      <div class="header stripe-pattern" ng-show="nestedSelection.section"><span>{{nestedSelection.title}}</span></div>
+      <div class="header stripe-pattern" ng-hide="nestedSelection.section"><span>How To Play</span></div>
 
       <div class="image-block" ng-show="nestedSelection.image">
         <img ng-src="./images/advice/nested/{{ nestedSelection.image || 'yoga_tree' }}.png">

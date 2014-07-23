@@ -18,18 +18,18 @@
             <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
             <img ng-src="images/achievements/locked.png" ng-if="slide.locked">
           </div>
-          <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+          <!-- <time ng-if="!slide.locked">Achieved {{slide.date}}</time> -->
 
         </ion-slide>
       </ion-slide-box>
     </article>
 
     <article class="badges">
-      <div class="header-bar bar-red"></div>
+      <div class="header-bar bar-blue"></div>
       <h3>Awards</h3>
 
       <section class="row first">
-        <div class=""
+        <div
           ng-repeat="award in awardData"
           ng-show="$index == 0 || $index == 1"
           ng-click="loadAwardModal(award)"
@@ -40,7 +40,7 @@
       </section>
 
       <section class="row second">
-        <div class=""
+        <div
           ng-repeat="award in awardData"
           ng-show="$index == 2 || $index == 3 || $index == 4"
           ng-click="loadAwardModal(award)">

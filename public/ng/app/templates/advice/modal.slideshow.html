@@ -1,5 +1,5 @@
 <div class="slide" ng-show="slideShowActivated">
-  <div class="header">Step {{ slideIndex + 1 }}</div>
+  <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
   <ion-slide-box on-slide-changed="slideChange(index)">
     <ion-slide ng-repeat="step in selectedItem.steps">
@@ -8,9 +8,9 @@
       <p ng-show="step.content" ng-bind="step.content"></p>
 
       <div class="audio-block" ng-show="step.audio_path">
-        <button class="button icon ion-ios7-play button-royal pattern-bg" ng-show="showInit" ng-click="initAudio(step.audio_path)"></button>
-        <button class="button icon ion-ios7-pause button-royal pattern-bg" ng-show="mediaPlaying" ng-click="pauseAudio()"></button>
-        <button class="button icon ion-ios7-play button-royal pattern-bg"  ng-hide="showInit || mediaPlaying" ng-hide="mediaPlaying" ng-click="resumeAudio()"></button>
+        <button class="button icon ion-ios7-play button-royal stripe-pattern" ng-show="showInit" ng-click="initAudio(step.audio_path)"></button>
+        <button class="button icon ion-ios7-pause button-royal stripe-pattern" ng-show="mediaPlaying" ng-click="pauseAudio()"></button>
+        <button class="button icon ion-ios7-play button-royal stripe-pattern"  ng-hide="showInit || mediaPlaying" ng-hide="mediaPlaying" ng-click="resumeAudio()"></button>
       </div>
 
       <div class="tip" ng-show="step.tip">
