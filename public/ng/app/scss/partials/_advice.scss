@@ -15,15 +15,27 @@
 
     .advice-item {
       width:         49%;
+      height:        100%;
       float:         left;
       border-radius: 5px;
       color:         white;
       border:        0;
       text-align:    center;
-      padding: 10px 10px 0 10px;
+      padding:       10px 10px 0 10px;
+      position:      relative;
+
+      &::after {
+        content:          '';
+        background-image: url('../images/background/content.png');
+        opacity:          0.3;
+        top: 0; left: 0; bottom: 0; right: 0;
+        position:         absolute;
+        z-index:          -1;
+      }
 
       img {
         width: 100%;
+        opacity: 1;
       }
 
       h2 {

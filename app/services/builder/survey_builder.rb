@@ -60,7 +60,7 @@ module Builder
 
     def build_test_survey
       Questions::Other.boolean_has_pain(@survey)
-      Questions::Checklist.medication_efficacy_slider(@survey)
+      Questions::Other.bodymap(@survey)
       Questions::Other.textbox(@survey)
     end
 

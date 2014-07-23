@@ -38,10 +38,15 @@
             height: 80px;
           }
           button {
+            position: relative;
             border:        0;
             border-radius: 5px;
-            &::before {}
-            &::after {}
+
+            .button-text {
+              position: absolute;
+              left: 115px;
+              &.first { left: 90px; }
+            }
           }
         }
       }
@@ -51,6 +56,5 @@
       @include slider-override;
       bottom: 5px;
     }
-
   }
 }
