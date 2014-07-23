@@ -84,6 +84,7 @@
     margin-left: auto;
     margin-right: auto;
     min-height: 110px;
+    height: auto;
 
     &.skinny-item {
       height: 45px;
@@ -93,16 +94,33 @@
 
     .duration, .context {
       color: $dark-gray-font;
+      position: relative;
 
       .row, .col, .col-90, .col-10 {
         padding: 0;
       }
 
-      i { height: 20px; }
-
       span {
         font-size: 12px;
         white-space: normal;
+      }
+    }
+
+    .duration  {
+      img {
+        position: absolute;
+        width:    14px;
+        top:      9px;
+        left:     -1px;
+      }
+    }
+
+    .context {
+      img {
+        position: absolute;
+        width:    14px;
+        top:      3px;
+        left:     -1px;
       }
     }
 
