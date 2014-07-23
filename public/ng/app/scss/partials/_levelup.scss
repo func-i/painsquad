@@ -4,8 +4,8 @@
   width:      94%;
   overflow:   initial;
   text-align: center;
-  max-height: 375px;
-  min-height: 375px;
+  max-height: 400px;
+  min-height: 400px;
 
   ion-content {
     overflow: initial;
@@ -44,12 +44,12 @@
   .header {
     @extend .gray-diagonal;
     border-top:  7px solid $red-two;
-    height:      50px;
+    height:      60px;
     text-align:  center;
     color:       $red-two;
-    font-size:   16px;
+    font-size:   18px;
     font-weight: bold;
-    padding:     10px;
+    padding:     15px;
   }
 
   img {
@@ -59,12 +59,12 @@
 
   p {
     margin:     0 auto;
-    padding:    10px;
+    padding:    10px 20px;
     text-align: center;
   }
 
   .button {
-    width:       75%;
-    margin-left: 12%;
+    width:       90%;
+    margin-left: 5%;
   }
 }
