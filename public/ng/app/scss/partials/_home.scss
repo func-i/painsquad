@@ -4,12 +4,15 @@
   box-shadow:       none !important;
   position:         absolute;
   top:              10px;
+  min-width:        1px;
+  min-height:       1px;
+
   img {
     position: relative;
     width:    50%;
   }
   &.left { top: 10px; }
-  &.right { top: 5px; left: -60px; }
+  &.right { top: 5px; left: -55px; }
 }
 
 .home {

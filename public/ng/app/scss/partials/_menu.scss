@@ -8,6 +8,10 @@ $menu-dark-font:  #C0C0C0;
   overflow: visible;
 }
 
+.menu-content {
+  box-shadow: -9px 0px 10px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0,0,0,0.2);
+}
+
 ion-side-menu.menu-left.menu {
   background-color: #292929; /* Old browsers */
   background: -moz-radial-gradient(bottom, ellipse cover, #292929 0%, #5d6367 100%); /* FF3.6+ */
