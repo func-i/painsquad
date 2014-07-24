@@ -8,6 +8,7 @@ li.item, .item.item-checkbox {
 
 // BOOLEAN
 .boolean {
+  height: 500px;
   padding: 15px;
   margin-left:  auto;
   margin-right: auto;
@@ -54,7 +55,7 @@ li.item, .item.item-checkbox {
 
   .item.item-input.other-textbox {
     border-color: lightgray;
-    margin:       0 10px 10px 60px;
+    margin:       0 20px 10px 60px;
     textarea {
       resize: none;
       &::-webkit-input-placeholder {
@@ -62,6 +63,7 @@ li.item, .item.item-checkbox {
       }
     }
   }
+
 }
 
 // CHECKLIST-GRID
@@ -72,13 +74,6 @@ li.item, .item.item-checkbox {
     width: 50%;
     float: left;
     border-bottom: 1px solid $gray-five;
-
-    textarea {
-      resize: none;
-      &::-webkit-input-placeholder {
-        font-style: italic;
-      }
-    }
 
     li.item {
       margin-top:    1px;
@@ -96,6 +91,17 @@ li.item, .item.item-checkbox {
     .item.item-input {
       border-color: lightgray;
       margin:       0 10px 0 60px;
+
+      &.textarea {
+        border-color: lightgray;
+        margin:       0 15px 0 45px;
+        textarea {
+          resize: none;
+          &::-webkit-input-placeholder {
+            font-style: italic;
+          }
+        }
+      }
     }
 
     &.wide {

@@ -23,7 +23,7 @@ module Builder::Questions::Checklist
 
   OTHER_STRATEGIES = [
     'Deep breathing', 'Relaxation exercises', 'Heat', 'Cold', 'Massage/rubbing',
-    'Imagery', 'Distraction (TV, books, music)', 'Talking with friends & family',
+    'Imagery', 'Distraction', 'Talking with friends & family',
     'Rest/sleep', 'Prayer/meditation'
   ]
 

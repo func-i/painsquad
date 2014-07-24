@@ -6,7 +6,6 @@
       ng-click="openModal(choice)">
         <img ng-src="./images/bodymap/thumbnail/bodymap-{{choice.content | lowercase}}.png" class="thumbnail">
         <img ng-src="./images/bodymap/checked.png" class="checked" ng-show="contentSaved(choice.content)">
-        <!-- <span class="ion-checkmark-circled assertive" ng-show="contentSaved(choice.content)"></span> -->
         <div class="image-wrapper" ng-show="contentSaved(choice.content)">
         </div>
         <span class="content">{{ choice.content }}</span>

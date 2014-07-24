@@ -1,5 +1,4 @@
 .survey {
-  min-height: 320px;
 
   &.survey-complete {
     .content-wrapper .question {
@@ -43,7 +42,7 @@
 
     .question {
       background: white;
-      min-height: 370px;
+      min-height: 390px;
       padding-bottom: 10px;
 
       .content-actual {
