@@ -118,28 +118,33 @@ li.item, .item.item-checkbox {
 .bodymap {
 
   .item {
-    position: relative;
-    height:       62px;
+    height:       70px;
     margin-left:  0px;
     margin-right: 0px;
     padding:      10px;
+    position:     relative;
 
-    img {
-      width:       16%;
+    .thumbnail {
+      position:   absolute;
+      max-width:  40px;
+      max-height: 40px;
+      top:        15px;
+      left:       20px;
     }
 
-    .ion-checkmark-circled {
-      position:         absolute;
-      top:              36px;
-      left:             42px;
-      font-size:        20px;
-      border-radius:    50%;
-      background-color: white;
+    .checked {
+      position: absolute;
+      width:    17px;
+      height:   17px;
+      top:      43px;
+      left:     50px;
     }
 
     .content {
-      margin-left: 15px;
-      top:         -13px;
+      position: absolute;
+      left:     75px;
+      bottom:   20px;
+      font-size: 17px;
     }
 
     .icon-right.ion-chevron-right {
