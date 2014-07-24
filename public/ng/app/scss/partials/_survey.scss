@@ -1,6 +1,9 @@
 .survey {
 
   &.survey-complete {
+    .content-wrapper {
+      margin: 10px;
+    }
     .content-wrapper .question {
       .content-actual {
         height: 60px;

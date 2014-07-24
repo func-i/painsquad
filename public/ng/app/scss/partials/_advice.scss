@@ -157,7 +157,7 @@
   }
 
   .container {
-    margin:  15px 10px;
+    margin:  15px;
     background-color: white;
 
     &.basic {
@@ -178,47 +178,59 @@
     }
 
     img {
-      height: 100%;
+      width: auto;
+      height: auto;
     }
 
     .detail {
       @extend .gray-diagonal;
       margin-top:       -5px;
-      height:           100%;
+      height:           60px;
       background-color: #FAFAFA;
 
       .duration, .context {
-        color:     $dark-gray-font;
-        max-width: 80%;
-        i {
-          font-size: 16px;
+        position: relative;
+        color: $dark-gray-font;
+        // margin-left: 15px;
+
+        img {
+          position:   absolute;
+          width:      14px;
+          margin-top: 5px;
         }
         span {
-          font-size: 12px;
-          line-height: 1px;
+          font-size:    12px;
+          line-height:  1px;
+          padding-left: 40px;
         }
       }
 
-      .duration  {
+      .duration {
+        padding: 10px 0 0 0;
         img {
-          width:    14px;
-          margin-top: 4px;
-          margin-left: 1px;
+          position: absolute;
+          top:      9px;
+          left:     20px;
         }
       }
 
       .context {
+        padding: 2px 0 10px 0;
         img {
-          width: 14px;
-          margin-top: 4px;
-          margin-left: 1px;
+          position: absolute;
+          top:      0px;
+          left:     20px;
         }
+      }
+
+      .content {
+        margin-top: -10px;
       }
 
       .badge {
         position: absolute;
-        top:      104px;
-        right:    7px;
+        top:      119px;
+        right:    15px;
         i img { width: 22px; }
       }
     }

@@ -31,6 +31,16 @@
         <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image  || 'fallback' }}.png">
 
         <div class="detail">
+          <div class="duration">
+             <img ng-src="./images/advice/icon/blue-time.png">
+             <span>{{ selectedItem.duration }}</span>
+          </div>
+
+          <div class="context">
+            <img ng-src="./images/advice/icon/green-check.png">
+            <span>{{ selectedItem.context }}</span>
+          </div>
+<!--
           <div class="duration row">
             <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
             <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
@@ -40,7 +50,7 @@
             <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
             <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
           </div>
-
+ -->
           <div class="badge">
             <i ng-if="selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
               <img ng-src="./images/buttons/advice-fav.png">
