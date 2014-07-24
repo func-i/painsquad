@@ -4,6 +4,20 @@ $menu-item-color: #5B6166;
 $menu-gap-color:  $gray-two;
 $menu-dark-font:  #C0C0C0;
 
+.menu {
+  overflow: visible;
+}
+
+ion-side-menu.menu-left.menu {
+  background-color: #292929; /* Old browsers */
+  background: -moz-radial-gradient(bottom, ellipse cover, #292929 0%, #5d6367 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, bottom bottom, 0px, bottom bottom, 100%, color-stop(0%,#292929), color-stop(100%,#5d6367)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(bottom, ellipse cover, #292929 0%,#5d6367 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(bottom, ellipse cover, #292929 0%,#5d6367 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(bottom, ellipse cover, #292929 0%,#5d6367 100%); /* IE10+ */
+  background: radial-gradient(ellipse at bottom, #292929 0%,#5d6367 100%); /* W3C */
+}
+
 .no-padding-top .list {
   padding-top: 0;
 }
@@ -37,11 +51,11 @@ ion-content.sidemenu {
   }
 
   .scroll-content {
-    background-color: $menu-item-color;
+    background-color: transparent;
   }
 
   .item {
-    background-color: $menu-item-color;
+    background-color: transparent;
     font-family: 'ArialMT';
 
     .ion-chevron-down, .ion-chevron-right {
@@ -53,8 +67,11 @@ ion-content.sidemenu {
     }
 
     a {
-      background-color: $menu-item-color;
+      background-color: transparent;
       color:            $menu-dark-font;
+      &.activated {
+        background-color: $menu-item-color;
+      }
     }
 
     &.no-border {

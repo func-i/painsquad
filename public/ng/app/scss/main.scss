@@ -1,10 +1,17 @@
-@import
   // modules are sass-only styles (variables, mixins, overrides)
+@import
   'modules/defaults',
   'modules/variables',
   'modules/helpers',
   'modules/overrides',
-  'modules/mixins',
+  'modules/mixins';
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+@import "www/lib/ionic/scss/ionic";
+
+@import
 
   // view and template-related styles
   'partials/intro',
@@ -27,8 +34,3 @@
   'partials/levelup',
   'partials/advice_animation',
   'partials/static';
-
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
-
-@import "www/lib/ionic/scss/ionic";

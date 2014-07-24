@@ -3,13 +3,13 @@
   border-color:     transparent !important;
   box-shadow:       none !important;
   position:         absolute;
-  top:              5px;
+  top:              10px;
   img {
     position: relative;
     width:    50%;
   }
-  &.left { right: 5px; }
-  &.right { left: 5px; }
+  &.left { top: 10px; }
+  &.right { top: 5px; left: -60px; }
 }
 
 .home {
