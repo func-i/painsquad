@@ -7,14 +7,6 @@
     bottom: 40px;
   }
 
-  // time {
-  //   color: white;
-  //   font-size: 16px;
-  //   position: absolute;
-  //   top: 200px;
-  //   left: 75px;
-  // }
-
   .slider-slide {
     background-color: transparent;
     padding: 0;
@@ -31,8 +23,18 @@
       }
 
       img {
+        position: relative;
         width: 150px;
         margin: 0 auto;
+        z-index: 0;
+      }
+
+      .shadow {
+        position: absolute;
+        width:    80%;
+        top:      35px;
+        left:     75px;
+        z-index: -1;
       }
 
       aside {
@@ -129,12 +131,22 @@
   .award {
 
     .image {
-      text-align: center;
-      img {
+      // text-align: center;
+      position: relative;
+
+      .main {
         height: 150px;
         width:  150px;
-        margin: 8% auto;
-        // margin: 8% 27%;
+        // margin: 8% auto;
+        margin: 8% 27%;
+      }
+
+      .shadow {
+        position: absolute;
+        width:    72%;
+        top:      29px;
+        left:     88px;
+        z-index: -1;
       }
     }
 

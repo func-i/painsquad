@@ -36,14 +36,15 @@
         Account Settings
       </div>
 
-      <ion-item ng-show="isLoggedIn">
+      <ion-item ng-if="isLoggedIn" style="height: auto;">
         Logged in as: {{ currentUser.username }}
+
         <button
-          class="button button-block button-assertive"
-          ng-show="isLoggedIn"
+          class="button button-block button-assertive override"
           ng-click="logout()">
             Logout
         </button>
+
       </ion-item>
 
       <div class="extension"></div>

@@ -29,7 +29,11 @@
       <div class="radial-wrapper">
         <div class="line-left"></div>
         <div class="line-right"></div>
-        <img class="rank" ng-src="{{rankBadge}}"></img>
+        <div class="overlay">
+          <img class="rank" ng-src="{{rankBadge}}">
+          <img class="shadow" ng-src="./images/shadows/home-shadow.png">
+        </div>
+
         <progress-arc
           size="232"
           stroke="#D12D4E"
