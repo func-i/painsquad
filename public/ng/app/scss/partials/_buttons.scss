@@ -3,13 +3,14 @@ button {
     display:       block;
     border:        0;
     border-radius: 5px;
+    font-family:   'ArialMT';
     font-size:     20px;
 
     &.home {
       height:    44px;
-      width:     calc(100% - 70px);
+      width:     calc(100% - 55px);
       min-width: 150px;
-      margin:    10px auto;
+      margin:    12px auto;
     }
 
     &.done {
