@@ -29,10 +29,8 @@
       <div class="radial-wrapper">
         <div class="line-left"></div>
         <div class="line-right"></div>
-        <div class="overlay">
-          <img class="rank" ng-src="{{rankBadge}}">
-          <img class="shadow" ng-src="./images/shadows/home-shadow.png">
-        </div>
+        <img class="rank" ng-src="{{rankBadge}}">
+        <img class="shadow" ng-src="./images/shadows/home-shadow.png">
 
         <progress-arc
           size="232"
@@ -42,8 +40,10 @@
           counter-clockwise="false"
           background="#C7DBEA">
         </progress-arc>
+        <img class="progress-shadow" ng-src="./images/shadows/progress-shadow.png">
       </div>
 
+<!--
       <div class="action">
         <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
           Start Case
@@ -61,6 +61,6 @@
         </button>
       </div>
     </div>
-
+ -->
   </ion-content>
 </ion-view>
