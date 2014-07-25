@@ -240,7 +240,7 @@
       url: '/reports/action'
       views:
         menuContent:
-          templateUrl: 'templates/static/report.html',
+          templateUrl: 'templates/reports/report.html',
           controller: "ActionReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -255,7 +255,7 @@
       url: '/reports/cause'
       views:
         menuContent:
-          templateUrl: 'templates/static/report.html',
+          templateUrl: 'templates/reports/report.html',
           controller: "CauseReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -270,7 +270,7 @@
       url: '/reports/effect'
       views:
         menuContent:
-          templateUrl: 'templates/static/report.html',
+          templateUrl: 'templates/reports/report.html',
           controller: "EffectReportCtrl",
           resolve:
             report: (Report, $q) ->
@@ -285,7 +285,7 @@
       url: '/reports/pain'
       views:
         menuContent:
-          templateUrl: 'templates/static/report.html',
+          templateUrl: 'templates/reports/report.html',
           controller: "PainReportCtrl",
           resolve:
             report: (Report, $q) ->

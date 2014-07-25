@@ -11,7 +11,6 @@
 .modal {
 
   .modal-inherit {
-    @extend .survey;
 
     .content-wrapper {
       padding-left: 15px;
@@ -25,7 +24,7 @@
 
       .content {
         background: white;
-        min-height: 370px;
+        min-height: 425px;
 
         .content-actual {
           font-size:     16px;
@@ -51,10 +50,6 @@
           color: $gray-font;
         }
 
-        .slider-container {
-          // padding-top: 10px;
-        }
-
         .content-textarea {
           padding: 20px;
           border-bottom: 1px solid lightgray;
@@ -62,7 +57,6 @@
           label.item.item-input {
             border-color: lightgray;
             textarea {
-              padding-top: 20px;
               resize: none;
               &::-webkit-input-placeholder {
                 font-style: italic;
@@ -71,21 +65,50 @@
           }
         }
 
-        .map section svg {
-          height:      50%;
-          background-color: $bodymap-bg;
+        .map {
+          .bodymap-wrapper {
+            position: relative;
+            z-index: 0;
 
-          &#head, &#torso, &#arms, &#legs {
-            width: 85%;
-            margin: 10px 20px;
+            section {
+              z-index: 1;
+                svg {
+                position: relative;
+                overflow: hidden;
+                height: 50%;
+
+                &#head, &#torso, &#arms, &#legs {
+                  width: 85%;
+                  margin: 10px 20px;
+                }
+
+                &#legs {
+                  z-index: 2;
+                }
+              }
+            }
+
+            .head-bg, .torso-bg, .torso-bg, .legs-bg, .arm-bg {
+              position: absolute;
+              z-index:  -1;
+              width:    85%;
+              height:   90%;
+              margin:   10px 20px;
+              top:      0px;
+              left:     0px;
+            }
+
+            .arm-bg {
+              height: 277px;
+            }
           }
         }
 
         .tip {
-          text-align: center;
-          color:      $gray-font;
-          margin:     24px;
-          font-size:  12px;
+          text-align:       center;
+          color:            $gray-font;
+          margin:           10px 22px;
+          font-size:        12px;
           background-image: url('../images/background/content.png');
           background-color: rgba(217, 220, 222, 0.2);
 
@@ -97,13 +120,13 @@
 
         section .button-bar {
           padding-top:  10px;
-          width:        90%;
+          width:        85%;
           margin-left:  auto;
           margin-right: auto;
 
           .button {
             @extend .override;
-            @extend .diagonal;
+            @extend .stripe-pattern;
           }
         }
 

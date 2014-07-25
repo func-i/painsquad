@@ -22,7 +22,7 @@
 
   </ion-header-bar>
 
-  <ion-content has-header="true" class="content-background">
+  <ion-content has-header="true" class="content-background-no-objects">
 
     <div class="container" ng-class="{ 'basic': modalStyle == 'basic', 'slideshow': modalStyle == 'slideshow', 'nested': modalStyle == 'nested', 'show-slides': slideShowActivated }">
       <div class="header-bar bar-blue"></div>
@@ -31,18 +31,34 @@
         <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image  || 'fallback' }}.png">
 
         <div class="detail">
+          <div class="duration">
+             <img ng-src="./images/advice/icon/blue-time.png">
+             <span>{{ selectedItem.duration }}</span>
+          </div>
+
+          <div class="context">
+            <img ng-src="./images/advice/icon/green-check.png">
+            <span>{{ selectedItem.context }}</span>
+          </div>
+<!--
           <div class="duration row">
-            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
+            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
             <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
           </div>
 
           <div class="context row">
-            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
+            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
             <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
           </div>
+ -->
+          <div class="badge">
+            <i ng-if="selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
+              <img ng-src="./images/buttons/advice-fav.png">
+            </i>
 
-          <div class="badge" ng-class="{ 'favorite': selectedItem.favorite }" ng-click="toggleFavorite(selectedItem)">
-            <i ng-model="selectedItem.favorite" class="ion-ios7-heart-outline"> </i>
+            <i ng-if="!selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
+              <img ng-src="./images/buttons/advice-not-fav.png">
+            </i>
           </div>
         </div>
 
@@ -56,10 +72,10 @@
         <div ng-switch-when="slideshow" ng-cloak>
 
           <div class="slide" ng-show="slideShowActivated">
-            <div class="header">Step {{ slideIndex + 1 }}</div>
+            <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
             <ion-slide-box on-slide-changed="slideChange(index)">
-              <ion-slide ng-repeat="step in selectedItem.steps">
+              <ion-slide ng-repeat="step in selectedItem.steps" ng-class="{ 'center-images': selectedItem.image == 'belly_breathing' }">
 
                 <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
                 <p ng-show="step.content" ng-bind="step.content"></p>
@@ -102,7 +118,6 @@
                 <i class="ion-chevron-right pull-right"></i>
               </ion-item>
             </ion-list>
-
           </div>
         </div>
       </div>

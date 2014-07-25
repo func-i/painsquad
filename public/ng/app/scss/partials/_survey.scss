@@ -1,7 +1,13 @@
 .survey {
-  min-height: 320px;
 
   &.survey-complete {
+    .content-wrapper {
+      margin: 10px;
+      .question {
+        height: 480px;
+      }
+    }
+
     .content-wrapper .question {
       .content-actual {
         height: 60px;
@@ -21,9 +27,23 @@
       }
 
       .points {
+        position: relative;
+        z-index: 0;
         text-align: center;
-        img {
+
+        .points-img {
+          position: relative;
+          z-index: 1;
           width: 85%;
+        }
+
+        .shadow {
+          position: absolute;
+          z-index:  0;
+          width:    88%;
+          top:      16px;
+          left:     31px;
+          opacity: 0.8;
         }
       }
     }
@@ -32,8 +52,8 @@
   .progress-mock { height: 60px; }
 
   .content-wrapper {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 0 10px 0 10px;
 
     .content-header {
@@ -43,7 +63,7 @@
 
     .question {
       background: white;
-      min-height: 370px;
+      min-height: 390px;
       padding-bottom: 10px;
 
       .content-actual {
@@ -51,19 +71,9 @@
         height:        80px;
         border-bottom: 1px solid lightgray;
         text-align:    center;
-        padding:       15px;
+        padding:       15px 20px;
         display:       block;
-        position:      relative;
-
-        &::before {
-          content:    '';
-          position:   absolute;
-          top:        0; left: 0; bottom: 0; right: 0;
-          opacity:    0.2;
-          width:      100%;
-          background-image: url('../images/background/content.png');
-          background-color: $overlay-bg;
-        }
+        @extend .stripe-pattern;
       }
     }
 

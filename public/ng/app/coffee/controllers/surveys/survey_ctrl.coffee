@@ -1,7 +1,5 @@
 'use strict'
 
-# Parent controller responsible for handling survey navigation
-# Survey question-specific logic delegated to sub-controllers
 @SurveyCtrl = @controllerModule.controller "SurveyCtrl", ($scope, $state, $rootScope, $ionicScrollDelegate, $timeout, survey, SubmissionResource, AuthService, SubmissionService, BodymapService) ->
 
   $scope.startSurvey = ->

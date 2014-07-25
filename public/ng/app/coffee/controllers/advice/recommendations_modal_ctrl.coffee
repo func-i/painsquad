@@ -14,8 +14,7 @@
     $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
-    # <i> element clicks bound to ng-model, ignore this event
-    if event.target.tagName.toLowerCase() is 'i' or event.target.className.toLowerCase() is 'badge'
+    if event.target.tagName is 'IMG'
       $scope.toggleFavorite(item)
     else # load the modal
       $scope.modalStyle = item.style

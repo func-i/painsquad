@@ -4,7 +4,7 @@
     <button class="button button-clear button-primary" ng-click="back()">Back</button>
   </ion-header-bar>
 
-  <ion-content padding="true" class="achievements content-background">
+  <ion-content padding="true" class="achievements content-background-no-objects">
 
     <article class="awards">
       <ion-slide-box>
@@ -13,23 +13,36 @@
           <div class="wrapper">
             <h4 ng-if="!slide.locked">Rank</h4>
             <h4 ng-if="slide.locked">Locked</h4>
-            <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
-            <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
-            <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
-            <img ng-src="images/achievements/locked.png" ng-if="slide.locked">
+
+            <div class="arrow-wrapper">
+              <div class="link-wrap">
+                <img class="back" ng-src="./images/achievements/chevron-left.png" ng-click="previous()">
+              </div>
+              <div class="link-wrap">
+                <img class="forward" ng-src="./images/achievements/chevron-right.png" ng-click="next()">
+              </div>
+            </div>
+
+            <div class="image-wrapper">
+              <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked">
+              <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked">
+              <img class="shadow" ng-src="./images/shadows/achievement-main-shadow.png">
+            </div>
+            <div class="time-wrapper">
+              <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+            </div>
           </div>
-          <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
 
         </ion-slide>
       </ion-slide-box>
     </article>
 
     <article class="badges">
-      <div class="header-bar bar-red"></div>
+      <div class="header-bar bar-blue"></div>
       <h3>Awards</h3>
 
       <section class="row first">
-        <div class=""
+        <div
           ng-repeat="award in awardData"
           ng-show="$index == 0 || $index == 1"
           ng-click="loadAwardModal(award)"
@@ -40,7 +53,7 @@
       </section>
 
       <section class="row second">
-        <div class=""
+        <div
           ng-repeat="award in awardData"
           ng-show="$index == 2 || $index == 3 || $index == 4"
           ng-click="loadAwardModal(award)">

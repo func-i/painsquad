@@ -1,42 +1,69 @@
+.image-button {
+  background-color: transparent !important;
+  border-color:     transparent !important;
+  box-shadow:       none !important;
+  position:         absolute;
+  top:              10px;
+  height:           0px !important;
+  width:            60px !important;
+  min-height:       0;
+  min-width:        0;
+
+  img {
+    position: relative;
+    width:    50%;
+  }
+
+  &.left {
+    top:  10px;
+    left: -5px;
+  }
+
+  &.right {
+    top:  5px;
+    left: -50px;
+  }
+}
+
 .home {
   clear: both;
 
   .transparent-header {
     height:           60px;
     color:            white;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 
     span {
+      font-family:    'Arial-BoldMT';
       padding:        10px;
       display:        inline-block;
-      font-size: 8px;
-      font-weight:    bold;
+      font-size:      9px;
       text-transform: uppercase;
 
       i {
-        font-size: 24px;
+        padding-top: 3px;
+        font-family: 'ArialMT';
+        font-size: 27px;
         font-weight: normal;
         display: block;
       }
 
       &.next-level {
-        text-align: left;
+        text-align:   left;
+        padding-left: 16px;
       }
       &.current-points {
-        text-align:   right;
-        float:        right;
+        text-align:    right;
+        float:         right;
+        padding-right: 16px;
       }
     }
   }
 
   .body-wrapper {
-    // height: 500px;
-    // min-height: 500px;
-    // max-height: 100%;
-    // background-color: rgba(0, 0, 0, 0.2);
-
     .action {
-      margin-top: 10px;
+      position:   relative;
+      z-index:    1;
 
       button {
         text-align: center;

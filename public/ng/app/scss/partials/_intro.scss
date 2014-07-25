@@ -1,14 +1,16 @@
 .intro {
-  z-index: 1;
+
   .scroll .slider {
+    overflow: visible;
+
     .slider-slides {
       position: relative;
-      padding-top: 20px;
+      padding-top: 10px;
 
       .slider-slide {
-        height:           410px;
+        height:           440px;
         background-color: white;
-        box-shadow:       0px 0px 15px -4px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
+        box-shadow:       0px 0px 15px -9px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
         text-align:       left;
 
         h3 {
@@ -25,7 +27,7 @@
         }
 
         .image-wrapper {
-          padding: 10px 20px;
+          padding: 15px 20px;
           img {
             max-width: 245px;
             width:     98%;
@@ -34,14 +36,31 @@
 
         .lower-wrapper {
           p {
-            font-size: 12px;
-            height: 80px;
+            font-family: 'ArialMT';
+            font-size:   14px;
+            color:       $gray-font;
+            height:      90px;
           }
+
           button {
+            position:      relative;
             border:        0;
             border-radius: 5px;
-            &::before {}
-            &::after {}
+            margin-top:    20px;
+
+            .button-text {
+              position:    absolute;
+              font-family: 'ArialMT';
+              font-size:   20px;
+              left:        110px;
+              &.first { left: 80px; }
+            }
+
+            .icon-right {
+              margin-right: 10px;
+              font-size: 24px;
+            }
+
           }
         }
       }
@@ -49,8 +68,7 @@
 
     .slider-pager {
       @include slider-override;
-      bottom: 5px;
+      bottom: -455px;
     }
-
   }
 }

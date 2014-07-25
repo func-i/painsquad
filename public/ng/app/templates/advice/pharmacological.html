@@ -6,7 +6,7 @@
     </div>
   </ion-header-bar>
 
-  <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background">
+  <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background-no-objects">
 
     <ion-list class="recommended">
       <div class="header-bar bar-blue"></div>
@@ -21,17 +21,23 @@
           <h2>{{ item.title }}</h2>
 
           <div class="duration row">
-            <div class="col col-10"><i class="ion-ios7-clock-outline calm"> </i></div>
-            <div class="col col-90"><span>{{ item.duration }}</span></div>
+            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
+            <div class="col col-80"><span>{{ item.duration }}</span></div>
           </div>
 
           <div class="context row">
-            <div class="col col-10"><i class="ion-ios7-checkmark-outline balanced"> </i></div>
-            <div class="col col-90"><span>{{ item.context }}</span></div>
+            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
+            <div class="col col-80"><span>{{ item.context }}</span></div>
           </div>
 
-          <div class="badge" ng-class="{ 'favorite': item.favorite }">
-            <i ng-model="item.favorite" class="ion-ios7-heart-outline"> </i>
+          <div class="badge">
+            <i ng-if="item.favorite" ng-model="item.favorite">
+              <img ng-src="./images/buttons/advice-fav.png">
+            </i>
+
+            <i ng-if="!item.favorite" ng-model="item.favorite">
+              <img ng-src="./images/buttons/advice-not-fav.png">
+            </i>
           </div>
 
           <span class="chevron-icon ion-chevron-right"></span>

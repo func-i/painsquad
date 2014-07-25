@@ -1,3 +1,14 @@
+//clearfix
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
 .pull-right {
   float: right;
 }
@@ -15,6 +26,11 @@
 .content-background {
   background-image: url('../images/background/survey.png');
   background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.content-background-no-objects {
+  background-image: url('../images/background/survey-no-objects.png');
   background-repeat: no-repeat;
 }
 
@@ -54,30 +70,23 @@
   margin-right: auto !important;
 }
 
-// diagonal transparent background
-// FIXME: for some reason it has some opacity issue
-.diagonal {
+.stripe-pattern {
   position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background-image: url('../images/background/content.png');
-    width: 100%;
-    opacity: 0.2;
+  &.radius {
+    &::before {
+      border-radius: 5px;
+    }
   }
-}
 
-.pattern-bg {
-  position: relative;
-  display: block;
+  &::before {
+    content:    '';
+    position:   absolute;
+    top:        0; left: 0; bottom: 0; right: 0;
+    opacity:    0.2;
+    width:      100%;
 
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0; left: 0; bottom: 0; right: 0;
-    background: url('../images/background/content.png');
-    opacity: 0.2;
+    background-image: url('../images/background/content.png');
+    background-size:  5px;
+    background-color: $overlay-bg;
   }
 }

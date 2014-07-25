@@ -1,11 +1,15 @@
 <ion-view title="Pain Squad&#43;" hide-back-button="true" ng-cloak>
 
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+  <ion-nav-buttons side="left" class="home-override">
+    <button menu-toggle="left" class="button image-button left">
+      <img ng-src="./images/buttons/hamburger-icon.png">
+    </button>
   </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
-    <button class="button button-icon icon ion-android-information" ui-sref="app.about"></button>
+  <ion-nav-buttons side="right" class="home-buttons">
+    <button class="button image-button right" ui-sref="app.about">
+      <img ng-src="./images/buttons/about-icon.png">
+    </button>
   </ion-nav-buttons>
 
   <ion-content class="has-header home content-background">
@@ -25,15 +29,19 @@
       <div class="radial-wrapper">
         <div class="line-left"></div>
         <div class="line-right"></div>
-        <img class="rank" ng-src="{{rankBadge}}"></img>
+        <img class="rank" ng-src="{{rankBadge}}">
+        <img class="shadow" ng-src="./images/shadows/home-shadow.png">
+
+        <div class="upper-line-wrap"></div>
         <progress-arc
-          size="232"
-          stroke="#D12D4E"
-          stroke-width="14"
+          size="200"
+          stroke="#EE0057"
+          stroke-width="16"
           progress="progress"
           counter-clockwise="false"
           background="#C7DBEA">
         </progress-arc>
+        <img class="progress-shadow" ng-src="./images/shadows/progress-shadow.png">
       </div>
 
       <div class="action">
@@ -42,12 +50,12 @@
           <img ng-src="./images/buttons/start_case_icon.png">
         </button>
 
-        <button class="button button-positive override diagonal home" ui-sref="app.achievements">
+        <button class="button button-positive override home stripe-pattern radius" ui-sref="app.achievements">
           Achievements
           <img ng-src="./images/buttons/achievements_icon.png">
         </button>
 
-        <button class="button button-positive override diagonal home" ui-sref="app.advice">
+        <button class="button button-positive override home stripe-pattern radius" ui-sref="app.advice">
           Get Advice
           <img ng-src="./images/buttons/advice_icon.png">
         </button>
