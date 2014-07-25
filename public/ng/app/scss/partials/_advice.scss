@@ -7,6 +7,8 @@
   }
 
   .top {
+    z-index:       0;
+    position:      relative;
     display:       inline-block;
     margin-top:    10px;
     margin-bottom: 15px;
@@ -14,6 +16,8 @@
     width:         100%;
 
     .advice-item {
+      overflow:      hidden;
+      position:      relative;
       width:         49%;
       height:        100%;
       float:         left;
@@ -21,21 +25,20 @@
       color:         white;
       border:        0;
       text-align:    center;
-      padding:       10px 10px 0 10px;
-      position:      relative;
+      padding:       15px 15px 10px 15px;
 
-      &::after {
-        content:          '';
-        background-image: url('../images/background/content.png');
-        opacity:          0.3;
-        top: 0; left: 0; bottom: 0; right: 0;
-        position:         absolute;
-        z-index:          -1;
+      .fav-badge {
+        position: relative;
+        z-index: 1;
+        width: 100%;
       }
 
-      img {
-        width: 100%;
-        opacity: 1;
+      .shadow {
+        z-index:  0;
+        position: absolute;
+        width:    100%;
+        top:      70px;
+        left:     19px;
       }
 
       h2 {

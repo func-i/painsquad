@@ -7,16 +7,18 @@
   <ion-content padding="true" class="advice content-background-no-objects">
 
     <section class="top">
-      <div class="advice-item yellow stripe-pattern" ui-sref="app.recommended"
+      <div class="advice-item yellow" ui-sref="app.recommended"
         ng-class="{ 'active': isActiveOne }" ng-init="isActiveOne = false" ng-click="isActiveOne = !isActiveOne">
           <h2>Recommended For You</h2>
-          <img ng-src="./images/advice/main/rec.png">
+          <img class="fav-badge" ng-src="./images/advice/main/rec.png">
+          <img class="shadow" ng-src="./images/shadows/home-shadow.png">
       </div>
 
-      <div class="advice-item red stripe-pattern" ui-sref="app.favorites"
+      <div class="advice-item red" ui-sref="app.favorites"
         ng-class="{ 'active': isActiveTwo }" ng-init="isActiveTwo = false" ng-click="isActiveTwo = !isActiveTwo">
           <h2>Your Favourites</h2>
-          <img ng-src="./images/advice/main/fav.png">
+          <img class="fav-badge" ng-src="./images/advice/main/fav.png">
+          <img class="shadow" ng-src="./images/shadows/home-shadow.png">
       </div>
     </section>
 
@@ -38,7 +40,7 @@
 
     </section>
 
-    <div class="extension stripe-pattern"></div>
+    <div class="extension"></div>
 
   </ion-content>
 </ion-view>
