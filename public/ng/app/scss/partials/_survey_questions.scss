@@ -28,8 +28,9 @@ li.item, .item.item-checkbox {
 // CHECKLIST-EXTRA
 .checklist-extra {
   li.item.item-checkbox {
+    &.last { border-bottom: 0; }
     &.disabled { opacity: 0.5 ; }
-    &.textfield { border-bottom: 0; }
+
   }
 }
 

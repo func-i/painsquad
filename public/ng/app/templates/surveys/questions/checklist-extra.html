@@ -4,7 +4,7 @@
     <ul>
       <div ng-repeat="choice in question.choices">
 
-        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled }">
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled, 'last': $last }">
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox"
               ng-click="delegateSelection(choice)"
