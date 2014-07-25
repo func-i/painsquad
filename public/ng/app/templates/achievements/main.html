@@ -13,8 +13,16 @@
           <div class="wrapper">
             <h4 ng-if="!slide.locked">Rank</h4>
             <h4 ng-if="slide.locked">Locked</h4>
-            <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
-            <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
+
+            <div class="arrow-wrapper">
+              <div class="link-wrap">
+                <img class="back" ng-src="./images/achievements/chevron-left.png" ng-click="previous()">
+              </div>
+              <div class="link-wrap">
+                <img class="forward" ng-src="./images/achievements/chevron-right.png" ng-click="next()">
+              </div>
+            </div>
+
             <div class="image-wrapper">
               <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked">
               <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked">

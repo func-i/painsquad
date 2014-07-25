@@ -72,6 +72,12 @@
 
 .stripe-pattern {
   position: relative;
+  &.radius {
+    &::before {
+      border-radius: 5px;
+    }
+  }
+
   &::before {
     content:    '';
     position:   absolute;
