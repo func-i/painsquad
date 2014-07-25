@@ -14,11 +14,11 @@ $menu-dark-font:  #C0C0C0;
 
 ion-side-menu.menu-left.menu {
   background: #292929; /* Old browsers */
-  background: -moz-radial-gradient(50% 75%, ellipse cover,  #292929 0%, #5d6367 100%); /* FF3.6+ */
+  background: -moz-radial-gradient(50% 75%, circle cover,  #292929 0%, #5d6367 100%); /* FF3.6+ */
   background: -webkit-gradient(radial, 50% 75%, 0px, 50% 75%, 100%, color-stop(0%,#292929), color-stop(100%,#5d6367)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(50% 75%, ellipse cover,  #292929 0%,#5d6367 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(50% 75%, ellipse cover,  #292929 0%,#5d6367 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(50% 75%, ellipse cover,  #292929 0%,#5d6367 100%); /* IE10+ */
+  background: -webkit-radial-gradient(50% 75%, circle cover,  #292929 0%,#5d6367 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(50% 75%, circle cover,  #292929 0%,#5d6367 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(50% 75%, circle cover,  #292929 0%,#5d6367 100%); /* IE10+ */
   background: radial-gradient(cover at 50% 75%,  #292929 0%,#5d6367 100%); /* W3C */
   background-size: 275px;
 }
