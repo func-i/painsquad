@@ -8,7 +8,8 @@
     "angular-google-chart": "~0.0.10",
     "ionic": "driftyco/ionic-bower#master",
     "angular-progress-arc": "~0.3.0",
-    "angular-media-player": "~0.5.5"
+    "angular-media-player": "~0.5.5",
+    "angular-elastic": "~2.3.5"
   },
   "resolutions": {
     "angular": "~1.2.20"

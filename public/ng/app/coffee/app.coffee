@@ -13,7 +13,8 @@
   'angularMoment',
   'googlechart',
   'angular-progress-arc',
-  'mediaPlayer'
+  'mediaPlayer',
+  'monospaced.elastic'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
