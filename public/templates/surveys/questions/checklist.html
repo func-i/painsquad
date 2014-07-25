@@ -17,14 +17,12 @@
             {{ choice.content }}
         </li>
         <li class="other-textarea" ng-show="choice.textfield && choice.selected">
-          <label class="item item-input other-textbox">
-
-            <textarea
+          <div class="textarea-wrapper">
+            <textarea class="msd-elastic"
               ng-model="choice.value"
-              placeholder="Please specify..."
-              rows="4"></textarea>
-
-          </label>
+              placeholder="Please specify...">
+            </textarea>
+          </div>
         </li>
       </div>
     </ul>

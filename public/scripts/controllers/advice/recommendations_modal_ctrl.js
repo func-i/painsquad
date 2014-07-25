@@ -14,7 +14,7 @@
       return $scope.modal.remove();
     });
     $scope.loadAdviceModal = function(item) {
-      if (event.target.tagName.toLowerCase() === 'i' || event.target.className.toLowerCase() === 'badge') {
+      if (event.target.tagName === 'IMG') {
         return $scope.toggleFavorite(item);
       } else {
         $scope.modalStyle = item.style;

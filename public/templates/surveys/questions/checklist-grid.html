@@ -13,12 +13,14 @@
         </label>
         <span class="content">{{ choice.content }}</span>
       </li>
-      <label ng-show="choice.textfield && choice.selected" class="item item-input">
-        <textarea
-          ng-model="choice.value"
-          placeholder="Please specify"
-          rows="5"></textarea>
-      </label>
+      <li class="other-textarea cf" ng-show="choice.textfield && choice.selected">
+        <div class="textarea-wrapper">
+          <textarea class="msd-elastic"
+            ng-model="choice.value"
+            placeholder="Please specify...">
+          </textarea>
+        </div>
+      </li>
 
     </div>
 

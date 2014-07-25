@@ -26,16 +26,16 @@
         <form name="currentForm" valid-modal-form>
 
           <div class="content-actual" ng-show="!detailData.currentChoice.textfield">
-            <p>How helpful was this in reducing your pain?</p>
+            <p>How <strong>helpful</strong> was this in reducing your pain?</p>
           </div>
 
           <div class="content-actual" ng-if="detailData.currentChoice.textfield == true">
-            <p>Please specify what other medications you took</p>
+            <p>Please <strong>specify</strong> what other medications you took</p>
           </div>
 
           <div class="content-textarea" ng-if="detailData.currentChoice.textfield == true">
             <label class="item item-input">
-              <textarea rows="3"
+              <textarea msd-elastic
                 ng-required="ifTextareaPresent(detailData.currentChoice)"
                 placeholder="Please specify..."
                 ng-model="detailData.currentChoice.custom_text"></textarea>

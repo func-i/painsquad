@@ -2,14 +2,14 @@
 
   <div class="button-bar">
     <a href
-      class="button override diagonal"
+      class="button override stripe-pattern"
       ng-click="activeTab = 'front'"
       ng-class="{ 'active': activeTab === 'front' }">
       <span>Front</span>
     </a>
 
     <a href
-      class="button override diagonal"
+      class="button override stripe-pattern"
       ng-click="activeTab = 'back'"
       ng-class="{ 'active': activeTab === 'back' }">
       <span>Back</span>
@@ -18,11 +18,17 @@
 
   <div ng-switch="activeTab">
     <div ng-switch-when="front">
-      <section region="front" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsofront.svg'"></section>
+      <div class="bodymap-wrapper">
+        <section region="front" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsofront.svg'"></section>
+        <img class="torso-bg" ng-src="./images/bodymap/backgrounds/bodymap-torso-front-bg.png" />
+      </div>
     </div>
 
     <div ng-switch-when="back">
-      <section region="back" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsoback.svg'"></section>
+      <div class="bodymap-wrapper">
+        <section region="back" body-map-selector-switch ng-include="'images/bodymap/bodymap-torsoback.svg'"></section>
+        <img class="torso-bg" ng-src="./images/bodymap/backgrounds/bodymap-torso-back-bg.png" />
+      </div>
     </div>
   </div>
 

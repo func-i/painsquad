@@ -136,7 +136,7 @@
     unlockItem = function(listItem, item) {
       if (listItem) {
         listItem.locked = false;
-        return listItem.date = moment(item.created_at).format('ll');
+        return listItem.date = moment(item.created_at).format('MMM. D, YYYY');
       }
     };
     unlockAwardsAndSetDates = function() {
@@ -149,7 +149,7 @@
           case 'commendation':
             if (achievements.commendation) {
               item.locked = false;
-              _results.push(item.date = moment(achievements.commendation_date).format('ll'));
+              _results.push(item.date = moment(achievements.commendation_date).format('MMM. D, YYYY'));
             } else {
               _results.push(void 0);
             }
@@ -157,7 +157,7 @@
           case 'medal':
             if (achievements.medal) {
               item.locked = false;
-              _results.push(item.date = moment(achievements.medal_date).format('ll'));
+              _results.push(item.date = moment(achievements.medal_date).format('MMM. D, YYYY'));
             } else {
               _results.push(void 0);
             }
@@ -166,7 +166,7 @@
             if (achievements.award_level > 0) {
               item.locked = false;
               item.level = achievements.award_level;
-              _results.push(item.date = moment(achievements.latest_award_date).format('ll'));
+              _results.push(item.date = moment(achievements.latest_award_date).format('MMM. D, YYYY'));
             } else {
               _results.push(void 0);
             }
@@ -175,7 +175,7 @@
             if (achievements.cross_level > 0) {
               item.locked = false;
               item.level = achievements.cross_level;
-              _results.push(item.date = moment(achievements.latest_cross_date).format('ll'));
+              _results.push(item.date = moment(achievements.latest_cross_date).format('MMM. D, YYYY'));
             } else {
               _results.push(void 0);
             }
@@ -184,7 +184,7 @@
             if (achievements.star_level > 0) {
               item.locked = false;
               item.level = achievements.star_level;
-              _results.push(item.date = moment(achievements.latest_star_date).format('ll'));
+              _results.push(item.date = moment(achievements.latest_star_date).format('MMM. D, YYYY'));
             } else {
               _results.push(void 0);
             }
