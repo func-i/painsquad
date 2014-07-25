@@ -8,7 +8,7 @@ li.item, .item.item-checkbox {
 
 // BOOLEAN
 .boolean {
-  height: 500px;
+  // height: 500px;
   padding: 15px;
   margin-left:  auto;
   margin-right: auto;
@@ -153,13 +153,13 @@ li.item, .item.item-checkbox {
     .content {
       position: absolute;
       left:     75px;
-      bottom:   20px;
+      bottom:   22px;
       font-size: 17px;
     }
 
     .icon-right.ion-chevron-right {
       position:         absolute;
-      margin-top:       12px;
+      margin-top:       16px;
       right:            20px;
       background-color: white;
     }

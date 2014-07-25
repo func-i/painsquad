@@ -17,11 +17,17 @@
   </div>
   <div ng-switch="activeTab">
     <div ng-switch-when="left">
-      <section region="left" body-map-selector-switch ng-include="'images/bodymap/bodymap-armleft.svg'"></section>
+      <div class="bodymap-wrapper">
+        <section region="left" body-map-selector-switch ng-include="'images/bodymap/bodymap-armleft.svg'"></section>
+        <img class="arm-bg" ng-src="./images/bodymap/backgrounds/arm-left.png" />
+      </div>
     </div>
 
     <div ng-switch-when="right">
-      <section region="right" body-map-selector-switch ng-include="'images/bodymap/bodymap-armright.svg'"></section>
+      <div class="bodymap-wrapper">
+        <section region="right" body-map-selector-switch ng-include="'images/bodymap/bodymap-armright.svg'"></section>
+        <img class="arm-bg" ng-src="./images/bodymap/backgrounds/arm-right.png" />
+      </div>
     </div>
   </div>
 
