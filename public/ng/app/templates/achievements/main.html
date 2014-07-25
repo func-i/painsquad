@@ -15,11 +15,15 @@
             <h4 ng-if="slide.locked">Locked</h4>
             <aside class="back ion-ios7-arrow-left" ng-click="previous()"></aside>
             <aside class="forward ion-ios7-arrow-right" ng-click="next()"></aside>
-            <img ng-src="{{slide.image_path}}" ng-if="!slide.locked">
-            <img ng-src="./images/achievements/locked.png" ng-if="slide.locked">
-            <img class="shadow" ng-src="./images/shadows/achievement-main-shadow.png">
+            <div class="image-wrapper">
+              <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked">
+              <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked">
+              <img class="shadow" ng-src="./images/shadows/achievement-main-shadow.png">
+            </div>
+            <div class="time-wrapper">
+              <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+            </div>
           </div>
-          <!-- <time ng-if="!slide.locked">Achieved {{slide.date}}</time> -->
 
         </ion-slide>
       </ion-slide-box>
