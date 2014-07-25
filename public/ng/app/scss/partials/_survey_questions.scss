@@ -53,9 +53,10 @@ li.item, .item.item-checkbox {
     padding-bottom: 10px;
   }
 
-  .item.item-input.other-textbox {
-    border-color: lightgray;
-    margin:       0 20px 10px 60px;
+  .textarea-wrapper {
+    border: 1px solid lightgray;
+    margin: 5px 20px 10px 60px;
+    padding: 2px;
     textarea {
       resize: none;
       &::-webkit-input-placeholder {
@@ -88,15 +89,17 @@ li.item, .item.item-checkbox {
       }
     }
 
-    .item.item-input {
-      border-color: lightgray;
-      margin:       0 10px 0 60px;
+    .other-textarea {
+      list-style:     none;
 
-      &.textarea {
-        border-color: lightgray;
-        margin:       0 15px 0 45px;
+      .textarea-wrapper {
+        width:   80%;
+        border:  1px solid lightgray;
+        margin:  0px 10px 0px 45px;
+        padding: 2px;
+
         textarea {
-          resize: none;
+          resize: none !important;
           &::-webkit-input-placeholder {
             font-style: italic;
           }
@@ -109,6 +112,7 @@ li.item, .item.item-checkbox {
     }
 
     &.last {
+      height: auto;
       clear: left;
       width: 100%;
       float: none;
@@ -117,7 +121,6 @@ li.item, .item.item-checkbox {
     }
   }
 }
-
 
 
 // BODYMAP
