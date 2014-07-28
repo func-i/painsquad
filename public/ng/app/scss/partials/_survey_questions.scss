@@ -25,15 +25,6 @@ li.item, .item.item-checkbox {
   }
 }
 
-// CHECKLIST-EXTRA
-.checklist-extra {
-  li.item.item-checkbox {
-    &.last { border-bottom: 0; }
-    &.disabled { opacity: 0.5 ; }
-
-  }
-}
-
 // CHECKLIST
 .checklist {
   width: 100%;
@@ -46,6 +37,7 @@ li.item, .item.item-checkbox {
   }
 
   li.item.item-checkbox {
+    .content { margin-left: -10px; }
     &.disabled { opacity: 0.5 ; }
     &.textfield { border-bottom: 0; }
   }
@@ -65,7 +57,16 @@ li.item, .item.item-checkbox {
       }
     }
   }
+}
 
+// CHECKLIST-EXTRA
+.checklist-extra {
+  li.item.item-checkbox {
+    .content { margin-left: -10px; }
+    &.last { border-bottom: 0; }
+    &.disabled { opacity: 0.5 ; }
+
+  }
 }
 
 // CHECKLIST-GRID

@@ -167,9 +167,9 @@
       }
 
       .shadow {
-        width:    235px;
+        width:    230px;
         position: absolute;
-        top:      40px;
+        top:      35px;
         left:     3px;
         z-index:  -1;
       }
@@ -202,8 +202,8 @@
         }
 
         p:last-child {
-          color: $gray-font;
-          font-size: 14px;
+          color:          $gray-one;
+          font-size:      12px;
           padding-bottom: 5px;
         }
       }

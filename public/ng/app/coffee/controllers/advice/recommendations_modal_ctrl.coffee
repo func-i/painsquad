@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) ->
+@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, Favorites, Activity) ->
   $scope.selectedItem = {}
   $scope.showInit     = true
 
@@ -14,13 +14,14 @@
     $scope.modal.remove()
 
   $scope.loadAdviceModal = (item) ->
-    if event.target.tagName is 'IMG'
+    if event.target.tagName is 'IMG' and event.target.className is 'fav'
       $scope.toggleFavorite(item)
     else # load the modal
       $scope.modalStyle = item.style
       setHeaderButtons(item)
       $scope.selectedItem = item
       $scope.modal.show()
+      $ionicScrollDelegate.scrollTop()
 
   $scope.startSlideshow = ->
     $scope.slideIndex         = 0
@@ -61,4 +62,4 @@
     $scope.showDidItButton    = null
     $scope.selectedItem       = null
 
-@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', '$document', 'AudioPlayer', 'Favorites', 'Activity']
+@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', 'Favorites', 'Activity']

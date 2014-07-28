@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $timeout, Favorites, Activity) {
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, Favorites, Activity) {
     var closeModal, resetState, setHeaderButtons;
     $scope.selectedItem = {};
     $scope.showInit = true;
@@ -14,13 +14,14 @@
       return $scope.modal.remove();
     });
     $scope.loadAdviceModal = function(item) {
-      if (event.target.tagName === 'IMG') {
+      if (event.target.tagName === 'IMG' && event.target.className === 'fav') {
         return $scope.toggleFavorite(item);
       } else {
         $scope.modalStyle = item.style;
         setHeaderButtons(item);
         $scope.selectedItem = item;
-        return $scope.modal.show();
+        $scope.modal.show();
+        return $ionicScrollDelegate.scrollTop();
       }
     };
     $scope.startSlideshow = function() {
@@ -72,6 +73,6 @@
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$timeout', '$interval', '$document', 'AudioPlayer', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', 'Favorites', 'Activity'];
 
 }).call(this);

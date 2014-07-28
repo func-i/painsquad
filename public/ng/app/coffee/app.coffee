@@ -25,6 +25,7 @@
 @configModule     = angular.module 'painSquad.config', []
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
+  $rootScope.firstLaunch     = true
   $rootScope.sideMenuEnabled = true
   $rootScope.notificationID  = 0
   $rootScope.$state          = $state
@@ -60,12 +61,3 @@
 
     if window.StatusBar
       StatusBar.styleLightContent()
-
-    if window.plugin
-      # NotificationService.onclick = (id, state, json) ->
-      #   parsedJson = JSON.parse(json)
-      #   alert "id: #{id}, state: #{state}, json: #{parsedJson}"
-
-      window.plugin.notification.local.onclick = (id, state, json) ->
-        parsedJson = JSON.parse(json)
-        alert "id: #{id}, state: #{state}, json: #{parsedJson}"

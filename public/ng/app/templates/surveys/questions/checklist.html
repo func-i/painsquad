@@ -12,9 +12,8 @@
                 ng-model="choice.selected"
                 ng-change="disableIfNone()"
                 ng-disabled="choice.disabled" />
-
             </label>
-            {{ choice.content }}
+            <span class="content">{{choice.content}}</span>
         </li>
         <li class="other-textarea" ng-show="choice.textfield && choice.selected">
           <div class="textarea-wrapper">

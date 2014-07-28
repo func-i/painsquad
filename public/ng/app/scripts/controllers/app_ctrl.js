@@ -3,7 +3,7 @@
   this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, NotificationService, NotificationSettingsService) {
     $scope.levelUp = {};
     $scope.advice = {};
-    $ionicModal.fromTemplateUrl('templates/shared/login.html', function(modal) {
+    $ionicModal.fromTemplateUrl('templates/shared/modal.login.html', function(modal) {
       return $scope.loginModal = modal;
     }, {
       scope: $scope,
