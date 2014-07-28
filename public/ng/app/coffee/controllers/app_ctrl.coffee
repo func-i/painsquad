@@ -4,7 +4,7 @@
   $scope.levelUp = {}
   $scope.advice  = {}
 
-  $ionicModal.fromTemplateUrl 'templates/shared/login.html', (modal) ->
+  $ionicModal.fromTemplateUrl 'templates/shared/modal.login.html', (modal) ->
     $scope.loginModal = modal
   ,
     scope: $scope

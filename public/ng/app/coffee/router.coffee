@@ -4,7 +4,7 @@
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push('AuthInterceptor')
   $httpProvider.responseInterceptors.push('EventInterceptor')
-  $urlRouterProvider.otherwise '/app/home'
+  $urlRouterProvider.otherwise '/app/intro'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'
   if currentUser?

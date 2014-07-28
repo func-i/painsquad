@@ -60,12 +60,3 @@
 
     if window.StatusBar
       StatusBar.styleLightContent()
-
-    if window.plugin
-      # NotificationService.onclick = (id, state, json) ->
-      #   parsedJson = JSON.parse(json)
-      #   alert "id: #{id}, state: #{state}, json: #{parsedJson}"
-
-      window.plugin.notification.local.onclick = (id, state, json) ->
-        parsedJson = JSON.parse(json)
-        alert "id: #{id}, state: #{state}, json: #{parsedJson}"

@@ -5,7 +5,7 @@
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     $httpProvider.responseInterceptors.push('AuthInterceptor');
     $httpProvider.responseInterceptors.push('EventInterceptor');
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/intro');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
       $httpProvider.defaults.headers.common['Authorization'] = "Token token=" + currentUser.access_token;

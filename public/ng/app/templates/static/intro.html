@@ -1,6 +1,10 @@
-<ion-view scroll="false" ng-cloak>
+<ion-view scroll="false" hide-nav-bar="{{data.hideNavBar}}" ng-cloak>
 
-  <ion-content class="content-background intro" padding="true">
+  <ion-header-bar class="bar-royal" ng-if="!data.hideNavBar">
+    <h1 class="title">About The App</h1>
+  </ion-header-bar>
+
+  <ion-content class="content-background intro" padding="true" ng-class="{ 'has-header': !data.hideNavBar }">
 
     <ion-slide-box>
       <ion-slide>
@@ -70,8 +74,13 @@
           <p>
             If you file enough cases, you will move up in ranking and earn special awards!
           </p>
-          <button class="button button-full button-assertive stripe-pattern last" ng-click="goHome()">
+          <button ng-show="data.showLogin" class="button button-full button-assertive stripe-pattern last" ng-click="login()">
             <span class="button-text">Login</span>
+            <span class="icon-right ion-chevron-right pull-right"></span>
+          </button>
+
+          <button ng-hide="data.showLogin" class="button button-full button-assertive stripe-pattern last" ng-click="goHome()">
+            <span class="button-text">Get Started</span>
             <span class="icon-right ion-chevron-right pull-right"></span>
           </button>
         </div>

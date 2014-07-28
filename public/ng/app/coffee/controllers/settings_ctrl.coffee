@@ -30,6 +30,9 @@
       if date.selected
         $scope.selectedEveningAlert = $scope.eveningAlerts[index]
 
+  $scope.logout = ->
+    AuthService.logout()
+
   init()
 
 @SettingsCtrl.$inject = [ '$rootScope', '$scope', 'settings', 'moment', 'AuthService', 'UserService' ]

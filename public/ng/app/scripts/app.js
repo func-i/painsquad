@@ -36,14 +36,7 @@
     };
     return $ionicPlatform.ready(function() {
       if (window.StatusBar) {
-        StatusBar.styleLightContent();
-      }
-      if (window.plugin) {
-        return window.plugin.notification.local.onclick = function(id, state, json) {
-          var parsedJson;
-          parsedJson = JSON.parse(json);
-          return alert("id: " + id + ", state: " + state + ", json: " + parsedJson);
-        };
+        return StatusBar.styleLightContent();
       }
     });
   });

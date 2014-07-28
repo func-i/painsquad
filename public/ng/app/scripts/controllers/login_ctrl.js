@@ -1,6 +1,7 @@
 (function() {
   'use strict';
   this.LoginCtrl = this.controllerModule.controller('LoginCtrl', function($rootScope, $state, $scope, AuthService, UserService) {
+    $rootScope.sideMenuEnabled = false;
     $scope.message = "";
     $scope.user = {
       email: null,
