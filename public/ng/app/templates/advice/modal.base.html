@@ -25,7 +25,7 @@
   <ion-content has-header="true" class="content-background-no-objects">
 
     <div class="container" ng-class="{ 'basic': modalStyle == 'basic', 'slideshow': modalStyle == 'slideshow', 'nested': modalStyle == 'nested', 'show-slides': slideShowActivated }">
-      <div class="header-bar bar-blue"></div>
+      <div class="header-bar bar-blue" ng-hide="slideShowActivated"></div>
 
       <div ng-hide="slideShowActivated" ng-cloak>
         <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image  || 'fallback' }}.png">
@@ -62,10 +62,12 @@
         <div ng-switch-when="slideshow" ng-cloak>
 
           <div class="slide" ng-show="slideShowActivated">
-            <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps" ng-class="{ 'center-images': selectedItem.image == 'belly_breathing' }">
+                <div class="header-bar bar-blue"></div>
+
+                <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
                 <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
                 <p ng-show="step.content" ng-bind="step.content"></p>
