@@ -1,13 +1,18 @@
 (function() {
   'use strict';
-  this.AuthInterceptor = this.serviceModule.factory('AuthInterceptor', function($q, $injector) {
+  this.AuthInterceptor = this.serviceModule.factory('AuthInterceptor', function($q, $injector, $rootScope) {
     var error, success;
     success = function(response) {
       return response;
     };
     error = function(response) {
       if (response.status === 401) {
-        $injector.get("$state").transitionTo("app.login");
+        if ($injector.get('$rootScope').firstLaunch) {
+          $injector.get("$state").transitionTo("app.intro");
+          $injector.get('$rootScope').firstLaunch = false;
+        } else {
+          $injector.get("$state").transitionTo("app.login");
+        }
         return $q.reject(response);
       } else {
         return $q.reject(response);

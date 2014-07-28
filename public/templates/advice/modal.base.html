@@ -25,7 +25,7 @@
   <ion-content has-header="true" class="content-background-no-objects">
 
     <div class="container" ng-class="{ 'basic': modalStyle == 'basic', 'slideshow': modalStyle == 'slideshow', 'nested': modalStyle == 'nested', 'show-slides': slideShowActivated }">
-      <div class="header-bar bar-blue"></div>
+      <div class="header-bar bar-blue" ng-hide="slideShowActivated"></div>
 
       <div ng-hide="slideShowActivated" ng-cloak>
         <img ng-if="selectedItem.image" ng-src="./images/advice/banner/{{ selectedItem.image  || 'fallback' }}.png">
@@ -40,24 +40,14 @@
             <img ng-src="./images/advice/icon/green-check.png">
             <span>{{ selectedItem.context }}</span>
           </div>
-<!--
-          <div class="duration row">
-            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
-            <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
-          </div>
 
-          <div class="context row">
-            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
-            <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
-          </div>
- -->
           <div class="badge">
             <i ng-if="selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
-              <img ng-src="./images/buttons/advice-fav.png">
+              <img class="fav" ng-src="./images/buttons/advice-fav.png">
             </i>
 
             <i ng-if="!selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
-              <img ng-src="./images/buttons/advice-not-fav.png">
+              <img class="fav" ng-src="./images/buttons/advice-not-fav.png">
             </i>
           </div>
         </div>
@@ -72,10 +62,12 @@
         <div ng-switch-when="slideshow" ng-cloak>
 
           <div class="slide" ng-show="slideShowActivated">
-            <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
             <ion-slide-box on-slide-changed="slideChange(index)">
               <ion-slide ng-repeat="step in selectedItem.steps" ng-class="{ 'center-images': selectedItem.image == 'belly_breathing' }">
+                <div class="header-bar bar-blue"></div>
+
+                <div class="header stripe-pattern">Step {{ slideIndex + 1 }}</div>
 
                 <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
                 <p ng-show="step.content" ng-bind="step.content"></p>

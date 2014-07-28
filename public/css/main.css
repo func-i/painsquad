@@ -49,8 +49,8 @@ h1.title {
   background-image: url('../images/background/survey-no-objects.png');
   background-repeat: no-repeat; }
 
-.gray-diagonal, .badges, .modal .award article .header, .modal .container .detail, .modal#levelup .header {
-  background-color: #E1E1E1;
+.gray-diagonal, .badges, .modal .award article .header, .modal .container .detail, .modal .nested .container .header, .modal#levelup .header {
+  background-color: #FAFAFA;
   background-image: url('../images/background/content.png'); }
 
 .extension {
@@ -7429,17 +7429,12 @@ a.button {
         color: #404548;
         height: 90px; }
       .intro .scroll .slider .slider-slides .slider-slide .lower-wrapper button {
-        position: relative;
         border: 0;
         border-radius: 5px;
-        margin-top: 20px; }
+        margin-top: 20px;
+        text-align: center; }
         .intro .scroll .slider .slider-slides .slider-slide .lower-wrapper button .button-text {
-          position: absolute;
-          font-family: 'ArialMT';
-          font-size: 20px;
-          left: 110px; }
-          .intro .scroll .slider .slider-slides .slider-slide .lower-wrapper button .button-text.first {
-            left: 80px; }
+          margin-left: 25px; }
         .intro .scroll .slider .slider-slides .slider-slide .lower-wrapper button .icon-right {
           margin-right: 10px;
           font-size: 24px; }
@@ -7744,7 +7739,6 @@ body.platform-browser .progress {
       .home .body-wrapper .action button img {
         position: absolute;
         height: 70%;
-        border: 2px solid white;
         border-radius: 20px;
         right: 10px;
         top: 6px; }
@@ -7883,9 +7877,9 @@ body.platform-browser .progress {
     width: 150px;
     margin-top: 30px; }
   .modal .award .image .shadow {
-    width: 235px;
+    width: 230px;
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 3px;
     z-index: -1; }
 .modal .award article {
@@ -7908,8 +7902,8 @@ body.platform-browser .progress {
       padding-bottom: 5px;
       text-transform: uppercase; }
     .modal .award article .header p:last-child {
-      color: #404548;
-      font-size: 14px;
+      color: #5B6166;
+      font-size: 12px;
       padding-bottom: 5px; }
   .modal .award article .body {
     margin: 20px;
@@ -8037,7 +8031,8 @@ body.platform-browser .progress {
     min-height: 480px; }
   .modal .container.show-slides {
     min-height: 0;
-    height: 0%; }
+    height: 0%;
+    background-color: transparent; }
   .modal .container img {
     width: auto;
     height: auto; }
@@ -8080,11 +8075,11 @@ body.platform-browser .progress {
         width: 22px; }
   .modal .container .description p {
     font-size: 16px;
-    padding: 20px 15px 0 20px;
+    padding: 20px 15px 10px 20px;
     color: #303436; }
     .modal .container .description p.byline {
       color: #404548;
-      font-size: 14px; }
+      font-size: 15px; }
       .modal .container .description p.byline br {
         line-height: 35px; }
 
@@ -8095,22 +8090,31 @@ body.platform-browser .progress {
     color: #00aed7;
     font-size: 20px;
     padding: 10px; }
-  .modal .container .slide .slider .slider-pager .slider-pager-page {
-    font-size: 80%;
-    width: 4%;
-    margin: 0 auto;
-    color: #c1c1c1;
-    opacity: 1; }
-    .modal .container .slide .slider .slider-pager .slider-pager-page.active {
-      color: #00aed7; }
+  .modal .container .slide .slider {
+    overflow: visible; }
+    .modal .container .slide .slider .slider-pager {
+      bottom: -85px; }
+      .modal .container .slide .slider .slider-pager .slider-pager-page {
+        font-size: 80%;
+        width: 4%;
+        margin: 0 auto;
+        color: #c1c1c1;
+        opacity: 1; }
+        .modal .container .slide .slider .slider-pager .slider-pager-page.active {
+          color: #00aed7; }
   .modal .container .slide .slider {
     height: 100%; }
     .modal .container .slide .slider .slider-slide {
-      height: 85%;
-      padding-top: 10px;
-      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8), -1px 0px 15px -4px rgba(0, 0, 0, 0.8); }
+      height: 420px;
+      background-color: white;
+      box-shadow: 0px 0px 15px -9px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
+      text-align: left; }
       .modal .container .slide .slider .slider-slide.center-images {
         text-align: center; }
+        .modal .container .slide .slider .slider-slide.center-images .header {
+          text-align: left; }
+      .modal .container .slide .slider .slider-slide img {
+        width: 95%; }
       .modal .container .slide .slider .slider-slide p {
         margin: 7px 15px;
         text-align: left; }
@@ -8283,9 +8287,7 @@ ion-content.sidemenu {
 .survey .progress-mock {
   height: 60px; }
 .survey .content-wrapper {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0 10px 0 10px; }
+  margin: 0 15px; }
   .survey .content-wrapper .content-header {
     width: 100%;
     display: block; }
@@ -8327,11 +8329,6 @@ li.item, .item.item-checkbox {
 .radio .content {
   top: -1px; }
 
-.checklist-extra li.item.item-checkbox.last {
-  border-bottom: 0; }
-.checklist-extra li.item.item-checkbox.disabled {
-  opacity: 0.5; }
-
 .checklist {
   width: 100%; }
   .checklist label.other-textbox {
@@ -8339,6 +8336,8 @@ li.item, .item.item-checkbox {
     border-top: 0;
     margin: 5px;
     border: 1px solid gray; }
+  .checklist li.item.item-checkbox .content {
+    margin-left: -10px; }
   .checklist li.item.item-checkbox.disabled {
     opacity: 0.5; }
   .checklist li.item.item-checkbox.textfield {
@@ -8353,6 +8352,13 @@ li.item, .item.item-checkbox {
       resize: none; }
       .checklist .textarea-wrapper textarea::-webkit-input-placeholder {
         font-style: italic; }
+
+.checklist-extra li.item.item-checkbox .content {
+  margin-left: -10px; }
+.checklist-extra li.item.item-checkbox.last {
+  border-bottom: 0; }
+.checklist-extra li.item.item-checkbox.disabled {
+  opacity: 0.5; }
 
 .checklist-grid {
   clear: both; }
@@ -8439,9 +8445,7 @@ li.item, .item.item-checkbox {
     width: 100% !important; } }
 
 .modal .modal-inherit .content-wrapper {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 20px 10px 0 10px; }
+  margin: 20px 15px; }
   .modal .modal-inherit .content-wrapper .content-header {
     width: 100%;
     display: block; }
@@ -8604,24 +8608,23 @@ li.item, .item.item-checkbox {
   .modal#advice ion-content {
     padding: 10px 0; }
 
-.static .terms-container {
-  background-color: white;
-  font-size: 12px;
-  padding: 15px; }
-.static .types-container {
-  background-color: white;
-  font-size: 12px;
-  padding: 15px; }
-  .static .types-container ol li {
-    padding-bottom: 20px; }
-    .static .types-container ol li em {
+.static {
+  font-size: 14px; }
+  .static .terms-container {
+    background-color: white;
+    padding: 15px; }
+  .static .types-container {
+    background-color: white;
+    padding: 15px; }
+    .static .types-container ol li {
+      padding-bottom: 20px; }
+      .static .types-container ol li em {
+        font-style: italic; }
+  .static .pain-container {
+    background-color: white;
+    padding: 15px; }
+    .static .pain-container p em {
       font-style: italic; }
-.static .pain-container {
-  background-color: white;
-  font-size: 12px;
-  padding: 15px; }
-  .static .pain-container p em {
-    font-style: italic; }
 
 .acknowledgements .image-container {
   height: 100px;

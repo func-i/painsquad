@@ -53,25 +53,25 @@
 
 
     <g id="Features">
-            <path id="right_brow" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="right_brow" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M229.93,179.68c0,0-4.631-6.367-27.784-6.367s-29.521,6.367-29.521,6.367"/>
 
-            <path id="left_brow" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="left_brow" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M273.42,179.68c0,0,4.631-6.367,27.784-6.367s29.52,6.367,29.52,6.367"/>
 
-            <path id="right_eye" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="right_eye" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M183.044,198.781c0,0,8.682,3.473,18.522,3.473c9.84,0,21.417-4.631,25.468-4.631"/>
 
-            <path id="left_eye" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="left_eye" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M316.254,198.781c0,0-8.683,3.473-18.523,3.473c-9.84,0-21.416-4.631-25.468-4.631"/>
 
-            <path id="nose" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="nose" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M231.991,256.081c0,0,6.964,2.782,17.394,2.782c10.443,0,17.044-2.782,17.044-2.782"/>
 
-            <path id="lip" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="lip" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M231.88,302.966c0,0,6.964,2.782,17.395,2.782c10.441,0,17.043-2.782,17.043-2.782"/>
 
-            <path id="mouth" fill="none" stroke="#4C2E02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            <path id="mouth" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
             M221.502,291.394c0,0,14.758,1.737,28.073,1.737c13.313,0,29.233-1.737,29.233-1.737"/>
         <g>
             <path fill="#EFE5DA" d="M488.026,446.768c-15.174-26.685-73.709-41.136-118.633-56.394l-119.678,44.57l-123.104-43.718

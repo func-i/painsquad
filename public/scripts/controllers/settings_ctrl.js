@@ -46,6 +46,9 @@
       }
       return _results;
     };
+    $scope.logout = function() {
+      return AuthService.logout();
+    };
     return init();
   });
 
