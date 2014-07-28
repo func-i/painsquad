@@ -40,24 +40,14 @@
             <img ng-src="./images/advice/icon/green-check.png">
             <span>{{ selectedItem.context }}</span>
           </div>
-<!--
-          <div class="duration row">
-            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
-            <div class="col col-90"><span>{{ selectedItem.duration }}</span></div>
-          </div>
 
-          <div class="context row">
-            <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
-            <div class="col col-90"><span>{{ selectedItem.context }}</span></div>
-          </div>
- -->
           <div class="badge">
             <i ng-if="selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
-              <img ng-src="./images/buttons/advice-fav.png">
+              <img class="fav" ng-src="./images/buttons/advice-fav.png">
             </i>
 
             <i ng-if="!selectedItem.favorite" ng-model="selectedItem.favorite" ng-click="toggleFavorite(selectedItem)">
-              <img ng-src="./images/buttons/advice-not-fav.png">
+              <img class="fav" ng-src="./images/buttons/advice-not-fav.png">
             </i>
           </div>
         </div>

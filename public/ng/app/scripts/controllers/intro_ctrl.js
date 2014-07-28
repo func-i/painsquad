@@ -25,8 +25,7 @@
         return $scope.data.showLogin = false;
       }
     };
-    init();
-    return console.log($scope.data.hideNavBar);
+    return init();
   });
 
   this.IntroCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicSlideBoxDelegate'];

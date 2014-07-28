@@ -24,6 +24,5 @@
       $scope.data.showLogin  = false
 
   init()
-  console.log $scope.data.hideNavBar
 
 @IntroCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicSlideBoxDelegate' ]

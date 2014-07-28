@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.configModule.constant('CONFIG', {
-    apiUrl: 'http://localhost:3000/api'
+    apiUrl: 'http://10.0.1.18:3000/api'
   });
 
 }).call(this);
