@@ -190,12 +190,14 @@
     .detail {
       @extend .gray-diagonal;
       margin-top:       -5px;
-      height:           75px;
+      min-height:       65px;
+      max-height:       75px;
       background-color: #FAFAFA;
 
       .duration, .context {
-        position: relative;
-        color: $dark-gray-font;
+        position:       relative;
+        color:          $dark-gray-font;
+        vertical-align: middle;
 
         img {
           position:   absolute;
@@ -244,16 +246,17 @@
     .description {
       p {
         font-size: 16px;
-        padding:   20px 15px 10px 20px;
-        color:     $dark-gray-font;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: $dark-gray-font;
+
+        &.desc {
+          padding-top: 20px;
+        }
 
         &.byline {
-          color:     $gray-font;
-          font-size: 15px;
-
-          br {
-            line-height: 35px;
-          }
+          color: $gray-font;
+          font-size: 14px;
         }
       }
     }
@@ -268,14 +271,15 @@
     height:    50px;
     color:     $royal;
     font-size: 20px;
-    padding:   10px;
+    padding:   15px;
   }
 
   .slider {
-    overflow: visible;
     .slider-pager {
       @include slider-override;
-      bottom: -85px;
+      position: fixed;
+      bottom:   -15px;
+      left:     0;
     }
   }
 

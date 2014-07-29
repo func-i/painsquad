@@ -54,7 +54,6 @@
   .content-wrapper {
     margin: 0 15px;
 
-
     .content-header {
       width:   100%;
       display: block;
@@ -73,6 +72,7 @@
         padding:       15px 20px;
         display:       block;
         @extend .stripe-pattern;
+        span { vertical-align: middle; }
       }
     }
 
@@ -86,8 +86,9 @@
       background-color: rgba(217, 220, 222, 0.2);
 
       p {
-        padding: 2px 5px;
-        border: 1px solid $red-four;
+        padding:     7px 5px;
+        border:      1px solid $red-four;
+        line-height: 15px;
       }
     }
   }
