@@ -1,8 +1,6 @@
 .intro {
 
   .scroll .slider {
-    overflow: visible;
-
     .slider-slides {
       position: relative;
       padding-top: 10px;
@@ -64,7 +62,9 @@
 
     .slider-pager {
       @include slider-override;
-      bottom: -455px;
+      position: fixed;
+      bottom:   -10px;
+      left:     5px;
     }
   }
 }
