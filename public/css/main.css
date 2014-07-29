@@ -7479,6 +7479,8 @@ button.button.show-next.show-inactive {
   color: #5B6166;
   font-size: 20px;
   border: 0; }
+  .button-bar > a.button.override span, .button-bar > a.button.override .modal .modal-inherit .content-wrapper .content section .button-bar a.button, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button.override a.button {
+    vertical-align: middle; }
   .button-bar > a.button.override:first-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:first-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:first-child {
     border-radius: 5px 0px 0px 5px; }
   .button-bar > a.button.override:last-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:last-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:last-child {
@@ -8293,7 +8295,7 @@ ion-content.sidemenu {
     display: block; }
   .survey .content-wrapper .question {
     background: white;
-    min-height: 390px;
+    min-height: 400px;
     padding-bottom: 10px; }
     .survey .content-wrapper .question .content-actual {
       font-size: 16px;
@@ -8398,7 +8400,7 @@ li.item, .item.item-checkbox {
       padding-bottom: 10px; }
 
 .bodymap .item {
-  height: 70px;
+  height: 65px;
   margin-left: 0px;
   margin-right: 0px;
   padding: 10px;
@@ -8418,7 +8420,7 @@ li.item, .item.item-checkbox {
   .bodymap .item .content {
     position: absolute;
     left: 75px;
-    bottom: 22px;
+    bottom: 17px;
     font-size: 17px; }
   .bodymap .item .icon-right.ion-chevron-right {
     position: absolute;
@@ -8451,7 +8453,7 @@ li.item, .item.item-checkbox {
     display: block; }
   .modal .modal-inherit .content-wrapper .content {
     background: white;
-    min-height: 425px; }
+    min-height: 440px; }
     .modal .modal-inherit .content-wrapper .content .content-actual {
       font-size: 16px;
       height: 80px;
@@ -8496,6 +8498,8 @@ li.item, .item.item-checkbox {
             margin: 10px 20px; }
           .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper section svg#legs {
             z-index: 2; }
+          .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper section svg#arms {
+            width: 79%; }
       .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper .head-bg, .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper .torso-bg, .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper .torso-bg, .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper .legs-bg, .modal .modal-inherit .content-wrapper .content .map .bodymap-wrapper .arm-bg {
         position: absolute;
         z-index: -1;
