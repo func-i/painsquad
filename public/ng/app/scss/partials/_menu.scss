@@ -28,7 +28,8 @@ ion-side-menu.menu-left.menu {
 }
 
 ion-item {
-  border: 0;
+  border:      0;
+
   &.special-bottom-border {
     border-bottom: 2px solid black;
   }
@@ -63,6 +64,7 @@ ion-content.sidemenu {
     background-color: transparent;
     font-family: 'ArialMT';
     font-kerning: 0;
+    padding-top: 0 !important;
 
     .ion-chevron-down, .ion-chevron-right {
       margin-right: -10px;

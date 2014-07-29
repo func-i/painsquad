@@ -39,9 +39,11 @@
       <img class="content-header" ng-src="images/background/binder-clips.png">
 
       <section class="question">
-        <div class="content-actual gray-diagonal">
+
+        <div class="content-actual grey-background">
           <span ng-bind-html="question.content"></span>
         </div>
+
         <div class="choices" ng-switch="question.question_type">
 
           <div ng-switch-when="boolean">
@@ -78,7 +80,7 @@
 
         </div>
 
-        <div class="tip" ng-show="question.tip">
+        <div class="tip bg-tip" ng-show="question.tip">
           <p><strong>TIP:</strong> {{ question.tip}} </p>
         </div>
 

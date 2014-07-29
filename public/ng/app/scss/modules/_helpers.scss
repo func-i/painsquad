@@ -34,10 +34,6 @@
   background-repeat: no-repeat;
 }
 
-.gray-diagonal {
-  background-color: #FAFAFA;
-  background-image: url('../images/background/content.png');
-}
 
 .extension {
   height: 200px;
@@ -70,13 +66,8 @@
   margin-right: auto !important;
 }
 
-.stripe-pattern {
+.grey-background {
   position: relative;
-  &.radius {
-    &::before {
-      border-radius: 5px;
-    }
-  }
 
   &::before {
     content:    '';
@@ -84,9 +75,50 @@
     top:        0; left: 0; bottom: 0; right: 0;
     opacity:    0.2;
     width:      100%;
-
     background-image: url('../images/background/content.png');
     background-size:  5px;
     background-color: $overlay-bg;
+  }
+}
+
+.grey-diagonal {
+  // background-color: #FAFAFA;
+  background-image: url('../images/pattern/grey.png');
+}
+
+.bg-tip {
+  background-image: url('../images/pattern/tip.png');
+  background-size:  350px;
+}
+
+.bg-pattern {
+  position: relative;
+
+  &::before {
+    content:         '';
+    position:        absolute;
+    top:             0; left: 0; bottom: 0; right: 0;
+    width:           100%;
+    background-size: 350px;
+  }
+
+  &.green::before {
+    background-image: url('../images/pattern/green.png');
+    border-radius: 5px;
+  }
+
+  &.red::before {
+    background-image: url('../images/pattern/red.png');
+    border-radius: 5px;
+  }
+
+  &.grey::before {
+    background-image: url('../images/pattern/grey.png');
+    border-radius: 5px;
+  }
+
+  &.blue::before {
+    background-image: url('../images/pattern/blue.png');
+    border-radius: 5px;
   }
 }

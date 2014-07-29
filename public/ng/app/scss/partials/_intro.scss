@@ -40,21 +40,20 @@
             height:      90px;
           }
 
-          button {
+          .button {
+            width: 100%;
             border:        0;
             border-radius: 5px;
             margin-top:    20px;
             text-align:    center;
+            &::before {
+              padding-left: 200px;
+              padding-top:  4px;
+            }
 
             .button-text {
-              margin-left: 25px;
+              margin-left: 5px;
             }
-
-            .icon-right {
-              margin-right: 10px;
-              font-size: 24px;
-            }
-
           }
         }
       }
