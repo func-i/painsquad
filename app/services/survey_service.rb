@@ -10,7 +10,7 @@ class SurveyService
 
   def get_survey
     # TEMP CODE FOR TESTING!
-    return send_test_survey if Rails.env.development?
+    # return send_test_survey if Rails.env.development?
 
     if @last_submission.nil?
       # send full survey if its the first
