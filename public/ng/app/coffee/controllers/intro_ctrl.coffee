@@ -1,7 +1,6 @@
 'use strict'
 
 @IntroCtrl = @controllerModule.controller 'IntroCtrl', ($scope, $rootScope, $state, $ionicSlideBoxDelegate, UserService) ->
-  $rootScope.sideMenuEnabled = false
   $scope.data =
     hideNavBar: true
     showLogin:  true

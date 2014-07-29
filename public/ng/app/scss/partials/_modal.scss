@@ -22,7 +22,7 @@
 
       .content {
         background: white;
-        min-height: 425px;
+        min-height: 440px;
 
         .content-actual {
           font-size:     16px;
@@ -82,6 +82,10 @@
 
                 &#legs {
                   z-index: 2;
+                }
+
+                &#arms {
+                  width: 79%;
                 }
               }
             }

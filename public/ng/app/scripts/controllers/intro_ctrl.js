@@ -2,7 +2,6 @@
   'use strict';
   this.IntroCtrl = this.controllerModule.controller('IntroCtrl', function($scope, $rootScope, $state, $ionicSlideBoxDelegate, UserService) {
     var init;
-    $rootScope.sideMenuEnabled = false;
     $scope.data = {
       hideNavBar: true,
       showLogin: true

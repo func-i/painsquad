@@ -47,6 +47,10 @@ button.button.show-next {
     font-size: 20px;
     border: 0;
 
+    span {
+      vertical-align: middle;
+    }
+
     &:first-child {
       border-radius: 5px 0px 0px 5px;
     }
