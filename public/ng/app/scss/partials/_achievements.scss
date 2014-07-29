@@ -5,6 +5,9 @@
   .slider .slider-pager {
     @include slider-override;
     bottom: 20px;
+    .slider-pager-page {
+      width: 13px;
+    }
   }
 
   .slider-slide {
@@ -76,16 +79,25 @@
 }
 
 .badges {
-  @extend .gray-diagonal;
-  height: 260px;
-  text-align: center;
+  height:           300px;
+  text-align:       center;
+  position:         relative;
+  background-color: white;
+  overflow: hidden;
 
-  h3 {
-    text-align: center;
-    color: $royal;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 10px 0 4px 0;
+  .wrapper {
+    height: 100%;
+  }
+
+
+  span {
+    h3 {
+      border-top:  15px solid transparent;
+      text-align:  center;
+      color:       $royal;
+      font-weight: bold;
+      font-size:   20px;
+    }
   }
 
   .row {
@@ -95,6 +107,7 @@
     -webkit-box-pack: center; /* justify-content */
     -webkit-box-align: center; /* align-items */
     justify-content: center;
+    padding: 0;
 
     div {
       margin: 9px;
@@ -203,7 +216,7 @@
 
         p:last-child {
           color:          $gray-one;
-          font-size:      12px;
+          font-size:      14px;
           padding-bottom: 5px;
         }
       }

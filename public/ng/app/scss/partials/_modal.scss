@@ -31,17 +31,6 @@
           text-align:    center;
           padding:       15px;
           display:       block;
-          position:      relative;
-
-          &::before {
-            content:    '';
-            position:   absolute;
-            top:        0; left: 0; bottom: 0; right: 0;
-            background: url('/images/background/content.png');
-            background-color: lightgray;
-            opacity:    0.2;
-            width:      100%;
-          }
         }
 
         .upper .number {
