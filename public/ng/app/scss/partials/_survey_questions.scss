@@ -129,7 +129,9 @@ li.item, .item.item-checkbox {
 .bodymap {
 
   .item {
-    height:       70px;
+    // height:       70px;
+
+    height:       65px;
     margin-left:  0px;
     margin-right: 0px;
     padding:      10px;
@@ -152,9 +154,9 @@ li.item, .item.item-checkbox {
     }
 
     .content {
-      position: absolute;
-      left:     75px;
-      bottom:   22px;
+      position:  absolute;
+      left:      75px;
+      bottom:    17px;
       font-size: 17px;
     }
 

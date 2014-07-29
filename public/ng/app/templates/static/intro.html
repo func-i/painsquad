@@ -1,4 +1,4 @@
-<ion-view title="About The App" scroll="false" hide-nav-bar="{{data.hideNavBar}}" ng-cloak ng-controller="IntroCtrl">
+<ion-view title="About The App" scroll="false" hide-nav-bar="{{data.hideNavBar}}" ng-cloak>
 
   <ion-content class="content-background intro" padding="true" ng-class="{ 'has-header': !data.hideNavBar }">
 
@@ -15,8 +15,13 @@
             You've been enlisted in an elite group known as Pain Squad+. Your job is to monitor your pain and report clues in the cases.
           </p>
 
-          <button class="button button-full button-positive stripe-pattern" ng-click="next()">
+          <button ng-show="data.showLogin" class="button button-full button-positive stripe-pattern" ng-click="next()">
             <span class="button-text first">Get Started</span>
+            <span class="icon-right ion-chevron-right pull-right"></span>
+          </button>
+
+          <button ng-hide="data.showLogin" class="button button-full button-positive stripe-pattern" ng-click="next()">
+            <span class="button-text first">Next</span>
             <span class="icon-right ion-chevron-right pull-right"></span>
           </button>
         </div>
@@ -75,10 +80,6 @@
             <span class="icon-right ion-chevron-right pull-right"></span>
           </button>
 
-          <button ng-hide="data.showLogin" class="button button-full button-assertive stripe-pattern last" ng-click="goHome()">
-            <span class="button-text">Get Started</span>
-            <span class="icon-right ion-chevron-right pull-right"></span>
-          </button>
         </div>
       </ion-slide>
     </ion-slide-box>
