@@ -13,6 +13,7 @@
 #  extremes      :string(255)
 #  tag           :string(255)
 #  report_label  :string(255)
+#  name          :string(255)
 #
 
 FactoryGirl.define do

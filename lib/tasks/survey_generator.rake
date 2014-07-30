@@ -1,6 +1,5 @@
 namespace :survey do
 
-  # Official Surveys
   desc "Creates 'Full Assessment' Survey"
   task :full => [:environment] do
     Survey.where(identifier: 'full').destroy_all

@@ -36,6 +36,10 @@ PainSquadApi::Application.routes.draw do
     put :password, on: :member
   end
 
+  resources :questions, only: [:index, :show, :edit, :update]
+  resources :choices, only: [:edit, :update]
+
+
   get :admin, to: 'users#index'
 
 end

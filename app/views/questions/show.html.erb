@@ -1,0 +1,55 @@
+<p>
+  <%- if flash[:alert] || flash[:notice] %>
+    <div data-alert class="alert-box">
+      <%= flash[:alert] if flash[:alert] %>
+      <%= flash[:notice] if flash[:notice] %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+</p>
+
+<h2>Question #<%= @question.id %></h2>
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question Type</th>
+      <th>Content</th>
+      <th>Tip</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @question.question_type.titleize %></td>
+      <td><%= @question.content %></td>
+      <td><%= @question.tip.presence || 'none' %></td>
+      <td><%= link_to 'Edit', edit_question_path(@question) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%- if @question.editable_choices %>
+  <h3>Choices</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Label</th>
+        <th>Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    <%- @question.choices.each do |choice| %>
+      <tbody>
+        <tr>
+          <td><%= choice.content %></td>
+          <td><%= choice.value.presence || 'none' %></td>
+          <td><%= link_to 'Edit', edit_choice_path(choice) %></td>
+        </tr>
+      </tbody>
+    <%- end %>
+  </table>
+<%- end %>
+
+<%= link_to 'Back', questions_path, class: 'button tiny radius alert' %>

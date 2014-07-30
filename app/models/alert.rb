@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: alerts
+#
+#  id         :integer          not null, primary key
+#  time       :time
+#  category   :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Alert < ActiveRecord::Base
   has_many :user_alerts
   has_many :users, through: :user_alerts
