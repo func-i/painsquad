@@ -23,6 +23,7 @@
 #  medal                           :boolean          default(FALSE)
 #  healthcare_provider_email       :string(255)
 #  admin                           :boolean          default(FALSE)
+#  phone_number                    :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
