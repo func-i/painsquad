@@ -64,9 +64,7 @@
         width: "" + $scope.surveyProgress + "%"
       };
     };
-    $scope.startSurvey();
-    $rootScope.sideMenuEnabled = false;
-    return console.log('sideMenu: ', $rootScope.sideMenuEnabled);
+    return $scope.startSurvey();
   });
 
   this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$timeout', 'survey', 'AuthService', 'SubmissionService', 'BodymapService'];

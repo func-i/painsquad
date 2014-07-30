@@ -26,7 +26,6 @@
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.firstLaunch     = true
-  $rootScope.sideMenuEnabled = true
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 

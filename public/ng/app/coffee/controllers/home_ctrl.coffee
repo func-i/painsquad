@@ -5,7 +5,6 @@
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
   $scope.progress    = if userScore then userScore.percent_completed else 0.01
-  $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->
     confirmPopup = $ionicPopup.show
