@@ -1,21 +1,18 @@
 class QuestionsController < ApplicationController
   skip_before_action :restrict_access
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:edit, :update, :destroy]
 
-  # GET /questions
   def index
-    @questions = Question.all
+    @questions = Question.all.order('question_type')
   end
 
-  # GET /questions/1
   def show
+    @question = Question.includes(:choices).find(params[:id])
   end
 
-  # GET /questions/1/edit
   def edit
   end
 
-  # PATCH/PUT /questions/1
   def update
     if @question.update(question_params)
       redirect_to @question, notice: 'Question was successfully updated.'
@@ -25,13 +22,13 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def question_params
-      params[:question]
-    end
+  def set_question
+    @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:content, :tip)
+  end
+
 end

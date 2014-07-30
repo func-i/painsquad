@@ -3,21 +3,18 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th colspan="2">Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.name %></td>
+        <td><%= link_to question.display_name, question %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%#= link_to 'New Question', new_question_path %>

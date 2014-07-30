@@ -6,7 +6,7 @@ module Builder::Questions::Other
       question = survey.questions.create(
         question_type: 'boolean',
         content:       'Did you have <strong>pain</strong> since your last case?',
-        name:          'boolean has pain'
+        name:          'has pain'
       )
       question.choices.create content: 'Yes', value: 'true'
       question.choices.create content: 'No', value: 'false'
@@ -16,7 +16,7 @@ module Builder::Questions::Other
       question = survey.questions.create(
         question_type: 'radio',
         content:       'When you had pain in the last 12 hours, how long did it <strong>usually</strong> last?',
-        name:          'radio pain duration'
+        name:          'pain duration'
       )
       question.choices.create content: 'Just a few minutes'
       question.choices.create content: 'About an hour'
@@ -31,7 +31,7 @@ module Builder::Questions::Other
         question_type: 'bodymap',
         content:       '<strong>Where did it hurt</strong> since your last case?',
         tip:           'Touch the area of the body and then select parts in that area',
-        name:          'bodymap'
+        name:          ''
       )
       question.choices.create content: 'Head'
       question.choices.create content: 'Torso'
@@ -43,7 +43,7 @@ module Builder::Questions::Other
       question = survey.questions.create(
         question_type: 'textbox',
         content:       'Tell us anything else about your pain since your last case',
-        name:          'textbox'
+        name:          ''
       )
       question.choices.create textfield: true
     end

@@ -11,7 +11,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'no pain', most: 'worst possible pain' },
         tag:           'intensity',
         report_label:  'Now',
-        name:          'slider current pain'
+        name:          'current pain'
       )
       question.choices.create
     end
@@ -24,7 +24,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'no pain', most: 'worst possible pain' },
         tag:           'intensity',
         report_label:  'Worst',
-        name:          'slider last case worst pain'
+        name:          'last case worst pain'
       )
       question.choices.create
     end
@@ -37,7 +37,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'no pain', most: 'worst possible pain' },
         tag:           'intensity',
         report_label:  'Least',
-        name:          'slider last case best pain'
+        name:          'last case best pain'
       )
       question.choices.create
     end
@@ -50,7 +50,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'no pain', most: 'worst possible pain' },
         tag:           'intensity',
         report_label:  'Average',
-        name:          'slider last case average pain'
+        name:          'last case average pain'
       )
       question.choices.create
     end
@@ -62,7 +62,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Bothersome',
-        name:          'slider last case bothersome pain'
+        name:          'last case bothersome pain'
       )
       question.choices.create
     end
@@ -74,7 +74,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Sleep',
-        name:          'slider last case sleep interference'
+        name:          'last case sleep interference'
       )
       question.choices.create
     end
@@ -86,7 +86,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Things you did',
-        name:          'slider last case pain activity interference'
+        name:          'last case activity interference'
       )
       question.choices.create
     end
@@ -98,7 +98,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'How you felt',
-        name:          'slider last case pain emotional interference'
+        name:          'last case emotional interference'
       )
       question.choices.create
     end
@@ -110,7 +110,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Walking',
-        name:          'slider last case pain walking interference'
+        name:          'last case walking interference'
       )
       question.choices.create
     end
@@ -120,7 +120,7 @@ module Builder::Questions::Slider
         question_type: 'slider',
         content:       'How much did your pain get in the way of your <strong>relationships</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
-        name:          'slider last case pain relationship interference'
+        name:          'last case relationship interference'
 
       )
       question.choices.create
@@ -133,7 +133,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Schoolwork',
-        name:          'slider last case pain schooling interference'
+        name:          'last case schooling interference'
 
       )
       question.choices.create
@@ -146,7 +146,7 @@ module Builder::Questions::Slider
         extremes:      { least: 'not at all', most: 'a lot' },
         tag:           'effect',
         report_label:  'Enjoying Life',
-        name:          'slider last case pain life interference'
+        name:          'last case life interference'
 
       )
       question.choices.create
@@ -157,7 +157,7 @@ module Builder::Questions::Slider
         question_type: 'slider',
         content:       'How <strong>helpful</strong> was this strategy in reducing pain?',
         extremes:      { least: 'not helpful', most: 'very helpful' },
-        name:          'slider strategy efficacy'
+        name:          'strategy efficacy'
 
       )
       question.choices.create
@@ -169,7 +169,7 @@ module Builder::Questions::Slider
         content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?',
         identifier:    'pain_control',
         extremes:      { least: 'not at all', most: 'a lot' },
-        name:          'slider pain control'
+        name:          'pain control'
       )
       question.choices.create
     end

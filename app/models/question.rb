@@ -17,6 +17,7 @@
 
 class Question < ActiveRecord::Base
   QUESTION_TYPES = %w( boolean radio slider bodymap checklist checklist-grid checklist-extra textbox )
+  EDITABLE_TYPES = %w( radio slider checklist checklist-grid checklist-extra )
 
   belongs_to :survey
   has_many :choices, dependent: :destroy
@@ -27,5 +28,23 @@ class Question < ActiveRecord::Base
   validates :question_type, inclusion: QUESTION_TYPES
 
   scope :identifiers, -> { where.not(identifier: nil) }
+
+  def editable_choices
+    choices.any? && EDITABLE_TYPES.include?(question_type)
+  end
+
+  def display_name
+    name.empty? ? truncated_display : normal_display
+  end
+
+  private
+
+  def normal_display
+    "#{question_type.capitalize} - #{name.titleize}"
+  end
+
+  def truncated_display
+    question_type.capitalize
+  end
 
 end

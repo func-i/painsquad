@@ -35,7 +35,7 @@ module Builder::Questions::Checklist
         content:       'What do you think your pain was <strong>due to</strong>?',
         tip:           'You can click multiple answers',
         tag:           'pain_cause',
-        name:          'checklist pain cause'
+        name:          'pain cause'
         )
       question.choices.create content: 'None', can_disable: true
       PAIN_CAUSE.each { |content| question.choices.create content: content }
@@ -47,7 +47,7 @@ module Builder::Questions::Checklist
         question_type: 'checklist-grid',
         content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last case',
         tip:           'You can click multiple answers',
-        name:          'checklist describe pain grid'
+        name:          'describe pain'
       )
       DESCRIBE_PAIN.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other', textfield: true
@@ -57,7 +57,7 @@ module Builder::Questions::Checklist
       question = survey.questions.create(
         question_type: 'checklist-grid',
         content:       'What other <strong>symptoms</strong> have you experienced in the last 12 hours?',
-        name:          'checklist other symptoms grid'
+        name:          'other symptoms'
       )
       OTHER_SYMPTOMS.each { |content| question.choices.create content: content }
       question.choices.create content: 'Other', textfield: true
@@ -69,7 +69,7 @@ module Builder::Questions::Checklist
         content:       'What <strong>medications</strong> have you taken to reduce your pain since your last case?',
         tip:           'Touch the medication and then rate how helpful it was in reducing pain',
         tag:           'medications',
-        name:          'checklist medication efficacy slider'
+        name:          'medication efficacy'
       )
       question.choices.create content: 'None', can_disable: true
       MEDICATION.each { |content| question.choices.create content: content }
@@ -80,7 +80,7 @@ module Builder::Questions::Checklist
       question = survey.questions.create(
         question_type: 'checklist',
         content:       'What <strong>other strategies</strong> did you use to reduce pain since your last case?',
-        name:          'checklist other strategies'
+        name:          'other strategies'
       )
       question.choices.create content: 'None', can_disable: true
       OTHER_STRATEGIES.each { |content| question.choices.create content: content }
