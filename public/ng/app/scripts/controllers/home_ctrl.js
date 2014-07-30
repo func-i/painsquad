@@ -2,11 +2,12 @@
   'use strict';
   this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) {
     var init;
+    $rootScope.sideMenuEnabled = true;
+    console.log('HomeCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled);
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
     $scope.progress = userScore ? userScore.percent_completed : 0.01;
-    $rootScope.sideMenuEnabled = true;
     $scope.showPopup = function() {
       var confirmPopup;
       return confirmPopup = $ionicPopup.show({

@@ -96,15 +96,5 @@ ion-content.sidemenu {
   .item.item-divider {
     border-color: transparent;
     height:       160px;
-    position: relative;
-    &::before {
-      content:    '';
-      position:   absolute;
-      top:        0; left: 0; bottom: 0; right: 0;
-      opacity:    0.1;
-      width:      100%;
-      background-image: url('../images/background/content.png');
-      background-color: $overlay-bg;
-    }
   }
 }

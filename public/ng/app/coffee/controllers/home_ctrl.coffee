@@ -1,12 +1,13 @@
 'use strict'
 
 @HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) ->
+  $rootScope.sideMenuEnabled = true
+  console.log 'HomeCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled
   $scope.currentUser = UserService.currentUser()
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
   $scope.progress    = if userScore then userScore.percent_completed else 0.01
 
-  $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->
     confirmPopup = $ionicPopup.show

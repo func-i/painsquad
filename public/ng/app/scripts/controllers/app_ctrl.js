@@ -1,6 +1,7 @@
 (function() {
   'use strict';
   this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, NotificationService, NotificationSettingsService) {
+    console.log('AppCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled);
     $scope.levelUp = {};
     $scope.advice = {};
     $ionicModal.fromTemplateUrl('templates/shared/modal.login.html', function(modal) {

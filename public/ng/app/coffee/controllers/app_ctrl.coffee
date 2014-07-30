@@ -1,6 +1,7 @@
 'use strict'
 
 @AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, NotificationService, NotificationSettingsService) ->
+  console.log 'AppCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled
   $scope.levelUp = {}
   $scope.advice  = {}
 
