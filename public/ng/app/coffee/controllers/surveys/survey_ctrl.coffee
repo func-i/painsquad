@@ -64,5 +64,6 @@
   # DEFAULT ACTIONS
   $scope.startSurvey()
   $rootScope.sideMenuEnabled = false
+  console.log 'sideMenu: ', $rootScope.sideMenuEnabled
 
 @SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$timeout', 'survey', 'AuthService', 'SubmissionService', 'BodymapService']

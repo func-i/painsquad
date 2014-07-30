@@ -26,13 +26,6 @@
         ]
       });
     };
-    $scope.levelup = function() {
-      return $rootScope.$broadcast('event:levelup', {
-        image: 'rookie',
-        prev_rank: 'rookie',
-        rank: 'rookie'
-      });
-    };
     init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();

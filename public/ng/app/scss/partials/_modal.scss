@@ -117,7 +117,7 @@
 
           .button {
             @extend .override;
-            @extend .stripe-pattern;
+            // @extend .stripe-pattern;
           }
         }
 

@@ -65,7 +65,8 @@
       };
     };
     $scope.startSurvey();
-    return $rootScope.sideMenuEnabled = false;
+    $rootScope.sideMenuEnabled = false;
+    return console.log('sideMenu: ', $rootScope.sideMenuEnabled);
   });
 
   this.SurveyCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicScrollDelegate', '$timeout', 'survey', 'AuthService', 'SubmissionService', 'BodymapService'];

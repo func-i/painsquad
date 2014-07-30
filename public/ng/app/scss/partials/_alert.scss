@@ -13,7 +13,7 @@
   }
 
   .popup-buttons.row {
-    button:first-child {
+    .button-default {
       position: relative;
 
       &::before {
@@ -28,7 +28,7 @@
       }
     }
 
-    button:last-child {
+    .button-positive {
       position: relative;
 
       &::before {
@@ -37,7 +37,7 @@
         top:             0; left: 0; bottom: 0; right: 0;
         width:           100%;
         background-size: 350px;
-        background-image: url('../images/pattern/grey.png');
+        background-image: url('../images/pattern/blue.png');
         opacity: 0.2;
         border-radius: 5px;
       }
