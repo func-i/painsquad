@@ -65,11 +65,25 @@ h1.title {
   .header-bar.bar-blue {
     background-color: #00aed7; }
   .header-bar.bar-red {
-    background-color: #DF4461; }
+    background-color: #EE0057; }
 
 .margin-fix {
   margin-left: auto !important;
   margin-right: auto !important; }
+
+.divider-background {
+  position: relative; }
+  .divider-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+    width: 100%;
+    background-image: url('../images/pattern/divider.png');
+    background-size: 200px; }
 
 .grey-background {
   position: relative; }
@@ -85,9 +99,6 @@ h1.title {
     background-image: url('../images/background/content.png');
     background-size: 5px;
     background-color: rgba(77, 77, 77, 0.2); }
-
-.grey-diagonal {
-  background-image: url('../images/pattern/grey.png'); }
 
 .bg-tip {
   background-image: url('../images/pattern/tip.png');
@@ -141,13 +152,14 @@ ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
 
 li.item.item-checkbox label.checkbox input, .checkbox-icon {
   height: 20px;
-  width: 20px; }
+  width: 20px;
+  overflow: hidden; }
   li.item.item-checkbox label.checkbox input::before, .checkbox-icon::before {
     border-radius: 0; }
   li.item.item-checkbox label.checkbox input::after, .checkbox-icon::after {
     display: block;
-    top: 5px;
-    left: 4px;
+    top: 0.35rem;
+    left: 0.25rem;
     height: 6.5px;
     width: 13px;
     border: 2px solid #fff;
@@ -158,7 +170,8 @@ li.item.item-checkbox label.checkbox input, .checkbox-icon {
     border-bottom-left-radius: 1px;
     border-bottom-right-radius: 0px;
     transform: rotate(-47deg);
-    -webkit-transform: rotate(-47deg); }
+    -webkit-transform: rotate(-47deg);
+    box-shadow: 0px 7px 12px -1px black; }
 
 li.item.item-checkbox label.checkbox, #radio {
   top: 58%; }
@@ -7436,9 +7449,7 @@ a.button {
     background-color: white;
     box-shadow: 0px 0px 15px -9px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
     text-align: left; }
-    .intro .scroll .slider .slider-slides .slider-slide h3 {
-      background-image: url('../images/background/content.png');
-      background-color: #D9DCDE;
+    .intro .scroll .slider .slider-slides .slider-slide .header h3 {
       margin: 0 auto;
       padding: 15px 20px;
       color: #1B2D6D;
@@ -7471,10 +7482,10 @@ a.button {
   bottom: -10px;
   left: 5px; }
   .intro .scroll .slider .slider-pager .slider-pager-page {
+    width: 12px;
     font-size: 80%;
-    width: 4%;
     margin: 0 auto;
-    color: #9ba0a4;
+    color: #cdccca;
     opacity: 1; }
     .intro .scroll .slider .slider-pager .slider-pager-page.active {
       color: #00aed7; }
@@ -7506,18 +7517,19 @@ button.button.show-next.show-inactive {
   color: #737D80; }
 
 .button-bar > a.button.override, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button {
-  color: #5B6166;
   font-size: 20px;
   border: 0; }
   .button-bar > a.button.override span, .button-bar > a.button.override .modal .modal-inherit .content-wrapper .content section .button-bar a.button, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button.override a.button {
-    vertical-align: middle; }
+    vertical-align: middle;
+    position: relative; }
   .button-bar > a.button.override:first-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:first-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:first-child {
     border-radius: 5px 0px 0px 5px; }
   .button-bar > a.button.override:last-child, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button:last-child, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button:last-child {
     border-radius: 0px 5px 5px 0px; }
   .button-bar > a.button.override.active, .button-bar > .modal .modal-inherit .content-wrapper .content section .button-bar a.button.active, .modal .modal-inherit .content-wrapper .content section .button-bar .button-bar > a.button.active {
     background-color: #EE0057;
-    color: white; }
+    color: white;
+    position: relative; }
 
 body.platform-ios .progress {
   top: 60px; }
@@ -7789,10 +7801,10 @@ body.platform-browser .progress {
   .awards .slider .slider-pager {
     bottom: 20px; }
     .awards .slider .slider-pager .slider-pager-page {
+      width: 12px;
       font-size: 80%;
-      width: 4%;
       margin: 0 auto;
-      color: #9ba0a4;
+      color: #cdccca;
       opacity: 1; }
       .awards .slider .slider-pager .slider-pager-page.active {
         color: #00aed7; }
@@ -7951,8 +7963,14 @@ body.platform-browser .progress {
     margin: 20px;
     color: #5B6166; }
   .modal .award article button {
-    width: 90%;
+    width: 85%;
     margin: 0 auto; }
+    .modal .award article button .video {
+      position: absolute;
+      height: 70%;
+      border-radius: 20px;
+      right: 10px;
+      top: 7px; }
 
 .advice {
   padding-left: 5px;
@@ -8081,8 +8099,7 @@ body.platform-browser .progress {
   .modal .container .detail {
     margin-top: -5px;
     min-height: 65px;
-    max-height: 75px;
-    background-color: #FAFAFA; }
+    max-height: 75px; }
     .modal .container .detail .duration, .modal .container .detail .context {
       position: relative;
       color: #303436;
@@ -8113,7 +8130,7 @@ body.platform-browser .progress {
       margin-top: -10px; }
     .modal .container .detail .badge {
       position: absolute;
-      top: 119px;
+      top: -3px;
       right: 15px; }
       .modal .container .detail .badge i img {
         width: 22px; }
@@ -8140,10 +8157,10 @@ body.platform-browser .progress {
     bottom: -15px;
     left: 0; }
     .modal .container .slide .slider .slider-pager .slider-pager-page {
+      width: 12px;
       font-size: 80%;
-      width: 4%;
       margin: 0 auto;
-      color: #9ba0a4;
+      color: #cdccca;
       opacity: 1; }
       .modal .container .slide .slider .slider-pager .slider-pager-page.active {
         color: #00aed7; }
@@ -8159,7 +8176,7 @@ body.platform-browser .progress {
         .modal .container .slide .slider .slider-slide.center-images .header {
           text-align: left; }
       .modal .container .slide .slider .slider-slide img {
-        width: 95%; }
+        width: 80%; }
       .modal .container .slide .slider .slider-slide p {
         margin: 7px 15px;
         text-align: left; }
@@ -8286,20 +8303,9 @@ ion-content.sidemenu {
     ion-content.sidemenu .item.white a {
       color: white; }
   ion-content.sidemenu .item.item-divider {
+    background-color: #414345;
     border-color: transparent;
-    height: 160px;
-    position: relative; }
-    ion-content.sidemenu .item.item-divider::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      opacity: 0.1;
-      width: 100%;
-      background-image: url('../images/background/content.png');
-      background-color: rgba(77, 77, 77, 0.2); }
+    height: 160px; }
 
 .survey.survey-complete .content-wrapper {
   margin: 10px; }
@@ -8572,9 +8578,9 @@ li.item, .item.item-checkbox {
 .popup .popup-body {
   text-align: center;
   color: #5B6166; }
-.popup .popup-buttons.row:first-child button {
+.popup .popup-buttons.row .button-default {
   position: relative; }
-  .popup .popup-buttons.row:first-child button::before {
+  .popup .popup-buttons.row .button-default::before {
     content: '';
     position: absolute;
     top: 0;
@@ -8586,9 +8592,9 @@ li.item, .item.item-checkbox {
     background-image: url('../images/pattern/grey.png');
     opacity: 0.2;
     border-radius: 5px; }
-.popup .popup-buttons.row:last-child button {
+.popup .popup-buttons.row .button-positive {
   position: relative; }
-  .popup .popup-buttons.row:last-child button::before {
+  .popup .popup-buttons.row .button-positive::before {
     content: '';
     position: absolute;
     top: 0;
@@ -8636,16 +8642,16 @@ li.item, .item.item-checkbox {
       font-weight: 100;
       font-size: 20px;
       line-height: 25px;
-      background-color: #EE0057; }
+      background-color: #DF4461; }
   .modal#levelup .header {
-    border-top: 7px solid #DF4461;
+    border-top: 7px solid #EE0057;
     height: 60px;
     text-align: center;
     color: #DF4461;
     font-size: 18px;
     font-weight: bold;
     padding: 15px; }
-  .modal#levelup img {
+  .modal#levelup img.rank {
     margin: 15px 0;
     width: 120px; }
   .modal#levelup p {
@@ -8653,8 +8659,15 @@ li.item, .item.item-checkbox {
     padding: 10px 20px;
     text-align: center; }
   .modal#levelup .button {
+    position: relative;
     width: 90%;
     margin-left: 5%; }
+    .modal#levelup .button .video {
+      position: absolute;
+      height: 70%;
+      border-radius: 20px;
+      right: 10px;
+      top: 7px; }
 
 .modal#advice {
   width: 100%;

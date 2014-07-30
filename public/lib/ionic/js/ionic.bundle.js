@@ -9,7 +9,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.0.0-beta.9-nightly-270
+ * Ionic, v1.0.0-beta.10
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -26,7 +26,7 @@
 window.ionic = {
   controllers: {},
   views: {},
-  version: '1.0.0-beta.9-nightly-270'
+  version: '1.0.0-beta.10'
 };
 
 (function(ionic) {
@@ -36223,7 +36223,7 @@ angular.module('ui.router.compat')
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v1.0.0-beta.9-nightly-270
+ * Ionic, v1.0.0-beta.10
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -37778,6 +37778,7 @@ function($rootScope, $document, $compile, $timeout, $ionicPlatform, $ionicTempla
 
       $timeout(function(){
         modalEl.addClass('ng-enter-active');
+        ionic.trigger('resize');
         self.scope.$parent && self.scope.$parent.$broadcast('modal.shown', self);
         self.el.classList.add('active');
       }, 20);
@@ -40290,7 +40291,7 @@ function($scope, scrollViewOptions, $timeout, $window, $$scrollValueCache, $loca
         if(curElm !== null)scrollTop += curElm.offsetTop;
         curElm = curElm.offsetParent;
         levelsClimbed++;
-      } while (curElm.attributes != self.element.attributes && curElm.offsetParent !== null);
+      } while (curElm.attributes != self.element.attributes && curElm.offsetParent);
       scrollView.scrollTo(scrollLeft, scrollTop, !!shouldAnimate);
     });
   };
@@ -41050,13 +41051,11 @@ function($timeout, $controller, $ionicBind) {
   };
 }]);
 
+var GESTURE_DIRECTIVES = 'onHold onTap onTouch onRelease onDrag onDragUp onDragRight onDragDown onDragLeft onSwipe onSwipeUp onSwipeRight onSwipeDown onSwipeLeft'.split(' ');
 
-forEach(
-  'onHold onTap onTouch onRelease onDrag onDragUp onDragRight onDragDown onDragLeft onSwipe onSwipeUp onSwipeRight onSwipeBottom onSwipeLeft'.split(' '),
-  function(name) {
-    IonicModule.directive(name, gestureDirective(name));
-  }
-);
+GESTURE_DIRECTIVES.forEach(function(name) {
+  IonicModule.directive(name, gestureDirective(name));
+});
 
 
 /**
