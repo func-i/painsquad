@@ -17,7 +17,7 @@
 
 class Question < ActiveRecord::Base
   QUESTION_TYPES = %w( boolean radio slider bodymap checklist checklist-grid checklist-extra textbox )
-  EDITABLE_TYPES = %w( radio slider checklist checklist-grid checklist-extra )
+  EDITABLE_TYPES = %w( radio checklist checklist-grid checklist-extra )
 
   belongs_to :survey
   has_many :choices, dependent: :destroy
