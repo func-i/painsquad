@@ -13,9 +13,8 @@
   }
 
   .popup-buttons.row {
-
-    &:first-child button {
-     position: relative;
+    button:first-child {
+      position: relative;
 
       &::before {
         content:         '';
@@ -29,8 +28,8 @@
       }
     }
 
-    &:last-child button {
-     position: relative;
+    button:last-child {
+      position: relative;
 
       &::before {
         content:         '';
@@ -38,10 +37,41 @@
         top:             0; left: 0; bottom: 0; right: 0;
         width:           100%;
         background-size: 350px;
-        background-image: url('../images/pattern/blue.png');
+        background-image: url('../images/pattern/grey.png');
         opacity: 0.2;
         border-radius: 5px;
       }
     }
+
+    // &:first-child button {
+    //  position: relative;
+
+    //   &::before {
+    //     content:         '';
+    //     position:        absolute;
+    //     top:             0; left: 0; bottom: 0; right: 0;
+    //     width:           100%;
+    //     background-size: 350px;
+    //     background-image: url('../images/pattern/grey.png');
+    //     opacity: 0.2;
+    //     border-radius: 5px;
+    //   }
+    // }
+
+    // &:last-child button {
+    //  position: relative;
+
+    //   &::before {
+    //     content:         '';
+    //     position:        absolute;
+    //     top:             0; left: 0; bottom: 0; right: 0;
+    //     width:           100%;
+    //     background-size: 350px;
+    //     background-image: url('../images/pattern/blue.png');
+    //     opacity: 0.2;
+    //     border-radius: 5px;
+    //   }
+    // }
+
   }
 }

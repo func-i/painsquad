@@ -1,7 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, NotificationService, NotificationSettingsService) ->
-  console.log 'AppCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -48,4 +47,4 @@
     $scope.levelupModal.remove()
     $scope.adviceModal.remove()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'NotificationService', 'NotificationSettingsService' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout' ]

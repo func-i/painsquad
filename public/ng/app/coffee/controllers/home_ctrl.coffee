@@ -1,13 +1,11 @@
 'use strict'
 
 @HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) ->
-  $rootScope.sideMenuEnabled = true
-  console.log 'HomeCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled
   $scope.currentUser = UserService.currentUser()
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
   $scope.progress    = if userScore then userScore.percent_completed else 0.01
-
+  $rootScope.sideMenuEnabled = true
 
   $scope.showPopup = ->
     confirmPopup = $ionicPopup.show
@@ -29,8 +27,8 @@
   # $scope.testFull = ->
   #   $state.go('app.new_survey_by_type', type: 'full')
 
-  # $scope.levelup = ->
-  #   $rootScope.$broadcast 'event:levelup', { image: 'rookie', prev_rank: 'rookie', rank: 'rookie' }
+  $scope.levelup = ->
+    $rootScope.$broadcast 'event:levelup', { image: 'rookie', prev_rank: 'rookie', rank: 'rookie' }
 
   init = ->
     # only show popup after transitioning from survey_complete

@@ -42,7 +42,6 @@
   }
 
   .header {
-    @extend .gray-diagonal;
     border-top:  7px solid $red-two;
     height:      60px;
     text-align:  center;
@@ -52,7 +51,7 @@
     padding:     15px;
   }
 
-  img {
+  img.badge {
     margin: 15px 0;
     width: 120px;
   }

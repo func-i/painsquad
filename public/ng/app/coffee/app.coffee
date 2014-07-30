@@ -26,8 +26,7 @@
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
   $rootScope.firstLaunch     = true
-  $rootScope.sideMenuEnabled = true
-  $rootScope.notificationID  = 0
+  # $rootScope.sideMenuEnabled = true
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 
@@ -50,14 +49,8 @@
         console.log err
 
   $ionicPlatform.ready ->
+    if window.StatusBar
+      StatusBar.styleLightContent()
     # if window.cordova and window.cordova.plugins.Keyboard
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
-
-    # if window.cordova and window.cordova.plugins
-    #   window.cordova.plugins.notification.badge.clear()
-    #   window.cordova.plugins.notification.badge.configure
-    #     autoClear: true
-
-    if window.StatusBar
-      StatusBar.styleLightContent()

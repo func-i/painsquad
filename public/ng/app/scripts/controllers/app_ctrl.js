@@ -1,7 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, NotificationService, NotificationSettingsService) {
-    console.log('AppCtrl Init, sideMenuEnabled: ', $rootScope.sideMenuEnabled);
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout) {
     $scope.levelUp = {};
     $scope.advice = {};
     $ionicModal.fromTemplateUrl('templates/shared/modal.login.html', function(modal) {
@@ -49,6 +48,6 @@
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'NotificationService', 'NotificationSettingsService'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout'];
 
 }).call(this);

@@ -1,4 +1,4 @@
-<ion-view title="Pain Squad&#43;" hide-back-button="true" ng-cloak>
+<ion-view title="Pain Squad&#43;">
 
   <ion-nav-buttons side="left" class="home-override">
     <button menu-toggle="left" class="button image-button left">
@@ -45,6 +45,11 @@
       </div>
 
       <div class="action">
+
+        <button class="button button-stable override home" ng-click="levelup()">
+          levelup
+        </button>
+
         <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
           Start Case
           <img ng-src="./images/buttons/start_case_icon.png">

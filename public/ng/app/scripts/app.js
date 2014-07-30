@@ -17,8 +17,6 @@
   this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
     var checkConnection;
     $rootScope.firstLaunch = true;
-    $rootScope.sideMenuEnabled = true;
-    $rootScope.notificationID = 0;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {

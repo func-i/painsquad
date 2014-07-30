@@ -6,13 +6,19 @@
       <div class="circle" ng-click="closeModal()">X</div>
     </div>
 
-    <div class="header stripe-pattern">You've Moved Up!</div>
+    <div class="header grey-background">
+      <span class="content">You've Moved Up!</span>
+    </div>
 
-    <img ng-src="./images/achievements/{{ levelUp.image || 'rookie' }}.png">
+    <img class="badge" ng-src="./images/achievements/{{ levelUp.image || 'rookie' }}.png">
 
     <p>Looks like it's time to drop the "{{levelUp.prev_rank}}" from your rank. A communication just came across from Headquarters, you are now officially a full-fledged {{levelUp.rank}} in PainSquad</p>
 
-    <button class="button button-assertive override stripe-pattern">Play Video</button>
+
+    <button class="button button-assertive override bg-pattern red">
+      <span class="content">Play Video</span>
+      <img class="video" ng-src="./images/buttons/play_video.png">
+    </button>
   </ion-content>
 
 </div>
