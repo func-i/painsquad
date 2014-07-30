@@ -5,12 +5,11 @@
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     $httpProvider.responseInterceptors.push('AuthInterceptor');
     $httpProvider.responseInterceptors.push('EventInterceptor');
-    $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
       $httpProvider.defaults.headers.common['Authorization'] = "Token token=" + currentUser.access_token;
     }
-    return $stateProvider.state('app', {
+    $stateProvider.state('app', {
       url: '/app',
       abstract: true,
       templateUrl: 'templates/layout/menu.html',
@@ -440,6 +439,7 @@
         }
       }
     });
+    return $urlRouterProvider.otherwise('/app/home');
   });
 
 }).call(this);

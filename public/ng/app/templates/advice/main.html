@@ -9,14 +9,14 @@
     <section class="top">
       <div class="advice-item yellow" ui-sref="app.recommended"
         ng-class="{ 'active': isActiveOne }" ng-init="isActiveOne = false" ng-click="isActiveOne = !isActiveOne">
-          <h2>Recommended For You</h2>
+          <h2 class="content">Recommended For You</h2>
           <img class="fav-badge" ng-src="./images/advice/main/rec.png">
           <img class="shadow" ng-src="./images/shadows/home-shadow.png">
       </div>
 
-      <div class="advice-item red" ui-sref="app.favorites"
+      <div class="advice-item red bg-pattern red" ui-sref="app.favorites"
         ng-class="{ 'active': isActiveTwo }" ng-init="isActiveTwo = false" ng-click="isActiveTwo = !isActiveTwo">
-          <h2>Your Favourites</h2>
+          <h2 class="content">Your Favourites</h2>
           <img class="fav-badge" ng-src="./images/advice/main/fav.png">
           <img class="shadow" ng-src="./images/shadows/home-shadow.png">
       </div>
@@ -40,7 +40,7 @@
 
     </section>
 
-    <div class="extension"></div>
+    <div class="extension grey-background"></div>
 
   </ion-content>
 </ion-view>

@@ -43,12 +43,12 @@ button.button.show-next {
 
 .button-bar > a.button {
   &.override {
-    color: $gray-one;
     font-size: 20px;
     border: 0;
 
     span {
       vertical-align: middle;
+      position: relative;
     }
 
     &:first-child {
@@ -61,6 +61,7 @@ button.button.show-next {
     &.active {
       background-color: $assertive;
       color: white;
+      position: relative;
     }
   }
 }

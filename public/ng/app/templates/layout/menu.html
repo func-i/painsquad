@@ -1,16 +1,18 @@
 <ion-side-menus>
 
-  <ion-pane ion-side-menu-content>
+  <ion-pane ion-side-menu-content drag-content="false">
 
     <ion-nav-bar class="bar-royal nav-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+      <ion-nav-back-button class="button-clear">
+        <i class="icon ion-ios7-arrow-back"></i> Back
+      </ion-nav-back-button>
     </ion-nav-bar>
 
     <ion-nav-view name="menuContent" animation="nav-title-slide-ios7"></ion-nav-view>
 
   </ion-pane>
 
-  <ion-side-menu side="left" is-enabled="sideMenuEnabled" ng-init="reportMenu = false" drag-content="false">
+  <ion-side-menu side="left">
 
     <ion-content class="sidemenu">
       <div class="top-bar"></div>
@@ -29,7 +31,7 @@
           <i class="icon ion-chevron-right pull-right"></i>
         </ion-item>
 
-        <div class="item item-divider"></div>
+        <div class="item item-divider divider-background"></div>
 
         <ion-item menu-close ui-sref="app.about" class="no-border top special-border-lower">
           About

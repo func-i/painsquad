@@ -13,9 +13,8 @@
   }
 
   .popup-buttons.row {
-
-    &:first-child button {
-     position: relative;
+    .button-default {
+      position: relative;
 
       &::before {
         content:         '';
@@ -29,8 +28,8 @@
       }
     }
 
-    &:last-child button {
-     position: relative;
+    .button-positive {
+      position: relative;
 
       &::before {
         content:         '';
@@ -43,5 +42,6 @@
         border-radius: 5px;
       }
     }
+
   }
 }

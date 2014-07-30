@@ -192,7 +192,6 @@
       margin-top:       -5px;
       min-height:       65px;
       max-height:       75px;
-      background-color: #FAFAFA;
 
       .duration, .context {
         position:       relative;
@@ -237,7 +236,7 @@
 
       .badge {
         position: absolute;
-        top:      119px;
+        top:      -3px;
         right:    15px;
         i img { width: 22px; }
       }
@@ -300,7 +299,7 @@
       }
 
       img {
-        width: 95%;
+        width: 80%;
       }
 
       p {
@@ -359,7 +358,7 @@
     }
 
     .header {
-      @extend .gray-diagonal;
+      @extend .gray-background;
       height:     50px;
       color:      $royal;
       font-size:  20px;
