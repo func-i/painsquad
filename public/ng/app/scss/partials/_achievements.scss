@@ -226,8 +226,15 @@
       }
 
       button {
-        width: 90%;
+        width:  85%;
         margin: 0 auto;
+        .video {
+          position:      absolute;
+          height:        70%;
+          border-radius: 20px;
+          right:         10px;
+          top:           7px;
+        }
       }
     }
   }

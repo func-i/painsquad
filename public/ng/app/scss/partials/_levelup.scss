@@ -37,12 +37,12 @@
       font-weight:      100;
       font-size:        20px;
       line-height:      25px;
-      background-color: $assertive;
+      background-color: $red-two;
     }
   }
 
   .header {
-    border-top:  7px solid $red-two;
+    border-top:  7px solid $assertive;
     height:      60px;
     text-align:  center;
     color:       $red-two;
@@ -51,7 +51,7 @@
     padding:     15px;
   }
 
-  img.badge {
+  img.rank {
     margin: 15px 0;
     width: 120px;
   }
@@ -63,7 +63,15 @@
   }
 
   .button {
+    position: relative;
     width:       90%;
     margin-left: 5%;
+    .video {
+      position:      absolute;
+      height:        70%;
+      border-radius: 20px;
+      right:         10px;
+      top:           7px;
+    }
   }
 }
