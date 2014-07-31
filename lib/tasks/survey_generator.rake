@@ -2,13 +2,11 @@ namespace :survey do
 
   desc "Creates 'Full Assessment' Survey"
   task :full => [:environment] do
-    Survey.where(identifier: 'full').destroy_all
     Builder::SurveyBuilder.new(identifier: 'full').build
   end
 
   desc "Creates 'Truncated Assessment' Survey"
   task :truncated => [:environment] do
-    Survey.where(identifier: 'truncated').destroy_all
     Builder::SurveyBuilder.new(identifier: 'truncated').build
   end
 
@@ -24,7 +22,7 @@ namespace :survey do
   end
 
 
-  task :all => [:environment, :full, :truncated] do
+  task :all => [:environment, :clear_all, :full, :truncated] do
   end
 
   task :mock_results => [:environment] do

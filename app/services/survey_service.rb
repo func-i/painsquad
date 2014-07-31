@@ -38,10 +38,7 @@ class SurveyService
 
   protected
 
-  # builds surveys if they don't exist
-  # returns type specified
   def send_survey type
-    Survey.create_surveys! unless Survey.any?
     Survey.send(type).first
   end
 

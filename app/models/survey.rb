@@ -28,11 +28,6 @@ class Survey < ActiveRecord::Base
     identifier == 'truncated'
   end
 
-  def self.create_surveys!
-    SurveyBuilder.new(identifier: 'full').build
-    SurveyBuilder.new(identifier: 'truncated').build
-  end
-
   def xp_points
     full? ? 25 : 10
   end
