@@ -12,15 +12,18 @@
     $ionicSlideBoxDelegate.previous()
 
   $scope.login = ->
+    $rootScope.firstLaunch = false
     $state.go 'app.login'
 
   $scope.goHome = ->
     $state.go 'app.home'
 
   init = ->
-    if UserService.isLoggedIn()
+    if $rootScope.previousState_name is 'app.about' and UserService.isLoggedIn()
       $scope.data.hideNavBar = false
       $scope.data.showLogin  = false
+    else if !$rootScope.firstLaunch
+      $scope.goHome()
 
   init()
 

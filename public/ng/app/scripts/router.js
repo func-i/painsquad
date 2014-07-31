@@ -439,7 +439,7 @@
         }
       }
     });
-    return $urlRouterProvider.otherwise('/app/home');
+    return $urlRouterProvider.otherwise('/app/intro');
   });
 
 }).call(this);

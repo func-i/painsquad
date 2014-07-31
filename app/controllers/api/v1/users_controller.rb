@@ -1,21 +1,19 @@
 module Api
   module V1
     class UsersController < BaseController
-      skip_before_action :restrict_access, only: [:create]
+
+      swagger_controller :users, 'Users Controller'
+
+      swagger_api :index do
+        summary 'Returns User Information when at Home view'
+        response :unauthorized
+      end
 
       def index
         if present_user
           render json: present_user
         else
           render json: nil, status: 401
-        end
-      end
-
-      def create
-        @user = User.new user_params
-
-        unless @user.save
-          render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
         end
       end
 

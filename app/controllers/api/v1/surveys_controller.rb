@@ -3,6 +3,13 @@ module Api
     class SurveysController < BaseController
       before_action :fetch_survey, only: :show
 
+      swagger_controller :surveys, 'Surveys Controller'
+
+      swagger_api :show do
+        summary 'Returns survey'
+        response :unauthorized
+      end
+
       def show
         if @survey
           render json: @survey
@@ -11,12 +18,22 @@ module Api
         end
       end
 
+      swagger_api :full do
+        summary 'Returns full survey'
+        response :unauthorized
+      end
+
       def full
         if @survey = Survey.full.first
           render json: @survey
         else
           render json: nil, status: 404
         end
+      end
+
+      swagger_api :truncated do
+        summary 'Returns truncated survey'
+        response :unauthorized
       end
 
       def truncated

@@ -3,17 +3,22 @@ module Api
     class SubmissionsController < BaseController
       before_action :fetch_submission, only: [:show]
 
-      def show
-        render json: @submission
+      swagger_controller :reports, 'Submissions Controller'
+
+      swagger_api :create do
+        summary "Saves Submission from completed 'Pain Case' Survey"
+        param :form, :survey_id, :integer, :required, 'Survey ID'
+        param :form, :has_pain, :boolean, :required, 'First Question, indicates if user has experienced pain'
+        param :form, :xp_points, :integer, :required, 'User Points Awarded for completing'
+        param_list :form, :answers_attributes, :array, :required, 'Answers', [ 'question_id', 'choice_id', 'value', 'bodymap_data', 'custom_text' ]
+        response :unprocessable_entity
       end
 
       def create
         @submission      = Submission.new(submission_params)
         @submission.user = @user
         if @submission.save
-          # uses custom response serializer to intercept level_up event for client modal
           render json: @submission, serializer: ActivitySerializer
-          # prevent this from being called multiple times in a callback
           @submission.user.check_last_three_reports
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity

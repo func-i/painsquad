@@ -14,6 +14,7 @@ gem 'jquery-rails',     '~> 3.1.0'
 gem 'foundation-rails', '~> 5.3.0.1'
 gem 'sass-rails',       '~> 4.0.3'
 gem 'modernizr-rails',  '~> 2.7.1'
+gem 'swagger-docs',     '~> 0.1.8'
 
 # alerts
 gem 'delayed_job_active_record', '~> 4.0.1'

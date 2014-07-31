@@ -409,4 +409,5 @@
           templateUrl: 'templates/static/pain/psychological.html'
     )
 
-  $urlRouterProvider.otherwise '/app/home'
+  $urlRouterProvider.otherwise '/app/intro'
+  # $urlRouterProvider.otherwise '/app/home'
