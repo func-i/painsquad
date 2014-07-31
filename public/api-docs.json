@@ -1,0 +1,51 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "apis": [
+    {
+      "path": "api/v1/users.{format}",
+      "description": "Users Controller"
+    },
+    {
+      "path": "api/v1/submissions.{format}",
+      "description": "Submissions Controller"
+    },
+    {
+      "path": "api/v1/reports.{format}",
+      "description": "Reports Controller"
+    },
+    {
+      "path": "api/v1/favorites.{format}",
+      "description": "Favorites Controller"
+    },
+    {
+      "path": "api/v1/survey_results.{format}",
+      "description": "Survey Results Controller"
+    },
+    {
+      "path": "api/v1/achievements.{format}",
+      "description": "Achievements Controller"
+    },
+    {
+      "path": "api/v1/activities.{format}",
+      "description": "Activities Controller"
+    },
+    {
+      "path": "api/v1/sessions.{format}",
+      "description": "Sessions Controller"
+    },
+    {
+      "path": "api/v1/settings.{format}",
+      "description": "Settings Controller"
+    },
+    {
+      "path": "api/v1/surveys.{format}",
+      "description": "Surveys Controller"
+    },
+    {
+      "path": "api/v1/recommendations.{format}",
+      "description": "Recommendations Controller"
+    }
+  ]
+}

@@ -3,12 +3,28 @@ module Api
     class SettingsController < BaseController
       before_action :fetch_alert, only: :update
 
+      swagger_controller :settings, 'Settings Controller'
+
+      swagger_api :show do
+        summary 'Returns user alert settings'
+        response :not_found
+      end
+
       def show
         if present_user
           render json: present_user, serializer: AlertsSerializer
         else
           render json: nil, status: 404
         end
+      end
+
+      swagger_api :update do
+        summary 'Updates user alert settings'
+        param :form, :id, :integer, :required, 'Alert ID'
+        param :form, :time, :string, :required, 'Ruby Date object'
+        param :form, :display_time, :string, 'Human Readable Time Format'
+        param :form, :category, :string, :required, 'Alert Category Identifier'
+        response :not_found
       end
 
       def update

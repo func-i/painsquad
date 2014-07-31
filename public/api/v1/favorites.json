@@ -1,0 +1,74 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "favorites",
+  "apis": [
+    {
+      "path": "api/favorites",
+      "operations": [
+        {
+          "summary": "Returns Users recommendation favorites",
+          "responseMessages": [
+            {
+              "code": 422,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Favorites#index"
+        }
+      ]
+    },
+    {
+      "path": "api/favorites",
+      "operations": [
+        {
+          "summary": "Adds a recommendation to User favorites",
+          "responseMessages": [
+            {
+              "code": 422,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "recommendation_id",
+              "type": "integer",
+              "description": "Recommendation ID",
+              "required": true
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V1::Favorites#create"
+        }
+      ]
+    },
+    {
+      "path": "api/favorites/{id}",
+      "operations": [
+        {
+          "summary": "Removes recommendation from User favorites",
+          "responseMessages": [
+            {
+              "code": 422,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "recommendation_id",
+              "type": "integer",
+              "description": "Recommendation ID",
+              "required": true
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V1::Favorites#destroy"
+        }
+      ]
+    }
+  ]
+}
