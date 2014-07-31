@@ -3,7 +3,7 @@ module Builder::Questions::Slider
   class << self
 
     def current_pain survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much <strong>pain</strong> do you have right now?',
         tip:           'Touch the mark and slide it to describe your pain.',
@@ -13,11 +13,11 @@ module Builder::Questions::Slider
         report_label:  'Now',
         name:          'current pain'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_worst survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'What was your pain when it was at its <strong>worst</strong> since your last case?',
         identifier:    'last_case_worst',
@@ -26,11 +26,11 @@ module Builder::Questions::Slider
         report_label:  'Worst',
         name:          'last case worst pain'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_best survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'What was your pain when it was at its <strong>least</strong> since your last case?',
         identifier:    'last_case_best',
@@ -39,11 +39,11 @@ module Builder::Questions::Slider
         report_label:  'Least',
         name:          'last case best pain'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_average survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'What was your pain when it was at its <strong>average</strong> since your last case?',
         identifier:    'last_case_average',
@@ -52,11 +52,11 @@ module Builder::Questions::Slider
         report_label:  'Average',
         name:          'last case average pain'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_bothersome survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How <strong>bothersome</strong> was your pain since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -64,11 +64,11 @@ module Builder::Questions::Slider
         report_label:  'Bothersome',
         name:          'last case bothersome pain'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_sleep survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of your <strong>sleep</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -76,11 +76,11 @@ module Builder::Questions::Slider
         report_label:  'Sleep',
         name:          'last case sleep interference'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_activities survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of <strong>things you did</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -88,11 +88,11 @@ module Builder::Questions::Slider
         report_label:  'Things you did',
         name:          'last case activity interference'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_felt survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of <strong>how you felt</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -100,11 +100,11 @@ module Builder::Questions::Slider
         report_label:  'How you felt',
         name:          'last case emotional interference'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_walking survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of <strong>walking</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -112,22 +112,22 @@ module Builder::Questions::Slider
         report_label:  'Walking',
         name:          'last case walking interference'
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_relationships survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of your <strong>relationships</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
         name:          'last case relationship interference'
 
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_school survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of <strong>schoolwork</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -136,11 +136,11 @@ module Builder::Questions::Slider
         name:          'last case schooling interference'
 
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def last_case_enjoyment survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much did your pain get in the way of <strong>enjoying life</strong> since your last case?',
         extremes:      { least: 'not at all', most: 'a lot' },
@@ -149,29 +149,29 @@ module Builder::Questions::Slider
         name:          'last case life interference'
 
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def strategy_efficacy survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How <strong>helpful</strong> was this strategy in reducing pain?',
         extremes:      { least: 'not helpful', most: 'very helpful' },
         name:          'strategy efficacy'
 
       )
-      question.choices.create
+      question.choices.create!
     end
 
     def pain_control survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'slider',
         content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?',
         identifier:    'pain_control',
         extremes:      { least: 'not at all', most: 'a lot' },
         name:          'pain control'
       )
-      question.choices.create
+      question.choices.create!
     end
 
   end

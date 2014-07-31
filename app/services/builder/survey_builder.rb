@@ -5,7 +5,7 @@ module Builder
     def initialize(params = {})
       @identifier = params.fetch :identifier
       @title      = "#{@identifier.capitalize} Assessment"
-      @survey     = Survey.create title: @title, identifier: @identifier
+      @survey     = Survey.create! title: @title, identifier: @identifier
     end
 
     def build
@@ -46,26 +46,14 @@ module Builder
 
     # looks for existing questions from full survey to share existing models
     def build_truncated_survey
-      # Questions::Other.boolean_has_pain(@survey)
-      # Questions::Slider.current_pain(@survey)
-      # Questions::Slider.last_case_worst(@survey)
-      # Questions::Slider.last_case_sleep(@survey)
-      # Questions::Slider.last_case_activities(@survey)
-      # Questions::Checklist.medication_efficacy_slider(@survey)
-      # Questions::Checklist.other_strategies(@survey)
-      # Questions::Slider.pain_control(@survey)
-      [
-        'has pain',
-        'current pain',
-        'last case worst pain',
-        'last case sleep interference',
-        'last case activity interference',
-        'medication efficacy',
-        'other strategies',
-        'pain control'
-      ].each do |question|
-        @survey.questions << Question.find_by(name: question)
-      end
+      Questions::Other.boolean_has_pain(@survey)
+      Questions::Slider.current_pain(@survey)
+      Questions::Slider.last_case_worst(@survey)
+      Questions::Slider.last_case_sleep(@survey)
+      Questions::Slider.last_case_activities(@survey)
+      Questions::Checklist.medication_efficacy_slider(@survey)
+      Questions::Checklist.other_strategies(@survey)
+      Questions::Slider.pain_control(@survey)
     end
 
     def build_test_survey

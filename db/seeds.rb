@@ -27,6 +27,5 @@ User.create! username: 'Admin User', email: 'admin@sickkids.ca', password: 'pain
 User.create! username: 'First Test User', email: 'test@uhn.com', password: 'password', healthcare_provider_email: 'test@uhn.com', phone_number: '555-555-5555'
 User.create! username: 'Second Test User', email: 'test@sickkids.ca', password: 'password', healthcare_provider_email: 'test@sickkids.ca', phone_number: '555-555-5555'
 
-Rake::Task['survey:all'].invoke
 Rake::Task['advice:all'].invoke
-
+Rake::Task['survey:create'].invoke

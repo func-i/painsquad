@@ -30,61 +30,61 @@ module Builder::Questions::Checklist
   class << self
 
     def pain_cause survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'checklist',
         content:       'What do you think your pain was <strong>due to</strong>?',
         tip:           'You can click multiple answers',
         tag:           'pain_cause',
         name:          'pain cause'
         )
-      question.choices.create content: 'None', can_disable: true
-      PAIN_CAUSE.each { |content| question.choices.create content: content }
-      question.choices.create content: 'Other (please list)', textfield: true
+      question.choices.create! content: 'None', can_disable: true
+      PAIN_CAUSE.each { |content| question.choices.create! content: content }
+      question.choices.create! content: 'Other (please list)', textfield: true
     end
 
     def describe_pain_grid survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'checklist-grid',
         content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last case',
         tip:           'You can click multiple answers',
         name:          'describe pain'
       )
-      DESCRIBE_PAIN.each { |content| question.choices.create content: content }
-      question.choices.create content: 'Other', textfield: true
+      DESCRIBE_PAIN.each { |content| question.choices.create! content: content }
+      question.choices.create! content: 'Other', textfield: true
     end
 
     def other_symptoms_grid survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'checklist-grid',
         content:       'What other <strong>symptoms</strong> have you experienced in the last 12 hours?',
         name:          'other symptoms'
       )
-      OTHER_SYMPTOMS.each { |content| question.choices.create content: content }
-      question.choices.create content: 'Other', textfield: true
+      OTHER_SYMPTOMS.each { |content| question.choices.create! content: content }
+      question.choices.create! content: 'Other', textfield: true
     end
 
     def medication_efficacy_slider survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'checklist-extra',
         content:       'What <strong>medications</strong> have you taken to reduce your pain since your last case?',
         tip:           'Touch the medication and then rate how helpful it was in reducing pain',
         tag:           'medications',
         name:          'medication efficacy'
       )
-      question.choices.create content: 'None', can_disable: true
-      MEDICATION.each { |content| question.choices.create content: content }
-      question.choices.create content: 'Other', textfield: true
+      question.choices.create! content: 'None', can_disable: true
+      MEDICATION.each { |content| question.choices.create! content: content }
+      question.choices.create! content: 'Other', textfield: true
     end
 
     def other_strategies survey
-      question = survey.questions.create(
+      question = survey.questions.create!(
         question_type: 'checklist',
         content:       'What <strong>other strategies</strong> did you use to reduce pain since your last case?',
         name:          'other strategies'
       )
-      question.choices.create content: 'None', can_disable: true
-      OTHER_STRATEGIES.each { |content| question.choices.create content: content }
-      question.choices.create content: 'Other', textfield: true
+      question.choices.create! content: 'None', can_disable: true
+      OTHER_STRATEGIES.each { |content| question.choices.create! content: content }
+      question.choices.create! content: 'Other', textfield: true
     end
 
   end
