@@ -1,0 +1,24 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "api/users",
+      "operations": [
+        {
+          "summary": "Returns User Information when at Home view",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Users#index"
+        }
+      ]
+    }
+  ]
+}

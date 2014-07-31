@@ -1,0 +1,56 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "surveys",
+  "apis": [
+    {
+      "path": "api/surveys/full",
+      "operations": [
+        {
+          "summary": "Returns full survey",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Surveys#full"
+        }
+      ]
+    },
+    {
+      "path": "api/surveys/truncated",
+      "operations": [
+        {
+          "summary": "Returns truncated survey",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Surveys#truncated"
+        }
+      ]
+    },
+    {
+      "path": "api/surveys",
+      "operations": [
+        {
+          "summary": "Returns survey",
+          "responseMessages": [
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Surveys#show"
+        }
+      ]
+    }
+  ]
+}
