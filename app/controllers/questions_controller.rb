@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:edit, :update, :destroy]
 
   def index
-    @full_questions      = Survey.full.first.questions.order('question_type')
-    @truncated_questions = Survey.truncated.first.questions.order('question_type')
+    @full_questions      = Survey.full.first.questions
+    @truncated_questions = Survey.truncated.first.questions
   end
 
   def show
