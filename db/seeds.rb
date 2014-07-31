@@ -28,9 +28,4 @@ User.create! username: 'First Test User', email: 'test@uhn.com', password: 'pass
 User.create! username: 'Second Test User', email: 'test@sickkids.ca', password: 'password', healthcare_provider_email: 'test@sickkids.ca', phone_number: '555-555-5555'
 
 Rake::Task['advice:all'].invoke
-# Rake::Task['survey:all'].invoke
-Rake::Task['survey:clear_all'].invoke
-Rake::Task['survey:full'].invoke
-Rake::Task['survey:truncated'].invoke
-
-
+Rake::Task['survey:create'].invoke

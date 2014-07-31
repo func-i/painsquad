@@ -11,7 +11,7 @@ namespace :survey do
   end
 
   desc "rake callback to clear existing survey"
-  task :clear_all => :environment do
+  task :clear => :environment do
     [Survey, Question, Choice, Submission, Answer].each &:destroy_all
   end
 
@@ -21,9 +21,7 @@ namespace :survey do
     Builder::SurveyBuilder.new(identifier: 'test').build
   end
 
-
-  task :all => [:environment, :clear_all, :full, :truncated] do
-  end
+  task :create => [:environment, :clear, :full, :truncated]
 
   task :mock_results => [:environment] do
     SubmissionSeedGenerator.build

@@ -1,20 +1,48 @@
-<h1>Questions</h1>
+<div class="row">
+  <div class="small-2 large-6 columns">
+    <h2>Full Survey</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @full_questions.each do |question| %>
+          <tr>
+            <td><%= link_to question.display_name, question %></td>
+            <td><%= link_to 'Show', question %></td>
+            <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.display_name, question %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="small-2 large-6 columns">
+    <h2>Truncated Survey</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @truncated_questions.each do |question| %>
+          <tr>
+            <td><%= link_to question.display_name, question %></td>
+            <td><%= link_to 'Show', question %></td>
+            <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
