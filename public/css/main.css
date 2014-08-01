@@ -179,6 +179,8 @@ li.item.item-checkbox label.checkbox, #radio {
 li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
   height: 20px;
   width: 20px;
+  border-radius: 50%;
+  overflow: hidden;
   opacity: 1 !important; }
   li.item.item-checkbox label.checkbox#radio input::before, .checkbox-icon#radio::before {
     border-radius: 28px; }
@@ -7479,8 +7481,8 @@ a.button {
         margin-left: 5px; }
 .intro .scroll .slider .slider-pager {
   position: fixed;
-  bottom: -10px;
-  left: 5px; }
+  bottom: -15px;
+  left: -5%; }
   .intro .scroll .slider .slider-pager .slider-pager-page {
     width: 12px;
     font-size: 80%;
@@ -7798,18 +7800,14 @@ body.platform-browser .progress {
 .awards {
   background-color: transparent;
   position: relative; }
-  .awards .slider .slider-pager {
-    bottom: 20px; }
-    .awards .slider .slider-pager .slider-pager-page {
-      width: 12px;
-      font-size: 80%;
-      margin: 0 auto;
-      color: #cdccca;
-      opacity: 1; }
-      .awards .slider .slider-pager .slider-pager-page.active {
-        color: #00aed7; }
-    .awards .slider .slider-pager .slider-pager-page {
-      width: 13px; }
+  .awards .slider .slider-pager .slider-pager-page {
+    width: 12px;
+    font-size: 80%;
+    margin: 0 auto;
+    color: #cdccca;
+    opacity: 1; }
+    .awards .slider .slider-pager .slider-pager-page.active {
+      color: #00aed7; }
   .awards .slider-slide {
     background-color: transparent;
     padding: 0; }
@@ -7864,7 +7862,7 @@ body.platform-browser .progress {
   .badges .wrapper {
     height: 100%; }
   .badges span h3 {
-    border-top: 15px solid transparent;
+    border-top: 10px solid transparent;
     text-align: center;
     color: #00aed7;
     font-weight: bold;
@@ -7880,7 +7878,7 @@ body.platform-browser .progress {
     justify-content: center;
     padding: 0; }
     .badges .row div {
-      margin: 9px;
+      margin: 5px 9px;
       position: relative; }
       .badges .row div p {
         margin: auto;
@@ -7995,7 +7993,7 @@ body.platform-browser .progress {
       color: white;
       border: 0;
       text-align: center;
-      padding: 15px 15px 10px 15px; }
+      padding: 15px 10px; }
       .advice .top .advice-item .fav-badge {
         position: relative;
         z-index: 1;
@@ -8023,8 +8021,7 @@ body.platform-browser .progress {
         .advice .top .advice-item.yellow.active {
           background-color: #9b872d; }
       .advice .top .advice-item.red {
-        margin-left: 2%;
-        background-color: #DF4461; }
+        margin-left: 2%; }
         .advice .top .advice-item.red.active {
           background-color: #a0233c; }
   .advice .bottom {
@@ -8155,7 +8152,7 @@ body.platform-browser .progress {
   .modal .container .slide .slider .slider-pager {
     position: fixed;
     bottom: -15px;
-    left: 0; }
+    left: -5%; }
     .modal .container .slide .slider .slider-pager .slider-pager-page {
       width: 12px;
       font-size: 80%;
@@ -8241,21 +8238,21 @@ body.platform-browser .progress {
   box-shadow: -9px 0px 10px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2); }
 
 ion-side-menu.menu-left.menu {
-  background: #292929;
+  background: #292929 !important;
   /* Old browsers */
-  background: -moz-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%);
+  background: -moz-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%) !important;
   /* FF3.6+ */
-  background: -webkit-gradient(radial, 50% 75%, 0px, 50% 75%, 100%, color-stop(0%, #292929), color-stop(100%, #5d6367));
+  background: -webkit-gradient(radial, 50% 75%, 0px, 50% 75%, 100%, color-stop(0%, #292929), color-stop(100%, #5d6367)) !important;
   /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%);
+  background: -webkit-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%) !important;
   /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%);
+  background: -o-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%) !important;
   /* Opera 12+ */
-  background: -ms-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%);
+  background: -ms-radial-gradient(50% 75%, circle cover, #292929 0%, #5d6367 100%) !important;
   /* IE10+ */
-  background: radial-gradient(cover at 50% 75%, #292929 0%, #5d6367 100%);
+  background: radial-gradient(cover at 50% 75%, #292929 0%, #5d6367 100%) !important;
   /* W3C */
-  background-size: 275px; }
+  background-size: 275px !important; }
 
 .no-padding-top .list {
   padding-top: 0; }
@@ -8377,7 +8374,8 @@ li.item, .item.item-checkbox {
     margin: 5px 0; }
 
 .radio .content {
-  top: -1px; }
+  top: 0px;
+  left: -5px; }
 
 .checklist {
   width: 100%; }
@@ -8424,7 +8422,7 @@ li.item, .item.item-checkbox {
       width: 100%;
       font-size: 16px; }
       .checklist-grid form div li.item span {
-        top: 14px;
+        top: 1px;
         left: 45px; }
     .checklist-grid form div .other-textarea {
       list-style: none; }
