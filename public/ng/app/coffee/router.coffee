@@ -5,6 +5,9 @@
   $httpProvider.responseInterceptors.push('AuthInterceptor')
   $httpProvider.responseInterceptors.push('EventInterceptor')
 
+  # $urlRouterProvider.otherwise '/app/intro'
+  $urlRouterProvider.otherwise '/app/home'
+
   currentUser = JSON.parse localStorage.getItem 'current_user'
   if currentUser?
     $httpProvider.defaults.headers.common['Authorization'] = "Token token=#{currentUser.access_token}"
@@ -408,6 +411,3 @@
         menuContent:
           templateUrl: 'templates/static/pain/psychological.html'
     )
-
-  # $urlRouterProvider.otherwise '/app/intro'
-  $urlRouterProvider.otherwise '/app/home'

@@ -62,9 +62,6 @@
 
     .slider-pager {
       @include slider-override;
-      position: fixed;
-      bottom:   -10px;
-      left:     5px;
     }
   }
 }
