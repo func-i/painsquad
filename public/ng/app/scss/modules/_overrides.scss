@@ -76,9 +76,11 @@ li.item.item-checkbox label.checkbox, #radio {
 }
 
 li.item.item-checkbox label.checkbox#radio input, .checkbox-icon#radio {
-  height:  20px;
-  width:   20px;
-  opacity: 1 !important;
+  height:        20px;
+  width:         20px;
+  border-radius: 50%;
+  overflow:      hidden;
+  opacity:       1 !important;
 
   &::before {
     border-radius: 28px;

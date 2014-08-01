@@ -12,10 +12,6 @@
     $scope.previous = function() {
       return $ionicSlideBoxDelegate.previous();
     };
-    $scope.login = function() {
-      $rootScope.firstLaunch = false;
-      return $state.go('app.login');
-    };
     $scope.goHome = function() {
       return $state.go('app.home');
     };
@@ -23,8 +19,6 @@
       if ($rootScope.previousState_name === 'app.about' && UserService.isLoggedIn()) {
         $scope.data.hideNavBar = false;
         return $scope.data.showLogin = false;
-      } else if (!$rootScope.firstLaunch) {
-        return $scope.goHome();
       }
     };
     return init();

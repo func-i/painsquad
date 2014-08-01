@@ -3,11 +3,7 @@
   position: relative;
 
   .slider .slider-pager {
-    @include slider-override;
-    bottom: 20px;
-    .slider-pager-page {
-      width: 13px;
-    }
+    @include slider-override-not-fixed;
   }
 
   .slider-slide {
@@ -92,7 +88,7 @@
 
   span {
     h3 {
-      border-top:  15px solid transparent;
+      border-top:  10px solid transparent;
       text-align:  center;
       color:       $royal;
       font-weight: bold;
@@ -110,7 +106,8 @@
     padding: 0;
 
     div {
-      margin: 9px;
+      margin: 5px 9px;
+      // margin: 9px;
       position: relative;
 
       p {

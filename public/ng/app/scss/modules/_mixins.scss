@@ -1,6 +1,9 @@
 @mixin slider-override {
+  position: fixed;
+  bottom:   -15px;
+  left:     -5%;
+
   .slider-pager-page {
-    // width:  4%;
     width:     12px;
     font-size: 80%;
     margin:    0 auto;
@@ -11,3 +14,17 @@
     }
   }
 }
+
+@mixin slider-override-not-fixed {
+  .slider-pager-page {
+    width:     12px;
+    font-size: 80%;
+    margin:    0 auto;
+    color:     rgb(205, 204, 202);
+    opacity:   1;
+    &.active {
+      color: $royal;
+    }
+  }
+}
+

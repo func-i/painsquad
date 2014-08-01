@@ -25,7 +25,7 @@
       color:         white;
       border:        0;
       text-align:    center;
-      padding:       15px 15px 10px 15px;
+      padding:       15px 10px;
 
       .fav-badge {
         position: relative;
@@ -66,7 +66,6 @@
 
       &.red {
         margin-left: 2%;
-        background-color: $red-two;
         &.active {
           background-color: rgb(160, 35, 60);
         }
@@ -276,9 +275,6 @@
   .slider {
     .slider-pager {
       @include slider-override;
-      position: fixed;
-      bottom:   -15px;
-      left:     0;
     }
   }
 
