@@ -5,27 +5,37 @@ class SurveyService
   def initialize(user)
     @user            = user
     @last_submission = @user.submissions.last
-    # @previous        = @user.previous_submissions
+    @now             = Time.zone.now.strftime("%H:%M:%S")
   end
 
+  # if notification was sent in last
+  # - 5 minutes of notification?
+  #    - send full survey
+  # - 1:00 to 1:05 of notification (1hr to 1.05 hr)
+  #     - send truncated survey
+  # otherwise
+  # - determine survey from pain report
   def get_survey
-    # TEMP CODE FOR TESTING!
-    # return send_test_survey if Rails.env.development?
-
-    if @last_submission.nil?
-      # send full survey if its the first
-      send_survey :full
-    elsif !@last_submission.has_pain?
-      # no pain in previous report, send truncated
-      send_survey :truncated
+    if within_notification_window?
+      send_from_notification_hook
     else
-      # otherwise, determine which survey from pain_severity
-      determine_pain_severity
+      send_from_pain_report
     end
   end
 
-  def send_test_survey
-    Survey.where(identifier: :test).first
+  protected
+
+  # send full survey if its the first
+  # no pain in previous report, send truncated
+  # otherwise, determine which survey from pain_severity
+  def send_from_pain_report
+    if @last_submission.nil?
+      send_survey :full
+    elsif !@last_submission.has_pain?
+      send_survey :truncated
+    else
+      determine_pain_severity
+    end
   end
 
   def determine_pain_severity
@@ -36,10 +46,20 @@ class SurveyService
     end
   end
 
-  protected
+  def within_notification_window?
+    @user.alerts.each do |alert|
+    end
+  end
+
+  def send_from_notification_hook
+  end
 
   def send_survey type
     Survey.send(type).first
+  end
+
+  def send_test_survey
+    Survey.where(identifier: :test).first
   end
 
 end
