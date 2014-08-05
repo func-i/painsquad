@@ -16,11 +16,12 @@ class SurveyService
   # otherwise
   # - determine survey from pain report
   def get_survey
-    if within_notification_window?
-      send_from_notification_hook
-    else
-      send_from_pain_report
-    end
+    send_from_pain_report
+    # if within_notification_window?
+    #   send_from_notification_hook
+    # else
+    #   send_from_pain_report
+    # end
   end
 
   protected
