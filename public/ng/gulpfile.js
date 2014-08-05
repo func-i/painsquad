@@ -29,6 +29,7 @@ var source_paths = {
   index_page: ['./app/index.html'],
   fonts:      ['./app/fonts/**.ttf']
 };
+
 // the destination paths
 var dest_paths = {
   css:       './www/css/',
@@ -39,9 +40,10 @@ var dest_paths = {
   fonts:     './www/fonts/',
   root:      './www/'
 };
+
 // the options used by gulp-open when booting the test server
 var open_options = {
-  url: "http://10.0.1.18:1337"
+  url: "http://localhost:1337"
 };
 
 gulp.task('coffee', function() {
@@ -176,7 +178,6 @@ gulp.task('compile-all', function(callback) {
 // start a livereload-enable server & open browser
 gulp.task('run-server', function() {
   connect.server({
-    host: '10.0.1.18',
     port: '1337',
     root: 'www',
     livereload: true

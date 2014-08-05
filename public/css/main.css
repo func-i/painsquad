@@ -127,6 +127,9 @@ h1.title {
   .bg-pattern.blue::before {
     background-image: url('../images/pattern/blue.png');
     border-radius: 5px; }
+  .bg-pattern.yellow::before {
+    background-image: url('../images/pattern/yellow.png');
+    border-radius: 5px; }
 
 ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
   border-color: transparent !important;
@@ -7611,7 +7614,7 @@ body.platform-browser .progress {
   .home .radial-wrapper .shadow {
     position: absolute;
     width: 260px;
-    top: -23px;
+    top: -25px;
     left: 12px;
     z-index: -1; }
   .home .radial-wrapper .upper-line-wrap {
