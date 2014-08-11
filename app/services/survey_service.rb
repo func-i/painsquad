@@ -5,7 +5,7 @@ class SurveyService
   def initialize(user)
     @user            = user
     @last_submission = @user.submissions.last
-    @now             = Time.zone.now.strftime("%H:%M:%S")
+    @now             = Time.zone.now#.strftime("%H:%M:%S")
   end
 
   # if notification was sent in last
@@ -16,12 +16,11 @@ class SurveyService
   # otherwise
   # - determine survey from pain report
   def get_survey
-    send_from_pain_report
-    # if within_notification_window?
-    #   send_from_notification_hook
-    # else
-    #   send_from_pain_report
-    # end
+    if within_notification_window?
+      send_from_notification_hook
+    else
+      send_from_pain_report
+    end
   end
 
   protected
@@ -48,11 +47,11 @@ class SurveyService
   end
 
   def within_notification_window?
-    @user.alerts.each do |alert|
-    end
+    @user.alerts.where(time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
   end
 
   def send_from_notification_hook
+      send_survey :full
   end
 
   def send_survey type
