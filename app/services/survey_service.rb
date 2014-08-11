@@ -1,29 +1,31 @@
-# Survey Service, responsible for deciding which survey to send to client
-# based off User's previous survey pain_severity level
 class SurveyService
 
   def initialize(user)
     @user            = user
     @last_submission = @user.submissions.last
-    @now             = Time.zone.now#.strftime("%H:%M:%S")
   end
 
-  # if notification was sent in last
-  # - 5 minutes of notification?
-  #    - send full survey
-  # - 1:00 to 1:05 of notification (1hr to 1.05 hr)
-  #     - send truncated survey
-  # otherwise
-  # - determine survey from pain report
   def get_survey
-    if within_notification_window?
-      send_from_notification_hook
+    if five_minutes_ago?
+      send_survey :full
+    elsif one_hour_ago?
+      send_survey :truncated
     else
       send_from_pain_report
     end
   end
 
   protected
+
+  # 0:05 to 0:00 ago
+  def five_minutes_ago?
+    @user.alerts.where(time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
+  end
+
+  # 1:05 to 1:00 ago
+  def one_hour_ago?
+    @user.alerts.where(time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..1.hour.ago.strftime("%H:%M:%S")).any?
+  end
 
   # send full survey if its the first
   # no pain in previous report, send truncated
@@ -44,14 +46,6 @@ class SurveyService
     else
       send_survey :full
     end
-  end
-
-  def within_notification_window?
-    @user.alerts.where(time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
-  end
-
-  def send_from_notification_hook
-      send_survey :full
   end
 
   def send_survey type
