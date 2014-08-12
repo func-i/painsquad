@@ -20,7 +20,7 @@
         display: block;
       }
 
-      .content {
+      .content-main {
         background: white;
         min-height: 440px;
 
@@ -92,6 +92,10 @@
             .arm-bg {
               height: 277px;
             }
+
+            .torso-bg {
+              height: 91%;
+            }
           }
         }
 
@@ -131,7 +135,8 @@
 
             span.idk {
               position: absolute;
-              top:      13px;
+              top:      12px;
+              left:     50px;
             }
           }
         }

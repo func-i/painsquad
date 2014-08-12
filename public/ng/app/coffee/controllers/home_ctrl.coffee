@@ -12,11 +12,11 @@
       template: '<span>Get recommended advice based on your pain case</span>'
       buttons:  [
         {
-          text: 'No'
-          type: 'button-default'
+          text: "<span class='content'>No</span>"
+          type: 'button-stable'
         },
         {
-          text: 'Yes'
+          text: "<span class='content'>Yes</span>"
           type: 'button-positive'
           onTap: (ev) ->
             $state.go 'app.recommended'

@@ -58,7 +58,6 @@
   }
   &.bar-red {
     background-color: $assertive;
-    // background-color: $red-two;
   }
 }
 
@@ -81,6 +80,20 @@
   }
 }
 
+.button-bg {
+  position: relative;
+
+  &::before {
+    content:    '';
+    position:   absolute;
+    top:        0; left: 0; bottom: 0; right: 0;
+    opacity:    0.2;
+    width:      100%;
+    background-image: url('../images/background/content.png');
+    background-size:  5px;
+  }
+}
+
 .grey-background {
   position: relative;
 
@@ -88,7 +101,6 @@
     content:    '';
     position:   absolute;
     top:        0; left: 0; bottom: 0; right: 0;
-    // opacity:    0.5;
     width:      100%;
     background-image: url('../images/pattern/grey.png');
     background-size:  350px;
