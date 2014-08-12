@@ -44,8 +44,9 @@ button.button.show-next {
 .button-bar > a.button {
   &.override {
     font-size: 20px;
-    border: 0;
-    position: relative;
+    border:    0;
+    position:  relative;
+    color:     #7d8787;
 
     span {
       vertical-align: middle;

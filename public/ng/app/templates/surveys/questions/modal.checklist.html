@@ -34,12 +34,12 @@
           </div>
 
           <div class="content-textarea" ng-if="detailData.currentChoice.textfield == true">
-            <label class="item item-input">
-              <textarea msd-elastic
-                ng-required="ifTextareaPresent(detailData.currentChoice)"
-                placeholder="Please specify..."
-                ng-model="detailData.currentChoice.custom_text"></textarea>
-            </label>
+            <div class="textarea-wrapper">
+              <textarea class="msd-elastic"
+                ng-model="choice.value"
+                placeholder="Please specify...">
+              </textarea>
+            </div>
           </div>
 
           <div class="slider-container" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">

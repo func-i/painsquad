@@ -38,12 +38,15 @@
         }
 
         .content-textarea {
-          padding: 20px;
+          padding:       20px;
+          height:        auto;
           border-bottom: 1px solid lightgray;
 
-          label.item.item-input {
-            border-color: lightgray;
+          .textarea-wrapper {
+            border: 1px solid lightgray;
+            padding: 2px;
             textarea {
+              padding: 5px;
               resize: none;
               &::-webkit-input-placeholder {
                 font-style: italic;
@@ -100,16 +103,16 @@
         }
 
         .tip {
-          text-align:       center;
-          color:            $gray-font;
-          margin:           10px 22px;
-          font-size:        12px;
-          // background-image: url('../images/background/content.png');
-          // background-color: rgba(217, 220, 222, 0.2);
+          text-align: center;
+          clear:      both;
+          color:      $gray-font;
+          margin:     24px;
+          font-size:  12px;
 
           p {
-            padding: 2px 5px;
-            border: 1px solid $red-four;
+            padding:     7px 5px;
+            border:      1px solid $red-four;
+            line-height: 15px;
           }
         }
 

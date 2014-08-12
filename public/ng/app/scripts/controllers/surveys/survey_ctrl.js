@@ -38,8 +38,10 @@
       }, 100);
     };
     $scope.reloadScroll = function() {
-      $ionicScrollDelegate.scrollTop();
-      return $ionicScrollDelegate.resize();
+      return $timeout(function() {
+        $ionicScrollDelegate.scrollTop();
+        return $ionicScrollDelegate.resize();
+      }, 50);
     };
     $scope.submit = function() {
       SubmissionService.prepareSubmissionAnswer($scope.question);
