@@ -88,11 +88,10 @@
     content:    '';
     position:   absolute;
     top:        0; left: 0; bottom: 0; right: 0;
-    opacity:    0.2;
+    // opacity:    0.5;
     width:      100%;
-    background-image: url('../images/background/content.png');
-    background-size:  5px;
-    background-color: $overlay-bg;
+    background-image: url('../images/pattern/grey.png');
+    background-size:  350px;
   }
 }
 
