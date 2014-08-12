@@ -71,30 +71,33 @@
                   <span class="content">Step {{ $index + 1 }}</span>
                 </div>
 
-                <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
-                <p ng-show="step.content" ng-bind="step.content"></p>
+                <div class="content-wrapper">
+                  <img ng-if="step.image_path" ng-src="./images/advice/steps/{{ step.image_path }}.png">
+                  <p ng-show="step.content" ng-bind="step.content"></p>
 
-                <div class="audio-block" ng-if="step.audio_path">
-                  <progress-arc
-                    class="round-progress"
-                    size="150"
-                    stroke="#1A9ECD"
-                    stroke-width="14"
-                    progress="(currentAudio.currentTime / currentAudio.duration) * -1"
-                    counter-clockwise="false"
-                    background="#C7DBEA">
-                  </progress-arc>
+                  <div class="audio-block" ng-if="step.audio_path">
+                    <progress-arc
+                      class="round-progress"
+                      size="150"
+                      stroke="#1A9ECD"
+                      stroke-width="14"
+                      progress="(currentAudio.currentTime / currentAudio.duration) * -1"
+                      counter-clockwise="false"
+                      background="#C7DBEA">
+                    </progress-arc>
 
-                  <audio media-player="currentAudio">
-                    <source ng-src="{{ initAudio(step.audio_path) }}" type="audio/mp3"></source>
-                  </audio>
+                    <audio media-player="currentAudio">
+                      <source ng-src="{{ initAudio(step.audio_path) }}" type="audio/mp3"></source>
+                    </audio>
 
-                  <button class="button icon ion-ios7-play button-royal" ng-hide="currentAudio.playing" ng-click="currentAudio.play()"></button>
-                  <button class="button icon ion-ios7-pause button-royal" ng-show="currentAudio.playing" ng-click="currentAudio.pause()"></button>
-                </div>
+                    <button class="button icon ion-ios7-play button-royal" ng-hide="currentAudio.playing" ng-click="currentAudio.play()"></button>
+                    <button class="button icon ion-ios7-pause button-royal" ng-show="currentAudio.playing" ng-click="currentAudio.pause()"></button>
+                  </div>
 
-                <div class="tip" ng-show="step.tip">
-                  TIP: <small ng-bind="step.tip"></small>
+                  <div class="tip" ng-show="step.tip">
+                    TIP: <small ng-bind="step.tip"></small>
+                  </div>
+
                 </div>
 
               </ion-slide>
