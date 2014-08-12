@@ -2,16 +2,16 @@
 
   <div class="button-bar">
     <a href
-      class="button override button-bg"
+      class="button override bg-pattern"
       ng-click="activeTab = 'front'"
-      ng-class="{ 'active': activeTab === 'front' }">
+      ng-class="{ 'active red': activeTab === 'front', 'grey': activeTab !== 'front' }">
       <span>Front</span>
     </a>
 
     <a href
-      class="button override button-bg"
+      class="button override bg-pattern"
       ng-click="activeTab = 'back'"
-      ng-class="{ 'active': activeTab === 'back' }">
+      ng-class="{ 'active red': activeTab === 'back', 'grey': activeTab !== 'back' }">
       <span>Back</span>
     </a>
   </div>

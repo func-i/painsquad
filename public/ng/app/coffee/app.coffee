@@ -48,6 +48,8 @@
         console.log err
 
   $ionicPlatform.ready ->
+    # $state.go 'app.intro'
+
     if window.StatusBar
       StatusBar.styleLightContent()
     # if window.cordova and window.cordova.plugins.Keyboard
