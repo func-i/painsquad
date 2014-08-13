@@ -14,7 +14,10 @@
   'googlechart',
   'angular-progress-arc',
   'mediaPlayer',
-  'monospaced.elastic'
+  'monospaced.elastic',
+  'com.2fdevs.videogular',
+  'com.2fdevs.videogular.plugins.overlayplay',
+  'com.2fdevs.videogular.plugins.buffering'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

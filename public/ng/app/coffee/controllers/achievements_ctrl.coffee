@@ -1,7 +1,8 @@
 'use strict'
 
-@AchievementsCtrl = @controllerModule.controller 'AchievementsCtrl', ($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG) ->
+@AchievementsCtrl = @controllerModule.controller 'AchievementsCtrl', ($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG, $sce) ->
   $scope.selectedAward = {}
+  $scope.showVideo     = false
 
   $scope.achievementData = [
       {
@@ -101,8 +102,26 @@
     animation: "slide-in-up"
     scope: $scope
 
+  $ionicModal.fromTemplateUrl "templates/shared/modal.video.html", (modal) ->
+    $scope.videoModal = modal
+  ,
+    animation: "slide-in-up"
+    scope: $scope
+
   $scope.$on '$destroy', ->
     $scope.modal.remove()
+    $scope.videoModal.remove()
+
+  $scope.playVideo = ->
+    $scope.videoItem = $scope.selectedItem
+    $scope.showVideo = true
+    # $scope.videoModal.show()
+
+  $scope.closeVideoModal = ->
+    $scope.videoModal.hide()
+
+  $scope.trustSrc = (src) ->
+    $sce.trustAsResourceUrl(src)
 
   $scope.loadAwardModal = (item) ->
     $scope.selectedItem = item
@@ -126,6 +145,7 @@
 
   reset = ->
     $scope.selectedItem = {}
+    $scope.showVideo    = false
 
   mergeRankData = ->
     for item, index in achievements.ranks
@@ -166,4 +186,4 @@
   mergeRankData()
   unlockAwardsAndSetDates()
 
-@AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements']
+@AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements', 'CONFIG', '$sce']

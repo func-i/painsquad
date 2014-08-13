@@ -1,0 +1,22 @@
+<div class="modal modal-video" id="fullscreen" scroll="false">
+
+  <ion-content>
+
+    <div videogular class="video-wrapper">
+
+      <video
+        controls
+        class="videoPlayer"
+        preload="metadata"
+        ng-src="{{ trustSrc(videoItem.video_path) }}"
+        type="video/mp4">
+      </video>
+
+      <vg-buffering></vg-buffering>
+      <vg-overlay-play></vg-overlay-play>
+    </div>
+
+    <button class="button" ng-click="closeVideoModal()">Close</button>
+  </ion-content>
+
+</div>
