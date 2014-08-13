@@ -7,7 +7,11 @@
     };
     error = function(response) {
       if (response.status === 401) {
-        $injector.get("$state").transitionTo("app.login");
+        if ($rootScope.firstLaunch) {
+          $injector.get("$state").transitionTo("app.intro");
+        } else {
+          $injector.get("$state").transitionTo("app.login");
+        }
         return $q.reject(response);
       } else {
         return $q.reject(response);

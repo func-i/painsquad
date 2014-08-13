@@ -6,7 +6,10 @@
       response
     error = (response) ->
       if response.status is 401
-        $injector.get("$state").transitionTo "app.login"
+        if $rootScope.firstLaunch
+          $injector.get("$state").transitionTo "app.intro"
+        else
+          $injector.get("$state").transitionTo "app.login"
         $q.reject response
       else
         $q.reject response
