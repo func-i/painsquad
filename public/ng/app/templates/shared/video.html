@@ -1,14 +1,13 @@
 <div ng-controller="VideoCtrl">
 
   <!-- plays inline on Cordova -->
-  <span ng-if="isCordova">
+  <span ng-if="showInlineVideo">
     <videogular
-      vg-width="320"
-      vg-height="480"
-      vg-autoplay="false"
-      vg-stretch="fit"
+      vg-width="1"
+      vg-height="1"
       vg-autoplay="true"
-      vg-complete="videoComplete">
+      vg-complete="videoComplete"
+      vg-player-ready="onPlayerReady">
         <video class="videoPlayer" autoplay="autoplay" webkit-playsinline>
           <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
         </video>
@@ -16,28 +15,19 @@
     </videogular>
   </span>
 
-</div>
-
+  <!-- plays inline on mobile safari -->
 <!--
-<div class="modal modal-video" id="fullscreen" scroll="false">
-
-  <ion-content>
+  <span ng-if="!isCordova">
     <videogular
       vg-width="320"
-      vg-height="480"
-      vg-autoplay="false"
-      vg-stretch="fit"
+      vg-height="320"
       vg-autoplay="true"
       vg-complete="videoComplete">
-        <video class="videoPlayer" autoplay="autoplay" webkit-playsinline>
+        <video class="videoPlayer">
           <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
         </video>
         <vg-overlay-play></vg-overlay-play>
     </videogular>
-
-    <button class="button" ng-click="closeVideoModal()">Close</button>
-
-  </ion-content>
-
-</div>
+  </span>
  -->
+</div>
