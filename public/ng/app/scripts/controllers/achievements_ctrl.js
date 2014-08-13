@@ -3,7 +3,6 @@
   this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG, $sce) {
     var mergeRankData, reset, unlockAwardsAndSetDates, unlockItem;
     $scope.selectedAward = {};
-    $scope.showVideo = false;
     $scope.achievementData = [
       {
         name: 'rookie',
@@ -91,26 +90,10 @@
       animation: "slide-in-up",
       scope: $scope
     });
-    $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
-      return $scope.videoModal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
-    });
     $scope.$on('$destroy', function() {
       $scope.modal.remove();
       return $scope.videoModal.remove();
     });
-    $scope.playVideo = function() {
-      $scope.videoItem = $scope.selectedItem;
-      return $scope.showVideo = true;
-    };
-    $scope.closeVideoModal = function() {
-      return $scope.videoModal.hide();
-    };
-    $scope.trustSrc = function(src) {
-      return $sce.trustAsResourceUrl(src);
-    };
     $scope.loadAwardModal = function(item) {
       $scope.selectedItem = item;
       if (!item.locked) {
@@ -139,8 +122,7 @@
       }
     };
     reset = function() {
-      $scope.selectedItem = {};
-      return $scope.showVideo = false;
+      return $scope.selectedItem = {};
     };
     mergeRankData = function() {
       var index, item, _i, _len, _ref, _results;
@@ -213,6 +195,22 @@
         }
       }
       return _results;
+    };
+    $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
+      return $scope.videoModal = modal;
+    }, {
+      animation: "slide-in-up",
+      scope: $scope
+    });
+    $scope.playVideo = function() {
+      $scope.videoItem = $scope.selectedItem;
+      return $scope.videoModal.show();
+    };
+    $scope.videoComplete = function() {
+      return $scope.videoModal.hide();
+    };
+    $scope.trustSrc = function(src) {
+      return $sce.trustAsResourceUrl(src);
     };
     mergeRankData();
     return unlockAwardsAndSetDates();

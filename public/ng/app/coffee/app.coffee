@@ -16,8 +16,9 @@
   'mediaPlayer',
   'monospaced.elastic',
   'com.2fdevs.videogular',
+  'com.2fdevs.videogular.plugins.controls',
   'com.2fdevs.videogular.plugins.overlayplay',
-  'com.2fdevs.videogular.plugins.buffering'
+  'com.2fdevs.videogular.plugins.buffering',
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []

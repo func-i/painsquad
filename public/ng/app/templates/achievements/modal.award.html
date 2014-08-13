@@ -31,20 +31,6 @@
         <span class="content">Play Video</span>
         <img class="video" ng-src="./images/buttons/play_video.png">
       </button>
-
-      <videogular class="video-wrapper" ng-show="showVideo">
-
-        <video
-          allowfullscreen="true"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          class="videoPlayer"
-          preload="metadata"
-          ng-src="{{ trustSrc(videoItem.video_path) }}"
-          type="video/mp4">
-        </video>
-        <vg-overlay-play></vg-overlay-play>
-      </videogular>
     </article>
 
   </ion-content>
