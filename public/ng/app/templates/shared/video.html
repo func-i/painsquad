@@ -1,4 +1,11 @@
 <div ng-controller="VideoCtrl">
+  <script>
+    var video = document.getElementById('video');
+    video.addEventListener("webkitendfullscreen", function () {
+      //hide video here
+      $(this).hide();
+    }, true);
+  </script>
 
   <!-- plays inline on Cordova -->
   <span ng-if="showInlineVideo">
