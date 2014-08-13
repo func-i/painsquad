@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService) {
-    var isMobileSafari;
+    var isMobileSafari, loadModal;
     $scope.isCordova = $rootScope.isCordova;
     $scope.videoItem = {};
     $scope.API = null;
@@ -9,20 +9,23 @@
     $scope.$on('event:playVideo', function(ev, data) {
       $scope.videoItem.video_path = data;
       if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !isMobileSafari()) {
-        $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
-          return $scope.videoModal = modal;
-        }, {
-          animation: "slide-in-up",
-          scope: $scope
-        });
-        $timeout(function() {
-          return $scope.videoModal.show();
-        }, 50);
+        loadModal();
       }
       if (isMobileSafari()) {
         return $scope.showInlineVideo = true;
       }
     });
+    loadModal = function() {
+      $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
+        return $scope.videoModal = modal;
+      }, {
+        animation: "slide-in-up",
+        scope: $scope
+      });
+      return $timeout(function() {
+        return $scope.videoModal.show();
+      }, 50);
+    };
     isMobileSafari = function() {
       if (window.navigator.userAgent.match(/(iPod|iPhone|iPad)/) && window.navigator.userAgent.match(/AppleWebKit/)) {
         return true;
