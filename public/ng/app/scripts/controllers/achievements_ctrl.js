@@ -91,14 +91,16 @@
       scope: $scope
     });
     $scope.$on('$destroy', function() {
-      $scope.modal.remove();
-      return $scope.videoModal.remove();
+      return $scope.modal.remove();
     });
     $scope.loadAwardModal = function(item) {
       $scope.selectedItem = item;
       if (!item.locked) {
         return $scope.modal.show();
       }
+    };
+    $scope.playVideo = function() {
+      return $scope.$emit('event:playVideo');
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
@@ -195,22 +197,6 @@
         }
       }
       return _results;
-    };
-    $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
-      return $scope.videoModal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
-    });
-    $scope.playVideo = function() {
-      $scope.videoItem = $scope.selectedItem;
-      return $scope.videoModal.show();
-    };
-    $scope.videoComplete = function() {
-      return $scope.videoModal.hide();
-    };
-    $scope.trustSrc = function(src) {
-      return $sce.trustAsResourceUrl(src);
     };
     mergeRankData();
     return unlockAwardsAndSetDates();

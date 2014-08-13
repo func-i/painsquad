@@ -1,0 +1,43 @@
+<div ng-controller="VideoCtrl">
+
+  <!-- plays inline on Cordova -->
+  <span ng-if="isCordova">
+    <videogular
+      vg-width="320"
+      vg-height="480"
+      vg-autoplay="false"
+      vg-stretch="fit"
+      vg-autoplay="true"
+      vg-complete="videoComplete">
+        <video class="videoPlayer" autoplay="autoplay" webkit-playsinline>
+          <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
+        </video>
+        <vg-overlay-play></vg-overlay-play>
+    </videogular>
+  </span>
+
+</div>
+
+<!--
+<div class="modal modal-video" id="fullscreen" scroll="false">
+
+  <ion-content>
+    <videogular
+      vg-width="320"
+      vg-height="480"
+      vg-autoplay="false"
+      vg-stretch="fit"
+      vg-autoplay="true"
+      vg-complete="videoComplete">
+        <video class="videoPlayer" autoplay="autoplay" webkit-playsinline>
+          <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
+        </video>
+        <vg-overlay-play></vg-overlay-play>
+    </videogular>
+
+    <button class="button" ng-click="closeVideoModal()">Close</button>
+
+  </ion-content>
+
+</div>
+ -->

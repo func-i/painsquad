@@ -28,9 +28,10 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
-  $rootScope.$state          = $state
-  $rootScope.$stateParams    = $stateParams
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) ->
+  $rootScope.isCordova    = false
+  $rootScope.$state       = $state
+  $rootScope.$stateParams = $stateParams
 
   # helper to provide $state.back() method * won't work when page is reloaded
   $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
@@ -51,6 +52,9 @@
         console.log err
 
   $ionicPlatform.ready ->
+    if window.cordova or window.Cordova
+      $rootScope.isCordova = true
+
     if window.StatusBar
       StatusBar.styleLightContent()
     # if window.cordova and window.cordova.plugins.Keyboard

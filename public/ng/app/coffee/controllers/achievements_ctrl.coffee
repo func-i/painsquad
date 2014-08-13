@@ -103,11 +103,13 @@
 
   $scope.$on '$destroy', ->
     $scope.modal.remove()
-    $scope.videoModal.remove()
 
   $scope.loadAwardModal = (item) ->
     $scope.selectedItem = item
     $scope.modal.show() unless item.locked
+
+  $scope.playVideo = ->
+    $scope.$emit 'event:playVideo'
 
   $scope.closeModal = ->
     $scope.modal.hide()
@@ -163,23 +165,6 @@
             item.locked = false
             item.level  = achievements.star_level
             item.date   = moment(achievements.latest_star_date).format('MMM. D, YYYY')
-
-  ########## VIDEO ###########
-  $ionicModal.fromTemplateUrl "templates/shared/modal.video.html", (modal) ->
-    $scope.videoModal = modal
-  ,
-    animation: "slide-in-up"
-    scope: $scope
-
-  $scope.playVideo = ->
-    $scope.videoItem = $scope.selectedItem
-    $scope.videoModal.show()
-
-  $scope.videoComplete = ->
-    $scope.videoModal.hide()
-
-  $scope.trustSrc = (src) ->
-    $sce.trustAsResourceUrl(src)
 
   mergeRankData()
   unlockAwardsAndSetDates()

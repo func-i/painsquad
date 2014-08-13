@@ -14,8 +14,9 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) {
     var checkConnection;
+    $rootScope.isCordova = false;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
@@ -33,6 +34,9 @@
       });
     };
     return $ionicPlatform.ready(function() {
+      if (window.cordova || window.Cordova) {
+        $rootScope.isCordova = true;
+      }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();
       }

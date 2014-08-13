@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) {
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService, UserAgentService) {
     var init;
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
@@ -25,6 +25,9 @@
         ]
       });
     };
+    $scope.testFull = function() {
+      return console.log("isCordova ", $rootScope.isCordova);
+    };
     init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();
@@ -33,6 +36,6 @@
     return init();
   });
 
-  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];
+  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService', 'UserAgentService'];
 
 }).call(this);
