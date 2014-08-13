@@ -1,21 +1,22 @@
 (function() {
   'use strict';
-  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce) {
-    console.log('VideoCtrl Init, isCordova? ', $rootScope.isCordova);
+  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout) {
     $scope.isCordova = $rootScope.isCordova;
-    $scope.$on('event:playVideo', function() {
-      return console.log('event:playVideo detected');
+    $scope.videoItem = {};
+    $scope.$on('event:playVideo', function(ev, data) {
+      $scope.videoItem.video_path = data;
+      if (!$scope.isCordova) {
+        $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
+          return $scope.videoModal = modal;
+        }, {
+          animation: "slide-in-up",
+          scope: $scope
+        });
+        return $timeout(function() {
+          return $scope.videoModal.show();
+        }, 50);
+      }
     });
-    $ionicModal.fromTemplateUrl("templates/shared/modal.video.html", function(modal) {
-      return $scope.videoModal = modal;
-    }, {
-      animation: "slide-in-up",
-      scope: $scope
-    });
-    $scope.playVideo = function() {
-      $scope.videoItem = $scope.selectedItem;
-      return $scope.videoModal.show();
-    };
     $scope.videoComplete = function() {
       return $scope.videoModal.hide();
     };
@@ -24,6 +25,6 @@
     };
   });
 
-  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce'];
+  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout'];
 
 }).call(this);

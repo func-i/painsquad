@@ -109,7 +109,7 @@
     $scope.modal.show() unless item.locked
 
   $scope.playVideo = ->
-    $scope.$emit 'event:playVideo'
+    $scope.$broadcast 'event:playVideo', $scope.selectedItem.video_path
 
   $scope.closeModal = ->
     $scope.modal.hide()

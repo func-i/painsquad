@@ -4,11 +4,10 @@
     <videogular
       vg-width="320"
       vg-height="480"
-      vg-autoplay="false"
       vg-stretch="fit"
       vg-autoplay="true"
       vg-complete="videoComplete">
-        <video class="videoPlayer" autoplay="autoplay" webkit-playsinline>
+        <video class="videoPlayer">
           <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
         </video>
         <vg-overlay-play></vg-overlay-play>

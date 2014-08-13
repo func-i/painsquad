@@ -100,7 +100,7 @@
       }
     };
     $scope.playVideo = function() {
-      return $scope.$emit('event:playVideo');
+      return $scope.$broadcast('event:playVideo', $scope.selectedItem.video_path);
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
