@@ -15,7 +15,8 @@
     $state.go 'app.home'
 
   $scope.login = ->
-    $rootScope.firstLaunch = false
+    localStorage.setItem 'introComplete', true
+    # $rootScope.firstLaunch = false
     $state.go 'app.login'
 
   init = ->

@@ -25,7 +25,6 @@
 @configModule     = angular.module 'painSquad.config', []
 
 @painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) ->
-  $rootScope.firstLaunch     = true
   $rootScope.$state          = $state
   $rootScope.$stateParams    = $stateParams
 

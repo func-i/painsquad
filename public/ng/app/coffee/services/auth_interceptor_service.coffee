@@ -6,7 +6,7 @@
       response
     error = (response) ->
       if response.status is 401
-        if $rootScope.firstLaunch
+        if !localStorage.getItem 'introComplete'
           $injector.get("$state").transitionTo "app.intro"
         else
           $injector.get("$state").transitionTo "app.login"

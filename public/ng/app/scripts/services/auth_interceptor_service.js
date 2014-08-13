@@ -7,7 +7,7 @@
     };
     error = function(response) {
       if (response.status === 401) {
-        if ($rootScope.firstLaunch) {
+        if (!localStorage.getItem('introComplete')) {
           $injector.get("$state").transitionTo("app.intro");
         } else {
           $injector.get("$state").transitionTo("app.login");

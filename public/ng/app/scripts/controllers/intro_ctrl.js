@@ -16,7 +16,7 @@
       return $state.go('app.home');
     };
     $scope.login = function() {
-      $rootScope.firstLaunch = false;
+      localStorage.setItem('introComplete', true);
       return $state.go('app.login');
     };
     init = function() {
