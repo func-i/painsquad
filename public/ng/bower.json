@@ -9,7 +9,8 @@
     "ionic": "driftyco/ionic-bower#1.0.0-beta.11",
     "angular-progress-arc": "~0.3.0",
     "angular-media-player": "~0.5.5",
-    "angular-elastic": "~2.3.5"
+    "angular-elastic": "~2.3.5",
+    "videogular": "~0.4.2"
   },
   "resolutions": {
     "angular": "~1.2.20"
