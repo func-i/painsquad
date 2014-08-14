@@ -1,26 +1,10 @@
 <div ng-controller="VideoCtrl">
 
-  showInlineVideo: {{ showInlineVideo }}
-
   <!-- plays inline on Cordova -->
   <span ng-if="showInlineVideo">
     <video class="videoPlayer" autoplay on-exit-listener>
       <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
     </video>
-
-<!--
-    <videogular
-      vg-height="0"
-      vg-width="0"
-      vg-autoplay="true"
-      vg-complete="inlineVideoComplete"
-      vg-player-ready="onPlayerReady">
-        <video class="videoPlayer" autoplay="autoplay" webkit-playsinline on-exit-listener>
-          <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
-        </video>
-        <vg-overlay-play></vg-overlay-play>
-    </videogular>
- -->
   </span>
 
 </div>

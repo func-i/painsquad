@@ -6,10 +6,6 @@
     $scope.videoItem = {};
     $scope.API = null;
     $scope.showInlineVideo = false;
-    $rootScope.$on(VG_EVENTS.ON_EXIT_FULLSCREEN, function(ev) {
-      console.log('event: ', ev);
-      return $scope.showInlineVideo = false;
-    });
     $scope.$on('event:playVideo', function(ev, data) {
       $scope.videoItem.video_path = data;
       if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !isMobileSafari()) {
@@ -48,7 +44,6 @@
         return $scope.videoModal.hide();
       }, 200);
     };
-    $scope.inlineVideoComplete = function() {};
     return $scope.closeVideoModal = function() {
       $scope.videoModal.hide();
       return $scope.API.pause();

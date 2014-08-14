@@ -8,19 +8,6 @@
   $scope.API             = null
   $scope.showInlineVideo = false
 
-  # TODO:
-    # - if user clicks 'done' before videoComplete, need to hide video
-    # - fix on mobile safari, 'operation could not be completed' error
-    # - fix webkitendfullscreen event using directive or something
-
-  $rootScope.$on VG_EVENTS.ON_EXIT_FULLSCREEN, (ev) ->
-    console.log 'event: ', ev
-    $scope.showInlineVideo = false
-
-  # $rootScope.$on VG_EVENTS.ON_TOGGLE_FULLSCREEN, (ev) ->
-  #   console.log 'event: ', ev
-  #   $scope.showInlineVideo = !$scope.showInlineVideo
-
   $scope.$on 'event:playVideo', (ev, data) ->
     $scope.videoItem.video_path = data
     if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !isMobileSafari()
@@ -55,11 +42,6 @@
     $timeout ->
       $scope.videoModal.hide()
     , 200
-
-  $scope.inlineVideoComplete = ->
-    # $timeout ->
-    #   $scope.showInlineVideo = false
-    # , 50
 
   $scope.closeVideoModal = ->
     $scope.videoModal.hide()
