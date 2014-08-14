@@ -1,7 +1,6 @@
 @mixin slider-override {
-  position: fixed;
-  bottom:   -15px;
-  left:     0%;
+  top: 460px;
+  left: 0;
 
   .slider-pager-page {
     width:     12px;
