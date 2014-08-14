@@ -23,8 +23,8 @@
         }
       ]
 
-  $scope.test = ->
-    $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
+  # $scope.test = ->
+  #   $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
 
   init = ->
     # only show popup after transitioning from survey_complete
