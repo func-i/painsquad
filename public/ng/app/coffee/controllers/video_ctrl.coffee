@@ -2,20 +2,24 @@
 
 # if cordova, render video webkit inline video
 # if browser, launch in modal and use videogular shit
-@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService) ->
+@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS) ->
   $scope.isCordova       = $rootScope.isCordova
   $scope.videoItem       = {}
   $scope.API             = null
   $scope.showInlineVideo = false
 
-
   # TODO:
+    # - if user clicks 'done' before videoComplete, need to hide video
     # - fix on mobile safari, 'operation could not be completed' error
     # - fix webkitendfullscreen event using directive or something
 
-  # $rootScope.$on 'VG_EVENTS.ON_EXIT_FULLSCREEN', (ev) ->
-    # $scope.showInlineVideo = false
-    # $scope.API.pause()
+  $rootScope.$on VG_EVENTS.ON_EXIT_FULLSCREEN, (ev) ->
+    console.log 'event: ', ev
+    $scope.showInlineVideo = false
+
+  # $rootScope.$on VG_EVENTS.ON_TOGGLE_FULLSCREEN, (ev) ->
+  #   console.log 'event: ', ev
+  #   $scope.showInlineVideo = !$scope.showInlineVideo
 
   $scope.$on 'event:playVideo', (ev, data) ->
     $scope.videoItem.video_path = data
@@ -52,8 +56,13 @@
       $scope.videoModal.hide()
     , 200
 
+  $scope.inlineVideoComplete = ->
+    # $timeout ->
+    #   $scope.showInlineVideo = false
+    # , 50
+
   $scope.closeVideoModal = ->
     $scope.videoModal.hide()
     $scope.API.pause()
 
-@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService' ]
+@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS' ]

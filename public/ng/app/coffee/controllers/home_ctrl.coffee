@@ -24,7 +24,6 @@
       ]
 
   $scope.testFull = ->
-    console.log "isCordova ", $rootScope.isCordova
   #   $state.go('app.new_survey_by_type', type: 'full')
 
   # $scope.levelup = ->

@@ -2,8 +2,7 @@
 
   <ion-content>
     <videogular
-      vg-width="320"
-      vg-height="320"
+      vg-responsive="true"
       vg-autoplay="true"
       vg-complete="videoComplete"
       vg-player-ready="onPlayerReady">
@@ -13,7 +12,7 @@
         <vg-overlay-play></vg-overlay-play>
     </videogular>
 
-    <button class="button" ng-click="closeVideoModal()">Close</button>
+    <button class="button button-assertive override home" ng-click="closeVideoModal()">Close</button>
 
   </ion-content>
 

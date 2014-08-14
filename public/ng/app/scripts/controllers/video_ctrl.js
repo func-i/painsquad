@@ -1,11 +1,15 @@
 (function() {
   'use strict';
-  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService) {
+  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS) {
     var isMobileSafari, loadModal;
     $scope.isCordova = $rootScope.isCordova;
     $scope.videoItem = {};
     $scope.API = null;
     $scope.showInlineVideo = false;
+    $rootScope.$on(VG_EVENTS.ON_EXIT_FULLSCREEN, function(ev) {
+      console.log('event: ', ev);
+      return $scope.showInlineVideo = false;
+    });
     $scope.$on('event:playVideo', function(ev, data) {
       $scope.videoItem.video_path = data;
       if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !isMobileSafari()) {
@@ -44,12 +48,13 @@
         return $scope.videoModal.hide();
       }, 200);
     };
+    $scope.inlineVideoComplete = function() {};
     return $scope.closeVideoModal = function() {
       $scope.videoModal.hide();
       return $scope.API.pause();
     };
   });
 
-  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService'];
+  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS'];
 
 }).call(this);
