@@ -5,4 +5,12 @@
     left: -5px;
   }
 
+  .checkbox input, .checkbox-icon {
+    &::before {
+      margin: 1px;
+      width:  90%;
+      height: 90%;
+    }
+  }
+
 }

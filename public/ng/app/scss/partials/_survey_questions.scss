@@ -49,9 +49,10 @@ li.item, .item.item-checkbox {
 
   .textarea-wrapper {
     border: 1px solid lightgray;
-    margin: 5px 20px 10px 60px;
+    margin: 5px 20px 10px 50px;
     padding: 2px;
     textarea {
+      padding: 5px;
       resize: none;
       &::-webkit-input-placeholder {
         font-style: italic;
