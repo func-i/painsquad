@@ -25,7 +25,13 @@
         ]
       });
     };
-    $scope.testFull = function() {};
+    $scope.test = function() {
+      return $rootScope.$broadcast('event:levelup', {
+        image: 'junior_detective',
+        prev_rank: 'junior_detective',
+        rank: 'junior_detective'
+      });
+    };
     init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();

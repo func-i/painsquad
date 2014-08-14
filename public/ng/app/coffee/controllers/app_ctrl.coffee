@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -35,6 +35,10 @@
     $scope.levelUp.rank      = args.rank
     $scope.levelupModal.show()
 
+  $scope.playLevelupVideo = ->
+    path = "#{CONFIG.baseUrl}/videos/ranks/#{$scope.levelUp.image}.m4v"
+    $scope.$broadcast 'event:playVideo', path
+
   $rootScope.$on 'event:advice', (event, args) ->
     $scope.advice.name = args.name
     $scope.adviceModal.show()
@@ -47,4 +51,4 @@
     $scope.levelupModal.remove()
     $scope.adviceModal.remove()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG' ]

@@ -23,11 +23,8 @@
         }
       ]
 
-  $scope.testFull = ->
-  #   $state.go('app.new_survey_by_type', type: 'full')
-
-  # $scope.levelup = ->
-  #   $rootScope.$broadcast 'event:levelup', { image: 'rookie', prev_rank: 'rookie', rank: 'rookie' }
+  $scope.test = ->
+    $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
 
   init = ->
     # only show popup after transitioning from survey_complete
