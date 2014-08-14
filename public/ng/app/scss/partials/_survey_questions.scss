@@ -49,9 +49,10 @@ li.item, .item.item-checkbox {
 
   .textarea-wrapper {
     border: 1px solid lightgray;
-    margin: 5px 20px 10px 60px;
+    margin: 5px 20px 10px 50px;
     padding: 2px;
     textarea {
+      padding: 5px;
       resize: none;
       &::-webkit-input-placeholder {
         font-style: italic;
@@ -66,7 +67,6 @@ li.item, .item.item-checkbox {
     .content { margin-left: -10px; }
     &.last { border-bottom: 0; }
     &.disabled { opacity: 0.5 ; }
-
   }
 }
 
@@ -140,7 +140,7 @@ li.item, .item.item-checkbox {
       position:   absolute;
       max-width:  40px;
       max-height: 40px;
-      top:        15px;
+      top:        12px;
       left:       20px;
     }
 
@@ -148,20 +148,20 @@ li.item, .item.item-checkbox {
       position: absolute;
       width:    17px;
       height:   17px;
-      top:      43px;
+      top:      41px;
       left:     50px;
     }
 
     .content {
       position:  absolute;
       left:      75px;
-      bottom:    17px;
+      bottom:    19px;
       font-size: 17px;
     }
 
     .icon-right.ion-chevron-right {
       position:         absolute;
-      margin-top:       16px;
+      margin-top:       13px;
       right:            20px;
       background-color: white;
     }

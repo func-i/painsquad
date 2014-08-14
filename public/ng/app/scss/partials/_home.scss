@@ -14,9 +14,8 @@
     width:    50%;
   }
 
-  &.left {
-    top:  10px;
-    left: -5px;
+  &.left, &.right {
+    top: 10px;
   }
 
   &.right {

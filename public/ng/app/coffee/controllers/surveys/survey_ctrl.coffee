@@ -39,8 +39,10 @@
     , 100
 
   $scope.reloadScroll = ->
-    $ionicScrollDelegate.scrollTop()
-    $ionicScrollDelegate.resize()
+    $timeout ->
+      $ionicScrollDelegate.scrollTop()
+      $ionicScrollDelegate.resize()
+    , 50
 
   $scope.submit = ->
     SubmissionService.prepareSubmissionAnswer($scope.question)

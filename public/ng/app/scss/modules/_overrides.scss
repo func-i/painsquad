@@ -13,6 +13,10 @@ ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
   padding-top:    13px !important;
 }
 
+.slider.no-overflow {
+  padding-bottom: 25px;
+}
+
 // FORM/INPUT OVERRIDES
 $checkbox-border:  #808A8F;
 $checkbox-checked: #DF4461;

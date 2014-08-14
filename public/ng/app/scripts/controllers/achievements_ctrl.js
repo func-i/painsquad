@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements) {
+  this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG, $sce) {
     var mergeRankData, reset, unlockAwardsAndSetDates, unlockItem;
     $scope.selectedAward = {};
     $scope.achievementData = [
@@ -42,7 +42,7 @@
         locked: true,
         image_path: 'images/awards/commendation-small.png',
         badge_image_path: 'images/awards/commendation-badge.png',
-        video_path: '',
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/commendation.m4v",
         level: null,
         date: null,
         message: 'Wow! Having completed your first case, you have achieved the Commendation award. Keep up the great work.'
@@ -51,7 +51,7 @@
         locked: true,
         image_path: 'images/awards/medal-small.png',
         badge_image_path: 'images/awards/medal-badge.png',
-        video_path: '',
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/medal.m4v",
         level: null,
         date: null,
         message: "Great! Having completed your first advice, you've achieved the Medal award, keep it up!"
@@ -60,7 +60,7 @@
         locked: true,
         image_path: 'images/awards/award-small.png',
         badge_image_path: 'images/awards/award-badge.png',
-        video_path: '',
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/award.m4v",
         level: 0,
         date: null,
         message: "Awesome! For completing five cases, you've earned an Award, keep going!"
@@ -69,7 +69,7 @@
         locked: true,
         image_path: 'images/awards/cross-small.png',
         badge_image_path: 'images/awards/cross-badge.png',
-        video_path: '',
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/cross.m4v",
         level: 0,
         date: null,
         message: "Nice! You've earned a Cross award for receiving 100 points from advice!"
@@ -78,7 +78,7 @@
         locked: true,
         image_path: 'images/awards/star-small.png',
         badge_image_path: 'images/awards/star-badge.png',
-        video_path: '',
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/star.m4v",
         level: 0,
         date: null,
         message: "Great job! You've been awarded a Star for completing six different pain recommendations!"
@@ -98,6 +98,9 @@
       if (!item.locked) {
         return $scope.modal.show();
       }
+    };
+    $scope.playVideo = function() {
+      return $scope.$broadcast('event:playVideo', $scope.selectedItem.video_path);
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
@@ -199,6 +202,6 @@
     return unlockAwardsAndSetDates();
   });
 
-  this.AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements'];
+  this.AchievementsCtrl.$inject = ['$scope', '$state', '$ionicSlideBoxDelegate', '$ionicModal', 'moment', 'achievements', 'CONFIG', '$sce'];
 
 }).call(this);

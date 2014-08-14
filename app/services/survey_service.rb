@@ -6,6 +6,8 @@ class SurveyService
   end
 
   def get_survey
+    return send_test_survey if Rails.env.development?
+
     if five_minutes_ago?
       send_survey :full
     elsif one_hour_ago?

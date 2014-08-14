@@ -17,7 +17,7 @@ namespace :survey do
 
   desc 'Test Survey'
   task :test => [:environment] do
-    Rake::Task['survey:clear_all'].invoke
+    Rake::Task['survey:clear'].invoke
     Builder::SurveyBuilder.new(identifier: 'test').build
   end
 

@@ -6,10 +6,14 @@
     "underscore": "~1.6.0",
     "angular-moment": "~0.7.0",
     "angular-google-chart": "~0.0.10",
-    "ionic": "driftyco/ionic-bower#1.0.0-beta.10",
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.11",
     "angular-progress-arc": "~0.3.0",
     "angular-media-player": "~0.5.5",
-    "angular-elastic": "~2.3.5"
+    "angular-elastic": "~2.3.5",
+    "videogular": "~0.4.2",
+    "videogular-overlay-play": "~0.4.2",
+    "videogular-buffering": "~0.4.2",
+    "videogular-controls": "~0.4.2"
   },
   "resolutions": {
     "angular": "~1.2.20"

@@ -1,15 +1,16 @@
-// body {
-//   &.platform-ios {
-//     top: 60px;
-//   }
+.platform-cordova {
 
-//   &.platform-browser {
-//     top: 44px;
-//   }
-// }
+  .image-button.left {
+    top: 30px;
+    left: -5px;
+  }
 
-// .top-bar {
-//   background-color: $royal;
-//   height: 20px;
-//   top: -20px;
-// }
+  .checkbox input, .checkbox-icon {
+    &::before {
+      margin: 1px;
+      width:  90%;
+      height: 90%;
+    }
+  }
+
+}

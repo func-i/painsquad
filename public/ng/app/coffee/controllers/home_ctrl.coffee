@@ -1,6 +1,6 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) ->
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService, UserAgentService) ->
   $scope.currentUser = UserService.currentUser()
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
@@ -12,22 +12,19 @@
       template: '<span>Get recommended advice based on your pain case</span>'
       buttons:  [
         {
-          text: 'No'
-          type: 'button-default'
+          text: "<span class='content'>No</span>"
+          type: 'button-stable'
         },
         {
-          text: 'Yes'
+          text: "<span class='content'>Yes</span>"
           type: 'button-positive'
           onTap: (ev) ->
             $state.go 'app.recommended'
         }
       ]
 
-  # $scope.testFull = ->
-  #   $state.go('app.new_survey_by_type', type: 'full')
-
-  # $scope.levelup = ->
-  #   $rootScope.$broadcast 'event:levelup', { image: 'rookie', prev_rank: 'rookie', rank: 'rookie' }
+  # $scope.test = ->
+  #   $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
 
   init = ->
     # only show popup after transitioning from survey_complete
@@ -36,4 +33,4 @@
 
   init()
 
-@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService']
+@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService', 'UserAgentService']

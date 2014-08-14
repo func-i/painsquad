@@ -2,19 +2,20 @@
 
   <div class="button-bar">
     <a href
-      class="button override grey-background"
+      class="button override bg-pattern"
       ng-click="activeTab = 'left'"
-      ng-class="{ 'active': activeTab === 'left' }">
-      <span>Left</span>
+      ng-class="{ 'active red': activeTab === 'left', 'grey': activeTab !== 'left' }">
+      <span>Front</span>
     </a>
 
     <a href
-      class="button override grey-background"
+      class="button override bg-pattern"
       ng-click="activeTab = 'right'"
-      ng-class="{ 'active': activeTab === 'right' }">
-      <span>Right</span>
+      ng-class="{ 'active red': activeTab === 'right', 'grey': activeTab !== 'right' }">
+      <span>Back</span>
     </a>
   </div>
+
   <div ng-switch="activeTab">
     <div ng-switch-when="left">
       <div class="bodymap-wrapper">

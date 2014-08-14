@@ -32,6 +32,7 @@
 .content-background-no-objects {
   background-image: url('../images/background/survey-no-objects.png');
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 
@@ -58,7 +59,6 @@
   }
   &.bar-red {
     background-color: $assertive;
-    // background-color: $red-two;
   }
 }
 
@@ -74,10 +74,11 @@
     content:    '';
     position:   absolute;
     top:        0; left: 0; bottom: 0; right: 0;
-    opacity:    0.2;
+    opacity:    0.1;
     width:      100%;
     background-image: url('../images/pattern/divider.png');
     background-size:  200px;
+    background-color: #4E5255;
   }
 }
 
@@ -88,11 +89,9 @@
     content:    '';
     position:   absolute;
     top:        0; left: 0; bottom: 0; right: 0;
-    opacity:    0.2;
     width:      100%;
-    background-image: url('../images/background/content.png');
-    background-size:  5px;
-    background-color: $overlay-bg;
+    background-image: url('../images/pattern/grey.png');
+    background-size:  350px;
   }
 }
 

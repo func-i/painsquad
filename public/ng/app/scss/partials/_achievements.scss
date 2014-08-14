@@ -28,7 +28,7 @@
           position: relative;
           font-weight: 100;
           color:       white;
-          font-size:   16px;
+          font-size:   14px;
         }
       }
 
@@ -203,17 +203,17 @@
         }
 
         p:first-child {
-          color:       $royal;
-          font-size:   18px;
-          font-weight: bold;
-          padding-top: 5px;
+          color:          $royal;
+          font-size:      18px;
+          font-weight:    bold;
+          padding-top:    10px;
           padding-bottom: 5px;
           text-transform: uppercase;
         }
 
         p:last-child {
           color:          $gray-one;
-          font-size:      14px;
+          font-size:      12px;
           padding-bottom: 5px;
         }
       }
