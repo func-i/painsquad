@@ -14,11 +14,13 @@
 
     <p>Looks like it's time to drop the "{{levelUp.prev_rank}}" from your rank. A communication just came across from Headquarters, you are now officially a full-fledged {{levelUp.rank}} in PainSquad</p>
 
-
-    <button class="button button-assertive override bg-pattern red">
+    <button class="button button-assertive override bg-pattern red" ng-click="playLevelupVideo()">
       <span class="content">Play Video</span>
       <img class="video" ng-src="./images/buttons/play_video.png">
     </button>
+
+    <div ng-include src="'templates/shared/video.html'"></div>
+
   </ion-content>
 
 </div>

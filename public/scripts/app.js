@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.painSquad = angular.module('painSquad', ['ionic', 'painSquad.controllers', 'painSquad.directives', 'painSquad.resources', 'painSquad.services', 'painSquad.filters', 'painSquad.config', 'ngResource', 'underscore', 'angularMoment', 'googlechart', 'angular-progress-arc', 'mediaPlayer', 'monospaced.elastic']);
+  this.painSquad = angular.module('painSquad', ['ionic', 'painSquad.controllers', 'painSquad.directives', 'painSquad.resources', 'painSquad.services', 'painSquad.filters', 'painSquad.config', 'ngResource', 'underscore', 'angularMoment', 'googlechart', 'angular-progress-arc', 'mediaPlayer', 'monospaced.elastic', 'com.2fdevs.videogular', 'com.2fdevs.videogular.plugins.controls', 'com.2fdevs.videogular.plugins.overlayplay', 'com.2fdevs.videogular.plugins.buffering']);
 
   this.controllerModule = angular.module('painSquad.controllers', []);
 
@@ -14,9 +14,9 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) {
     var checkConnection;
-    $rootScope.firstLaunch = true;
+    $rootScope.isCordova = false;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
@@ -34,6 +34,9 @@
       });
     };
     return $ionicPlatform.ready(function() {
+      if (window.cordova || window.Cordova) {
+        $rootScope.isCordova = true;
+      }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();
       }

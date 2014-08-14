@@ -21,25 +21,25 @@
 
     <div class="content-wrapper">
       <img class="content-header" ng-src="images/background/binder-clips.png">
-      <div class="content detail-slider">
+      <div class="content-main detail-slider">
 
         <form name="currentForm" valid-modal-form>
 
           <div class="content-actual grey-background" ng-show="!detailData.currentChoice.textfield">
-            <p>How <strong>helpful</strong> was this in reducing your pain?</p>
+            <span class="content">How <strong>helpful</strong> was this in reducing your pain?</span>
           </div>
 
           <div class="content-actual grey-background" ng-if="detailData.currentChoice.textfield == true">
-            <p>Please <strong>specify</strong> what other medications you took</p>
+            <span class="content">Please <strong>specify</strong> what other medications you took</span>
           </div>
 
           <div class="content-textarea" ng-if="detailData.currentChoice.textfield == true">
-            <label class="item item-input">
-              <textarea msd-elastic
-                ng-required="ifTextareaPresent(detailData.currentChoice)"
-                placeholder="Please specify..."
-                ng-model="detailData.currentChoice.custom_text"></textarea>
-            </label>
+            <div class="textarea-wrapper">
+              <textarea class="msd-elastic"
+                ng-model="choice.value"
+                placeholder="Please specify...">
+              </textarea>
+            </div>
           </div>
 
           <div class="slider-container" ng-class="{ 'disabled': detailData.currentChoice.slider_disabled }">

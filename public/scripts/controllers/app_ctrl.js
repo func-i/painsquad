@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG) {
     $scope.levelUp = {};
     $scope.advice = {};
     $ionicModal.fromTemplateUrl('templates/shared/modal.login.html', function(modal) {
@@ -34,6 +34,11 @@
       $scope.levelUp.rank = args.rank;
       return $scope.levelupModal.show();
     });
+    $scope.playLevelupVideo = function() {
+      var path;
+      path = "" + CONFIG.baseUrl + "/videos/ranks/" + $scope.levelUp.image + ".m4v";
+      return $scope.$broadcast('event:playVideo', path);
+    };
     $rootScope.$on('event:advice', function(event, args) {
       $scope.advice.name = args.name;
       $scope.adviceModal.show();
@@ -48,6 +53,6 @@
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG'];
 
 }).call(this);

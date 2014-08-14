@@ -2,33 +2,33 @@
 
   <ion-content class="content-background intro" padding="true" ng-class="{ 'has-header': !data.hideNavBar }">
 
-    <ion-slide-box>
-      <ion-slide>
-        <div class="header-bar bar-darkblue"></div>
-        <div class="header grey-background">
-          <h3 class="content">Welcome to Pain Squad+</h3>
-        </div>
-        <div class="image-wrapper">
-          <img ng-src="./images/intro/intro_glass.png">
-        </div>
+    <ion-slide-box class="no-overflow">
+        <ion-slide>
+          <div class="header-bar bar-darkblue"></div>
+          <div class="header grey-background">
+            <h3 class="content">Welcome to Pain Squad+</h3>
+          </div>
+          <div class="image-wrapper">
+            <img ng-src="./images/intro/intro_glass.png">
+          </div>
 
-        <div class="lower-wrapper">
-          <p>
-            You've been enlisted in an elite group known as Pain Squad+. Your job is to monitor your pain and report clues in the cases.
-          </p>
+          <div class="lower-wrapper">
+            <p>
+              You've been enlisted in an elite group known as Pain Squad+. Your job is to monitor your pain and report clues in the cases.
+            </p>
 
-          <button class="button button-positive override bg-pattern blue button-icon icon-right ion-chevron-right"
-            ng-hide="data.showLogin" ng-click="next()">
-              <span class="content button-text">Next</span>
-          </button>
+            <button class="button button-positive override bg-pattern blue button-icon icon-right ion-chevron-right"
+              ng-hide="data.showLogin" ng-click="next()">
+                <span class="content button-text">Next</span>
+            </button>
 
-          <button class="button button-positive override home bg-pattern blue button-icon icon-right ion-chevron-right"
-            ng-click="next()" ng-show="data.showLogin">
-              <span class="content button-text">Get Started</span>
-          </button>
+            <button class="button button-positive override home bg-pattern blue button-icon icon-right ion-chevron-right"
+              ng-click="next()" ng-show="data.showLogin">
+                <span class="content button-text">Get Started</span>
+            </button>
 
-        </div>
-      </ion-slide>
+          </div>
+        </ion-slide>
 
       <ion-slide>
         <div class="header-bar bar-darkblue"></div>
@@ -95,6 +95,7 @@
 
         </div>
       </ion-slide>
+
     </ion-slide-box>
 
   </ion-content>

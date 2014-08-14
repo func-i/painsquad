@@ -4,7 +4,7 @@
     $ionicModal.fromTemplateUrl("templates/advice/modal.steps.html", function(modal) {
       return $scope.modal = modal;
     }, {
-      animation: "slide-in-up",
+      animation: 'slide-left-right',
       scope: $scope
     });
     $scope.$on('$destroy', function() {

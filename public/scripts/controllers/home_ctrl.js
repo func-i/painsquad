@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService) {
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService, UserAgentService) {
     var init;
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
@@ -13,10 +13,10 @@
         template: '<span>Get recommended advice based on your pain case</span>',
         buttons: [
           {
-            text: 'No',
-            type: 'button-default'
+            text: "<span class='content'>No</span>",
+            type: 'button-stable'
           }, {
-            text: 'Yes',
+            text: "<span class='content'>Yes</span>",
             type: 'button-positive',
             onTap: function(ev) {
               return $state.go('app.recommended');
@@ -33,6 +33,6 @@
     return init();
   });
 
-  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService'];
+  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService', 'UserAgentService'];
 
 }).call(this);

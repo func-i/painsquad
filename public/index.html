@@ -36,16 +36,21 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
     <script src="lib/underscore/underscore.js"></script>
-    <script src="lib/moment/moment.js"></script>
-    <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
     <script src="lib/angular-google-chart/ng-google-chart.js"></script>
-    <script src="lib/angular-progress-arc/angular-progress-arc.js"></script>
-    <script src="lib/angular-media-player/dist/angular-media-player.js"></script>
+    <script src="lib/angular-progress-arc/angular-progress-arc.min.js"></script>
+    <script src="lib/angular-media-player/dist/angular-media-player.min.js"></script>
     <script src="lib/angular-elastic/elastic.js"></script>
+    <script src="lib/videogular/videogular.js"></script>
+    <script src="lib/videogular-buffering/buffering.js"></script>
+    <script src="lib/videogular-controls/controls.js"></script>
+    <script src="lib/videogular-overlay-play/overlay-play.js"></script>
 
-
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/config.js"></script>
@@ -57,6 +62,7 @@
     <script src="scripts/controllers/home_ctrl.js"></script>
     <script src="scripts/controllers/settings_ctrl.js"></script>
     <script src="scripts/controllers/achievements_ctrl.js"></script>
+    <script src="scripts/controllers/video_ctrl.js"></script>
 
     <script src="scripts/controllers/advice/prevent_ctrl.js"></script>
     <script src="scripts/controllers/advice/manage_ctrl.js"></script>
@@ -103,6 +109,7 @@
     <script src="scripts/services/bodymap_service.js"></script>
     <script src="scripts/services/pain_service.js"></script>
     <script src="scripts/services/network_service.js"></script>
+    <script src="scripts/services/user_agent_service.js"></script>
 
     <script src="scripts/filters/slider_filter.js"></script>
     <script src="scripts/filters/capitalize.js"></script>
@@ -115,9 +122,7 @@
     <script src="scripts/directives/slider_gradient.js"></script>
     <script src="scripts/directives/body_map_selector.js"></script>
     <script src="scripts/directives/body_map_selector_switch.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <script src="scripts/directives/on_exit_listener.js"></script>
   </head>
 
   <body ng-app="painSquad">
