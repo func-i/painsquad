@@ -25,7 +25,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout) ->
   $rootScope.isCordova    = false
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
@@ -49,11 +49,17 @@
         console.log err
 
   $ionicPlatform.ready ->
+    if navigator.splashscreen
+      $timeout ->
+        navigator.splashscreen.hide()
+      , 50
+
     if window.cordova or window.Cordova
       $rootScope.isCordova = true
 
     if window.StatusBar
       StatusBar.styleLightContent()
+
     # if window.cordova and window.cordova.plugins.Keyboard
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true
