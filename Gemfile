@@ -20,6 +20,7 @@ gem 'swagger-docs',     '~> 0.1.8'
 gem 'delayed_job_active_record', '~> 4.0.1'
 gem 'delayed_job_recurring',     '~> 0.3.3'
 gem 'twilio-ruby',               '~> 3.11.5'
+gem 'aws-sdk',                   '~> 1.51.0'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService, UserAgentService) {
-    var init;
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore) {
+    var getDeviceInfo, init;
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
     $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
@@ -30,9 +30,21 @@
         return $scope.showPopup();
       }
     };
-    return init();
+    getDeviceInfo = function() {
+      if (window.device) {
+        return $scope.device = {
+          model: device.model,
+          cordova: device.cordova,
+          platform: device.platform,
+          uuid: device.uuid,
+          version: device.version
+        };
+      }
+    };
+    init();
+    return getDeviceInfo();
   });
 
-  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService', 'UserAgentService'];
+  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore'];
 
 }).call(this);

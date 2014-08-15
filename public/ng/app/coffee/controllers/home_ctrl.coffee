@@ -1,6 +1,6 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore, NetworkService, UserAgentService) ->
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $rootScope, $ionicPopup, UserService, userScore) ->
   $scope.currentUser = UserService.currentUser()
   $scope.userScore   = userScore
   $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
@@ -31,6 +31,16 @@
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
-  init()
+  getDeviceInfo = ->
+    if window.device
+      $scope.device =
+        model:    device.model
+        cordova:  device.cordova
+        platform: device.platform
+        uuid:     device.uuid
+        version:  device.version
 
-@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore', 'NetworkService', 'UserAgentService']
+  init()
+  getDeviceInfo()
+
+@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore']

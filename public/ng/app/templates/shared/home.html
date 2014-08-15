@@ -54,6 +54,20 @@
       </div>
 
       <div class="action">
+        <div class="info" ng-if="device">
+          Device info:
+          <br>
+          Model:       {{ device.model }}
+          <br>
+          Cordova:     {{ device.cordova }}
+          <br>
+          Platform:    {{ device.platform }}
+          <br>
+          UUID:        {{ device.uuid }}
+          <br>
+          Version:     {{ device.version }}
+          <br>
+        </div>
 
         <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
           Start Case

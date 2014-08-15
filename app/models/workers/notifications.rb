@@ -9,9 +9,8 @@ module Workers
 
     # finds users with notification scheduled in the next 5 minutes
     def perform
-      users = user_lookup
-      if users.any?
-        users.each do |user|
+      if user_lookup.any?
+        user_lookup.each do |user|
           Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, :full))
         end
       end
@@ -23,7 +22,7 @@ module Workers
       current_time = now.strftime("%H:%M:%S")
       five_minutes = less_five.strftime("%H:%M:%S")
       users        = []
-      User.all.each do |user|
+      User.find_each do |user|
         if user.alerts.any? && user.alerts.where(time: five_minutes..current_time).any?
           users << user
         end
