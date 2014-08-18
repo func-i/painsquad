@@ -23,7 +23,9 @@
             userScore: function(User, $q) {
               var defer;
               defer = $q.defer();
-              User.query(function(response) {
+              User.query({
+                rnd: Math.random()
+              }, function(response) {
                 return defer.resolve(response.user);
               });
               return defer.promise;

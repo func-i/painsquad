@@ -5,6 +5,7 @@
   # $httpProvider.responseInterceptors.push('AuthInterceptor')
   # $httpProvider.responseInterceptors.push('EventInterceptor')
 
+  # $urlRouterProvider.otherwise '/app/login'
   $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'
@@ -30,7 +31,7 @@
           resolve:
             userScore: (User, $q) ->
               defer = $q.defer()
-              User.query (response) ->
+              User.query { rnd: Math.random() }, (response) ->
                 defer.resolve response.user
               defer.promise
     )
