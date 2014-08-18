@@ -25,13 +25,13 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout, PushNotificationService) ->
   $rootScope.isCordova    = false
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
 
   # helper to provide $state.back() method * won't work when page is reloaded
-  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams, PushNotificationService) ->
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
     $rootScope.previousState_name   = fromState.name
     $rootScope.previousState_params = fromParams
 
@@ -49,11 +49,10 @@
         console.log err
 
   $ionicPlatform.ready ->
-    # debugger
-    # PushNotificationService.registerPush()
-
     if window.cordova or window.Cordova
+      navigator.splashscreen.hide()
       $rootScope.isCordova = true
+      PushNotificationService.registerPush()
 
     if window.StatusBar
       StatusBar.styleLightContent()

@@ -14,12 +14,12 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout, PushNotificationService) {
     var checkConnection;
     $rootScope.isCordova = false;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams, PushNotificationService) {
+    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
       $rootScope.previousState_name = fromState.name;
       return $rootScope.previousState_params = fromParams;
     });
@@ -35,7 +35,9 @@
     };
     return $ionicPlatform.ready(function() {
       if (window.cordova || window.Cordova) {
+        navigator.splashscreen.hide();
         $rootScope.isCordova = true;
+        PushNotificationService.registerPush();
       }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();

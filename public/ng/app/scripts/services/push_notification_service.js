@@ -1,6 +1,21 @@
 (function() {
   'use strict';
-  this.PushNotificationService = this.serviceModule.factory('PushNotificationService', function($http) {
+  this.PushNotificationService = this.serviceModule.factory("PushNotificationService", function() {
+    var onNotificationAPN;
+    onNotificationAPN = function(e) {
+      var snd;
+      if (e.alert) {
+        console.log("push-notification: " + e.alert);
+        navigator.notification.alert(e.alert);
+      }
+      if (e.sound) {
+        snd = new Media(e.sound);
+        snd.play();
+      }
+      if (e.badge) {
+        return pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+      }
+    };
     return {
       registerPush: function(fn) {
         var errorHandler, pushNotification, successHandler, tokenHandler;
@@ -35,6 +50,6 @@
     };
   });
 
-  this.PushNotificationService.$inject = ['$http'];
+  this.PushNotificationService.$inject = [];
 
 }).call(this);
