@@ -31,7 +31,7 @@
   $rootScope.$stateParams = $stateParams
 
   # helper to provide $state.back() method * won't work when page is reloaded
-  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) ->
+  $rootScope.$on "$stateChangeSuccess", (event, toState, toParams, fromState, fromParams, PushNotificationService) ->
     $rootScope.previousState_name   = fromState.name
     $rootScope.previousState_params = fromParams
 
@@ -49,10 +49,8 @@
         console.log err
 
   $ionicPlatform.ready ->
-    if navigator.splashscreen
-      $timeout ->
-        navigator.splashscreen.hide()
-      , 50
+    # debugger
+    # PushNotificationService.registerPush()
 
     if window.cordova or window.Cordova
       $rootScope.isCordova = true

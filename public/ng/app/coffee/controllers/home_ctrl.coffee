@@ -31,16 +31,6 @@
     if $rootScope.previousState_name is 'app.survey_complete'
       $scope.showPopup()
 
-  getDeviceInfo = ->
-    if window.device
-      $scope.device =
-        model:    device.model
-        cordova:  device.cordova
-        platform: device.platform
-        uuid:     device.uuid
-        version:  device.version
-
   init()
-  getDeviceInfo()
 
 @HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore']

@@ -3,7 +3,7 @@
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/login');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
       $httpProvider.defaults.headers.common['Authorization'] = "Token token=" + currentUser.access_token;
@@ -23,9 +23,7 @@
             userScore: function(User, $q) {
               var defer;
               defer = $q.defer();
-              User.query({
-                rnd: Math.random()
-              }, function(response) {
+              User.query(function(response) {
                 return defer.resolve(response.user);
               });
               return defer.promise;

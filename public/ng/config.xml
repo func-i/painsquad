@@ -50,4 +50,8 @@
     <param name="onload" value="true"/>
   </feature>
 
+  <feature name="PushPlugin">
+    <param name="ios-package" value="PushPlugin" />
+  </feature>
+
 </widget>

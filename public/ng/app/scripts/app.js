@@ -19,7 +19,7 @@
     $rootScope.isCordova = false;
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams, PushNotificationService) {
       $rootScope.previousState_name = fromState.name;
       return $rootScope.previousState_params = fromParams;
     });
@@ -34,11 +34,6 @@
       });
     };
     return $ionicPlatform.ready(function() {
-      if (navigator.splashscreen) {
-        $timeout(function() {
-          return navigator.splashscreen.hide();
-        }, 50);
-      }
       if (window.cordova || window.Cordova) {
         $rootScope.isCordova = true;
       }
