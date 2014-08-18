@@ -3,7 +3,9 @@
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $urlRouterProvider.otherwise('/app/login');
+    $httpProvider.responseInterceptors.push('AuthInterceptor');
+    $httpProvider.responseInterceptors.push('EventInterceptor');
+    $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
       $httpProvider.defaults.headers.common['Authorization'] = "Token token=" + currentUser.access_token;

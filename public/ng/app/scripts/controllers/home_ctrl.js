@@ -25,6 +25,9 @@
         ]
       });
     };
+    $scope.test = function() {
+      return console.log('rootScope.deviceToken: ', $rootScope.deviceToken);
+    };
     init = function() {
       if ($rootScope.previousState_name === 'app.survey_complete') {
         return $scope.showPopup();

@@ -34,10 +34,11 @@
       });
     };
     return $ionicPlatform.ready(function() {
+      var pushNotificationCallback, registeredCallback;
       if (window.cordova || window.Cordova) {
         navigator.splashscreen.hide();
         $rootScope.isCordova = true;
-        PushNotificationService.registerPush();
+        new PushNotificationService(registeredCallback = function(deviceToken, platform) {}, pushNotificationCallback = function(data, platform) {});
       }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();

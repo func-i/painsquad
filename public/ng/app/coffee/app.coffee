@@ -52,7 +52,13 @@
     if window.cordova or window.Cordova
       navigator.splashscreen.hide()
       $rootScope.isCordova = true
-      PushNotificationService.registerPush()
+      new PushNotificationService(
+        registeredCallback = (deviceToken, platform) ->
+          # $rootScope.deviceToken = deviceToken
+      , pushNotificationCallback = (data, platform) ->
+        # console.log 'inside pushNotificationCallback -> platform: ', platform
+        # console.log 'inside pushNotificationCallback -> data: ', data
+      )
 
     if window.StatusBar
       StatusBar.styleLightContent()

@@ -1,6 +1,7 @@
-access_key = Rails.application.secrets.aws_access_key_id
-secret_key = Rails.application.secrets.aws_secret_access_key
-$SNS = AWS::SNS.new(:access_key_id => access_key, :secret_access_key => secret_key)
+$SNS = AWS::SNS.new(
+  :access_key_id     => Rails.application.secrets.aws_access_key_id,
+  :secret_access_key => Rails.application.secrets.aws_secret_access_key
+)
 
 # arn = 'arn:aws:sns:us-east-1::app/APNS/.iOS.Production'
 # endpoint = AWS.sns.client.create_platform_endpoint(

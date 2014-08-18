@@ -23,8 +23,9 @@
         }
       ]
 
-  # $scope.test = ->
-  #   $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
+  $scope.test = ->
+    console.log 'rootScope.deviceToken: ', $rootScope.deviceToken
+    # $rootScope.$broadcast 'event:levelup', { image: 'junior_detective', prev_rank: 'junior_detective', rank: 'junior_detective' }
 
   init = ->
     # only show popup after transitioning from survey_complete

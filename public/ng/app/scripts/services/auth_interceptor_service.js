@@ -9,7 +9,11 @@
     error = function(response) {
       console.log('error response: ', response);
       if (response.status === 401) {
-        $injector.get("$state").transitionTo("app.login");
+        if (!localStorage.getItem('introComplete')) {
+          $injector.get("$state").transitionTo("app.intro");
+        } else {
+          $injector.get("$state").transitionTo("app.login");
+        }
         return $q.reject(response);
       } else {
         return $q.reject(response);

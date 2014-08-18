@@ -2,11 +2,10 @@
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
-  # $httpProvider.responseInterceptors.push('AuthInterceptor')
-  # $httpProvider.responseInterceptors.push('EventInterceptor')
+  $httpProvider.responseInterceptors.push('AuthInterceptor')
+  $httpProvider.responseInterceptors.push('EventInterceptor')
 
-  $urlRouterProvider.otherwise '/app/login'
-  # $urlRouterProvider.otherwise '/app/home'
+  $urlRouterProvider.otherwise '/app/home'
 
   currentUser = JSON.parse localStorage.getItem 'current_user'
   if currentUser?
