@@ -130,6 +130,9 @@ h1.title {
   .bg-pattern.yellow::before {
     background-image: url('../images/pattern/yellow.png');
     border-radius: 5px; }
+  .bg-pattern.bodymap-switch::before {
+    background-image: url('../images/pattern/button_bar.png');
+    border-radius: 5px; }
 
 ion-nav-bar.bar.bar-royal, .nav-title-slide-ios7, .bar .bar-header .nav-bar {
   border-color: transparent !important;
@@ -7866,8 +7869,7 @@ a.button {
       .intro .scroll .slider .slider-slides .slider-slide .image-wrapper {
         padding: 15px 20px; }
         .intro .scroll .slider .slider-slides .slider-slide .image-wrapper img {
-          max-width: 245px;
-          width: 98%; }
+          width: 100%; }
       .intro .scroll .slider .slider-slides .slider-slide .lower-wrapper p {
         font-family: 'ArialMT';
         font-size: 14px;
@@ -7926,10 +7928,10 @@ button.button.show-next.show-inactive {
   font-size: 20px;
   border: 0;
   position: relative;
-  color: #7d8787; }
+  color: #7d8787;
+  vertical-align: middle; }
   .button-bar > a.button.override span, .button-bar > a.button.override .modal .modal-inherit .content-wrapper .content-main section .button-bar a.button, .modal .modal-inherit .content-wrapper .content-main section .button-bar .button-bar > a.button.override a.button {
-    vertical-align: middle;
-    position: relative; }
+    vertical-align: middle; }
   .button-bar > a.button.override:first-child, .button-bar > .modal .modal-inherit .content-wrapper .content-main section .button-bar a.button:first-child, .modal .modal-inherit .content-wrapper .content-main section .button-bar .button-bar > a.button:first-child {
     border-radius: 5px 0px 0px 5px; }
   .button-bar > a.button.override:last-child, .button-bar > .modal .modal-inherit .content-wrapper .content-main section .button-bar a.button:last-child, .modal .modal-inherit .content-wrapper .content-main section .button-bar .button-bar > a.button:last-child {
@@ -8539,7 +8541,7 @@ body.platform-browser .progress {
       .modal .container .detail .badge i img {
         width: 22px; }
   .modal .container .description {
-    padding-bottom: 45px; }
+    padding-bottom: 24px; }
     .modal .container .description p {
       font-size: 16px;
       padding-left: 20px;
@@ -8559,7 +8561,7 @@ body.platform-browser .progress {
     font-size: 20px;
     padding: 15px; }
   .modal .container .slide .slider .slider-pager {
-    top: 425px;
+    top: 403px;
     left: 0px; }
     .modal .container .slide .slider .slider-pager .slider-pager-page {
       width: 12px;
@@ -8570,7 +8572,7 @@ body.platform-browser .progress {
       .modal .container .slide .slider .slider-pager .slider-pager-page.active {
         color: #00aed7; }
   .modal .container .slide .slider .slider-slide {
-    min-height: 420px;
+    min-height: 400px;
     background-color: white;
     box-shadow: 0px 0px 15px -9px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
     text-align: left; }
@@ -8628,6 +8630,11 @@ body.platform-browser .progress {
       display: block;
       padding: 13px 0;
       margin-left: 17px; }
+  .modal .nested .container .single-wrapper {
+    padding: 20px 17px; }
+    .modal .nested .container .single-wrapper p {
+      color: #303436;
+      font-weight: normal; }
   .modal .nested .container .list-wrapper {
     padding: 20px 35px; }
     .modal .nested .container .list-wrapper ol {
@@ -9003,7 +9010,7 @@ li.item, .item.item-checkbox {
     right: 0;
     width: 100%;
     background-size: 350px;
-    background-image: url('../images/pattern/grey.png');
+    background-image: url('../images/pattern/button_bar.png');
     border-radius: 5px;
     opacity: 0.5; }
 .popup .popup-buttons.row .button-positive {
