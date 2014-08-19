@@ -36,7 +36,6 @@
   saveDeviceToken = ->
     if $rootScope.deviceToken
       TokenResource.update(token: $rootScope.deviceToken)
-      # console.log 'Need to save deviceToken on app init, ', $rootScope.deviceToken
 
   $rootScope.$on 'event:levelup', (event, args) ->
     $scope.levelUp.image     = args.image

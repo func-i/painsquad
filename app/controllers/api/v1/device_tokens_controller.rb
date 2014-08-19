@@ -1,6 +1,6 @@
 module Api
   module V1
-    class DeviceTokenController < BaseController
+    class DeviceTokensController < BaseController
 
       swagger_controller :device_token, 'Device Token Controller'
 
@@ -15,6 +15,10 @@ module Api
       end
 
       private
+
+      def token_params
+        params.require(:device_token).permit(:token)
+      end
 
     end
   end
