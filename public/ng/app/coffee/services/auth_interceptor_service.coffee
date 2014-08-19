@@ -1,12 +1,12 @@
 'use strict'
 
-@AuthInterceptor = @serviceModule.factory 'AuthInterceptor', ($q, $injector, $rootScope) ->
+@AuthInterceptor = @serviceModule.factory 'AuthInterceptor', ($q, $injector, $location) ->
 
     success = (response) ->
       response
     error = (response) ->
       if response.status is 401
-        if !localStorage.getItem 'introComplete'
+        unless localStorage.getItem('introComplete')
           $injector.get("$state").transitionTo "app.intro"
         else
           $injector.get("$state").transitionTo "app.login"

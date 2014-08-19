@@ -15,10 +15,7 @@
   'angular-progress-arc',
   'mediaPlayer',
   'monospaced.elastic',
-  'com.2fdevs.videogular',
-  'com.2fdevs.videogular.plugins.controls',
-  'com.2fdevs.videogular.plugins.overlayplay',
-  'com.2fdevs.videogular.plugins.buffering',
+  'com.2fdevs.videogular'
 ]
 
 @controllerModule = angular.module 'painSquad.controllers', []
@@ -28,7 +25,7 @@
 @filterModule     = angular.module 'painSquad.filters', []
 @configModule     = angular.module 'painSquad.config', []
 
-@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) ->
+@painSquad.run ($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout, PushNotificationService) ->
   $rootScope.isCordova    = false
   $rootScope.$state       = $state
   $rootScope.$stateParams = $stateParams
@@ -53,10 +50,19 @@
 
   $ionicPlatform.ready ->
     if window.cordova or window.Cordova
+      navigator.splashscreen.hide()
       $rootScope.isCordova = true
+      new PushNotificationService(
+        registeredCallback = (deviceToken, platform) ->
+          # $rootScope.deviceToken = deviceToken
+      , pushNotificationCallback = (data, platform) ->
+        # console.log 'inside pushNotificationCallback -> platform: ', platform
+        # console.log 'inside pushNotificationCallback -> data: ', data
+      )
 
     if window.StatusBar
       StatusBar.styleLightContent()
+
     # if window.cordova and window.cordova.plugins.Keyboard
     #   cordova.plugins.Keyboard.shrinkView true
     #   cordova.plugins.Keyboard.hideKeyboardAccessoryBar true

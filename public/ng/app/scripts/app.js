@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.painSquad = angular.module('painSquad', ['ionic', 'painSquad.controllers', 'painSquad.directives', 'painSquad.resources', 'painSquad.services', 'painSquad.filters', 'painSquad.config', 'ngResource', 'underscore', 'angularMoment', 'googlechart', 'angular-progress-arc', 'mediaPlayer', 'monospaced.elastic', 'com.2fdevs.videogular', 'com.2fdevs.videogular.plugins.controls', 'com.2fdevs.videogular.plugins.overlayplay', 'com.2fdevs.videogular.plugins.buffering']);
+  this.painSquad = angular.module('painSquad', ['ionic', 'painSquad.controllers', 'painSquad.directives', 'painSquad.resources', 'painSquad.services', 'painSquad.filters', 'painSquad.config', 'ngResource', 'underscore', 'angularMoment', 'googlechart', 'angular-progress-arc', 'mediaPlayer', 'monospaced.elastic', 'com.2fdevs.videogular']);
 
   this.controllerModule = angular.module('painSquad.controllers', []);
 
@@ -14,7 +14,7 @@
 
   this.configModule = angular.module('painSquad.config', []);
 
-  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, UserAgentService) {
+  this.painSquad.run(function($ionicPlatform, $rootScope, $state, $stateParams, NetworkService, $timeout, PushNotificationService) {
     var checkConnection;
     $rootScope.isCordova = false;
     $rootScope.$state = $state;
@@ -34,8 +34,11 @@
       });
     };
     return $ionicPlatform.ready(function() {
+      var pushNotificationCallback, registeredCallback;
       if (window.cordova || window.Cordova) {
+        navigator.splashscreen.hide();
         $rootScope.isCordova = true;
+        new PushNotificationService(registeredCallback = function(deviceToken, platform) {}, pushNotificationCallback = function(data, platform) {});
       }
       if (window.StatusBar) {
         return StatusBar.styleLightContent();

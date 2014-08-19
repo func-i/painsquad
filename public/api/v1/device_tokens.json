@@ -1,0 +1,58 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "device_tokens",
+  "apis": [
+    {
+      "path": "api/device_token",
+      "operations": [
+        {
+          "summary": "Saves device token field",
+          "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "device_token",
+              "type": "string",
+              "description": "Device Token",
+              "required": true
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V1::DeviceTokens#update"
+        }
+      ]
+    },
+    {
+      "path": "api/device_token",
+      "operations": [
+        {
+          "summary": "Saves device token field",
+          "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ],
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "device_token",
+              "type": "string",
+              "description": "Device Token",
+              "required": true
+            }
+          ],
+          "method": "put",
+          "nickname": "Api::V1::DeviceTokens#update"
+        }
+      ]
+    }
+  ]
+}
