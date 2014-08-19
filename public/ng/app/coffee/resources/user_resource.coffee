@@ -6,5 +6,4 @@
   $resource "#{CONFIG.apiUrl}/users/", {},
     query: { method: 'GET', isArray: false }
 
-
 @UserResource.$inject = [ '$http', '$resource', 'CONFIG' ]

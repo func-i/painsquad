@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AuthInterceptor = this.serviceModule.factory('AuthInterceptor', function($q, $injector, $rootScope) {
+  this.AuthInterceptor = this.serviceModule.factory('AuthInterceptor', function($q, $injector, $location) {
     var error, success;
     success = function(response) {
       return response;

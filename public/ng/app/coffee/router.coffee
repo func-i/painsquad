@@ -30,6 +30,7 @@
           resolve:
             userScore: (User, $q) ->
               defer = $q.defer()
+              # User.query { rnd: Math.random() }, (response) ->
               User.query (response) ->
                 defer.resolve response.user
               defer.promise

@@ -6,14 +6,24 @@ module Workers
       @survey_type = self[:survey_type]
 
       if @survey_type == :full
-        TwilioSms.send_text(@user.phone_number, @survey_type)
+        determine_notification_type
         queue_truncated_alert
       elsif @survey_type == :truncated
-        TwilioSms.send_text(@user.phone_number, @survey_type)
+        determine_notification_type
       end
     end
 
     protected
+
+    def determine_notification_type
+      if @user.device_token?
+        PushInterface.new(@user.device_token, @survey_type).send_message
+      elsif @user.phone_number?
+        SmsInterface.new(@user.phone_number, @survey_type).send_text
+      else
+        logger.info "No valid token or phone number for User ID: #{@user.id}"
+      end
+    end
 
     def queue_truncated_alert
       Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :truncated), run_at: 1.hour.from_now)
