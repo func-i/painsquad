@@ -275,7 +275,7 @@
 
   .slider {
     .slider-pager {
-      top:  425px;
+      top:  403px;
       left: 0px;
 
       .slider-pager-page {
@@ -295,13 +295,10 @@
     // height: 100%;
 
     .slider-slide {
-      min-height:           420px;
+      min-height:       400px;
       background-color: white;
       box-shadow:       0px 0px 15px -9px rgba(0, 0, 0, 0.8), 0px 0px 15px -4px rgba(0, 0, 0, 0.8);
       text-align:       left;
-
-      ion-slide {
-      }
 
       .content-wrapper {
         margin-bottom: 45px;
