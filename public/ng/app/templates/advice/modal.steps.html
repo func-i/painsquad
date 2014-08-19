@@ -28,12 +28,8 @@
         <img ng-src="./images/advice/nested/{{ nestedSelection.image || 'yoga_tree' }}.png">
       </div>
 
-      <div class="list-wrapper" ng-if="nestedSelection.steps.length == 1">
-        <ol>
-          <li ng-repeat="step in nestedSelection.steps track by $index" style="list-style-type: none;">
-            <p ng-bind="step.content"></p>
-          </li>
-        </ol>
+      <div class="single-wrapper" ng-if="nestedSelection.steps.length == 1">
+        <p class="single-item" ng-bind="nestedSelection.steps[0].content"></p>
       </div>
 
       <div class="list-wrapper" ng-if="nestedSelection.steps.length > 1">
