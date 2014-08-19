@@ -1,0 +1,68 @@
+<ion-view title="Pain Squad&#43;" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <button class="button image-button left" menu-toggle="left">
+      <img ng-src="./images/buttons/hamburger-icon.png">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right" class="home-override-right">
+    <button class="button image-button right" ui-sref="app.about">
+      <img ng-src="./images/buttons/about-icon.png">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header home content-background">
+    <section class="transparent-header">
+      <span class="next-level">
+        points to promotion
+        <i>{{ userScore.points_for_next_rank }}</i>
+      </span>
+      <span class="current-points">
+        total points earned
+        <i>{{ userScore.score }}</i>
+      </span>
+    </section>
+
+    <div class="body-wrapper">
+
+      <div class="radial-wrapper">
+        <div class="line-left"></div>
+        <div class="line-right"></div>
+        <img class="rank" ng-src="{{rankBadge}}">
+        <img class="shadow" ng-src="./images/shadows/home-shadow.png">
+
+        <div class="upper-line-wrap"></div>
+        <progress-arc
+          size="200"
+          stroke="#DE4563"
+          stroke-width="16"
+          progress="progress"
+          counter-clockwise="false"
+          background="#C7DBEA">
+        </progress-arc>
+        <img class="progress-shadow" ng-src="./images/shadows/progress-shadow.png">
+      </div>
+
+      <div class="action">
+
+        <button class="button button-assertive override home bottom-border" ui-sref="app.new_survey">
+          Start Case
+          <img ng-src="./images/buttons/start_case_icon.png">
+        </button>
+
+        <button class="button button-positive override home bg-pattern blue" ui-sref="app.achievements">
+          <span class="content">Achievements</span>
+          <img ng-src="./images/buttons/achievements_icon.png">
+        </button>
+
+        <button class="button button-positive override home bg-pattern blue" ui-sref="app.advice">
+          <span class="content">Get Advice</span>
+          <img ng-src="./images/buttons/advice_icon.png">
+        </button>
+
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

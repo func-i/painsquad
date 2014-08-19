@@ -13,6 +13,7 @@ PainSquadApi::Application.routes.draw do
       resource :session
 
       resource :settings, only: [:show, :update]
+      resource :device_token, only: :update
 
       resource :surveys do
         member { get 'full'; get 'truncated'; }
@@ -23,8 +24,6 @@ PainSquadApi::Application.routes.draw do
       end
     end
   end
-
-  # post 'twilio/text' => 'twilio#text'
 
   resource :session, only: [:create, :destroy]
   get :login, to: 'sessions#new'
