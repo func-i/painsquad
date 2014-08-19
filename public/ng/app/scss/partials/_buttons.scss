@@ -43,14 +43,14 @@ button.button.show-next {
 
 .button-bar > a.button {
   &.override {
-    font-size: 20px;
-    border:    0;
-    position:  relative;
-    color:     #7d8787;
+    font-size:      20px;
+    border:         0;
+    position:       relative;
+    color:          #7d8787;
+    vertical-align: middle;
 
     span {
       vertical-align: middle;
-      position: relative;
     }
 
     &:first-child {
