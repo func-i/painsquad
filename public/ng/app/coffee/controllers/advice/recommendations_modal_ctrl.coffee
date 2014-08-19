@@ -7,7 +7,7 @@
   $ionicModal.fromTemplateUrl "templates/advice/modal.base.html", (modal) ->
     $scope.modal = modal
   ,
-    animation: "slide-in-up"
+    animation: 'slide-left-right'
     scope: $scope
 
   $scope.$on '$destroy', ->

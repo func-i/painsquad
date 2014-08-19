@@ -136,4 +136,9 @@
     border-radius: 5px;
   }
 
+  &.bodymap-switch::before {
+    background-image: url('../images/pattern/button_bar.png');
+    border-radius: 5px;
+  }
+
 }
