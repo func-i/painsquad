@@ -35,7 +35,7 @@
 
   saveDeviceToken = ->
     if $rootScope.deviceToken
-      TokenResource.update(token: $rootScope.deviceToken)
+      TokenResource.update(device_token: $rootScope.deviceToken)
 
   $rootScope.$on 'event:levelup', (event, args) ->
     $scope.levelUp.image     = args.image

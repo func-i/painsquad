@@ -37,7 +37,7 @@
     saveDeviceToken = function() {
       if ($rootScope.deviceToken) {
         return TokenResource.update({
-          token: $rootScope.deviceToken
+          device_token: $rootScope.deviceToken
         });
       }
     };
