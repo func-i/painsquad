@@ -18,8 +18,10 @@ module Workers
     def determine_notification_type
       if @user.device_token?
         PushInterface.new(@user.device_token, @survey_type).send_message
-      else
+      elsif @user.phone_number?
         SmsInterface.new(@user.phone_number, @survey_type).send_text
+      else
+        logger.info "No valid token or phone number for User ID: #{@user.id}"
       end
     end
 

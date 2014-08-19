@@ -37,11 +37,17 @@ Run specific file: `bundle exec cucumber features/feature_name.feature`
 Run specific scenario: `bundle exec cucumber features/feature_name.feature:5`
 
 
-## Deployment
-
-* Temporary solution *
+## Heroku Deployment
 
 - `$ cd public/ng && gulp build`
 - Copy all files/folders in `www/` directory to `public/` directory
 - Commit and push to `origin:heroku-deployment`
 - Finally: `git push heroku heroku-deployment:master`
+
+## API Documentation
+
+To generate the API Documentation:
+
+`rake swagger:docs`
+
+This creates a self-contained directory within `public/` with the generated documentation.

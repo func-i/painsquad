@@ -40,6 +40,10 @@
       "description": "Settings Controller"
     },
     {
+      "path": "api/v1/device_tokens.{format}",
+      "description": "Device Token Controller"
+    },
+    {
       "path": "api/v1/surveys.{format}",
       "description": "Surveys Controller"
     },
