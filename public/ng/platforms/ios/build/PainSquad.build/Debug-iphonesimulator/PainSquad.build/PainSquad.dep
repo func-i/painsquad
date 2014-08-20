@@ -1,5 +1,5 @@
 5f981a6f2230b9bcd549650d9a6fdc9c 649c869241d8b6026424c72558700f1a ffffffffffffffffffffffffffffffff 1054 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-0000000053f4c2e40000000000000a11 5d43949f018817746d5c7bca15cc5661 ffffffffffffffffffffffffffffffff 0 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo
+0000000053f4c57f0000000000000a11 5d43949f018817746d5c7bca15cc5661 ffffffffffffffffffffffffffffffff 0 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo
 0000000053f4bb310000000000003d59 ee835167b772d8d3b184516a4bde09a6 ffffffffffffffffffffffffffffffff 15705 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72@2x.png
 0000000053f4bb23000000000000421b b72a0b5975361bfdb2590e4a5b396fae ffffffffffffffffffffffffffffffff 16923 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76@2x.png
 0000000053f4bb83000000000000265a b55a35ec843e175ad93609763130b517 ffffffffffffffffffffffffffffffff 9818 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-50@2x.png
@@ -24,8 +24,8 @@
 0000000053f4bba4000000000000183f 569f618e4d2d85255f86e3658bc2ed21 ffffffffffffffffffffffffffffffff 6207 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72.png
 0000000053f4bb8d0000000000001bf7 895c009b2ae8fa59b7e2a6dbeeab72bd ffffffffffffffffffffffffffffffff 7159 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-40@2x.png
 0000000053f4bb9a00000000000019f7 d300c3e0720093c61e1be0596d7cbf8b ffffffffffffffffffffffffffffffff 6647 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76.png
-61943e45df0fe87d218b93fca0223da8 5ac17d5d3ccd5ce6ccd92df2213345a9 ffffffffffffffffffffffffffffffff 102 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
-0000000053f4c2e40000000000000a11 5d43949f018817746d5c7bca15cc5661 ffffffffffffffffffffffffffffffff 1283 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
+61943e45df0fefe6218b93fca0223da8 5ac17d5d3ccd5ce6ccd92df2213345a9 ffffffffffffffffffffffffffffffff 102 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
+0000000053f4c57f0000000000000a11 5d43949f018817746d5c7bca15cc5661 ffffffffffffffffffffffffffffffff 1283 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
 0792fd5e05819142c243e17209bc4a59 3cd7aada8df9d68a4cd7e836b4865d04 ffffffffffffffffffffffffffffffff 366884 /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
 86143803731b7b7b0351dcb82826f5f9 3c122b5dcb768a514bd0cec4416ba056 ffffffffffffffffffffffffffffffff 67036 /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o
 86143803735387d40351dcb82826f2fc 3b80d603ce350cdb89932fb649bfd1d6 ffffffffffffffffffffffffffffffff 66908 /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o
