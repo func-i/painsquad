@@ -1,6 +1,6 @@
 'use strict'
 
-@AuthInterceptor = @serviceModule.factory 'AuthInterceptor', ($q, $injector, $location) ->
+@AuthInterceptor = @serviceModule.factory 'AuthInterceptor', ($q, $injector) ->
 
     success = (response) ->
       response

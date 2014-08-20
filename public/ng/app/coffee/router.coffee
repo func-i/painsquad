@@ -4,6 +4,7 @@
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
   $httpProvider.responseInterceptors.push('AuthInterceptor')
   $httpProvider.responseInterceptors.push('EventInterceptor')
+  $httpProvider.interceptors.push('LoadingInterceptor')
 
   $urlRouterProvider.otherwise '/app/home'
 
@@ -30,7 +31,6 @@
           resolve:
             userScore: (User, $q) ->
               defer = $q.defer()
-              # User.query { rnd: Math.random() }, (response) ->
               User.query (response) ->
                 defer.resolve response.user
               defer.promise
