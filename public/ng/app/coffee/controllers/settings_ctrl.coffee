@@ -1,4 +1,4 @@
-'use strict'
+# 'use strict'
 
 @SettingsCtrl = @controllerModule.controller 'SettingsCtrl', ($rootScope, $scope, settings, moment, AuthService, UserService, SettingResource) ->
   $scope.currentUser          = UserService.currentUser()

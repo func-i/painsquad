@@ -1,5 +1,4 @@
 (function() {
-  'use strict';
   this.SettingsCtrl = this.controllerModule.controller('SettingsCtrl', function($rootScope, $scope, settings, moment, AuthService, UserService, SettingResource) {
     var init, saveSelection;
     $scope.currentUser = UserService.currentUser();
