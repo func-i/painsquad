@@ -54,10 +54,7 @@
       $rootScope.isCordova = true
       new PushNotificationService(
         registeredCallback = (deviceToken, platform) ->
-          # $rootScope.deviceToken = deviceToken
       , pushNotificationCallback = (data, platform) ->
-        # console.log 'inside pushNotificationCallback -> platform: ', platform
-        # console.log 'inside pushNotificationCallback -> data: ', data
       )
 
     if window.StatusBar

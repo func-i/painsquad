@@ -254,38 +254,38 @@ t1398288085
 s20812
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.h
-c0000000053BAC33900000000000005B7
-t1404748601
+c0000000053F4FABF00000000000005B7
+t1408563903
 s1463
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m
-c0000000053BAC339000000000000176D
-t1404748601
+c0000000053F4FABF000000000000176D
+t1408563903
 s5997
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.h
-c0000000053BAC33900000000000004CF
-t1404748601
+c0000000053F4FABF00000000000004CF
+t1408563903
 s1231
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m
-c0000000053BAC339000000000000126A
-t1404748601
+c0000000053F4FABF000000000000126A
+t1408563903
 s4714
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.xib
-c0000000053BAC3390000000000001759
-t1404748601
+c0000000053F4FABF0000000000001759
+t1408563903
 s5977
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-c0000000053F4F70E0000000000000A11
-t1408562958
+c0000000053F4FFD70000000000000A11
+t1408565207
 s2577
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch
-c0000000053BAC33900000000000003C3
-t1404748601
+c0000000053F4FABF00000000000003C3
+t1408563903
 s963
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.ionic.keyboard/IonicKeyboard.h
@@ -424,123 +424,123 @@ t1404827924
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/de.lproj/Localizable.strings
-c0000000053BAC33900000000000004C0
-t1404748601
+c0000000053F4FABF00000000000004C0
+t1408563903
 s1216
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/en.lproj/Localizable.strings
-c0000000053BAC33900000000000004AB
-t1404748601
+c0000000053F4FABF00000000000004AB
+t1408563903
 s1195
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-40.png
-c0000000053F4BBD10000000000000A2A
-t1408547793
+c0000000053F4FABF0000000000000A2A
+t1408563903
 s2602
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-40@2x.png
-c0000000053F4BB8D0000000000001BF7
-t1408547725
+c0000000053F4FABF0000000000001BF7
+t1408563903
 s7159
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-50.png
-c0000000053F4BBC90000000000000E37
-t1408547785
+c0000000053F4FABF0000000000000E37
+t1408563903
 s3639
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-50@2x.png
-c0000000053F4BB83000000000000265A
-t1408547715
+c0000000053F4FABF000000000000265A
+t1408563903
 s9818
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-60.png
-c0000000053F4B4910000000000001285
-t1408545937
+c0000000053F4FABF0000000000001285
+t1408563903
 s4741
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-60@2x.png
-c0000000053F4BB5D0000000000003033
-t1408547677
+c0000000053F4FABF0000000000003033
+t1408563903
 s12339
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-72.png
-c0000000053F4BBA4000000000000183F
-t1408547748
+c0000000053F4FABF000000000000183F
+t1408563903
 s6207
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-72@2x.png
-c0000000053F4BB310000000000003D59
-t1408547633
+c0000000053F4FABF0000000000003D59
+t1408563903
 s15705
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-76.png
-c0000000053F4BB9A00000000000019F7
-t1408547738
+c0000000053F4FABF00000000000019F7
+t1408563903
 s6647
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-76@2x.png
-c0000000053F4BB23000000000000421B
-t1408547619
+c0000000053F4FABF000000000000421B
+t1408563903
 s16923
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-small.png
-c0000000053F4BBD90000000000000676
-t1408547801
+c0000000053F4FABF0000000000000676
+t1408563903
 s1654
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-small@2x.png
-c0000000053F4BBB200000000000011B7
-t1408547762
+c0000000053F4FABF00000000000011B7
+t1408563903
 s4535
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon.png
-c0000000053F4BBBC000000000000112D
-t1408547772
+c0000000053F4FABF000000000000112D
+t1408563903
 s4397
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon@2x.png
-c0000000053F4BB6C0000000000002D41
-t1408547692
+c0000000053F4FABF0000000000002D41
+t1408563903
 s11585
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-568h@2x~iphone.png
-c0000000053F4C26300000000000E6025
-t1408549475
+c0000000053F4FABF00000000000E6025
+t1408563903
 s942117
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Landscape@2x~ipad.png
-c0000000053BAC3390000000000033D0A
-t1404748601
+c0000000053F4FABF0000000000033D0A
+t1408563903
 s212234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Landscape~ipad.png
-c0000000053BAC33900000000000166A2
-t1404748601
+c0000000053F4FABF00000000000166A2
+t1408563903
 s91810
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Portrait@2x~ipad.png
-c0000000053BAC3390000000000033F7C
-t1404748601
+c0000000053F4FABF0000000000033F7C
+t1408563903
 s212860
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Portrait~ipad.png
-c0000000053BAC3390000000000016641
-t1404748601
+c0000000053F4FABF0000000000016641
+t1408563903
 s91713
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default@2x~iphone.png
-c0000000053F4C28600000000000C2438
-t1408549510
+c0000000053F4FABF00000000000C2438
+t1408563903
 s795704
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default~iphone.png
-c0000000053BAC339000000000000289A
-t1404748601
+c0000000053F4FABF000000000000289A
+t1408563903
 s10394
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m
-c0000000053BAC339000000000000045B
-t1404748601
+c0000000053F4FABF000000000000045B
+t1408563903
 s1115
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/APPBackgroundMode.o
@@ -559,19 +559,19 @@ t1405112251
 s95348
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o
-t1408384926
+t1408564653
 s66908
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o
-t1408131793
+t1408564653
 s77368
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o
-t1408384020
+t1408564653
 s56156
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o
-t1408384020
+t1408564653
 s50312
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVNotification.o
@@ -580,15 +580,15 @@ t1404827939
 s68440
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o
-t1408384020
+t1408564653
 s20604
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o
-t1408384020
+t1408564653
 s74180
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o
-t1408384020
+t1408564653
 s111532
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/IonicKeyboard.o
@@ -597,16 +597,16 @@ t1408131792
 s63708
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o
-t1408131792
+t1408564653
 s51540
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad.LinkFileList
-c0000000053F23F9C00000000000005B5
-t1408384924
+c0000000053F4FABF00000000000005B5
+t1408563903
 s1461
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o
-t1408384926
+t1408564653
 s67036
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/UIWebViewExtension.o
@@ -615,20 +615,20 @@ t1407955271
 s46292
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o
-t1407955271
+t1408564652
 s2964
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
-c0000000053BAC394000000000000002D
-t1404748692
+c0000000053F4FABF000000000000002D
+t1408563903
 s45
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-t1408562960
+t1408565209
 s1054
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
-t1408562435
+t1408565103
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/CDVNotification.bundle
@@ -636,43 +636,43 @@ t1404827939
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-568h@2x~iphone.png
-t1408549607
+t1408563903
 s942117
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Landscape@2x~ipad.png
-t1404748693
+t1408563903
 s212234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Landscape~ipad.png
-t1404748693
+t1408563903
 s91810
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Portrait@2x~ipad.png
-t1404748693
+t1408563903
 s212860
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Portrait~ipad.png
-t1404748693
+t1408563903
 s91713
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default@2x~iphone.png
-t1408549607
+t1408563903
 s795704
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default~iphone.png
-t1404748693
+t1408563903
 s10394
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
-t1408562959
+t1408565208
 s1283
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/MainViewController.nib
-t1404748693
+t1408563903
 s836
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-t1408384926
+t1408564653
 s366884
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo
@@ -680,177 +680,177 @@ t2
 s0
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/de.lproj/Localizable.strings
-t1404748693
+t1408563903
 s280
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/en.lproj/Localizable.strings
-t1404748693
+t1408563903
 s166
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-40.png
-t1408547889
+t1408563903
 s2602
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-40@2x.png
-t1408547889
+t1408563903
 s7159
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-50.png
-t1408547889
+t1408563903
 s3639
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-50@2x.png
-t1408548010
+t1408563903
 s9818
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-60.png
-t1408548010
+t1408563903
 s4741
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-60@2x.png
-t1408547889
+t1408563903
 s12339
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72.png
-t1408547889
+t1408563903
 s6207
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72@2x.png
-t1408548010
+t1408563903
 s15705
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76.png
-t1408547889
+t1408563903
 s6647
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76@2x.png
-t1408548010
+t1408563903
 s16923
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-small.png
-t1408547889
+t1408563903
 s1654
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-small@2x.png
-t1408547889
+t1408563903
 s4535
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon.png
-t1408547889
+t1408563903
 s4397
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon@2x.png
-t1408547889
+t1408563903
 s11585
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDV.h
-c0000000053EE62CD0000000000000516
-t1408131789
+c0000000053F4FABF0000000000000516
+t1408563903
 s1302
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-c0000000053EE62CD0000000000000D19
-t1408131789
+c0000000053F4FABF0000000000000D19
+t1408563903
 s3353
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-c0000000053EE62CD00000000000008BA
-t1408131789
+c0000000053F4FABF00000000000008BA
+t1408563903
 s2234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-c0000000053EE62CD00000000000004E2
-t1408131789
+c0000000053F4FABF00000000000004E2
+t1408563903
 s1250
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-c0000000053EE62CD0000000000000503
-t1408131789
+c0000000053F4FABF0000000000000503
+t1408563903
 s1283
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-c0000000053EE62CD0000000000000401
-t1408131789
+c0000000053F4FABF0000000000000401
+t1408563903
 s1025
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-c0000000053EE62CD00000000000007E6
-t1408131789
+c0000000053F4FABF00000000000007E6
+t1408563903
 s2022
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-c0000000053EE62CD00000000000003DA
-t1408131789
+c0000000053F4FABF00000000000003DA
+t1408563903
 s986
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
-c0000000053EE62CD00000000000006CF
-t1408131789
+c0000000053F4FABF00000000000006CF
+t1408563903
 s1743
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-c0000000053EE62CD00000000000008F3
-t1408131789
+c0000000053F4FABF00000000000008F3
+t1408563903
 s2291
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-c0000000053EE62CD0000000000000C13
-t1408131789
+c0000000053F4FABF0000000000000C13
+t1408563903
 s3091
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-c0000000053EE62CD0000000000000408
-t1408131789
+c0000000053F4FABF0000000000000408
+t1408563903
 s1032
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
-c0000000053EE62CD000000000000038D
-t1408131789
+c0000000053F4FABF000000000000038D
+t1408563903
 s909
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
-c0000000053EE62CD000000000000041C
-t1408131789
+c0000000053F4FABF000000000000041C
+t1408563903
 s1052
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-c0000000053EE62CD0000000000000ACC
-t1408131789
+c0000000053F4FABF0000000000000ACC
+t1408563903
 s2764
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-c0000000053EE62CD00000000000004B4
-t1408131789
+c0000000053F4FABF00000000000004B4
+t1408563903
 s1204
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
-c0000000053EE62CD0000000000000392
-t1408131789
+c0000000053F4FABF0000000000000392
+t1408563903
 s914
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-c0000000053EE62CD000000000000037D
-t1408131789
+c0000000053F4FABF000000000000037D
+t1408563903
 s893
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-c0000000053EE62CD00000000000005DA
-t1408131789
+c0000000053F4FABF00000000000005DA
+t1408563903
 s1498
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-c0000000053EE62CD00000000000003A0
-t1408131789
+c0000000053F4FABF00000000000003A0
+t1408563903
 s928
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
-c0000000053EE62CD0000000000000476
-t1408131789
+c0000000053F4FABF0000000000000476
+t1408563903
 s1142
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a
-c0000000053EE62CE00000000000D4228
-t1408131790
+c0000000053F4FDAB00000000000D4228
+t1408564651
 s868904
 
 N/usr/lib/libSystem.B.dylib
@@ -989,7 +989,7 @@ t1397968700
 s104944
 
 N/var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch
-t1407955271
+t1408564652
 s5376528
 
 N/var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-crxanjetgoyhpyfzzawatcrrlsof/PainSquad-Prefix.pch.pch
@@ -998,7 +998,7 @@ s5376528
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies59691a8f2ea5b941^889c1a8f2ea5b941^---0#1#1#--18"Check dependencies36"5E6AA3F5-CF48-4AED-9A48-E7E3A690634C-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies75e7a55837a5b941^4720a65837a5b941^---0#1#1#--18"Check dependencies36"1DF41793-08AC-492B-9883-65ED52488D8C-
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/APPBackgroundMode.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/de.appplant.cordova.plugin.background-mode/APPBackgroundMode.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s426519418.681029
@@ -1067,8 +1067,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Compil
 b888DF5C4-A902-44E3-9C83-0E2C5A4834CE
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430077725.987783
-e430077726.055180
+s430257453.103712
+e430257453.188778
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o
@@ -1101,12 +1101,12 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection134"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m276"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler1ff4fc1d77a2b941^96210e1e77a2b941^---0#0#1#-19%DVTDocumentLocation2@133"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m0000000000000000^3989"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o36"CA2B4269-B32B-4732-9635-5F419510430C-
-b4FD38B77-FACC-410B-A8BD-401C9E1C72B9
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection134"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m276"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler4fb11a2d35a5b941^f662302d35a5b941^---0#0#1#-19%DVTDocumentLocation2@133"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m0000000000000000^3989"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/AppDelegate+notification.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o36"29AABDC6-167C-47D3-93A6-F5B68A125915-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s429824592.905061
-e429824593.008083
+s430257452.963309
+e430257453.075334
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o
@@ -1129,12 +1129,12 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m218"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o [1mPainSquad/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler57d1e7509a9eb941^bd5202519a9eb941^---0#0#1#-19%DVTDocumentLocation2@88"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m0000000000000000^3846"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o [1mPainSquad/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=99 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o36"76818463-9B99-40FB-AF35-78962030671B-
-bDEA23CF8-B4F2-43B8-83C5-E29DBE454E73
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m218"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o [1mPainSquad/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler6fbdf62c35a5b941^7d92132d35a5b941^---0#0#1#-19%DVTDocumentLocation2@88"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m0000000000000000^3847"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o [1mPainSquad/Classes/AppDelegate.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o36"C1C286AD-3C04-4D80-AAA6-30DE683B9392-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430076819.905286
-e430076820.063009
+s430257453.074401
+e430257453.169250
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o
@@ -1152,12 +1152,12 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection130"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m261"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera9dde79373a2b941^132a109473a2b941^---0#0#1#-19%DVTDocumentLocation2@129"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m0000000000000000^3937"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o36"D7BB6155-FCE6-469A-975F-E298B269B46D-
-bD7D5E8D5-DB8F-4421-A552-E83E648100FB
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection130"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m261"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler2f30132d35a5b941^f25c2b2d35a5b941^---0#0#1#-19%DVTDocumentLocation2@129"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m0000000000000000^3937"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVConnection.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o36"72DFBE90-E102-4266-87D1-2258AB128ACD-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430076819.901532
-e430076820.045096
+s430257452.965018
+e430257453.070595
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o
@@ -1188,8 +1188,8 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m240"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o [1mPainSquad/Plugins/org.apache.cordova.device/CDVDevice.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerf1f4e69373a2b941^fbce0b9473a2b941^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m0000000000000000^3887"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o [1mPainSquad/Plugins/org.apache.cordova.device/CDVDevice.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o36"987AF2C3-7736-4D91-84D2-797E17287D0E-
-bD7D5E8D5-DB8F-4421-A552-E83E648100FB
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m240"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o [1mPainSquad/Plugins/org.apache.cordova.device/CDVDevice.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler9434f72c35a5b941^6212122d35a5b941^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m0000000000000000^3887"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o [1mPainSquad/Plugins/org.apache.cordova.device/CDVDevice.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.device/CDVDevice.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o36"075DC5EE-F0C4-4CF6-82FB-9714ABA6E98E-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVNotification.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.dialogs/CDVNotification.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s426520739.807934
@@ -1216,8 +1216,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compil
 b35D33423-1C73-484B-AD12-4B3740C09BF9
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430076820.046460
-e430076820.123498
+s430257453.075659
+e430257453.144961
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o
@@ -1228,12 +1228,12 @@ xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m265"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd80c0c9473a2b941^ed9f1f9473a2b941^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m0000000000000000^3949"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o36"FEBA3AFF-B32E-41D1-A4BE-C798E3E970D1-
-bD7D5E8D5-DB8F-4421-A552-E83E648100FB
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection132"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m265"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerfe7c132d35a5b941^361d252d35a5b941^---0#0#1#-19%DVTDocumentLocation2@131"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m0000000000000000^3949"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o [1mPainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.network-information/CDVReachability.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o36"06B7A978-9983-4139-BB5F-F12F3DB3CA88-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430076819.901844
-e430076820.101289
+s430257452.999362
+e430257453.103309
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o
@@ -1254,12 +1254,12 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m258"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o [1mPainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler2600e79373a2b941^bbee199473a2b941^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m0000000000000000^3935"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o [1mPainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o36"D10E48AF-46CD-411D-8005-5B25935A1106-
-bD7D5E8D5-DB8F-4421-A552-E83E648100FB
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m258"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o [1mPainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler44f8ff2c35a5b941^0ab91a2d35a5b941^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m0000000000000000^3935"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o [1mPainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.splashscreen/CDVSplashScreen.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o36"16D2245C-8621-430A-A5D8-94E2DA45B5E0-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430076819.902615
-e430076820.120936
+s430257453.044832
+e430257453.191421
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o
@@ -1280,8 +1280,8 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m249"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o [1mPainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler8330e79373a2b941^88f51e9473a2b941^---0#0#1#-19%DVTDocumentLocation2@118"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m0000000000000000^3911"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o [1mPainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o36"BF4E70B0-9DD0-45B7-B420-3387F3794CCA-
-bD7D5E8D5-DB8F-4421-A552-E83E648100FB
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m249"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o [1mPainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler459f0b2d35a5b941^7e01312d35a5b941^---0#0#1#-19%DVTDocumentLocation2@118"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m0000000000000000^3911"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o [1mPainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/org.apache.cordova.statusbar/CDVStatusBar.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o36"F5BB53B4-4146-4166-83FF-0E121086C48D-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/IonicKeyboard.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.ionic.keyboard/IonicKeyboard.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s429824592.905553
@@ -1307,8 +1307,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Compil
 bDEA23CF8-B4F2-43B8-83C5-E29DBE454E73
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s429824592.905247
-e429824592.978594
+s430257452.963548
+e430257453.043531
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o
@@ -1330,12 +1330,12 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m232"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o [1mPainSquad/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera6d2e7509a9eb941^64cffa509a9eb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m0000000000000000^3888"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o [1mPainSquad/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=99 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o36"97AC4EB6-766C-4BDA-BC08-3F27598EF69E-
-bDEA23CF8-B4F2-43B8-83C5-E29DBE454E73
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m232"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o [1mPainSquad/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler64cff62c35a5b941^86e20a2d35a5b941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m0000000000000000^3889"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o [1mPainSquad/Classes/MainViewController.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o36"B33E6FD0-E64B-4C4B-96E4-E860A9E0D8A6-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s430077725.987947
-e430077726.050002
+s430257453.145305
+e430257453.211825
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o
@@ -1366,8 +1366,8 @@ d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordov
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
 d/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m248"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler8bfefc1d77a2b941^64cd0c1e77a2b941^---0#0#1#-19%DVTDocumentLocation2@119"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m0000000000000000^3905"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o36"C9227700-0027-412A-947A-7A80C944461C-
-b4FD38B77-FACC-410B-A8BD-401C9E1C72B9
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m248"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler795b252d35a5b941^c13a362d35a5b941^---0#0#1#-19%DVTDocumentLocation2@119"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m0000000000000000^3905"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o [1mPainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.phonegap.plugins.PushPlugin/PushPlugin.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o36"E602A851-E9A7-401E-A2B7-F5808D00B718-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/UIWebViewExtension.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.ionic.keyboard/UIWebViewExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s429648071.780778
@@ -1386,8 +1386,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compil
 b886B6BE5-E773-4527-9CAD-BF658FBD9AE4
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s429648071.702539
-e429648071.780407
+s430257452.962946
+e430257452.998964
 r1
 xCompileC
 xbuild/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o
@@ -1397,8 +1397,8 @@ xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m180"CompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o PainSquad/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerc6f9b3c7e89bb941^cb4cc9c7e89bb941^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m0000000000000000^3751"CompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o PainSquad/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o36"FC14FEA7-0545-480A-96D3-19E05907682E-
-b886B6BE5-E773-4527-9CAD-BF658FBD9AE4
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m196"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o [1mPainSquad/main.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilercdabf62c35a5b941^c102002d35a5b941^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m0000000000000000^3789"[1mCompileC[0m build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o [1mPainSquad/main.m[0m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -include /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch -MMD -MT dependencies -MF /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.dia -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o36"818F2C71-E646-47C1-98ED-3BA51DC58F02-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CCompileXIB /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.xib
 s426441493.319877
@@ -1651,18 +1651,18 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Copy bu
 b1E832000-EC5D-46DA-88F1-13E026977478
 
 CGenerateDSYMFile /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-s430255760.532619
-e430255760.579184
+s430258009.841883
+e430258009.876735
 r1
 xGenerateDSYMFile
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Generate /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM105"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad276b88902ea5b941^4e4794902ea5b941^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM/0000000000000000^743"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM36"20B1211D-0FDE-47A1-8871-523618248684-
-bBCB60984-7164-47DB-9CAE-859F9D5870C2
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Generate /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM105"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad5793d75937a5b941^a774e05937a5b941^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM/0000000000000000^743"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM36"DC8C5FBF-6C54-4C49-943B-348EDFAE94AF-
+bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
 
 CLd /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad normal i386
-s430077726.056871
-e430077726.100729
+s430257453.213336
+e430257453.320773
 r1
 xLd
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
@@ -1744,36 +1744,36 @@ d/usr/lib/system/libsystem_pthread.dylib
 d/usr/lib/system/libsystem_sandbox.dylib
 d/usr/lib/system/libunc.dylib
 d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Link /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad61"[1mLd[0m build/emulator/PainSquad.app/PainSquad normal i38636ab0e1e77a2b941^30d4191e77a2b941^---0#0#1#--1848"[1mLd[0m build/emulator/PainSquad.app/PainSquad normal i386    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export IPHONEOS_DEPLOYMENT_TARGET=6.0    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -filelist /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a -ObjC -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework AssetsLibrary /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a -framework CoreGraphics -framework MobileCoreServices -framework CoreLocation -weak_framework SystemConfiguration -Xlinker -dependency_info -Xlinker /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad_dependency_info.dat -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad36"1E361925-AA9A-4429-9FFF-F355628FF615-
-b4FD38B77-FACC-410B-A8BD-401C9E1C72B9
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Link /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad61"[1mLd[0m build/emulator/PainSquad.app/PainSquad normal i386fbb0362d35a5b941^711e522d35a5b941^---0#0#1#--1848"[1mLd[0m build/emulator/PainSquad.app/PainSquad normal i386    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export IPHONEOS_DEPLOYMENT_TARGET=6.0    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -filelist /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a -ObjC -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework AssetsLibrary /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a -framework CoreGraphics -framework MobileCoreServices -framework CoreLocation -weak_framework SystemConfiguration -Xlinker -dependency_info -Xlinker /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad_dependency_info.dat -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad36"F086B335-450B-45B1-BCCD-C94D13F42C7B-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CPhaseScriptExecution Copy\ www\ directory /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
-s430255759.107783
-e430255760.525588
+s430258008.655854
+e430258009.837014
 r1
 xPhaseScriptExecution
 xCopy www directory
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
 o
-oreal	0m1.397s
-ouser	0m0.518s
-osys	0m0.818s
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'144"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh21e51b8f2ea5b941^a58286902ea5b941^-42"real	0m1.397suser	0m0.518ssys	0m0.818s3(21%IDEActivityLogMessage2@14"real	0m1.397s-430255760#1#14#-0#-----2@14"user	0m0.518s-430255760#15#14#-0#-----2@13"sys	0m0.818s-430255760#29#13#-0#-----0#0#1#--362"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh    cd /Users/matt/src/painsquad/public/ng/platforms/ios    /bin/sh -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh36"E57AFAA5-51C7-4D4B-8F5E-AD1E804EA6F4-
-bBCB60984-7164-47DB-9CAE-859F9D5870C2
+oreal	0m1.161s
+ouser	0m0.454s
+osys	0m0.694s
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'144"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh035ca85837a5b941^e04ad65937a5b941^-42"real	0m1.161suser	0m0.454ssys	0m0.694s3(21%IDEActivityLogMessage2@14"real	0m1.161s-430258009#1#14#-0#-----2@14"user	0m0.454s-430258009#15#14#-0#-----2@13"sys	0m0.694s-430258009#29#13#-0#-----0#0#1#--362"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh    cd /Users/matt/src/painsquad/public/ng/platforms/ios    /bin/sh -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh36"D93C5A92-774E-460B-A1EB-12407D28A604-
+bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
 
 CProcessInfoPlistFile /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-s430255759.104671
-e430255759.106626
+s430258008.650020
+e430258008.654065
 r1
 xProcessInfoPlistFile
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
 x/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Process /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist107"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m93df1a8f2ea5b941^274d1b8f2ea5b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist0000000000000000^833"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    builtin-infoPlistUtility /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist -genpkginfo /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist36"E13C07DA-519D-4C79-8B5F-E7F374D25256-
-bBCB60984-7164-47DB-9CAE-859F9D5870C2
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Process /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist107"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m1381a65837a5b941^b472a75837a5b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist0000000000000000^833"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    builtin-infoPlistUtility /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist -genpkginfo /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist36"C1E09583-7EC9-44CD-BA67-34DBB8995089-
+bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
 
 CProcessPCH /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s429648071.328517
-e429648071.701828
+s430257452.749196
+e430257452.962215
 r1
 xProcessPCH
 x/var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch
@@ -1783,8 +1783,8 @@ xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile PainSquad/PainSquad-Prefix.pch298"ProcessPCH /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler7e3854c7e89bb941^ffaeb3c7e89bb941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch0000000000000000^3848"ProcessPCH /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator --serialize-diagnostics /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.d -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch -o /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch36"53623A79-0A7D-41FE-B5BC-74B590C579CF-
-b886B6BE5-E773-4527-9CAD-BF658FBD9AE4
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile PainSquad/PainSquad-Prefix.pch306"[1mProcessPCH[0m /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler48e0bf2c35a5b941^ca53f62c35a5b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch0000000000000000^3878"[1mProcessPCH[0m /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=133 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-generated-files.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-own-target-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-all-target-headers.hmap -iquote /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/PainSquad-project-headers.hmap -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/usr/local/lib/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/UninstalledProducts/include -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources/i386 -I/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/DerivedSources -F/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator --serialize-diagnostics /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.d -c /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch -o /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch36"801589FA-CAA4-4F8C-A13F-4F3BC3DCDF68-
+bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CProcessPCH /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-crxanjetgoyhpyfzzawatcrrlsof/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s426441494.650356
@@ -1802,11 +1802,11 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precomp
 b1E832000-EC5D-46DA-88F1-13E026977478
 
 CTouch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-s430255760.580039
-e430255760.585598
+s430258009.877575
+e430258009.881470
 r1
 xTouch
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app42"[1mTouch[0m build/emulator/PainSquad.app2a8d94902ea5b941^79ea95902ea5b941^---0#0#1#--505"[1mTouch[0m build/emulator/PainSquad.app    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /usr/bin/touch -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app36"FC74DCA3-68B4-4630-BA41-E9A72E37A9EB-
-bBCB60984-7164-47DB-9CAE-859F9D5870C2
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app42"[1mTouch[0m build/emulator/PainSquad.app24b9e05937a5b941^dfa8e15937a5b941^---0#0#1#--505"[1mTouch[0m build/emulator/PainSquad.app    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /usr/bin/touch -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app36"3F01D16F-001A-4D5B-AF73-10F2311F0E65-
+bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
 
