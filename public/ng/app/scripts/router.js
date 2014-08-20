@@ -5,6 +5,7 @@
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     $httpProvider.responseInterceptors.push('AuthInterceptor');
     $httpProvider.responseInterceptors.push('EventInterceptor');
+    $httpProvider.interceptors.push('LoadingInterceptor');
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
