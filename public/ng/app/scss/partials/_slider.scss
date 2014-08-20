@@ -25,7 +25,18 @@ $thumb-height: 30px;
   &.range-assertive.override {
     input {
       border-radius:    20px;
-      background-image: $slider-red-gradient;
+      background-image: #f5c7d0; /* Old browsers */
+      background-image: -moz-linear-gradient(left, #f5c7d0 0%, #dd4662 100%); /* FF3.6+ */
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,#f5c7d0), color-stop(100%,#dd4662)); /* Chrome,Safari4+ */
+      background-image: -webkit-linear-gradient(left, #f5c7d0 0%,#dd4662 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(left, #f5c7d0 0%,#dd4662 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(left, #f5c7d0 0%,#dd4662 100%); /* IE10+ */
+      background-image: linear-gradient(to right, #f5c7d0 0%,#dd4662 100%); /* W3C */
+
+      // background-image: -moz-linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+      // background-image: -webkit-linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+      // background-image: -ms-linear-gradient(to right, #F5C7D0 0%, #DD4662 100%);
+      // background-image: linear-gradient(to to right, #F5C7D0 0%, #DD4662 100%);
       background-size:  100% 100%;
       height:           15px;
       margin:           10px;
@@ -41,7 +52,18 @@ $thumb-height: 30px;
   &.range-balanced.override {
     input {
       border-radius:    20px;
-      background-image: $slider-green-gradient;
+      background-image: #b1e2d5; /* Old browsers */
+      background-image: -moz-linear-gradient(left, #b1e2d5 0%, #0e9b73 100%); /* FF3.6+ */
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(0%,#b1e2d5), color-stop(100%,#0e9b73)); /* Chrome,Safari4+ */
+      background-image: -webkit-linear-gradient(left, #b1e2d5 0%,#0e9b73 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(left, #b1e2d5 0%,#0e9b73 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(left, #b1e2d5 0%,#0e9b73 100%); /* IE10+ */
+      background-image: linear-gradient(to right, #b1e2d5 0%,#0e9b73 100%); /* W3C */
+
+      // background-image: -moz-linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+      // background-image: -webkit-linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+      // background-image: -ms-linear-gradient(to right, #B1E2D5 0%, #0E9B73 100%);
+      // background-image: linear-gradient(to to right, #B1E2D5 0%, #0E9B73 100%);
       background-size:  100% 100%;
       height:           15px;
       margin:           10px;
