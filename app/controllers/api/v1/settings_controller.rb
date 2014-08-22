@@ -21,7 +21,7 @@ module Api
       swagger_api :update do
         summary 'Updates user alert settings'
         param :form, :id, :integer, :required, 'Alert ID'
-        param :form, :time, :string, :required, 'Ruby Date object'
+        param :form, :alert_time, :string, :required, 'Ruby Date object'
         param :form, :display_time, :string, 'Human Readable Time Format'
         param :form, :category, :string, :required, 'Alert Category Identifier'
         response :not_found
@@ -40,7 +40,7 @@ module Api
       private
 
       def setting_params
-        params.require(:setting).permit(:id, :time, :category, :selected)
+        params.require(:setting).permit(:id, :alert_time, :category, :selected)
       end
 
       def fetch_alert

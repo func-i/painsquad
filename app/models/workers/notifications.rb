@@ -22,7 +22,7 @@ module Workers
       current_time = now.strftime("%H:%M:%S")
       users        = []
       User.find_each do |user|
-        if user.alerts.any? && user.alerts.where(time: five_minutes..current_time).any?
+        if user.alerts.any? && user.alerts.where(alert_time: five_minutes..current_time).any?
           binding.pry
           users << user
         end

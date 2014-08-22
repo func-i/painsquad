@@ -14,14 +14,14 @@ class Alert < ActiveRecord::Base
   has_many :users, through: :user_alerts
 
   validates :category, inclusion: %w( morning_alert evening_alert )
-  validates :time, presence: true
+  validates :alert_time, presence: true
 
   scope :morning, -> { where(category: 'morning_alert') }
   scope :evening, -> { where(category: 'evening_alert') }
-  scope :default_alerts, -> { where('time = ? or time = ?', Time.zone.now.change({hour: 8, min: 30}).strftime("%H:%M:%S"), Time.zone.now.change({hour: 18, min: 30}).strftime("%H:%M:%S")) }
+  scope :default_alerts, -> { where('alert_time = ? or alert_time = ?', Time.zone.now.change({hour: 9, min: 00}).strftime("%H:%M:%S"), Time.zone.now.change({hour: 19, min: 00}).strftime("%H:%M:%S")) }
 
   def display_time
-    time.strftime('%I:%M:%S %p')
+    alert_time.strftime('%I:%M:%S %p')
   end
 
 end
