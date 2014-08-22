@@ -1,7 +1,7 @@
 module Workers
   class Notifications
     include Delayed::RecurringJob
-    TIME_RANGE = 10
+    TIME_RANGE = 5
 
     timezone  'US/Eastern'
     run_every TIME_RANGE.minutes
