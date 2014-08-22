@@ -1,7 +1,7 @@
 module Workers
   class Notifications
     include Delayed::RecurringJob
-    TIME_RANGE = 5
+    TIME_RANGE = 10
 
     timezone  'US/Eastern'
     run_every TIME_RANGE.minutes
@@ -23,7 +23,6 @@ module Workers
       users        = []
       User.find_each do |user|
         if user.alerts.any? && user.alerts.where(alert_time: five_minutes..current_time).any?
-          binding.pry
           users << user
         end
       end
