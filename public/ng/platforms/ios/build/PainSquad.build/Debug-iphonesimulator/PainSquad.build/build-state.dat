@@ -254,38 +254,38 @@ t1398288085
 s20812
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.h
-c0000000053F4FABF00000000000005B7
-t1408563903
+c0000000053F5027600000000000005B7
+t1408565878
 s1463
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/AppDelegate.m
-c0000000053F4FABF000000000000176D
-t1408563903
+c0000000053F50276000000000000176D
+t1408565878
 s5997
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.h
-c0000000053F4FABF00000000000004CF
-t1408563903
+c0000000053F5027600000000000004CF
+t1408565878
 s1231
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.m
-c0000000053F4FABF000000000000126A
-t1408563903
+c0000000053F50276000000000000126A
+t1408565878
 s4714
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Classes/MainViewController.xib
-c0000000053F4FABF0000000000001759
-t1408563903
+c0000000053F502760000000000001759
+t1408565878
 s5977
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-c0000000053F4FFD70000000000000A11
-t1408565207
+c0000000053F75EC20000000000000A11
+t1408720578
 s2577
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Prefix.pch
-c0000000053F4FABF00000000000003C3
-t1408563903
+c0000000053F5027600000000000003C3
+t1408565878
 s963
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/com.ionic.keyboard/IonicKeyboard.h
@@ -424,123 +424,123 @@ t1404827924
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/de.lproj/Localizable.strings
-c0000000053F4FABF00000000000004C0
-t1408563903
+c0000000053F5027600000000000004C0
+t1408565878
 s1216
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/en.lproj/Localizable.strings
-c0000000053F4FABF00000000000004AB
-t1408563903
+c0000000053F5027600000000000004AB
+t1408565878
 s1195
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-40.png
-c0000000053F4FABF0000000000000A2A
-t1408563903
+c0000000053F502760000000000000A2A
+t1408565878
 s2602
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-40@2x.png
-c0000000053F4FABF0000000000001BF7
-t1408563903
+c0000000053F502760000000000001BF7
+t1408565878
 s7159
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-50.png
-c0000000053F4FABF0000000000000E37
-t1408563903
+c0000000053F502760000000000000E37
+t1408565878
 s3639
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-50@2x.png
-c0000000053F4FABF000000000000265A
-t1408563903
+c0000000053F50276000000000000265A
+t1408565878
 s9818
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-60.png
-c0000000053F4FABF0000000000001285
-t1408563903
+c0000000053F502760000000000001285
+t1408565878
 s4741
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-60@2x.png
-c0000000053F4FABF0000000000003033
-t1408563903
+c0000000053F502760000000000003033
+t1408565878
 s12339
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-72.png
-c0000000053F4FABF000000000000183F
-t1408563903
+c0000000053F50276000000000000183F
+t1408565878
 s6207
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-72@2x.png
-c0000000053F4FABF0000000000003D59
-t1408563903
+c0000000053F502760000000000003D59
+t1408565878
 s15705
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-76.png
-c0000000053F4FABF00000000000019F7
-t1408563903
+c0000000053F5027600000000000019F7
+t1408565878
 s6647
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-76@2x.png
-c0000000053F4FABF000000000000421B
-t1408563903
+c0000000053F50276000000000000421B
+t1408565878
 s16923
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-small.png
-c0000000053F4FABF0000000000000676
-t1408563903
+c0000000053F502760000000000000676
+t1408565878
 s1654
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon-small@2x.png
-c0000000053F4FABF00000000000011B7
-t1408563903
+c0000000053F5027600000000000011B7
+t1408565878
 s4535
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon.png
-c0000000053F4FABF000000000000112D
-t1408563903
+c0000000053F50276000000000000112D
+t1408565878
 s4397
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/icons/icon@2x.png
-c0000000053F4FABF0000000000002D41
-t1408563903
+c0000000053F502760000000000002D41
+t1408565878
 s11585
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-568h@2x~iphone.png
-c0000000053F4FABF00000000000E6025
-t1408563903
+c0000000053F5027600000000000E6025
+t1408565878
 s942117
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Landscape@2x~ipad.png
-c0000000053F4FABF0000000000033D0A
-t1408563903
+c0000000053F502760000000000033D0A
+t1408565878
 s212234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Landscape~ipad.png
-c0000000053F4FABF00000000000166A2
-t1408563903
+c0000000053F5027600000000000166A2
+t1408565878
 s91810
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Portrait@2x~ipad.png
-c0000000053F4FABF0000000000033F7C
-t1408563903
+c0000000053F502760000000000033F7C
+t1408565878
 s212860
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default-Portrait~ipad.png
-c0000000053F4FABF0000000000016641
-t1408563903
+c0000000053F502760000000000016641
+t1408565878
 s91713
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default@2x~iphone.png
-c0000000053F4FABF00000000000C2438
-t1408563903
+c0000000053F5027600000000000C2438
+t1408565878
 s795704
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Resources/splash/Default~iphone.png
-c0000000053F4FABF000000000000289A
-t1408563903
+c0000000053F50276000000000000289A
+t1408565878
 s10394
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/main.m
-c0000000053F4FABF000000000000045B
-t1408563903
+c0000000053F50276000000000000045B
+t1408565878
 s1115
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/APPBackgroundMode.o
@@ -559,19 +559,19 @@ t1405112251
 s95348
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate+notification.o
-t1408564653
+t1408567657
 s66908
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/AppDelegate.o
-t1408564653
+t1408567657
 s77368
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVConnection.o
-t1408564653
+t1408567657
 s56156
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVDevice.o
-t1408564653
+t1408567657
 s50312
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVNotification.o
@@ -580,15 +580,15 @@ t1404827939
 s68440
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVReachability.o
-t1408564653
+t1408567657
 s20604
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVSplashScreen.o
-t1408564653
+t1408567657
 s74180
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/CDVStatusBar.o
-t1408564653
+t1408567657
 s111532
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/IonicKeyboard.o
@@ -597,16 +597,16 @@ t1408131792
 s63708
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/MainViewController.o
-t1408564653
+t1408567657
 s51540
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PainSquad.LinkFileList
-c0000000053F4FABF00000000000005B5
-t1408563903
+c0000000053F5027600000000000005B5
+t1408565878
 s1461
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/PushPlugin.o
-t1408564653
+t1408567657
 s67036
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/UIWebViewExtension.o
@@ -615,20 +615,20 @@ t1407955271
 s46292
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/main.o
-t1408564652
+t1408567657
 s2964
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
-c0000000053F4FABF000000000000002D
-t1408563903
+c0000000053F50276000000000000002D
+t1408565878
 s45
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-t1408565209
+t1408720580
 s1054
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
-t1408565103
+t1408720439
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/CDVNotification.bundle
@@ -636,43 +636,43 @@ t1404827939
 s102
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-568h@2x~iphone.png
-t1408563903
+t1408565878
 s942117
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Landscape@2x~ipad.png
-t1408563903
+t1408565878
 s212234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Landscape~ipad.png
-t1408563903
+t1408565878
 s91810
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Portrait@2x~ipad.png
-t1408563903
+t1408565878
 s212860
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default-Portrait~ipad.png
-t1408563903
+t1408565878
 s91713
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default@2x~iphone.png
-t1408563903
+t1408565878
 s795704
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Default~iphone.png
-t1408563903
+t1408565878
 s10394
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
-t1408565208
+t1408720579
 s1283
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/MainViewController.nib
-t1408563903
+t1408565878
 s836
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-t1408564653
+t1408568291
 s366884
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo
@@ -680,177 +680,177 @@ t2
 s0
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/de.lproj/Localizable.strings
-t1408563903
+t1408565878
 s280
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/en.lproj/Localizable.strings
-t1408563903
+t1408565878
 s166
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-40.png
-t1408563903
+t1408565878
 s2602
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-40@2x.png
-t1408563903
+t1408565878
 s7159
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-50.png
-t1408563903
+t1408565878
 s3639
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-50@2x.png
-t1408563903
+t1408565878
 s9818
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-60.png
-t1408563903
+t1408565878
 s4741
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-60@2x.png
-t1408563903
+t1408565878
 s12339
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72.png
-t1408563903
+t1408565878
 s6207
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-72@2x.png
-t1408563903
+t1408565878
 s15705
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76.png
-t1408563903
+t1408565878
 s6647
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-76@2x.png
-t1408563903
+t1408565878
 s16923
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-small.png
-t1408563903
+t1408565878
 s1654
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon-small@2x.png
-t1408563903
+t1408565878
 s4535
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon.png
-t1408563903
+t1408565878
 s4397
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/icon@2x.png
-t1408563903
+t1408565878
 s11585
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDV.h
-c0000000053F4FABF0000000000000516
-t1408563903
+c0000000053F502760000000000000516
+t1408565878
 s1302
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-c0000000053F4FABF0000000000000D19
-t1408563903
+c0000000053F502760000000000000D19
+t1408565878
 s3353
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-c0000000053F4FABF00000000000008BA
-t1408563903
+c0000000053F5027600000000000008BA
+t1408565878
 s2234
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-c0000000053F4FABF00000000000004E2
-t1408563903
+c0000000053F5027600000000000004E2
+t1408565878
 s1250
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-c0000000053F4FABF0000000000000503
-t1408563903
+c0000000053F502760000000000000503
+t1408565878
 s1283
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-c0000000053F4FABF0000000000000401
-t1408563903
+c0000000053F502760000000000000401
+t1408565878
 s1025
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-c0000000053F4FABF00000000000007E6
-t1408563903
+c0000000053F5027600000000000007E6
+t1408565878
 s2022
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-c0000000053F4FABF00000000000003DA
-t1408563903
+c0000000053F5027600000000000003DA
+t1408565878
 s986
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
-c0000000053F4FABF00000000000006CF
-t1408563903
+c0000000053F5027600000000000006CF
+t1408565878
 s1743
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-c0000000053F4FABF00000000000008F3
-t1408563903
+c0000000053F5027600000000000008F3
+t1408565878
 s2291
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-c0000000053F4FABF0000000000000C13
-t1408563903
+c0000000053F502760000000000000C13
+t1408565878
 s3091
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-c0000000053F4FABF0000000000000408
-t1408563903
+c0000000053F502760000000000000408
+t1408565878
 s1032
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
-c0000000053F4FABF000000000000038D
-t1408563903
+c0000000053F50276000000000000038D
+t1408565878
 s909
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
-c0000000053F4FABF000000000000041C
-t1408563903
+c0000000053F50276000000000000041C
+t1408565878
 s1052
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-c0000000053F4FABF0000000000000ACC
-t1408563903
+c0000000053F502760000000000000ACC
+t1408565878
 s2764
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-c0000000053F4FABF00000000000004B4
-t1408563903
+c0000000053F5027600000000000004B4
+t1408565878
 s1204
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
-c0000000053F4FABF0000000000000392
-t1408563903
+c0000000053F502760000000000000392
+t1408565878
 s914
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-c0000000053F4FABF000000000000037D
-t1408563903
+c0000000053F50276000000000000037D
+t1408565878
 s893
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-c0000000053F4FABF00000000000005DA
-t1408563903
+c0000000053F5027600000000000005DA
+t1408565878
 s1498
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-c0000000053F4FABF00000000000003A0
-t1408563903
+c0000000053F5027600000000000003A0
+t1408565878
 s928
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
-c0000000053F4FABF0000000000000476
-t1408563903
+c0000000053F502760000000000000476
+t1408565878
 s1142
 
 N/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/libCordova.a
-c0000000053F4FDAB00000000000D4228
-t1408564651
+c0000000053F50BE300000000000D4228
+t1408568291
 s868904
 
 N/usr/lib/libSystem.B.dylib
@@ -989,7 +989,7 @@ t1397968700
 s104944
 
 N/var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch
-t1408564652
+t1408567657
 s5376528
 
 N/var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-crxanjetgoyhpyfzzawatcrrlsof/PainSquad-Prefix.pch.pch
@@ -998,7 +998,7 @@ s5376528
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies75e7a55837a5b941^4720a65837a5b941^---0#1#1#--18"Check dependencies36"1DF41793-08AC-492B-9883-65ED52488D8C-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies3d5f5f4396a7b941^33a75f4396a7b941^---0#1#1#--18"Check dependencies36"B0AD43F7-D1E2-45E3-8079-034DDBC6D6A0-
 
 CCompileC build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Objects-normal/i386/APPBackgroundMode.o /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/Plugins/de.appplant.cordova.plugin.background-mode/APPBackgroundMode.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s426519418.681029
@@ -1651,14 +1651,14 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Copy bu
 b1E832000-EC5D-46DA-88F1-13E026977478
 
 CGenerateDSYMFile /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-s430258009.841883
-e430258009.876735
+s430413380.778518
+e430413380.831771
 r1
 xGenerateDSYMFile
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Generate /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM105"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad5793d75937a5b941^a774e05937a5b941^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM/0000000000000000^743"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM36"DC8C5FBF-6C54-4C49-943B-348EDFAE94AF-
-bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Generate /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM105"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad895dc74496a7b941^ccefd44496a7b941^---0#0#1#-19%DVTDocumentLocation2@91"file:///Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM/0000000000000000^731"[1mGenerateDSYMFile[0m [1mbuild/emulator/PainSquad.app.dSYM[0m build/emulator/PainSquad.app/PainSquad    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app.dSYM36"2BC370B9-0465-433C-A9D9-0B240EEB70BC-
+bE0D5CA67-B568-499C-A790-5A28AF29BAFE
 
 CLd /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PainSquad normal i386
 s430257453.213336
@@ -1748,28 +1748,28 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Link /U
 bC9B4C155-F4C6-4291-8E11-CC0BF4DEB8D1
 
 CPhaseScriptExecution Copy\ www\ directory /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
-s430258008.655854
-e430258009.837014
+s430413379.376827
+e430413380.770927
 r1
 xPhaseScriptExecution
 xCopy www directory
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh
 o
-oreal	0m1.161s
-ouser	0m0.454s
-osys	0m0.694s
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'144"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh035ca85837a5b941^e04ad65937a5b941^-42"real	0m1.161suser	0m0.454ssys	0m0.694s3(21%IDEActivityLogMessage2@14"real	0m1.161s-430258009#1#14#-0#-----2@14"user	0m0.454s-430258009#15#14#-0#-----2@13"sys	0m0.694s-430258009#29#13#-0#-----0#0#1#--362"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh    cd /Users/matt/src/painsquad/public/ng/platforms/ios    /bin/sh -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh36"D93C5A92-774E-460B-A1EB-12407D28A604-
-bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
+oreal	0m1.370s
+ouser	0m0.519s
+osys	0m0.805s
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'144"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh36c8604396a7b941^a470c54496a7b941^-42"real	0m1.370suser	0m0.519ssys	0m0.805s3(21%IDEActivityLogMessage2@14"real	0m1.370s-430413380#1#14#-0#-----2@14"user	0m0.519s-430413380#15#14#-0#-----2@13"sys	0m0.805s-430413380#29#13#-0#-----0#0#1#--362"[1mPhaseScriptExecution[0m Copy\ www\ directory build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh    cd /Users/matt/src/painsquad/public/ng/platforms/ios    /bin/sh -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/PainSquad.build/Debug-iphonesimulator/PainSquad.build/Script-304B58A110DAC018002A0835.sh36"2D3A38A6-4F84-4711-BD62-5264F7D6BD55-
+bE0D5CA67-B568-499C-A790-5A28AF29BAFE
 
 CProcessInfoPlistFile /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-s430258008.650020
-e430258008.654065
+s430413379.374024
+e430413379.375783
 r1
 xProcessInfoPlistFile
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist
 x/Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Process /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist107"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m1381a65837a5b941^b472a75837a5b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist0000000000000000^833"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    builtin-infoPlistUtility /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist -genpkginfo /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist36"C1E09583-7EC9-44CD-BA67-34DBB8995089-
-bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Process /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist107"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m88d55f4396a7b941^1e33604396a7b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist0000000000000000^821"[1mProcessInfoPlistFile[0m build/emulator/PainSquad.app/Info.plist [1mPainSquad/PainSquad-Info.plist[0m    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"    builtin-infoPlistUtility /Users/matt/src/painsquad/public/ng/platforms/ios/PainSquad/PainSquad-Info.plist -genpkginfo /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app/Info.plist36"4E6526A0-E7F8-4A47-944E-8B6A453F88DB-
+bE0D5CA67-B568-499C-A790-5A28AF29BAFE
 
 CProcessPCH /var/folders/0_/dcsf_23s1k7f0w5pt83yhhhw0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/PainSquad-Prefix-cmggmbuzpkzpyhdujadzrpbfvjfo/PainSquad-Prefix.pch.pch PainSquad/PainSquad-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s430257452.749196
@@ -1802,11 +1802,11 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precomp
 b1E832000-EC5D-46DA-88F1-13E026977478
 
 CTouch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-s430258009.877575
-e430258009.881470
+s430413380.832814
+e430413380.838148
 r1
 xTouch
 x/Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app42"[1mTouch[0m build/emulator/PainSquad.app24b9e05937a5b941^dfa8e15937a5b941^---0#0#1#--505"[1mTouch[0m build/emulator/PainSquad.app    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/MacGPG2/bin:/Users/matt/bin/FDK/Tools/osx"    /usr/bin/touch -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app36"3F01D16F-001A-4D5B-AF73-10F2311F0E65-
-bCF9BFACA-8500-4B4E-9D65-DD5F07BE3A48
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app42"[1mTouch[0m build/emulator/PainSquad.app7748d54496a7b941^d592d64496a7b941^---0#0#1#--493"[1mTouch[0m build/emulator/PainSquad.app    cd /Users/matt/src/painsquad/public/ng/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/matt/.rbenv/shims:/Users/matt/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"    /usr/bin/touch -c /Users/matt/src/painsquad/public/ng/platforms/ios/build/emulator/PainSquad.app36"5AB4E8B4-F028-401E-8D4D-4DADE1244EFB-
+bE0D5CA67-B568-499C-A790-5A28AF29BAFE
 
