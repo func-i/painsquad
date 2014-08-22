@@ -18,12 +18,12 @@ module Workers
 
     def user_lookup
       now          = Time.zone.now
-      less_five    = now - 5.minutes
+      five_minutes = (now - TIME_RANGE.minutes).strftime("%H:%M:%S")
       current_time = now.strftime("%H:%M:%S")
-      five_minutes = less_five.strftime("%H:%M:%S")
       users        = []
       User.find_each do |user|
         if user.alerts.any? && user.alerts.where(time: five_minutes..current_time).any?
+          binding.pry
           users << user
         end
       end
