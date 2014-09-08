@@ -23,25 +23,17 @@
 #import "CDVViewController.h"
 #import "CDVCommandDelegateImpl.h"
 
-// Parse JS on the main thread if it's shorter than this.
-static const NSInteger JSON_SIZE_FOR_MAIN_THREAD = 4 * 1024; // Chosen arbitrarily.
-// Execute multiple commands in one go until this many seconds have passed.
-static const double MAX_EXECUTION_TIME = .008; // Half of a 60fps frame.
-
 @interface CDVCommandQueue () {
     NSInteger _lastCommandQueueFlushRequestId;
     __weak CDVViewController* _viewController;
     NSMutableArray* _queue;
-    NSTimeInterval _startExecutionTime;
+    BOOL _currentlyExecuting;
 }
 @end
 
 @implementation CDVCommandQueue
 
-- (BOOL)currentlyExecuting
-{
-    return _startExecutionTime > 0;
-}
+@synthesize currentlyExecuting = _currentlyExecuting;
 
 - (id)initWithViewController:(CDVViewController*)viewController
 {
@@ -64,46 +56,22 @@ static const double MAX_EXECUTION_TIME = .008; // Half of a 60fps frame.
     _lastCommandQueueFlushRequestId = 0;
 }
 
-- (void)enqueueCommandBatch:(NSString*)batchJSON
+- (void)enqueCommandBatch:(NSString*)batchJSON
 {
     if ([batchJSON length] > 0) {
-        NSMutableArray* commandBatchHolder = [[NSMutableArray alloc] init];
-        [_queue addObject:commandBatchHolder];
-        if ([batchJSON length] < JSON_SIZE_FOR_MAIN_THREAD) {
-            [commandBatchHolder addObject:[batchJSON JSONObject]];
-        } else {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^() {
-                    NSMutableArray* result = [batchJSON JSONObject];
-                    @synchronized(commandBatchHolder) {
-                        [commandBatchHolder addObject:result];
-                    }
-                    [self performSelectorOnMainThread:@selector(executePending) withObject:nil waitUntilDone:NO];
-                });
-        }
+        [_queue addObject:batchJSON];
+        [self executePending];
     }
 }
 
-- (void)processXhrExecBridgePoke:(NSNumber*)requestId
+- (void)maybeFetchCommandsFromJs:(NSNumber*)requestId
 {
-    NSInteger rid = [requestId integerValue];
-
-    // An ID of 1 is a special case because that signifies the first request of
-    // the page. Since resetRequestId is called from webViewDidStartLoad, and the
-    // JS context at the time of webViewDidStartLoad is still that of the previous
-    // page, it's possible for requests from the previous page to come in after this
-    // point. We ignore these by enforcing that ID=1 be the first ID.
-    if ((_lastCommandQueueFlushRequestId == 0) && (rid != 1)) {
-        CDV_EXEC_LOG(@"Exec: Ignoring exec request from previous page.");
-        return;
-    }
-
     // Use the request ID to determine if we've already flushed for this request.
     // This is required only because the NSURLProtocol enqueues the same request
     // multiple times.
-    if (rid > _lastCommandQueueFlushRequestId) {
+    if ([requestId integerValue] > _lastCommandQueueFlushRequestId) {
         _lastCommandQueueFlushRequestId = [requestId integerValue];
         [self fetchCommandsFromJs];
-        [self executePending];
     }
 }
 
@@ -113,37 +81,28 @@ static const double MAX_EXECUTION_TIME = .008; // Half of a 60fps frame.
     NSString* queuedCommandsJSON = [_viewController.webView stringByEvaluatingJavaScriptFromString:
         @"cordova.require('cordova/exec').nativeFetchMessages()"];
 
-    CDV_EXEC_LOG(@"Exec: Flushed JS->native queue (hadCommands=%d).", [queuedCommandsJSON length] > 0);
-    [self enqueueCommandBatch:queuedCommandsJSON];
+    [self enqueCommandBatch:queuedCommandsJSON];
+    if ([queuedCommandsJSON length] > 0) {
+        CDV_EXEC_LOG(@"Exec: Retrieved new exec messages by request.");
+    }
 }
 
 - (void)executePending
 {
     // Make us re-entrant-safe.
-    if (_startExecutionTime > 0) {
+    if (_currentlyExecuting) {
         return;
     }
     @try {
-        _startExecutionTime = [NSDate timeIntervalSinceReferenceDate];
+        _currentlyExecuting = YES;
 
-        while ([_queue count] > 0) {
-            NSMutableArray* commandBatchHolder = _queue[0];
-            NSMutableArray* commandBatch = nil;
-            @synchronized(commandBatchHolder) {
-                // If the next-up command is still being decoded, wait for it.
-                if ([commandBatchHolder count] == 0) {
-                    break;
-                }
-                commandBatch = commandBatchHolder[0];
-            }
+        for (NSUInteger i = 0; i < [_queue count]; ++i) {
+            // Parse the returned JSON array.
+            NSArray* commandBatch = [[_queue objectAtIndex:i] JSONObject];
 
-            while ([commandBatch count] > 0) {
+            // Iterate over and execute all of the commands.
+            for (NSArray* jsonEntry in commandBatch) {
                 @autoreleasepool {
-                    // Execute the commands one-at-a-time.
-                    NSArray* jsonEntry = [commandBatch dequeue];
-                    if ([commandBatch count] == 0) {
-                        [_queue removeObjectAtIndex:0];
-                    }
                     CDVInvokedUrlCommand* command = [CDVInvokedUrlCommand commandFromJson:jsonEntry];
                     CDV_EXEC_LOG(@"Exec(%@): Calling %@.%@", command.callbackId, command.className, command.methodName);
 
@@ -159,17 +118,13 @@ static const double MAX_EXECUTION_TIME = .008; // Half of a 60fps frame.
 #endif
                     }
                 }
-
-                // Yield if we're taking too long.
-                if (([_queue count] > 0) && ([NSDate timeIntervalSinceReferenceDate] - _startExecutionTime > MAX_EXECUTION_TIME)) {
-                    [self performSelector:@selector(executePending) withObject:nil afterDelay:0];
-                    return;
-                }
             }
         }
+
+        [_queue removeAllObjects];
     } @finally
     {
-        _startExecutionTime = 0;
+        _currentlyExecuting = NO;
     }
 }
 
@@ -194,7 +149,7 @@ static const double MAX_EXECUTION_TIME = .008; // Half of a 60fps frame.
     SEL normalSelector = NSSelectorFromString(methodName);
     if ([obj respondsToSelector:normalSelector]) {
         // [obj performSelector:normalSelector withObject:command];
-        ((void (*)(id, SEL, id))objc_msgSend)(obj, normalSelector, command);
+        objc_msgSend(obj, normalSelector, command);
     } else {
         // There's no method to call, so throw an error.
         NSLog(@"ERROR: Method '%@' not defined in Plugin '%@'", methodName, command.className);
