@@ -20,12 +20,12 @@ class SurveyService
 
   # 0:05 to 0:00 ago
   def five_minutes_ago?
-    @user.alerts.where(time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
+    @user.alerts.where(alert_time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
   end
 
   # 1:05 to 1:00 ago
   def one_hour_ago?
-    @user.alerts.where(time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..1.hour.ago.strftime("%H:%M:%S")).any?
+    @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..1.hour.ago.strftime("%H:%M:%S")).any?
   end
 
   # send full survey if its the first
