@@ -1,5 +1,17 @@
 # PainSquad
 
+## Twillio Account Details
+
+email: jon@func-i.com
+password: EOVbBKl)}7VEMD4&
+
+### Verify phone numbers on a trial account
+
+http://twilio.com/user/account/phone-numbers/verified
+
+### Your Twillio Phone Number
+
+(437) 800-0269
 
 ## Getting Started
 
@@ -51,3 +63,8 @@ To generate the API Documentation:
 `rake swagger:docs`
 
 This creates a self-contained directory within `public/` with the generated documentation.
+
+## TestFlight
+
+$ cd public/ng
+$ ionic build ios
