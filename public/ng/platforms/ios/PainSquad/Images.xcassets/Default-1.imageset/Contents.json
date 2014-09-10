@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "subtype" : "retina4",
       "scale" : "2x"
     }
   ],
