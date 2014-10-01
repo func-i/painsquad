@@ -2,9 +2,9 @@
 
 @painSquad.config ($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) ->
   $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
+  $httpProvider.interceptors.push('LoadingInterceptor')
   $httpProvider.responseInterceptors.push('AuthInterceptor')
   $httpProvider.responseInterceptors.push('EventInterceptor')
-  $httpProvider.interceptors.push('LoadingInterceptor')
 
   $urlRouterProvider.otherwise '/app/home'
 
@@ -33,6 +33,7 @@
               defer = $q.defer()
               User.query (response) ->
                 defer.resolve response.user
+
               defer.promise
     )
 
@@ -337,6 +338,14 @@
       views:
         menuContent:
           templateUrl: 'templates/static/privacy.html'
+    )
+
+    # no connection
+    .state('app.notconnected'
+      url: '/not_connected'
+      views:
+        menuContent:
+          templateUrl: 'templates/static/not_connected.html'
     )
 
     # intro slideshow

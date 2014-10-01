@@ -3,9 +3,9 @@
   this.painSquad.config(function($urlRouterProvider, $stateProvider, $compileProvider, $httpProvider, CONFIG) {
     var currentUser;
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    $httpProvider.interceptors.push('LoadingInterceptor');
     $httpProvider.responseInterceptors.push('AuthInterceptor');
     $httpProvider.responseInterceptors.push('EventInterceptor');
-    $httpProvider.interceptors.push('LoadingInterceptor');
     $urlRouterProvider.otherwise('/app/home');
     currentUser = JSON.parse(localStorage.getItem('current_user'));
     if (currentUser != null) {
@@ -374,6 +374,13 @@
       views: {
         menuContent: {
           templateUrl: 'templates/static/privacy.html'
+        }
+      }
+    }).state('app.notconnected', {
+      url: '/not_connected',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/not_connected.html'
         }
       }
     }).state('app.intro', {

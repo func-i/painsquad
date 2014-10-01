@@ -28,9 +28,11 @@
     };
     checkConnection = function() {
       return NetworkService.isOnline().then(function(isConnected) {
-        return console.log(isConnected);
+        if (!isConnected) {
+          return $state.go('app.notconnected');
+        }
       })["catch"](function(err) {
-        return console.log(err);
+        return $state.go('app.notconnected');
       });
     };
     return $ionicPlatform.ready(function() {

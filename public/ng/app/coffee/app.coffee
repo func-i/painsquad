@@ -42,11 +42,10 @@
   checkConnection = ->
     NetworkService.isOnline()
       .then (isConnected) ->
-        # $state.go 'app.home'
-        console.log isConnected
+        unless isConnected
+          $state.go 'app.notconnected'
       .catch (err) ->
-        # $state.go 'app.login'
-        console.log err
+        $state.go 'app.notconnected'
 
   $ionicPlatform.ready ->
     if window.cordova or window.Cordova

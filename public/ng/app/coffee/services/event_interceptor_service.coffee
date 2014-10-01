@@ -10,6 +10,9 @@
           $rootScope.$broadcast 'event:advice', { name: response.data.activity.advice_name }
       response
     error = (response) ->
+      if (response.data is '' && response.status is 0)
+        $injector.get("$state").transitionTo "app.notconnected"
+
       $q.reject response
     (promise) ->
       promise.then success, error

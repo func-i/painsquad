@@ -20,6 +20,9 @@
       return response;
     };
     error = function(response) {
+      if (response.data === '' && response.status === 0) {
+        $injector.get("$state").transitionTo("app.notconnected");
+      }
       return $q.reject(response);
     };
     return function(promise) {
