@@ -51,6 +51,7 @@
     if window.cordova or window.Cordova
       navigator.splashscreen.hide()
       $rootScope.isCordova = true
+      console.log "Starting push notification service"
       new PushNotificationService(
         registeredCallback = (deviceToken, platform) ->
       , pushNotificationCallback = (data, platform) ->

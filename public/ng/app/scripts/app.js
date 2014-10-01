@@ -40,6 +40,7 @@
       if (window.cordova || window.Cordova) {
         navigator.splashscreen.hide();
         $rootScope.isCordova = true;
+        console.log("Starting push notification service");
         new PushNotificationService(registeredCallback = function(deviceToken, platform) {}, pushNotificationCallback = function(data, platform) {});
       }
       if (window.StatusBar) {
