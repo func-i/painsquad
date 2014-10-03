@@ -21,6 +21,7 @@
     };
     error = function(response) {
       if (response.data === '' && response.status === 0) {
+        console.log("I am not connected");
         $injector.get("$state").transitionTo("app.notconnected");
       }
       return $q.reject(response);
