@@ -11,6 +11,7 @@
       response
     error = (response) ->
       if (response.data is '' && response.status is 0)
+        console.log "I am not connected"
         $injector.get("$state").transitionTo "app.notconnected"
 
       $q.reject response

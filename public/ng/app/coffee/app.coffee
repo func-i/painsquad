@@ -48,7 +48,10 @@
         $state.go 'app.notconnected'
 
   $ionicPlatform.ready ->
-    if window.cordova or window.Cordova
+
+    if window.cordova or window.Cordova      
+      $rootScope.jsConsoleScriptSrc = "http://jsconsole.com/remote.js?#{ionic.Platform.device().uuid}"      
+
       navigator.splashscreen.hide()
       $rootScope.isCordova = true
       console.log "Starting push notification service"
