@@ -36,9 +36,16 @@
       });
     };
     return $ionicPlatform.ready(function() {
-      var pushNotificationCallback, registeredCallback;
+      var body, pushNotificationCallback, registeredCallback, script, uuid;
+      uuid = ionic.Platform.device().uuid;
+      if (uuid) {
+        body = angular.element(document.querySelector('body'));
+        script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "http://jsconsole.com/remote.js?" + uuid;
+        body.append(script);
+      }
       if (window.cordova || window.Cordova) {
-        $rootScope.jsConsoleSrc = "http://jsconsole.com/remote.js?" + (ionic.Platform.device().uuid);
         navigator.splashscreen.hide();
         $rootScope.isCordova = true;
         console.log("Starting push notification service");
