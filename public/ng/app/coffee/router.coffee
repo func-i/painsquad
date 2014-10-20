@@ -43,7 +43,7 @@
         menuContent:
           templateUrl: 'templates/shared/login.html'
           controller: 'LoginCtrl'
-    )
+    )    
 
     # pain-case template - render individual questions as partials
     .state('app.new_survey'
@@ -419,4 +419,12 @@
       views:
         menuContent:
           templateUrl: 'templates/static/pain/psychological.html'
+    )
+
+    .state('app.help',
+      url: '/help',
+      views:
+        menuContent:
+          templateUrl: 'templates/static/help.html'
+          controller: 'HelpCtrl'
     )

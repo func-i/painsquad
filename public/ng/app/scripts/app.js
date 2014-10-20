@@ -36,19 +36,10 @@
       });
     };
     return $ionicPlatform.ready(function() {
-      var body, pushNotificationCallback, registeredCallback, script, uuid;
-      uuid = ionic.Platform.device().uuid;
-      if (uuid) {
-        body = angular.element(document.querySelector('body'));
-        script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = "http://jsconsole.com/remote.js?" + uuid;
-        body.append(script);
-      }
+      var pushNotificationCallback, registeredCallback;
       if (window.cordova || window.Cordova) {
         navigator.splashscreen.hide();
         $rootScope.isCordova = true;
-        console.log("Starting push notification service");
         new PushNotificationService(registeredCallback = function(deviceToken, platform) {}, pushNotificationCallback = function(data, platform) {});
       }
       if (window.StatusBar) {

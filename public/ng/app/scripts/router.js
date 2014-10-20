@@ -447,6 +447,14 @@
           templateUrl: 'templates/static/pain/psychological.html'
         }
       }
+    }).state('app.help', {
+      url: '/help',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/help.html',
+          controller: 'HelpCtrl'
+        }
+      }
     });
   });
 
