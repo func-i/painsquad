@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails',       '4.1.0'
-gem 'thin',        '~> 1.6.2'
+#gem 'thin',        '~> 1.6.2'
+gem 'unicorn'
 gem 'pg',          '~> 0.17.1'
 
 gem 'rack-cors',   '~> 0.2.9'
@@ -21,6 +22,12 @@ gem 'delayed_job_active_record', '~> 4.0.1'
 gem 'delayed_job_recurring',     '~> 0.3.3'
 gem 'twilio-ruby',               '~> 3.11.5'
 gem 'aws-sdk',                   '~> 1.51.0'
+
+# Deployment
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-rbenv', '~> 2.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
@@ -42,6 +49,7 @@ group :development do
   gem 'better_errors',      '~> 1.1.0'
   gem 'binding_of_caller',  '~> 0.7.2'
   gem 'annotate',           '~> 2.6.5'
+  gem 'capistrano3-unicorn'
 end
 
 group :test do
