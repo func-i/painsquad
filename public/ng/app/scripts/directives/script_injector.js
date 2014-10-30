@@ -6,7 +6,17 @@
       scope: {
         src: "="
       },
-      template: '<script src="{{src}}"></script>'
+      link: function(scope, element, attrs) {
+        return scope.$watch("src", function(src) {
+          var scriptTag;
+          console.log(element);
+          console.log(src);
+          element.empty();
+          scriptTag = document.createElement("script");
+          console.log(scriptTag);
+          return element.html(scriptTag);
+        });
+      }
     };
   });
 

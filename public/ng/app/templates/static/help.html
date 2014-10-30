@@ -1,0 +1,28 @@
+<ion-view title="Remote Help">
+  <ion-content class="has-header content-background static" padding="true">
+    <div class="header-bar bar-darkblue"></div>
+    <div class="terms-container">
+      <center>
+        <img src="/images/buttons/about-icon.png" />
+
+        <h4>
+          If you require assistance please contact Functional Imperative and we will 
+          troubleshoot the issue with you.
+        </h4>      
+        <p>        
+            Your debugging code:
+            <strong>{{debuggingCode}}</strong>
+            <br />
+            <br />
+            <p>
+              <a class="button button-assertive" ng-click="bindToJSConsole()">
+                Begin Remote Debugging
+              </a>
+            </p>
+        </p>
+      </center>
+    </div>
+
+  </ion-content>
+
+</ion-view>
