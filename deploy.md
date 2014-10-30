@@ -100,17 +100,16 @@ From server: (S)
 
 * (L) $> cap production deploy:check_directories
 
-* nano /var/www/painsquad/shared/config/database.yml
+* (S) nano /var/www/painsquad/shared/config/database.yml
   * Add the database credentials in this file from Postgres step
-* Generate a key pair
-* $> ssh-keygen -t rsa
+  * Reference: config/database.yml.example
+* (S) nano /var/www/painsquad/shared/config/secrets.yml
+  * Fill in with the correct information.
+  * Reference: config/secrets.yml.example
+* (S) Generate a key pair
+  * $> ssh-keygen -t rsa
+
 * Add the keypair to the github repo
-* $> mkdir -p ~/apps/painsquad/shared/config
 
-These two files will need to be filled with the correct information.
-
-See config/database.yml.example and config/secrets.yml.example
-
-* $> touch ~/apps/painsquad/shared/config/database.yml
-* $> touch ~/apps/painsquad/shared/config/secrets.yml
-
+* (L) From your project directory
+  * cap production deploy
