@@ -1,0 +1,29 @@
+<section class="checklist-grid" ng-controller="ChecklistGridCtrl" ng-cloak>
+
+  <form name="currentForm" valid-form>
+
+    <div ng-repeat="choice in question.choices | orderByWidth" ng-class="{wide: choice.wide, even: $even, odd: $odd, last: $last}">
+
+      <li class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox"
+            ng-required="atLeastOne()"
+            ng-model="choice.selected"
+            ng-click="resizeIfOther()"/>
+        </label>
+        <span class="content">{{ choice.content }}</span>
+      </li>
+      <li class="other-textarea cf" ng-show="choice.textfield && choice.selected">
+        <div class="textarea-wrapper">
+          <textarea class="msd-elastic"
+            ng-model="choice.value"
+            placeholder="Please specify...">
+          </textarea>
+        </div>
+      </li>
+
+    </div>
+
+  </form>
+
+</section>

@@ -33,7 +33,7 @@
     $scope.modal.hide()
 
   # resets modalSelection object and close modal
-  $scope.discardModalSelections = ->
+  $scope.discardModalSelections = ->    
     resetModalSelection()
     $scope.modal.hide()
 

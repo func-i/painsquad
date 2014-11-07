@@ -1,6 +1,6 @@
 module Builder::Questions::Checklist
   PAIN_CAUSE = [
-    'Your treatments', 'Medical Conditions', 'Medical Procedures', 'Everyday Pain'
+    'Chemo, Surgey, etc', 'Your Cancer', 'Other Medical Conditions', 'Medical Procedures', 'Everyday Pain'
   ]
 
   DESCRIBE_PAIN = [
@@ -11,10 +11,10 @@ module Builder::Questions::Checklist
   ]
 
   OTHER_SYMPTOMS = [
-    'Nausea', 'Drowsiness', 'Tingling', 'Numbness', 'Vomiting', 'Itching',
-    'Lack of appetite', 'Difficulty swallowing', 'Mouth sores', 'Constipation',
-    'Changes in skin', 'Diarrhea'
-  ]
+    "Changes in skin", "Constipation", "Diarrhea", "Difficulty swallowing", 
+    "Drowsiness", "Itching", "Lack of appetite", "Mouth sores", 
+    "Nausea", "Numbness", "Tingling", "Vomiting"
+  ] 
 
   MEDICATION = [
    'Acetaminophen (Tylenol)', 'Ibuprofen (Advil)', 'Naproxen', 'Codeine',
@@ -36,8 +36,7 @@ module Builder::Questions::Checklist
         tip:           'You can click multiple answers',
         tag:           'pain_cause',
         name:          'pain cause'
-        )
-      question.choices.create! content: 'None', can_disable: true
+        )      
       PAIN_CAUSE.each { |content| question.choices.create! content: content }
       question.choices.create! content: 'Other (please list)', textfield: true
     end
@@ -59,6 +58,8 @@ module Builder::Questions::Checklist
         content:       'What other <strong>symptoms</strong> have you experienced in the last 12 hours?',
         name:          'other symptoms'
       )
+      
+      question.choices.create! content: 'None', can_disable: true
       OTHER_SYMPTOMS.each { |content| question.choices.create! content: content }
       question.choices.create! content: 'Other', textfield: true
     end
@@ -78,8 +79,9 @@ module Builder::Questions::Checklist
 
     def other_strategies survey
       question = survey.questions.create!(
-        question_type: 'checklist',
+        question_type: 'checklist-extra',
         content:       'What <strong>other strategies</strong> did you use to reduce pain since your last case?',
+        tip:           'Touch the strategy and then rate how helpful it was in reducing pain',
         name:          'other strategies'
       )
       question.choices.create! content: 'None', can_disable: true

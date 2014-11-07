@@ -37,7 +37,7 @@ module Builder
       Questions::Slider.last_case_enjoyment(@survey)
       Questions::Checklist.describe_pain_grid(@survey)
       Questions::Checklist.other_symptoms_grid(@survey)
-      Questions::Checklist.medication_efficacy_slider(@survey)
+      # Questions::Checklist.medication_efficacy_slider(@survey)
       Questions::Slider.strategy_efficacy(@survey)
       Questions::Checklist.other_strategies(@survey)
       Questions::Slider.pain_control(@survey)

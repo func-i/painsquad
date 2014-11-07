@@ -166,7 +166,7 @@ module Builder::Questions::Slider
     def pain_control survey
       question = survey.questions.create!(
         question_type: 'slider',
-        content:       'How much <strong>control</strong> did you feel you had over your pain since your last case?',
+        content:       'How well do you think you were able to <strong>manage</strong> your pain since your last case?',
         identifier:    'pain_control',
         extremes:      { least: 'not at all', most: 'a lot' },
         name:          'pain control'

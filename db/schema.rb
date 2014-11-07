@@ -158,13 +158,6 @@ ActiveRecord::Schema.define(version: 20140822152347) do
     t.string   "identifier"
   end
 
-  create_table "things", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "user_alerts", force: true do |t|
     t.integer "alert_id"
     t.integer "user_id"

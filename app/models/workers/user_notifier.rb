@@ -27,7 +27,7 @@ module Workers
 
     def queue_truncated_alert
       Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :truncated), run_at: 1.hour.from_now)
-      # Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :truncated), run_at: 1.minute.from_now)
+      #Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :full), run_at: 15.minute.from_now)
     end
 
   end
