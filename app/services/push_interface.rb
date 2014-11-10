@@ -38,11 +38,11 @@ class PushInterface
   end
 
   def full_message
-    { "default" => "This is a reminder from PainSquad that its time to complete a full case!" }.to_json
+    { "default" => "This is a reminder from PainSquad that its time to complete a case!" }.to_json
   end
 
   def truncated_message
-    { "default" => "This is a follow-up reminder from PainSquad to complete a truncated case!" }.to_json
+    { "default" => "This is a follow-up reminder from PainSquad to complete a case!" }.to_json
   end
 
 end

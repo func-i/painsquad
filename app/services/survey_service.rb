@@ -37,7 +37,8 @@ class SurveyService
     elsif !@last_submission.has_pain?
       send_survey :truncated
     else
-      determine_pain_severity
+      #determine_pain_severity
+      send_survey :full
     end
   end
 
