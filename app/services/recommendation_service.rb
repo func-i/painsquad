@@ -1,8 +1,8 @@
 class RecommendationService
 
   DIST = {
-    'mild'     => [ 'psychological', 'physical', 'pharmacological' ],
-    'moderate' => [ 'pharmacological', 'pharmacological', 'psychological', 'physical' ]
+    'mild'     => [ 'pharmacological', 'psychological', 'physical' ],
+    'moderate' => [ 'pharmacological', 'psychological', 'physical' ]
   }
 
   def initialize(user)
@@ -18,9 +18,9 @@ class RecommendationService
     DIST[@pain_severity].each do |element|
       unique = false
       while !unique
-        recommendation = weighted_sample(Recommendation.send(element))
+        recommendation = weighted_sample(Recommendation.send(element).suggestable)
         if result.include? recommendation
-          recommendation = weighted_sample(Recommendation.send(element))
+          recommendation = weighted_sample(Recommendation.send(element).suggestable)
         else
           result << recommendation
           unique = true

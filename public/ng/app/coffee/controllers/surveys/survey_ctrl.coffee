@@ -15,7 +15,7 @@
 
   $scope.noPain = ->
     $scope.submission.has_pain = false
-    $scope.submit()
+    $scope.submit(false)
 
   # question handler, passes current choices to SubmissionService
   # calls continueSurvey which handles rendering of next partial
@@ -44,10 +44,10 @@
       $ionicScrollDelegate.resize()
     , 50
 
-  $scope.submit = ->
+  $scope.submit = (popup = true) ->
     SubmissionService.prepareSubmissionAnswer($scope.question)
     SubmissionResource.save(submission: $scope.submission)
-    $state.go('app.survey_complete')
+    $state.go('app.survey_complete', popup: popup)
 
   $scope.$on 'currentForm:valid', (ev) ->
     $scope.showNext = true

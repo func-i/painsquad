@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $rootScope, $ionicPopup, UserService, userScore) {
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $stateParams, $rootScope, $ionicPopup, UserService, userScore) {
     var init;
     $scope.currentUser = UserService.currentUser();
     $scope.userScore = userScore;
@@ -26,7 +26,7 @@
       });
     };
     init = function() {
-      if ($rootScope.previousState_name === 'app.survey_complete') {
+      if ($rootScope.previousState_name === 'app.survey_complete' && $stateParams.popup === "true") {
         return $scope.showPopup();
       }
     };

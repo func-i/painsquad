@@ -14,7 +14,7 @@
     };
     $scope.noPain = function() {
       $scope.submission.has_pain = false;
-      return $scope.submit();
+      return $scope.submit(false);
     };
     $scope.nextQuestion = function() {
       if (!$scope.showNext) {
@@ -43,12 +43,17 @@
         return $ionicScrollDelegate.resize();
       }, 50);
     };
-    $scope.submit = function() {
+    $scope.submit = function(popup) {
+      if (popup == null) {
+        popup = true;
+      }
       SubmissionService.prepareSubmissionAnswer($scope.question);
       SubmissionResource.save({
         submission: $scope.submission
       });
-      return $state.go('app.survey_complete');
+      return $state.go('app.survey_complete', {
+        popup: popup
+      });
     };
     $scope.$on('currentForm:valid', function(ev) {
       return $scope.showNext = true;
