@@ -2,7 +2,7 @@
   'use strict';
   this.filterModule.filter('orderByWidth', function() {
     return function(input) {
-      var array, lastItem, pushToEnd;
+      var array, compare, lastItem, pushToEnd;
       array = [];
       pushToEnd = [];
       lastItem = [];
@@ -16,10 +16,19 @@
           return array.push(item);
         }
       });
+      compare = function(a, b) {
+        if (a.content < b.content) {
+          return -1;
+        }
+        if (a.content > b.content) {
+          return 1;
+        }
+        return 0;
+      };
       if (array.length % 2 !== 0) {
         array[array.length - 1].wide = true;
       }
-      return array.concat(pushToEnd).concat(lastItem);
+      return array.sort(compare).concat(pushToEnd.sort(compare)).concat(lastItem);
     };
   });
 

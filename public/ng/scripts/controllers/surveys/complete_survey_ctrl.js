@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.CompleteSurveyCtrl = this.controllerModule.controller("CompleteSurveyCtrl", function($scope, $state, $rootScope, SubmissionService, UserService, surveyResult) {
+  this.CompleteSurveyCtrl = this.controllerModule.controller("CompleteSurveyCtrl", function($scope, $state, $stateParams, $rootScope, SubmissionService, UserService, surveyResult) {
     $scope.currentUser = UserService.currentUser();
     $scope.submission = SubmissionService.getSubmission();
     $scope.data = {
@@ -8,7 +8,9 @@
       message: surveyResult.message
     };
     return $scope.home = function() {
-      return $state.go('app.home');
+      return $state.go('app.home', {
+        popup: $stateParams.popup
+      });
     };
   });
 
