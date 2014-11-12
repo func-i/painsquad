@@ -26,7 +26,7 @@ set :repo_url, 'git@github.com:func-i/painsquad.git'
 set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{log tmp/pids tmp/cache}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -45,11 +45,6 @@ namespace :deploy do
     invoke 'unicorn:reload'
   end
 
-  task :setup_config do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    #sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-  end
-
-  after :deploy, 'deploy:migrate', 'deploy:setup_config'
+  after :deploy, 'deploy:migrate'
   after :publishing, "deploy:restart"
 end
