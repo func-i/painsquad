@@ -16,10 +16,4 @@ angular.module("google-chart-sample", ["ngRoute", "googlechart"]).config(['$rout
             otherwise({
                 redirectTo: '/fat'
             });
-    }]).value('googleChartApiConfig', {
-            version: '1',
-            optionalSettings: {
-                packages: ['corechart'],
-                language: 'fr'
-            }
-    });
+    }])

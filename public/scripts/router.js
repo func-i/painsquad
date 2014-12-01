@@ -17,7 +17,7 @@
       templateUrl: 'templates/layout/menu.html',
       controller: 'AppCtrl'
     }).state('app.home', {
-      url: '/home',
+      url: '/home?popup',
       views: {
         menuContent: {
           templateUrl: 'templates/shared/home.html',
@@ -81,7 +81,7 @@
         }
       }
     }).state('app.survey_complete', {
-      url: '/surveys/complete',
+      url: '/surveys/complete?popup',
       views: {
         menuContent: {
           templateUrl: 'templates/surveys/complete.html',
@@ -445,6 +445,14 @@
       views: {
         menuContent: {
           templateUrl: 'templates/static/pain/psychological.html'
+        }
+      }
+    }).state('app.help', {
+      url: '/help',
+      views: {
+        menuContent: {
+          templateUrl: 'templates/static/help.html',
+          controller: 'HelpCtrl'
         }
       }
     });

@@ -15,6 +15,5 @@
   },
   "_source": "git://github.com/2fdevs/bower-videogular.git",
   "_target": "~0.4.2",
-  "_originalSource": "videogular",
-  "_direct": true
+  "_originalSource": "videogular"
 }

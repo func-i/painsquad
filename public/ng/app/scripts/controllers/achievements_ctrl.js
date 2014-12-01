@@ -8,31 +8,37 @@
         name: 'rookie',
         locked: true,
         image_path: 'images/achievements/rookie.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/rookie.m4v",
         date: null
       }, {
         name: 'junior_detective',
         locked: true,
         image_path: 'images/achievements/junior_detective.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/junior_detective.m4v",
         date: null
       }, {
         name: 'detective',
         locked: true,
         image_path: 'images/achievements/detective.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/detective.m4v",
         date: null
       }, {
         name: 'sergeant',
         locked: true,
         image_path: 'images/achievements/lieutenant.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/lieutenant.m4v",
         date: null
       }, {
         name: 'lieutenant',
         locked: true,
         image_path: 'images/achievements/sergeant.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/sergeant.m4v",
         date: null
       }, {
         name: 'chief',
         locked: true,
         image_path: 'images/achievements/chief.png',
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/chief.m4v",
         date: null
       }
     ];
@@ -99,8 +105,8 @@
         return $scope.modal.show();
       }
     };
-    $scope.playVideo = function() {
-      return $scope.$broadcast('event:playVideo', $scope.selectedItem.video_path);
+    $scope.playVideo = function(video_path) {
+      return $scope.$broadcast('event:playVideo', video_path || $scope.selectedItem.video_path);
     };
     $scope.closeModal = function() {
       $scope.modal.hide();

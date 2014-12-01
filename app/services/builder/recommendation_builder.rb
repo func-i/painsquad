@@ -160,7 +160,7 @@ module Builder
       ### PHYSICAL
       def applying_cold
         rec = Recommendation.create(
-          # group:       'manage',
+          group:       'manage',
           section:     'physical',
           style:       'basic',
           title:       'Applying Cold',
@@ -174,7 +174,7 @@ module Builder
 
       def applying_heat
         rec = Recommendation.create(
-          # group:       'manage',
+          group:       'manage',
           section:     'physical',
           style:       'basic',
           title:       'Applying Heat',
