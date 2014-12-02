@@ -1,6 +1,6 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :show_level_up_modal, :rank, :prev_rank, :display_rank
-  attributes :show_advice_modal, :advice_name
+  attributes :rank, :prev_rank, :display_rank,
+    :show_level_up_modal, :show_advice_modal, :advice_name, :show_medal_modal
 
   def show_advice_modal
     object.user.advice_score_unlocked?
@@ -28,6 +28,10 @@ class ActivitySerializer < ActiveModel::Serializer
 
   def display_rank
     object.user.display_rank
+  end
+
+  def show_medal_modal
+    object.user.medal_event?
   end
 
 end

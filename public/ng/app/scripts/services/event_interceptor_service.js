@@ -16,12 +16,16 @@
             name: response.data.activity.advice_name
           });
         }
+        if (response.data.activity.show_medal_modal) {
+          $rootScope.$broadcast('event:medal', {
+            name: response.data.activity.advice_name
+          });
+        }
       }
       return response;
     };
     error = function(response) {
       if (response.data === '' && response.status === 0) {
-        console.log("I am not connected");
         $injector.get("$state").transitionTo("app.notconnected");
       }
       return $q.reject(response);

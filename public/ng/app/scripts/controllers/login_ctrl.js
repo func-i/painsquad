@@ -10,12 +10,12 @@
       return AuthService.login($scope.user);
     };
     $scope.$on("event:auth-loginRequired", function(e, rejection) {
-      return $scope.loginModal.show();
+      return $scope.modals.loginModal.show();
     });
     $scope.$on("event:auth-loginConfirmed", function() {
       $scope.email = null;
       $scope.password = null;
-      return $scope.loginModal.hide();
+      return $scope.modals.loginModal.hide();
     });
     $scope.$on("event:auth-login-failed", function(e, status) {
       var error;

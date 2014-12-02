@@ -59,6 +59,11 @@ class User < ActiveRecord::Base
     self.activities.last.event == 'level_up'
   end
 
+  def medal_event?
+    last_activity = self.activities.last
+    last_activity.event == 'award_achieved' && last_activity.name == 'medal'
+  end
+
   def last_pain_report
     submissions.last.try(:pain_severity) || 'mild'
   end

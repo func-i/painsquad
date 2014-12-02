@@ -8,10 +8,11 @@
           $rootScope.$broadcast 'event:levelup', { image: response.data.activity.rank, prev_rank: response.data.activity.prev_rank, rank: response.data.activity.display_rank }
         if response.data.activity.show_advice_modal
           $rootScope.$broadcast 'event:advice', { name: response.data.activity.advice_name }
+        if response.data.activity.show_medal_modal
+          $rootScope.$broadcast 'event:medal', { name: response.data.activity.advice_name }
       response
     error = (response) ->
       if (response.data is '' && response.status is 0)
-        console.log "I am not connected"
         $injector.get("$state").transitionTo "app.notconnected"
 
       $q.reject response
