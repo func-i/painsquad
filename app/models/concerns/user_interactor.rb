@@ -2,6 +2,7 @@ module UserInteractor
   extend ActiveSupport::Concern
 
   included do
+    attr_accessor :modals_to_show
     after_save :process_save_interaction
   end
 
@@ -13,7 +14,7 @@ module UserInteractor
     elsif self.class == Activity
       user.increment!(:score, 5) if recommendation? && user.advice_score_unlocked?
     end
-    UserAwardService.analyze(self.user)
+    self.modals_to_show = UserAwardService.analyze(self)
   end
 
   # Submission Events

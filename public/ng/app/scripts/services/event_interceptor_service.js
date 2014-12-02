@@ -3,23 +3,12 @@
   this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope) {
     var error, success;
     success = function(response) {
-      if (response && response.data && response.data.activity) {
-        if (response.data.activity.show_level_up_modal) {
-          $rootScope.$broadcast('event:levelup', {
-            image: response.data.activity.rank,
-            prev_rank: response.data.activity.prev_rank,
-            rank: response.data.activity.display_rank
-          });
-        }
-        if (response.data.activity.show_advice_modal) {
-          $rootScope.$broadcast('event:advice', {
-            name: response.data.activity.advice_name
-          });
-        }
-        if (response.data.activity.show_medal_modal) {
-          $rootScope.$broadcast('event:medal', {
-            name: response.data.activity.advice_name
-          });
+      var modal, _i, _len, _ref;
+      if (response && response.data && response.data.activity && response.data.activity.modals) {
+        _ref = response.data.activity.modals;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          modal = _ref[_i];
+          $rootScope.$broadcast("event:" + modal.event_name, modal.options);
         }
       }
       return response;

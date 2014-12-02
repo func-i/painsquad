@@ -29,23 +29,17 @@
       $scope.levelUp.rank = args.rank;
       return $scope.modals.levelupModal.show();
     });
-    $rootScope.$on('event:advice', function(event, args) {
-      $scope.advice.name = args.name;
-      $scope.modals.adviceModal.show();
+    $rootScope.$on('event:genericModal', function(event, args) {
+      $scope.modalContent = args.modal_content;
+      $scope.modals.genericModal.show();
       return $timeout(function() {
-        return $scope.modals.adviceModal.hide();
+        return $scope.modals.genericModal.hide();
       }, 2000);
-    });
-    $rootScope.$on('event:medal', function(event, args) {
-      $scope.modals.medalModal.show();
-      return $timeout(function() {
-        return $scope.modals.medalModal.hide();
-      }, 4000);
     });
     $scope.$on("$destroy", function() {
       $scope.modals.loginModal.remove();
       $scope.modals.levelupModal.remove();
-      return $scope.modals.adviceModal.remove();
+      return $scope.modals.genericModal.remove();
     });
     return saveDeviceToken();
   });

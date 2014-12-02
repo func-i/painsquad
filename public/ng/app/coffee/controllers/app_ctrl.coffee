@@ -27,23 +27,30 @@
     $scope.levelUp.rank      = args.rank
     $scope.modals.levelupModal.show()
 
-  $rootScope.$on 'event:advice', (event, args) ->
-    $scope.advice.name = args.name
-    $scope.modals.adviceModal.show()
+  $rootScope.$on 'event:genericModal', (event, args) ->
+    $scope.modalContent = args.modal_content
+    $scope.modals.genericModal.show()
     $timeout ->
-      $scope.modals.adviceModal.hide()
+      $scope.modals.genericModal.hide()
     , 2000
 
-  $rootScope.$on 'event:medal', (event, args) ->
-    $scope.modals.medalModal.show()
-    $timeout ->
-      $scope.modals.medalModal.hide()
-    , 4000
+  # $rootScope.$on 'event:advice', (event, args) ->
+  #   $scope.advice.name = args.name
+  #   $scope.modals.adviceModal.show()
+  #   $timeout ->
+  #     $scope.modals.adviceModal.hide()
+  #   , 2000
+
+  # $rootScope.$on 'event:medal', (event, args) ->
+  #   $scope.modals.medalModal.show()
+  #   $timeout ->
+  #     $scope.modals.medalModal.hide()
+  #   , 4000
 
   $scope.$on "$destroy", ->
     $scope.modals.loginModal.remove()
     $scope.modals.levelupModal.remove()
-    $scope.modals.adviceModal.remove()
+    $scope.modals.genericModal.remove()
 
   saveDeviceToken()
 

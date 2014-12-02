@@ -13,11 +13,7 @@
           scope: scope,
           animation: 'slide-left-right'
         });
-        this.loadModal(scope, 'advice', 'templates/shared/advice.html', {
-          scope: scope,
-          animation: 'slide-left-right'
-        });
-        return this.loadModal(scope, 'medalModal', 'templates/shared/medal.html', {
+        return this.loadModal(scope, 'genericModal', 'templates/shared/modal.generic.html', {
           scope: scope,
           animation: 'slide-left-right'
         });
