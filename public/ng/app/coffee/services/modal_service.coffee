@@ -16,16 +16,6 @@
       animation: 'slide-left-right'
     )
 
-    # @loadModal(scope, 'advice', 'templates/shared/advice.html',
-    #   scope: scope
-    #   animation: 'slide-left-right'
-    # )
-
-    # @loadModal(scope, 'medalModal', 'templates/shared/medal.html',
-    #   scope: scope
-    #   animation: 'slide-left-right'
-    # )
-
     @loadModal(scope, 'genericModal', 'templates/shared/modal.generic.html',
       scope: scope
       animation: 'slide-left-right'

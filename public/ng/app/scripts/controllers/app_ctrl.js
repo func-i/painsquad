@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService) {
     var saveDeviceToken;
     $scope.levelUp = {};
     $scope.advice = {};
@@ -35,6 +35,18 @@
       return $timeout(function() {
         return $scope.modals.genericModal.hide();
       }, 2000);
+    });
+    $rootScope.$on('event:popupModal', function(event, args) {
+      return $ionicPopup.show({
+        title: args.title,
+        template: args.modal_content,
+        buttons: [
+          {
+            text: "<span class='content'>OK</span>",
+            type: 'button-stable'
+          }
+        ]
+      });
     });
     $scope.$on("$destroy", function() {
       $scope.modals.loginModal.remove();

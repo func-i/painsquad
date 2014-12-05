@@ -1,7 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
   attributes :modals
-    #:rank, :prev_rank, :display_rank, :modals
-    #:show_level_up_modal, :show_advice_modal, :advice_name, :show_medal_modal
 
   def modals
     modals = []
@@ -50,7 +48,14 @@ class ActivitySerializer < ActiveModel::Serializer
             modal_content: "<p>Hey there recruit, you’ve earned a <strong>Cross</strong>.</p> You’re doing excellent work fighting pain. We’re proud to call you one of the best and brightest on Pain Squad+. Keep up the great work!</p>"
           }
         }
-
+      when 'healthcare_provider_notified'
+        modals << {
+          event_name: 'popupModal',
+          options: {
+            title: "Your healthcare team has been told about your pain",
+            modal_content: "You can keep up with the strategies you’ve been using in the mean time"
+          }
+        }
       end
     end
 

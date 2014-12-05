@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -34,18 +34,16 @@
       $scope.modals.genericModal.hide()
     , 2000
 
-  # $rootScope.$on 'event:advice', (event, args) ->
-  #   $scope.advice.name = args.name
-  #   $scope.modals.adviceModal.show()
-  #   $timeout ->
-  #     $scope.modals.adviceModal.hide()
-  #   , 2000
-
-  # $rootScope.$on 'event:medal', (event, args) ->
-  #   $scope.modals.medalModal.show()
-  #   $timeout ->
-  #     $scope.modals.medalModal.hide()
-  #   , 4000
+  $rootScope.$on 'event:popupModal', (event, args) ->
+    $ionicPopup.show
+      title:    args.title
+      template: args.modal_content
+      buttons:  [
+        {
+          text: "<span class='content'>OK</span>"
+          type: 'button-stable'
+        }
+      ]
 
   $scope.$on "$destroy", ->
     $scope.modals.loginModal.remove()

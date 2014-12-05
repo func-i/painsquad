@@ -18,8 +18,8 @@ module Api
         @submission      = Submission.new(submission_params)
         @submission.user = @user
         if @submission.save
+          @submission.modals_to_show << "healthcare_provider_notified" if @submission.user.check_last_three_reports
           render json: @submission, serializer: ActivitySerializer
-          @submission.user.check_last_three_reports
         else
           render json: {errors: @submission.errors.full_messages}, status: :unprocessable_entity
         end
