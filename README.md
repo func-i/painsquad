@@ -11,11 +11,24 @@
 
 #### Client:
 
-- `$ cd public/ng`
+- `cd public/ng`
 - `npm install`
 - `sudo bower -g install`
 - `sudo npm install -g gulp`
 - `gulp serve`
+
+#### Device Setup
+
+- `sudo npm install -g cordova`
+- `sudo npm install -g ionic`
+- `ionic platform ios`
+- `cordova plugin add https://github.com/phonegap-build/PushPlugin.git`
+- `cordova plugin add com.ionic.keyboard`
+- `cordova plugin add org.apache.cordova.device`
+- `cordova plugin add org.apache.cordova.network-information`
+- `cordova plugin add org.apache.cordova.splashscreen`
+- `cordova plugin add org.apache.cordova.statusbar`
+- `cordova plugin add org.apache.cordova.console`
 
 ##### Emulation:
 
