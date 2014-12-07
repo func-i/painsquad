@@ -31,4 +31,8 @@ class Submission < ActiveRecord::Base
   validates :user, presence: true
   validates :has_pain, inclusion: [true, false]
 
+  def current_pain_answer
+    self.answers.joins(:question).where(questions: {identifier: 'current_pain'}).first
+  end
+
 end

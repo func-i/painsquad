@@ -5,11 +5,11 @@ module PainReporting
   end
 
   # With No Pain OR/ No improvement detected (i.e. first assessment) (7.9a)
-  BEST = "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future…maybe even a commendation or award!"
+  OK = "The case against pain is getting stronger every day! Keep up the good work and there may be a promotion in your future…maybe even a commendation or award!"
   # With Pain >20 point improvement from last (7.9b)
   BETTER= "Wow! You’re really putting pain in its place. Continue the great job recruit!"
   # With Pain <20 point improvement or pain worsening (7.9b)
-  OK = "Keep up with the advice you’ve been using. You might even want to seek more help."
+  WORSE = "Keep up with the advice you’ve been using. You might even want to seek more help."
 
   # really bad pain severity determination
   # takes last three pain reports
@@ -17,24 +17,27 @@ module PainReporting
   # if moderate, add 1
   # determines message from that result
   def determine_pain_severity_message
-    result = 0
-    last_three_reports.each do |report|
-      if report.pain_severity == nil || report.pain_severity == 'mild'
-        result -= 1
-      elsif
-        result += 1
-      end
-    end
-    render_message(result)
-  end
 
-  def render_message(result)
-    if result < 0
-      BEST
-    elsif result > 0
-      OK
+    # => Get the last 2 submissions
+    last_submissions = previous_submissions.limit(2)
+
+    # => If there are at least 2 submissions
+    if last_submissions.count == 2
+      
+      # => Get the different between their current_pain questions
+      current_pain, previous_pain = last_submissions.collect{|sub| sub.current_pain_answer.value}
+      if current_pain < previous_pain - 20
+        # => The pain has improved by 20
+        BETTER
+      elsif current_pain > previous_pain + 20
+        # => The pain has gotten worse by 20
+        WORSE
+      else
+        OK
+      end
     else
-      BETTER
+      # => There aren't at least 2 results, show the OK by default
+      OK
     end
   end
 

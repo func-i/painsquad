@@ -15,31 +15,6 @@ class PainSeverityService
   private
 
   def set_pain_severity
-    pain_levels = fetch_pain_levels_from_answers
-    pain_level  = extract_from_levels(pain_levels)
-    @submission.update(pain_severity: pain_level)
+    @submission.update(pain_severity: (@submission.current_pain_answer.value > 30 ? :moderate : :mild))
   end
-
-  def fetch_pain_levels_from_answers
-    pain_array = []
-    @submission.answers.each do |answer|
-      if answer.question.identifier.present?
-        if answer.question.identifier == 'pain_control'
-          pain_array << (100 - answer.value).abs if answer.value
-        else
-          pain_array << answer.value if answer.value
-        end
-      end
-    end
-    pain_array
-  end
-
-  def extract_from_levels(pain_levels)
-    if pain_levels.any?
-      pain_levels.max > 30 ? :moderate : :mild
-    else
-      :moderate
-    end
-  end
-
 end

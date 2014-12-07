@@ -13,7 +13,7 @@
 
 - `$ cd public/ng`
 - `npm install`
-- `bower install`
+- `sudo bower -g install`
 - `sudo npm install -g gulp`
 - `gulp serve`
 
