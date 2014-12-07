@@ -11,10 +11,13 @@ module Workers
     def perform
       if user_lookup.any?
         user_lookup.each do |user|
-          Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, :full))
+          Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, "This is a reminder from PainSquad that its time to complete a case!"))
+          Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, "This is a follow-up reminder from PainSquad to complete a case!"), run_at: 1.hour.from_now)
         end
       end
     end
+
+    protected
 
     def user_lookup
       now          = Time.zone.now
@@ -27,7 +30,7 @@ module Workers
         end
       end
       users
-    end
+    end 
 
   end
 end

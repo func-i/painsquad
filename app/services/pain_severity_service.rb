@@ -15,6 +15,14 @@ class PainSeverityService
   private
 
   def set_pain_severity
-    @submission.update(pain_severity: (@submission.current_pain_answer.value > 30 ? :moderate : :mild))
+    pain_severity = if @submission.current_pain_answer.value > 30 
+      # => Notify the user 1 hour from now asking to follow up with the pain
+      Delayed::Job.enqueue(Workers::UserNotifier.new(@submission.user.id, "Hey recruit. You reported pain an hour ago. Tell us how you are doing now!"))
+      :moderate 
+    else
+      :mild
+    end
+
+    @submission.update(pain_severity: pain_severity)
   end
 end
