@@ -25,7 +25,7 @@ module PainReporting
     if last_submissions.count == 2
       
       # => Get the different between their current_pain questions
-      current_pain, previous_pain = last_submissions.collect{|sub| sub.current_pain_answer.value}
+      current_pain, previous_pain = last_submissions.collect{|sub| sub.current_pain_answer.try(:value) || 0}
       if current_pain < previous_pain - 20
         # => The pain has improved by 20
         BETTER

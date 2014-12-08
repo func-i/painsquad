@@ -18,6 +18,7 @@
     $scope.$broadcast 'event:playVideo', path
 
   saveDeviceToken = ->
+    console.log "device token", $rootScope.deviceToken
     if $rootScope.deviceToken
       TokenResource.update(device_token: $rootScope.deviceToken)
 
@@ -29,23 +30,11 @@
 
   $rootScope.$on 'event:genericModal', (event, args) ->
     $scope.modalContent = args.modal_content
+
     $scope.modals.genericModal.show()
     $timeout ->
       $scope.modals.genericModal.hide()
     , 2000
-
-  # $rootScope.$on 'event:advice', (event, args) ->
-  #   $scope.advice.name = args.name
-  #   $scope.modals.adviceModal.show()
-  #   $timeout ->
-  #     $scope.modals.adviceModal.hide()
-  #   , 2000
-
-  # $rootScope.$on 'event:medal', (event, args) ->
-  #   $scope.modals.medalModal.show()
-  #   $timeout ->
-  #     $scope.modals.medalModal.hide()
-  #   , 4000
 
   $scope.$on "$destroy", ->
     $scope.modals.loginModal.remove()

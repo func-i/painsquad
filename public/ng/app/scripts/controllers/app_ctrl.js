@@ -17,6 +17,7 @@
       return $scope.$broadcast('event:playVideo', path);
     };
     saveDeviceToken = function() {
+      console.log("device token", $rootScope.deviceToken);
       if ($rootScope.deviceToken) {
         return TokenResource.update({
           device_token: $rootScope.deviceToken

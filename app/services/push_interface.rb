@@ -3,15 +3,14 @@ class PushInterface
   def initialize(user_token)
     @client       = $SNS.client
     @token        = user_token
-    @endpoint     = create_endpoint
-    @message      = {default: message}.to_json
+    @endpoint     = create_endpoint    
   end
 
   def send_message(message)
     push_parameters = {
       target_arn:        @endpoint,
       message_structure: "json",
-      message:           message
+      message:           {default: message}.to_json
     }
     @client.publish(push_parameters)
   end

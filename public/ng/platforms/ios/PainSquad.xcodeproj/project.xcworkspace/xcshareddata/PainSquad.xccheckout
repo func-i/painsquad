@@ -11,17 +11,17 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9DB7CA9F051ED15E293283E8E6145099244E5300</key>
-		<string>ssh://github.com/func-i/painsquad.git</string>
+		<string>github.com:func-i/painsquad.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>public/ng/platforms/ios/PainSquad.xcodeproj/project.xcworkspace</string>
+	<string>public/ng/platforms/ios/PainSquad.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9DB7CA9F051ED15E293283E8E6145099244E5300</key>
 		<string>../../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/func-i/painsquad.git</string>
+	<string>github.com:func-i/painsquad.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

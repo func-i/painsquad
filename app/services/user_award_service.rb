@@ -1,15 +1,15 @@
 class UserAwardService
 
-  def self.analyze(object)
-    new(object).process
+  def self.analyze(object, modals = nil)
+    new(object, modals).process
   end
 
-  def initialize(object)
+  def initialize(object, modals)
     @object     = object
     @user       = object.user
     @last_event = @user.activities.last
 
-    @modals = []
+    @modals = modals || []
   end
 
   def process

@@ -1,14 +1,19 @@
 (function() {
   'use strict';
-  this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope) {
+  this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope, $timeout) {
     var error, success;
     success = function(response) {
-      var modal, _i, _len, _ref;
+      var i, modal, _fn, _i, _len, _ref;
       if (response && response.data && response.data.activity && response.data.activity.modals) {
         _ref = response.data.activity.modals;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          modal = _ref[_i];
-          $rootScope.$broadcast("event:" + modal.event_name, modal.options);
+        _fn = function(m, index) {
+          return $timeout(function() {
+            return $rootScope.$broadcast("event:" + m.event_name, m.options);
+          }, index * 2700);
+        };
+        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+          modal = _ref[i];
+          _fn(modal, i);
         }
       }
       return response;

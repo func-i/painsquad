@@ -1,12 +1,16 @@
 'use strict'
 
-@EventInterceptor = @serviceModule.factory 'EventInterceptor', ($q, $injector, $rootScope) ->
+@EventInterceptor = @serviceModule.factory 'EventInterceptor', ($q, $injector, $rootScope, $timeout) ->
 
     success = (response) ->
       if response and response.data and response.data.activity and response.data.activity.modals
 
-        for modal in response.data.activity.modals
-          $rootScope.$broadcast "event:#{modal.event_name}", modal.options
+        for modal, i in response.data.activity.modals
+          ((m, index) ->
+            $timeout ->
+              $rootScope.$broadcast "event:#{m.event_name}", m.options
+            , index * 2700
+          )(modal, i)
 
       response
     error = (response) ->
