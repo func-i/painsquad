@@ -24,8 +24,8 @@
             </div>
 
             <div class="image-wrapper">
-              <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked">
-              <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked" ng-click="playVideo(slide.video_path)">
+              <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked" ng-click="playVideo(slide.video_path)">
+              <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked">
               <img class="shadow" ng-src="./images/shadows/achievement-main-shadow.png">
             </div>
             <div class="time-wrapper">

@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		0451D5603CDC4004A17BD070 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289E40761D7941C3A4AB5B7A /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -571,7 +572,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "d617bf4c-bb41-413d-bd02-c040caa56259";
+				PROVISIONING_PROFILE = "39852b8d-326b-4442-bcc3-401a298419f9";
 			};
 			name = Debug;
 		};
@@ -606,7 +607,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "d617bf4c-bb41-413d-bd02-c040caa56259";
+				PROVISIONING_PROFILE = "39852b8d-326b-4442-bcc3-401a298419f9";
 			};
 			name = Release;
 		};
