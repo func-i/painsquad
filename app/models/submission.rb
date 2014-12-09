@@ -23,6 +23,8 @@ class Submission < ActiveRecord::Base
   scope :truncated, -> { survey.where(identifier: 'truncated') }
 
   scope :by_date, -> { order('created_at DESC') }
+  scope :are_mild, -> { where(pain_severity: Submission::pain_severities[:mild]) }
+  scope :are_moderate, -> { where(pain_severity: Submission::pain_severities[:moderate]) }
 
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers

@@ -42,13 +42,15 @@ module PainReporting
   end
 
   def check_last_three_reports
-    if last_three_reports.collect(&:pain_severity).all? { |value| value == 'moderate' }
-      return UserMailer.pain_alert(self).deliver
+    # => Load the last mild submission
+    last_mild = previous_submissions.are_mild.first
+    if last_mild
+      # => Find all moderate submissions after this mild one
+      if previous_submissions.are_moderate.where("created_at > ?", last_mild.created_at).count % 3 == 0
+        # => Send an email in intervals of 3 moderates
+        UserMailer.pain_alert(self).deliver
+      end
     end
-  end
-
-  def last_three_reports
-    previous_submissions.limit(3)
   end
 
 end
