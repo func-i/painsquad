@@ -572,7 +572,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "39852b8d-326b-4442-bcc3-401a298419f9";
+				PROVISIONING_PROFILE = "5144a3c7-b4d1-4f08-aed9-2458febad9ce";
 			};
 			name = Debug;
 		};
@@ -607,7 +607,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "39852b8d-326b-4442-bcc3-401a298419f9";
+				PROVISIONING_PROFILE = "5144a3c7-b4d1-4f08-aed9-2458febad9ce";
 			};
 			name = Release;
 		};
