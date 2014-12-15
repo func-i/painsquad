@@ -35,7 +35,7 @@ module Builder::Questions::Checklist
         content:       'What do you think your pain was <strong>due to</strong>?',
         tip:           'You can click multiple answers',
         tag:           'pain_cause',
-        name:          'pain cause'
+        name:          'pain_cause'
         )      
       PAIN_CAUSE.each { |content| question.choices.create! content: content }
       question.choices.create! content: 'Other (please list)', textfield: true
@@ -46,7 +46,7 @@ module Builder::Questions::Checklist
         question_type: 'checklist-grid',
         content:       'Touch the words that best <strong>describe</strong> how your pain felt since your last case',
         tip:           'You can click multiple answers',
-        name:          'describe pain'
+        name:          'describe_pain'
       )
       DESCRIBE_PAIN.each { |content| question.choices.create! content: content }
       question.choices.create! content: 'Other', textfield: true
@@ -56,7 +56,7 @@ module Builder::Questions::Checklist
       question = survey.questions.create!(
         question_type: 'checklist-grid',
         content:       'What other <strong>symptoms</strong> have you experienced in the last 12 hours?',
-        name:          'other symptoms'
+        name:          'other_symptoms'
       )
       
       question.choices.create! content: 'None', can_disable: true
@@ -70,7 +70,7 @@ module Builder::Questions::Checklist
         content:       'What <strong>medications</strong> have you taken to reduce your pain since your last case?',
         tip:           'Touch the medication and then rate how helpful it was in reducing pain',
         tag:           'medications',
-        name:          'medication efficacy'
+        name:          'medication_efficacy'
       )
       question.choices.create! content: 'None', can_disable: true
       MEDICATION.each { |content| question.choices.create! content: content }
@@ -82,7 +82,7 @@ module Builder::Questions::Checklist
         question_type: 'checklist-extra',
         content:       'What <strong>other strategies</strong> did you use to reduce pain since your last case?',
         tip:           'Touch the strategy and then rate how helpful it was in reducing pain',
-        name:          'other strategies'
+        name:          'other_strategies'
       )
       question.choices.create! content: 'None', can_disable: true
       OTHER_STRATEGIES.each { |content| question.choices.create! content: content }

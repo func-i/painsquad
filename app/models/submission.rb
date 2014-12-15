@@ -26,6 +26,8 @@ class Submission < ActiveRecord::Base
   scope :are_mild, -> { where(pain_severity: Submission::pain_severities[:mild]) }
   scope :are_moderate, -> { where(pain_severity: Submission::pain_severities[:moderate]) }
 
+  scope :between, -> (from_date, to_date) { where(created_at: [from_date.beginning_of_day..to_date.end_of_day]) }
+
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers
 

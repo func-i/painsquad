@@ -1,5 +1,5 @@
-class ChoicesController < ApplicationController
-  skip_before_action :restrict_access
+class ChoicesController < AdminController
+  
   before_action :set_choice, only: [:edit, :update]
 
   def edit

@@ -1,0 +1,15 @@
+<h1>User Report</h1>
+
+<%= form_tag :reports, role: 'form', class: 'form-inline' do %>
+  <div class='row'>    
+    <%= label_tag "From Date:" %>
+    <%= date_select :report, :from, {start_year: 2014, end_year: Date.today.year}, {class: 'large-2 columns end'} %>    
+  </div>
+
+  <div class='row'>
+    <%= label_tag "To Date:" %>
+    <%= date_select :report, :to, {start_year: 2014, end_year: Date.today.year}, {class: 'large-2 columns end'} %>      
+  </div>
+  
+  <%= submit_tag "Generate", class: 'button', disable_with: "Generating..." %>
+<% end %>
