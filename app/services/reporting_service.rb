@@ -2,8 +2,10 @@ class ReportingService
 
 	attr_reader :from_date, :to_date
 	
-	def initialize(report_params)
+	def initialize(report_params)		
 		@report_params = report_params	
+
+		@header_hash = {}
 
 		# => Parse the from and to date
 		parse_date
@@ -30,8 +32,10 @@ class ReportingService
 					submission.pain_severity
 				]
 
+				arr << get_answer_values(submission)
+
 				# TODO: Populate with the values for each answer based on the headers
-				csv << arr
+				csv << arr.flatten
 			end
 		end
 	end
@@ -62,40 +66,84 @@ class ReportingService
 		]
 
 		# => Get the headers for all the questions
-		header_arr << get_question_headers
+		get_question_headers
+		
+		header_arr << @header_hash.keys
 		header_arr.flatten
 	end
 
-	def get_question_headers 		
-		question_header_arr = []
-
+	def get_question_headers
 		# => Take the full survey and loop through all the questions
-		Survey.full.first.questions.each do |question|
-
-			# => Populate the headers based on the choices.
-			# => Each submission will have a full header of the questions and choices and will populate the answer under the corresponding column.
-			# => This is because a question can have multiple answers
-			question_header_arr << get_question_choice_headers(question)
+		Survey.all.each do |survey|
+			survey.questions.order("id ASC").each do |question|
+				# => Populate the headers based on the choices.
+				# => Each submission will have a full header of the questions and choices and will populate the answer under the corresponding column.
+				# => This is because a question can have multiple answers
+				get_question_choice_headers(question)
+			end
 		end
-
-		question_header_arr.flatten
 	end
 
-	def get_question_choice_headers(question)
-		choice_arr = []
-		
+	def get_question_choice_headers(question)		
 		question.choices.each do |choice|			
 			if choice.content
 				# => If the choice has content (some don't)
 				# => Then use that has the header
-				choice_arr << "#{question.name}_#{choice.content}"
+
+				if choice.textfield
+					hsh = @header_hash["#{question.name}_#{choice.content}_textfield"] ||= []
+					@header_hash["#{question.name}_#{choice.content}_textfield"] << {
+						question_id: question.id,
+						choice_id: choice.id,
+						textfield: true
+					}
+				end
+
+				hsh = @header_hash["#{question.name}_#{choice.content}"] ||= []
+				@header_hash["#{question.name}_#{choice.content}"] << {
+					question_id: question.id,
+					choice_id: choice.id
+				}
 			else
 				# => Default to the question name for questions that have choices without content.  (Text questions)
-				choice_arr << question.name
+				@header_hash[question.name] ||= []
+				@header_hash[question.name] << {
+					question_id: question.id,
+					choice_id: choice.id
+				}				
 			end
 		end
+	end
 
-		choice_arr
+	def get_answer_values(submission)
+		values = []
+		@header_hash.each_pair do |header, arr|
+			found = false			
+			arr.each do |hsh|
+				answer = submission.answers.where(question_id: hsh[:question_id], choice_id: hsh[:choice_id]).first
+				if answer					
+					values << parse_answer(answer, hsh)				
+					found = true
+				end		
+			end
+
+			values << nil unless found
+		end
+		values		
+	end
+
+	def parse_answer(answer, hsh)		
+		question = answer.question
+		case question.question_type
+		when "slider"			
+			answer.value
+		when 'checklist-extra'
+			if hsh[:textfield]
+				answer.custom_text
+			else
+				answer.value
+			end
+		end
 	end
 
 end
