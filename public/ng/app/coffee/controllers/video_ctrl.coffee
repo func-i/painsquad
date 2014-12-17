@@ -8,13 +8,14 @@
   $scope.API             = null
   $scope.showInlineVideo = false
 
-  $scope.$on 'event:playVideo', (ev, data) ->
+  $scope.$on 'event:playVideo', (ev, data) ->  
     $scope.videoItem.video_path = data
-    if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !isMobileSafari()
-      loadModal()
-    if isMobileSafari()
-      $scope.showInlineVideo = true
 
+    if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !$scope.isMobile()
+      loadModal()
+    else if $scope.isMobile()
+      $scope.showInlineVideo = true
+    
   loadModal = ->
     $ionicModal.fromTemplateUrl "templates/shared/modal.video.html", (modal) ->
       $scope.videoModal = modal
@@ -25,7 +26,7 @@
     $timeout ->
       $scope.videoModal.show()
     , 50
-
+  
   isMobileSafari = ->
     if window.navigator.userAgent.match(/(iPod|iPhone|iPad)/) and window.navigator.userAgent.match(/AppleWebKit/)
       true

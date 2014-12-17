@@ -16,6 +16,9 @@
       path = "" + CONFIG.baseUrl + "/videos/ranks/" + $scope.levelUp.image + ".m4v";
       return $scope.$broadcast('event:playVideo', path);
     };
+    $scope.isMobile = function() {
+      return ionic.Platform.isIOS() || ionic.Platform.isAndroid();
+    };
     saveDeviceToken = function() {
       console.log("device token", $rootScope.deviceToken);
       if ($rootScope.deviceToken) {

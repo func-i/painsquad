@@ -8,10 +8,9 @@
     $scope.showInlineVideo = false;
     $scope.$on('event:playVideo', function(ev, data) {
       $scope.videoItem.video_path = data;
-      if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !isMobileSafari()) {
-        loadModal();
-      }
-      if (isMobileSafari()) {
+      if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !$scope.isMobile()) {
+        return loadModal();
+      } else if ($scope.isMobile()) {
         return $scope.showInlineVideo = true;
       }
     });

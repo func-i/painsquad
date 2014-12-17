@@ -17,6 +17,9 @@
     path = "#{CONFIG.baseUrl}/videos/ranks/#{$scope.levelUp.image}.m4v"
     $scope.$broadcast 'event:playVideo', path
 
+  $scope.isMobile = ->
+    ionic.Platform.isIOS() or ionic.Platform.isAndroid()
+
   saveDeviceToken = ->
     console.log "device token", $rootScope.deviceToken
     if $rootScope.deviceToken
