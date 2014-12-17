@@ -5,9 +5,13 @@ class SurveyService
     @last_submission = @user.submissions.last
   end
 
-  def get_survey
-    # return send_test_survey if Rails.env.development?
-    if five_minutes_ago? || one_hour_ago?
+  def get_survey    
+    # => Allow an admin to force the next survey to be a full one.
+    # => This was initially done for development testing, but thought it might be useful as an admin feature in the future.
+    if @user.force_full_survey
+      @user.update(force_full_survey: false)
+      send_survey :full      
+    elsif five_minutes_ago? || one_hour_ago?
       send_survey :full
     else
       send_survey :truncated

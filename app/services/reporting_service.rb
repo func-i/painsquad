@@ -29,7 +29,7 @@ class ReportingService
 				# => Start with some default values
 				arr = [
 					submission.created_at,
-					submission.pain_severity
+					submission.pain_severity || 'SKIP'
 				]
 
 				arr << get_answer_values(submission)
@@ -102,14 +102,16 @@ class ReportingService
 				hsh = @header_hash["#{question.name}_#{choice.content}"] ||= []
 				@header_hash["#{question.name}_#{choice.content}"] << {
 					question_id: question.id,
-					choice_id: choice.id
+					choice_id: choice.id,
+					bodymap: question.question_type.eql?('bodymap'),
+					choice_name: choice.content
 				}
 			else
 				# => Default to the question name for questions that have choices without content.  (Text questions)
 				@header_hash[question.name] ||= []
 				@header_hash[question.name] << {
 					question_id: question.id,
-					choice_id: choice.id
+					choice_id: choice.id					
 				}				
 			end
 		end
@@ -120,29 +122,51 @@ class ReportingService
 		@header_hash.each_pair do |header, arr|
 			found = false			
 			arr.each do |hsh|
-				answer = submission.answers.where(question_id: hsh[:question_id], choice_id: hsh[:choice_id]).first
+				answer = submission.answers.where(question_id: hsh[:question_id], choice_id: hsh[:choice_id]).first								
+				#binding.pry if header.eql?("describe_pain_Beating")
 				if answer					
 					values << parse_answer(answer, hsh)				
 					found = true
+				else					
+					case header
+					when "has_pain_Yes"
+						if submission.has_pain
+							values << 'X'						
+							found = true
+							break
+						end
+					when "has_pain_No"
+						unless submission.has_pain
+							values << 'X'
+							found = true
+							break						
+						end
+					end
 				end		
 			end
 
-			values << nil unless found
+			values << 'SKIP' unless found
 		end
 		values		
 	end
 
-	def parse_answer(answer, hsh)		
+	def parse_answer(answer, hsh)				
 		question = answer.question
 		case question.question_type
-		when "slider"			
-			answer.value
+		when "slider", 'checklist'			
+			answer.value || 'X'
 		when 'checklist-extra'
 			if hsh[:textfield]
 				answer.custom_text
 			else
 				answer.value
 			end
+		when "radio", "checklist-grid"
+			'X'
+		when "bodymap"
+			answer.bodymap_data[hsh[:choice_name].downcase].join(",")
+		when 'textbox'
+			answer.custom_text
 		end
 	end
 

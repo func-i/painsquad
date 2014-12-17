@@ -20,6 +20,7 @@ gem 'swagger-docs',     '~> 0.1.8'
 # alerts
 gem 'delayed_job_active_record', '~> 4.0.1'
 gem 'delayed_job_recurring',     '~> 0.3.3'
+gem "delayed_job_web"
 gem 'twilio-ruby',               '~> 3.11.5'
 gem 'aws-sdk',                   '~> 1.51.0'
 

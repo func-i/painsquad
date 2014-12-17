@@ -42,4 +42,6 @@ PainSquadApi::Application.routes.draw do
 
   get :admin, to: 'users#index'
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
 end
