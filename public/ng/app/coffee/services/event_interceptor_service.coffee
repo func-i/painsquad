@@ -1,17 +1,20 @@
 'use strict'
 
-@EventInterceptor = @serviceModule.factory 'EventInterceptor', ($q, $injector, $rootScope) ->
+@EventInterceptor = @serviceModule.factory 'EventInterceptor', ($q, $injector, $rootScope, $timeout) ->
 
     success = (response) ->
-      if response and response.data and response.data.activity
-        if response.data.activity.show_level_up_modal
-          $rootScope.$broadcast 'event:levelup', { image: response.data.activity.rank, prev_rank: response.data.activity.prev_rank, rank: response.data.activity.display_rank }
-        if response.data.activity.show_advice_modal
-          $rootScope.$broadcast 'event:advice', { name: response.data.activity.advice_name }
+      if response and response.data and response.data.activity and response.data.activity.modals
+
+        for modal, i in response.data.activity.modals
+          ((m, index) ->
+            $timeout ->
+              $rootScope.$broadcast "event:#{m.event_name}", m.options
+            , index * 2700
+          )(modal, i)
+
       response
     error = (response) ->
       if (response.data is '' && response.status is 0)
-        console.log "I am not connected"
         $injector.get("$state").transitionTo "app.notconnected"
 
       $q.reject response

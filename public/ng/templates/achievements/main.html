@@ -1,0 +1,74 @@
+<ion-view title="Achievements">
+
+  <ion-header-bar>
+    <button class="button button-clear button-primary" ng-click="back()">Back</button>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="achievements content-background-no-objects">
+
+    <article class="awards">
+      <ion-slide-box>
+        <ion-slide ng-repeat="slide in achievementData">
+
+          <div class="wrapper">
+            <h4 ng-if="!slide.locked">Rank</h4>
+            <h4 ng-if="slide.locked">Locked</h4>
+
+            <div class="arrow-wrapper">
+              <div class="link-wrap">
+                <img class="back" ng-src="./images/achievements/chevron-left.png" ng-click="previous()">
+              </div>
+              <div class="link-wrap">
+                <img class="forward" ng-src="./images/achievements/chevron-right.png" ng-click="next()">
+              </div>
+            </div>
+
+            <div class="image-wrapper">
+              <img class="rank-image" ng-src="{{slide.image_path}}" ng-if="!slide.locked" ng-click="playVideo(slide.video_path)">
+              <img class="rank-image" ng-src="./images/achievements/locked.png" ng-if="slide.locked">
+              <img class="shadow" ng-src="./images/shadows/achievement-main-shadow.png">
+            </div>
+            <div class="time-wrapper">
+              <time ng-if="!slide.locked">Achieved {{slide.date}}</time>
+            </div>
+          </div>
+
+        </ion-slide>
+      </ion-slide-box>
+    </article>
+
+    <article class="badges">
+      <div class="header-bar bar-blue"></div>
+      <div class="wrapper grey-background">
+      <span class="content"><h3>Awards</h3></span>
+
+        <section class="row first">
+          <div
+            ng-repeat="award in awardData"
+            ng-show="$index == 0 || $index == 1"
+            ng-click="loadAwardModal(award)"
+            ng-class="{ 'first': $first }">
+              <figure id="circle" ng-style="getImage(award)"></figure>
+              <p>{{ award.name | capitalize }}</p>
+          </div>
+        </section>
+
+        <section class="row second">
+          <div
+            ng-repeat="award in awardData"
+            ng-show="$index == 2 || $index == 3 || $index == 4"
+            ng-click="loadAwardModal(award)">
+              <figure id="circle" ng-style="getImage(award)"></figure>
+              <div class="badge-level"
+                ng-show="award.level"
+                ng-class="{ 'three': award.level > 100, 'two': award.level > 10 }">
+                <span>{{award.level}}x</span>
+              </div>
+              <p>{{ award.name | capitalize }}</p>
+          </div>
+        </section>
+      </div>
+
+    </article>
+  </ion-content>
+</ion-view>

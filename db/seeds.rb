@@ -1,5 +1,9 @@
 def times
   [
+    { alert_time: Time.zone.now.change({hour: 6, min: 00}).strftime("%H:%M:%S"), category: 'morning_alert' },
+    { alert_time: Time.zone.now.change({hour: 6, min: 30}).strftime("%H:%M:%S"), category: 'morning_alert' },
+    { alert_time: Time.zone.now.change({hour: 7, min: 00}).strftime("%H:%M:%S"), category: 'morning_alert' },
+    { alert_time: Time.zone.now.change({hour: 7, min: 30}).strftime("%H:%M:%S"), category: 'morning_alert' },
     { alert_time: Time.zone.now.change({hour: 8, min: 00}).strftime("%H:%M:%S"), category: 'morning_alert' },
     { alert_time: Time.zone.now.change({hour: 8, min: 30}).strftime("%H:%M:%S"), category: 'morning_alert' },
     { alert_time: Time.zone.now.change({hour: 9, min: 00}).strftime("%H:%M:%S"), category: 'morning_alert' },

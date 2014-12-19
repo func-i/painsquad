@@ -34,7 +34,8 @@ module Builder
           duration:    '45 min. to 60 min.',
           context:     'Before Procedures',
           description: "Remember to apply pain numbing cream (topical anesthetic) 45-60 minutes before the procedure if your healthcare team has said it's okay.",
-          byline:      nil
+          byline:      nil,
+          suggestable: false
         )
       end
 
@@ -159,7 +160,7 @@ module Builder
       ### PHYSICAL
       def applying_cold
         rec = Recommendation.create(
-          # group:       'manage',
+          group:       'manage',
           section:     'physical',
           style:       'basic',
           title:       'Applying Cold',
@@ -173,7 +174,7 @@ module Builder
 
       def applying_heat
         rec = Recommendation.create(
-          # group:       'manage',
+          group:       'manage',
           section:     'physical',
           style:       'basic',
           title:       'Applying Heat',

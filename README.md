@@ -11,11 +11,24 @@
 
 #### Client:
 
-- `$ cd public/ng`
+- `cd public/ng`
 - `npm install`
-- `bower install`
+- `sudo bower -g install`
 - `sudo npm install -g gulp`
 - `gulp serve`
+
+#### Device Setup
+
+- `sudo npm install -g cordova`
+- `sudo npm install -g ionic`
+- `ionic platform ios`
+- `cordova plugin add https://github.com/phonegap-build/PushPlugin.git`
+- `cordova plugin add com.ionic.keyboard`
+- `cordova plugin add org.apache.cordova.device`
+- `cordova plugin add org.apache.cordova.network-information`
+- `cordova plugin add org.apache.cordova.splashscreen`
+- `cordova plugin add org.apache.cordova.statusbar`
+- `cordova plugin add org.apache.cordova.console`
 
 ##### Emulation:
 
@@ -37,8 +50,9 @@ Run specific scenario: `bundle exec cucumber features/feature_name.feature:5`
 
 ## Heroku Deployment
 
-- `$ cd public/ng && gulp build`
+- `cd public/ng && gulp build && cd ../ && cp -rf ng/www/* ./`
 - Copy all files/folders in `www/` directory to `public/` directory
+  - `cp -rf www/* ./`
 - Commit and push to `origin:heroku-deployment`
 - Finally: `git push heroku heroku-deployment:master`
 

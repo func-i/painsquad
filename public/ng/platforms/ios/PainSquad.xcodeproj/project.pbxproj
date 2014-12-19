@@ -547,7 +547,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Functional Imperative Inc. (C7QW7JZQ9G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Salis (4FNS88J775)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -572,7 +572,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "ea18a70a-2d19-402c-8910-eaf68e5e588c";
+				PROVISIONING_PROFILE = "5144a3c7-b4d1-4f08-aed9-2458febad9ce";
 			};
 			name = Debug;
 		};
@@ -584,7 +584,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Functional Imperative Inc. (C7QW7JZQ9G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathan Salis (4FNS88J775)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PainSquad/PainSquad-Prefix.pch";
@@ -607,7 +607,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PainSquad;
-				PROVISIONING_PROFILE = "ea18a70a-2d19-402c-8910-eaf68e5e588c";
+				PROVISIONING_PROFILE = "5144a3c7-b4d1-4f08-aed9-2458febad9ce";
 			};
 			name = Release;
 		};

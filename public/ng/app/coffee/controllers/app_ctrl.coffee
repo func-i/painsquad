@@ -1,27 +1,11 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
-  $ionicModal.fromTemplateUrl 'templates/shared/modal.login.html', (modal) ->
-    $scope.loginModal = modal
-  ,
-    scope: $scope
-    animation: 'fade-in'
-    focusFirstInput: true
-
-  $ionicModal.fromTemplateUrl 'templates/shared/levelup.html', (modal) ->
-    $scope.levelupModal = modal
-  ,
-    scope: $scope
-    animation: 'slide-left-right'
-
-  $ionicModal.fromTemplateUrl 'templates/shared/advice.html', (modal) ->
-    $scope.adviceModal = modal
-  ,
-    scope: $scope
-    animation: 'slide-left-right'
+  # Register all the modals to be used in this app
+  ModalService.registerModals($scope)
 
   $scope.closeModal = ->
     $scope.levelupModal.hide()
@@ -33,7 +17,11 @@
     path = "#{CONFIG.baseUrl}/videos/ranks/#{$scope.levelUp.image}.m4v"
     $scope.$broadcast 'event:playVideo', path
 
+  $scope.isMobile = ->
+    ionic.Platform.isIOS() or ionic.Platform.isAndroid()
+
   saveDeviceToken = ->
+    console.log "device token", $rootScope.deviceToken
     if $rootScope.deviceToken
       TokenResource.update(device_token: $rootScope.deviceToken)
 
@@ -41,20 +29,20 @@
     $scope.levelUp.image     = args.image
     $scope.levelUp.prev_rank = args.prev_rank
     $scope.levelUp.rank      = args.rank
-    $scope.levelupModal.show()
+    $scope.modals.levelupModal.show()
 
+  $rootScope.$on 'event:genericModal', (event, args) ->
+    $scope.modalContent = args.modal_content
 
-  $rootScope.$on 'event:advice', (event, args) ->
-    $scope.advice.name = args.name
-    $scope.adviceModal.show()
+    $scope.modals.genericModal.show()
     $timeout ->
-      $scope.adviceModal.hide()
+      $scope.modals.genericModal.hide()
     , 2000
 
   $scope.$on "$destroy", ->
-    $scope.loginModal.remove()
-    $scope.levelupModal.remove()
-    $scope.adviceModal.remove()
+    $scope.modals.loginModal.remove()
+    $scope.modals.levelupModal.remove()
+    $scope.modals.genericModal.remove()
 
   saveDeviceToken()
 

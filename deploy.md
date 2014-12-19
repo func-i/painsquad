@@ -96,20 +96,36 @@ The steps in this guide were taken from [this guide](http://alexpotrykus.com/blo
 #### Deployment
 
 From local: (L)
+
 From server: (S)
 
 * (L) $> cap production deploy:check_directories
 
 * (S) nano /var/www/painsquad/shared/config/database.yml
   * Add the database credentials in this file from Postgres step
-  * Reference: config/database.yml.example
-* (S) nano /var/www/painsquad/shared/config/secrets.yml
-  * Fill in with the correct information.
-  * Reference: config/secrets.yml.example
 * (S) Generate a key pair
-  * $> ssh-keygen -t rsa
-
+* (S) $> ssh-keygen -t rsa
 * Add the keypair to the github repo
+* (S) $> mkdir -p ~/apps/painsquad/shared/config
 
-* (L) From your project directory
-  * cap production deploy
+These two files will need to be filled with the correct information.  The correct information corresponds to existing AWS and Twillio accounts.
+
+See config/database.yml.example and config/secrets.yml.example
+
+* (S) $> touch ~/apps/painsquad/shared/config/database.yml
+* (S) $> touch ~/apps/painsquad/shared/config/secrets.yml
+
+#### Firewall
+
+* Internal services:
+  * postgres is installed locally and doesn't require external access
+
+* External services:
+  * Twillio (SMS messages) use a REST API
+    * endpoint: https://api.twilio.com
+  * AWS SNS (push notifications) use a REST API
+    * endpoint: http://sns.us-east-1.amazonaws.com
+
+* Ports required:
+  * 80 Inbound and outbound
+  * 443 Inbound and outbound

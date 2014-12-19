@@ -1,0 +1,51 @@
+<ion-view title="Favorites">
+
+  <ion-content padding="true" ng-controller="RecommendationsModalCtrl" class="content-background-no-objects">
+    <ion-list ng-hide="isFavorites" class="recommended">
+      <div class="header-bar bar-blue"></div>
+
+      <div class="item skinny-item margin-fix" ui-sref="app.recommended">
+        Add Some Favourites
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </div>
+    </ion-list>
+
+    <ion-list ng-show="isFavorites" class="recommended">
+      <div class="header-bar bar-blue"></div>
+
+      <ion-item
+        ng-repeat="item in favorites"
+        class="item item-thumbnail-left"
+        ng-click="loadAdviceModal(item.recommendation)"
+        ng-class="{ 'first': $first }">
+
+        <img ng-src="./images/advice/thumb/{{ item.recommendation.image }}.png">
+        <h2>{{ item.recommendation.title }}</h2>
+
+        <div class="duration row">
+          <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/blue-time.png"></div>
+          <div class="col col-80"><span>{{ item.recommendation.duration }}</span></div>
+        </div>
+
+        <div class="context row">
+          <div class="col col-10 icon-image"><img ng-src="./images/advice/icon/green-check.png"></div>
+          <div class="col col-80"><span>{{ item.recommendation.context }}</span></div>
+        </div>
+
+        <div class="badge">
+          <i ng-if="item.recommendation.favorite" ng-model="item.recommendation.favorite">
+            <img class="fav" ng-src="./images/buttons/advice-fav.png">
+          </i>
+
+          <i ng-if="!item.recommendation.favorite" ng-model="item.recommendation.favorite">
+            <img class="fav" ng-src="./images/buttons/advice-not-fav.png">
+          </i>
+        </div>
+        <span class="chevron-icon ion-chevron-right"></span>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>

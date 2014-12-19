@@ -37,4 +37,6 @@ class Recommendation < ActiveRecord::Base
   scope :psychological,   -> { where(section: 'psychological') }
   scope :physical,        -> { where(section: 'physical') }
 
+  scope :suggestable,     -> { where(suggestable: true) }
+
 end

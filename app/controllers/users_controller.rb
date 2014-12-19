@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  skip_before_action :restrict_access
+class UsersController < AdminController
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

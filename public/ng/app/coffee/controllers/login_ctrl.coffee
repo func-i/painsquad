@@ -10,12 +10,12 @@
     AuthService.login $scope.user
 
   $scope.$on "event:auth-loginRequired", (e, rejection) ->
-    $scope.loginModal.show()
+    $scope.modals.loginModal.show()
 
   $scope.$on "event:auth-loginConfirmed", ->
     $scope.email    = null
     $scope.password = null
-    $scope.loginModal.hide()
+    $scope.modals.loginModal.hide()
 
   $scope.$on "event:auth-login-failed", (e, status) ->
     if status.status is 401

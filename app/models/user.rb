@@ -49,6 +49,8 @@ class User < ActiveRecord::Base
   validates :cross_level, numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
   validates :star_level,  numericality: { :greater_than_or_equal_to => 0, :less_than_or_equal_to => 999 }
 
+  scope :admin, -> { where(admin: true) }
+
   enum rank: [:rookie, :junior_detective, :detective, :sergeant, :lieutenant, :chief]
   LEVELS = [ 300, 700, 1200, 2000, 2800 ]
 
@@ -57,6 +59,11 @@ class User < ActiveRecord::Base
 
   def level_up_event?
     self.activities.last.event == 'level_up'
+  end
+
+  def medal_event?
+    last_activity = self.activities.last
+    last_activity.event == 'award_achieved' && last_activity.name == 'medal'
   end
 
   def last_pain_report

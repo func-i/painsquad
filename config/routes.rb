@@ -38,6 +38,10 @@ PainSquadApi::Application.routes.draw do
   resources :questions, only: [:index, :show, :edit, :update]
   resources :choices, only: [:edit, :update]
 
+  resources :reports, only: [:index, :create]
+
   get :admin, to: 'users#index'
+
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 end

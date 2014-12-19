@@ -14,5 +14,12 @@
       else
         array.push(item)
 
+    compare = (a,b) ->
+      if (a.content < b.content)
+         return -1
+      if (a.content > b.content)
+        return 1
+      return 0
+
     array[array.length - 1].wide = true if array.length % 2 != 0
-    return array.concat(pushToEnd).concat(lastItem)
+    return array.sort(compare).concat(pushToEnd.sort(compare)).concat(lastItem)

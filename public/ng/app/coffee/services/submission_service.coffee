@@ -52,6 +52,7 @@
         question_id: answerObj.question_id
         choice_id:   selectedChoices[0].id
         value:       selectedChoices[0].value
+        custom_text: selectedChoices[0].custom_text
       @addAnswer(resultObj)
 
   # extracts items from selectedChoices and pushes to answers array
@@ -70,13 +71,15 @@
   addSliderAnswer: (answerObj) ->
     resultObj =
       question_id: answerObj.question_id
-      value:       parseInt(answerObj.choices[0].value)
+      choice_id:   answerObj.choices[0].id
+      value:       parseInt(answerObj.choices[0].value)      
     @addAnswer(resultObj)
 
   # adds custom textbox answer
   addTextboxAnswer: (answerObj) ->
     resultObj =
       question_id: answerObj.question_id
+      choice_id:   answerObj.choices[0].id
       custom_text: answerObj.choices[0].value
     @addAnswer(resultObj)
 
@@ -84,6 +87,7 @@
   addBodymapAnswer: (answerObj, regionSelections) ->
     resultObj =
       question_id:  answerObj.question_id
+      choice_id:    answerObj.choices[0].id
       bodymap_data: regionSelections
     @addAnswer(resultObj)
 

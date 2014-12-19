@@ -1,27 +1,25 @@
 (function() {
   'use strict';
-  this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope) {
+  this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope, $timeout) {
     var error, success;
     success = function(response) {
-      if (response && response.data && response.data.activity) {
-        if (response.data.activity.show_level_up_modal) {
-          $rootScope.$broadcast('event:levelup', {
-            image: response.data.activity.rank,
-            prev_rank: response.data.activity.prev_rank,
-            rank: response.data.activity.display_rank
-          });
-        }
-        if (response.data.activity.show_advice_modal) {
-          $rootScope.$broadcast('event:advice', {
-            name: response.data.activity.advice_name
-          });
+      var i, modal, _fn, _i, _len, _ref;
+      if (response && response.data && response.data.activity && response.data.activity.modals) {
+        _ref = response.data.activity.modals;
+        _fn = function(m, index) {
+          return $timeout(function() {
+            return $rootScope.$broadcast("event:" + m.event_name, m.options);
+          }, index * 2700);
+        };
+        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+          modal = _ref[i];
+          _fn(modal, i);
         }
       }
       return response;
     };
     error = function(response) {
       if (response.data === '' && response.status === 0) {
-        console.log("I am not connected");
         $injector.get("$state").transitionTo("app.notconnected");
       }
       return $q.reject(response);

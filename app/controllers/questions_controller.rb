@@ -1,5 +1,5 @@
-class QuestionsController < ApplicationController
-  skip_before_action :restrict_access
+class QuestionsController < AdminController
+  
   before_action :set_question, only: [:edit, :update, :destroy]
 
   def index

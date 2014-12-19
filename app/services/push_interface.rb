@@ -1,18 +1,16 @@
 class PushInterface
 
-  def initialize(user_token, message_type = nil)
+  def initialize(user_token)
     @client       = $SNS.client
     @token        = user_token
-    @endpoint     = create_endpoint
-    @message_type = message_type
-    @message      = determine_message
+    @endpoint     = create_endpoint    
   end
 
-  def send_message
+  def send_message(message)
     push_parameters = {
       target_arn:        @endpoint,
       message_structure: "json",
-      message:           @message
+      message:           {default: message}.to_json
     }
     @client.publish(push_parameters)
   end
@@ -27,22 +25,12 @@ class PushInterface
     response[:endpoint_arn]
   end
 
-  def determine_message
-    if @message_type == :full
-      return full_message
-    elsif @message_type == :truncated
-      return truncated_message
-    else
-      return full_message
-    end
-  end
-
   def full_message
-    { "default" => "This is a reminder from PainSquad that its time to complete a full case!" }.to_json
+    { "default" => "This is a reminder from PainSquad that its time to complete a case!" }.to_json
   end
 
   def truncated_message
-    { "default" => "This is a follow-up reminder from PainSquad to complete a truncated case!" }.to_json
+    { "default" => "This is a follow-up reminder from PainSquad to complete a case!" }.to_json
   end
 
 end

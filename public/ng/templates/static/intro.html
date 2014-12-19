@@ -1,0 +1,103 @@
+<ion-view title="About The App" scroll="false" hide-nav-bar="{{data.hideNavBar}}" ng-controller="IntroCtrl" ng-cloak>
+
+  <ion-content class="content-background intro" padding="true" ng-class="{ 'has-header': !data.hideNavBar }">
+
+    <ion-slide-box class="no-overflow">
+        <ion-slide>
+          <div class="header-bar bar-darkblue"></div>
+          <div class="header grey-background">
+            <h3 class="content">Welcome to Pain Squad+</h3>
+          </div>
+          <div class="image-wrapper">
+            <img ng-src="./images/intro/intro_glass.png">
+          </div>
+
+          <div class="lower-wrapper">
+            <p>
+              You've been enlisted in an elite group known as Pain Squad+. Your job is to monitor your pain and report clues in the cases.
+            </p>
+
+            <button class="button button-positive override bg-pattern blue button-icon icon-right ion-chevron-right"
+              ng-hide="data.showLogin" ng-click="next()">
+                <span class="content button-text">Next</span>
+            </button>
+
+            <button class="button button-positive override home bg-pattern blue button-icon icon-right ion-chevron-right"
+              ng-click="next()" ng-show="data.showLogin">
+                <span class="content button-text">Get Started</span>
+            </button>
+
+          </div>
+        </ion-slide>
+
+      <ion-slide>
+        <div class="header-bar bar-darkblue"></div>
+        <div class="header grey-background">
+          <h3 class="content">File Pain Cases</h3>
+        </div>
+        <div class="image-wrapper">
+          <img ng-src="./images/intro/intro_folder.png">
+        </div>
+
+        <div class="lower-wrapper">
+          <p>
+          Your phone will alert you in the morning and evening when a pain case is due. You can also file a case any other time you feel pain.
+          </p>
+
+          <button class="button button-positive override bg-pattern blue button-icon icon-right ion-chevron-right"
+            ng-click="next()">
+              <span class="content button-text">Next</span>
+          </button>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="header-bar bar-darkblue"></div>
+        <div class="header grey-background">
+          <h3 class="content">Get Advice</h3>
+        </div>
+        <div class="image-wrapper">
+          <img ng-src="./images/intro/intro_idea.png">
+        </div>
+
+        <div class="lower-wrapper">
+          <p>
+            After each case has been filed, we will send you advice you can use to manage your pain. Your healthcare team will also be watching your pain and may contact you to help.
+          </p>
+
+          <button class="button button-positive override bg-pattern blue button-icon icon-right ion-chevron-right"
+            ng-click="next()">
+              <span class="content button-text">Next</span>
+          </button>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="header-bar bar-darkblue"></div>
+        <div class="header grey-background">
+          <h3 class="content">Earn Awards</h3>
+        </div>
+        <div class="image-wrapper">
+          <img ng-src="./images/intro/intro_badge.png">
+        </div>
+
+        <div class="lower-wrapper">
+          <p>
+            If you file enough cases, you will move up in ranking and earn special awards!
+          </p>
+
+          <button class="button button-assertive override bg-pattern red button-icon icon-right ion-chevron-right"
+            ng-show="data.showLogin" ng-click="login()">
+              <span class="content button-text">Login</span>
+          </button>
+
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+
+  </ion-content>
+
+</ion-view>

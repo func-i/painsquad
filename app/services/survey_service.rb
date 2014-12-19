@@ -5,14 +5,16 @@ class SurveyService
     @last_submission = @user.submissions.last
   end
 
-  def get_survey
-    # return send_test_survey if Rails.env.development?
-    if five_minutes_ago?
+  def get_survey    
+    # => Allow an admin to force the next survey to be a full one.
+    # => This was initially done for development testing, but thought it might be useful as an admin feature in the future.
+    if @user.force_full_survey
+      @user.update(force_full_survey: false)
+      send_survey :full      
+    elsif five_minutes_ago? || one_hour_ago?
       send_survey :full
-    elsif one_hour_ago?
-      send_survey :truncated
     else
-      send_from_pain_report
+      send_survey :truncated
     end
   end
 
@@ -26,27 +28,6 @@ class SurveyService
   # 1:05 to 1:00 ago
   def one_hour_ago?
     @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..1.hour.ago.strftime("%H:%M:%S")).any?
-  end
-
-  # send full survey if its the first
-  # no pain in previous report, send truncated
-  # otherwise, determine which survey from pain_severity
-  def send_from_pain_report
-    if @last_submission.nil?
-      send_survey :full
-    elsif !@last_submission.has_pain?
-      send_survey :truncated
-    else
-      determine_pain_severity
-    end
-  end
-
-  def determine_pain_severity
-    if @last_submission.mild?
-      send_survey :truncated
-    else
-      send_survey :full
-    end
   end
 
   def send_survey type

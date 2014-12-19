@@ -57,7 +57,8 @@
           resultObj = {
             question_id: answerObj.question_id,
             choice_id: selectedChoices[0].id,
-            value: selectedChoices[0].value
+            value: selectedChoices[0].value,
+            custom_text: selectedChoices[0].custom_text
           };
           return this.addAnswer(resultObj);
         }
@@ -81,6 +82,7 @@
         var resultObj;
         resultObj = {
           question_id: answerObj.question_id,
+          choice_id: answerObj.choices[0].id,
           value: parseInt(answerObj.choices[0].value)
         };
         return this.addAnswer(resultObj);
@@ -89,6 +91,7 @@
         var resultObj;
         resultObj = {
           question_id: answerObj.question_id,
+          choice_id: answerObj.choices[0].id,
           custom_text: answerObj.choices[0].value
         };
         return this.addAnswer(resultObj);
@@ -97,6 +100,7 @@
         var resultObj;
         resultObj = {
           question_id: answerObj.question_id,
+          choice_id: answerObj.choices[0].id,
           bodymap_data: regionSelections
         };
         return this.addAnswer(resultObj);

@@ -1,28 +1,10 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) {
     var saveDeviceToken;
     $scope.levelUp = {};
     $scope.advice = {};
-    $ionicModal.fromTemplateUrl('templates/shared/modal.login.html', function(modal) {
-      return $scope.loginModal = modal;
-    }, {
-      scope: $scope,
-      animation: 'fade-in',
-      focusFirstInput: true
-    });
-    $ionicModal.fromTemplateUrl('templates/shared/levelup.html', function(modal) {
-      return $scope.levelupModal = modal;
-    }, {
-      scope: $scope,
-      animation: 'slide-left-right'
-    });
-    $ionicModal.fromTemplateUrl('templates/shared/advice.html', function(modal) {
-      return $scope.adviceModal = modal;
-    }, {
-      scope: $scope,
-      animation: 'slide-left-right'
-    });
+    ModalService.registerModals($scope);
     $scope.closeModal = function() {
       return $scope.levelupModal.hide();
     };
@@ -34,7 +16,11 @@
       path = "" + CONFIG.baseUrl + "/videos/ranks/" + $scope.levelUp.image + ".m4v";
       return $scope.$broadcast('event:playVideo', path);
     };
+    $scope.isMobile = function() {
+      return ionic.Platform.isIOS() || ionic.Platform.isAndroid();
+    };
     saveDeviceToken = function() {
+      console.log("device token", $rootScope.deviceToken);
       if ($rootScope.deviceToken) {
         return TokenResource.update({
           device_token: $rootScope.deviceToken
@@ -45,19 +31,19 @@
       $scope.levelUp.image = args.image;
       $scope.levelUp.prev_rank = args.prev_rank;
       $scope.levelUp.rank = args.rank;
-      return $scope.levelupModal.show();
+      return $scope.modals.levelupModal.show();
     });
-    $rootScope.$on('event:advice', function(event, args) {
-      $scope.advice.name = args.name;
-      $scope.adviceModal.show();
+    $rootScope.$on('event:genericModal', function(event, args) {
+      $scope.modalContent = args.modal_content;
+      $scope.modals.genericModal.show();
       return $timeout(function() {
-        return $scope.adviceModal.hide();
+        return $scope.modals.genericModal.hide();
       }, 2000);
     });
     $scope.$on("$destroy", function() {
-      $scope.loginModal.remove();
-      $scope.levelupModal.remove();
-      return $scope.adviceModal.remove();
+      $scope.modals.loginModal.remove();
+      $scope.modals.levelupModal.remove();
+      return $scope.modals.genericModal.remove();
     });
     return saveDeviceToken();
   });

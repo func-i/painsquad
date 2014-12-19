@@ -2,19 +2,22 @@
 
 # if cordova, render video webkit inline video
 # if browser, launch in modal and use videogular shit
-@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS) ->
+@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS, CONFIG) ->
   $scope.isCordova       = $rootScope.isCordova
   $scope.videoItem       = {}
   $scope.API             = null
   $scope.showInlineVideo = false
 
-  $scope.$on 'event:playVideo', (ev, data) ->
+  $scope.$on 'event:playVideo', (ev, data) ->  
+    console.log "Video url"
+    console.log data
     $scope.videoItem.video_path = data
-    if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !isMobileSafari()
-      loadModal()
-    if isMobileSafari()
-      $scope.showInlineVideo = true
 
+    if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !$scope.isMobile()
+      loadModal()
+    else if $scope.isMobile()
+      $scope.showInlineVideo = true
+    
   loadModal = ->
     $ionicModal.fromTemplateUrl "templates/shared/modal.video.html", (modal) ->
       $scope.videoModal = modal
@@ -25,7 +28,7 @@
     $timeout ->
       $scope.videoModal.show()
     , 50
-
+  
   isMobileSafari = ->
     if window.navigator.userAgent.match(/(iPod|iPhone|iPad)/) and window.navigator.userAgent.match(/AppleWebKit/)
       true
@@ -47,4 +50,4 @@
     $scope.videoModal.hide()
     $scope.API.pause()
 
-@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS' ]
+@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS', 'CONFIG' ]

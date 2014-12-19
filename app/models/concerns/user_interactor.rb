@@ -2,6 +2,7 @@ module UserInteractor
   extend ActiveSupport::Concern
 
   included do
+    attr_accessor :modals_to_show
     after_save :process_save_interaction
   end
 
@@ -11,9 +12,10 @@ module UserInteractor
       set_pain_severity
       calculate_score
     elsif self.class == Activity
+      modals = ['advice']  
       user.increment!(:score, 5) if recommendation? && user.advice_score_unlocked?
     end
-    UserAwardService.analyze(self.user)
+    self.modals_to_show = UserAwardService.analyze(self, modals)
   end
 
   # Submission Events

@@ -146,7 +146,7 @@ gulp.task('build-native', function() {
 gulp.task('run-emulator', function() {
   // start the ios emulator
   if(argv.ios) {
-    if (exec('ionic emulate ios').code !== 0) {
+    if (exec('ionic emulate ios --target="iPhone (Retina 4-inch)"').code !== 0) {
       echo('Error: iOS run failed');
       exit(1);
     }

@@ -1,34 +1,23 @@
 module Workers
-  class UserNotifier < Struct.new(:user_id, :survey_type)
+  class UserNotifier < Struct.new(:user_id, :message)
 
     def perform
       @user        = User.find(self[:user_id])
-      @survey_type = self[:survey_type]
+      @message = self[:message]
 
-      if @survey_type == :full
-        determine_notification_type
-        queue_truncated_alert
-      elsif @survey_type == :truncated
-        determine_notification_type
-      end
+      determine_notification_type
     end
 
     protected
 
     def determine_notification_type
       if @user.device_token?
-        PushInterface.new(@user.device_token, @survey_type).send_message
+        PushInterface.new(@user.device_token).send_message(@message)
       elsif @user.phone_number?
-        SmsInterface.new(@user.phone_number, @survey_type).send_text
+        SmsInterface.new(@user.phone_number).send_text(@message)
       else
         logger.info "No valid token or phone number for User ID: #{@user.id}"
       end
     end
-
-    def queue_truncated_alert
-      Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :truncated), run_at: 1.hour.from_now)
-      # Delayed::Job.enqueue(Workers::UserNotifier.new(@user.id, :truncated), run_at: 1.minute.from_now)
-    end
-
   end
 end
