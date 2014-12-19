@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, Favorites, Activity) {
+  this.RecommendationsModalCtrl = this.controllerModule.controller('RecommendationsModalCtrl', function($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, $sce, Favorites, Activity, CONFIG) {
     var closeModal, resetState, setHeaderButtons;
     $scope.selectedItem = {};
     $scope.showInit = true;
@@ -48,7 +48,7 @@
       return closeModal();
     };
     $scope.initAudio = function(src) {
-      return "./images/advice/audio/" + src + ".mp3";
+      return $sce.trustAsResourceUrl(CONFIG.baseUrl + ("/images/advice/audio/" + src + ".mp3"));
     };
     $scope.discardAdvice = function() {
       return closeModal();
@@ -73,6 +73,6 @@
     };
   });
 
-  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', 'Favorites', 'Activity'];
+  this.RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', '$sce', 'Favorites', 'Activity', 'CONFIG'];
 
 }).call(this);
