@@ -24,6 +24,7 @@
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$2.class \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$3.class \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar.class \
+/Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/classes/org/apache/cordova/videoplayer/VideoPlayer.class \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/dexedLibs/classes-06aa910f690ada47c9c42d7aeeadaffe.jar \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/dexedLibs/gcm-b289336abffefcf4d97351e49b82e67a.jar \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/ant-build/dexedLibs/android-support-v13-2e5177f5fd540b006713e2c54defea21.jar \

@@ -1,6 +1,6 @@
 'use strict'
 
-@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, Favorites, Activity) ->
+@RecommendationsModalCtrl = @controllerModule.controller 'RecommendationsModalCtrl', ($scope, $state, $ionicModal, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout, $sce, Favorites, Activity, CONFIG) ->
   $scope.selectedItem = {}
   $scope.showInit     = true
 
@@ -40,7 +40,7 @@
     closeModal()
 
   $scope.initAudio = (src) ->
-    "./images/advice/audio/#{src}.mp3"
+    $sce.trustAsResourceUrl CONFIG.baseUrl + "/images/advice/audio/#{src}.mp3"
 
   $scope.discardAdvice = ->
     closeModal()
@@ -62,4 +62,4 @@
     $scope.showDidItButton    = null
     $scope.selectedItem       = null
 
-@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', 'Favorites', 'Activity']
+@RecommendationsModalCtrl.$inject = ['$scope', '$state', '$ionicModal', '$ionicSlideBoxDelegate', '$ionicScrollDelegate', '$timeout', '$sce', 'Favorites', 'Activity', 'CONFIG']

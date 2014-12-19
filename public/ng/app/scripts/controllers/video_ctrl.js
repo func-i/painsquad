@@ -1,12 +1,14 @@
 (function() {
   'use strict';
-  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS) {
+  this.VideoCtrl = this.controllerModule.controller('VideoCtrl', function($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS, CONFIG) {
     var isMobileSafari, loadModal;
     $scope.isCordova = $rootScope.isCordova;
     $scope.videoItem = {};
     $scope.API = null;
     $scope.showInlineVideo = false;
     $scope.$on('event:playVideo', function(ev, data) {
+      console.log("Video url");
+      console.log(data);
       $scope.videoItem.video_path = data;
       if (UserAgentService() === 'chrome' || UserAgentService() === 'safari' && !$scope.isMobile()) {
         return loadModal();
@@ -49,6 +51,6 @@
     };
   });
 
-  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS'];
+  this.VideoCtrl.$inject = ['$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS', 'CONFIG'];
 
 }).call(this);

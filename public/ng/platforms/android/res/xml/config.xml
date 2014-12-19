@@ -20,6 +20,9 @@
     <feature name="StatusBar">
         <param name="android-package" onload="true" value="org.apache.cordova.statusbar.StatusBar" />
     </feature>
+    <feature name="VideoPlayer">
+        <param name="android-package" value="org.apache.cordova.videoplayer.VideoPlayer" />
+    </feature>
     <name>PainSquad</name>
     <description />
     <author />
