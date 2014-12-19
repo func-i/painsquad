@@ -29,10 +29,10 @@ class ReportingService
 				# => Start with some default values
 				arr = [
 					submission.created_at,
-					submission.user.username,
-					submission.user.email,
-					submission.user.phone_number,
-					submission.user.healthcare_provider_email,
+					submission.user.try(:username),
+					submission.user.try(:email),
+					submission.user.try(:phone_number),
+					submission.user.try(:healthcare_provider_email),
 					submission.pain_severity || 'SKIP'
 				]
 
