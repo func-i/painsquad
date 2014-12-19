@@ -29,6 +29,10 @@ class ReportingService
 				# => Start with some default values
 				arr = [
 					submission.created_at,
+					submission.user.username,
+					submission.user.email,
+					submission.user.phone_number,
+					submission.user.healthcare_provider_email,
 					submission.pain_severity || 'SKIP'
 				]
 
@@ -62,6 +66,10 @@ class ReportingService
 		# => Populate default header values here
 		header_arr = [
 			"submission_date",
+			'username',
+			'user_email',
+			'user_phone_number',
+			'healthcare_provider_email',
 			"pain_severity"
 		]
 
@@ -145,7 +153,7 @@ class ReportingService
 				end		
 			end
 
-			values << 'SKIP' unless found
+			values << nil unless found
 		end
 		values		
 	end
