@@ -131,7 +131,7 @@ class ReportingService
 			found = false			
 			arr.each do |hsh|
 				answer = submission.answers.where(question_id: hsh[:question_id], choice_id: hsh[:choice_id]).first								
-				#binding.pry if header.eql?("describe_pain_Beating")
+				#binding.pry
 				if answer					
 					values << parse_answer(answer, hsh)				
 					found = true

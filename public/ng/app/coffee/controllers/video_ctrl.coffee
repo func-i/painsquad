@@ -2,21 +2,21 @@
 
 # if cordova, render video webkit inline video
 # if browser, launch in modal and use videogular shit
-@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, VG_EVENTS, CONFIG) ->
+@VideoCtrl = @controllerModule.controller 'VideoCtrl',  ($ionicPlatform, $rootScope, $state, $scope, $ionicModal, $sce, $timeout, UserAgentService, CONFIG) ->
   $scope.isCordova       = $rootScope.isCordova
   $scope.videoItem       = {}
   $scope.API             = null
   $scope.showInlineVideo = false
 
-  $scope.$on 'event:playVideo', (ev, data) ->  
-    console.log "Video url"
-    console.log data
+  $scope.$on 'event:playVideo', (ev, data) ->      
     $scope.videoItem.video_path = data
+    $scope.sources = [{src: $scope.trustSrc(data), type: 'video/mp4'}]
+    $scope.theme = "#{CONFIG.baseUrl}/lib/videogular-themes-default/videogular.css"
 
-    if UserAgentService() is 'chrome' or UserAgentService() is 'safari' and !$scope.isMobile()
-      loadModal()
-    else if $scope.isMobile()
+    if ionic.Platform.isIOS()
       $scope.showInlineVideo = true
+    else
+      loadModal()  
     
   loadModal = ->
     $ionicModal.fromTemplateUrl "templates/shared/modal.video.html", (modal) ->
@@ -26,7 +26,8 @@
       scope: $scope
 
     $timeout ->
-      $scope.videoModal.show()
+      $scope.videoModal.show()      
+      $scope.API.play()
     , 50
   
   isMobileSafari = ->
@@ -43,11 +44,11 @@
 
   $scope.videoComplete = ->
     $timeout ->
-      $scope.videoModal.hide()
+      $scope.videoModal.remove()
     , 200
 
-  $scope.closeVideoModal = ->
-    $scope.videoModal.hide()
-    $scope.API.pause()
+  $scope.closeVideoModal = ->    
+    $scope.videoModal.remove()
+    $scope.API.pause()    
 
-@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'VG_EVENTS', 'CONFIG' ]
+@VideoCtrl.$inject = [ '$rootScope', '$state', '$scope', '$ionicModal', '$sce', '$timeout', 'UserAgentService', 'CONFIG' ]

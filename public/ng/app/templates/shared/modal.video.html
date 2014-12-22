@@ -1,15 +1,26 @@
 <div class="modal modal-video" id="fullscreen" scroll="false">
 
   <ion-content>
-    <videogular
+
+    <videogular 
+      vg-theme="theme"
+      vg-player-ready="onPlayerReady"
+      vg-autoplay="true"
+      vg-responsive="true"
+      vg-complete="videoComplete">
+        <vg-video vg-src="sources"></vg-video>
+    </videogular>
+
+
+    <!-- <videogular
       vg-responsive="true"
       vg-autoplay="true"
       vg-complete="videoComplete"
       vg-player-ready="onPlayerReady">
         <video class="videoPlayer">
-          <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
+          <source vg-src="trustSrc(videoItem.video_path)" type="video/mp4">
         </video>
-    </videogular>
+    </videogular> -->
 
     <button class="button button-assertive override home" ng-click="closeVideoModal()">Close</button>
   </ion-content>
