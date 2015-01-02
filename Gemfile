@@ -17,6 +17,8 @@ gem 'sass-rails',       '~> 4.0.3'
 gem 'modernizr-rails',  '~> 2.7.1'
 gem 'swagger-docs',     '~> 0.1.8'
 
+gem 'daemons'
+
 # alerts
 gem 'delayed_job_active_record', '~> 4.0.1'
 gem 'delayed_job_recurring',     '~> 0.3.3'
@@ -29,6 +31,7 @@ gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano3-delayed-job', '~> 1.0'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'

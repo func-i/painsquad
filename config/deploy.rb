@@ -43,6 +43,7 @@ set :rbenv_roles, :all # default value
 namespace :deploy do
   task :restart do
     invoke 'unicorn:reload'
+    invoke 'delayed_job:restart'
   end
 
   after :deploy, 'deploy:migrate'
