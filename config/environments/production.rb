@@ -73,14 +73,10 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address:              "smtp.mandrillapp.com",
-    port:                 587,
-    domain:               'heroku.com',
-    authentication:       :plain,
-    user_name:            ENV['MANDRILL_USERNAME'],
-    password:             ENV['MANDRILL_APIKEY'],
-    enable_starttls_auto: true
+    address:        "mailrelay.research.sickkids.ca",
+    authentication: :none
   }
+
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'painsquad.com' }
   config.action_mailer.delivery_method = :smtp
