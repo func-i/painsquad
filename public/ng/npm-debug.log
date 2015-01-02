@@ -4,36 +4,41 @@
 3 info using node@v0.10.33
 4 verbose request where is /ionic
 5 verbose request registry https://registry.npmjs.org/
-6 verbose request id c4ee6d8b0cb4fc0d
+6 verbose request id 62ba436365aaf766
 7 verbose url raw /ionic
 8 verbose url resolving [ 'https://registry.npmjs.org/', './ionic' ]
 9 verbose url resolved https://registry.npmjs.org/ionic
 10 verbose request where is https://registry.npmjs.org/ionic
-11 info trying registry request attempt 1 at 11:08:20
-12 verbose etag "4ZDUTKSYQQYRX14R2EAM2IQQO"
+11 info trying registry request attempt 1 at 10:32:11
+12 verbose etag "530UPN27A7ROW6LQ7RV2IZ2FT"
 13 http GET https://registry.npmjs.org/ionic
 14 http 200 https://registry.npmjs.org/ionic
 15 silly registry.get cb [ 200,
-15 silly registry.get   { date: 'Fri, 12 Dec 2014 16:08:21 GMT',
+15 silly registry.get   { date: 'Fri, 02 Jan 2015 15:32:11 GMT',
 15 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-15 silly registry.get     etag: '"530UPN27A7ROW6LQ7RV2IZ2FT"',
+15 silly registry.get     etag: '"A5JUBCD6WZ7YB41YFK8SJASKS"',
 15 silly registry.get     'content-type': 'application/json',
 15 silly registry.get     'cache-control': 'max-age=60',
-15 silly registry.get     'content-length': '159820',
+15 silly registry.get     'content-length': '175557',
 15 silly registry.get     'accept-ranges': 'bytes',
 15 silly registry.get     via: '1.1 varnish',
 15 silly registry.get     age: '0',
-15 silly registry.get     'x-served-by': 'cache-ord1723-ORD',
-15 silly registry.get     'x-cache': 'MISS',
-15 silly registry.get     'x-cache-hits': '0',
-15 silly registry.get     'x-timer': 'S1418400501.496776,VS0,VE272',
+15 silly registry.get     'x-served-by': 'cache-jfk1033-JFK',
+15 silly registry.get     'x-cache': 'HIT',
+15 silly registry.get     'x-cache-hits': '1',
+15 silly registry.get     'x-timer': 'S1420212731.241439,VS0,VE22',
 15 silly registry.get     vary: 'Accept',
 15 silly registry.get     'keep-alive': 'timeout=10, max=50',
 15 silly registry.get     connection: 'Keep-Alive' } ]
-16 info outdated updating [ [ '/usr/local/lib', 'ionic', '1.2.8', '1.2.13', '1.2.13', 'latest' ] ]
-17 verbose install where,what [ '/usr/local/lib', [ 'ionic@1.2.13' ] ]
-18 verbose cache add [ 'ionic@1.2.13', null ]
-19 verbose cache add name=undefined spec="ionic@1.2.13" args=["ionic@1.2.13",null]
+16 info outdated updating [ [ '/usr/local/lib',
+16 info outdated     'ionic',
+16 info outdated     '1.2.13',
+16 info outdated     '1.2.14',
+16 info outdated     '1.2.14',
+16 info outdated     'latest' ] ]
+17 verbose install where,what [ '/usr/local/lib', [ 'ionic@1.2.14' ] ]
+18 verbose cache add [ 'ionic@1.2.14', null ]
+19 verbose cache add name=undefined spec="ionic@1.2.14" args=["ionic@1.2.14",null]
 20 verbose parsed url { protocol: null,
 20 verbose parsed url   slashes: null,
 20 verbose parsed url   auth: null,
@@ -43,10 +48,10 @@
 20 verbose parsed url   hash: null,
 20 verbose parsed url   search: null,
 20 verbose parsed url   query: null,
-20 verbose parsed url   pathname: 'ionic@1.2.13',
-20 verbose parsed url   path: 'ionic@1.2.13',
-20 verbose parsed url   href: 'ionic@1.2.13' }
-21 verbose cache add name="ionic" spec="1.2.13" args=["ionic","1.2.13"]
+20 verbose parsed url   pathname: 'ionic@1.2.14',
+20 verbose parsed url   path: 'ionic@1.2.14',
+20 verbose parsed url   href: 'ionic@1.2.14' }
+21 verbose cache add name="ionic" spec="1.2.14" args=["ionic","1.2.14"]
 22 verbose parsed url { protocol: null,
 22 verbose parsed url   slashes: null,
 22 verbose parsed url   auth: null,
@@ -56,39 +61,39 @@
 22 verbose parsed url   hash: null,
 22 verbose parsed url   search: null,
 22 verbose parsed url   query: null,
-22 verbose parsed url   pathname: '1.2.13',
-22 verbose parsed url   path: '1.2.13',
-22 verbose parsed url   href: '1.2.13' }
-23 verbose addNamed [ 'ionic', '1.2.13' ]
-24 verbose addNamed [ '1.2.13', '1.2.13' ]
-25 silly lockFile 5e1bd26f-ionic-1-2-13 ionic@1.2.13
-26 verbose lock ionic@1.2.13 /Users/sailias/.npm/5e1bd26f-ionic-1-2-13.lock
+22 verbose parsed url   pathname: '1.2.14',
+22 verbose parsed url   path: '1.2.14',
+22 verbose parsed url   href: '1.2.14' }
+23 verbose addNamed [ 'ionic', '1.2.14' ]
+24 verbose addNamed [ '1.2.14', '1.2.14' ]
+25 silly lockFile 1f4bf3f8-ionic-1-2-14 ionic@1.2.14
+26 verbose lock ionic@1.2.14 /Users/sailias/.npm/1f4bf3f8-ionic-1-2-14.lock
 27 verbose registry.get https://registry.npmjs.org/ionic not expired, no request
-28 silly lockFile 61b739f4-npmjs-org-ionic-ionic-1-2-13-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-29 verbose lock https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz /Users/sailias/.npm/61b739f4-npmjs-org-ionic-ionic-1-2-13-tgz.lock
-30 verbose addRemoteTarball [ 'https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz',
-30 verbose addRemoteTarball   '24e6c4aa646d73f4d62b0b75a25d5fdb117929e0' ]
-31 info retry fetch attempt 1 at 11:08:21
-32 verbose fetch to= /var/folders/k1/1nm38q951j110ccn3hyz2xfr0000gn/T/npm-65911-MMVS1IRp/registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-33 http GET https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-34 http 200 https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-35 silly lockFile 61b739f4-npmjs-org-ionic-ionic-1-2-13-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-36 silly lockFile 61b739f4-npmjs-org-ionic-ionic-1-2-13-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.13.tgz
-37 silly lockFile 5e1bd26f-ionic-1-2-13 ionic@1.2.13
-38 silly lockFile 5e1bd26f-ionic-1-2-13 ionic@1.2.13
-39 error Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.13'
-39 error  { [Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.13']
+28 silly lockFile 3ecf7fb1-npmjs-org-ionic-ionic-1-2-14-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+29 verbose lock https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz /Users/sailias/.npm/3ecf7fb1-npmjs-org-ionic-ionic-1-2-14-tgz.lock
+30 verbose addRemoteTarball [ 'https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz',
+30 verbose addRemoteTarball   'd7c404d2f4ca85a987c636ed289a8004b48b97b3' ]
+31 info retry fetch attempt 1 at 10:32:12
+32 verbose fetch to= /var/folders/k1/1nm38q951j110ccn3hyz2xfr0000gn/T/npm-21740-CkNtd4CM/registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+33 http GET https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+34 http 200 https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+35 silly lockFile 3ecf7fb1-npmjs-org-ionic-ionic-1-2-14-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+36 silly lockFile 3ecf7fb1-npmjs-org-ionic-ionic-1-2-14-tgz https://registry.npmjs.org/ionic/-/ionic-1.2.14.tgz
+37 silly lockFile 1f4bf3f8-ionic-1-2-14 ionic@1.2.14
+38 silly lockFile 1f4bf3f8-ionic-1-2-14 ionic@1.2.14
+39 error Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.14'
+39 error  { [Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.14']
 39 error   errno: 3,
 39 error   code: 'EACCES',
-39 error   path: '/Users/sailias/.npm/ionic/1.2.13' }
+39 error   path: '/Users/sailias/.npm/ionic/1.2.14' }
 40 error Please try running this command again as root/Administrator.
 41 error System Darwin 14.0.0
 42 error command "node" "/usr/local/bin/npm" "update" "-g" "ionic"
 43 error cwd /Users/sailias/apps/painsquad/public/ng
 44 error node -v v0.10.33
 45 error npm -v 1.4.28
-46 error path /Users/sailias/.npm/ionic/1.2.13
+46 error path /Users/sailias/.npm/ionic/1.2.14
 47 error code EACCES
 48 error errno 3
-49 error stack Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.13'
+49 error stack Error: EACCES, mkdir '/Users/sailias/.npm/ionic/1.2.14'
 50 verbose exit [ 3, true ]

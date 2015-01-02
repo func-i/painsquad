@@ -63,12 +63,12 @@ $scope.$on('phonegapPush.notification', function (notification) {
       $log.info "Successfully registered with GCM push server. " + "Waiting for device registration ID via notification. " + "Registration result:", result
 
     apnsSuccessHandler = (deviceToken) ->
-      $log.info "Successfully registered with APNS push server. Device token:", deviceToken
+      $log.info("Successfully registered with APNS push server. Device token: " + deviceToken)
       $rootScope.deviceToken = deviceToken
       registeredCallback deviceToken, "APNS"
 
     genericErrorHandler = (error) ->
-      $log.error "Error registering with push server:", error
+      $log.info("Error registering with push server: " + error)
 
     # Register device with push server
     if device.platform is "Android"

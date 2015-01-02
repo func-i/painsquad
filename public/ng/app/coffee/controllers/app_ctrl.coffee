@@ -20,8 +20,7 @@
   $scope.isMobile = ->
     ionic.Platform.isIOS() or ionic.Platform.isAndroid()
 
-  saveDeviceToken = ->
-    console.log "device token", $rootScope.deviceToken
+  saveDeviceToken = ->    
     if $rootScope.deviceToken
       TokenResource.update(device_token: $rootScope.deviceToken)
 
@@ -43,7 +42,8 @@
     $scope.modals.loginModal.remove()
     $scope.modals.levelupModal.remove()
     $scope.modals.genericModal.remove()
-
-  saveDeviceToken()
+  
+  $rootScope.$watch "deviceToken", (token) ->
+    saveDeviceToken()
 
 @AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG' ]

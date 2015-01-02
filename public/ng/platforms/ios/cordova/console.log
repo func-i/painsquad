@@ -106,3 +106,18 @@ objc[27145]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.a
 2014-12-18 16:48:59.414 PainSquad[27145:70b] active
 2014-12-18 16:48:59.597 PainSquad[27145:70b] Resetting plugins due to page load.
 2014-12-18 16:48:59.996 PainSquad[27145:70b] Finished load of: file:///Users/sailias/Library/Developer/CoreSimulator/Devices/9F330587-B530-4F45-B468-C0748F51752C/data/Applications/05C90912-EDDB-452E-8E05-B63EAC9A87DD/PainSquad.app/www/index.html#/app/home
+objc[25789]: Class AXEmojiUtilities is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities and /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libAXSpeechManager.dylib. One of the two will be used. Which one is undefined.
+2015-01-02 11:17:58.207 PainSquad[25789:70b] Cannot find executable for CFBundle 0x7a02c190 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/GeoServices.axbundle> (not loaded)
+2015-01-02 11:17:58.211 PainSquad[25789:70b] Cannot find executable for CFBundle 0x79e360c0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/AccessibilityBundles/CertUIFramework.axbundle> (not loaded)
+2015-01-02 11:17:58.270 PainSquad[25789:70b] Multi-tasking -> Device: YES, App: YES
+2015-01-02 11:17:58.286 PainSquad[25789:70b] Unlimited access to network resources
+2015-01-02 11:17:58.466 PainSquad[25789:70b] [CDVTimer][keyboard] 0.096023ms
+2015-01-02 11:17:58.511 PainSquad[25789:70b] [CDVTimer][splashscreen] 43.965995ms
+2015-01-02 11:17:58.516 PainSquad[25789:70b] [CDVTimer][statusbar] 4.190028ms
+2015-01-02 11:17:58.516 PainSquad[25789:70b] [CDVTimer][TotalPluginStartup] 49.889982ms
+2015-01-02 11:17:58.524 PainSquad[25789:70b] active
+2015-01-02 11:17:58.681 PainSquad[25789:70b] Resetting plugins due to page load.
+2015-01-02 11:17:59.037 PainSquad[25789:70b] Finished load of: file:///Users/sailias/Library/Developer/CoreSimulator/Devices/9F330587-B530-4F45-B468-C0748F51752C/data/Applications/05C90912-EDDB-452E-8E05-B63EAC9A87DD/PainSquad.app/www/index.html#/app/home
+2015-01-02 11:17:59.462 PainSquad[25789:70b] device token 
+2015-01-02 11:18:38.366 PainSquad[25789:70b] Resetting plugins due to page load.
+2015-01-02 11:18:39.051 PainSquad[25789:70b] Finished load of: file:///Users/sailias/Library/Developer/CoreSimulator/Devices/9F330587-B530-4F45-B468-C0748F51752C/data/Applications/05C90912-EDDB-452E-8E05-B63EAC9A87DD/PainSquad.app/www/index.html#/app/login

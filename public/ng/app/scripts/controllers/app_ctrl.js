@@ -20,7 +20,6 @@
       return ionic.Platform.isIOS() || ionic.Platform.isAndroid();
     };
     saveDeviceToken = function() {
-      console.log("device token", $rootScope.deviceToken);
       if ($rootScope.deviceToken) {
         return TokenResource.update({
           device_token: $rootScope.deviceToken
@@ -45,7 +44,9 @@
       $scope.modals.levelupModal.remove();
       return $scope.modals.genericModal.remove();
     });
-    return saveDeviceToken();
+    return $rootScope.$watch("deviceToken", function(token) {
+      return saveDeviceToken();
+    });
   });
 
   this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG'];
