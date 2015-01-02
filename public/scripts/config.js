@@ -1,8 +1,8 @@
 (function() {
   'use strict';
   this.configModule.constant('CONFIG', {
-    apiUrl: 'http://painsquad.herokuapp.com/api',
-    baseUrl: 'http://painsquad.herokuapp.com'
+    apiUrl: 'http://psplus.research.sickkids.ca/api',
+    baseUrl: 'http://psplus.research.sickkids.ca'
   });
 
 }).call(this);

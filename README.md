@@ -48,13 +48,11 @@ Run specific file: `bundle exec cucumber features/feature_name.feature`
 Run specific scenario: `bundle exec cucumber features/feature_name.feature:5`
 
 
-## Heroku Deployment
+## Web Server Deployment
 
 - `cd public/ng && gulp build && cd ../ && cp -rf ng/www/* ./`
-- Copy all files/folders in `www/` directory to `public/` directory
-  - `cp -rf www/* ./`
-- Commit and push to `origin:heroku-deployment`
-- Finally: `git push heroku heroku-deployment:master`
+- git commit -a 
+- cap production deploy
 
 ## API Documentation
 

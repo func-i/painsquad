@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG, $sce) {
+  this.AchievementsCtrl = this.controllerModule.controller('AchievementsCtrl', function($ionicPlatform, $scope, $state, $ionicSlideBoxDelegate, $ionicModal, moment, achievements, CONFIG, $sce) {
     var mergeRankData, reset, unlockAwardsAndSetDates, unlockItem;
     $scope.selectedAward = {};
     $scope.achievementData = [
@@ -8,37 +8,37 @@
         name: 'rookie',
         locked: true,
         image_path: 'images/achievements/rookie.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/rookie.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/rookie.mp4",
         date: null
       }, {
         name: 'junior_detective',
         locked: true,
         image_path: 'images/achievements/junior_detective.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/junior_detective.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/junior_detective.mp4",
         date: null
       }, {
         name: 'detective',
         locked: true,
         image_path: 'images/achievements/detective.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/detective.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/detective.mp4",
         date: null
       }, {
         name: 'sergeant',
         locked: true,
         image_path: 'images/achievements/lieutenant.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/lieutenant.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/lieutenant.mp4",
         date: null
       }, {
         name: 'lieutenant',
         locked: true,
         image_path: 'images/achievements/sergeant.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/sergeant.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/sergeant.mp4",
         date: null
       }, {
         name: 'chief',
         locked: true,
         image_path: 'images/achievements/chief.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/chief.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/ranks/chief.mp4",
         date: null
       }
     ];
@@ -48,7 +48,7 @@
         locked: true,
         image_path: 'images/awards/commendation-small.png',
         badge_image_path: 'images/awards/commendation-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/commendation.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/commendation.mp4",
         level: null,
         date: null,
         message: 'Wow! Having completed your first case, you have achieved the Commendation award. Keep up the great work.'
@@ -57,7 +57,7 @@
         locked: true,
         image_path: 'images/awards/medal-small.png',
         badge_image_path: 'images/awards/medal-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/medal.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/medal.mp4",
         level: null,
         date: null,
         message: "Great! Having completed your first advice, you've achieved the Medal award, keep it up!"
@@ -66,7 +66,7 @@
         locked: true,
         image_path: 'images/awards/award-small.png',
         badge_image_path: 'images/awards/award-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/award.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/award.mp4",
         level: 0,
         date: null,
         message: "Awesome! For completing five cases, you've earned an Award, keep going!"
@@ -75,7 +75,7 @@
         locked: true,
         image_path: 'images/awards/cross-small.png',
         badge_image_path: 'images/awards/cross-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/cross.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/cross.mp4",
         level: 0,
         date: null,
         message: "Nice! You've earned a Cross award for receiving 100 points from advice!"
@@ -84,7 +84,7 @@
         locked: true,
         image_path: 'images/awards/star-small.png',
         badge_image_path: 'images/awards/star-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/star.m4v",
+        video_path: "" + CONFIG.baseUrl + "/videos/awards/star.mp4",
         level: 0,
         date: null,
         message: "Great job! You've been awarded a Star for completing six different pain recommendations!"
