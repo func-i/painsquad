@@ -60,12 +60,12 @@
         return $log.info("Successfully registered with GCM push server. " + "Waiting for device registration ID via notification. " + "Registration result:", result);
       };
       apnsSuccessHandler = function(deviceToken) {
-        $log.info("Successfully registered with APNS push server. Device token:", deviceToken);
+        $log.info("Successfully registered with APNS push server. Device token: " + deviceToken);
         $rootScope.deviceToken = deviceToken;
         return registeredCallback(deviceToken, "APNS");
       };
       genericErrorHandler = function(error) {
-        return $log.error("Error registering with push server:", error);
+        return $log.info("Error registering with push server: " + error);
       };
       if (device.platform === "Android") {
         pushNotification.register(gcmSuccessHandler, genericErrorHandler, {
