@@ -58,6 +58,20 @@
     </div>
 
     <div class="row">
+      <div class="small-3 columns">
+        <%= f.label :device_token, class: "right inline" %>
+      </div>
+      <div class="small-7 columns end">
+        <%= f.text_field :device_token %>
+      </div>
+      <% if @user.device_token %>
+        <div class="small-2 columns end">
+          <%= link_to "Test message", [:test_message, @user], class: 'button tiny success', method: "post" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row">
       <div class="small-9 small-offset-3 columns">
         <%= f.submit class: 'button radius' %>
       </div>

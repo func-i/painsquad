@@ -31,8 +31,15 @@ PainSquadApi::Application.routes.draw do
   delete :logout, to: 'sessions#destroy'
 
   resources :users do
-    get :current, on: :collection
-    put :password, on: :member
+
+    collection do
+      get :current
+    end
+
+    member do 
+      put :password
+      post :test_message
+    end
   end
 
   resources :questions, only: [:index, :show, :edit, :update]

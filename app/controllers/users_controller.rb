@@ -1,6 +1,6 @@
 class UsersController < AdminController
   
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :test_message]
 
   # GET /users
   def index
@@ -46,6 +46,11 @@ class UsersController < AdminController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
+  def test_message
+    Workers::UserNotifier.new(@user.id, "This is a test message from Painsquad").perform
+    redirect_to @user
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -55,7 +60,7 @@ class UsersController < AdminController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :healthcare_provider_email, :phone_number)
+    params.require(:user).permit(:username, :email, :password, :healthcare_provider_email, :phone_number, :device_token)
   end
 
 end
