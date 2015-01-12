@@ -24,4 +24,8 @@ class Alert < ActiveRecord::Base
     alert_time.strftime('%I:%M:%S %p')
   end
 
+  def time_today
+    Date.today.beginning_of_day + (self.alert_time.hour).hours + (self.alert_time.min).minutes
+  end
+
 end

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService, AuthService) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService) {
     var saveDeviceToken;
     $scope.levelUp = {};
     $scope.advice = {};
@@ -27,9 +27,23 @@
       }
     };
     $scope.logout = function() {
-      if (confirm("Are you sure you want to log out?")) {
-        return AuthService.logout();
-      }
+      var confirmPopup;
+      return confirmPopup = $ionicPopup.confirm({
+        title: 'Log out',
+        template: 'Are you sure you want to log out?',
+        buttons: [
+          {
+            text: "<span class='content'>No</span>",
+            type: 'button-stable'
+          }, {
+            text: "<span class='content'>Yes</span>",
+            type: 'button-positive',
+            onTap: function(ev) {
+              return AuthService.logout();
+            }
+          }
+        ]
+      });
     };
     $rootScope.$on('event:levelup', function(event, args) {
       $scope.levelUp.image = args.image;
@@ -60,6 +74,6 @@
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService'];
 
 }).call(this);

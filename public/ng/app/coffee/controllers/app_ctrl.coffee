@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService, AuthService) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -25,8 +25,21 @@
       TokenResource.update(device_token: $rootScope.deviceToken)
 
   $scope.logout = ->
-    if confirm "Are you sure you want to log out?"      
-      AuthService.logout()
+    confirmPopup = $ionicPopup.confirm(
+     title: 'Log out',
+     template: 'Are you sure you want to log out?'
+     buttons:  [
+      {
+        text: "<span class='content'>No</span>"
+        type: 'button-stable'
+      },
+      {
+        text: "<span class='content'>Yes</span>"
+        type: 'button-positive'
+        onTap: (ev) ->
+          AuthService.logout()
+      }
+    ])
 
   $rootScope.$on 'event:levelup', (event, args) ->
     $scope.levelUp.image     = args.image
@@ -50,4 +63,4 @@
   $rootScope.$watch "deviceToken", (token) ->
     saveDeviceToken()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService' ]

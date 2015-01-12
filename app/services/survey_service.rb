@@ -14,7 +14,7 @@ class SurveyService
       send_survey :full
     elsif @last_submission 
       # => The user had an alert a hour ago and hasn't created a new submission
-      if had_alert_within_an_hour? && @last_submission.created_at < 1.hour.ago - 5.minutes
+      if had_alert_within_an_hour?
         send_survey :full        
       else
         send_survey :truncated
@@ -28,7 +28,12 @@ class SurveyService
   protected
   
   def had_alert_within_an_hour?
-    @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
+    last_alert = @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).first
+    if last_alert 
+      @last_submission.created_at < last_alert.time_today
+    else 
+      false
+    end
   end
 
   def send_survey type
