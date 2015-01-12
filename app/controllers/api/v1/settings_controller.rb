@@ -29,7 +29,7 @@ module Api
 
       def update
         if present_user && @alert && new_alert?
-          present_user.alerts.where(category: alert_type).destroy_all
+          present_user.user_alerts.joins(:alert).where(alerts: {category: alert_type}).destroy_all
           present_user.alerts << @alert
           head :ok
         else
