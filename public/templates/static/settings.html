@@ -30,21 +30,7 @@
           ng-options="alert as alert.display_time for alert in eveningAlerts">
         </select>
       </label>
-
-      <div class="item item-divider">
-        Account Settings
-      </div>
-
-      <ion-item ng-if="isLoggedIn" style="height: auto;">
-        Logged in as: {{ currentUser.username }}
-
-        <button
-          class="button button-block button-assertive override bg-pattern red"
-          ng-click="logout()">
-            <span class="content">Logout</span>
-        </button>
-      </ion-item>
-
+      
       <div class="extension grey-background"></div>
     </div>
 

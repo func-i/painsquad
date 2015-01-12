@@ -12,7 +12,7 @@ module Workers
       if user_lookup.any?
         user_lookup.each do |user|
           Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, "This is a reminder from PainSquad that its time to complete a case!"))
-          Delayed::Job.enqueue(Workers::UserNotifier.new(user.id, "This is a follow-up reminder from PainSquad to complete a case!"), run_at: 1.hour.from_now)
+          Delayed::Job.enqueue(Workers::FirstNotificationReminder.new(user.id), run_at: 15.minutes.from_now)
         end
       end
     end

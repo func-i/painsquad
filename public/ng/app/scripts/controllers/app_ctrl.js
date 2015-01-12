@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService, AuthService) {
     var saveDeviceToken;
     $scope.levelUp = {};
     $scope.advice = {};
@@ -26,6 +26,11 @@
         });
       }
     };
+    $scope.logout = function() {
+      if (confirm("Are you sure you want to log out?")) {
+        return AuthService.logout();
+      }
+    };
     $rootScope.$on('event:levelup', function(event, args) {
       $scope.levelUp.image = args.image;
       $scope.levelUp.prev_rank = args.prev_rank;
@@ -37,18 +42,24 @@
       $scope.modals.genericModal.show();
       return $timeout(function() {
         return $scope.modals.genericModal.hide();
-      }, 2000);
+      }, 3000);
     });
     $scope.$on("$destroy", function() {
-      $scope.modals.loginModal.remove();
-      $scope.modals.levelupModal.remove();
-      return $scope.modals.genericModal.remove();
+      if ($scope.modals.loginModal) {
+        $scope.modals.loginModal.remove();
+      }
+      if ($scope.modals.levelupModal) {
+        $scope.modals.levelupModal.remove();
+      }
+      if ($scope.modals.genericModal) {
+        return $scope.modals.genericModal.remove();
+      }
     });
     return $rootScope.$watch("deviceToken", function(token) {
       return saveDeviceToken();
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService'];
 
 }).call(this);

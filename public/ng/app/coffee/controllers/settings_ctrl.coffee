@@ -1,6 +1,6 @@
 # 'use strict'
 
-@SettingsCtrl = @controllerModule.controller 'SettingsCtrl', ($rootScope, $scope, settings, moment, AuthService, UserService, SettingResource) ->
+@SettingsCtrl = @controllerModule.controller 'SettingsCtrl', ($rootScope, $scope, settings, moment, UserService, SettingResource) ->
   $scope.currentUser          = UserService.currentUser()
   $scope.isLoggedIn           = UserService.isLoggedIn()
   $scope.morningAlerts        = settings.morning_alerts
@@ -28,11 +28,8 @@
         $scope.selectedMorningAlert = $scope.morningAlerts[index]
     for date, index in $scope.eveningAlerts
       if date.selected
-        $scope.selectedEveningAlert = $scope.eveningAlerts[index]
-
-  $scope.logout = ->
-    AuthService.logout()
+        $scope.selectedEveningAlert = $scope.eveningAlerts[index]  
 
   init()
 
-@SettingsCtrl.$inject = [ '$rootScope', '$scope', 'settings', 'moment', 'AuthService', 'UserService' ]
+@SettingsCtrl.$inject = [ '$rootScope', '$scope', 'settings', 'moment', 'UserService' ]

@@ -67,10 +67,22 @@
     </div>
 
     <% if @user.device_token || @user.phone_number %>
-      <div class="small-2 small-offset-3 columns end">
-        <%= link_to "Test message", [:test_message, @user], class: 'button tiny success', method: "post" %>
+      <div class="row">
+        <div class="small-2 small-offset-3 columns end">
+          <%= link_to "Test message", [:test_message, @user], class: 'button tiny success', method: "post" %>
+        </div>
       </div>
     <% end %>
+
+    <div class="row">
+      <div class='small-3 columns'>
+        <%= f.label :force_full_survey, class: "right inline" %>      
+      </div>
+      <div class='small-7 columns end'>
+        <%= f.check_box :force_full_survey  %>
+      </div>
+    </div>
+
 
     <div class="row">
       <div class="small-9 small-offset-3 columns">

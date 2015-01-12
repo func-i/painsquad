@@ -9,7 +9,7 @@
           ((m, index) ->
             $timeout ->
               $rootScope.$broadcast "event:#{m.event_name}", m.options
-            , index * 2700
+            , index * 3700
           )(modal, i)
 
       response

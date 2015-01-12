@@ -9,7 +9,7 @@
         _fn = function(m, index) {
           return $timeout(function() {
             return $rootScope.$broadcast("event:" + m.event_name, m.options);
-          }, index * 2700);
+          }, index * 3700);
         };
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           modal = _ref[i];

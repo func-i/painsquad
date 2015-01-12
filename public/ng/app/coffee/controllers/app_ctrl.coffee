@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $timeout, CONFIG, TokenResource, ModalService, AuthService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -24,6 +24,10 @@
     if $rootScope.deviceToken
       TokenResource.update(device_token: $rootScope.deviceToken)
 
+  $scope.logout = ->
+    if confirm "Are you sure you want to log out?"      
+      AuthService.logout()
+
   $rootScope.$on 'event:levelup', (event, args) ->
     $scope.levelUp.image     = args.image
     $scope.levelUp.prev_rank = args.prev_rank
@@ -36,14 +40,14 @@
     $scope.modals.genericModal.show()
     $timeout ->
       $scope.modals.genericModal.hide()
-    , 2000
+    , 3000
 
   $scope.$on "$destroy", ->
-    $scope.modals.loginModal.remove()
-    $scope.modals.levelupModal.remove()
-    $scope.modals.genericModal.remove()
+    $scope.modals.loginModal.remove() if $scope.modals.loginModal
+    $scope.modals.levelupModal.remove() if $scope.modals.levelupModal
+    $scope.modals.genericModal.remove() if $scope.modals.genericModal
   
   $rootScope.$watch "deviceToken", (token) ->
     saveDeviceToken()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService' ]

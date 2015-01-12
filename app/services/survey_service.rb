@@ -8,26 +8,27 @@ class SurveyService
   def get_survey    
     # => Allow an admin to force the next survey to be a full one.
     # => This was initially done for development testing, but thought it might be useful as an admin feature in the future.
+
     if @user.force_full_survey
       @user.update(force_full_survey: false)
-      send_survey :full      
-    elsif five_minutes_ago? || one_hour_ago?
       send_survey :full
+    elsif @last_submission 
+      # => The user had an alert a hour ago and hasn't created a new submission
+      if had_alert_within_an_hour? && @last_submission.created_at < 1.hour.ago - 5.minutes
+        send_survey :full        
+      else
+        send_survey :truncated
+      end
     else
+      # => Default to the truncated survey
       send_survey :truncated
     end
   end
 
   protected
-
-  # 0:05 to 0:00 ago
-  def five_minutes_ago?
-    @user.alerts.where(alert_time: 5.minutes.ago.strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
-  end
-
-  # 1:05 to 1:00 ago
-  def one_hour_ago?
-    @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..1.hour.ago.strftime("%H:%M:%S")).any?
+  
+  def had_alert_within_an_hour?
+    @user.alerts.where(alert_time: (1.hour.ago - 5.minutes).strftime("%H:%M:%S")..Time.current.strftime("%H:%M:%S")).any?
   end
 
   def send_survey type

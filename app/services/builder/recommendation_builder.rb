@@ -141,7 +141,7 @@ module Builder
 
       def mini_relaxation
         rec = Recommendation.create(
-          group:       'manage',
+          group:       'both',
           section:     'psychological',
           style:       'slideshow',
           title:       'Mini-relaxation',

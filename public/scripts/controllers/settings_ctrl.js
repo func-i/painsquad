@@ -1,5 +1,5 @@
 (function() {
-  this.SettingsCtrl = this.controllerModule.controller('SettingsCtrl', function($rootScope, $scope, settings, moment, AuthService, UserService, SettingResource) {
+  this.SettingsCtrl = this.controllerModule.controller('SettingsCtrl', function($rootScope, $scope, settings, moment, UserService, SettingResource) {
     var init, saveSelection;
     $scope.currentUser = UserService.currentUser();
     $scope.isLoggedIn = UserService.isLoggedIn();
@@ -45,12 +45,9 @@
       }
       return _results;
     };
-    $scope.logout = function() {
-      return AuthService.logout();
-    };
     return init();
   });
 
-  this.SettingsCtrl.$inject = ['$rootScope', '$scope', 'settings', 'moment', 'AuthService', 'UserService'];
+  this.SettingsCtrl.$inject = ['$rootScope', '$scope', 'settings', 'moment', 'UserService'];
 
 }).call(this);

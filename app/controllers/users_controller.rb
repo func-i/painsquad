@@ -60,7 +60,7 @@ class UsersController < AdminController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :healthcare_provider_email, :phone_number, :device_token)
+    params.require(:user).permit(:username, :email, :password, :healthcare_provider_email, :phone_number, :device_token, :force_full_survey)
   end
 
 end

@@ -7,10 +7,13 @@ class PushInterface
   end
 
   def send_message(message)
+    apns_payload = {aps: { alert: message, sound: 'default'}}.to_json
+    hsh =  {default: message, "APNS" => apns_payload }.to_json
+
     push_parameters = {
       target_arn:        @endpoint,
       message_structure: "json",
-      message:           {default: message}.to_json
+      message:           hsh
     }
     @client.publish(push_parameters)
   end
