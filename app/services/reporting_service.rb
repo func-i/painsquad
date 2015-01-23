@@ -173,10 +173,8 @@ class ReportingService
 			'X'
 		when "bodymap"
 			arr = answer.bodymap_data[hsh[:choice_name].downcase]			
-			if arr
-				puts answer.bodymap_data.inspect
-				puts hsh[:choice_name].inspect 
-				answer.bodymap_data[hsh[:choice_name].downcase].join(",")
+			if arr								
+				arr.join(",")
 			end
 		when 'textbox'
 			answer.custom_text
