@@ -85,10 +85,15 @@
 
   # adds bodymap object answer
   addBodymapAnswer: (answerObj, regionSelections) ->
-    resultObj =
-      question_id:  answerObj.question_id
-      choice_id:    answerObj.choices[0].id
-      bodymap_data: regionSelections
-    @addAnswer(resultObj)
+    
+    for key, arr of regionSelections
+      choice = answerObj.choices.filter((c) -> c.content.toLowerCase() is key)[0]     
+
+      resultObj =
+        question_id:  answerObj.question_id
+        choice_id:    choice.id
+        bodymap_data: arr
+
+      @addAnswer(resultObj)
 
 @SubmissionService.$inject = [ 'BodymapService' ]

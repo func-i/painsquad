@@ -97,13 +97,21 @@
         return this.addAnswer(resultObj);
       },
       addBodymapAnswer: function(answerObj, regionSelections) {
-        var resultObj;
-        resultObj = {
-          question_id: answerObj.question_id,
-          choice_id: answerObj.choices[0].id,
-          bodymap_data: regionSelections
-        };
-        return this.addAnswer(resultObj);
+        var arr, choice, key, resultObj, _results;
+        _results = [];
+        for (key in regionSelections) {
+          arr = regionSelections[key];
+          choice = answerObj.choices.filter(function(c) {
+            return c.content.toLowerCase() === key;
+          })[0];
+          resultObj = {
+            question_id: answerObj.question_id,
+            choice_id: choice.id,
+            bodymap_data: arr
+          };
+          _results.push(this.addAnswer(resultObj));
+        }
+        return _results;
       }
     };
   });

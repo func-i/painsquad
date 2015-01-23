@@ -36,12 +36,7 @@ module Api
             :choice_id,
             :value,
             :custom_text,
-            bodymap_data: [
-              head:  [],
-              torso: [],
-              arms:  [],
-              legs:  []
-            ]
+            bodymap_data: []
           ]
         )
       end

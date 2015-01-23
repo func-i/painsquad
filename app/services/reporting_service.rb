@@ -171,11 +171,8 @@ class ReportingService
 			end
 		when "radio", "checklist-grid"
 			'X'
-		when "bodymap"
-			arr = answer.bodymap_data[hsh[:choice_name].downcase]			
-			if arr								
-				arr.join(",")
-			end
+		when "bodymap"			
+			answer.bodymap_data.join(",") unless answer.bodymap_data.nil?
 		when 'textbox'
 			answer.custom_text
 		end
