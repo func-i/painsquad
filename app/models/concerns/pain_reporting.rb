@@ -49,7 +49,7 @@ module PainReporting
     prev_submissions = prev_submissions.where("created_at > ?", last_mild.created_at) if last_mild
   
     # => Find all moderate submissions after this mild one
-    if prev_submissions.count % 3 == 0
+    if prev_submissions.count > 0 && prev_submissions.count % 3 == 0
       # => Send an email in intervals of 3 moderates
       UserMailer.pain_alert(self).deliver
     end  
