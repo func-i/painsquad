@@ -18,6 +18,6 @@ class Answer < ActiveRecord::Base
   belongs_to :choice
   belongs_to :question
 
-  serialize :bodymap_data, JSON
+  serialize :bodymap_data
 
 end
