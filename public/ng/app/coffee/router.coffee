@@ -29,12 +29,8 @@
           templateUrl: 'templates/shared/home.html'
           controller:  'HomeCtrl'
           resolve:
-            userScore: (User, $q) ->
-              defer = $q.defer()
-              User.query (response) ->
-                defer.resolve response.user
-
-              defer.promise
+            currentUserResponse: (User, $q) ->
+              User.query().$promise
     )
 
     .state('app.login',
@@ -86,6 +82,9 @@
               SurveyResults.query (response) ->
                 defer.resolve response.survey_results
               defer.promise
+
+            currentUserResponse: (User, $q) ->
+              User.query().$promise
     )
 
 

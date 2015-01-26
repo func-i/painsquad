@@ -1,12 +1,12 @@
 (function() {
   'use strict';
-  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService) {
+  this.AppCtrl = this.controllerModule.controller('AppCtrl', function($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService, UserService) {
     var saveDeviceToken;
     $scope.levelUp = {};
     $scope.advice = {};
     ModalService.registerModals($scope);
     $scope.closeModal = function() {
-      return $scope.levelupModal.hide();
+      return $scope.modals.levelupModal.hide();
     };
     $scope.closeAdvice = function() {
       return $scope.adviceModal.hide();
@@ -56,7 +56,7 @@
       $scope.modals.genericModal.show();
       return $timeout(function() {
         return $scope.modals.genericModal.hide();
-      }, 3000);
+      }, 7000);
     });
     $scope.$on("$destroy", function() {
       if ($scope.modals.loginModal) {
@@ -74,6 +74,6 @@
     });
   });
 
-  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService'];
+  this.AppCtrl.$inject = ['$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService', 'UserService'];
 
 }).call(this);

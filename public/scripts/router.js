@@ -23,13 +23,8 @@
           templateUrl: 'templates/shared/home.html',
           controller: 'HomeCtrl',
           resolve: {
-            userScore: function(User, $q) {
-              var defer;
-              defer = $q.defer();
-              User.query(function(response) {
-                return defer.resolve(response.user);
-              });
-              return defer.promise;
+            currentUserResponse: function(User, $q) {
+              return User.query().$promise;
             }
           }
         }
@@ -94,6 +89,9 @@
                 return defer.resolve(response.survey_results);
               });
               return defer.promise;
+            },
+            currentUserResponse: function(User, $q) {
+              return User.query().$promise;
             }
           }
         }

@@ -1,11 +1,13 @@
 (function() {
   'use strict';
-  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $stateParams, $rootScope, $ionicPopup, UserService, userScore) {
-    var init;
-    $scope.currentUser = UserService.currentUser();
-    $scope.userScore = userScore;
-    $scope.rankBadge = userScore ? "images/achievements/" + userScore.rank + ".png" : "images/achievements/rookie.png";
-    $scope.progress = userScore ? userScore.percent_completed : 0.01;
+  this.HomeCtrl = this.controllerModule.controller('HomeCtrl', function($scope, $state, $stateParams, $rootScope, $ionicPopup, UserService, currentUserResponse) {
+    var currentUser, init;
+    currentUser = currentUserResponse.user;
+    UserService.set(currentUser);
+    $scope.currentUser = currentUser;
+    $scope.userScore = currentUser;
+    $scope.rankBadge = currentUser ? "images/achievements/" + currentUser.rank + ".png" : "images/achievements/rookie.png";
+    $scope.progress = currentUser ? currentUser.percent_completed : 0.01;
     $scope.showPopup = function() {
       var confirmPopup;
       return confirmPopup = $ionicPopup.show({
@@ -33,6 +35,6 @@
     return init();
   });
 
-  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore'];
+  this.HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'currentUser'];
 
 }).call(this);

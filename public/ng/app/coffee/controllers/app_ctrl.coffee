@@ -1,6 +1,6 @@
 'use strict'
 
-@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService) ->
+@AppCtrl = @controllerModule.controller 'AppCtrl', ($scope, $rootScope, $state, $ionicModal, $ionicPopup, $timeout, CONFIG, TokenResource, ModalService, AuthService, UserService) ->
   $scope.levelUp = {}
   $scope.advice  = {}
 
@@ -8,7 +8,7 @@
   ModalService.registerModals($scope)
 
   $scope.closeModal = ->
-    $scope.levelupModal.hide()
+    $scope.modals.levelupModal.hide()
 
   $scope.closeAdvice = ->
     $scope.adviceModal.hide()
@@ -53,7 +53,7 @@
     $scope.modals.genericModal.show()
     $timeout ->
       $scope.modals.genericModal.hide()
-    , 3000
+    , 7000
 
   $scope.$on "$destroy", ->
     $scope.modals.loginModal.remove() if $scope.modals.loginModal
@@ -63,4 +63,4 @@
   $rootScope.$watch "deviceToken", (token) ->
     saveDeviceToken()
 
-@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService' ]
+@AppCtrl.$inject = [ '$scope', '$rootScope', '$state', '$ionicModal', '$ionicPopup', '$timeout', 'CONFIG', 'TokenResource', 'ModalService', 'AuthService', 'UserService' ]

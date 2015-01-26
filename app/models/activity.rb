@@ -22,6 +22,7 @@ class Activity < ActiveRecord::Base
   scope :recommendation_events, -> { where('event=?', 'recommendation_complete') }
   scope :submission_events, -> { where('event=?', 'submission_complete') }
   scope :award_events, -> { where('event=?', 'award_achieved') }
+  scope :level_up_events, -> { where('event=?', 'level_up') }
 
   def submission?
     subject_type == 'Submission'

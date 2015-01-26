@@ -54,6 +54,7 @@ group :development do
   gem 'binding_of_caller',  '~> 0.7.2'
   gem 'annotate',           '~> 2.6.5'
   gem 'capistrano3-unicorn'
+  gem 'letter_opener'
 end
 
 group :test do

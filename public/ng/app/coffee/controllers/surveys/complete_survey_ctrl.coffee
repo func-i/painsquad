@@ -1,8 +1,10 @@
 'use strict'
 
-@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, $stateParams, $rootScope, SubmissionService, UserService, surveyResult) ->
+@CompleteSurveyCtrl = @controllerModule.controller "CompleteSurveyCtrl", ($scope, $state, $stateParams, $rootScope, SubmissionService, UserService, surveyResult, currentUserResponse) ->
 
-  $scope.currentUser = UserService.currentUser()
+  currentUser = currentUserResponse.user
+  UserService.set(currentUser)
+  $scope.currentUser = currentUser
   $scope.submission  = SubmissionService.getSubmission()
 
   $scope.data =

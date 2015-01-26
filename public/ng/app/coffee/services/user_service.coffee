@@ -1,12 +1,15 @@
 'use strict'
 
-@UserService = @serviceModule.factory 'UserService', ($http) ->
+@UserService = @serviceModule.factory 'UserService', ($http, User) ->
 
   isLoggedIn: ->
     @currentUser()?
 
   currentUser: ->
     JSON.parse(@get())
+
+  fetch: ->
+    User.query()
 
   get: ->
     localStorage.getItem 'current_user'
@@ -22,4 +25,4 @@
     $http.defaults.headers.common['Authorization'] = ''
 
 
-@UserService.$inject = [ '$http' ]
+@UserService.$inject = [ '$http', 'User' ]

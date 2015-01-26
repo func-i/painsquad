@@ -54,6 +54,8 @@ class ActivitySerializer < ActiveModel::Serializer
       end
     end
 
+    #binding.pry
+
     modals << {event_name: 'levelup', options: {image: rank, prev_rank: prev_rank, rank: display_rank}} if show_level_up_modal
     modals
   end
@@ -67,7 +69,7 @@ class ActivitySerializer < ActiveModel::Serializer
   end
 
   def show_level_up_modal
-    object.user.level_up_event?
+    object.user.reload.level_up_event?
   end
 
   def rank

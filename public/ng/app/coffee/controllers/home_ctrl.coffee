@@ -1,10 +1,13 @@
 'use strict'
 
-@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $stateParams, $rootScope, $ionicPopup, UserService, userScore) ->
-  $scope.currentUser = UserService.currentUser()
-  $scope.userScore   = userScore
-  $scope.rankBadge   = if userScore then "images/achievements/#{userScore.rank}.png" else "images/achievements/rookie.png"
-  $scope.progress    = if userScore then userScore.percent_completed else 0.01
+@HomeCtrl = @controllerModule.controller 'HomeCtrl', ($scope, $state, $stateParams, $rootScope, $ionicPopup, UserService, currentUserResponse) ->
+  currentUser = currentUserResponse.user
+  
+  UserService.set(currentUser)
+  $scope.currentUser = currentUser
+  $scope.userScore   = currentUser
+  $scope.rankBadge   = if currentUser then "images/achievements/#{currentUser.rank}.png" else "images/achievements/rookie.png"
+  $scope.progress    = if currentUser then currentUser.percent_completed else 0.01
 
   $scope.showPopup = ->
     confirmPopup = $ionicPopup.show
@@ -34,4 +37,4 @@
 
   init()
 
-@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'userScore']
+@HomeCtrl.$inject = ['$scope', '$state', '$rootScope', '$ionicPopup', 'UserService', 'currentUser']

@@ -19,13 +19,13 @@ class UserAwardService
   end
 
   def check_submission
-    if @user.submission_count == 1
+    if @user.submissions.count == 1
       @user.update commendation: true
       activity_builder 'commendation', 'award_achieved'
 
       # => Set a commendation modal
       @modals << 'commendation'
-    elsif @user.submission_count % 5 == 0
+    elsif @user.submissions.count % 5 == 0
       @user.increment! :award_level
       activity_builder 'award', 'award_achieved'
 

@@ -12,8 +12,10 @@ module UserInteractor
       set_pain_severity
       calculate_score
     elsif self.class == Activity
-      modals = ['advice']  
-      user.increment!(:score, 5) if recommendation? && user.advice_score_unlocked?
+      if recommendation? && user.advice_score_unlocked?
+        modals = ['advice']  
+        user.increment!(:score, 5) 
+      end
     end
     self.modals_to_show = UserAwardService.analyze(self, modals)
   end

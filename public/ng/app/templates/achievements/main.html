@@ -61,7 +61,7 @@
               <figure id="circle" ng-style="getImage(award)"></figure>
               <div class="badge-level"
                 ng-show="award.level"
-                ng-class="{ 'three': award.level > 100, 'two': award.level > 10 }">
+                ng-class="{ 'three': award.level > 99, 'two': award.level > 9 }">
                 <span>{{award.level}}x</span>
               </div>
               <p>{{ award.name | capitalize }}</p>

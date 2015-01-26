@@ -58,7 +58,10 @@ class User < ActiveRecord::Base
   after_update :create_rank_event, :if => :rank_changed?
 
   def level_up_event?
-    self.activities.last.event == 'level_up'
+    last_submission_activity = self.activities.submission_events.last
+    if last_submission_activity
+      self.activities.level_up_events.exists?(["id > ?", last_submission_activity.id])
+    end
   end
 
   def medal_event?

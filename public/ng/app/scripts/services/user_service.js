@@ -1,12 +1,15 @@
 (function() {
   'use strict';
-  this.UserService = this.serviceModule.factory('UserService', function($http) {
+  this.UserService = this.serviceModule.factory('UserService', function($http, User) {
     return {
       isLoggedIn: function() {
         return this.currentUser() != null;
       },
       currentUser: function() {
         return JSON.parse(this.get());
+      },
+      fetch: function() {
+        return User.query();
       },
       get: function() {
         return localStorage.getItem('current_user');
@@ -24,6 +27,6 @@
     };
   });
 
-  this.UserService.$inject = ['$http'];
+  this.UserService.$inject = ['$http', 'User'];
 
 }).call(this);

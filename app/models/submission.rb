@@ -23,7 +23,7 @@ class Submission < ActiveRecord::Base
   scope :truncated, -> { survey.where(identifier: 'truncated') }
 
   scope :by_date, -> { order('created_at DESC') }
-  scope :are_mild, -> { where(pain_severity: Submission::pain_severities[:mild]) }
+  scope :are_mild, -> { where("pain_severity = ? OR pain_severity IS NULL", Submission::pain_severities[:mild]) }
   scope :are_moderate, -> { where(pain_severity: Submission::pain_severities[:moderate]) }
 
   scope :between, -> (from_date, to_date) { where(created_at: [from_date.beginning_of_day..to_date.end_of_day]) }
