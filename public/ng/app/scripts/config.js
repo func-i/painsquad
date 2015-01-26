@@ -1,8 +1,8 @@
 (function() {
   'use strict';
   this.configModule.constant('CONFIG', {
-    apiUrl: 'http://10.0.1.31:3000/api',
-    baseUrl: 'http://10.0.1.31:3000'
+    apiUrl: 'http://psplus.research.sickkids.ca/api',
+    baseUrl: 'http://psplus.research.sickkids.ca'
   });
 
 }).call(this);
