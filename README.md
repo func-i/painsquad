@@ -67,6 +67,10 @@ This creates a self-contained directory within `public/` with the generated docu
 $ cd public/ng
 $ gulp build --ios
 
+## Android
+
+$ gulp build --android
+
 ## Common problems
 
 On a native device you are getting the error: "deviceready not fired for 5 seconds"
