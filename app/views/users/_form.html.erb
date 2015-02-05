@@ -66,7 +66,7 @@
       </div>      
     </div>
 
-    <% if @user.device_token || @user.phone_number %>
+    <% unless @user.new_record? && (@user.device_token || @user.phone_number) %>
       <div class="row">
         <div class="small-2 small-offset-3 columns end">
           <%= link_to "Test message", [:test_message, @user], class: 'button tiny success', method: "post" %>
