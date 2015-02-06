@@ -19,6 +19,12 @@
     choice.value = null
     $scope.modal.hide()
 
+  $scope.choiceTextHelper = ->        
+    if $scope.question.name is "medication_efficacy"
+      return "medications"
+    else
+      return "strategies"    
+
   $scope.showSave = false
 
   $scope.$on 'detailModal:valid', (event) ->

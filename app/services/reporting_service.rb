@@ -98,6 +98,14 @@ class ReportingService
 				# => If the choice has content (some don't)
 				# => Then use that has the header
 
+				hsh = @header_hash["#{question.name}_#{choice.content}"] ||= []
+				@header_hash["#{question.name}_#{choice.content}"] << {
+					question_id: question.id,
+					choice_id: choice.id,
+					bodymap: question.question_type.eql?('bodymap'),
+					choice_name: choice.content
+				}
+
 				if choice.textfield
 					hsh = @header_hash["#{question.name}_#{choice.content}_textfield"] ||= []
 					@header_hash["#{question.name}_#{choice.content}_textfield"] << {
@@ -106,14 +114,7 @@ class ReportingService
 						textfield: true
 					}
 				end
-
-				hsh = @header_hash["#{question.name}_#{choice.content}"] ||= []
-				@header_hash["#{question.name}_#{choice.content}"] << {
-					question_id: question.id,
-					choice_id: choice.id,
-					bodymap: question.question_type.eql?('bodymap'),
-					choice_name: choice.content
-				}
+				
 			else
 				# => Default to the question name for questions that have choices without content.  (Text questions)
 				@header_hash[question.name] ||= []
@@ -161,15 +162,15 @@ class ReportingService
 	def parse_answer(answer, hsh)				
 		question = answer.question
 		case question.question_type
-		when "slider", 'checklist'			
-			answer.value || 'X'
-		when 'checklist-extra'
+		when "slider"
+			answer.value || 'X'										
+		when 'checklist-extra', 'checklist', "checklist-grid"
 			if hsh[:textfield]
 				answer.custom_text
 			else
-				answer.value
+				answer.value || 'X'
 			end
-		when "radio", "checklist-grid"
+		when "radio"
 			'X'
 		when "bodymap"			
 			answer.bodymap_data.join(",") unless answer.bodymap_data.nil?

@@ -1,5 +1,5 @@
 class QuestionSerializer < ActiveModel::Serializer
-  attributes :question_id, :question_type, :content, :tip, :identifier, :extremes
+  attributes :question_id, :question_type, :content, :tip, :identifier, :extremes, :name
   has_many :choices
 
   def choices

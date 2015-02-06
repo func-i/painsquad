@@ -11,7 +11,7 @@
     inverse = null
     for choice in $scope.question.choices
       if choice.textfield
-        inverse = true if choice.selected and choice.value and choice.value.length >= 1
+        inverse = true if choice.selected and choice.custom_text and choice.custom_text.length >= 1
       else if choice.selected
         inverse = true
     !inverse
