@@ -5,7 +5,7 @@ class ReportService
     @report_type = report_type
 
     # => Get all the user's submissions
-    @submissions = Submission.where(user_id: @user.id).by_date.take(100)
+    @submissions = Submission.where(user_id: @user.id).by_date.limit(100)
     @graph_data = {}
   end
 
@@ -25,95 +25,119 @@ class ReportService
   end
 
   def action_data
+    med_data()
+    strat_data()    
+  end
+
+  def med_data
+    graph_data = {}
+
     # => Loop through the submissions to add the to graphing data
     @submissions.each do |submission|
 
-      # => Find the medical question in the survey
-      med_question = submission.survey.questions.where(tag: 'medications').first
+      submission.answers.includes(question: :choices).where(questions: {tag: 'medications'}).each do |answer|
+        # next if answer.choice.textfield || answer.choice.can_disable
+        next if answer.choice.try(:can_disable)
+        graph_data[answer.choice.content] ||= {
+          count: 0,
+          total: 0
+        }
 
-      # => If the submission has the medical question
-      if med_question
-
-        # => Load the answers for the medical question
-        answers = submission.answers.where(question_id: med_question.id)
-
-        answers.each do |answer|
-          # next if answer.choice.textfield || answer.choice.can_disable
-          next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
-          @graph_data[answer.choice.content] ||= {
-            count: 0,
-            total: 0
-          }
-
-          # => Increment the number of times this was answered
-          @graph_data[answer.choice.content][:count] += 1
-          @graph_data[answer.choice.content][:total] = @graph_data[answer.choice.content][:total] + answer.value
-          @graph_data[answer.choice.content][:average] = @graph_data[answer.choice.content][:total] / @graph_data[answer.choice.content][:count]
-        end
-
+        # => Increment the number of times this was answered
+        graph_data[answer.choice.content][:count] += 1
+        graph_data[answer.choice.content][:total] = graph_data[answer.choice.content][:total] + (answer.value || 0)
+        graph_data[answer.choice.content][:average] = graph_data[answer.choice.content][:total] / graph_data[answer.choice.content][:count]
       end
     end
+
+    @graph_data[:med] = graph_data
+  end  
+
+  def strat_data
+    graph_data = {}
+
+    # => Loop through the submissions to add the to graphing data
+    @submissions.each do |submission|
+
+      submission.answers.includes(question: :choices).where(questions: {name: 'other_strategies'}).each do |answer|
+        # next if answer.choice.textfield || answer.choice.can_disable
+        next if answer.choice.try(:can_disable)
+        graph_data[answer.choice.content] ||= {
+          count: 0,
+          total: 0
+        }
+
+        # => Increment the number of times this was answered
+        graph_data[answer.choice.content][:count] += 1
+        graph_data[answer.choice.content][:total] = graph_data[answer.choice.content][:total] + (answer.value || 0)
+        graph_data[answer.choice.content][:average] = graph_data[answer.choice.content][:total] / graph_data[answer.choice.content][:count]
+      end
+    end
+
+    @graph_data[:strat] = graph_data
   end
 
   def cause_data
-    @submissions.each do |submission|
+    @graph_data[:submission_count] = 0
 
-      # => Find the medical question in the survey
-      pain_question = submission.survey.questions.where(tag: 'pain_cause').first
+    @submissions.full.each do |submission|
 
-      # => If the submission has the medical question
-      if pain_question
-         # => Load the answers for the medical question
-        submission.answers.where(question_id: pain_question.id).each do |answer|
-          next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
-          @graph_data[answer.choice.content] ||= 0
-          @graph_data[answer.choice.content] += 1
-        end
+      submission.answers.includes(question: :choices).where(questions: {tag: 'pain_cause'}).each do |answer|
+        next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)          
+        @graph_data[answer.choice.content] ||= 0
+        @graph_data[answer.choice.content] += 1 
       end
+
+      @graph_data[:submission_count] += 1
     end
   end
 
   def effect_data
-    @submissions.each do |submission|
+    @submissions.full.each do |submission|
 
-      # => Get all the effect questions, there are multiple questions unlike
-      # => the reports above that have 1 question and multiple answers for it
-      submission.survey.questions.where(tag: 'effect').each do |effect_question|
+      submission.answers.includes(question: :choices).where(questions: {tag: 'effect'}).each do |answer|
+        next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
+        @graph_data[answer.question.report_label] ||= {
+          count: 0,
+          total: 0,
+          average: 0
+        }
 
-        # => Get the answers for this submission
-        submission.answers.where(question_id: effect_question.id).each do |answer|
-          next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
-          @graph_data[effect_question.report_label] ||= {
-            count: 0,
-            total: 0,
-            average: 0
-          }
-
-           # => Increment the number of times this was answered
-          @graph_data[effect_question.report_label][:count] += 1
-          @graph_data[effect_question.report_label][:total] = @graph_data[effect_question.report_label][:total] + answer.value
-          @graph_data[effect_question.report_label][:average] = @graph_data[effect_question.report_label][:total] / @graph_data[effect_question.report_label][:count]
-        end
+         # => Increment the number of times this was answered
+        @graph_data[answer.question.report_label][:count] += 1
+        @graph_data[answer.question.report_label][:total] += answer.value
+        @graph_data[answer.question.report_label][:average] = @graph_data[answer.question.report_label][:total] / @graph_data[answer.question.report_label][:count]
       end
     end
   end
 
   def pain_data
-    @submissions.each do |submission|
-      submission.survey.questions.where(tag: 'intensity').each do |pain_question|
+    @submissions.full.each do |submission|
+      submission.answers.includes(question: :choices).where(questions: {tag: 'intensity'}).each do |answer|
+        next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
+        date = submission.created_at.strftime("%b %e, %Y")
+        @graph_data[date] ||= {}
 
-         # => Get the answers for this submission
-        submission.answers.where(question_id: pain_question.id).each do |answer|
-          next if answer.choice.try(:textfield) || answer.choice.try(:can_disable)
-          date = submission.created_at.strftime("%b %e, %Y")
-          @graph_data[date] ||= {
-            worst: 0,
-            least: 0
-          }
+        lbl = answer.question.report_label.downcase.to_sym
+        val = @graph_data[date][lbl]
 
-          @graph_data[date][pain_question.report_label.downcase.to_sym] = answer.value
+        puts "#{date} => #{lbl} : #{val}"
+        if val            
+          case lbl
+          when :least
+            val = answer.value if answer.value < val                
+          when :most
+            val = answer.value if answer.value > val
+          else
+            val = answer.value
+          end
+        else
+          val = answer.value
         end
+
+        @graph_data[date][lbl] = val
+        
       end
-    end
+    end    
   end
 end

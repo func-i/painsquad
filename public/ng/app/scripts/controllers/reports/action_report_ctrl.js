@@ -60,12 +60,12 @@
         }
       };
     };
-    chartData = function() {
+    chartData = function(reportData) {
       var data, hsh, label;
       data = [["Medication", "Frequency", "Effectiveness"]];
-      if (Object.keys(report).length > 0) {
-        for (label in report) {
-          hsh = report[label];
+      if (Object.keys(reportData).length > 0) {
+        for (label in reportData) {
+          hsh = reportData[label];
           data.push([label, hsh.count, hsh.average]);
         }
       } else {
@@ -74,12 +74,16 @@
       return data;
     };
     loadChart = function() {
-      var chart;
+      var chart, medChart, stratChart;
       chart = {};
       chart.type = "ColumnChart";
       chart.options = chartOptions();
-      chart.data = chartData();
-      return $scope.chart = chart;
+      medChart = angular.copy(chart);
+      medChart.data = chartData(report.med);
+      $scope.medChart = medChart;
+      stratChart = angular.copy(chart);
+      stratChart.data = chartData(report.strat);
+      return $scope.stratChart = stratChart;
     };
     return loadChart();
   });

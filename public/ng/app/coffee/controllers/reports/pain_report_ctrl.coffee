@@ -17,7 +17,7 @@
       alignment: 'center'
       maxLines: 2
 
-    colors: ["blue", "red"]
+    colors: ["blue", "red", "green", "orange"]
 
     hAxis:
       direction: -1

@@ -51,11 +51,11 @@
      width:  '75%'
      height: '75%'
 
-  chartData = ->
+  chartData = (reportData) ->
     data = [["Medication", "Frequency", "Effectiveness"]]
 
-    if Object.keys(report).length > 0
-      for label, hsh of report
+    if Object.keys(reportData).length > 0
+      for label, hsh of reportData
         data.push [label, hsh.count, hsh.average]
     else
       data.push ["", 0, 0]
@@ -65,9 +65,15 @@
   loadChart = ->
     chart = {}
     chart.type = "ColumnChart"
-    chart.options = chartOptions()
-    chart.data = chartData()
-    $scope.chart = chart
+    chart.options = chartOptions()    
+
+    medChart = angular.copy(chart)
+    medChart.data = chartData(report.med)
+    $scope.medChart = medChart
+
+    stratChart = angular.copy(chart)
+    stratChart.data = chartData(report.strat)
+    $scope.stratChart = stratChart
 
   # Default behaviour
   loadChart()

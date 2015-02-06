@@ -21,6 +21,7 @@ class Question < ActiveRecord::Base
   EDITABLE_TYPES = %w( radio checklist checklist-grid checklist-extra )
 
   belongs_to :survey
+  has_many :answers
   has_many :choices, dependent: :destroy
   accepts_nested_attributes_for :choices, allow_destroy: true
 

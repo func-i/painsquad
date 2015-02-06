@@ -19,10 +19,10 @@ class Submission < ActiveRecord::Base
 
   enum pain_severity: [:mild, :moderate]
 
-  scope :full, -> { survey.where(identifier: 'full') }
-  scope :truncated, -> { survey.where(identifier: 'truncated') }
+  scope :full, -> { includes(:survey).where(surveys: {identifier: 'full'}) }
+  scope :truncated, -> { includes(:survey).where(surveys: {identifier: 'truncated'}) }
 
-  scope :by_date, -> { order('created_at DESC') }
+  scope :by_date, -> { order('submissions.created_at DESC') }
   scope :are_mild, -> { where("pain_severity = ? OR pain_severity IS NULL", Submission::pain_severities[:mild]) }
   scope :are_moderate, -> { where(pain_severity: Submission::pain_severities[:moderate]) }
 

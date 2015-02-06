@@ -42,11 +42,14 @@
       height: '85%'
 
   chartData = ->
-    data = [["Medication", "Frequency"]]
+    data = [["Medication", "Frequency"]]    
+
+    submission_count = report["submission_count"]
+    delete report["submission_count"]    
 
     if Object.keys(report).length > 0
       for label, freq of report
-        data.push [label, freq]
+        data.push [label, (freq / submission_count) * 100]
     else
       data.push ["", 0]
 

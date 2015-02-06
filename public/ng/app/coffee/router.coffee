@@ -242,7 +242,7 @@
       url: '/reports/action'
       views:
         menuContent:
-          templateUrl: 'templates/reports/report.html',
+          templateUrl: 'templates/reports/tabbed_report.html',
           controller: "ActionReportCtrl",
           resolve:
             report: (Report, $q) ->
