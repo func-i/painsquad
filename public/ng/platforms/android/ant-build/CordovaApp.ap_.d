@@ -689,6 +689,7 @@
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/layout/menu.html \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/reports/main.html \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/reports/report.html \
+/Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/reports/tabbed_report.html \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/shared/advice.html \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/shared/home.html \
 /Users/sailias/apps/painsquad/public/ng/platforms/android/assets/www/templates/shared/levelup.html \
