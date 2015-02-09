@@ -20,6 +20,13 @@
       choice.value = null;
       return $scope.modal.hide();
     };
+    $scope.choiceTextHelper = function() {
+      if ($scope.question.name === "medication_efficacy") {
+        return "medications";
+      } else {
+        return "strategies";
+      }
+    };
     $scope.showSave = false;
     $scope.$on('detailModal:valid', function(event) {
       return $scope.showSave = true;

@@ -8198,6 +8198,9 @@ body.platform-browser .progress {
         .slider-container .range-container .lower .text:nth-child(2) {
           margin-right: 12px; }
 
+.platform-android .image-button {
+  top: 8px !important; }
+
 .image-button {
   background-color: transparent !important;
   border-color: transparent !important;

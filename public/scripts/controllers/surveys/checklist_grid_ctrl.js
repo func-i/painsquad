@@ -14,7 +14,7 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         choice = _ref[_i];
         if (choice.textfield) {
-          if (choice.selected && choice.value && choice.value.length >= 1) {
+          if (choice.selected && choice.custom_text && choice.custom_text.length >= 1) {
             inverse = true;
           }
         } else if (choice.selected) {

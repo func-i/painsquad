@@ -4,8 +4,8 @@
   #apiUrl:  'http://painsquad.herokuapp.com/api'
   #baseUrl: 'http://painsquad.herokuapp.com'
 
-  apiUrl:  'http://psplus.research.sickkids.ca/api'
-  baseUrl: 'http://psplus.research.sickkids.ca'
+  apiUrl:  'https://psplus.research.sickkids.ca/api'
+  baseUrl: 'https://psplus.research.sickkids.ca'
 
   #apiUrl:    'http://localhost:3000/api'
   #baseUrl:   'http://localhost:3000'

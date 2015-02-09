@@ -43,12 +43,14 @@
       };
     };
     chartData = function() {
-      var data, freq, label;
+      var data, freq, label, submission_count;
       data = [["Medication", "Frequency"]];
+      submission_count = report["submission_count"];
+      delete report["submission_count"];
       if (Object.keys(report).length > 0) {
         for (label in report) {
           freq = report[label];
-          data.push([label, freq]);
+          data.push([label, (freq / submission_count) * 100]);
         }
       } else {
         data.push(["", 0]);
