@@ -1,4 +1,4 @@
-class ReportingService 
+class AdminReportingService 
 
 	attr_reader :from_date, :to_date
 	
@@ -58,7 +58,7 @@ class ReportingService
 
 	def load_submissions
 		# => Load the submissions from the params here.
-		@submissions = Submission.between(@from_date, @to_date)	
+		@submissions = Submission.between(@from_date, @to_date).order(:created_at)
 	end
 
 	def create_headers
