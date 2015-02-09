@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   respond_to :json
 
+  force_ssl if: :ssl_configured?  
+
   def present_user
     @user
   end
@@ -27,6 +29,10 @@ class ApplicationController < ActionController::Base
 
   def not_authenticated
     redirect_to :login
+  end
+
+  def ssl_configured?
+    Rails.env.production?
   end
 
 end
