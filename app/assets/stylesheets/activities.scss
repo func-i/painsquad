@@ -10,6 +10,10 @@
   }
 
   .submission_complete {
+    .title {
+      background-color: $success-color;
+    }
+
     &.mild {
       .title {
         background-color: $success-color;
