@@ -9,6 +9,7 @@ class UsersController < AdminController
 
   # GET /users/1
   def show
+    @activities = @user.activities.order("created_at DESC").limit(10)
   end
 
   # GET /users/new

@@ -1,0 +1,32 @@
+#activities_holder {
+  .title {
+    text-align: right;
+  }
+
+  .award_achieved {
+    .title {
+      background-color: $primary-color;
+    }
+  }
+
+  .submission_complete {
+    &.mild {
+      .title {
+        background-color: $success-color;
+      }
+    }
+
+    &.moderate {
+      .title {
+        background-color: $alert-color;
+      }
+    }
+  }
+
+  .recommendation_complete {
+    .title {
+      background-color: $warning-color;
+    }
+  }
+
+}

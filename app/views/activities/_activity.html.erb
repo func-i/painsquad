@@ -1,0 +1,7 @@
+<ul class="pricing-table <%= activity_css_class(activity) %>">    
+  <li class="title">
+    <div class="left"><%= activity.created_at.strftime("%F %T") %></div>
+    <%= activity.event.titleize %>
+  </li>  
+  <%= render "activities/#{activity.event}", activity: activity %>
+</ul>
