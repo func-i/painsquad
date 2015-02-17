@@ -220,7 +220,7 @@ module Builder
 
       def mental_relaxation
         rec = Recommendation.create(
-          group:       'prevent',
+          group:       'manage',
           section:     'psychological',
           style:       'slideshow',
           title:       'Mental Relaxation',
@@ -239,7 +239,7 @@ module Builder
 
       def muscle_relaxation
         rec = Recommendation.create(
-          group:       'prevent',
+          group:       'manage',
           section:     'psychological',
           style:       'slideshow',
           title:       'Muscle Relaxation',
