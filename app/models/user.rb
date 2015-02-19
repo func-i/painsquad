@@ -56,14 +56,7 @@ class User < ActiveRecord::Base
 
   after_create :grant_api_access, :register_create_event
   after_update :create_rank_event, :if => :rank_changed?
-
-  def level_up_event?
-    last_submission_activity = self.activities.submission_events.last
-    if last_submission_activity
-      self.activities.level_up_events.exists?(["id > ?", last_submission_activity.id])
-    end
-  end
-
+  
   def medal_event?
     last_activity = self.activities.last
     last_activity.event == 'award_achieved' && last_activity.name == 'medal'

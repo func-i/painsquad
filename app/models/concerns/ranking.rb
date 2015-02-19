@@ -5,10 +5,6 @@ module Ranking
     after_update :update_user_ranking
   end
 
-  def has_ranked_up
-    return true if self.activities.last.level_up?
-  end
-
   def display_rank(submitted_rank = nil)
     rank = submitted_rank || self.rank
     rank.include?('_') ? rank.split('_').map(&:capitalize).join(' ') : rank.capitalize
@@ -63,7 +59,7 @@ module Ranking
     old_score, new_score = self.changes[:score]
     User::LEVELS.each do |threshold|
       if old_score < threshold && new_score >= threshold
-        self.update(rank: self[:rank] + 1)
+        self.update(rank: self[:rank] + 1, levelled_up: true)
       end
     end
   end
