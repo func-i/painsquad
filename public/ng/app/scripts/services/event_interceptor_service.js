@@ -3,17 +3,17 @@
   this.EventInterceptor = this.serviceModule.factory('EventInterceptor', function($q, $injector, $rootScope, $timeout) {
     var error, success;
     success = function(response) {
-      var i, modal, _fn, _i, _len, _ref;
+      var fn, i, j, len, modal, ref;
       if (response && response.data && response.data.activity && response.data.activity.modals) {
-        _ref = response.data.activity.modals;
-        _fn = function(m, index) {
+        ref = response.data.activity.modals;
+        fn = function(m, index) {
           return $timeout(function() {
             return $rootScope.$broadcast("event:" + m.event_name, m.options);
           }, index * 7700);
         };
-        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-          modal = _ref[i];
-          _fn(modal, i);
+        for (i = j = 0, len = ref.length; j < len; i = ++j) {
+          modal = ref[i];
+          fn(modal, i);
         }
       }
       return response;

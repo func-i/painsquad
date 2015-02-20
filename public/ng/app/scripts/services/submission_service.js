@@ -97,8 +97,8 @@
         return this.addAnswer(resultObj);
       },
       addBodymapAnswer: function(answerObj, regionSelections) {
-        var arr, choice, key, resultObj, _results;
-        _results = [];
+        var arr, choice, key, resultObj, results;
+        results = [];
         for (key in regionSelections) {
           arr = regionSelections[key];
           choice = answerObj.choices.filter(function(c) {
@@ -109,9 +109,9 @@
             choice_id: choice.id,
             bodymap_data: arr
           };
-          _results.push(this.addAnswer(resultObj));
+          results.push(this.addAnswer(resultObj));
         }
-        return _results;
+        return results;
       }
     };
   });

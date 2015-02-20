@@ -8,11 +8,11 @@
       }
     };
     return $scope.atLeastOne = function() {
-      var choice, inverse, _i, _len, _ref;
+      var choice, i, inverse, len, ref;
       inverse = null;
-      _ref = $scope.question.choices;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        choice = _ref[_i];
+      ref = $scope.question.choices;
+      for (i = 0, len = ref.length; i < len; i++) {
+        choice = ref[i];
         if (choice.textfield) {
           if (choice.selected && choice.custom_text && choice.custom_text.length >= 1) {
             inverse = true;

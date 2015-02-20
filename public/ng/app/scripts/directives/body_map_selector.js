@@ -7,18 +7,18 @@
     return {
       restrict: 'A',
       link: function(scope, elem, attr, ctrl) {
-        var $paths, item, region, _i, _len, _ref, _results;
+        var $paths, i, item, len, ref, region, results;
         $paths = angular.element(document.querySelector('#selections')).find('path');
         $paths.bind('click', function() {
-          var path, _i, _len, _selections;
+          var _selections, i, len, path;
           if (this.getAttribute('fill') === selectedFill) {
             this.setAttribute('fill', unselectedFill);
           } else {
             this.setAttribute('fill', selectedFill);
           }
           _selections = [];
-          for (_i = 0, _len = $paths.length; _i < _len; _i++) {
-            path = $paths[_i];
+          for (i = 0, len = $paths.length; i < len; i++) {
+            path = $paths[i];
             if (path.getAttribute('fill') === selectedFill) {
               _selections.push(path.id);
             }
@@ -27,16 +27,16 @@
             return scope.$parent.modalSelection.tempSelections = _selections;
           });
         });
-        _ref = scope.$parent.selections[attr.region];
-        _results = [];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          region = _ref[_i];
+        ref = scope.$parent.selections[attr.region];
+        results = [];
+        for (i = 0, len = ref.length; i < len; i++) {
+          region = ref[i];
           item = _.find($paths, function(path) {
             return path.id === region;
           });
-          _results.push(item.setAttribute('fill', selectedFill));
+          results.push(item.setAttribute('fill', selectedFill));
         }
-        return _results;
+        return results;
       }
     };
   });

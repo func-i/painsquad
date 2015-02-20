@@ -68,7 +68,7 @@
     });
     $scope.progressWidth = function() {
       return {
-        width: "" + $scope.surveyProgress + "%"
+        width: $scope.surveyProgress + "%"
       };
     };
     return $scope.startSurvey();

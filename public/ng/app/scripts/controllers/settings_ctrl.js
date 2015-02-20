@@ -8,8 +8,8 @@
     $scope.selectedMorningAlert = {};
     $scope.selectedEveningAlert = {};
     $scope.handleSelection = function(alert, alertArray) {
-      var date, index, _i, _len;
-      for (index = _i = 0, _len = alertArray.length; _i < _len; index = ++_i) {
+      var date, i, index, len;
+      for (index = i = 0, len = alertArray.length; i < len; index = ++i) {
         date = alertArray[index];
         if (date.selected) {
           date.selected = !date.selected;
@@ -25,25 +25,25 @@
       return SettingResource.update(alert);
     };
     init = function() {
-      var date, index, _i, _j, _len, _len1, _ref, _ref1, _results;
-      _ref = $scope.morningAlerts;
-      for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
-        date = _ref[index];
+      var date, i, index, j, len, len1, ref, ref1, results;
+      ref = $scope.morningAlerts;
+      for (index = i = 0, len = ref.length; i < len; index = ++i) {
+        date = ref[index];
         if (date.selected) {
           $scope.selectedMorningAlert = $scope.morningAlerts[index];
         }
       }
-      _ref1 = $scope.eveningAlerts;
-      _results = [];
-      for (index = _j = 0, _len1 = _ref1.length; _j < _len1; index = ++_j) {
-        date = _ref1[index];
+      ref1 = $scope.eveningAlerts;
+      results = [];
+      for (index = j = 0, len1 = ref1.length; j < len1; index = ++j) {
+        date = ref1[index];
         if (date.selected) {
-          _results.push($scope.selectedEveningAlert = $scope.eveningAlerts[index]);
+          results.push($scope.selectedEveningAlert = $scope.eveningAlerts[index]);
         } else {
-          _results.push(void 0);
+          results.push(void 0);
         }
       }
-      return _results;
+      return results;
     };
     return init();
   });

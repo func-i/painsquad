@@ -8,37 +8,37 @@
         name: 'rookie',
         locked: true,
         image_path: 'images/achievements/rookie.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/rookie.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/rookie.mp4",
         date: null
       }, {
         name: 'junior_detective',
         locked: true,
         image_path: 'images/achievements/junior_detective.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/junior_detective.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/junior_detective.mp4",
         date: null
       }, {
         name: 'detective',
         locked: true,
         image_path: 'images/achievements/detective.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/detective.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/detective.mp4",
         date: null
       }, {
         name: 'sergeant',
         locked: true,
         image_path: 'images/achievements/lieutenant.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/lieutenant.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/lieutenant.mp4",
         date: null
       }, {
         name: 'lieutenant',
         locked: true,
         image_path: 'images/achievements/sergeant.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/sergeant.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/sergeant.mp4",
         date: null
       }, {
         name: 'chief',
         locked: true,
         image_path: 'images/achievements/chief.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/ranks/chief.mp4",
+        video_path: CONFIG.baseUrl + "/videos/ranks/chief.mp4",
         date: null
       }
     ];
@@ -48,7 +48,7 @@
         locked: true,
         image_path: 'images/awards/commendation-small.png',
         badge_image_path: 'images/awards/commendation-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/commendation.mp4",
+        video_path: CONFIG.baseUrl + "/videos/awards/commendation.mp4",
         level: null,
         date: null,
         message: 'Wow! Having completed your first case, you have achieved the Commendation award. Keep up the great work.'
@@ -57,7 +57,7 @@
         locked: true,
         image_path: 'images/awards/medal-small.png',
         badge_image_path: 'images/awards/medal-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/medal.mp4",
+        video_path: CONFIG.baseUrl + "/videos/awards/medal.mp4",
         level: null,
         date: null,
         message: "Great! Having completed your first advice, you've achieved the Medal award, keep it up!"
@@ -66,7 +66,7 @@
         locked: true,
         image_path: 'images/awards/award-small.png',
         badge_image_path: 'images/awards/award-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/award.mp4",
+        video_path: CONFIG.baseUrl + "/videos/awards/award.mp4",
         level: 0,
         date: null,
         message: "Awesome! For completing five cases, you've earned an Award, keep going!"
@@ -75,7 +75,7 @@
         locked: true,
         image_path: 'images/awards/cross-small.png',
         badge_image_path: 'images/awards/cross-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/cross.mp4",
+        video_path: CONFIG.baseUrl + "/videos/awards/cross.mp4",
         level: 0,
         date: null,
         message: "Nice! You've earned a Cross award for receiving 100 points from advice!"
@@ -84,7 +84,7 @@
         locked: true,
         image_path: 'images/awards/star-small.png',
         badge_image_path: 'images/awards/star-badge.png',
-        video_path: "" + CONFIG.baseUrl + "/videos/awards/star.mp4",
+        video_path: CONFIG.baseUrl + "/videos/awards/star.mp4",
         level: 0,
         date: null,
         message: "Great job! You've been awarded a Star for completing six different pain recommendations!"
@@ -133,14 +133,14 @@
       return $scope.selectedItem = {};
     };
     mergeRankData = function() {
-      var index, item, _i, _len, _ref, _results;
-      _ref = achievements.ranks;
-      _results = [];
-      for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
-        item = _ref[index];
-        _results.push(unlockItem($scope.achievementData[index], item));
+      var i, index, item, len, ref, results;
+      ref = achievements.ranks;
+      results = [];
+      for (index = i = 0, len = ref.length; i < len; index = ++i) {
+        item = ref[index];
+        results.push(unlockItem($scope.achievementData[index], item));
       }
-      return _results;
+      return results;
     };
     unlockItem = function(listItem, item) {
       if (listItem) {
@@ -149,60 +149,60 @@
       }
     };
     unlockAwardsAndSetDates = function() {
-      var item, _i, _len, _ref, _results;
-      _ref = $scope.awardData;
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        item = _ref[_i];
+      var i, item, len, ref, results;
+      ref = $scope.awardData;
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        item = ref[i];
         switch (item.name) {
           case 'commendation':
             if (achievements.commendation) {
               item.locked = false;
-              _results.push(item.date = moment(achievements.commendation_date).format('MMM. D, YYYY'));
+              results.push(item.date = moment(achievements.commendation_date).format('MMM. D, YYYY'));
             } else {
-              _results.push(void 0);
+              results.push(void 0);
             }
             break;
           case 'medal':
             if (achievements.medal) {
               item.locked = false;
-              _results.push(item.date = moment(achievements.medal_date).format('MMM. D, YYYY'));
+              results.push(item.date = moment(achievements.medal_date).format('MMM. D, YYYY'));
             } else {
-              _results.push(void 0);
+              results.push(void 0);
             }
             break;
           case 'award':
             if (achievements.award_level > 0) {
               item.locked = false;
               item.level = achievements.award_level;
-              _results.push(item.date = moment(achievements.latest_award_date).format('MMM. D, YYYY'));
+              results.push(item.date = moment(achievements.latest_award_date).format('MMM. D, YYYY'));
             } else {
-              _results.push(void 0);
+              results.push(void 0);
             }
             break;
           case 'cross':
             if (achievements.cross_level > 0) {
               item.locked = false;
               item.level = achievements.cross_level;
-              _results.push(item.date = moment(achievements.latest_cross_date).format('MMM. D, YYYY'));
+              results.push(item.date = moment(achievements.latest_cross_date).format('MMM. D, YYYY'));
             } else {
-              _results.push(void 0);
+              results.push(void 0);
             }
             break;
           case 'star':
             if (achievements.star_level > 0) {
               item.locked = false;
               item.level = achievements.star_level;
-              _results.push(item.date = moment(achievements.latest_star_date).format('MMM. D, YYYY'));
+              results.push(item.date = moment(achievements.latest_star_date).format('MMM. D, YYYY'));
             } else {
-              _results.push(void 0);
+              results.push(void 0);
             }
             break;
           default:
-            _results.push(void 0);
+            results.push(void 0);
         }
       }
-      return _results;
+      return results;
     };
     mergeRankData();
     return unlockAwardsAndSetDates();

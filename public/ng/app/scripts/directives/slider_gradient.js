@@ -9,7 +9,7 @@
       link: function(scope, elem, attr) {
         return scope.$watch('sliderGradient', function(value) {
           value || (value = 50);
-          return elem.css('left', "" + (parseInt(value)) + "%");
+          return elem.css('left', (parseInt(value)) + "%");
         });
       }
     };

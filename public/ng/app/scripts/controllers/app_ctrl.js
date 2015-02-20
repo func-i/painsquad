@@ -13,7 +13,7 @@
     };
     $scope.playLevelupVideo = function() {
       var path;
-      path = "" + CONFIG.baseUrl + "/videos/ranks/" + $scope.levelUp.image + ".m4v";
+      path = CONFIG.baseUrl + "/videos/ranks/" + $scope.levelUp.image + ".m4v";
       return $scope.$broadcast('event:playVideo', path);
     };
     $scope.isMobile = function() {
