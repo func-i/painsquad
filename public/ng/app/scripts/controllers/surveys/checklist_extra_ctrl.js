@@ -30,26 +30,26 @@
       }
     };
     $scope.disableAllChoices = function() {
-      var choice, i, len, ref, results;
-      ref = $scope.question.choices;
-      results = [];
-      for (i = 0, len = ref.length; i < len; i++) {
-        choice = ref[i];
+      var choice, _i, _len, _ref, _results;
+      _ref = $scope.question.choices;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        choice = _ref[_i];
         if (!choice.can_disable) {
           choice.selected = false;
-          results.push(choice.disabled = !choice.disabled);
+          _results.push(choice.disabled = !choice.disabled);
         } else {
-          results.push(void 0);
+          _results.push(void 0);
         }
       }
-      return results;
+      return _results;
     };
     return $scope.atLeastOne = function() {
-      var choice, i, inverse, len, ref;
+      var choice, inverse, _i, _len, _ref;
       inverse = null;
-      ref = $scope.question.choices;
-      for (i = 0, len = ref.length; i < len; i++) {
-        choice = ref[i];
+      _ref = $scope.question.choices;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        choice = _ref[_i];
         if (choice.selected) {
           inverse = true;
         }

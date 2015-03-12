@@ -19,16 +19,16 @@
       }
     };
     return $scope.removeItem = function(item_id) {
-      var index, ref, results, value;
-      ref = $scope.favorites;
-      results = [];
-      for (index in ref) {
-        value = ref[index];
+      var index, value, _ref, _results;
+      _ref = $scope.favorites;
+      _results = [];
+      for (index in _ref) {
+        value = _ref[index];
         if (value.recommendation_id === item_id) {
-          results.push($scope.favorites.splice(index, 1));
+          _results.push($scope.favorites.splice(index, 1));
         }
       }
-      return results;
+      return _results;
     };
   });
 

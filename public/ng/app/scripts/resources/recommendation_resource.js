@@ -1,7 +1,7 @@
 (function() {
   this.RecommendationResource = this.resourceModule.factory('Recommendation', function($http, $resource, CONFIG) {
     $http.defaults.useXDomain = true;
-    return $resource(CONFIG.apiUrl + "/recommendations/", {}, {
+    return $resource("" + CONFIG.apiUrl + "/recommendations/", {}, {
       query: {
         method: 'GET',
         isArray: false

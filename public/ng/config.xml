@@ -50,6 +50,9 @@
   </feature>
 
   <platform name="ios">
+    <!-- iOS 8.0+ -->
+    <!-- iPhone 6 Plus  -->
+    <icon src="icons/icon-60-3x.png" width="180" height="180" />
 
     <!-- iOS 7.0+ -->
     <!-- iPhone / iPod Touch -->
@@ -76,9 +79,13 @@
     <!-- images are determined by width and height. The following are supported -->
     <splash src="screens/ios/screen-iphone-portrait.png" width="320" height="480"/>
     <splash src="screens/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
-    <splash src="screens/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
-    <splash src="screens/ios/Default@2x~iphone.png" width="640" height="960"/>
+
     <splash src="screens/ios/Default~iphone.png" width="320" height="480"/>
+    <splash src="screens/ios/Default@2x~iphone.png" width="640" height="960"/>
+
+    <splash src="screens/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+    <splash src="screens/ios/Default-667h@2x~iphone.png" width="750" height="1334"/>
+    <splash src="screens/ios/Default-736h@2x~iphone.png" width="1242" height="2208"/>
 
   </platform>
 

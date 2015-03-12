@@ -14,7 +14,7 @@
           type: 'video/mp4'
         }
       ];
-      $scope.theme = CONFIG.baseUrl + "/lib/videogular-themes-default/videogular.css";
+      $scope.theme = "" + CONFIG.baseUrl + "/lib/videogular-themes-default/videogular.css";
       if (ionic.Platform.isIOS()) {
         return $scope.showInlineVideo = true;
       } else {

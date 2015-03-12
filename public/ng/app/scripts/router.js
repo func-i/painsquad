@@ -176,7 +176,7 @@
               defer = $q.defer();
               $http({
                 method: 'GET',
-                url: CONFIG.apiUrl + "/recommendations/prevent/"
+                url: "" + CONFIG.apiUrl + "/recommendations/prevent/"
               }).success(function(response) {
                 return defer.resolve(response.recommendations);
               }).error(function(data) {
@@ -199,7 +199,7 @@
               defer = $q.defer();
               $http({
                 method: 'GET',
-                url: CONFIG.apiUrl + "/recommendations/manage/"
+                url: "" + CONFIG.apiUrl + "/recommendations/manage/"
               }).success(function(response) {
                 return defer.resolve(response.recommendations);
               }).error(function(data) {

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+  var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   this.directiveModule.directive('bodyMapSelectorSwitch', function() {
     var selectedFill, unselectedFill;
@@ -9,24 +9,24 @@
     return {
       restrict: 'A',
       link: function(scope, elem, attr, ctrl) {
-        var $availablePaths, $directiveSelections, $paths, $persistedSelections, i, item, j, len, len1, ref, region;
+        var $availablePaths, $directiveSelections, $paths, $persistedSelections, item, region, _i, _j, _len, _len1, _ref;
         $paths = angular.element(document.querySelector("[region='" + attr.region + "'] #selections")).find('path');
         $availablePaths = _.pluck($paths, 'id');
         $persistedSelections = scope.$parent.selections;
         $directiveSelections = scope.$parent.modalSelection.tempSelections || [];
-        ref = scope.$parent.modalSelection.tempSelections;
-        for (i = 0, len = ref.length; i < len; i++) {
-          region = ref[i];
-          if (indexOf.call($availablePaths, region) >= 0) {
+        _ref = scope.$parent.modalSelection.tempSelections;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          region = _ref[_i];
+          if (__indexOf.call($availablePaths, region) >= 0) {
             item = _.find($paths, function(path) {
               return path.id === region;
             });
             item.setAttribute('fill', selectedFill);
           }
         }
-        for (j = 0, len1 = $persistedSelections.length; j < len1; j++) {
-          region = $persistedSelections[j];
-          if (indexOf.call($availablePaths, region) >= 0) {
+        for (_j = 0, _len1 = $persistedSelections.length; _j < _len1; _j++) {
+          region = $persistedSelections[_j];
+          if (__indexOf.call($availablePaths, region) >= 0) {
             item = _.find($paths, function(path) {
               return path.id === region;
             });

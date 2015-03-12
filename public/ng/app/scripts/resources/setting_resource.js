@@ -2,7 +2,7 @@
   'use strict';
   this.SettingResource = this.resourceModule.factory('SettingResource', function($http, $resource, CONFIG) {
     $http.defaults.useXDomain = true;
-    return $resource(CONFIG.apiUrl + "/settings/", {}, {
+    return $resource("" + CONFIG.apiUrl + "/settings/", {}, {
       query: {
         method: 'GET',
         isArray: false
