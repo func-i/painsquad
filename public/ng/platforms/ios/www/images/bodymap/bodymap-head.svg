@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="head" viewBox="0 0 494 462" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+<g id="head">
+    <text id="Left" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="36" font-weight="100">
+        <tspan x="420" y="40">Left</tspan>
+    </text>
+    <text id="Right" fill="#525051" sketch:type="MSTextLayer" font-family="Arial" font-size="36" font-weight="100">
+        <tspan x="10" y="40">Right</tspan>
+    </text>
+
+    <g id="selections">
+      <path id="neck_left" fill="#DDC9B2" d="M369.393,390.374c-19.824-6.673-36.869-13.54-46.021-21.091
+            c-11.059-9.121-7.449-53.393-7.449-53.393c-4.98,4.664-31.615,27.309-66.221,27.309v91.74l0.014,0.005L369.393,390.374z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="neck_right" fill="#DDC9B2" d="M249.611,343.197c-35.011-0.037-61.77-21.768-66.312-25.646
+            c0,0,3.609,42.611-7.449,51.732c-9.62,7.936-28.119,14.923-49.239,21.943l123.09,43.713v-91.74
+            C249.672,343.199,249.643,343.197,249.611,343.197z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="jaw_right" fill="#DDC9B2" d="M249.467,269.543c-47.173-0.139-84.286-10.188-90.613-12.017
+            c0,0,4.076,36.686,24.446,60.024c4.542,3.879,31.301,25.609,66.312,25.646v-73.654
+            C249.564,269.543,249.516,269.543,249.467,269.543z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="jaw_left" fill="#DDC9B2" d="M340.188,257.789c-6.863,2.063-42.783,11.756-89.691,11.756
+            c-0.295,0-0.59-0.001-0.885-0.002v73.654c0.031,0,0.061,0.002,0.09,0.002c34.605,0,61.24-22.645,66.221-27.309
+            c17.412-22.351,23.627-53.889,24.367-57.926c0.002-0.133,0.021-0.244,0.043-0.322L340.188,257.789z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="mid_left" fill="#DDC9B2" d="M372.469,194.941c-1.49-17.881-17.5-6.705-17.5-6.705s3.998-7.958,4.158-40.466
+            c-8.799,1.969-48.271,9.913-109.156,9.913c-0.119,0-0.24,0-0.359,0v111.713c0.342,0.001,0.686,0.002,1.027,0.002
+            c46.908,0,82.83-9.692,89.693-11.756c0.018-0.072,0.035-0.116,0.035-0.116s-0.006,0.038-0.02,0.111
+            c0.008-0.003,0.02-0.005,0.027-0.008c-0.008,0.003-0.02,0.005-0.027,0.008c-0.012,0.074-0.031,0.185-0.059,0.327
+            c-0.002,0.65,0.5,1.797,4.107,1.797C358.551,259.762,373.959,212.822,372.469,194.941z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="mid_right" fill="#DDC9B2" d="M249.609,157.684c-61.527-0.029-101.348-8.397-109.517-10.227
+            c0.113,31.387,3.33,40.779,3.33,40.779s-16.049-11.176-17.539,6.705c-1.491,17.881,14.785,64.82,28.941,64.82
+            c2.605,0,4.028-2.235,4.028-2.235c6.327,1.829,43.584,11.731,90.756,11.87c0.002,0,0.002,0,0.002,0V157.684
+            C249.611,157.684,249.611,157.684,249.609,157.684z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="top_right" fill="#DDC9B2" d="M140.088,145.77c0,0.574,0.003,1.127,0.005,1.688
+            c8.169,1.829,47.989,10.197,109.517,10.227c0.002,0,0.002,0,0.002,0V36.246C189.122,36.246,140.088,86.487,140.088,145.77z" onclick="" style="cursor:pointer"
+            />
+
+        <path id="top_left" fill="#DDC9B2" d="M249.611,36.246v121.438c0.119,0,0.24,0,0.359,0c60.885,0,100.357-7.944,109.156-9.913
+            c0.004-0.663,0.008-1.318,0.008-2.001C359.135,85.232,310.1,36.246,249.611,36.246z" onclick="" style="cursor:pointer"
+            />
+    </g>
+
+
+    <g id="Features">
+            <path id="right_brow" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M229.93,179.68c0,0-4.631-6.367-27.784-6.367s-29.521,6.367-29.521,6.367"/>
+
+            <path id="left_brow" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M273.42,179.68c0,0,4.631-6.367,27.784-6.367s29.52,6.367,29.52,6.367"/>
+
+            <path id="right_eye" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M183.044,198.781c0,0,8.682,3.473,18.522,3.473c9.84,0,21.417-4.631,25.468-4.631"/>
+
+            <path id="left_eye" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M316.254,198.781c0,0-8.683,3.473-18.523,3.473c-9.84,0-21.416-4.631-25.468-4.631"/>
+
+            <path id="nose" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M231.991,256.081c0,0,6.964,2.782,17.394,2.782c10.443,0,17.044-2.782,17.044-2.782"/>
+
+            <path id="lip" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M231.88,302.966c0,0,6.964,2.782,17.395,2.782c10.441,0,17.043-2.782,17.043-2.782"/>
+
+            <path id="mouth" fill="none" stroke="#4C2E02" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+            M221.502,291.394c0,0,14.758,1.737,28.073,1.737c13.313,0,29.233-1.737,29.233-1.737"/>
+        <g>
+            <path fill="#EFE5DA" d="M488.026,446.768c-15.174-26.685-73.709-41.136-118.633-56.394l-119.678,44.57l-123.104-43.718
+                C82.33,405.938,25.807,421.07,11.194,446.768C3.016,461.152,2.628,483.837,3.364,498h492.494
+                C496.594,483.837,496.206,461.152,488.026,446.768z"/>
+        </g>
+    </g>
+</g>
+</svg>

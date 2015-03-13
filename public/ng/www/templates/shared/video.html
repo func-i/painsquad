@@ -1,0 +1,8 @@
+<div ng-controller="VideoCtrl">
+  <!-- plays inline on Cordova -->
+  <span ng-if="showInlineVideo">
+    <video class="videoPlayer" autoplay on-exit-listener height="1" width="1">
+      <source ng-src="{{ trustSrc(videoItem.video_path) }}" type="video/mp4">
+    </video>
+  </span>
+</div>

@@ -1,0 +1,41 @@
+<div class="modal" id="fullscreen">
+
+  <ion-header-bar class="bar bar-header bar-royal">
+    <button class="button button-icon ion-ios7-arrow-back" ng-click="closeModal()">
+      Back
+    </button>
+
+    <h1 class="title">{{ selectedItem.name | capitalize }}</h1>
+
+  </ion-header-bar>
+
+  <ion-content padding="true" has-header="true" class="award content-background-no-objects">
+
+    <div class="image">
+      <img class="main" ng-src="{{ selectedItem.badge_image_path }}">
+      <img class="shadow" ng-src="./images/shadows/achievement-modal-shadow.png">
+    </div>
+
+    <article>
+      <div class="header-bar bar-blue"></div>
+      <div class="header grey-background">
+        <p class="content">{{ selectedItem.name }}</p>
+        <p class="content">Achieved {{ selectedItem.date }}</p>
+      </div>
+
+      <div class="body">
+        <p>{{ selectedItem.message }}</p>
+      </div>
+
+      <button class="button button-assertive override bg-pattern red" ng-click="playVideo()">
+        <span class="content">Play Video</span>
+        <img class="video" ng-src="./images/buttons/play_video.png">
+      </button>
+
+      <!-- <div ng-include src="'templates/shared/video.html'"></div> -->
+
+    </article>
+
+  </ion-content>
+
+</div>

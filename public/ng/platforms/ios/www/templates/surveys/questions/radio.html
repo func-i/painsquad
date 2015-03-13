@@ -1,0 +1,18 @@
+<section class="radio" ng-controller="RadioCtrl" ng-cloak>
+
+  <form name="currentForm" valid-radio-form>
+    <ul>
+      <li class="item item-checkbox" ng-repeat="choice in question.choices">
+        <label id="radio" class="checkbox">
+          <input
+            type="checkbox"
+            ng-model="choice.selected"
+            ng-disabled="preventDeselect(choice)"
+            ng-change="deselectOther(choice)">
+        </label>
+        <span class="content">{{ choice.content }}</span>
+      </li>
+    </ul>
+  </form>
+
+</section>

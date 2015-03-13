@@ -1,0 +1,35 @@
+<section ng-init="activeTab = 'left'">
+
+  <div class="button-bar">
+    <a href
+      class="button override bg-pattern"
+      ng-click="activeTab = 'left'"
+      ng-class="{ 'active red': activeTab === 'left', 'bodymap-switch': activeTab !== 'left' }">
+      <span class="content">Left</span>
+    </a>
+
+    <a href
+      class="button override bg-pattern"
+      ng-click="activeTab = 'right'"
+      ng-class="{ 'active red': activeTab === 'right', 'bodymap-switch': activeTab !== 'right' }">
+      <span class="content">Right</span>
+    </a>
+  </div>
+
+  <div ng-switch="activeTab">
+    <div ng-switch-when="left">
+      <div class="bodymap-wrapper">
+        <section region="left" body-map-selector-switch ng-include="'images/bodymap/bodymap-armleft.svg'"></section>
+        <img class="arm-bg" ng-src="./images/bodymap/backgrounds/arm-left.png" />
+      </div>
+    </div>
+
+    <div ng-switch-when="right">
+      <div class="bodymap-wrapper">
+        <section region="right" body-map-selector-switch ng-include="'images/bodymap/bodymap-armright.svg'"></section>
+        <img class="arm-bg" ng-src="./images/bodymap/backgrounds/arm-right.png" />
+      </div>
+    </div>
+  </div>
+
+</section>

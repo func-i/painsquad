@@ -1,0 +1,33 @@
+<ion-view title="Manage Pain">
+
+  <ion-header-bar>
+    <button class="button button-clear button-primary" ng-click="back()">Back</button>
+  </ion-header-bar>
+
+  <ion-content padding="true" class="content-background-no-objects">
+
+    <ion-list>
+      <div class="header-bar bar-blue"></div>
+
+      <div class="item skinny-item margin-fix" ui-sref="app.pain_pharmacological">
+        Medicines to treat pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </div>
+
+      <div class="item skinny-item margin-fix" ui-sref="app.pain_physical">
+        Physical ways to treat pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </div>
+
+      <div class="item skinny-item margin-fix" ui-sref="app.pain_psychological">
+        Mental ways to treat pain
+        <span class="icon-right ion-chevron-right pull-right"></span>
+      </div>
+
+    </ion-list>
+
+    <div class="extension extra grey-background"></div>
+
+  </ion-content>
+
+</ion-view>

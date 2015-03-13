@@ -1,0 +1,22 @@
+<ion-view title="{{reportTitle}}" ng-cloak>  
+    <ion-tabs>
+
+      <ion-tab title="Medications">
+        <ion-content class="has-header content-background">
+          <div class="chart-wrapper">
+            <div class="header-bar bar-blue"></div>
+            <div google-chart chart="medChart" class="chart"></div>
+          </div>
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="Strategies">
+        <ion-content class="has-header content-background">
+          <div class="chart-wrapper">
+            <div class="header-bar bar-blue"></div>
+            <div google-chart chart="stratChart" class="chart"></div>
+          </div>
+        </ion-content>
+      </ion-tab>
+    </ion-tabs>  
+</ion-view>

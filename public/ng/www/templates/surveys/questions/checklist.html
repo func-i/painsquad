@@ -1,0 +1,30 @@
+<section class="checklist" ng-controller="ChecklistCtrl" ng-cloak>
+
+  <form name="currentForm" valid-form>
+    <ul>
+      <div ng-repeat="choice in question.choices">
+        <li class="item item-checkbox" ng-class="{ 'disabled': choice.disabled, 'textfield': choice.textfield }">
+            <label class="checkbox">
+
+              <input
+                type="checkbox"
+                ng-required="atLeastOne()"
+                ng-model="choice.selected"
+                ng-change="disableIfNone()"
+                ng-disabled="choice.disabled" />
+            </label>
+            <span class="content">{{choice.content}}</span>
+        </li>
+        <li class="other-textarea" ng-show="choice.textfield && choice.selected">
+          <div class="textarea-wrapper">
+            <textarea class="msd-elastic"
+              ng-model="choice.custom_text"
+              placeholder="Please specify...">
+            </textarea>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </form>
+
+</section>
