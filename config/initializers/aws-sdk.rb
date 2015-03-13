@@ -1,6 +1,7 @@
 $SNS = AWS::SNS.new(
   :access_key_id     => Rails.application.secrets.aws_access_key_id,
-  :secret_access_key => Rails.application.secrets.aws_secret_access_key
+  :secret_access_key => Rails.application.secrets.aws_secret_access_key,
+  :region => 'us-west-2'
 )
 
 # arn = 'arn:aws:sns:us-east-1::app/APNS/.iOS.Production'
