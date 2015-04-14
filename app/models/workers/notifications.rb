@@ -26,14 +26,7 @@ module Workers
       current_time = now.strftime("%H:%M:%S")
       users        = []
       User.find_each do |user|
-        alerts = user.alerts.where(alert_time: five_minutes..current_time)
-
-        if user.last_reminder_time
-          last_reminder_time = user.last_reminder_time.strftime("%H:%M:%S")
-          alerts = alerts.where("alert_time > ?", last_reminder_time) 
-        end
-
-        if user.alerts.any? && alerts.any?
+        if user.alerts.any? && user.alerts.where(alert_time: five_minutes..current_time).any?
           users << user
         end
       end
