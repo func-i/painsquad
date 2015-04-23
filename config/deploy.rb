@@ -3,6 +3,7 @@ lock '3.2.1'
 
 set :application, 'painsquad'
 set :repo_url, 'git@github.com:func-i/painsquad.git'
+set :branch, ENV['BRANCH'] || "master"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
